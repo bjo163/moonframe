@@ -11,7 +11,7 @@ Reference-style links (`[label][ref]`), raw HTML links/IDs, anchors in non-Markd
 ## Coverage without a wasteful Cartesian explosion
 
 1. **30 baseline appearances:** canonical 15 skins × effective `light`/`dark`. `system` resolves; never screenshot it as a 31st identity.
-2. **Reference fixture parity:** dashboard, data table (same rows), long form, dialog and navigation; pin viewport, fonts, content, timezone, network/data seeds and clock.
+2. **Reference fixture parity:** dashboard, data table (same rows), long form, dialog and navigation; pin viewport, fonts, content, timezone, network/data seeds and clock. The proposed copy/data and capture controls are specified in the [Skin Lab fixtures document](skin-lab-fixtures.md); it defines requirements only, not rendered evidence.
 3. **105 skin pairs:** grayscale and decoration-disabled screenshot evidence for each pairing; compare all eight non-color dimensions; reviewers must fill human decisions. No pair passes on score alone.
 4. **State/density:** all public components in meaningful focus-visible, hover, active, selected, disabled, invalid, loading, empty and error states; compact/comfortable/spacious samples.
 5. **Risk-based combinations:** mobile/tablet/desktop, keyboard-only, 200%/400% zoom/reflow, long translations/RTL, high-contrast and forced-colors, reduced-motion, image/font failure, SSR/no-JS (if supported), offline fallback.
