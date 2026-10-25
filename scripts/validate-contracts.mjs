@@ -193,6 +193,141 @@ if (process.argv.includes('--self-test')) {
   console.log('PASS: premium negative fixtures (invalid block/page refs, duplicate IDs, missing coverage)');
 }
 
+
+// Token Architecture & Theme Engine planning checks (not a production resolver).
+const tokenSubsetSchema = read('schemas/moonframe-token-subset.schema.json');
+const themePrefsSchema = read('schemas/moonframe-theme-preferences.schema.json');
+const tpr=theme.preferenceResolution;
+const tokenTypeMap=dict.tokenTypeProposals, tokenLayerMap=dict.tokenLayerProposals;
+const plannedTypes=new Set(source.subset.allowedTypes);
+const schemaSupportedTypes=new Set(tokenSubsetSchema.$defs.token.properties.$type.enum);
+fail(tokenSubsetSchema.$schema==='https://json-schema.org/draft/2020-12/schema' &&
+     themePrefsSchema.$schema==='https://json-schema.org/draft/2020-12/schema',
+     'Token/preference schemas must declare JSON Schema Draft 2020-12');
+fail(tokenSubsetSchema.$defs?.group && tokenSubsetSchema.$defs?.token &&
+     tokenSubsetSchema.$defs?.reference,'Incomplete proposed bounded DTCG schema');
+fail(sameSet(themePrefsSchema.properties.requested.properties.skinId.enum,ids) &&
+     sameSet(themePrefsSchema.properties.effective.properties.skinId.enum,ids),
+     'Theme preferences schema skin IDs out of sync with canonical theme contract');
+for(const [field,required] of [
+ ['modePreference',['light','dark','system']],
+ ['densityPreference',['compact','comfortable','spacious']],
+ ['motionPreference',['system','full','reduced']],
+ ['contrastPreference',['system','normal','high']],
+ ['directionPreference',['app-locale','ltr','rtl']]
+]) fail(sameSet(tpr.preferenceFields[field],required) &&
+        sameSet(themePrefsSchema.properties.requested.properties[field].enum,required),
+        'Theme requested preference enum mismatch: '+field);
+for(const [field,required] of [
+ ['resolvedMode',['light','dark']],['resolvedMotion',['full','reduced']],
+ ['contrast',['normal','high']],['direction',['ltr','rtl']]
+]) fail(sameSet(tpr.resolvedFields[field],required) &&
+        sameSet(themePrefsSchema.properties.effective.properties[field].enum,required),
+        'Theme effective preference enum mismatch: '+field);
+fail(theme.rootAttributes.skin==='data-skin' && theme.rootAttributes.mode==='data-mode' &&
+     theme.rootAttributes.density==='data-density' && theme.rootAttributes.motion==='data-motion' &&
+     theme.rootAttributes.contrast==='data-contrast' && theme.rootAttributes.direction==='dir',
+     'Root attributes/theme vocabulary drift');
+fail(theme.fallbacks.unknownSkin==='classic' && theme.fallbacks.invalidMode==='system' &&
+     theme.fallbacks.invalidDensity==='comfortable' && theme.fallbacks.invalidDirection==='ltr',
+     'Required documented preference fallbacks drift');
+fail(Array.isArray(tpr.precedence)&&tpr.precedence.length===5 &&
+     tpr.precedence[0].includes('controlled') && tpr.precedence[1].includes('saved') &&
+     tpr.precedence[2].includes('OS') && tpr.precedence[3].includes('application default'),
+     'Theme preference precedence contract incomplete');
+fail(tpr.persistence?.neverPersist?.includes('resolvedMode') &&
+     tpr.persistence?.persist?.includes('modePreference') &&
+     tpr.changeHandling?.some(x=>x.includes('only if requested mode=system')) &&
+     tpr.persistence?.default?.startsWith('none'),
+     'Stored vs derived/system-mode/runtime policy mismatch');
+fail(tokenNames.length===Object.keys(tokenTypeMap).length &&
+     sameSet(tokenNames,Object.keys(tokenTypeMap)) &&
+     sameSet(tokenNames,Object.keys(tokenLayerMap)),
+     'Token type/layer proposals must cover all 78 original token IDs');
+fail(plannedTypes.size>=6 && plannedTypes.has('shadow') &&
+     !schemaSupportedTypes.has('shadow'),
+     'Shadow must remain proposed-but-schema-unsupported pending fixture proof');
+fail([...schemaSupportedTypes].every(x=>plannedTypes.has(x)),
+     'Schema type includes a type not proposed in source plan');
+fail(source.sourceLayout?.overlayOrder?.length===5 &&
+     source.sourceLayout.overlayOrder[0]==='reference-only-definition' &&
+     source.sourceLayout.overlayOrder[4]==='skins/<skin-id>/<effective-mode>' &&
+     source.sourceLayout.expectedResolvedAppearances===30,
+     'Sparse source overlay specification missing or drifted');
+fail(source.outputStrategy?.checkMode?.includes('no filesystem mutation') &&
+     source.coverageReportContract?.perAppearance?.includes('sourceLineage') &&
+     source.versioning?.tokenSetVersion==='not-created',
+     'Generator/output source lineage or pending version unclear');
+const legacyFromInventory=tokenNames.filter(x=>/[A-Z]/.test(x));
+fail(sameSet(dict.namingPolicy?.legacyGrandfathered||[],legacyFromInventory) &&
+     dict.catalogClarification.includes('Mixed required'),
+     'Legacy names require explicit documented grandfathering');
+fail(uniq(tokenNames)&&tokenNames.length===78,'Original vocabulary changed without reviewed migration');
+fail(dict.canonicalValueSource===null && theme.tokens.canonicalSource===null &&
+     source.status==='source-values-not-created',
+     'Production token source improperly claimed');
+
+// Tiny fixture checker: validates proposed *whole-token* alias semantics only.
+// It does not process token files, apply overlays, generate CSS or implement ThemeProvider.
+function validateTokenFixture(map) {
+  const issues=[];
+  const allowed=new Set(['color','dimension','duration','number','fontFamily','fontWeight','cubicBezier']);
+  const isRecord=x=>x && typeof x==='object' && !Array.isArray(x);
+  function validateValue(v,type,id) {
+    if(type==='color'&&!(isRecord(v)&&v.colorSpace==='srgb'&&Array.isArray(v.components)&&
+        v.components.length===3&&v.components.every(x=>typeof x==='number'&&Number.isFinite(x)&&x>=0&&x<=1)&&
+        (v.alpha===undefined||(typeof v.alpha==='number'&&v.alpha>=0&&v.alpha<=1)))) issues.push('Bad color '+id);
+    if(type==='dimension'&&!(isRecord(v)&&Number.isFinite(v.value)&&['px','rem'].includes(v.unit))) issues.push('Bad dimension '+id);
+    if(type==='duration'&&!(isRecord(v)&&Number.isFinite(v.value)&&v.value>=0&&v.unit==='ms')) issues.push('Bad duration '+id);
+    if(type==='number'&&!(typeof v==='number'&&Number.isFinite(v))) issues.push('Bad number '+id);
+    if(type==='fontFamily'&&!(typeof v==='string'||(Array.isArray(v)&&v.length>0&&v.every(x=>typeof x==='string')))) issues.push('Bad fontFamily '+id);
+    if(type==='fontWeight'&&!(Number.isFinite(v)||typeof v==='string')) issues.push('Bad fontWeight '+id);
+    if(type==='cubicBezier'&&!(Array.isArray(v)&&v.length===4&&v.every(Number.isFinite))) issues.push('Bad cubicBezier '+id);
+  }
+  const seen=new Set();
+  function visit(id,stack=[]) {
+    if(stack.includes(id)){issues.push('Alias cycle '+[...stack,id].join(' -> '));return;}
+    if(seen.has(id))return;
+    const entry=map[id];
+    if(!entry){issues.push('Unknown alias '+id);return;}
+    if(!isRecord(entry)||typeof entry.$type!=='string'||!('$value'in entry)){issues.push('Malformed token '+id);return;}
+    if(!allowed.has(entry.$type)){issues.push('Unsupported type '+id);return;}
+    const v=entry.$value;
+    if(typeof v==='string'&&v.startsWith('{')){
+      if(!/^\{[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*\}$/.test(v)){issues.push('Malformed alias '+id);return;}
+      const target=v.slice(1,-1);
+      const destination=map[target];
+      if(!destination){issues.push('Unknown alias '+target);return;}
+      if(destination.$type!==entry.$type) issues.push('Alias type mismatch '+id+' -> '+target);
+      visit(target,[...stack,id]);
+    }else validateValue(v,entry.$type,id);
+    seen.add(id);
+  }
+  for(const id of Object.keys(map))visit(id);
+  return issues;
+}
+const example={
+  'color.reference':{$type:'color',$value:{colorSpace:'srgb',components:[0.25,0.5,0.75]}},
+  'color.semantic':{$type:'color',$value:'{color.reference}'},
+  'space.reference':{$type:'dimension',$value:{value:8,unit:'px'}}
+};
+for(const x of validateTokenFixture(example))errors.push('Valid illustrative token fixture failed: '+x);
+if(process.argv.includes('--self-test')) {
+  const badUnknown=structuredClone(example);badUnknown['color.semantic'].$value='{color.nonexistent}';
+  assert(validateTokenFixture(badUnknown).some(e=>e.includes('Unknown alias')));
+  const badCycle=structuredClone(example);badCycle['color.reference'].$value='{color.semantic}';
+  assert(validateTokenFixture(badCycle).some(e=>e.includes('Alias cycle')));
+  const badType=structuredClone(example);badType['color.semantic'].$value='{space.reference}';
+  assert(validateTokenFixture(badType).some(e=>e.includes('Alias type mismatch')));
+  const badUnit=structuredClone(example);badUnit['space.reference'].$value={value:8,unit:'vh'};
+  assert(validateTokenFixture(badUnit).some(e=>e.includes('Bad dimension')));
+  const badColor=structuredClone(example);badColor['color.reference'].$value.components=[0,1.4,0.1];
+  assert(validateTokenFixture(badColor).some(e=>e.includes('Bad color')));
+  const badUnsupported=structuredClone(example);badUnsupported['color.reference'].$type='gradient';
+  assert(validateTokenFixture(badUnsupported).some(e=>e.includes('Unsupported type')));
+  console.log('PASS: proposed token fixture negatives (unknown alias, cycle, type, unit, color, unsupported)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
