@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 
 // Fixture-only proof for the proposed Moonframe DTCG-inspired subset.
 // This is intentionally not a full DTCG parser or a production generator.
+const PROOF_VERSION = '0.1.0';
 const fixture = {
   reference: {
     color: {
@@ -144,4 +145,4 @@ expectFailure('alias cycle', () => resolveToken(cycle.get('a'), cycle), /alias c
 expectFailure('unresolved reference', () => resolveToken({ $type: 'color', $value: '{missing.token}' }, new Map()), /unresolved alias/);
 expectFailure('missing mode', () => generateCss({ light: fixture.modes.light }), /missing mode: dark/);
 
-process.stdout.write(`PASS: bounded token subset fixture; deterministic CSS, ${fixture.required.length} semantic role, 2 modes, and negative type/alias/coverage cases.\n`);
+process.stdout.write(`PASS: bounded token subset proof v${PROOF_VERSION}; Node ${process.version}; deterministic CSS, ${fixture.required.length} semantic role, 2 modes, and negative type/alias/coverage cases.\n`);
