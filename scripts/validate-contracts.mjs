@@ -75,13 +75,118 @@ for (const c of cmp) {
   fail(c.implementationStatus==='not-implemented', 'A catalog entry cannot claim implementation without code: '+c.id);
 }
 fail(b.length>=10 && uniq(b.map(x=>x.id)), 'Block IDs wrong');
-for (const x of b) {
+for (const x of b.filter(x=>x.recordKind==='family-blueprint')) {
   fail(sameSet(x.skinApplicability, ids), 'Block skin coverage inconsistent '+x.id);
   fail(x.businessLogic==='forbidden' && Array.isArray(x.states)&&x.states.includes('loading')&&x.states.includes('error'), 'Block state/logic incomplete '+x.id);
 }
 fail(sameSet(assets.plannedPerSkin.map(x=>x.skinId),ids), 'Asset manifest skin coverage wrong');
 fail(assets.plannedPerSkin.every(x=>x.status==='not-produced' && x.assets.length===0), 'Unverified asset production claim');
 fail(sfx.defaultEnabled===false && sfx.requiresExplicitConsent===true && sfx.autoplayOnLoad===false && sfx.producedAssets.length===0, 'Unsafe/unverified audio default');
+
+// Premium UI scope: inspect Level A/B → C → D → E graph and optional Level F.
+const pages = read('contracts/moonframe-page-template-manifest-v0.1.json');
+const starters = read('contracts/moonframe-starter-manifest-v0.1.json');
+const integrations = read('contracts/moonframe-integration-manifest-v0.1.json');
+const auth = read('contracts/moonframe-auth-ui-catalog-v0.1.json');
+const dataWorkspace = read('contracts/moonframe-data-workspace-contract-v0.1.json');
+const premiumCoverage = read('contracts/moonframe-premium-coverage-v0.1.json');
+const concreteBlocks=b.filter(x=>x.kind==='concrete-block');
+const legacyBlocks=b.filter(x=>x.recordKind==='family-blueprint');
+const pageItems=pages.templates, starterItems=starters.starters, optionalItems=integrations.candidates;
+const priorities=new Set(['P0','P1','P2','P3']);
+const atLeast=(arr,n)=>Array.isArray(arr)&&arr.length>=n;
+const scopedIdSets=[cmp.map(x=>x.id),b.map(x=>x.id),pageItems.map(x=>x.id),starterItems.map(x=>x.id),optionalItems.map(x=>x.id)];
+const allIds=scopedIdSets.flat();
+fail(uniq(allIds),'Duplicate ID across A/B/C/D/E/F');
+for(const [index,entries] of scopedIdSets.entries())
+  fail(uniq(entries)&&entries.every(isString),'Malformed IDs in level '+index);
+fail(cmp.length===components.counts.total,'Component total drift');
+fail(legacyBlocks.length===blocks.counts.familyBlueprints &&
+  concreteBlocks.length===blocks.counts.concreteBlocks,'Block family/concrete counts drift');
+fail(Object.entries(blocks.counts.byCategory).every(([name,n])=>concreteBlocks.filter(x=>x.category===name).length===n),
+ 'Block per-category counts drift');
+function catalogGraphProblems(blockList,pageList,starterList,optionalList,authMap) {
+  const e=[];
+  const blockIds=new Set(blockList.map(x=>x.id));
+  const pageIds=new Set(pageList.map(x=>x.id));
+  const used=new Set([...blockList.map(x=>x.id),...pageList.map(x=>x.id),...starterList.map(x=>x.id),...optionalList.map(x=>x.id)]);
+  if (used.size!==blockList.length+pageList.length+starterList.length+optionalList.length)
+    e.push('Duplicate Level C/D/E/F ID');
+  for(const item of blockList){
+    if(item.kind!=='concrete-block'||item.level!=='C'||!priorities.has(item.priority)||item.status!=='specified-not-implemented')
+      e.push('Invalid concrete block taxonomy/status: '+item.id);
+    if(!atLeast(item.stateMatrix,3)||!atLeast(item.acceptance,3)||!atLeast(item.inputs,0)||
+       !atLeast(item.visualAcceptance,2)||!isString(item.integrationBoundary)||!isString(item.a11y)||
+       !atLeast(item.eventContract?.events,0)||
+       !atLeast(item.responsive && Object.values(item.responsive),3))
+      e.push('Incomplete concrete block behavioral contract: '+item.id);
+    if(!item.skinCoverageSource?.includes('15 skin IDs')&&!item.skinCoverageSource?.includes('15 skin IDs ×'))
+      e.push('Skin coverage undefined: '+item.id);
+  }
+  for(const p of pageList) {
+    if(p.level!=='D'||p.status!=='specified-not-implemented'||!priorities.has(p.priority)||!atLeast(p.blockRefs,1)||
+       !atLeast(p.states,5)||!atLeast(p.acceptance,3)||!atLeast(Object.values(p.responsive||{}),3))
+      e.push('Invalid page record: '+p.id);
+    for(const ref of p.blockRefs||[]) if(!blockIds.has(ref)) e.push('Missing C-level blockRef: '+p.id+' -> '+ref);
+  }
+  for(const s of starterList){
+    if(s.level!=='E'||s.status!=='specified-not-implemented'||!atLeast(s.pageRefs,2)||!atLeast(s.integrationSeams,2))
+      e.push('Invalid starter record: '+s.id);
+    for(const ref of s.pageRefs||[])if(!pageIds.has(ref))e.push('Missing D-level pageRef: '+s.id+' -> '+ref);
+  }
+  for(const i of optionalList){
+    if(i.level!=='F'||i.selectionStatus!=='candidate-not-installed'||!isString(i.primarySource)||
+       !isString(i.licenseStatus)||i.versionPin!=='not-installed')
+      e.push('Unverified optional integration claimed: '+i.id);
+  }
+  for(const ref of authMap.authBlocks||[])if(!blockIds.has(ref))e.push('Invalid auth block reference: '+ref);
+  for(const [name,refs] of Object.entries(authMap.flowGroups||{}))
+    for(const ref of refs)if(!blockIds.has(ref))e.push('Invalid auth '+name+' reference: '+ref);
+  return e;
+}
+for(const msg of catalogGraphProblems(concreteBlocks,pageItems,starterItems,optionalItems,auth))errors.push(msg);
+fail(sameSet(auth.skinIds,ids)&&sameSet(auth.supportedModes,['light','dark']),'Auth skin/mode authority drift');
+fail(auth.securityBoundary.includes('Consumer/auth provider') &&
+  auth.implementationStatus==='not-implemented' &&
+  auth.providerIntegrationStatus==='none-installed','Auth security boundary/status claim false');
+fail(pages.count===pageItems.length && pageItems.length>20 && starterItems.length>=5 && optionalItems.length>=8,'Premium level D/E/F catalog incomplete');
+fail(sameSet(dataWorkspace.tiers.map(x=>x.id),['simple-table','data-table','advanced-workspace','enterprise-grid']), 'Four data workspace tiers missing');
+fail(dataWorkspace.tiers.every(x=>priorities.has(x.priority) && atLeast(x.featureScope,3)&&atLeast(x.nonGoals,1)), 'Workspace tier contract incomplete');
+fail(sameSet(premiumCoverage.appearanceModes,['light','dark']) &&
+  premiumCoverage.systemIsNotThirdMode===true,'Premium appearance semantics drift');
+fail(premiumCoverage.evidenceMatrix.expectedCells===premiumCoverage.referenceScreens.length*ids.length*2,
+  'Premium expected cell calculation incorrect');
+const coverageCells=premiumCoverage.evidenceMatrix.cells;
+const expectedCoverage=ids.flatMap(id=>['light','dark'].flatMap(mode=>
+  premiumCoverage.referenceScreens.map(itemId=>id+'::'+mode+'::'+itemId)));
+fail(coverageCells.length===expectedCoverage.length &&
+  sameSet(expectedCoverage,coverageCells.map(x=>x.skinId+'::'+x.mode+'::'+x.itemId)),
+  'Premium coverage has missing, duplicate or extraneous cells');
+const legalFixtures=new Set([...concreteBlocks.map(x=>x.id),...pageItems.map(x=>x.id)]);
+fail(uniq(premiumCoverage.referenceScreens)&&premiumCoverage.referenceScreens.every(x=>legalFixtures.has(x)),
+ 'Premium fixture includes invalid/nonconcrete items');
+const allLegalIds=new Set([...concreteBlocks.map(x=>x.id),...pageItems.map(x=>x.id)]);
+fail(sameSet(premiumCoverage.plannedUniversalApplicability.blockIds,concreteBlocks.map(x=>x.id)) &&
+  sameSet(premiumCoverage.plannedUniversalApplicability.pageTemplateIds,pageItems.map(x=>x.id)),
+  'Universal coverage drift');
+for(const x of coverageCells) {
+  fail(x.reviewStatus==='not-rendered'&&x.screenshot===null&&x.reviewer===null&&
+       x.contrastEvidence===null&&x.grayscaleEvidence===null&&x.decorationOffEvidence===null,
+    'Fabricated premium rendered/approved evidence: '+x.skinId+' '+x.mode+' '+x.itemId);
+}
+if (process.argv.includes('--self-test')) {
+  const badPages=structuredClone(pageItems);
+  badPages[0].blockRefs=['block-missing-deliberately'];
+  assert(catalogGraphProblems(concreteBlocks,badPages,starterItems,optionalItems,auth).some(x=>x.includes('Missing C-level')));
+  const badStarters=structuredClone(starterItems);
+  badStarters[0].pageRefs=['template-missing-deliberately'];
+  assert(catalogGraphProblems(concreteBlocks,pageItems,badStarters,optionalItems,auth).some(x=>x.includes('Missing D-level')));
+  const badBlocks=[...concreteBlocks,concreteBlocks[0]];
+  assert(catalogGraphProblems(badBlocks,pageItems,starterItems,optionalItems,auth).some(x=>x.includes('Duplicate Level')));
+  assert(!sameSet(expectedCoverage,coverageCells.slice(1).map(x=>x.skinId+'::'+x.mode+'::'+x.itemId)));
+  console.log('PASS: premium negative fixtures (invalid block/page refs, duplicate IDs, missing coverage)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];

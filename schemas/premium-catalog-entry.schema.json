@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/premium-catalog-entry.schema.json",
+  "title": "Moonframe premium catalog record",
+  "description": "Documentation contract only; cross-item references additionally validated by node scripts/validate-contracts.mjs",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "level",
+        "category",
+        "priority",
+        "inputs",
+        "eventContract",
+        "stateMatrix",
+        "responsive",
+        "acceptance",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^block-"
+        },
+        "kind": {
+          "const": "concrete-block"
+        },
+        "level": {
+          "const": "C"
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "status": {
+          "const": "specified-not-implemented"
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stateMatrix": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "level",
+        "blockRefs",
+        "states",
+        "priority",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^template-"
+        },
+        "level": {
+          "const": "D"
+        },
+        "blockRefs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^block-"
+          }
+        },
+        "states": {
+          "type": "array",
+          "minItems": 5
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "status": {
+          "const": "specified-not-implemented"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "level",
+        "pageRefs",
+        "priority",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^starter-"
+        },
+        "level": {
+          "const": "E"
+        },
+        "pageRefs": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^template-"
+          }
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "status": {
+          "const": "specified-not-implemented"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "level",
+        "selectionStatus",
+        "primarySource",
+        "licenseStatus"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "const": "F"
+        },
+        "selectionStatus": {
+          "const": "candidate-not-installed"
+        },
+        "primarySource": {
+          "type": "string",
+          "format": "uri"
+        },
+        "licenseStatus": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  ]
+}
