@@ -47,3 +47,5 @@ Consumer environment evidence is tracked in the [consumer matrix](../research/co
 ## 2026-10-25 Paper comparison and spike gate
 
 The current [provider comparison](../research/provider-spike.md) adds first-party feature/release evidence to the directional matrix. It remains a paper review: no packages were installed, no equal fixtures were run, and bundle, keyboard/AT, RTL, forced-colors, reduced-motion, and SSR outcomes are unmeasured. Keep this ADR proposed. The exact Radix aggregate package version and the complete React Aria package set are not yet pinned. MF-005 requires an owner-approved runtime and isolated fixture before hands-on work; do not select a provider from the weighted hypothesis score.
+
+Classic's shadcn visual reference is separately bounded in the [Classic baseline note](../research/classic-baseline.md). Current shadcn documentation offers Base UI, Radix and React Aria paths; the July 2026 Base UI default is not a Moonframe provider decision. No shadcn source was copied and no exact generated style/template commit is pinned.

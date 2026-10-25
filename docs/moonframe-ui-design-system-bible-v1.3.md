@@ -37,7 +37,7 @@ Moonframe is a first-party UI design system for Moon ecosystem apps. It comprise
 - `system` resolves to Light or Dark according to the OS/browser preference. It is a mode preference, not another skin.
 - Skin, appearance mode, density, motion preference and contrast preference are independent axes.
 - Components share behavioral semantics and public APIs. Skins may supply visual recipes, asset mappings, and layout composition strategies.
-- Classic is a shadcn-style compatibility baseline, not a product affiliation claim.
+- Classic is a shadcn-inspired visual reference, not source compatibility or a product affiliation claim; see the [dated baseline](research/classic-baseline.md).
 - Moonquest contains optional game-oriented presentation patterns only; game rules and state belong to the consuming app.
 - Moonledger contains a professional, compact ERP visual language only; accounting and business rules belong to the consuming app.
 - Heavy decorative assets, audio and advanced effects must be optional and lazily loaded where practical.

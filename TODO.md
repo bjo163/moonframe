@@ -156,9 +156,9 @@
 
 **Milestone artifact:** 8 reference appearance renders + six pair evidence slots. **Gate:** blocked: fixtures/screenshots. Entry: Theme preview, #2 Classic, #6 fixture spec. See [release matrix](docs/architecture/release-train-and-adoption.md).
 
-- [ ] **MF-004 — Pin Classic visual baseline without affiliation claims** · **P1 / S** · **status:** `blocked` · **lane:** D · **deps:** MF-003 · **issue:** [#2](https://github.com/bjo163/moonframe/issues/2)
+- [ ] **MF-004 — Pin Classic visual baseline without affiliation claims** · **P1 / S** · **status:** `in-progress` · **lane:** D · **deps:** MF-003 · **issue:** [#2](https://github.com/bjo163/moonframe/issues/2)
   - **Expected file owner/scope:** `docs/research/classic-baseline.md (proposed); ADR-0001`. **AC:** Source/date, typography/geometry, provider boundaries and fallback clear.
-  - **Validation/evidence:** Review shadcn current changelog and contract validator. **Risk/rollback:** No automatic shadcn adoption. **Adoption/output:** 8 reference appearance renders + six pair evidence slots. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Validation/evidence:** [Dated Classic baseline](docs/research/classic-baseline.md) reviewed against official July 2026 default/React Aria changelogs and current theming/Tailwind docs; `node scripts/validate-contracts.mjs` and `--self-test` pass. Exact generated style/commit and provider deferred pending MF-005 and maintainer review. **Risk/rollback:** No automatic shadcn adoption. **Adoption/output:** renders and pair evidence remain pending implementation; no screenshot evidence claimed. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
 
 - [ ] **MF-024 — Specify same-content deterministic Skin Lab fixtures** · **P1 / S** · **status:** `blocked` · **lane:** D/H · **deps:** MF-004,MF-013 · **issue:** [#6](https://github.com/bjo163/moonframe/issues/6)
   - **Expected file owner/scope:** `docs/qa/skin-lab-fixtures.md (proposed)`. **AC:** Pin content/data/fonts/viewport/timezone; grayscale/decorations off planned.
