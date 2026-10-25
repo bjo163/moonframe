@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Advanced Data Workspace (2026-10-25)
 
 - [Repository audit and P0–P3 findings](docs/audit/advanced-data-workspace-audit.md)
+- [Advanced Data Workspace final delivery and CI report](docs/audit/advanced-data-workspace-delivery-2026-10-25.md)
 - [Canonical existing Data Workspace Bible — expanded](docs/premium/data-workspace.md)
 - [Primary-source research and comparison](docs/research/advanced-data-workspace-research-log.md)
 - [ADR-0004 — engine choice proposed, not approved](docs/adr/0004-data-workspace-engine.md)
