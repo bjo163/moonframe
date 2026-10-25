@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Accessibility & Visual QA (2026-10-25)
 
 - [Live repository accessibility/visual QA audit](docs/audit/accessibility-visual-qa-baseline.md)
+- [Accessibility & Visual QA delivery report and verified CI evidence](docs/audit/accessibility-visual-qa-delivery-2026-10-25.md)
 - [WCAG/ACT/axe/Storybook/Playwright primary-source research](docs/research/accessibility-visual-qa-research-log.md)
 - [Accessibility & Visual QA Bible — canonical methodology](docs/qa/accessibility-visual-qa-bible.md)
 - [51 WCAG criteria and evidence/verification mapping](contracts/moonframe-accessibility-requirements-v0.1.json)

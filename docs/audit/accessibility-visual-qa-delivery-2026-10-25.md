@@ -1,0 +1,56 @@
+# Moonframe — Accessibility & Visual QA research/specification delivery report
+
+**Date:** 2026-10-25 Asia/Jakarta. **Repository:** https://github.com/bjo163/moonframe. **Default/edited branch:** `main` (no new branch/PR). **Audited starting HEAD:** [`e80eb268be290ac2977e78fe293257c93a21e6d7`](https://github.com/bjo163/moonframe/commit/e80eb268be290ac2977e78fe293257c93a21e6d7), with **103 tracked files**, public/push access and 6 existing GitHub issues. **Pre-report verified docs/CI HEAD:** [`b9ef4ed8c1d7378b9a076c376846388d084bcdae`](https://github.com/bjo163/moonframe/commit/b9ef4ed8c1d7378b9a076c376846388d084bcdae); [CI success](https://github.com/bjo163/moonframe/actions/runs/40185077633). This report commit has its own CI run and result must be checked separately. A local checkout was not inspected, so no assertion about local working tree. **Scope: research, docs, JSON metadata, Node static validator only.**
+
+## Audit conclusions, authority and P0–P3
+
+[Live baseline audit](accessibility-visual-qa-baseline.md): P0=**0**, P1=**6**, P2=**5**, P3=**3**; 14 planning/evidence gaps, NOT runtime bugs in a shipped UI.
+
+**Original canonical sources:** [Master Design System Bible](../moonframe-ui-design-system-bible-v1.3.md) overall goals, [Theme](../../contracts/moonframe-theme-contract-v1.3.json) 15 skins/Light-Dark/System and runtime prefs, [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) **105 pairs, 0 reviewed**, [Token Dictionary](../../contracts/moonframe-token-dictionary-v0.1.json) proposed values/roles with no production outputs, [Component API](../component-api-behavior-bible.md) + [151 component manifest](../../contracts/moonframe-component-manifest-v0.1.json) + [37 keyboard patterns](../../contracts/moonframe-keyboard-interaction-matrix-v0.1.json), [Premium Block Manifest](../../contracts/moonframe-block-manifest-v0.1.json) **131 concrete + 13 family blueprints**, [Templates](../../contracts/moonframe-page-template-manifest-v0.1.json) **72**. Existing [central QA strategy](../qa/validation-strategy.md) remains high-level release authority. Existing premium/auth/data/motion/asset appearance matrices already have planned cells only (660/240/180/180/120); these counts **are not completed tests or additive certification**. No package.json/React/TSX, Storybook, Playwright, axe installation, screenshots, manual AT test result, app binary/release or font/audio files.
+
+**Primary new QA authority:** [Accessibility & Visual QA Bible](../qa/accessibility-visual-qa-bible.md) exclusively owns standard verification procedures, screenshot/baseline QA, exception/defect policy, reviewer attestations and release decisions. It does not create another Skin Grammar pair truth, component props, token values or Auth/Data workflow definitions.
+
+## Verified official primary sources and affected decisions
+
+[Primary research log](../research/accessibility-visual-qa-research-log.md), checked 2026-10-25:
+- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) **Recommendation 12 Dec 2024**. **Level AA target proposed only**, not a conformance claim. [2.4.11 Focus Not Obscured (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum) is **AA**, [2.4.13 Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance) **AAA**; [2.5.7 Dragging Movements](https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements) **AA** requires non-drag single pointer alternative where applicable; [2.5.8 Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum) **AA**, usually 24×24 CSS px **or justified exception**; [3.3.8 Accessible Authentication (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum) **AA**. [1.4.10 Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow) accounts for exceptional 2D data regions; context-composited contrast required rather than isolated HEX token checks.
+- [W3C ACT Rules Format 1.1](https://www.w3.org/TR/act-rules-format/) **W3C Recommendation 5 Feb 2026**; [ACT Rules](https://www.w3.org/WAI/standards-guidelines/act/rules/about/) are informative/partial, not a product WCAG certification.
+- [axe-core maintainers](https://github.com/dequelabs/axe-core) describe average 57% automatic WCAG issue detection as their general metric, with `incomplete` manual checks; **not a Moonframe coverage percentage**.
+- [Storybook accessibility](https://storybook.js.org/docs/writing-tests/accessibility-testing) docs display **10.6** at access: axe-based partial component-state testing; not installed.
+- [Playwright visual comparisons](https://playwright.dev/docs/test-snapshots) require reproducible host/browser/OS/settings/hardware/font environment. `toHaveScreenshot` is a possible **future** local/free runner, not a captured baseline.
+- [MDN prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors), [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) inform cross-axis user safety and contrast plans.
+
+## Actual documents/contracts added or amended
+
+| Authority/path | What changed, limitations |
+|---|---|
+| [Baseline audit](accessibility-visual-qa-baseline.md) | Initial SHA/inventory, source of truth and 14 P0–P3 findings |
+| [Primary-source research](../research/accessibility-visual-qa-research-log.md) | Dated verified WCAG, ACT, tool/vendor decisions/limitations |
+| [QA Bible](../qa/accessibility-visual-qa-bible.md) | Normative vs product policy, test pyramid, browser/AT plans, 30-appearance and 105-pair method, visual baseline governance, defects and waivers |
+| [51 WCAG requirement contracts](../../contracts/moonframe-accessibility-requirements-v0.1.json) | **27 Level A, 22 AA, 2 AAA advisory**, bounded relevant subset; none tested, not exhaustive |
+| [151 QA component profiles](../../contracts/moonframe-component-qa-profiles-v0.1.json) | All existing component IDs joined to real state/keyboard patterns and criterion refs; **39 high-risk planned profiles**, 0 test evidence |
+| [270 visual baseline slots](../../contracts/moonframe-visual-baseline-matrix-v0.1.json) | 9 canonical page specimens × 15 skin IDs × Light/Dark; 0 screenshots, 0 captures/passes/reviews, no extra System mode |
+| [Zero-evidence ledger](../../contracts/moonframe-accessibility-qa-evidence-v0.1.json) | No real observations/waivers/defects, precise vocabulary/defect classification and evidence requirements |
+| [Conditional record JSON Schema](../../schemas/moonframe-accessibility-qa-record.schema.json) + [14 intentionally invalid metadata fixtures](../../contracts/fixtures/accessibility-visual-qa-v0.1.json) | Proposed Draft 2020-12 format and bounded Node rejection of fake passes/waivers; **independent full Draft engine NOT run** |
+| [ADR-0008](../adr/0008-accessibility-visual-qa-tooling.md) | CSS/React target unresolved, Playwright + axe + optional Storybook vs manual AT, weighted decision not scored without real consumer |
+| [16 task-ready tickets](../backlog/accessibility-visual-qa-atomic-issues.md) | Dependencies and acceptance; not created as GitHub Issues |
+| Amended [README](../../README.md), [central QA](../qa/validation-strategy.md), [component QA](../qa/component-testing-strategy.md), [Master Bible](../moonframe-ui-design-system-bible-v1.3.md), [Roadmap](../implementation-roadmap.md), [Governance](../architecture/decisions-and-governance.md), [Premium scope](../premium/premium-scope-bible.md), [Node validator](../../scripts/validate-contracts.mjs) | Canonical links, risk/status/CI and no duplicative component/skin/template contract |
+
+## Executed validation and exact evidence boundary
+
+**GitHub Actions [run 40185077633](https://github.com/bjo163/moonframe/actions/runs/40185077633) completed SUCCESS** at pre-report HEAD `b9ef4ed8c1d7378b9a076c376846388d084bcdae`. Steps:
+1. `node scripts/validate-contracts.mjs` **PASS**: original 15/30/105/151 and cross-file/Markdown links; new 51 WCAG IDs/levels, 151 component state/keyboard joins, nine valid specimen references, all 270 unrendered/zero approvals, no fake evidence ledger.
+2. `node scripts/validate-contracts.mjs --self-test` **PASS**: rejects all **14** intentionally invalid metadata fixtures (fake auto/manual/AT/release passes, invalid waiver, unknown WCAG/skin/component/mode, fake commit/capture), broken 270-cell mapping, fabricated approval, wrong 2.4.13 level, component keyboard drift and false manual AT count; original motion/auth/asset/data/token/premium negatives also pass.
+3. One intermediate CI failure was identified: a planned dashboard screenshot case used `loading` instead of existing canonical component-state `pending`. Corrected and rerun successfully on commit `30fd141`; latest navigation run also successful.
+
+**NOT RUN / NOT CLAIMED:** independent generic JSON Schema Draft 2020-12 validator, React/UI render/typecheck, axe audit, Storybook, Playwright/screenshot diff, browser forced-colors/contrast, zoom/RTL, manual NVDA/VoiceOver/TalkBack, ACT rule implementation, legal product-level WCAG audit, actual test baseline hashes, manual waiver decisions, 105 pair reviews, consumer integration. A green static CI is **not** a WCAG AA pass. Attempt to retrieve remote schema bytes for independent local validation was blocked by the available raw-file download route, so no independent schema result is asserted.
+
+## GitHub issues, release and next tasks
+
+**6 pre-existing GitHub Issues retained; 0 new GitHub Issues and 0 PRs created; no new branch.** Deduped against [#1](https://github.com/bjo163/moonframe/issues/1) consumer, [#3](https://github.com/bjo163/moonframe/issues/3) primitives, [#4](https://github.com/bjo163/moonframe/issues/4) distribution, [#5](https://github.com/bjo163/moonframe/issues/5) token proof and [#6](https://github.com/bjo163/moonframe/issues/6) Skin Lab; MF-090 and MF-092 already cover future release testing.
+
+**Five immediate tasks, dependencies first:** AVQA-001 verify consumer browser/AT/SSR matrix → AVQA-002 review 51 criteria completeness/actual applicability → AVQA-003 finalize evidence/waiver contract → AVQA-004 review 151 component QA risk/class and keyboard refs → AVQA-005 approve nine same-content screen fixtures. Then AVQA-006 screenshot runner spike, AVQA-007 axe/Storybook optional evaluation, AVQA-008 four proof-skin **future separately authorized implementation**, AVQA-009/010 real AT/contrast/zoom, AVQA-012 full 30 appearances, AVQA-013 105 canonical pair reviews, AVQA-015 release claim after consumer tests.
+
+**Open owner decisions:** target browsers/AT and locales, runtime package/test runner versions, font/texture/contrast validation data, snapshot ownership/threshold after measured flake, legal WCAG/commercial customer scope, exception review authority/expiry, release signoff, original design assets. None guessed/auto-approved.
+
+**No React component, actual test screenshot, ThemeProvider, token CSS generator, logo, PNG/SVG, font, SFX/audio, authentication/data/ERP/game/business logic, production asset or UI package created by this work.** QA contracts are specified and static checks pass, not implemented/tested/reviewed/released UI.
