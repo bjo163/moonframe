@@ -877,6 +877,39 @@ if(process.argv.includes('--self-test')){
   ' invalid metadata and false review/skin/inventory claims; SFX safe defaults)');
 }
 
+
+const assetQACoverage=read('contracts/moonframe-asset-qa-coverage-v0.1.json');
+function assetCoverageIssues(a){
+ const e=[];
+ if(!sameSet(a.modes,['light','dark'])||a.systemIsThirdAppearance!==false||
+    a.skinCount!==15)e.push('asset QA mode/skin drift');
+ const ca=a.cases.map(x=>x.id);
+ if(!uniq(ca)||ca.length!==4)e.push('asset QA cases changed without review');
+ const expected=ids.flatMap(id=>['light','dark'].flatMap(mode=>ca.map(x=>id+'::'+mode+'::'+x)));
+ const got=a.coverage.map(x=>x.skinId+'::'+x.mode+'::'+x.caseId);
+ if(a.expectedCoverage!==expected.length||!sameSet(expected,got))
+   e.push('asset QA missing/duplicate appearance slots');
+ if(a.status!=='planned-no-rendered-art'||a.counts.rendered!==0||
+    a.counts.passed!==0||a.counts.reviewed!==0||
+    a.coverage.some(x=>x.status!=='not-rendered'||x.renderScreenshot!==null||
+      x.licenseReview!==null||x.reviewer!==null||x.reviewedAt!==null||
+      x.contrastEvidence!==null||x.verdict!==null||x.sourceHash!==null))
+    e.push('asset QA false proof or pass without files and review');
+ if(a.pairwiseReviewsExpected!==105||a.pairwiseReviewsApproved!==0)
+    e.push('asset grammar pair review status fabricated');
+ return e;
+}
+for(const e of assetCoverageIssues(assetQACoverage))errors.push('Asset coverage: '+e);
+if(process.argv.includes('--self-test')){
+ const missing=structuredClone(assetQACoverage);
+ missing.coverage.pop();
+ assert(assetCoverageIssues(missing).some(x=>x.includes('missing/duplicate')));
+ const falsePass=structuredClone(assetQACoverage);
+ falsePass.coverage[0].status='pass';
+ assert(assetCoverageIssues(falsePass).some(x=>x.includes('false proof')));
+ console.log('PASS: asset QA appearance matrix negative tests (120 pending slots; missing/premature-review rejected)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
