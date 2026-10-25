@@ -1060,7 +1060,7 @@ if(process.argv.includes('--self-test')){
   assert(motionRecipeProblems(f.recipe).length>0,
    'Invalid motion recipe fixture unexpectedly accepted '+f.id);
  const badRefs=structuredClone(motionInter);
- badRefs.patterns[0].recipeRefs=['mot.invalid'];
+ badRefs.patterns[0].recipeRefs=['mot.not-in-contract'];
  assert(motionSystemProblems(motion,badRefs,motionSkins,motionQA,sfx).some(x=>x.includes('unknown interaction recipe')));
  const wrongSkin=structuredClone(motionSkins);
  wrongSkin.skins[0].review.verdict='pass';
