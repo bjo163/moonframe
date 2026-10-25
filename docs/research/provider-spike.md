@@ -56,7 +56,7 @@ The repository CI and local runtime are pinned to Node 24.22.1 LTS via `.nvmrc`;
 
 I reran npm run test:e2e with Node 24.22.1 from the retained temporary fixture. In the original fixture, Playwright ran 36 cases and reported 34 passed, 2 failed: Radix Select did not return to the first option after the Home-key assertion, and Radix nested-menu Escape closed the root menu rather than leaving the parent menu open. In escape-wrapper-experiment, the same 36-case suite reported 35 passed, 1 failed: the Base UI Home-key assertion still received the last option after the prior End-key selection. The wrapper corrected the Radix submenu Escape case in this rerun.
 
-These results do not establish why Home-key outcomes differ from the earlier temporary run, nor whether every provider must support that specific selection behavior. Treat the Home/End result as an unresolved fixture expectation and the Radix default Escape behavior as a reproduced difference. The fixture remains temporary, browser-only evidence; manual AT, Windows forced-colors and maintainer review remain outstanding.
+The Home/End assertions exercise a listbox popup with only three options. WAI-ARIA APG marks Home and End as optional listbox keys and strongly recommends them for lists longer than five options, so these observations are comparative evidence, not failures against a required APG behavior. The Radix default nested-menu Escape difference is a reproduced APG behavior gap; the wrapper corrected it in the temporary experiment. The fixture remains temporary, browser-only evidence; manual AT, Windows forced-colors and maintainer review remain outstanding.
 
 ## Sources
 
