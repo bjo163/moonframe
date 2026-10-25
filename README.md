@@ -53,7 +53,7 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 | 14 | Moonquest | RPG / adventure UI; quest journal, inventory, progression and game-like framing |
 | 15 | Moonledger | Professional ERP; dense and precise data workspaces; compact but accessible controls |
 
-Classic is a compatibility target inspired by the selected shadcn-style baseline—not a claim that Moonframe is the official shadcn product. Upstream version, style and interactive primitives must be audited and pinned before implementation.
+Classic is a proposed Moonframe visual reference informed by dated shadcn documentation; it is not a claim of source compatibility or product affiliation. See the [Classic baseline and reference boundary](docs/research/classic-baseline.md). Upstream generated source is not copied; provider and implementation choices remain behind MF-005 and review gates.
 
 ## Documentation
 
