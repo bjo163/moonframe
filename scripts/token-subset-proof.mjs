@@ -32,13 +32,49 @@ function getPath(tree, path) {
   return path.split('.').reduce((value, segment) => value?.[segment], tree);
 }
 
+function validateExtensions(extensions, path) {
+  if (!extensions || typeof extensions !== 'object' || Array.isArray(extensions) ||
+      Object.keys(extensions).some((key) => key !== 'moonframe')) {
+    fail(`only object-valued $extensions.moonframe is supported at ${path}`);
+  }
+}
+
+function validateDescriptionAndDeprecated(node, path) {
+  if (node.$description !== undefined && typeof node.$description !== 'string') fail(`$description must be a string at ${path}`);
+  if (node.$deprecated !== undefined && typeof node.$deprecated !== 'boolean' && typeof node.$deprecated !== 'string') {
+    fail(`$deprecated must be a boolean or string at ${path}`);
+  }
+  if (node.$extensions !== undefined) validateExtensions(node.$extensions, path);
+}
+
+function validateTokenShape(token, path) {
+  const allowed = new Set(['$type', '$value', '$description', '$deprecated', '$extensions']);
+  for (const key of Object.keys(token)) {
+    if (!allowed.has(key)) fail(`unsupported token property at ${path}: ${key}`);
+  }
+  validateDescriptionAndDeprecated(token, path);
+}
+
 function flattenTokens(tree, prefix = '', result = new Map()) {
+  if (!tree || typeof tree !== 'object' || Array.isArray(tree)) fail(`expected token group at ${prefix || '<root>'}`);
+  if (Object.hasOwn(tree, '$type')) fail(`group-level $type inheritance is unsupported at ${prefix || '<root>'}`);
+  validateDescriptionAndDeprecated(tree, prefix || '<root>');
+  for (const key of Object.keys(tree)) {
+    if (key.startsWith('$') && !['$description', '$deprecated', '$extensions'].includes(key)) {
+      fail(`unsupported group property at ${prefix || '<root>'}: ${key}`);
+    }
+    if (!key.startsWith('$') && /[.{}]/.test(key)) fail(`invalid token/group name at ${prefix || '<root>'}: ${key}`);
+  }
   for (const key of Object.keys(tree).sort()) {
     if (key.startsWith('$')) continue;
     const value = tree[key];
     const path = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === 'object' && Object.hasOwn(value, '$value')) result.set(path, value);
+    if (value && typeof value === 'object' && !Array.isArray(value) && Object.hasOwn(value, '$value')) {
+      validateTokenShape(value, path);
+      result.set(path, value);
+    }
     else if (value && typeof value === 'object' && !Array.isArray(value)) flattenTokens(value, path, result);
+    else fail(`expected token or group at ${path}`);
   }
   return result;
 }
@@ -133,6 +169,18 @@ const aliasChain = new Map([
 ]);
 assert.deepEqual(resolveToken(aliasChain.get('role.color'), aliasChain), aliasChain.get('reference.color').$value,
   'multi-hop whole-token aliases should resolve to the original typed value');
+assert.equal(flattenTokens({
+  $description: 'Fixture metadata',
+  $deprecated: false,
+  $extensions: { moonframe: { source: 'proof' } },
+  color: { blue: {
+    $type: 'color',
+    $value: { colorSpace: 'srgb', components: [0.2, 0.4, 0.6] },
+    $description: 'Fixture blue',
+    $deprecated: 'Fixture deprecation note',
+    $extensions: { moonframe: ['metadata'] },
+  } },
+}).size, 1, 'documented group/token metadata should pass structural validation');
 for (const [type, value] of [
   ['dimension', { value: 1, unit: 'rem' }],
   ['duration', { value: 0, unit: 'ms' }],
@@ -151,6 +199,26 @@ expectFailure('invalid value/type', () => resolveToken({ $type: 'color', $value:
 expectFailure('invalid type', () => resolveToken({ $type: 'paint', $value: 'blue' }, new Map()), /unsupported type/);
 expectFailure('missing token type', () => resolveToken({ $value: 1 }, new Map()), /token must have \$type and \$value/);
 expectFailure('missing token value', () => resolveToken({ $type: 'number' }, new Map()), /token must have \$type and \$value/);
+expectFailure('unsupported group-level type inheritance', () => flattenTokens({
+  $type: 'color', blue: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] } },
+}), /group-level \$type inheritance is unsupported/);
+expectFailure('unsupported group extension', () => flattenTokens({
+  $extends: 'other.tokens', color: { blue: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] } } },
+}), /unsupported group property.*\$extends/);
+expectFailure('unsupported token reference property', () => flattenTokens({ color: {
+  blue: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] }, $ref: '#/tokens/blue' },
+} }), /unsupported token property.*\$ref/);
+expectFailure('malformed token group child', () => flattenTokens({ color: { blue: null } }), /expected token or group/);
+expectFailure('invalid dotted token name', () => flattenTokens({ 'color.blue': {
+  $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] },
+} }), /invalid token\/group name/);
+expectFailure('invalid group description metadata', () => flattenTokens({ $description: 1, color: {} }), /\$description must be a string/);
+expectFailure('invalid token deprecation metadata', () => flattenTokens({ color: {
+  blue: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] }, $deprecated: 1 },
+} }), /\$deprecated must be a boolean or string/);
+expectFailure('unsupported third-party extension metadata', () => flattenTokens({ color: {
+  blue: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3] }, $extensions: { 'org.other': { note: true } } },
+} }), /only object-valued \$extensions\.moonframe is supported/);
 expectFailure('non-finite color channel', () => resolveToken({ $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, Number.NaN, 0.3] } }, new Map()), /three sRGB components/);
 expectFailure('non-finite color alpha', () => resolveToken({ $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3], alpha: Number.POSITIVE_INFINITY } }, new Map()), /alpha must be/);
 expectFailure('non-finite dimension', () => resolveToken({ $type: 'dimension', $value: { value: Number.NaN, unit: 'rem' } }, new Map()), /finite numeric value/);
@@ -183,5 +251,5 @@ expectFailure('missing mode', () => generateCss({ light: fixture.modes.light }),
 if (process.argv.includes('--emit-css')) {
   process.stdout.write(validCss);
 } else {
-  process.stdout.write(`PASS: bounded token subset proof v${PROOF_VERSION}; Node ${process.version}; deterministic CSS, finite typed-value checks, alias-chain resolution, ${fixture.required.length} semantic role, 2 modes, and negative type/alias/coverage cases.\n`);
+  process.stdout.write(`PASS: bounded token subset proof v${PROOF_VERSION}; Node ${process.version}; deterministic CSS, strict supported-subset shape, finite typed values, alias-chain resolution, ${fixture.required.length} semantic role, 2 modes, and negative type/alias/coverage cases.\n`);
 }
