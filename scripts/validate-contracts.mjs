@@ -910,6 +910,171 @@ if(process.argv.includes('--self-test')){
  console.log('PASS: asset QA appearance matrix negative tests (120 pending slots; missing/premature-review rejected)');
 }
 
+
+// Motion, Interaction & SFX: DOCS-ONLY contracts. No runtime animation/audio/browser tests.
+const motion=read('contracts/moonframe-motion-recipes-v0.1.json');
+const motionInter=read('contracts/moonframe-motion-interactions-v0.1.json');
+const motionSkins=read('contracts/moonframe-motion-skin-matrix-v0.1.json');
+const motionQA=read('contracts/moonframe-motion-qa-coverage-v0.1.json');
+const motionSchema=read('schemas/moonframe-motion-recipe.schema.json');
+const motionFixtures=read('contracts/fixtures/motion-interaction-sfx-v0.1.json');
+const canonComponentIds=new Set(components.components.map(c=>c.id));
+const motionIds=motion.recipes.map(x=>x.id), motionSet=new Set(motionIds);
+const canonSfxIds=sfx.events.map(x=>x.id);
+const canonicalMotions=Object.keys(dict.tokenTypeProposals).filter(x=>x.startsWith('motion.'));
+const motionCandidateIds=(dict.motionUsePolicy?.candidateNamesNotApproved||[]).map(x=>x.id);
+function motionRecipeProblems(x){
+ const e=[];
+ if(!x||typeof x!=='object')return ['missing motion record'];
+ if(!/^mot\.[a-z]+(?:-[a-z]+)*$/.test(x.id||''))e.push('invalid recipe id');
+ if(!motion.purposes.includes(x.purpose))e.push('unknown purpose');
+ if(!Array.isArray(x.componentIds)||!x.componentIds.length||
+    !uniq(x.componentIds)||x.componentIds.some(id=>!canonComponentIds.has(id)))
+   e.push('unknown/duplicate component reference');
+ if(!isString(x.trigger?.semanticFrom)||!isString(x.trigger?.semanticTo)||
+    !isString(x.trigger?.authority)||!isString(x.visual?.proposal))
+   e.push('missing trigger or visual semantic state');
+ if(!Array.isArray(x.tokenRefs)||!x.tokenRefs.length||
+    !uniq(x.tokenRefs)||x.tokenRefs.some(id=>!canonicalMotions.includes(id)))
+   e.push('unknown approved canonical motion token reference');
+ if(!Array.isArray(x.candidateTokenRefs)||
+    x.candidateTokenRefs.some(id=>!motionCandidateIds.includes(id)))
+   e.push('unknown unapproved candidate motion token');
+ if(!motion.reducedStrategyVocabulary.includes(x.reducedMotion?.strategy)||
+    !isString(x.reducedMotion?.equivalent))
+   e.push('missing/invalid reduced motion');
+ if(x.reducedMotion?.strategy==='essential'&&
+    x.reducedMotion?.requiresHumanExceptionApproval!==true)
+   e.push('unreviewed essential movement');
+ if(!isString(x.interruption?.onCancel)||!isString(x.interruption?.onUnmount)||
+    !isString(x.interruption?.onPreferenceChange)||
+    !isString(x.interruption?.onHiddenTab)||
+    x.interruption?.mustNotWaitForAnimation!==true)
+   e.push('missing safe interruption/cancellation policy');
+ if(x.continuous!==false||x.autoStarts!==false)e.push('unsafe continuous/auto-start animation');
+ if(!isString(x.noMotionNoAudio)||!isString(x.focusAndAria))
+   e.push('missing no-motion / focus / ARIA equivalent');
+ if(x.audio?.candidateEventId!==null&&!canonSfxIds.includes(x.audio?.candidateEventId))
+   e.push('unknown SFX event mapped');
+ if(x.audio?.neverOnlyFeedback!==true ||
+    !['none-by-default','optional-with-explicit-consumer-opt-in'].includes(x.audio?.eligibility))
+   e.push('invalid sound optionality');
+ if(x.skinRef!=='moonframe-motion-skin-matrix-v0.1.json')e.push('unknown skin matrix');
+ if(x.readiness!=='specified-not-implemented'||
+    x.evidence?.browser!==null||x.evidence?.manualAT!==null||
+    x.evidence?.reviewer!==null||x.evidence?.screenshot!==null)
+   e.push('false implemented/tested/visual approval claim');
+ if(!Array.isArray(x.testsRequired)||x.testsRequired.length<4 ||
+    x.performance?.benchmark!=='not-run')
+   e.push('incomplete test or fake benchmark');
+ return e;
+}
+function motionSystemProblems(rec,inter,skins,qa,sound){
+ const e=[];
+ if(rec.status!=='specified-not-implemented'||rec.recipes.length<20||
+    !uniq(rec.recipes.map(x=>x.id)))e.push('motion ID/count/status drift');
+ for(const r of rec.recipes)for(const v of motionRecipeProblems(r))
+   e.push('recipe '+r.id+': '+v);
+ if(!uniq(inter.patterns.map(x=>x.id))||inter.patterns.length<15||
+    inter.status!=='specified-not-implemented')
+   e.push('interaction pattern IDs/status drift');
+ for(const i of inter.patterns){
+  if(!Array.isArray(i.recipeRefs)||!i.recipeRefs.length||
+     i.recipeRefs.some(id=>!motionSet.has(id)))e.push('unknown interaction recipe '+i.id);
+  if(!Array.isArray(i.componentIds)||i.componentIds.some(id=>!canonComponentIds.has(id)))
+     e.push('unknown interaction component '+i.id);
+  if(i.readiness!=='specified-not-implemented'||i.evidence!==null||
+     !isString(i.keyboardFocusAndAria) && !isString(i.semanticsAndKeyboard))
+     e.push('false interaction implementation or missing accessibility '+i.id);
+ }
+ if(!sameSet(skins.skins.map(s=>s.skinId),ids)||skins.status!=='directions-specified-not-rendered'||
+    skins.count?.reviewedSkins!==0||skins.count?.effectiveAppearances!==30)
+   e.push('motion skin ID/review/appearance drift');
+ for(const s of skins.skins){
+  if(s.grammarRef!=='moonframe-skin-grammar-contract-v1.0.json#'+s.skinId||
+     s.specRef!=='moonframe-skin-specifications-v1.0.json#'+s.skinId||
+     s.permittedRecipeRefs.some(x=>!motionSet.has(x))||
+     !isString(s.reducedMotionFallback)||!isString(s.prohibitedAnimation)||
+     s.review?.verdict!=='not-reviewed'||s.review?.reviewer!==null||
+     s.review?.visualEvidence?.length!==0||s.tokenValuesApproved!==false||
+     s.globalMuteAlwaysWins!==true||s.implementation!=='not-implemented')
+    e.push('invalid/false-reviewed skin motion direction '+s.skinId);
+ }
+ if(!sameSet(qa.modes,['light','dark'])||qa.systemIsThirdMode!==false||
+    qa.skinCount!==15||qa.scenarios.length!==6||
+    !uniq(qa.scenarios.map(x=>x.id)))
+   e.push('motion QA scenario/mode drift');
+ const expected=ids.flatMap(id=>['light','dark'].flatMap(mode=>
+    qa.scenarios.map(s=>id+'::'+mode+'::'+s.id)));
+ const actual=qa.cells.map(x=>x.skinId+'::'+x.mode+'::'+x.caseId);
+ if(!sameSet(expected,actual)||qa.expectedCells!==expected.length)
+   e.push('missing/duplicate motion appearance cases');
+ if(qa.status!=='planned-no-visual-or-audio-evidence'||
+    qa.counts.rendered!==0||qa.counts.passed!==0||qa.counts.reviewed!==0||
+    qa.pairwiseExpected!==105||qa.pairwisePassed!==0||
+    qa.cells.some(x=>x.status!=='not-rendered'||x.screenshot!==null||
+      x.recording!==null||x.manualAT!==null||x.reviewer!==null||
+      x.reviewedAt!==null||x.verdict!==null))
+    e.push('false motion QA/visual/AT review claim');
+ for(const s of qa.scenarios)
+   if(!canonComponentIds.has(s.componentId)||!motionSet.has(s.recipeId))
+    e.push('unknown motion QA case reference '+s.id);
+ if(sound.events.length!==6||
+    !sameSet(sound.events.map(x=>x.id),['success','warning','error','notification','confirmation','quest-reward'])||
+    !sound.eventIdsStableNoRename||sound.producedAssets.length!==0||
+    sound.defaultEnabled!==false||sound.requiresExplicitConsent!==true||
+    sound.autoplayOnLoad!==false||sound.userPreferences?.mute!==true)
+   e.push('audio semantic event or opt-in default drift');
+ for(const x of sound.events){
+  if(x.defaultEnabled!==false||x.requiresUserGesture!==true||
+     !isString(x.visualEquivalent)||!isString(x.assistiveTechnologyEquivalent)||
+     !isString(x.playbackPolicy)||x.status!=='specified-not-implemented'||
+     x.proof?.mediaFile!==null||x.proof?.audioTest!==null||
+     x.proof?.licenseApproval!==null)
+    e.push('unsafe/unproven SFX event '+x.id);
+ }
+ if(sound.playbackDecision?.unknownEvent!=='silent-no-op'||
+    sound.playbackDecision?.browserBlocked!=='silent-no-op'||
+    sound.playbackDecision?.missingOrUnsupportedAsset!=='silent-no-op'||
+    sound.skinSoundProfiles?.approvedProfiles.length!==0)
+   e.push('sound fallback or approved profile fabricated');
+ if(dict.motionUsePolicy?.status!=='proposed-no-final-numeric-values'||
+    !sameSet(dict.motionUsePolicy.canonicalExistingNames,
+     ['motion.duration.fast','motion.duration.normal','motion.duration.slow',
+      'motion.easing.standard','motion.distance.small']))
+   e.push('historical motion token IDs unexpectedly modified');
+ return e;
+}
+for(const x of motionSystemProblems(motion,motionInter,motionSkins,motionQA,sfx))
+ errors.push('Motion/SFX: '+x);
+fail(motionSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     motionSchema.properties?.reducedMotion&&motionSchema.properties?.interruption&&
+     motionSchema.properties?.readiness,'Motion recipe schema missing structural fields');
+fail(motionFixtures.valid.length>=1&&motionFixtures.invalid.length>=10,
+     'Motion negative fixtures missing');
+for(const f of motionFixtures.valid)
+ for(const problem of motionRecipeProblems(f.recipe))
+  errors.push('Valid motion fixture '+f.id+' failed: '+problem);
+if(process.argv.includes('--self-test')){
+ for(const f of motionFixtures.invalid)
+  assert(motionRecipeProblems(f.recipe).length>0,
+   'Invalid motion recipe fixture unexpectedly accepted '+f.id);
+ const badRefs=structuredClone(motionInter);
+ badRefs.patterns[0].recipeRefs=['mot.invalid'];
+ assert(motionSystemProblems(motion,badRefs,motionSkins,motionQA,sfx).some(x=>x.includes('unknown interaction recipe')));
+ const wrongSkin=structuredClone(motionSkins);
+ wrongSkin.skins[0].review.verdict='pass';
+ assert(motionSystemProblems(motion,motionInter,wrongSkin,motionQA,sfx).some(x=>x.includes('false-reviewed')));
+ const wrongSound=structuredClone(sfx);
+ wrongSound.defaultEnabled=true;
+ assert(motionSystemProblems(motion,motionInter,motionSkins,motionQA,wrongSound).some(x=>x.includes('audio semantic')));
+ const badQa=structuredClone(motionQA);
+ badQa.cells[0].status='pass';
+ assert(motionSystemProblems(motion,motionInter,motionSkins,badQa,sfx).some(x=>x.includes('false motion QA')));
+ console.log('PASS: motion/interaction/SFX negative fixtures ('+motionFixtures.invalid.length+
+  ' invalid recipes, refs, fake skin/visual approvals, autoplay sound); 180 pending cases');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
