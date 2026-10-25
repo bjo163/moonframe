@@ -1,0 +1,1064 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-AUTH-PROVIDER-CAPABILITIES-001",
+  "status": "research-only-not-installed",
+  "dateAccessed": "2026-10-25",
+  "providerChoice": "open-needs-consumer-ADR",
+  "canonicalIntegrationManifest": "moonframe-integration-manifest-v0.1.json",
+  "notes": [
+    "Vendor-documented feature is not Moonframe implementation; do not use this table as a runtime entitlement flag.",
+    "Capability metadata for UI must come from app/provider trusted configuration and confirmed session policy.",
+    "Plan/license/pricing not quote-verified; mark gates as tentative, do not show paid feature as free.",
+    "unverified means research insufficient, NOT equivalent to not-supported.",
+    "Exactly six candidate providers × fourteen feature statuses; no dependencies installed."
+  ],
+  "statusVocabulary": [
+    "supported",
+    "partial",
+    "provider/config-dependent",
+    "plan-dependent",
+    "not-supported",
+    "unverified"
+  ],
+  "providers": [
+    {
+      "id": "authjs",
+      "name": "Auth.js",
+      "officialHome": "https://authjs.dev/getting-started",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    },
+    {
+      "id": "better-auth",
+      "name": "Better Auth",
+      "officialHome": "https://better-auth.com/docs/introduction",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    },
+    {
+      "id": "clerk",
+      "name": "Clerk",
+      "officialHome": "https://clerk.com/docs",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase Auth",
+      "officialHome": "https://supabase.com/docs/guides/auth",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase Authentication",
+      "officialHome": "https://firebase.google.com/docs/auth",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    },
+    {
+      "id": "workos",
+      "name": "WorkOS/AuthKit",
+      "officialHome": "https://workos.com/docs",
+      "installed": false,
+      "implementation": "not-implemented",
+      "pricingStatus": "plan-terms-unverified",
+      "versionPin": null
+    }
+  ],
+  "features": [
+    {
+      "id": "password",
+      "name": "email/password"
+    },
+    {
+      "id": "oauth-oidc",
+      "name": "OAuth/OIDC social sign-in"
+    },
+    {
+      "id": "magic-link",
+      "name": "Email magic-link"
+    },
+    {
+      "id": "passkey",
+      "name": "WebAuthn passkey"
+    },
+    {
+      "id": "mfa",
+      "name": "Multi-factor/TOTP"
+    },
+    {
+      "id": "recovery-codes",
+      "name": "Backup recovery codes"
+    },
+    {
+      "id": "sessions",
+      "name": "Session introspection/revocation"
+    },
+    {
+      "id": "password-reset",
+      "name": "Password reset and recovery"
+    },
+    {
+      "id": "organizations",
+      "name": "Organization/multi-tenancy"
+    },
+    {
+      "id": "invitations",
+      "name": "Organization invitations"
+    },
+    {
+      "id": "sso",
+      "name": "Enterprise SSO/SAML"
+    },
+    {
+      "id": "scim",
+      "name": "Directory/SCIM provisioning"
+    },
+    {
+      "id": "account-linking",
+      "name": "Identity linking/unlinking"
+    },
+    {
+      "id": "security-activity",
+      "name": "Security event activity UX data"
+    }
+  ],
+  "cells": [
+    {
+      "providerId": "authjs",
+      "featureId": "password",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://authjs.dev/getting-started/authentication/credentials",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "password",
+      "status": "supported",
+      "sourceUrl": "https://better-auth.com/docs/introduction",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "password",
+      "status": "supported",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "password",
+      "status": "supported",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/passwords",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "password",
+      "status": "supported",
+      "sourceUrl": "https://firebase.google.com/docs/auth/web/password-auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "password",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "oauth-oidc",
+      "status": "supported",
+      "sourceUrl": "https://authjs.dev/getting-started/authentication/oauth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "oauth-oidc",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/concepts/oauth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "oauth-oidc",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "oauth-oidc",
+      "status": "supported",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/social-login",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "oauth-oidc",
+      "status": "supported",
+      "sourceUrl": "https://firebase.google.com/docs/auth/web/google-signin",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "oauth-oidc",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "magic-link",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://authjs.dev/getting-started/authentication/email",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "magic-link",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/magic-link",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "magic-link",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "magic-link",
+      "status": "supported",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/auth-email-passwordless",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "magic-link",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://firebase.google.com/docs/auth/web/email-link-auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "magic-link",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "passkey",
+      "status": "partial",
+      "sourceUrl": "https://authjs.dev/getting-started/authentication/webauthn",
+      "accessedAt": "2026-10-25",
+      "caveat": "WebAuthn marked experimental in official docs; not production endorsement",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "passkey",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/passkey",
+      "accessedAt": "2026-10-25",
+      "caveat": "@better-auth/passkey plugin and server DB migration required",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "passkey",
+      "status": "supported",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Instance creation date affects whether passkeys fulfill MFA; verify July 8 2026 rule",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "passkey",
+      "status": "partial",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/passkeys",
+      "accessedAt": "2026-10-25",
+      "caveat": "EXPERIMENTAL opt-in, JS client >=2.105.0 stated; no stable API claim",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "passkey",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "passkey",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "mfa",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "mfa",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/2fa",
+      "accessedAt": "2026-10-25",
+      "caveat": "2FA plugin default challenges credential sign-ins only; non-credential methods require explicit gate",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "mfa",
+      "status": "supported",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "User-driven MFA reset flow not provided automatically",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "mfa",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/auth-mfa",
+      "accessedAt": "2026-10-25",
+      "caveat": "TOTP/phone flows supported with enrollment/factor config",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "mfa",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://firebase.google.com/docs/auth/web/multi-factor",
+      "accessedAt": "2026-10-25",
+      "caveat": "Product/Identity Platform SKU and method restrictions unverified in this audit",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "mfa",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "recovery-codes",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "recovery-codes",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/2fa",
+      "accessedAt": "2026-10-25",
+      "caveat": "2FA backup codes only with plugin and policy",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "recovery-codes",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "recovery-codes",
+      "status": "unverified",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/auth-mfa",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "recovery-codes",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "recovery-codes",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "sessions",
+      "status": "supported",
+      "sourceUrl": "https://authjs.dev/getting-started/session-management/get-session",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "sessions",
+      "status": "supported",
+      "sourceUrl": "https://better-auth.com/docs/concepts/session-management",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "sessions",
+      "status": "supported",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "sessions",
+      "status": "supported",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/sessions",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "sessions",
+      "status": "supported",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "sessions",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "password-reset",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "password-reset",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/authentication/email-password",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "password-reset",
+      "status": "supported",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "password-reset",
+      "status": "supported",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/passwords",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "password-reset",
+      "status": "supported",
+      "sourceUrl": "https://firebase.google.com/docs/auth/web/manage-users",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "medium",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "password-reset",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "organizations",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "organizations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/organization",
+      "accessedAt": "2026-10-25",
+      "caveat": "Organization plugin and DB/client config required",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "organizations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "organizations",
+      "status": "unverified",
+      "sourceUrl": "https://supabase.com/docs/guides/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "organizations",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "organizations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "invitations",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "invitations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/organization",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "invitations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "invitations",
+      "status": "unverified",
+      "sourceUrl": "https://supabase.com/docs/guides/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "invitations",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "invitations",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "sso",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Available by configured OIDC/OAuth/SAML provider, not generic built-in enterprise management",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "sso",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/plugins/sso",
+      "accessedAt": "2026-10-25",
+      "caveat": "SSO plugin; self-service enterprise options require separate commercial review",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "sso",
+      "status": "plan-dependent",
+      "sourceUrl": "https://clerk.com/docs/guides/configure/auth-strategies/sign-up-sign-in-options",
+      "accessedAt": "2026-10-25",
+      "caveat": "Plan/enterprise connection and org configuration required",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "sso",
+      "status": "plan-dependent",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/enterprise-sso/auth-sso-saml",
+      "accessedAt": "2026-10-25",
+      "caveat": "SAML subscription/availability must be checked in provider plan",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "sso",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "sso",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Tenant and connection configuration needed",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "scim",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "scim",
+      "status": "unverified",
+      "sourceUrl": "https://better-auth.com/docs/introduction",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "scim",
+      "status": "unverified",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "scim",
+      "status": "unverified",
+      "sourceUrl": "https://supabase.com/docs/guides/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "scim",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "scim",
+      "status": "plan-dependent",
+      "sourceUrl": "https://workos.com/docs/authkit/directory-provisioning",
+      "accessedAt": "2026-10-25",
+      "caveat": "Directory Sync alone does not provision AuthKit memberships or revoke sessions; Directory Provisioning must be separately enabled by support",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "account-linking",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "account-linking",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://better-auth.com/docs/concepts/users-accounts",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "account-linking",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "account-linking",
+      "status": "provider/config-dependent",
+      "sourceUrl": "https://supabase.com/docs/guides/auth/auth-identity-linking",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "account-linking",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "account-linking",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "authjs",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://authjs.dev/getting-started",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "better-auth",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://better-auth.com/docs/introduction",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "clerk",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://clerk.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "supabase",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://supabase.com/docs/guides/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "firebase",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://firebase.google.com/docs/auth",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    },
+    {
+      "providerId": "workos",
+      "featureId": "security-activity",
+      "status": "unverified",
+      "sourceUrl": "https://workos.com/docs",
+      "accessedAt": "2026-10-25",
+      "caveat": "Subject to deployment/framework and exact API/plan review; not installed; no runtime tests.",
+      "confidence": "low",
+      "moonframeIntegration": "none",
+      "licensePlanVerified": false
+    }
+  ]
+}
