@@ -429,5 +429,55 @@
     "crossValueTypes": "fontFamily/fontWeight/duration/dimension/number/cubicBezier/whole-token-alias; shadow composite requires processor fixture",
     "componentExceptions": "No new component token without owner/semantic reason/fallback/review trigger",
     "futureChange": "Additive metadata only; no existing ID renames"
+  },
+  "motionUsePolicy": {
+    "status": "proposed-no-final-numeric-values",
+    "canonicalExistingNames": [
+      "motion.duration.fast",
+      "motion.duration.normal",
+      "motion.duration.slow",
+      "motion.easing.standard",
+      "motion.distance.small"
+    ],
+    "valueOwnership": "This dictionary + token source pipeline, NOT motion recipe/skin map",
+    "recipeRef": "moonframe-motion-recipes-v0.1.json",
+    "candidateNamesNotApproved": [
+      {
+        "id": "motion.duration.immediate",
+        "type": "duration",
+        "unit": "ms",
+        "reason": "instant semantic state; zero or omitted animation to be reviewed"
+      },
+      {
+        "id": "motion.easing.enter",
+        "type": "cubicBezier",
+        "reason": "distinct enter intent if semantic need proved"
+      },
+      {
+        "id": "motion.easing.exit",
+        "type": "cubicBezier",
+        "reason": "distinct exit intent if tested"
+      },
+      {
+        "id": "motion.distance.medium",
+        "type": "dimension",
+        "reason": "reserved for bounded spatial transitions, if accepted"
+      },
+      {
+        "id": "motion.feedback.scale.subtle",
+        "type": "number",
+        "reason": "press scaling might be unnecessary; prototype proof required"
+      },
+      {
+        "id": "motion.stagger.short",
+        "type": "duration",
+        "unit": "ms",
+        "reason": "optional expressive list sequence, no core loops"
+      }
+    ],
+    "noLightDarkValueDuplication": "timing stays mode-neutral unless real contrast/material behavior requires narrow override",
+    "resolvedMotion": "Theme preference system/full/reduced; generated CSS root data-motion reduced overlay and OS media before JS",
+    "fallback": "when invalid/missing/unsupported token or CSS animation, apply immediate semantic target and reject invalid production build",
+    "numericApproval": "pending measurements and accessibility review; do not infer 100–180ms historic Moonpunk prose as canonical token value"
   }
 }

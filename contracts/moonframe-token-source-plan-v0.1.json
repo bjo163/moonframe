@@ -475,5 +475,20 @@
     "https://www.w3.org/community/reports/design-tokens/CG-FINAL-format-20251028/",
     "https://styledictionary.com/info/dtcg/",
     "https://tailwindcss.com/docs/theme"
-  ]
+  ],
+  "motionOverlayPlan": {
+    "status": "proposal-no-generated-code",
+    "canonicalNames": "moonframe-token-dictionary-v0.1.json.motionUsePolicy",
+    "recipeRefs": "moonframe-motion-recipes-v0.1.json",
+    "resolution": "Theme Contract resolvedMotion full/reduced; duration/easing/distance reference values mode-neutral by default; reduced mode strips or replaces nonessential motion",
+    "candidateSource": "future existing sparse semantic/common and media overlay, no independent 30×duplicate motion value sets",
+    "validation": [
+      "all public motion token refs resolve to correct type",
+      "no cycle, unknown alias, invalid duration/distance/easing",
+      "recipe reduced strategy defined and safe",
+      "skin cannot bypass reduced preferences"
+    ],
+    "SSR": "no motion on initial hydration if preference unresolved, no accidental animations on first paint",
+    "generatedAssets": []
+  }
 }

@@ -1,0 +1,449 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-MOTION-SKINS-001",
+  "status": "directions-specified-not-rendered",
+  "skinAuthority": "moonframe-skin-grammar-contract-v1.0.json",
+  "themeAuthority": "moonframe-theme-contract-v1.3.json",
+  "recipeAuthority": "moonframe-motion-recipes-v0.1.json",
+  "sfxAuthority": "moonframe-sfx-contract-v0.1.json",
+  "appearanceModes": [
+    "light",
+    "dark"
+  ],
+  "systemIsAnotherSkin": false,
+  "count": {
+    "skins": 15,
+    "effectiveAppearances": 30,
+    "reviewedSkins": 0
+  },
+  "globalInvariants": [
+    "skin grammar not behavior fork",
+    "Light and Dark do not change callback/focus semantics",
+    "reduced motion removes optional spatial accents",
+    "no autoplay loops or required audio",
+    "15 art directions not 15 independent audio engines"
+  ],
+  "skins": [
+    {
+      "skinId": "moonpunk",
+      "displayName": "Moonpunk",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonpunk",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonpunk",
+      "signatureCharacter": "hard-stop micro-impact, no whole-screen movement",
+      "permittedRecipeRefs": [
+        "mot.press",
+        "mot.tabs"
+      ],
+      "prohibitedAnimation": "no persistent shake/bounce; no oversized scaling",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static offset border and pressed state",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "no independent default audio",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonriot",
+      "displayName": "Moonriot",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonriot",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonriot",
+      "signatureCharacter": "short precise directional cue, quiet background",
+      "permittedRecipeRefs": [
+        "mot.nav",
+        "mot.tabs"
+      ],
+      "prohibitedAnimation": "no flash or angular wipe across live labels, no strobe",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static directional highlight",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonzine",
+      "displayName": "Moonzine",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonzine",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonzine",
+      "signatureCharacter": "gentle page-like layer continuity outside content",
+      "permittedRecipeRefs": [
+        "mot.popover",
+        "mot.route"
+      ],
+      "prohibitedAnimation": "no moving collage while reading or focus jumping",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static folio/paper edge",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonhalftone",
+      "displayName": "Moonhalftone",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonhalftone",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonhalftone",
+      "signatureCharacter": "ink panel reveal from safe static geometry",
+      "permittedRecipeRefs": [
+        "mot.row-details",
+        "mot.tabs"
+      ],
+      "prohibitedAnimation": "no pulsing screen-tone/moiré or borrowed manga effects",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static halftone composition",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonglitch",
+      "displayName": "Moonglitch",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonglitch",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonglitch",
+      "signatureCharacter": "controlled telemetry refresh with no visual breakup on text",
+      "permittedRecipeRefs": [
+        "mot.data-query",
+        "mot.pending"
+      ],
+      "prohibitedAnimation": "no jitter/flicker/scanline perpetual loops",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static telemetry divider and timestamp",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonsmash",
+      "displayName": "Moonsmash",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonsmash",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonsmash",
+      "signatureCharacter": "rare local impact accent without screen shake",
+      "permittedRecipeRefs": [
+        "mot.press",
+        "mot.quest-reward"
+      ],
+      "prohibitedAnimation": "no full-screen zoom, large bounce or rapid bursts",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static burst/emphasis and readable label",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "none by default; optional reward only under approved consumer context",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonink",
+      "displayName": "Moonink",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonink",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonink",
+      "signatureCharacter": "handmade line/brush reveal in nonfunctional decoration",
+      "permittedRecipeRefs": [
+        "mot.popover",
+        "mot.row-details"
+      ],
+      "prohibitedAnimation": "no path drawn over controls/meaning or infinite brush",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static original brush mark",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "mooncrash",
+      "displayName": "Mooncrash",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#mooncrash",
+      "specRef": "moonframe-skin-specifications-v1.0.json#mooncrash",
+      "signatureCharacter": "bounded mechanical panel settle",
+      "permittedRecipeRefs": [
+        "mot.drawer",
+        "mot.sidebar"
+      ],
+      "prohibitedAnimation": "no machine-shaking, no fake alarm flash",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "fixed plate seam and state border",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonpanel",
+      "displayName": "Moonpanel",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonpanel",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonpanel",
+      "signatureCharacter": "bounded panel transitions preserving content order",
+      "permittedRecipeRefs": [
+        "mot.row-details",
+        "mot.dialog"
+      ],
+      "prohibitedAnimation": "no panel motion that changes DOM focus/reading sequence",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static panel boundary",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonscrawl",
+      "displayName": "Moonscrawl",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonscrawl",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonscrawl",
+      "signatureCharacter": "optional sketch annotation reveals after semantics",
+      "permittedRecipeRefs": [
+        "mot.tooltip",
+        "mot.nav"
+      ],
+      "prohibitedAnimation": "no text scribble redraw, no jittering labels",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static annotation and legible text",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonraw",
+      "displayName": "Moonraw",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonraw",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonraw",
+      "signatureCharacter": "immediate unadorned feedback",
+      "permittedRecipeRefs": [
+        "mot.press",
+        "mot.select"
+      ],
+      "prohibitedAnimation": "do not add motion to satisfy differentiation quota",
+      "relativeIntensity": "minimal-or-instant",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "instant border/value change",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "none; no sonic identity needed",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonchrome",
+      "displayName": "Moonchrome",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonchrome",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonchrome",
+      "signatureCharacter": "rare controlled reflection behind primary content",
+      "permittedRecipeRefs": [
+        "mot.popover",
+        "mot.route"
+      ],
+      "prohibitedAnimation": "no continuous glow/lens blur across focus/data",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static high-contrast rim",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "classic",
+      "displayName": "Classic",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#classic",
+      "specRef": "moonframe-skin-specifications-v1.0.json#classic",
+      "signatureCharacter": "measured familiar micro-feedback",
+      "permittedRecipeRefs": [
+        "mot.press",
+        "mot.menu"
+      ],
+      "prohibitedAnimation": "no borrowed upstream branding or gratuitous flourish",
+      "relativeIntensity": "minimal-or-instant",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "quiet static border/opacity",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "silent core",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonquest",
+      "displayName": "Moonquest",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonquest",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonquest",
+      "signatureCharacter": "optional reward/quest emphasis after app-authoritative event",
+      "permittedRecipeRefs": [
+        "mot.quest-reward",
+        "mot.row-details"
+      ],
+      "prohibitedAnimation": "no mandatory rewards, no sensory overload or gameplay logic in UI",
+      "relativeIntensity": "brief-and-discrete-only-nonessential",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static progress/reward text and inventory borders",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "optional quest-reward event only if explicit consent; same semantic SFX contract",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    },
+    {
+      "skinId": "moonledger",
+      "displayName": "Moonledger",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonledger",
+      "specRef": "moonframe-skin-specifications-v1.0.json#moonledger",
+      "signatureCharacter": "almost instantaneous data and navigation feedback",
+      "permittedRecipeRefs": [
+        "mot.data-query",
+        "mot.select"
+      ],
+      "prohibitedAnimation": "no table row choreography or compact target shrink",
+      "relativeIntensity": "minimal-or-instant",
+      "tokenValuesApproved": false,
+      "reducedMotionFallback": "static update indicators, tabular data",
+      "lightDarkPolicy": "identical semantics and motion intent; visually verify contrast with the respective effective mode; no mode-specific choreography",
+      "soundProfile": "none by default on finance/destructive workflows",
+      "globalMuteAlwaysWins": true,
+      "sharedInteraction": "existing component API/keyboard/focus irrespective of skin, sound never required",
+      "status": "specified-not-implemented",
+      "implementation": "not-implemented",
+      "review": {
+        "visualEvidence": [],
+        "audioEvidence": [],
+        "reviewer": null,
+        "reviewedAt": null,
+        "verdict": "not-reviewed"
+      }
+    }
+  ]
+}
