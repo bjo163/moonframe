@@ -1,0 +1,233 @@
+{
+  "contractVersion": "0.1.0",
+  "contractId": "MF-TOKEN-001",
+  "status": "dictionary-contract-only-no-final-token-values",
+  "purpose": "Defines token namespaces, semantic roles, metadata and validation. Does not pretend that final values for all 30 appearances are approved.",
+  "principles": [
+    "Components consume semantic tokens, not literal palette values.",
+    "Primitive/reference tokens may feed semantic aliases; consumers should not bind directly to primitives.",
+    "Every required semantic token resolves in every Light/Dark map.",
+    "Token aliases cannot cycle and every reference must resolve.",
+    "Skin-specific decorative tokens are not substitutes for semantic interaction/status tokens.",
+    "DTCG-compatible source format is preferred where supported by the chosen toolchain."
+  ],
+  "naming": {
+    "separator": ".",
+    "stableLowerCase": true,
+    "avoidProductSpecificDomainTerms": true,
+    "examples": [
+      "color.surface.canvas",
+      "color.text.primary",
+      "color.action.primary",
+      "color.status.danger",
+      "type.size.body",
+      "space.4",
+      "radius.control",
+      "motion.duration.fast",
+      "layer.dialog"
+    ],
+    "forbiddenPatterns": [
+      "raw hex embedded in component CSS",
+      "cyclic aliases",
+      "skin id inside semantic token meaning",
+      "duplicate tokens with different names and identical meaning without reason"
+    ]
+  },
+  "families": [
+    {
+      "id": "color.primitive",
+      "purpose": "Raw palette/reference values by skin; never the default component API",
+      "required": true
+    },
+    {
+      "id": "color.semantic",
+      "purpose": "Canvas, surfaces, text, actions, borders, focus, selection, overlay, status, chart and code colors",
+      "required": true
+    },
+    {
+      "id": "type.family",
+      "purpose": "Body, heading, display, mono and data font roles with licensing metadata",
+      "required": true
+    },
+    {
+      "id": "type.scale",
+      "purpose": "Font-size, weight, line-height, tracking and paragraph measure",
+      "required": true
+    },
+    {
+      "id": "space",
+      "purpose": "Named spacing scale for gap, padding and section rhythm",
+      "required": true
+    },
+    {
+      "id": "size",
+      "purpose": "Control, icon, avatar, touch target and row dimensions",
+      "required": true
+    },
+    {
+      "id": "geometry",
+      "purpose": "Radius, border width/style, outline width/offset and divider thickness",
+      "required": true
+    },
+    {
+      "id": "elevation",
+      "purpose": "Shadow and surface layering",
+      "required": true
+    },
+    {
+      "id": "material",
+      "purpose": "Optional grain, halftone, glow, blur and texture budgets",
+      "required": true
+    },
+    {
+      "id": "motion",
+      "purpose": "Duration, easing, distance, stagger and enter/exit recipe",
+      "required": true
+    },
+    {
+      "id": "layer",
+      "purpose": "Documented z-index scale for sticky/menu/popover/dialog/toast/tooltip",
+      "required": true
+    },
+    {
+      "id": "density",
+      "purpose": "Compact/comfortable/spacious aliases and metrics",
+      "required": true
+    },
+    {
+      "id": "component",
+      "purpose": "Approved exception tokens for specific components",
+      "required": false
+    },
+    {
+      "id": "asset",
+      "purpose": "Stable asset IDs and references; no binary payloads",
+      "required": true
+    }
+  ],
+  "requiredSemanticTokenExamples": [
+    "color.surface.canvas",
+    "color.surface.default",
+    "color.surface.raised",
+    "color.surface.sunken",
+    "color.text.primary",
+    "color.text.secondary",
+    "color.text.muted",
+    "color.text.inverse",
+    "color.action.primary",
+    "color.action.primary.foreground",
+    "color.action.secondary",
+    "color.border.default",
+    "color.border.subtle",
+    "color.border.strong",
+    "color.focus.ring",
+    "color.selection.background",
+    "color.overlay.scrim",
+    "color.status.success",
+    "color.status.warning",
+    "color.status.danger",
+    "color.status.info",
+    "color.data.series.1",
+    "color.data.series.2",
+    "color.data.series.3",
+    "type.family.body",
+    "type.family.heading",
+    "type.family.display",
+    "type.family.mono",
+    "type.family.data",
+    "type.size.xs",
+    "type.size.sm",
+    "type.size.body",
+    "type.size.lg",
+    "type.size.display",
+    "type.weight.regular",
+    "type.weight.medium",
+    "type.weight.semibold",
+    "type.weight.bold",
+    "type.lineHeight.tight",
+    "type.lineHeight.normal",
+    "type.lineHeight.relaxed",
+    "space.0",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "space.6",
+    "space.8",
+    "space.12",
+    "space.16",
+    "size.control.sm",
+    "size.control.md",
+    "size.control.lg",
+    "size.icon.sm",
+    "size.icon.md",
+    "size.target.minimum",
+    "geometry.radius.none",
+    "geometry.radius.control",
+    "geometry.radius.card",
+    "geometry.border.default",
+    "geometry.focus.outline",
+    "elevation.raised",
+    "elevation.popover",
+    "elevation.dialog",
+    "motion.duration.fast",
+    "motion.duration.normal",
+    "motion.duration.slow",
+    "motion.easing.standard",
+    "motion.distance.small",
+    "layer.sticky",
+    "layer.dropdown",
+    "layer.popover",
+    "layer.dialog",
+    "layer.toast",
+    "layer.tooltip",
+    "density.compact.controlHeight",
+    "density.comfortable.controlHeight",
+    "density.spacious.controlHeight"
+  ],
+  "requiredCoverage": {
+    "appearances": 30,
+    "modes": [
+      "light",
+      "dark"
+    ],
+    "skins": [
+      "moonpunk",
+      "moonriot",
+      "moonzine",
+      "moonhalftone",
+      "moonglitch",
+      "moonsmash",
+      "moonink",
+      "mooncrash",
+      "moonpanel",
+      "moonscrawl",
+      "moonraw",
+      "moonchrome",
+      "classic",
+      "moonquest",
+      "moonledger"
+    ],
+    "everyRequiredSemanticTokenInEveryAppearance": true,
+    "noUnresolvedReferences": true,
+    "noReferenceCycles": true,
+    "fontLicenseAndFallbacksDocumented": true,
+    "contrastReviewedByRole": true
+  },
+  "validation": {
+    "failOnMissingRequiredToken": true,
+    "failOnUnexpectedTokenType": true,
+    "failOnUnresolvedReference": true,
+    "failOnCycle": true,
+    "failOnMissingModeMap": true,
+    "reportRawValuesInComponentSource": true,
+    "visualReviewStillRequired": true
+  },
+  "generationTargets": [
+    "CSS custom properties",
+    "Tailwind CSS v4 integration layer",
+    "TypeScript token types/helpers",
+    "Skin Lab reference export"
+  ],
+  "implementationNote": "Names are the proposed contract. Final token values, exact DTCG structure and generator choices must be approved after repository/toolchain audit."
+}
