@@ -511,7 +511,7 @@
     }
   ],
   "tokens": {
-    "canonicalSource": "contracts/moonframe-token-dictionary-v0.1.json",
+    "canonicalSource": null,
     "requiredFamilies": [
       "color",
       "typography",
@@ -524,7 +524,10 @@
       "density",
       "component",
       "asset-reference"
-    ]
+    ],
+    "dictionarySource": "contracts/moonframe-token-dictionary-v0.1.json",
+    "futureSourcePlan": "contracts/moonframe-token-source-plan-v0.1.json",
+    "canonicalValueSourceStatus": "not-created"
   },
   "accessibility": {
     "target": "WCAG 2.2 AA baseline",
@@ -555,6 +558,26 @@
     "bible": "docs/moonframe-ui-design-system-bible-v1.3.md",
     "skinGrammar": "contracts/moonframe-skin-grammar-contract-v1.0.json",
     "tokenDictionary": "contracts/moonframe-token-dictionary-v0.1.json",
-    "roadmap": "docs/implementation-roadmap.md"
+    "roadmap": "docs/implementation-roadmap.md",
+    "skinSpecifications": "contracts/moonframe-skin-specifications-v1.0.json",
+    "componentManifest": "contracts/moonframe-component-manifest-v0.1.json",
+    "blockManifest": "contracts/moonframe-block-manifest-v0.1.json",
+    "assetManifest": "contracts/moonframe-asset-manifest-v0.1.json",
+    "sfxContract": "contracts/moonframe-sfx-contract-v0.1.json",
+    "tokenSourcePlan": "contracts/moonframe-token-source-plan-v0.1.json"
+  },
+  "revisionDate": "2026-10-25",
+  "preferenceResolution": {
+    "requestedAppearance": [
+      "light",
+      "dark",
+      "system"
+    ],
+    "effectiveAppearance": [
+      "light",
+      "dark"
+    ],
+    "rootDataMode": "effective appearance only, never system",
+    "ssr": "Resolve preference before paint where technically possible; no implementation yet."
   }
 }

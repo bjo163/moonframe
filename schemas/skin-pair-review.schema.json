@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/skin-pair-review.schema.json",
+  "title": "Moonframe skin-pair review record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "a",
+    "b",
+    "status",
+    "reviewDimensions",
+    "notes",
+    "evidence",
+    "reviewer",
+    "reviewedAt",
+    "referenceScreens",
+    "grayscaleEvidence",
+    "decorationOffEvidence",
+    "nextAction"
+  ],
+  "properties": {
+    "a": {
+      "type": "string",
+      "minLength": 1
+    },
+    "b": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "not-reviewed",
+        "in-review",
+        "pass",
+        "needs-revision",
+        "exception-approved"
+      ]
+    },
+    "reviewDimensions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "referenceScreens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "grayscaleEvidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decorationOffEvidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextAction": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

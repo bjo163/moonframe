@@ -6,6 +6,9 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 
 ## Current status
 
+**Verified 2026-10-25:** repository has specifications only. Contracts and a documentation-level validator are not working UI or approved token values. Provider, production token values, npm exports, assets, and SFX are intentionally pending. The 105 skin pair reviews remain unreviewed until real screenshots exist.
+
+
 **Design specification stage.** This repository currently stores product and engineering contracts. Components, final tokens, original production assets, generated icon sets, and sound packs are not yet implemented or approved.
 
 ## Product promise
@@ -39,6 +42,22 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 Classic is a compatibility target inspired by the selected shadcn-style baseline—not a claim that Moonframe is the official shadcn product. Upstream version, style and interactive primitives must be audited and pinned before implementation.
 
 ## Documentation
+
+- [Baseline repository audit](docs/audit/repository-baseline-audit.md)
+- [Primary-source research log](docs/research/research-log.md)
+- [Primitive provider ADR (open)](docs/adr/0001-primitive-provider.md)
+- [Architecture, ownership and governance](docs/architecture/decisions-and-governance.md)
+- [Token pipeline and 30 pending coverage slots](docs/architecture/token-pipeline.md)
+- [QA strategy and release gates](docs/qa/validation-strategy.md)
+- [Initial small-task backlog](docs/backlog/initial-issues.md)
+- [Full skin recipes](contracts/moonframe-skin-specifications-v1.0.json)
+- [Component manifest (103 proposed entries)](contracts/moonframe-component-manifest-v0.1.json)
+- [Blocks and template manifest (13 proposed entries)](contracts/moonframe-block-manifest-v0.1.json)
+- [Token source/coverage plan](contracts/moonframe-token-source-plan-v0.1.json)
+- [Asset contract](contracts/moonframe-asset-manifest-v0.1.json)
+- [SFX contract](contracts/moonframe-sfx-contract-v0.1.json)
+- [Contract validation (Node, no installed packages)](scripts/validate-contracts.mjs)
+- [Contract CI](.github/workflows/contract-validation.yml)
 
 - [Design System Bible v1.3](docs/moonframe-ui-design-system-bible-v1.3.md)
 - [Skin Grammar Contract v1.0](contracts/moonframe-skin-grammar-contract-v1.0.json)

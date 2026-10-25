@@ -126,3 +126,11 @@ Every task issue should include: objective, scope/non-goals, dependencies, files
 - `released` — published with version and migration/release notes.
 
 Do not collapse these states into one “done” checkbox.
+
+---
+
+## Documentation-baseline addendum (2026-10-25)
+
+The repository baseline audit and new documentation-level contracts are recorded in [audit](audit/repository-baseline-audit.md), [research](research/research-log.md), [ADR](adr/0001-primitive-provider.md), [source plan](../contracts/moonframe-token-source-plan-v0.1.json) and [initial issue backlog](backlog/initial-issues.md). The historical checkboxes above remain intentionally unchanged: evidence of completed audit documents does not mean every part of a broad implementation issue has been satisfied.
+
+**Before implementation:** verify existing GitHub issues and current branch; tackle provider spike, token-format proof, source-owned distribution decision, and same-data four-skin reference fixtures. Do not open a new branch unless repo policy requires it. Never treat the docs-only validator as production token validation. The next workflow is deliberately modest: specification -> local spike -> reviewed decision -> targeted component implementation -> 30 appearance tests -> 105 visual pair reviews -> release.

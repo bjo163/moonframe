@@ -453,3 +453,19 @@ A skin is not done merely because it has colors assigned. It must have approved 
 ---
 
 **Status reminder:** This document defines the target system. It does not assert that any component, final token set, asset pack, sound pack, generated package, or release gate has been implemented or passed.
+
+---
+
+## 18. 2026-10-25 research-driven repository refinement (normative clarification)
+
+This amendment updates **interpretation, not product implementation**. Start with the [verified audit](audit/repository-baseline-audit.md) and [research log](research/research-log.md).
+
+1. **Canonical data authority:** the [Theme Contract](../contracts/moonframe-theme-contract-v1.3.json) owns skin IDs, mode preference/resolution and fallback. The [Grammar Contract](../contracts/moonframe-skin-grammar-contract-v1.0.json) owns pair status; the [15 detailed visual specimens/recipe specifications](../contracts/moonframe-skin-specifications-v1.0.json) own per-component artistic intentions. Neither screenshot approval nor implemented tokens is implied.
+2. **Token source clarification:** the [dictionary](../contracts/moonframe-token-dictionary-v0.1.json) names required roles only. The [token source plan](../contracts/moonframe-token-source-plan-v0.1.json) explicitly contains 30 pending coverage slots, and the [pipeline](architecture/token-pipeline.md) describes future DTCG subset generation. Never pass dictionary JSON to a production token generator as though it contained approved color/material/spacing values.
+3. **Catalog detail:** the [component manifest](../contracts/moonframe-component-manifest-v0.1.json) and [block/template manifest](../contracts/moonframe-block-manifest-v0.1.json) record proposed scope, states, accessibility requirements, tiers and dependencies; API stubs are not approved TypeScript interfaces or shipped components.
+4. **Original graphics and opt-in feedback:** [asset contract](../contracts/moonframe-asset-manifest-v0.1.json) contains empty production asset arrays and provenance/approval requirements. [SFX contract](../contracts/moonframe-sfx-contract-v0.1.json) defaults to silent and explicit consent; no audio was produced.
+5. **Primitive provider open:** do not choose Base UI just because [shadcn changed its new-project default in July 2026](https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default). [ADR-0001](adr/0001-primitive-provider.md) explicitly awaits an equal-fixture a11y/SSR/integration spike comparing Base UI, Radix and React Aria.
+6. **State vocabulary:** `specified` is a documentation state; `implemented`, `tested`, `reviewed`, and `released` need independent evidence. Pair status `not-reviewed` is a separate human visual gate. `system` is a *requested appearance preference*; a DOM-resolved effective `data-mode` must be `light` or `dark`.
+7. **Validation scope:** [contract validator and CI](../scripts/validate-contracts.mjs) check structural consistency; no claims about production quality, contrast, browser compatibility, bundle or WCAG compliance follow from a green docs-only run. See [QA strategy](qa/validation-strategy.md).
+
+Authoritative references and versioning rules are in [governance](architecture/decisions-and-governance.md). No dependency, framework, package namespace, license, artwork or SFX was selected or shipped in this refinement.

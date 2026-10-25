@@ -229,5 +229,9 @@
     "TypeScript token types/helpers",
     "Skin Lab reference export"
   ],
-  "implementationNote": "Names are the proposed contract. Final token values, exact DTCG structure and generator choices must be approved after repository/toolchain audit."
+  "implementationNote": "Names are the proposed contract. Final token values, exact DTCG structure and generator choices must be approved after repository/toolchain audit.",
+  "revisionDate": "2026-10-25",
+  "dictionaryRole": "authoritative required-token vocabulary and taxonomy; NOT canonical production values",
+  "canonicalValueSource": null,
+  "futureTokenSourcePlan": "moonframe-token-source-plan-v0.1.json"
 }

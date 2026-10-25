@@ -1,0 +1,20 @@
+name: Validate Moonframe specification contracts
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  spec-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Validate contract references, counts, statuses and Markdown links
+        run: node scripts/validate-contracts.mjs
+      - name: Run validator negative self-tests
+        run: node scripts/validate-contracts.mjs --self-test
