@@ -43,6 +43,19 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Package Architecture & Developer Experience (2026-10-25)
+
+- [Audited live repo and P0–P3 package/DX findings](docs/audit/package-architecture-dx-audit.md)
+- [Official npm/Node/TS/Vite/Tailwind/registry/OIDC research](docs/research/package-architecture-dx-research-log.md)
+- [Canonical Package Architecture & Developer Experience Bible](docs/architecture/package-architecture-dx-bible.md)
+- [ADR-0009 — Package topology, single runtime candidate](docs/adr/0009-package-topology.md)
+- [ADR-0010 — npm runtime vs source-owned registry](docs/adr/0010-package-distribution.md)
+- [Proposed package exports/metadata/distribution machine contract](contracts/moonframe-package-architecture-v0.1.json)
+- [11 planned developer journeys and 13 diagnostics](contracts/moonframe-developer-experience-v0.1.json)
+- [Bounded proposed package JSON Schema](schemas/moonframe-package-architecture.schema.json) and [16 invalid contract fixtures](contracts/fixtures/package-architecture-dx-v0.1.json)
+- [16 small issue-ready DX/package tasks (no GitHub issues created)](docs/backlog/package-architecture-dx-atomic-issues.md)
+
+
 ### Accessibility & Visual QA (2026-10-25)
 
 - [Live repository accessibility/visual QA audit](docs/audit/accessibility-visual-qa-baseline.md)
