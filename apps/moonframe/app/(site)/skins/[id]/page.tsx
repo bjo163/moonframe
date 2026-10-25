@@ -13,7 +13,7 @@ import {
   Grid,
   DescriptionList,
   CodeBlock,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { SKIN_CATALOG, TEMPLATE_CATALOG, getSkinById } from '../../../../lib/catalog';
 import { SkinCard } from '../../../../components/site/SkinCard';
 
@@ -86,7 +86,7 @@ export default async function SkinDetailPage({ params }: { params: Promise<{ id:
           <CardContent style={{ display: 'grid', gap: '1rem' }}>
             <CodeBlock
               language="tsx"
-              code={`import '@moonframe/ui/styles.css';\nimport { ThemeProvider, ThemeScript } from '@moonframe/ui';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang="en" suppressHydrationWarning>\n      <head>\n        <ThemeScript defaultSkin="${skin.id}" defaultMode="dark" />\n      </head>\n      <body>\n        <ThemeProvider defaultSkin="${skin.id}" defaultMode="dark" syncDocumentElement>\n          {children}\n        </ThemeProvider>\n      </body>\n    </html>\n  );\n}`}
+              code={`import '@moonwitness/moonframe/styles.css';\nimport { ThemeProvider, ThemeScript } from '@moonwitness/moonframe';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang="en" suppressHydrationWarning>\n      <head>\n        <ThemeScript defaultSkin="${skin.id}" defaultMode="dark" />\n      </head>\n      <body>\n        <ThemeProvider defaultSkin="${skin.id}" defaultMode="dark" syncDocumentElement>\n          {children}\n        </ThemeProvider>\n      </body>\n    </html>\n  );\n}`}
             />
             {matchingTemplates.length > 0 && (
               <div>

@@ -5,7 +5,7 @@ import {
   PageHeader,
   SegmentedControl,
   Badge,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { SKIN_CATALOG } from '../../../lib/catalog';
 import { SkinCard } from '../../../components/site/SkinCard';
 

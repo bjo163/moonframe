@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@moonframe/ui';
+import { ThemeProvider } from '@moonwitness/moonframe';
 import { TemplateRenderer } from '../templates';
 
 export default function NotFound() {

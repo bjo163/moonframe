@@ -29,10 +29,7 @@ importers:
 
   apps/moonframe:
     dependencies:
-      '@moonframe/ui':
-        specifier: workspace:@moonwitness/ui@*
-        version: link:../..
-      '@moonwitness/ui':
+      '@moonwitness/moonframe':
         specifier: workspace:*
         version: link:../..
       next:

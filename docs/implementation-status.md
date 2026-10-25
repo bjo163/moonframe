@@ -1,19 +1,19 @@
 # Moonframe Implementation Status & Runtime Evidence (2026-10-26)
 
-This document records the verified local runtime, reusable component library (`@moonframe/ui`), deterministic token slice, and `apps/moonframe` Next.js 16 showcase application.
+This document records the verified local runtime, reusable component library (`@moonwitness/moonframe`), deterministic token slice, and `apps/moonframe` Next.js 16 showcase application.
 
 > **Governance note:** Machine contract files in `contracts/*.json` intentionally retain their specification-phase sentinel values (`not-implemented` / `specified-not-implemented` / `not-reviewed`) as enforced by [scripts/validate-contracts.mjs](../scripts/validate-contracts.mjs) negative self-tests (`--self-test`). Full runtime implementation, the 105-pair skin grammar review, and owner `v0.1.0` RC/release signoffs are recorded in [TODO.md](../TODO.md) (`57/57` tasks complete), [docs/qa/skin-pairwise-review-report.md](qa/skin-pairwise-review-report.md), and [docs/qa/rc-evidence-and-release-ledger.md](qa/rc-evidence-and-release-ledger.md).
 
 ## 1. Workspace & Package Architecture (`M1`)
 
 - **Package Manager:** `pnpm@10.33.4` via [pnpm-workspace.yaml](../pnpm-workspace.yaml) and root [package.json](../package.json).
-- **Library (`@moonframe/ui` at root):**
+- **Library (`@moonwitness/moonframe` at root):**
   - `.` → [src/index.js](../src/index.js) + [src/index.d.ts](../src/index.d.ts)
   - `./styles.css` → [src/styles.css](../src/styles.css)
   - `./tailwind.css` → [src/tailwind.css](../src/tailwind.css)
   - `./skins` → [src/skins.js](../src/skins.js) + [src/skins.d.ts](../src/skins.d.ts)
   - `./theme` → [src/theme.js](../src/theme.js) + [src/theme.d.ts](../src/theme.d.ts)
-- **Official Showcase App (`apps/moonframe`):** Next.js 16.4.2 App Router linked via `"@moonframe/ui": "workspace:*"`. Running `pnpm run dev` at the root launches `apps/moonframe`.
+- **Official Showcase App (`apps/moonframe`):** Next.js 16.4.2 App Router linked via `"@moonwitness/moonframe": "workspace:*"`. Running `pnpm run dev` at the root launches `apps/moonframe`.
 
 ## 2. Deterministic Token Slice & Runtime CSS Bridge (`M2` & `M3`)
 

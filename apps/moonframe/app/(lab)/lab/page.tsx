@@ -8,7 +8,7 @@ import {
   Dialog, Tabs, Accordion, Table, TableHeader, TableBody, TableRow,
   TableHead, TableCell, TableCaption,
   type SkinId, type Mode, type Density, type Motion, type Contrast,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import './lab.css';
 
 interface ProjectItem {
@@ -120,7 +120,7 @@ function LabWorkspace() {
     announce('Project status updated.');
   }
   async function copySetup() {
-    const text = `import { ThemeProvider, Button } from '@moonframe/ui';\nimport '@moonframe/ui/styles.css';\n\n<ThemeProvider defaultSkin="${theme.skin}" defaultMode="${theme.mode}">\n  <Button>Start something great</Button>\n</ThemeProvider>`;
+    const text = `import { ThemeProvider, Button } from '@moonwitness/moonframe';\nimport '@moonwitness/moonframe/styles.css';\n\n<ThemeProvider defaultSkin="${theme.skin}" defaultMode="${theme.mode}">\n  <Button>Start something great</Button>\n</ThemeProvider>`;
     try { await navigator.clipboard.writeText(text); announce('React example copied to clipboard.'); }
     catch { announce('Clipboard unavailable. Select and copy the example in the Components tab.'); }
   }
@@ -200,7 +200,7 @@ function Gallery({ announce, theme, onDialog }: { announce: (m: string) => void;
       <Card><CardHeader><CardTitle>The finer details</CardTitle><CardDescription>Form controls that feel at home.</CardDescription></CardHeader><CardContent><form className="demo-form" onSubmit={e => { e.preventDefault(); announce('Preferences saved for this demo session.'); }}><div><Label htmlFor="gallery-name">Display name</Label><Input id="gallery-name" placeholder="Your name" defaultValue="Alex Lane" required /></div><div><Label htmlFor="gallery-bio">A few words about you</Label><Textarea id="gallery-bio" placeholder="Making things with care…" rows={3} /></div><Checkbox label="I agree to the workspace guidelines" checked={terms} onChange={e => setTerms(e.target.checked)} /><Switch label="Send me project notifications" checked={notifications} onChange={e => setNotifications(e.target.checked)} /><Button type="submit">Save preferences</Button></form></CardContent></Card>
       <Card><CardHeader><CardTitle>Space for the story</CardTitle><CardDescription>Organize information without losing your place.</CardDescription></CardHeader><CardContent className="demo-stack"><Tabs defaultValue="overview" items={[{ value: 'overview', label: 'Overview', content: <p>This is your overview. Use arrow keys to move between tabs; the same interaction works in every skin.</p> }, { value: 'details', label: 'Details', content: <p>Fifteen identities share one set of semantic controls, consistent focus behavior, and a portable CSS foundation.</p> }, { value: 'activity', label: 'Activity', content: <p>Your workspace is ready. Create a project from the overview to begin.</p> }]} /><Accordion items={[{ value: 'skins', title: 'What changes with a skin?', content: <p>Typography, geometry, surfaces, navigation, layout rhythm, and component styling. Your data and interactions stay consistent.</p> }, { value: 'install', title: 'How do I use it in my app?', content: <p>Import the components and stylesheet from the package, then wrap your application in ThemeProvider. The example below is ready to copy.</p> }]} /></CardContent></Card>
       <Card><CardHeader><CardTitle>Keep everyone in the loop</CardTitle><CardDescription>Feedback, loading, and focused interactions.</CardDescription></CardHeader><CardContent className="demo-stack"><Alert title="All set for something great">Your workspace is ready. Pick a skin and make it yours.</Alert><div className="demo-inline"><Button variant="secondary" onClick={onDialog}>Open dialog</Button><Button variant="ghost" onClick={() => announce('A small update, right when you need it.')}>Show notification</Button></div><div aria-label="Loading preview" className="demo-stack"><Skeleton style={{ width: '60%', height: 14 }} /><Skeleton style={{ width: '90%', height: 14 }} /><Skeleton style={{ width: '75%', height: 14 }} /></div></CardContent></Card>
-      <Card><CardHeader><CardTitle>Take it with you</CardTitle><CardDescription>A small beginning for your next application.</CardDescription></CardHeader><CardContent><pre className="demo-code"><code>{`import { ThemeProvider, Button }\n  from '@moonframe/ui';\nimport '@moonframe/ui/styles.css';\n\n<ThemeProvider\n  defaultSkin="${theme.skin}"\n  defaultMode="${theme.mode}"\n>\n  <Button>Start something great</Button>\n</ThemeProvider>`}</code></pre></CardContent></Card>
+      <Card><CardHeader><CardTitle>Take it with you</CardTitle><CardDescription>A small beginning for your next application.</CardDescription></CardHeader><CardContent><pre className="demo-code"><code>{`import { ThemeProvider, Button }\n  from '@moonwitness/moonframe';\nimport '@moonwitness/moonframe/styles.css';\n\n<ThemeProvider\n  defaultSkin="${theme.skin}"\n  defaultMode="${theme.mode}"\n>\n  <Button>Start something great</Button>\n</ThemeProvider>`}</code></pre></CardContent></Card>
     </div>
   </section>;
 }

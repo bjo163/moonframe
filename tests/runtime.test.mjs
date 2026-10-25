@@ -204,7 +204,7 @@ test('Next.js workspace layout, form fields, selectors, and DataTable server-ren
             createElement(Pagination, { page: 1, totalPages: 3 }),
             createElement(EmptyState, { title: 'Nothing queued', description: 'Create an item' }),
             createElement(Kbd, null, 'Ctrl+K'),
-            createElement(CodeBlock, { language: 'tsx', code: 'import { Button } from "@moonframe/ui";' })
+            createElement(CodeBlock, { language: 'tsx', code: 'import { Button } from "@moonwitness/moonframe";' })
           )
         )
       )

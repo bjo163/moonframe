@@ -1584,7 +1584,7 @@ export const CommandPalette = forwardRef(function CommandPalette({
 });
 
 /* ============================================================================
- * Level C Reusable Composite Blocks (Exported from @moonframe/ui)
+ * Level C Reusable Composite Blocks (Exported from @moonwitness/moonframe)
  * ========================================================================== */
 
 export const PageHeader = forwardRef(function PageHeader({

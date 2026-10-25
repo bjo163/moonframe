@@ -46,7 +46,7 @@ import {
   SettingsSection,
   SkinSelector,
   ModeSelector,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { COMPONENT_CATALOG, getComponentBySlug } from '../../../../lib/catalog';
 import { InteractivePlayground } from '../../../../components/site/InteractivePlayground';
 
@@ -206,9 +206,9 @@ function LiveComponentSpecimen({ slug }: { slug: string }) {
               { key: 'status', header: 'Status' },
             ]}
             data={[
-              { id: '1', name: '@moonframe/ui', exports: '66+ components', status: 'Verified' },
-              { id: '2', name: '@moonframe/ui/theme', exports: '7 hooks & SSR helpers', status: 'Verified' },
-              { id: '3', name: '@moonframe/ui/skins', exports: '15 canonical skins', status: 'Verified' },
+              { id: '1', name: '@moonwitness/moonframe', exports: '66+ components', status: 'Verified' },
+              { id: '2', name: '@moonwitness/moonframe/theme', exports: '7 hooks & SSR helpers', status: 'Verified' },
+              { id: '3', name: '@moonwitness/moonframe/skins', exports: '15 canonical skins', status: 'Verified' },
             ]}
           />
         </div>
@@ -227,7 +227,7 @@ function LiveComponentSpecimen({ slug }: { slug: string }) {
           />
           <SettingsSection
             title="Workspace Settings Block"
-            description="Reusable two-column SettingsSection exported directly from @moonframe/ui."
+            description="Reusable two-column SettingsSection exported directly from @moonwitness/moonframe."
             action={<Button size="sm">Save Changes</Button>}
           >
             <Field label="Organization Name"><Input defaultValue="Moonframe Studio" /></Field>
@@ -284,7 +284,7 @@ export default async function ComponentDetailPage({ params }: { params: Promise<
         <Card>
           <CardHeader>
             <CardTitle>Next.js Usage Example</CardTitle>
-            <CardDescription>Import directly from @moonframe/ui</CardDescription>
+            <CardDescription>Import directly from @moonwitness/moonframe</CardDescription>
           </CardHeader>
           <CardContent>
             <CodeBlock language="tsx" code={comp.code} />
@@ -303,7 +303,7 @@ export default async function ComponentDetailPage({ params }: { params: Promise<
             <DescriptionList
               columns={1}
               items={[
-                { term: 'Package Subpath', details: "import { ... } from '@moonframe/ui'" },
+                { term: 'Package Subpath', details: "import { ... } from '@moonwitness/moonframe'" },
                 { term: 'TypeScript Declarations', details: 'src/components.d.ts (strictly typed)' },
                 { term: 'Next.js 16 SSR', details: 'Hydration-safe with zero browser global leaks' },
               ]}

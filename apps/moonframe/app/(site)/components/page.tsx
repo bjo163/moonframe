@@ -13,7 +13,7 @@ import {
   Button,
   Badge,
   SearchInput,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { COMPONENT_CATALOG, type ComponentCategory } from '../../../lib/catalog';
 
 const categories: ('All' | ComponentCategory)[] = [
@@ -47,10 +47,10 @@ export default function ComponentsIndexPage() {
   return (
     <div>
       <PageHeader
-        eyebrow="Reusable @moonframe/ui Library"
+        eyebrow="Reusable @moonwitness/moonframe Library"
         title="Components & Level C Composite Blocks"
         badge={`${totalExports}+ Exports`}
-        description="Every primitive, form control, chart, overlay, and composite block below is exported directly from @moonframe/ui with full TypeScript definitions and SSR safety."
+        description="Every primitive, form control, chart, overlay, and composite block below is exported directly from @moonwitness/moonframe with full TypeScript definitions and SSR safety."
         breadcrumbs={[
           { label: 'Showcase', href: '/' },
           { label: 'Components', current: true },

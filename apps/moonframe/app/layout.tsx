@@ -1,7 +1,7 @@
 import React from 'react';
-import '@moonframe/ui/styles.css';
+import '@moonwitness/moonframe/styles.css';
 import './site.css';
-import { ThemeScript } from '@moonframe/ui';
+import { ThemeScript } from '@moonwitness/moonframe';
 
 export const metadata = {
   title: 'Moonframe — 15-Skin React & Next.js UI System & Template Showcase',

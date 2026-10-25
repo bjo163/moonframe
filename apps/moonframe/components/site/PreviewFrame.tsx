@@ -10,7 +10,7 @@ import {
   CodeBlock,
   skins,
   type SkinId,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import type { TemplateCatalogEntry } from '../../lib/catalog';
 
 export function PreviewFrame({ template }: { template: TemplateCatalogEntry }) {

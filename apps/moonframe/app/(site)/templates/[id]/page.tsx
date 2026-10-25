@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {
   PageHeader,
   Button,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { TEMPLATE_CATALOG, getTemplateById } from '../../../../lib/catalog';
 import { PreviewFrame } from '../../../../components/site/PreviewFrame';
 

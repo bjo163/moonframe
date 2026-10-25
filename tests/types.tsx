@@ -60,9 +60,9 @@ import {
   useSFX,
   skins,
   type SkinId,
-} from '@moonframe/ui';
-import { resolveTheme, type ThemePreferences } from '@moonframe/ui/theme';
-import { skinIds } from '@moonframe/ui/skins';
+} from '@moonwitness/moonframe';
+import { resolveTheme, type ThemePreferences } from '@moonwitness/moonframe/theme';
+import { skinIds } from '@moonwitness/moonframe/skins';
 import { createRef } from 'react';
 
 function Example() {

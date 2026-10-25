@@ -9,7 +9,7 @@ pnpm install
 pnpm run dev
 ```
 
-Open `http://localhost:3000`. Running `pnpm run dev` at the repository root starts the `apps/moonframe` Next.js 16 application via pnpm workspaces (`"@moonframe/ui": "workspace:*"`):
+Open `http://localhost:3000`. Running `pnpm run dev` at the repository root starts the `apps/moonframe` Next.js 16 application via pnpm workspaces (`"@moonwitness/moonframe": "workspace:*"`):
 - **`/`** — Landing page, live 15-skin interactive wall, featured templates, and quickstart
 - **`/skins` & `/skins/[id]`** — 15-skin gallery and deep-dive non-color visual grammar specs
 - **`/components` & `/components/[slug]`** — Interactive playground for all 66+ components & composite blocks
@@ -21,7 +21,7 @@ Open `http://localhost:3000`. Running `pnpm run dev` at the repository root star
 
 ## Install in a Next.js or React app
 
-Inside this monorepo, workspace apps consume `"@moonframe/ui": "workspace:*"`. For an external Next.js (15/16) or React 19 project, run `pnpm run pack:local` (or `pnpm pack`) at the repository root and install the resulting local tarball:
+Inside this monorepo, workspace apps consume `"@moonwitness/moonframe": "workspace:*"`. For an external Next.js (15/16) or React 19 project, run `pnpm run pack:local` (or `pnpm pack`) at the repository root and install the resulting local tarball:
 
 ```sh
 pnpm add /path/to/moonframe-ui-0.1.0.tgz
@@ -34,10 +34,10 @@ Use `ThemeScript` + `ThemeProvider` (with `syncDocumentElement`) in your root la
 ```tsx
 // app/layout.tsx
 import type { ReactNode } from 'react';
-import { ThemeProvider, ThemeScript, ToastProvider } from '@moonframe/ui';
-import '@moonframe/ui/styles.css';
+import { ThemeProvider, ThemeScript, ToastProvider } from '@moonwitness/moonframe';
+import '@moonwitness/moonframe/styles.css';
 // Optional if your Next.js app uses Tailwind CSS v4:
-// import '@moonframe/ui/tailwind.css';
+// import '@moonwitness/moonframe/tailwind.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -74,7 +74,7 @@ import {
   ModeSelector,
   Button,
   DataTable,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 
 export default function WorkspacePage() {
   return (
@@ -118,11 +118,11 @@ export default function WorkspacePage() {
 
 ### Subpath exports
 
-- `@moonframe/ui` — Full component library, layout primitives, `Slot`, `DataTable`, M10 `SkinBrandMark`, `SkinArtwork`, `SFXProvider`, `useSFX`, and theme runtime
-- `@moonframe/ui/theme` — `ThemeProvider`, `ThemeScript`, `getThemeInitScript`, `useTheme`, `resolveTheme`, `normalizePreferences`, `getThemeAttributes`
-- `@moonframe/ui/skins` — Pure `skins` catalog and `skinIds` array (safe in Server Components, Edge middleware, and Node scripts)
-- `@moonframe/ui/styles.css` — Self-contained stylesheet for all 15 skins in Light and Dark
-- `@moonframe/ui/tailwind.css` — Optional Tailwind CSS v4 `@theme inline` bridge mapping `--color-mf-*`, `--radius-mf`, `--shadow-mf`, and `--font-mf` to Moonframe's live CSS variables
+- `@moonwitness/moonframe` — Full component library, layout primitives, `Slot`, `DataTable`, M10 `SkinBrandMark`, `SkinArtwork`, `SFXProvider`, `useSFX`, and theme runtime
+- `@moonwitness/moonframe/theme` — `ThemeProvider`, `ThemeScript`, `getThemeInitScript`, `useTheme`, `resolveTheme`, `normalizePreferences`, `getThemeAttributes`
+- `@moonwitness/moonframe/skins` — Pure `skins` catalog and `skinIds` array (safe in Server Components, Edge middleware, and Node scripts)
+- `@moonwitness/moonframe/styles.css` — Self-contained stylesheet for all 15 skins in Light and Dark
+- `@moonwitness/moonframe/tailwind.css` — Optional Tailwind CSS v4 `@theme inline` bridge mapping `--color-mf-*`, `--radius-mf`, `--shadow-mf`, and `--font-mf` to Moonframe's live CSS variables
 
 ## Components and styling (70+ Exports)
 

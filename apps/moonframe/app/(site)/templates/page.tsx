@@ -13,7 +13,7 @@ import {
   Button,
   Badge,
   SearchInput,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { TEMPLATE_CATALOG, type TemplateCategory } from '../../../lib/catalog';
 
 const categories: ('All' | TemplateCategory)[] = [
@@ -50,7 +50,7 @@ export default function TemplatesMarketplacePage() {
         eyebrow="Premium Template Marketplace"
         title="43 Production-Ready Next.js Page Templates"
         badge="Wave A + B · 43 Templates"
-        description="Every template is built exclusively from public @moonframe/ui components and Level C composite blocks. Open any template to test responsive viewports, switch across all 15 skins, or copy the TSX code."
+        description="Every template is built exclusively from public @moonwitness/moonframe components and Level C composite blocks. Open any template to test responsive viewports, switch across all 15 skins, or copy the TSX code."
         breadcrumbs={[
           { label: 'Showcase', href: '/' },
           { label: 'Templates', current: true },

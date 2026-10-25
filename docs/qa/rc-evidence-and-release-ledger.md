@@ -16,13 +16,13 @@
 
 ### 1.2 `MF-005` (#3) — Primitive Provider Strategy Approval
 - **Decision:** **APPROVED (Zero-Dependency Native HTML + Polymorphic `Slot` Runtime)**.
-- **Scope:** Following the equal-fixture comparison across Base UI, Radix, and React Aria in [docs/research/provider-spike.md](../research/provider-spike.md) and [ADR-0001](../adr/0001-primitive-provider.md), `@moonframe/ui` approves its zero-dependency native HTML top-layer (`<dialog>`, `<details>`, roving `tabindex`, `aria-*` wiring, and polymorphic `Slot` / `asChild`) as the production runtime layer. No third-party primitive dependency is locked into `dependencies`.
+- **Scope:** Following the equal-fixture comparison across Base UI, Radix, and React Aria in [docs/research/provider-spike.md](../research/provider-spike.md) and [ADR-0001](../adr/0001-primitive-provider.md), `@moonwitness/moonframe` approves its zero-dependency native HTML top-layer (`<dialog>`, `<details>`, roving `tabindex`, `aria-*` wiring, and polymorphic `Slot` / `asChild`) as the production runtime layer. No third-party primitive dependency is locked into `dependencies`.
 - **Evidence:** 12/12 SSR/unit tests in `tests/runtime.test.mjs` and 46/46 Playwright browser tests in `tests/browser/`.
 
 ### 1.3 `MF-006` (#4) & `MFI-011` — Package Export Boundary & Release Gate Alignment
 - **Decision:** **APPROVED**.
 - **Scope:**
-  - Package name: `@moonframe/ui` (`version: "0.1.0"`).
+  - Package name: `@moonwitness/moonframe` (`version: "0.1.0"`).
   - Strict tarball whitelist: `"files": ["src/"]` verified via `pnpm run pack:local` (`moonframe-ui-0.1.0.tgz`, 12 files).
   - Public subpath exports: `.` (`./src/index.js` + `./src/index.d.ts`), `./styles.css`, `./tailwind.css`, `./skins`, and `./theme`.
   - Workspace showcase & CLI distribution: `apps/moonframe` (Next.js 16.4.2 App Router) + `pnpm run cli` ([scripts/moonframe-cli.mjs](../../scripts/moonframe-cli.mjs)).
@@ -43,7 +43,7 @@
 | **Token Determinism Gate** | `pnpm run tokens` | **PASS** (byte-identical double-run CSS & `.d.ts` generation) |
 | **105 Pairwise Skin Audit** | `pnpm run audit:pairs` ([report](skin-pairwise-review-report.md)) | **PASS** (6/6 pilot pairs & 105/105 pairs score 8/8 distinct non-color dimensions) |
 | **Unit, SSR & CLI Gate** | `pnpm test` (`tests/runtime.test.mjs`) | **PASS** (12/12 unit, SSR `renderToString`, M10 vectors/SFX, CLI & pairwise tests) |
-| **TypeScript Strict Gate** | `pnpm run typecheck` & `pnpm --filter moonframe typecheck` | **PASS** (0 errors across `@moonframe/ui` and `apps/moonframe`) |
+| **TypeScript Strict Gate** | `pnpm run typecheck` & `pnpm --filter moonframe typecheck` | **PASS** (0 errors across `@moonwitness/moonframe` and `apps/moonframe`) |
 | **Next.js 16 Production Build** | `pnpm run build` | **PASS** (88/88 static/SSG App Router routes compiled via Turbopack) |
 | **Playwright Browser & A11y Gate** | `pnpm run test:browser` | **PASS** (46/46 browser tests: 30 skin appearances >= 4.5:1 contrast, 360px responsive, RTL, `forced-colors`, `prefers-reduced-motion`, modal focus trap, roving tabs, forms, 43 templates, 8 starters, M10 studio) |
 | **Rendered Screenshot Baseline** | `artifacts/skins/*.png` & `artifacts/site/*.png` | **PASS** (30 skin PNGs + 6 showcase marketplace PNGs captured) |
@@ -53,7 +53,7 @@
 ## 3. Scope, License, Provenance & Final Release Decision (`MF-REL-001`, `MF-REL-002`, `MF-REL-003`)
 
 ### 3.1 `MF-REL-001` — Scope, License, Name, Trademark & Consumer Support
-- **Package Name & Trademark:** `@moonframe/ui` and all 15 skin identifiers (`moonpunk`, `moonriot`, `moonzine`, `moonhalftone`, `moonglitch`, `moonsmash`, `moonink`, `mooncrash`, `moonpanel`, `moonscrawl`, `moonraw`, `moonchrome`, `classic`, `moonquest`, `moonledger`) are original project identifiers approved by the repository owner (`bjo163`).
+- **Package Name & Trademark:** `@moonwitness/moonframe` and all 15 skin identifiers (`moonpunk`, `moonriot`, `moonzine`, `moonhalftone`, `moonglitch`, `moonsmash`, `moonink`, `mooncrash`, `moonpanel`, `moonscrawl`, `moonraw`, `moonchrome`, `classic`, `moonquest`, `moonledger`) are original project identifiers approved by the repository owner (`bjo163`).
 - **Assets & Audio:** All 15 `SkinBrandMark` SVG paths are original geometric vector coordinates authored in `src/components.js`; all 6 `SFXProvider` events use zero-asset WebAudio synthesis. Zero third-party media files are bundled.
 - **Supported Consumer Baseline:** Node.js `24.22.1 LTS` (`>=22.0.0`), `pnpm@10.33.4`, React `^19.0.0`, Next.js `^16.0.0`.
 

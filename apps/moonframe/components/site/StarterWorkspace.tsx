@@ -10,7 +10,7 @@ import {
   CodeBlock,
   skins,
   type SkinId,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import type { StarterCatalogEntry, TemplateCatalogEntry } from '../../lib/catalog';
 
 export function StarterWorkspace({
@@ -143,7 +143,7 @@ export function StarterWorkspace({
           <div>
             <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>Scaffold Entire Starter Pack</h3>
             <p style={{ margin: '0 0 0.75rem 0', color: 'var(--mf-muted)', fontSize: '0.9rem' }}>
-              Run this command in your Next.js project to generate the App Router root layout and all {starter.pageRefs.length} route files with @moonframe/ui components:
+              Run this command in your Next.js project to generate the App Router root layout and all {starter.pageRefs.length} route files with @moonwitness/moonframe components:
             </p>
             <CodeBlock language="bash" code={cliCommand} />
           </div>

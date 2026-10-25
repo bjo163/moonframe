@@ -16,7 +16,7 @@ import {
   SegmentedControl,
   CodeBlock,
   useTheme,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { SKIN_CATALOG, TEMPLATE_CATALOG, COMPONENT_CATALOG } from '../../lib/catalog';
 import { SkinCard } from '../../components/site/SkinCard';
 
@@ -89,7 +89,7 @@ export default function ShowcaseHomePage() {
             <Badge variant="primary">PREMIUM TEMPLATE MARKETPLACE</Badge>
             <h2 id="featured-templates-heading">Production-Ready Next.js Page Templates</h2>
             <p>
-              Every template is built exclusively from public <code>@moonframe/ui</code> exports. Inspect responsive Desktop, Tablet, and Mobile viewports or copy the complete source code.
+              Every template is built exclusively from public <code>@moonwitness/moonframe</code> exports. Inspect responsive Desktop, Tablet, and Mobile viewports or copy the complete source code.
             </p>
           </div>
           <Button variant="secondary" asChild>
@@ -210,13 +210,13 @@ export default function ShowcaseHomePage() {
               Start Developing in Seconds with pnpm
             </CardTitle>
             <CardDescription>
-              Running <code>pnpm run dev</code> at the repository root launches this Next.js 16 showcase app with live workspace linking to <code>@moonframe/ui</code>.
+              Running <code>pnpm run dev</code> at the repository root launches this Next.js 16 showcase app with live workspace linking to <code>@moonwitness/moonframe</code>.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <CodeBlock
               language="bash"
-              code={`# 1. Install workspace dependencies with pnpm\npnpm install\n\n# 2. Launch the Moonframe Next.js 16 showcase app\npnpm run dev\n\n# 3. Or pack @moonframe/ui as a portable tarball for external Next.js apps\npnpm run pack:local`}
+              code={`# 1. Install workspace dependencies with pnpm\npnpm install\n\n# 2. Launch the Moonframe Next.js 16 showcase app\npnpm run dev\n\n# 3. Or pack @moonwitness/moonframe as a portable tarball for external Next.js apps\npnpm run pack:local`}
             />
           </CardContent>
           <CardFooter>

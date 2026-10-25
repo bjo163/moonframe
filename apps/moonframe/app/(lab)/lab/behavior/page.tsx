@@ -5,7 +5,7 @@ import {
   Button, Checkbox, Switch, Tabs, Dialog, Accordion, Input, Select,
   Field, RadioGroup, DropdownMenu, Popover, Tooltip, DataTable,
   OTPInput, PasswordField, TagInput, SegmentedControl,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 
 export default function BehaviorFixturePage() {
   const [open, setOpen] = useState(false);

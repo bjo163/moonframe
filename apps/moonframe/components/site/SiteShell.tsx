@@ -12,7 +12,7 @@ import {
   SkinBrandMark,
   useTheme,
   type SkinId,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { SKIN_CATALOG, COMPONENT_CATALOG, TEMPLATE_CATALOG, STARTER_CATALOG } from '../../lib/catalog';
 
 export function SiteShell({ children }: { children: React.ReactNode }) {

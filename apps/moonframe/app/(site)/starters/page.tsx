@@ -10,7 +10,7 @@ import {
   CardFooter,
   Button,
   Badge,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import { STARTER_CATALOG, TEMPLATE_CATALOG } from '../../../lib/catalog';
 
 export default function StartersIndexPage() {

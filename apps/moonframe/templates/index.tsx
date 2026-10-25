@@ -61,7 +61,7 @@ import {
   ModeSelector,
   SkinBrandMark,
   SkinArtwork,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 
 export function TemplateRenderer({ id }: { id: string }) {
   const [notice, setNotice] = useState<string | null>(null);
@@ -645,7 +645,7 @@ export function TemplateRenderer({ id }: { id: string }) {
             eyebrow="Licensing & Tiers"
             title="Plans Built for Every Engineering Team"
             badge={billingPeriod === 'annual' ? 'Save 20% Annually' : 'Monthly Billing'}
-            description="Adopt @moonframe/ui across personal prototypes, studio products, or multi-team enterprises."
+            description="Adopt @moonwitness/moonframe across personal prototypes, studio products, or multi-team enterprises."
             actions={
               <SegmentedControl
                 label="Billing cycle"
@@ -715,7 +715,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               <Accordion
                 items={[
                   { value: 'q1', title: 'Can I switch skins at runtime without reloading Next.js?', content: <p>Yes. ThemeProvider updates data-skin and data-mode attributes instantaneously while ThemeScript prevents initial SSR flash.</p> },
-                  { value: 'q2', title: 'Does @moonframe/ui require external icon or font CDNs?', content: <p>No. Moonframe is 100% self-contained with zero external network requests.</p> },
+                  { value: 'q2', title: 'Does @moonwitness/moonframe require external icon or font CDNs?', content: <p>No. Moonframe is 100% self-contained with zero external network requests.</p> },
                 ]}
               />
             </CardContent>
@@ -829,7 +829,7 @@ export function TemplateRenderer({ id }: { id: string }) {
                 badge: '3 items',
                 cards: [
                   { code: 'MF-210', title: 'Configure pnpm workspace & workspace:* link', tag: 'DX', progress: 100 },
-                  { code: 'MF-225', title: 'Export 66+ typed components from @moonframe/ui', tag: 'Core', progress: 100 },
+                  { code: 'MF-225', title: 'Export 66+ typed components from @moonwitness/moonframe', tag: 'Core', progress: 100 },
                   { code: 'MF-240', title: 'Implement zero-FOUC ThemeScript for Next.js', tag: 'SSR', progress: 100 },
                 ],
               },
@@ -924,7 +924,7 @@ export function TemplateRenderer({ id }: { id: string }) {
             eyebrow="AI Synthesis Studio"
             title="Moonframe UI Copilot"
             badge="Moonchrome Engine"
-            description="Generate skin-aware Next.js layouts and inspect clean @moonframe/ui code."
+            description="Generate skin-aware Next.js layouts and inspect clean @moonwitness/moonframe code."
           />
           <Grid columns={2}>
             <Card>
@@ -962,11 +962,11 @@ export function TemplateRenderer({ id }: { id: string }) {
               <CardContent style={{ display: 'grid', gap: '1rem' }}>
                 <CodeBlock
                   language="tsx"
-                  code={`import { PageHeader, MetricGrid, DataTable } from '@moonframe/ui';\n\nexport default function SynthesizedScreen() {\n  return (\n    <main>\n      <PageHeader eyebrow="AI Generated" title="Revenue Console" />\n      <MetricGrid items={[{ label: 'MRR', value: '$84,000', delta: '+14%' }]} />\n    </main>\n  );\n}`}
+                  code={`import { PageHeader, MetricGrid, DataTable } from '@moonwitness/moonframe';\n\nexport default function SynthesizedScreen() {\n  return (\n    <main>\n      <PageHeader eyebrow="AI Generated" title="Revenue Console" />\n      <MetricGrid items={[{ label: 'MRR', value: '$84,000', delta: '+14%' }]} />\n    </main>\n  );\n}`}
                 />
                 <Timeline
                   items={[
-                    { title: 'Validated imports against @moonframe/ui', time: '12ms', badge: 'PASS' },
+                    { title: 'Validated imports against @moonwitness/moonframe', time: '12ms', badge: 'PASS' },
                     { title: 'Verified WCAG AA contrast tokens', time: '8ms', badge: 'PASS' },
                   ]}
                 />
@@ -1109,7 +1109,7 @@ export function TemplateRenderer({ id }: { id: string }) {
           <Main>
             <PageHeader
               eyebrow="Developer Guide"
-              title="Getting Started with @moonframe/ui"
+              title="Getting Started with @moonwitness/moonframe"
               badge="Node 24.22.1 LTS"
               description="Install via pnpm, configure zero-FOUC server rendering in Next.js, and compose with 66+ typed components."
             />
@@ -1131,7 +1131,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               <CardContent>
                 <CodeBlock
                   language="tsx"
-                  code={`import '@moonframe/ui/styles.css';\nimport { ThemeProvider, ThemeScript } from '@moonframe/ui';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang="en" suppressHydrationWarning>\n      <head><ThemeScript defaultSkin="classic" defaultMode="system" /></head>\n      <body><ThemeProvider syncDocumentElement>{children}</ThemeProvider></body>\n    </html>\n  );\n}`}
+                  code={`import '@moonwitness/moonframe/styles.css';\nimport { ThemeProvider, ThemeScript } from '@moonwitness/moonframe';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang="en" suppressHydrationWarning>\n      <head><ThemeScript defaultSkin="classic" defaultMode="system" /></head>\n      <body><ThemeProvider syncDocumentElement>{children}</ThemeProvider></body>\n    </html>\n  );\n}`}
                 />
               </CardContent>
             </Card>
@@ -1883,7 +1883,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               <CardHeader><CardTitle>1. Commercial Software License</CardTitle></CardHeader>
               <CardContent>
                 <p>
-                  Subject to these terms, Moonframe grants consumers a non-exclusive license to build, deploy, and distribute commercial web applications utilizing @moonframe/ui components.
+                  Subject to these terms, Moonframe grants consumers a non-exclusive license to build, deploy, and distribute commercial web applications utilizing @moonwitness/moonframe components.
                 </p>
               </CardContent>
             </Card>

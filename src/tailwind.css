@@ -1,5 +1,5 @@
-/* Optional Tailwind CSS v4 semantic bridge for @moonframe/ui consumers.
- * Import after @import "tailwindcss"; and @import "@moonframe/ui/styles.css";
+/* Optional Tailwind CSS v4 semantic bridge for @moonwitness/moonframe consumers.
+ * Import after @import "tailwindcss"; and @import "@moonwitness/moonframe/styles.css";
  */
 @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
 

@@ -25,8 +25,8 @@ Running `pnpm run dev` at the repository root launches the **`moonframe` Next.js
 Build the production Next.js showcase with `pnpm run build`, or pack a local consumer tarball (`moonframe-ui-0.1.0.tgz`) with `pnpm run pack:local`:
 
 ```tsx
-import { ThemeProvider, ThemeScript, Button } from '@moonframe/ui';
-import '@moonframe/ui/styles.css';
+import { ThemeProvider, ThemeScript, Button } from '@moonwitness/moonframe';
+import '@moonwitness/moonframe/styles.css';
 
 export default function App() {
   return (
@@ -41,7 +41,7 @@ export default function App() {
 
 ## Implementation and review status
 
-The repository is structured as a **pnpm workspace** combining the `@moonframe/ui` runtime library (`src/`) and the `moonframe` Next.js 16 showcase application (`apps/moonframe`). It remains private (`"private": true`) and has not been published to npm. The larger historical specifications below also cover future catalog items, optional original assets, and formal release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
+The repository is structured as a **pnpm workspace** combining the `@moonwitness/moonframe` runtime library (`src/`) and the `moonframe` Next.js 16 showcase application (`apps/moonframe`). It remains private (`"private": true`) and has not been published to npm. The larger historical specifications below also cover future catalog items, optional original assets, and formal release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
 
 **Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml).
 

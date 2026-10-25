@@ -1,4 +1,4 @@
-import { skins, type SkinId } from '@moonframe/ui/skins';
+import { skins, type SkinId } from '@moonwitness/moonframe/skins';
 
 export interface SkinCatalogEntry {
   id: SkinId;
@@ -257,7 +257,7 @@ export const COMPONENT_CATALOG: readonly ComponentCatalogEntry[] = [
     summary: 'Primary, secondary, outline, ghost, and danger action triggers with loading states and polymorphic Next.js Link (asChild) composition.',
     a11y: 'Native <button> semantics by default; merges props onto child anchor when asChild={true}; sets aria-busy when loading.',
     code: `import Link from 'next/link';
-import { Button } from '@moonframe/ui';
+import { Button } from '@moonwitness/moonframe';
 
 export function Actions() {
   return (
@@ -279,7 +279,7 @@ export function Actions() {
     category: 'Actions & Theme',
     summary: 'Drop-in controls for switching across all 15 skins and Light/Dark/System appearances with zero-FOUC Next.js SSR support.',
     a11y: 'Supports native <select> or accessible button group with aria-pressed state.',
-    code: `import { SkinSelector, ModeSelector } from '@moonframe/ui';
+    code: `import { SkinSelector, ModeSelector } from '@moonwitness/moonframe';
 
 export function ThemeToolbar() {
   return (
@@ -297,7 +297,7 @@ export function ThemeToolbar() {
     category: 'Foundation & Layout',
     summary: 'Skin-aware structural layout primitives that automatically adapt from command rails (Moonpunk) to top editorial bars (Moonriot) or dense workbenches (Moonledger).',
     a11y: 'Uses semantic <aside>, <main>, <header>, and <section> landmarks.',
-    code: `import { AppShell, Sidebar, Main, Header, Grid, Card } from '@moonframe/ui';
+    code: `import { AppShell, Sidebar, Main, Header, Grid, Card } from '@moonwitness/moonframe';
 
 export function WorkspaceShell() {
   return (
@@ -322,7 +322,7 @@ export function WorkspaceShell() {
     category: 'Forms & Inputs',
     summary: 'Accessible form field wrapper that automatically wires htmlFor, aria-describedby, and aria-invalid to child inputs.',
     a11y: 'Automatic ID association and role="alert" on validation error messages.',
-    code: `import { Field, Input, Select } from '@moonframe/ui';
+    code: `import { Field, Input, Select } from '@moonwitness/moonframe';
 
 export function ProjectForm() {
   return (
@@ -344,7 +344,7 @@ export function ProjectForm() {
     category: 'Forms & Inputs',
     summary: 'Specialized ready-to-use inputs for MFA verification, password strength, keyboard-navigable tag chips, range sliders, segmented switches, and file dropzones.',
     a11y: 'OTPInput supports multi-digit paste, arrow keys, and autocomplete="one-time-code". PasswordField announces strength changes via aria-live.',
-    code: `import { OTPInput, PasswordField, SearchInput, TagInput, Slider } from '@moonframe/ui';
+    code: `import { OTPInput, PasswordField, SearchInput, TagInput, Slider } from '@moonwitness/moonframe';
 
 export function SecurityInputs() {
   return (
@@ -365,7 +365,7 @@ export function SecurityInputs() {
     category: 'Forms & Inputs',
     summary: 'Controlled and uncontrolled boolean and single-choice selection controls with optional descriptions.',
     a11y: 'Preserves native <input type="checkbox">, role="switch", and role="radiogroup" keyboard behavior.',
-    code: `import { Checkbox, Switch, RadioGroup } from '@moonframe/ui';
+    code: `import { Checkbox, Switch, RadioGroup } from '@moonwitness/moonframe';
 
 export function Preferences() {
   return (
@@ -391,7 +391,7 @@ export function Preferences() {
     category: 'Navigation',
     summary: 'Roving-focus tabs (with RTL arrow support), hierarchical breadcrumbs, page switchers, and multi-step onboarding indicators.',
     a11y: 'Full WAI-ARIA tablist/tabpanel associations, aria-current="page", and aria-current="step".',
-    code: `import { Tabs, Stepper, Pagination } from '@moonframe/ui';
+    code: `import { Tabs, Stepper, Pagination } from '@moonwitness/moonframe';
 
 export function NavigationDemo() {
   return (
@@ -422,7 +422,7 @@ export function NavigationDemo() {
     category: 'Overlays & Dialogs',
     summary: 'Top-layer modals, slide-over drawers, Cmd+K command launcher, keyboard-roving action menus, popovers, and tooltips.',
     a11y: 'Native HTML <dialog> focus trapping, Escape dismissal, and opener focus restoration.',
-    code: `import { Dialog, CommandPalette, DropdownMenu, Button } from '@moonframe/ui';
+    code: `import { Dialog, CommandPalette, DropdownMenu, Button } from '@moonwitness/moonframe';
 
 export function OverlayExamples() {
   return (
@@ -455,7 +455,7 @@ export function OverlayExamples() {
     category: 'Feedback & Status',
     summary: 'Contextual banners, live toast notifications, determinate progress bars, status badges, loading skeletons, and zero-data states.',
     a11y: 'Polite aria-live regions for toasts, role="progressbar" with value bounds, and dismissible callout controls.',
-    code: `import { Callout, Progress, Badge, EmptyState, Button } from '@moonframe/ui';
+    code: `import { Callout, Progress, Badge, EmptyState, Button } from '@moonwitness/moonframe';
 
 export function FeedbackExamples() {
   return (
@@ -485,7 +485,7 @@ export function FeedbackExamples() {
     category: 'Data & Visualization',
     summary: 'Sortable/filterable/paginated DataTable, pure-SVG token-themed BarChart and Sparkline, activity Timelines, stacked AvatarGroups, and semantic DescriptionLists.',
     a11y: 'aria-sort on sortable table headers, role="img" + <title> on SVG charts, and semantic <dl>/<ol> markup.',
-    code: `import { DataTable, BarChart, Timeline, AvatarGroup } from '@moonframe/ui';
+    code: `import { DataTable, BarChart, Timeline, AvatarGroup } from '@moonwitness/moonframe';
 
 export function DataShowcase() {
   return (
@@ -520,9 +520,9 @@ export function DataShowcase() {
     name: 'Level C Blocks: PageHeader, MetricGrid, AuthCard, PricingCard, SettingsSection & ActivityFeed',
     exports: ['PageHeader', 'MetricGrid', 'AuthCard', 'PricingCard', 'SettingsSection', 'ActivityFeed'],
     category: 'Level C Composite Blocks',
-    summary: 'High-level reusable page building blocks exported directly from @moonframe/ui so Next.js consumers can assemble complete SaaS pages in minutes.',
+    summary: 'High-level reusable page building blocks exported directly from @moonwitness/moonframe so Next.js consumers can assemble complete SaaS pages in minutes.',
     a11y: 'Composes accessible Moonframe primitives with responsive grid breakpoints and zero backend coupling.',
-    code: `import { PageHeader, MetricGrid, PricingCard, SettingsSection, Button, Input } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, PricingCard, SettingsSection, Button, Input } from '@moonwitness/moonframe';
 
 export function CompositeBlocksDemo() {
   return (
@@ -531,7 +531,7 @@ export function CompositeBlocksDemo() {
         eyebrow="Control Plane"
         title="Production Overview"
         badge="15 Skins"
-        description="Built with reusable Level C blocks from @moonframe/ui."
+        description="Built with reusable Level C blocks from @moonwitness/moonframe."
         actions={<Button>Create Deployment</Button>}
       />
       <MetricGrid
@@ -553,7 +553,7 @@ export function CompositeBlocksDemo() {
     category: 'Actions & Theme',
     summary: 'Original 15-skin vector marks, adaptive artwork containers honoring data-decorations="off", and an opt-in WebAudio synthesizer runtime with 6 canonical event signatures.',
     a11y: 'Vector marks include accessible SVG titles or decorative hiding; SFX is muted by default with explicit consent and reduced-motion suppression.',
-    code: `import { SkinBrandMark, SkinArtwork, SFXProvider, useSFX, Button } from '@moonframe/ui';
+    code: `import { SkinBrandMark, SkinArtwork, SFXProvider, useSFX, Button } from '@moonwitness/moonframe';
 
 export function BrandAndSfxDemo() {
   const sfx = useSFX();
@@ -602,7 +602,7 @@ export const TEMPLATE_CATALOG: readonly TemplateCatalogEntry[] = [
     recommendedSkin: 'classic',
     recommendedMode: 'dark',
     componentsUsed: ['AppShell', 'Sidebar', 'PageHeader', 'MetricGrid', 'BarChart', 'DataTable', 'ActivityFeed'],
-    code: `import { AppShell, Sidebar, Main, PageHeader, MetricGrid, BarChart, DataTable, ActivityFeed, Button } from '@moonframe/ui';
+    code: `import { AppShell, Sidebar, Main, PageHeader, MetricGrid, BarChart, DataTable, ActivityFeed, Button } from '@moonwitness/moonframe';
 
 export default function DashboardOverview() {
   return (
@@ -638,7 +638,7 @@ export default function DashboardOverview() {
     recommendedSkin: 'moonglitch',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'SegmentedControl', 'MetricGrid', 'BarChart', 'DataTable', 'Callout'],
-    code: `import { PageHeader, SegmentedControl, MetricGrid, BarChart, Card, CardHeader, CardTitle, CardContent } from '@moonframe/ui';
+    code: `import { PageHeader, SegmentedControl, MetricGrid, BarChart, Card, CardHeader, CardTitle, CardContent } from '@moonwitness/moonframe';
 
 export default function AnalyticsWorkspace() {
   return (
@@ -668,7 +668,7 @@ export default function AnalyticsWorkspace() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SearchInput', 'Select', 'DataTable', 'Badge', 'Drawer', 'DescriptionList'],
-    code: `import { PageHeader, DataTable, Badge, Button } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, Badge, Button } from '@moonwitness/moonframe';
 
 export default function DataWorkspace() {
   return (
@@ -704,7 +704,7 @@ export default function DataWorkspace() {
     recommendedSkin: 'classic',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'AvatarGroup', 'DataTable', 'Dialog', 'Field', 'Input', 'TagInput'],
-    code: `import { PageHeader, AvatarGroup, DataTable, Button } from '@moonframe/ui';
+    code: `import { PageHeader, AvatarGroup, DataTable, Button } from '@moonwitness/moonframe';
 
 export default function UsersDirectory() {
   return (
@@ -738,7 +738,7 @@ export default function UsersDirectory() {
     recommendedSkin: 'moonpunk',
     recommendedMode: 'dark',
     componentsUsed: ['AuthCard', 'Field', 'Input', 'PasswordField', 'Checkbox', 'Button'],
-    code: `import { AuthCard, Field, Input, PasswordField, Checkbox, Button } from '@moonframe/ui';
+    code: `import { AuthCard, Field, Input, PasswordField, Checkbox, Button } from '@moonwitness/moonframe';
 
 export default function SignInSplit() {
   return (
@@ -768,7 +768,7 @@ export default function SignInSplit() {
     recommendedSkin: 'moonsmash',
     recommendedMode: 'light',
     componentsUsed: ['Stepper', 'AuthCard', 'Field', 'Input', 'PasswordField', 'RadioGroup', 'Button'],
-    code: `import { Stepper, AuthCard, Field, Input, PasswordField, Button } from '@moonframe/ui';
+    code: `import { Stepper, AuthCard, Field, Input, PasswordField, Button } from '@moonwitness/moonframe';
 
 export default function SignUpTemplate() {
   return (
@@ -791,7 +791,7 @@ export default function SignUpTemplate() {
     recommendedSkin: 'moonink',
     recommendedMode: 'light',
     componentsUsed: ['AuthCard', 'Field', 'Input', 'Callout', 'Button'],
-    code: `import { AuthCard, Field, Input, Callout, Button } from '@moonframe/ui';
+    code: `import { AuthCard, Field, Input, Callout, Button } from '@moonwitness/moonframe';
 
 export default function ForgotPasswordTemplate() {
   return (
@@ -817,7 +817,7 @@ export default function ForgotPasswordTemplate() {
     recommendedSkin: 'moonchrome',
     recommendedMode: 'dark',
     componentsUsed: ['AuthCard', 'OTPInput', 'Checkbox', 'Button', 'Badge'],
-    code: `import { AuthCard, OTPInput, Checkbox, Button } from '@moonframe/ui';
+    code: `import { AuthCard, OTPInput, Checkbox, Button } from '@moonwitness/moonframe';
 
 export default function MfaVerifyTemplate() {
   return (
@@ -841,7 +841,7 @@ export default function MfaVerifyTemplate() {
     recommendedSkin: 'classic',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SettingsSection', 'FileDropzone', 'Field', 'Input', 'Textarea', 'TagInput', 'Switch'],
-    code: `import { PageHeader, SettingsSection, Field, Input, TagInput, Switch, Button } from '@moonframe/ui';
+    code: `import { PageHeader, SettingsSection, Field, Input, TagInput, Switch, Button } from '@moonwitness/moonframe';
 
 export default function ProfilePreferences() {
   return (
@@ -867,7 +867,7 @@ export default function ProfilePreferences() {
     recommendedSkin: 'moonzine',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SettingsSection', 'SkinSelector', 'ModeSelector', 'RadioGroup', 'Slider'],
-    code: `import { PageHeader, SettingsSection, SkinSelector, ModeSelector, RadioGroup } from '@moonframe/ui';
+    code: `import { PageHeader, SettingsSection, SkinSelector, ModeSelector, RadioGroup } from '@moonwitness/moonframe';
 
 export default function AppearancePreferences() {
   return (
@@ -889,7 +889,7 @@ export default function AppearancePreferences() {
     recommendedSkin: 'moonglitch',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'Callout', 'DataTable', 'CodeBlock', 'Dialog', 'Timeline'],
-    code: `import { PageHeader, DataTable, CodeBlock, Button } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, CodeBlock, Button } from '@moonwitness/moonframe';
 
 export default function ApiKeySettings() {
   return (
@@ -908,7 +908,7 @@ export default function ApiKeySettings() {
     recommendedSkin: 'moonriot',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SegmentedControl', 'Grid', 'PricingCard', 'Accordion'],
-    code: `import { Grid, PricingCard } from '@moonframe/ui';
+    code: `import { Grid, PricingCard } from '@moonwitness/moonframe';
 
 export default function PlansAndPricing() {
   return (
@@ -928,7 +928,7 @@ export default function PlansAndPricing() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'MetricGrid', 'Progress', 'DescriptionList', 'DataTable'],
-    code: `import { PageHeader, Progress, DescriptionList, DataTable, Card, CardHeader, CardTitle, CardContent } from '@moonframe/ui';
+    code: `import { PageHeader, Progress, DescriptionList, DataTable, Card, CardHeader, CardTitle, CardContent } from '@moonwitness/moonframe';
 
 export default function BillingOverview() {
   return (
@@ -952,7 +952,7 @@ export default function BillingOverview() {
     recommendedSkin: 'moonpanel',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SearchInput', 'Grid', 'Card', 'Badge', 'AvatarGroup', 'Progress'],
-    code: `import { PageHeader, Grid, Card, CardHeader, CardTitle, CardContent, Badge } from '@moonframe/ui';
+    code: `import { PageHeader, Grid, Card, CardHeader, CardTitle, CardContent, Badge } from '@moonwitness/moonframe';
 
 export default function KanbanWorkspace() {
   return (
@@ -975,7 +975,7 @@ export default function KanbanWorkspace() {
     recommendedSkin: 'moonscrawl',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SearchInput', 'Card', 'Timeline', 'Textarea', 'Button', 'Badge'],
-    code: `import { PageHeader, Card, CardContent, Timeline, Textarea, Button } from '@moonframe/ui';
+    code: `import { PageHeader, Card, CardContent, Timeline, Textarea, Button } from '@moonwitness/moonframe';
 
 export default function MessagesWorkspace() {
   return (
@@ -1000,7 +1000,7 @@ export default function MessagesWorkspace() {
     recommendedSkin: 'moonchrome',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'Select', 'Slider', 'Card', 'CodeBlock', 'Textarea', 'Button'],
-    code: `import { PageHeader, Slider, CodeBlock, Textarea, Button } from '@moonframe/ui';
+    code: `import { PageHeader, Slider, CodeBlock, Textarea, Button } from '@moonwitness/moonframe';
 
 export default function AiChatTemplate() {
   return (
@@ -1022,7 +1022,7 @@ export default function AiChatTemplate() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'DescriptionList', 'Badge'],
-    code: `import { PageHeader, MetricGrid, DataTable } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, DataTable } from '@moonwitness/moonframe';
 
 export default function MoonledgerInvoices() {
   return (
@@ -1049,7 +1049,7 @@ export default function MoonledgerInvoices() {
     recommendedSkin: 'moonquest',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'Stepper', 'MetricGrid', 'Card', 'Progress', 'Timeline'],
-    code: `import { PageHeader, Stepper, MetricGrid, Progress } from '@moonframe/ui';
+    code: `import { PageHeader, Stepper, MetricGrid, Progress } from '@moonwitness/moonframe';
 
 export default function MoonquestHome() {
   return (
@@ -1075,7 +1075,7 @@ export default function MoonquestHome() {
     recommendedSkin: 'moonpunk',
     recommendedMode: 'light',
     componentsUsed: ['Hero', 'MetricGrid', 'Grid', 'Card', 'PricingCard', 'Button', 'Badge'],
-    code: `import { Hero, MetricGrid, Grid, PricingCard, Button, Badge } from '@moonframe/ui';
+    code: `import { Hero, MetricGrid, Grid, PricingCard, Button, Badge } from '@moonwitness/moonframe';
 
 export default function PublicLanding() {
   return (
@@ -1098,16 +1098,16 @@ export default function PublicLanding() {
     recommendedSkin: 'moonraw',
     recommendedMode: 'light',
     componentsUsed: ['AppShell', 'Sidebar', 'Main', 'PageHeader', 'SearchInput', 'Callout', 'CodeBlock', 'DescriptionList'],
-    code: `import { AppShell, Sidebar, Main, PageHeader, Callout, CodeBlock } from '@moonframe/ui';
+    code: `import { AppShell, Sidebar, Main, PageHeader, Callout, CodeBlock } from '@moonwitness/moonframe';
 
 export default function DocumentationLanding() {
   return (
     <AppShell>
       <Sidebar>Docs Index</Sidebar>
       <Main>
-        <PageHeader eyebrow="Documentation" title="Getting Started with @moonframe/ui" />
+        <PageHeader eyebrow="Documentation" title="Getting Started with @moonwitness/moonframe" />
         <Callout title="Node.js 24.22.1 LTS">Zero external runtime dependencies; full Next.js 16 SSR support.</Callout>
-        <CodeBlock language="bash" code="pnpm add @moonframe/ui" />
+        <CodeBlock language="bash" code="pnpm add @moonwitness/moonframe" />
       </Main>
     </AppShell>
   );
@@ -1121,7 +1121,7 @@ export default function DocumentationLanding() {
     recommendedSkin: 'moonhalftone',
     recommendedMode: 'light',
     componentsUsed: ['Card', 'EmptyState', 'Button', 'Badge', 'Kbd'],
-    code: `import { EmptyState, Button, Badge } from '@moonframe/ui';
+    code: `import { EmptyState, Button, Badge } from '@moonwitness/moonframe';
 
 export default function NotFoundTemplate() {
   return (
@@ -1142,7 +1142,7 @@ export default function NotFoundTemplate() {
     recommendedSkin: 'mooncrash',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'Callout', 'Progress', 'DataTable', 'Timeline', 'Badge'],
-    code: `import { PageHeader, Callout, Progress, Timeline } from '@moonframe/ui';
+    code: `import { PageHeader, Callout, Progress, Timeline } from '@moonwitness/moonframe';
 
 export default function MaintenanceTemplate() {
   return (
@@ -1164,7 +1164,7 @@ export default function MaintenanceTemplate() {
     recommendedSkin: 'classic',
     recommendedMode: 'light',
     componentsUsed: ['AuthCard', 'Field', 'Input', 'PasswordField', 'Checkbox', 'Button', 'Callout'],
-    code: `import { AuthCard, Field, Input, PasswordField, Checkbox, Button } from '@moonframe/ui';
+    code: `import { AuthCard, Field, Input, PasswordField, Checkbox, Button } from '@moonwitness/moonframe';
 
 export default function SignInMinimal() {
   return (
@@ -1187,7 +1187,7 @@ export default function SignInMinimal() {
     recommendedSkin: 'moonink',
     recommendedMode: 'light',
     componentsUsed: ['AuthCard', 'OTPInput', 'Callout', 'Button', 'Badge'],
-    code: `import { AuthCard, OTPInput, Callout, Button } from '@moonframe/ui';
+    code: `import { AuthCard, OTPInput, Callout, Button } from '@moonwitness/moonframe';
 
 export default function VerifyEmailTemplate() {
   return (
@@ -1207,7 +1207,7 @@ export default function VerifyEmailTemplate() {
     recommendedSkin: 'moonpunk',
     recommendedMode: 'dark',
     componentsUsed: ['Stepper', 'AuthCard', 'Field', 'Input', 'RadioGroup', 'SkinSelector', 'Button'],
-    code: `import { Stepper, AuthCard, Field, Input, RadioGroup, SkinSelector, Button } from '@moonframe/ui';
+    code: `import { Stepper, AuthCard, Field, Input, RadioGroup, SkinSelector, Button } from '@moonwitness/moonframe';
 
 export default function AuthOnboardingTemplate() {
   return (
@@ -1231,7 +1231,7 @@ export default function AuthOnboardingTemplate() {
     recommendedSkin: 'mooncrash',
     recommendedMode: 'dark',
     componentsUsed: ['Card', 'EmptyState', 'Callout', 'Button', 'Badge', 'CodeBlock'],
-    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonwitness/moonframe';
 
 export default function AccountLockedTemplate() {
   return (
@@ -1252,7 +1252,7 @@ export default function AccountLockedTemplate() {
     recommendedSkin: 'moonraw',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'DataTable', 'SegmentedControl', 'SearchInput', 'Button', 'Badge'],
-    code: `import { PageHeader, DataTable, Button, Badge } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, Button, Badge } from '@moonwitness/moonframe';
 
 export default function RecordsTableTemplate() {
   return (
@@ -1283,7 +1283,7 @@ export default function RecordsTableTemplate() {
     recommendedSkin: 'moonpanel',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'DescriptionList', 'Tabs', 'Card', 'Badge', 'Button', 'ActivityFeed'],
-    code: `import { PageHeader, DescriptionList, Tabs, Button } from '@moonframe/ui';
+    code: `import { PageHeader, DescriptionList, Tabs, Button } from '@moonwitness/moonframe';
 
 export default function ResourceDetailTemplate() {
   return (
@@ -1310,7 +1310,7 @@ export default function ResourceDetailTemplate() {
     recommendedSkin: 'moonglitch',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'DataTable', 'CodeBlock', 'Callout', 'Badge', 'SearchInput'],
-    code: `import { PageHeader, DataTable, CodeBlock } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, CodeBlock } from '@moonwitness/moonframe';
 
 export default function DataAuditTemplate() {
   return (
@@ -1338,7 +1338,7 @@ export default function DataAuditTemplate() {
     recommendedSkin: 'moonchrome',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'MetricGrid', 'BarChart', 'Sparkline', 'Card', 'Badge', 'DataTable'],
-    code: `import { PageHeader, MetricGrid, BarChart } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, BarChart } from '@moonwitness/moonframe';
 
 export default function ExecutiveDashboard() {
   return (
@@ -1358,7 +1358,7 @@ export default function ExecutiveDashboard() {
     recommendedSkin: 'mooncrash',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'Callout', 'Badge', 'Switch', 'Button'],
-    code: `import { PageHeader, MetricGrid, DataTable, Switch } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, DataTable, Switch } from '@moonwitness/moonframe';
 
 export default function OperationsConsole() {
   return (
@@ -1378,7 +1378,7 @@ export default function OperationsConsole() {
     recommendedSkin: 'moonglitch',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'DataTable', 'CodeBlock', 'Callout', 'Badge', 'Button'],
-    code: `import { PageHeader, DataTable, CodeBlock, Button } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, CodeBlock, Button } from '@moonwitness/moonframe';
 
 export default function WebhookInspector() {
   return (
@@ -1397,7 +1397,7 @@ export default function WebhookInspector() {
     recommendedSkin: 'moonraw',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'Progress', 'Button', 'Badge'],
-    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonwitness/moonframe';
 
 export default function QueueMonitor() {
   return (
@@ -1416,7 +1416,7 @@ export default function QueueMonitor() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'ActivityFeed', 'Button', 'Badge'],
-    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonframe/ui';
+    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonwitness/moonframe';
 
 export default function MoonledgerHome() {
   return (
@@ -1435,7 +1435,7 @@ export default function MoonledgerHome() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'DataTable', 'Badge', 'Button', 'Callout', 'SearchInput'],
-    code: `import { PageHeader, DataTable, Button } from '@moonframe/ui';
+    code: `import { PageHeader, DataTable, Button } from '@moonwitness/moonframe';
 
 export default function MoonledgerInventory() {
   return (
@@ -1454,7 +1454,7 @@ export default function MoonledgerInventory() {
     recommendedSkin: 'moonledger',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'SettingsSection', 'Field', 'Input', 'Select', 'Switch', 'Button'],
-    code: `import { PageHeader, SettingsSection, Field, Input, Select, Switch, Button } from '@moonframe/ui';
+    code: `import { PageHeader, SettingsSection, Field, Input, Select, Switch, Button } from '@moonwitness/moonframe';
 
 export default function OrganizationPreferences() {
   return (
@@ -1475,7 +1475,7 @@ export default function OrganizationPreferences() {
     recommendedSkin: 'moonquest',
     recommendedMode: 'dark',
     componentsUsed: ['PageHeader', 'Card', 'Badge', 'Progress', 'Grid', 'Button', 'SkinBrandMark'],
-    code: `import { PageHeader, Card, Badge, Progress, Button, SkinBrandMark } from '@moonframe/ui';
+    code: `import { PageHeader, Card, Badge, Progress, Button, SkinBrandMark } from '@moonwitness/moonframe';
 
 export default function MoonquestInventory() {
   return (
@@ -1494,7 +1494,7 @@ export default function MoonquestInventory() {
     recommendedSkin: 'moonsmash',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'PricingCard', 'SegmentedControl', 'Accordion', 'Badge', 'Grid'],
-    code: `import { PageHeader, PricingCard, Accordion, Grid } from '@moonframe/ui';
+    code: `import { PageHeader, PricingCard, Accordion, Grid } from '@moonwitness/moonframe';
 
 export default function PublicPricing() {
   return (
@@ -1517,7 +1517,7 @@ export default function PublicPricing() {
     recommendedSkin: 'moonriot',
     recommendedMode: 'light',
     componentsUsed: ['PageHeader', 'Field', 'Input', 'Textarea', 'TagInput', 'Button', 'Card'],
-    code: `import { PageHeader, Field, Input, Textarea, Button } from '@moonframe/ui';
+    code: `import { PageHeader, Field, Input, Textarea, Button } from '@moonwitness/moonframe';
 
 export default function PublicContact() {
   return (
@@ -1538,7 +1538,7 @@ export default function PublicContact() {
     recommendedSkin: 'moonzine',
     recommendedMode: 'light',
     componentsUsed: ['AppShell', 'Sidebar', 'Main', 'PageHeader', 'Timeline', 'Callout', 'Badge'],
-    code: `import { AppShell, Sidebar, Main, PageHeader, Timeline } from '@moonframe/ui';
+    code: `import { AppShell, Sidebar, Main, PageHeader, Timeline } from '@moonwitness/moonframe';
 
 export default function LegalContent() {
   return (
@@ -1560,7 +1560,7 @@ export default function LegalContent() {
     recommendedSkin: 'moonriot',
     recommendedMode: 'dark',
     componentsUsed: ['Card', 'EmptyState', 'Callout', 'Button', 'Badge', 'CodeBlock'],
-    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonwitness/moonframe';
 
 export default function ErrorPageTemplate() {
   return (
@@ -1581,7 +1581,7 @@ export default function ErrorPageTemplate() {
     recommendedSkin: 'mooncrash',
     recommendedMode: 'light',
     componentsUsed: ['EmptyState', 'Callout', 'Button', 'Badge', 'Field', 'Textarea'],
-    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonwitness/moonframe';
 
 export default function AccessDeniedTemplate() {
   return (
@@ -1602,7 +1602,7 @@ export default function AccessDeniedTemplate() {
     recommendedSkin: 'moonscrawl',
     recommendedMode: 'light',
     componentsUsed: ['EmptyState', 'Callout', 'Button', 'Badge', 'Progress'],
-    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonwitness/moonframe';
 
 export default function OfflinePageTemplate() {
   return (

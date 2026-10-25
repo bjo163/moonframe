@@ -27,7 +27,7 @@ import {
   skins,
   type SkinId,
   type Variant,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 
 type ComponentSize = 'sm' | 'md' | 'lg';
 

@@ -63,7 +63,7 @@ function getTemplateCode(templateId) {
   return `'use client';
 
 import React from 'react';
-import { PageHeader, Card, CardContent, Button } from '@moonframe/ui';
+import { PageHeader, Card, CardContent, Button } from '@moonwitness/moonframe';
 
 export default function ${cleanName}Page() {
   return (
@@ -76,7 +76,7 @@ export default function ${cleanName}Page() {
       />
       <Card>
         <CardContent style={{ padding: '1.5rem' }}>
-          <p>Ready to customize with @moonframe/ui components.</p>
+          <p>Ready to customize with @moonwitness/moonframe components.</p>
         </CardContent>
       </Card>
     </div>
@@ -160,8 +160,8 @@ async function main() {
 
       // Generate Starter layout.tsx
       const layoutContent = `import type { ReactNode } from 'react';
-import '@moonframe/ui/styles.css';
-import { ThemeProvider, ThemeScript, ToastProvider } from '@moonframe/ui';
+import '@moonwitness/moonframe/styles.css';
+import { ThemeProvider, ThemeScript, ToastProvider } from '@moonwitness/moonframe';
 
 export default function ${starter.id.split('-').map(s => s[0].toUpperCase() + s.slice(1)).join('')}Layout({
   children,

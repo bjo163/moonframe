@@ -2,7 +2,7 @@
 
 import React, { use } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { ThemeProvider, ToastProvider, skins, type SkinId, type Mode } from '@moonframe/ui';
+import { ThemeProvider, ToastProvider, skins, type SkinId, type Mode } from '@moonwitness/moonframe';
 import { getTemplateById } from '../../../../lib/catalog';
 import { TemplateRenderer } from '../../../../templates';
 

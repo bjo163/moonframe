@@ -1,6 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { PageHeader } from '@moonframe/ui';
+import { PageHeader } from '@moonwitness/moonframe';
 import { STARTER_CATALOG, TEMPLATE_CATALOG, getStarterById } from '../../../../lib/catalog';
 import { StarterWorkspace } from '../../../../components/site/StarterWorkspace';
 

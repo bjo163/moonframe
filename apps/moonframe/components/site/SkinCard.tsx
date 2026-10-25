@@ -14,7 +14,7 @@ import {
   Badge,
   Progress,
   useTheme,
-} from '@moonframe/ui';
+} from '@moonwitness/moonframe';
 import type { SkinCatalogEntry } from '../../lib/catalog';
 
 export function SkinCard({
