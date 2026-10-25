@@ -616,6 +616,142 @@ if(process.argv.includes('--self-test')){
    ' malformed query/filter/selection/export cases, cycle and coverage drift)');
 }
 
+
+// Auth & Security UI specification checks only. NOT authentication or a browser/IdP test.
+const authFlows=read('contracts/moonframe-auth-flow-contract-v0.1.json');
+const authProviders=read('contracts/moonframe-auth-provider-capability-matrix-v0.1.json');
+const authThreats=read('contracts/moonframe-auth-threat-model-v0.1.json');
+const authCoverage=read('contracts/moonframe-auth-skin-coverage-v0.1.json');
+const authEventSchema=read('schemas/moonframe-auth-safe-event.schema.json');
+const authFixtures=read('contracts/fixtures/auth-security-v0.1.json');
+const declaredFlowIds=authFlows.flows.map(x=>x.id);
+const declaredStates=authFlows.states.map(x=>x.id);
+const declaredActions=authFlows.events.map(x=>x.id);
+const providerIds=authProviders.providers.map(x=>x.id);
+const featureIds=authProviders.features.map(x=>x.id);
+const authBlockIds=new Set(concreteBlocks.filter(x=>x.category==='authentication').map(x=>x.id));
+const authPageIds=new Set(pageItems.filter(x=>x.category==='authentication').map(x=>x.id));
+function authCoverageProblems(flowModel,providers,threatModel,visual){
+ const e=[];
+ const flowIds=flowModel.flows.map(x=>x.id);
+ const statusIds=flowModel.states.map(x=>x.id);
+ const actionIds=flowModel.events.map(x=>x.id);
+ const knownFlows=new Set(flowIds);
+ const knownStates=new Set(statusIds);
+ if(!uniq(flowIds)||flowIds.length<50)e.push('missing or duplicate flow IDs');
+ if(!uniq(statusIds)||statusIds.length<15)e.push('missing or duplicate auth states');
+ if(!uniq(actionIds)||actionIds.length<10)e.push('missing or duplicate auth events');
+ if(!sameSet(flowModel.flowGroups.map(x=>x.id),['entry','registration','recovery','mfa-passkey','account','organization','onboarding']))
+  e.push('auth flow groups incomplete');
+ for(const row of flowModel.flows){
+  if(!authBlockIds.has(row.primaryBlockRef)||!authPageIds.has(row.primaryPageRef))e.push('unknown auth block/page ref '+row.id);
+  if(!knownStates.has(row.initialState)||row.applicableStates.some(x=>!knownStates.has(x))||
+     row.exceptionStates.some(x=>!knownStates.has(x)))e.push('unknown auth state '+row.id);
+  if(row.readiness!=='specified-provisional-not-implemented'||
+     row.statusEvidence.componentCode!==null||row.statusEvidence.providerIntegration!==null||
+     row.statusEvidence.browserTest!==null||row.statusEvidence.manualATReview!==null)
+    e.push('false implementation/evidence claim '+row.id);
+  if(!isString(row.requiredCapability)||!isString(row.providerTrust)||!row.providerTrust.includes('No success'))
+    e.push('missing trusted provider success precondition '+row.id);
+ }
+ for(const tr of flowModel.transitions){
+  if(!knownStates.has(tr.from)||!knownStates.has(tr.to)||!isString(tr.event))
+    e.push('transition missing state '+tr.event);
+  if(tr.to==='success-confirmed'&&!tr.guard.includes('trusted integration'))
+    e.push('false success transition guard');
+ }
+ if(providers.status!=='research-only-not-installed'||providers.providers.some(x=>x.installed!==false||x.implementation!=='not-implemented'))
+  e.push('provider incorrectly marked installed');
+ const providersSet=new Set(providers.providers.map(x=>x.id));
+ const featureSet=new Set(providers.features.map(x=>x.id));
+ if(!uniq([...providersSet])||!uniq([...featureSet])||providers.providers.length!==6||providers.features.length!==14)
+  e.push('provider/feature ID drift');
+ const cells=providers.cells.map(x=>x.providerId+'::'+x.featureId);
+ const expected=providers.providers.flatMap(p=>providers.features.map(f=>p.id+'::'+f.id));
+ if(!sameSet(cells,expected))e.push('provider matrix incomplete or duplicate');
+ for(const c of providers.cells){
+  if(!providers.statusVocabulary.includes(c.status)||!/^https:\/\/[^ ]+/.test(c.sourceUrl)||
+     c.moonframeIntegration!=='none'||c.licensePlanVerified!==false)
+    e.push('unverified/unsupported provider feature claimed usable '+c.providerId+'/'+c.featureId);
+ }
+ if(!uniq(threatModel.threats.map(x=>x.id))||threatModel.threats.length<18)
+  e.push('threat model missing/duplicate');
+ if(threatModel.status!=='threat-model-proposed-not-tested'||
+    Object.values(threatModel.securityClaims).some(x=>x!==false))
+  e.push('false auth security assurance claim');
+ for(const x of threatModel.threats)
+  if(!isString(x.owner)||!isString(x.backendControl)||!isString(x.acceptanceTest)||
+     x.reviewStatus!=='specified-provisional-not-tested')e.push('threat lacks test/boundary '+x.id);
+ if(!sameSet(visual.canonicalSkinIds,ids)||!sameSet(visual.modes,['light','dark'])||
+    visual.systemExtraMode!==false||visual.scenes.length!==8)
+  e.push('auth appearance/scene canonical drift');
+ const expectedCells=ids.flatMap(id=>['light','dark'].flatMap(mode=>visual.scenes.map(s=>id+'::'+mode+'::'+s.id)));
+ const actualCells=visual.cells.map(x=>x.skinId+'::'+x.mode+'::'+x.specimenId);
+ if(!sameSet(expectedCells,actualCells)||visual.expectedCells!==expectedCells.length)
+  e.push('auth appearance cells missing or duplicate');
+ if(visual.counts.passed!==0||visual.counts.reviewed!==0||
+    visual.cells.some(x=>x.status!=='not-rendered'||x.screenshot!==null||
+       x.reviewer!==null||x.manualATReview!==null))
+  e.push('false auth appearance review result');
+ for(const scene of visual.scenes)if(!authPageIds.has(scene.templateId))
+  e.push('auth scene missing template ref '+scene.id);
+ return e;
+}
+for(const issue of authCoverageProblems(authFlows,authProviders,authThreats,authCoverage))
+ errors.push('Auth contract: '+issue);
+fail(auth.flowModelRef==='moonframe-auth-flow-contract-v0.1.json'&&
+     auth.providerCapabilityRef==='moonframe-auth-provider-capability-matrix-v0.1.json'&&
+     auth.threatModelRef==='moonframe-auth-threat-model-v0.1.json'&&
+     auth.validatedFixtureRef==='fixtures/auth-security-v0.1.json'&&
+     auth.providerIntegrationStatus==='none-installed'&&
+     auth.implementationStatus==='not-implemented',
+     'Auth canonical catalog authority/runtime boundary drift');
+fail(authEventSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     authEventSchema.properties?.trustedResult&&authEventSchema.properties?.presentationState,
+     'Auth safe-event Draft-2020-12 schema source invalid or missing');
+function authSafeEventProblems(v) {
+ const e=[];
+ if(!v||typeof v!=='object')return ['invalid shared event object'];
+ const permitted=new Set(['schemaVersion','flowId','actionId','interactionId','presentationState',
+   'trustedResult','safeReferenceId','safeErrorCode','retryAfterSeconds','destinationId']);
+ const keys=Object.keys(v);
+ if(keys.some(k=>!permitted.has(k)))e.push('forbidden sensitive/unknown key');
+ if(v.schemaVersion!==1||!declaredFlowIds.includes(v.flowId))e.push('unknown flow/schema version');
+ if(!declaredActions.includes(v.actionId))e.push('unknown event action');
+ if(!declaredStates.includes(v.presentationState))e.push('unknown state');
+ if(!isString(v.interactionId)||v.interactionId.length>100)e.push('invalid correlation ID');
+ if(v.presentationState==='success-confirmed'&&v.trustedResult!==true)e.push('untrusted success');
+ if(typeof v.trustedResult!=='boolean')e.push('trustedResult invalid');
+ if(!(v.safeReferenceId===null||
+      (typeof v.safeReferenceId==='string'&&/^[A-Za-z0-9._:-]{0,100}$/.test(v.safeReferenceId))))
+   e.push('unsafe reference');
+ if('destinationId' in v&&(!/^[a-z][a-z0-9-]*$/.test(v.destinationId)))e.push('unsafe destination');
+ if('retryAfterSeconds' in v&&(!Number.isInteger(v.retryAfterSeconds)||v.retryAfterSeconds<0))
+   e.push('unsafe retry duration');
+ return e;
+}
+for(const f of authFixtures.valid)
+  for(const err of authSafeEventProblems(f.sample))errors.push('Valid auth fixture '+f.id+' failed: '+err);
+fail(authFixtures.invalid.length>=10&&authFixtures.valid.length>=2,
+     'Missing auth positive/negative fixture coverage');
+if(process.argv.includes('--self-test')){
+ for(const f of authFixtures.invalid)
+  assert(authSafeEventProblems(f.sample).length>0,'Invalid auth fixture passed: '+f.id);
+ const badFlow=structuredClone(authFlows);
+ badFlow.flows[0].primaryBlockRef='block-missing-auth';
+ assert(authCoverageProblems(badFlow,authProviders,authThreats,authCoverage).some(x=>x.includes('block/page')));
+ const badProof=structuredClone(authProviders);
+ badProof.cells[0].moonframeIntegration='installed';
+ assert(authCoverageProblems(authFlows,badProof,authThreats,authCoverage).some(x=>x.includes('provider feature')));
+ const badVisual=structuredClone(authCoverage);
+ badVisual.cells[0].status='pass';
+ assert(authCoverageProblems(authFlows,authProviders,authThreats,badVisual).some(x=>x.includes('appearance review')));
+ const badGate=structuredClone(authFlows);
+ badGate.transitions.find(x=>x.to==='success-confirmed').guard='click is success';
+ assert(authCoverageProblems(badGate,authProviders,authThreats,authCoverage).some(x=>x.includes('false success')));
+ console.log('PASS: auth contract negatives ('+authFixtures.invalid.length+' synthetic invalid safe events; missing refs, provider claims, visual evidence, trust gate)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
