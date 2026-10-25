@@ -59,3 +59,7 @@ The [component testing strategy](component-testing-strategy.md) and [API/state/k
 ## Advanced Data Workspace QA extension (2026-10-25)
 
 [Data Workspace QA](data-workspace-validation-plan.md) covers 31 specified-not-implemented capabilities, 8 domain-neutral presets, query/selection/export fixtures, 180 planned data workspace appearance cells, keyboard/AT and CSV formula-injection threat model. Existing static contract CI is not a browser/SSR/AT/Excel save-reopen test. `not-rendered` and `not-reviewed` states are preserved until actual evidence.
+
+## Auth & Security UI QA extension (2026-10-25)
+
+[Auth QA plan](auth-security-ui-validation-plan.md), [flow states](../../contracts/moonframe-auth-flow-contract-v0.1.json), [6×14 provider research matrix](../../contracts/moonframe-auth-provider-capability-matrix-v0.1.json) and [20-threat register](../../contracts/moonframe-auth-threat-model-v0.1.json) define future security/UX gates. Node validation with ten synthetic negative UI event fixtures is **not** a working provider/SSO/WebAuthn/session/permission test. [240 auth specimens](../../contracts/moonframe-auth-skin-coverage-v0.1.json) remain `not-rendered`; 105 global skin pair reviews remain `not-reviewed`. No WCAG 2.2 AA or security certification inferred.

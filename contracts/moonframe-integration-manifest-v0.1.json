@@ -294,5 +294,12 @@
       "fallback": "Native/shared base presentation without optional service or fail safely",
       "status": "specified-not-implemented"
     }
-  ]
+  ],
+  "authSecurityResearch": {
+    "status": "research-only-not-installed",
+    "capabilityMatrix": "moonframe-auth-provider-capability-matrix-v0.1.json",
+    "authFlowContract": "moonframe-auth-flow-contract-v0.1.json",
+    "adr": "docs/adr/0005-auth-provider-neutral-ui-integration.md",
+    "note": "No provider, React SDK, protocol or session implementation selected/installed; vendor capabilities must be verified at pinned version and account tier."
+  }
 }

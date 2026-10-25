@@ -43,6 +43,21 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Auth & Security UI Integration (2026-10-25)
+
+- [Auth/Security UI repository audit](docs/audit/auth-security-ui-audit.md)
+- [Current security standards and provider research](docs/research/auth-security-ui-research-log.md)
+- [Expanded canonical Auth & Security UI Bible](docs/premium/auth-ui-suite.md)
+- [62 flow contracts, 20 states and 26 guarded transitions](contracts/moonframe-auth-flow-contract-v0.1.json)
+- [Six providers × 14 documented feature statuses](contracts/moonframe-auth-provider-capability-matrix-v0.1.json)
+- [20 threat-informed acceptance cases](contracts/moonframe-auth-threat-model-v0.1.json)
+- [240 planned Light/Dark auth skin specimens](contracts/moonframe-auth-skin-coverage-v0.1.json)
+- [Safe UI event JSON Schema](schemas/moonframe-auth-safe-event.schema.json) and [synthetic fixtures](contracts/fixtures/auth-security-v0.1.json)
+- [ADR-0005 provider-neutral integration](docs/adr/0005-auth-provider-neutral-ui-integration.md)
+- [Auth QA and acceptance strategy](docs/qa/auth-security-ui-validation-plan.md)
+- [14 atomic tasks for later implementation](docs/backlog/auth-security-ui-issues.md)
+
+
 ### Advanced Data Workspace (2026-10-25)
 
 - [Repository audit and P0–P3 findings](docs/audit/advanced-data-workspace-audit.md)

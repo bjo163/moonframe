@@ -56,3 +56,7 @@ Acceptance for any **future release** additionally requires resolved/contrast-re
 ## 7. Conflicts and open architecture decisions
 
 A single package at first is preferable to a speculative monorepo until consumer use and distribution requirements justify split packages. `@moonframe/ui` remains a working placeholder, not verified for npm rights. Provider comparison, design token resolver/toolchain, table engine/version, optional auth adapters, licensing and font/artwork rights remain separate decisions. Never install a vendor for its popularity alone or attribute Moonframe to shadcn.
+
+### Authentication product boundary refinement — 2026-10-25
+
+The **existing** [Auth UI Bible](auth-ui-suite.md) now owns security-flow integration/trust/normalized statuses. The existing [auth catalog](../../contracts/moonframe-auth-ui-catalog-v0.1.json), [block](../../contracts/moonframe-block-manifest-v0.1.json) and [page](../../contracts/moonframe-page-template-manifest-v0.1.json) manifests still own their separate 26/17 IDs. [Flow maps](../../contracts/moonframe-auth-flow-contract-v0.1.json) and [provider matrix](../../contracts/moonframe-auth-provider-capability-matrix-v0.1.json) are referenced contracts, not new blocks or runtime SDKs. UI never authenticates, enforces policy, manages sessions, implements OAuth/OIDC/WebAuthn or stores user credentials.
