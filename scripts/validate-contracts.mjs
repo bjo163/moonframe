@@ -752,6 +752,131 @@ if(process.argv.includes('--self-test')){
  console.log('PASS: auth contract negatives ('+authFixtures.invalid.length+' synthetic invalid safe events; missing refs, provider claims, visual evidence, trust gate)');
 }
 
+
+// Original Asset & Brand: metadata and proposed-brief integrity only.
+// A green result does NOT license art, sanitize binary SVG, verify checksums,
+// check asset file existence, run a generic JSON Schema engine, or prove originality.
+const brandBriefs=read('contracts/moonframe-skin-asset-briefs-v0.1.json');
+const assetRecordSchema=read('schemas/moonframe-asset-record.schema.json');
+const assetFixtures=read('contracts/fixtures/original-asset-v0.1.json');
+function brandAndAssetProblems(manifest,briefs){
+ const e=[];
+ const briefIds=briefs.briefs.map(x=>x.skinId);
+ if(!sameSet(briefIds,ids))e.push('brand brief skin IDs missing/duplicate');
+ if(briefs.ownerApproved!==false||briefs.status!=='briefs-specified-no-art-produced')
+  e.push('brand hierarchy prematurely accepted or art claimed produced');
+ if(briefs.brandModel!=='single-umbrella-fifteen-endorsed-editions-proposed')
+  e.push('brand hierarchy unresolved unexpectedly');
+ for(const b of briefs.briefs){
+   if(!ids.includes(b.skinId))e.push('unknown skin in asset brief '+b.skinId);
+   if(b.visualSpecRef!=='moonframe-skin-specifications-v1.0.json#'+b.skinId ||
+      b.grammarRef!=='moonframe-skin-grammar-contract-v1.0.json#'+b.skinId)
+       e.push('broken brief canon ref '+b.skinId);
+   if(!isString(b.signatureMotif)||!isString(b.patternAndTexture?.artDirection)||
+      !Array.isArray(b.minimumRequired)||b.minimumRequired.length<3||
+      !Array.isArray(b.prohibitedOverlap?.nearestSkins)||
+      !isString(b.fallback)||!isString(b.typography?.licenses)||
+      !Array.isArray(b.accessibilityAndPerformanceRisks)||
+      b.accessibilityAndPerformanceRisks.length<2)
+       e.push('incomplete individual skin asset brief '+b.skinId);
+   if(b.prohibitedOverlap.nearestSkins.some(x=>!ids.includes(x)||x===b.skinId))
+       e.push('unknown/invalid anti-overlap neighbor '+b.skinId);
+   if(b.status!=='specified-not-implemented'||b.implementationStatus!=='not-produced'||
+      b.review.accepted!==false||b.review.reviewer!==null||
+      b.review.artifactHash!==null||b.review.sourceFile!==null)
+       e.push('fabricated visual/provenance review '+b.skinId);
+ }
+ if(manifest.brandHierarchy?.status!=='proposed-pending-owner-approval'||
+   manifest.categoriesAreCandidatePoolNotRequiredPerSkin!==true||
+   manifest.licenseGovernance?.repoCodeLicense!=='not-selected-no-LICENSE-present')
+   e.push('brand/license approval claimed without owner decision');
+ if(manifest.plannedPerSkin.length!==15||
+    !sameSet(manifest.plannedPerSkin.map(x=>x.skinId),ids)||
+    manifest.plannedPerSkin.some(x=>x.assets.length!==0||x.status!=='not-produced')||
+    manifest.approvedAssets?.length!==0)
+   e.push('asset inventory silently claims produced/approved art');
+ if(manifest.approvalWorkflow?.approvalsCompleted.length!==0||
+    manifest.approvalWorkflow?.evidenceCount!==0)
+   e.push('approval evidence fabricated');
+ if(manifest.recordSchemaRef!=='../schemas/moonframe-asset-record.schema.json'||
+    manifest.designBriefRef!=='moonframe-skin-asset-briefs-v0.1.json')
+   e.push('asset schema/brief manifest link drift');
+ return e;
+}
+for(const issue of brandAndAssetProblems(assets,brandBriefs))
+ errors.push('Asset/brand: '+issue);
+fail(assetRecordSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+ assetRecordSchema.properties?.source&&assetRecordSchema.properties?.license&&
+ assetRecordSchema.properties?.status&&
+ Array.isArray(assetRecordSchema.allOf)&&assetRecordSchema.allOf.length>=5,
+ 'Proposed conditional Draft 2020-12 asset metadata schema invalid/missing');
+// Tiny semantic proof for example-only/planned records; not a full schema engine.
+function assetRecordIssues(x){
+ const e=[];
+ if(!x||typeof x!=='object')return ['missing asset record'];
+ const needed=['schemaVersion','recordVersion','assetId','assetType','brandScope',
+  'skinId','purpose','status','provenanceType','license','source','exports',
+  'accessibility','review','owner','fallbackAssetId'];
+ for(const k of needed)if(!(k in x))e.push('missing field '+k);
+ if(x.schemaVersion!=='0.1.0'||typeof x.assetId!=='string'||
+   !/^mf\.(brand|skin|icon|illustration|pattern|preview|font|sound)\.[a-z0-9]+(?:[.-][a-z0-9]+)*$/.test(x.assetId))
+     e.push('invalid semantic asset ID');
+ if(x.skinId!==null&&!ids.includes(x.skinId))e.push('unknown skin ID');
+ if(!assetRecordSchema.properties?.assetType?.enum?.includes(x.assetType))e.push('invalid asset type');
+ if(!assetRecordSchema.properties?.status?.enum?.includes(x.status))e.push('invalid lifecycle status');
+ if(!assetRecordSchema.properties?.accessibility?.properties?.role?.enum?.includes(x.accessibility?.role))
+     e.push('invalid accessibility role');
+ const planned=['planned','example-only'].includes(x.status);
+ if(planned){
+  if(x.source!==null||!Array.isArray(x.exports)||x.exports.length!==0)
+    e.push('planned record cannot claim source or exports');
+  if(x.license?.distributionApproved!==false||
+    x.review?.rightsCleared!==false||x.review?.visualAccepted!==false||
+    x.review?.approvedBy!==null||x.review?.approvedAt!==null)
+    e.push('planned record cannot claim rights or visual review');
+ }else{
+  if(!x.source||typeof x.source.path!=='string'||
+    x.source.path.startsWith('/')||x.source.path.split('/').includes('..')||
+    !/^[0-9a-f]{64}$/.test(x.source.sha256||''))
+     e.push('nonplanned source missing or unsafe path/hash');
+ }
+ if(['accepted','published'].includes(x.status)){
+  if(x.license?.distributionApproved!==true||!isString(x.license?.licenseId)||
+    !isString(x.license?.evidenceUrl)||!isString(x.license?.reviewer)||
+    x.review?.rightsCleared!==true||x.review?.visualAccepted!==true||
+    !isString(x.review?.approvedBy)||!isString(x.review?.approvedAt)||
+    x.review?.securityReviewPassed!==true||x.review?.sourceIntegrityPassed!==true||
+    !Array.isArray(x.review?.evidence)||x.review.evidence.length===0||
+    !Array.isArray(x.exports)||x.exports.length===0)
+      e.push('published without real rights, sources and evidence');
+ }
+ return e;
+}
+fail(assetFixtures.status==='synthetic-examples-only'&&assetFixtures.valid.length>0&&
+ assetFixtures.invalid.length>=10,'Asset metadata fixtures missing');
+for(const v of assetFixtures.valid)
+ for(const err of assetRecordIssues(v.sample))errors.push('Valid asset fixture '+v.id+' failed: '+err);
+if(process.argv.includes('--self-test')){
+ for(const v of assetFixtures.invalid){
+  const err=assetRecordIssues(v.sample);
+  assert(err.length>0,'Invalid asset record unexpectedly accepted '+v.id);
+ }
+ const fake=structuredClone(brandBriefs);
+ fake.briefs[0].review.accepted=true;
+ assert(brandAndAssetProblems(assets,fake).some(x=>x.includes('fabricated visual')));
+ const wrong=structuredClone(brandBriefs);
+ wrong.briefs.pop();
+ assert(brandAndAssetProblems(assets,wrong).some(x=>x.includes('missing/duplicate')));
+ const fakeAssets=structuredClone(assets);
+ fakeAssets.approvedAssets.push({assetId:'fake'});
+ assert(brandAndAssetProblems(fakeAssets,brandBriefs).some(x=>x.includes('claims produced')));
+ assert(sfx.producedAssets.length===0&&sfx.defaultEnabled===false&&
+  sfx.autoplayOnLoad===false&&sfx.requiresExplicitConsent===true,
+  'Audio cannot be generated/auto-enabled by specification task');
+ console.log('PASS: brand/asset fixture negatives ('+assetFixtures.invalid.length+
+  ' invalid metadata and false review/skin/inventory claims; SFX safe defaults)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
