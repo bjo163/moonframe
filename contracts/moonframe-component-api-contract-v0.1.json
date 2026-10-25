@@ -85,6 +85,14 @@
           "token value definitions",
           "skin visual grammar"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Theme control bridge only, canonical runtime owned by theme contract",
+        "proposedPropScope": "preferences,defaults,children",
+        "behaviorAcceptance": "No local component keyboard model; reflect effective root attrs",
+        "openDesignDecision": "SSR and persistence adapter decision issue #1/#5",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -1055,6 +1063,14 @@
         "mustNotOwn": [
           "navigation href unless semantic Link"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Native button; default type=button; click intent once",
+        "proposedPropScope": "type,disabled,loading,variant,tonality,ref",
+        "behaviorAcceptance": "Enter/Space activation; no nested button; submit only explicit type",
+        "openDesignDecision": "Default variants/React ButtonHTMLAttributes contract requires type checking",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -1134,7 +1150,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Button semantics with required accessible name",
+        "proposedPropScope": "aria-label/labelledBy,type,loading,ref",
+        "behaviorAcceptance": "No unlabeled glyph-only action; focus visible at 30 appearances",
+        "openDesignDecision": "Icon prop versus children and tooltip combination",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "link",
@@ -1210,7 +1234,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native anchor navigation only when href is present",
+        "proposedPropScope": "href,target,rel,aria-current",
+        "behaviorAcceptance": "Enter follows URL; Space must not act like button; avoid disabled boolean with fake anchor",
+        "openDesignDecision": "Router link composition contract",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "button-group",
@@ -1437,7 +1469,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Tab focus versus active value explicit",
+        "proposedPropScope": "value/defaultValue,onValueChange,orientation,activationMode",
+        "behaviorAcceptance": "Arrows focus; Enter/Space activation manual by proposal",
+        "openDesignDecision": "Automatic activation with async panels and Home/End",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "segmented-control",
@@ -1589,7 +1629,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Links or buttons per navigation/page intent",
+        "proposedPropScope": "page,onPageChange,cursor,onCursorChange",
+        "behaviorAcceptance": "Current-page aria-current; no fabricated count for cursor",
+        "openDesignDecision": "Numeric versus cursor discriminated API",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "navigation-menu",
@@ -1820,6 +1868,14 @@
           "routing/data fetch"
         ],
         "legacyNamespaceException": "family:app-shell exists in block manifest"
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Layout slots with semantic landmarks and consistent nav focus",
+        "proposedPropScope": "header,nav,main,aside,footer,children",
+        "behaviorAcceptance": "Mobile collapse must preserve reading/focus order",
+        "openDesignDecision": "Legacy family:app-shell namespace remains distinct",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -2124,7 +2180,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Action menu; not generic nav landmark",
+        "proposedPropScope": "open/defaultOpen,onOpenChange,items",
+        "behaviorAcceptance": "Up/Down, Home/End, typeahead, Escape; submenu semantics",
+        "openDesignDecision": "Trigger/Item composition, action versus link item",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "context-menu",
@@ -2203,7 +2267,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Context action popup, pointer and keyboard entry",
+        "proposedPropScope": "open/onOpenChange,items,anchor",
+        "behaviorAcceptance": "Right-click or Shift+F10/Menu key; arrows and Escape",
+        "openDesignDecision": "Long-press touch and collision positions",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "menubar",
@@ -2281,7 +2353,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Persistent composite command menu distinct from plain navigation",
+        "proposedPropScope": "items,orientation",
+        "behaviorAcceptance": "ArrowLeft/Right top level, Up/Down submenu, escape",
+        "openDesignDecision": "RTL arrow direction, nested menus and focus loops",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "command-palette",
@@ -2358,7 +2438,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Search + action chooser; no global unconsented shortcuts",
+        "proposedPropScope": "open,onOpenChange,query,onQueryChange,onCommand",
+        "behaviorAcceptance": "Arrow selection, Enter action once, Escape close",
+        "openDesignDecision": "Virtualized async filtering and shortcut conflict",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "kbd",
@@ -2523,6 +2611,14 @@
         "mustNotOwn": [
           "error text ownership"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Native text input plus label/help/error relationships from Field",
+        "proposedPropScope": "value/defaultValue,onChange(event),name,required,readOnly,disabled",
+        "behaviorAcceptance": "Text selection/caret remains native; Enter submits per form",
+        "openDesignDecision": "React18/19 ref prop type",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -2604,7 +2700,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native multi-line edit; no implicit Enter form submit",
+        "proposedPropScope": "value/defaultValue,onChange(event),rows,resizePolicy",
+        "behaviorAcceptance": "Keyboard text editing preserved; no textarea-in-button",
+        "openDesignDecision": "Auto-resize requirement and scroll height",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "label",
@@ -2684,7 +2788,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Use HTML label or accessible group name",
+        "proposedPropScope": "htmlFor,children",
+        "behaviorAcceptance": "Click label focuses corresponding native field",
+        "openDesignDecision": "Composition with custom non-native controls",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "field",
@@ -2777,6 +2889,14 @@
           "form submission",
           "validation backend"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Associates exactly one control label, help and validation messages",
+        "proposedPropScope": "id,label,description,error,required,invalid",
+        "behaviorAcceptance": "Programmatic control relation; focus error first after invalid submission",
+        "openDesignDecision": "Nested Field and multiple control grouping",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -2947,6 +3067,14 @@
           "field id generation",
           "value changes"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Owns error/help message node only, Field owns association",
+        "proposedPropScope": "message,politeness",
+        "behaviorAcceptance": "Announce new error at appropriate time without duplicate live-region output",
+        "openDesignDecision": "Dynamic validation timing",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -3025,7 +3153,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native checkbox preferred with indeterminate separate state",
+        "proposedPropScope": "checked/defaultChecked,onCheckedChange,name,value",
+        "behaviorAcceptance": "Space toggles; required and reset native where feasible",
+        "openDesignDecision": "Tri-state API and form serialization",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "radio-group",
@@ -3103,7 +3239,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native fieldset+radio default",
+        "proposedPropScope": "value/defaultValue,onValueChange,name,required",
+        "behaviorAcceptance": "Arrows select; Tab enters group; visible focus/legend",
+        "openDesignDecision": "RTL orientation and wrap behavior",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "switch",
@@ -3180,7 +3324,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Switch semantically distinct from generic checkbox and Toggle",
+        "proposedPropScope": "checked/defaultChecked,onCheckedChange,name",
+        "behaviorAcceptance": "Space toggle; label announced; disabled no trigger",
+        "openDesignDecision": "Enter handling varies primitive",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "select",
@@ -3262,7 +3414,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Distinguish custom select popup from native select",
+        "proposedPropScope": "value/defaultValue,onValueChange,open,defaultOpen,onOpenChange,name",
+        "behaviorAcceptance": "Arrows/typeahead/Enter/Escape; text remains readable",
+        "openDesignDecision": "Native form participation, default invalid null semantics",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "combobox",
@@ -3347,7 +3507,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Editable input with suggestions and selected logical value separate",
+        "proposedPropScope": "inputValue/onInputValueChange,value/onValueChange,items,status",
+        "behaviorAcceptance": "Input retains focus; arrow navigation and escape; stale results never commit silently",
+        "openDesignDecision": "Async cancellation, free text vs strict select and popup kind",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "search-input",
@@ -3588,7 +3756,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Accessible value, min/max/step and orientation",
+        "proposedPropScope": "value/defaultValue,onValueChange,min,max,step,name",
+        "behaviorAcceptance": "Arrows/Home/End; screen reader value text",
+        "openDesignDecision": "RTL horizontal arrow semantics and form participation",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "validation-summary",
@@ -3830,7 +4006,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Multiple selected stable identifiers; selection independent of query",
+        "proposedPropScope": "values/defaultValues,onValuesChange,onRemove",
+        "behaviorAcceptance": "Space/Enter selection per listbox mode; chips removable by keyboard",
+        "openDesignDecision": "Array versus Set public shape; forms serialization",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "date-picker",
@@ -3911,7 +4095,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Date selection with locale/timezone ownership explicit",
+        "proposedPropScope": "value,defaultValue,onValueChange,locale,min,max",
+        "behaviorAcceptance": "Calendar grid arrows/Page; HTML date native fallback possible",
+        "openDesignDecision": "Date object/type/timezone and accessibility provider",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "date-range-picker",
@@ -3992,7 +4184,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Two endpoints and constraints; no fabricated timezone",
+        "proposedPropScope": "start,end,onValueChange,locale,disabledDates",
+        "behaviorAcceptance": "Calendar grid and range focus semantics",
+        "openDesignDecision": "Date type/discriminated invalid ranges",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "currency-input",
@@ -4150,7 +4350,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native file input, no upload request itself",
+        "proposedPropScope": "name,multiple,accept,onFilesSelected",
+        "behaviorAcceptance": "Keyboard invokes native chooser; duplicate selection handling",
+        "openDesignDecision": "Reset and drag/drop security",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "otpinput",
@@ -4390,7 +4598,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Modal focus containment, initial focus, inert background and restore",
+        "proposedPropScope": "open/defaultOpen/onOpenChange,children,modal",
+        "behaviorAcceptance": "Tab cycle; Escape policy and outside click distinguish reasons",
+        "openDesignDecision": "Portal/scroll-lock nested dialog and event reasons",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "alert-dialog",
@@ -4470,7 +4686,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Confirmation alert dialog with safe initial focus",
+        "proposedPropScope": "open/defaultOpen,onOpenChange,onConfirmIntent,pending",
+        "behaviorAcceptance": "No accidental destructive Enter on open; busy confirm app-controlled",
+        "openDesignDecision": "Escape cancellation and async result before dismiss",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "drawer",
@@ -4550,7 +4774,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Dialog-like focus/interaction when modal; sheet presentation changes geometry only",
+        "proposedPropScope": "open/defaultOpen,onOpenChange,modal",
+        "behaviorAcceptance": "Modal requires same focus/inert semantics as dialog; nonmodal different test",
+        "openDesignDecision": "Responsive modal versus nonmodal contract",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "popover",
@@ -4627,7 +4859,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Interactive popup without tooltip semantics",
+        "proposedPropScope": "open/defaultOpen,onOpenChange,modal",
+        "behaviorAcceptance": "Escape/return focus; Tab through interactive content if nonmodal",
+        "openDesignDecision": "Outside click/focus dismissal reason and portal layering",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "tooltip",
@@ -4708,6 +4948,14 @@
           "interactive children",
           "focus containment"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Informational, non-focusable popup",
+        "proposedPropScope": "content,delay,disabled",
+        "behaviorAcceptance": "Trigger hover/focus; Escape closes; interactive content forbidden",
+        "openDesignDecision": "Hover delay/ touch fallback, APG tooltip still draft",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -4784,7 +5032,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Nonmodal feedback, avoids duplicate live announcements",
+        "proposedPropScope": "status,message,duration,onDismissIntent",
+        "behaviorAcceptance": "No focus theft, user can pause/read/dismiss",
+        "openDesignDecision": "Alert versus status urgency, queue and timers",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "alert",
@@ -5003,7 +5259,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native progress/state role, no motion-only progress",
+        "proposedPropScope": "value,max,label",
+        "behaviorAcceptance": "Announce determinate progress updates; indeterminate no invented number",
+        "openDesignDecision": "Dynamic announcement throttle",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "spinner",
@@ -5597,7 +5861,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Disclosure headers as native buttons",
+        "proposedPropScope": "value/defaultValue,onValueChange,multiple",
+        "behaviorAcceptance": "Enter/Space expand; optional Up/Down consistent with APG",
+        "openDesignDecision": "single vs multiple discriminant, disabled header focus",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "collapsible",
@@ -5673,7 +5945,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Simple disclosure not full accordion roving navigation",
+        "proposedPropScope": "open/defaultOpen,onOpenChange",
+        "behaviorAcceptance": "Trigger button Enter/Space toggles aria-expanded",
+        "openDesignDecision": "Unmounted content and focus when collapsing",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "offline-state",
@@ -6111,7 +6391,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Native semantic table only; no auto grid model",
+        "proposedPropScope": "caption,rows?,children",
+        "behaviorAcceptance": "Keyboard only reaches true interactive cells; scope/headers",
+        "openDesignDecision": "Row rendering API vs compound table parts",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "data-table",
@@ -6199,6 +6487,14 @@
       "specificBoundary": {
         "requiresAppState": true,
         "note": "Do not implement row editing/pivot/grid from this item; see Data Workspace tier boundary"
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Controlled row model/query state, no fetching",
+        "proposedPropScope": "rows,columns,rowId,sorting,pagination,selection,status,callbacks",
+        "behaviorAcceptance": "Sort controls button, select checkbox; no ARIA grid until proven",
+        "openDesignDecision": "Adapter TanStack/Table, virtualization separate",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -6279,7 +6575,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Controlled filter intents, no implicit backend filtering",
+        "proposedPropScope": "filters,onFiltersChange,onReset",
+        "behaviorAcceptance": "Each field keyboard reachable; applied chips removable",
+        "openDesignDecision": "Query serialization shared DataWorkspace",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "bulk-action-toolbar",
@@ -6672,7 +6976,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Tree structure/selection/expanded controlled",
+        "proposedPropScope": "nodes,selectedKeys,expandedKeys,onSelectionChange,onExpandedChange",
+        "behaviorAcceptance": "Right expand, Left collapse, arrows/typing Home/End",
+        "openDesignDecision": "Multi-select focus independence and virtualized items",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "calendar",
@@ -6753,7 +7065,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Calendar surface could be read-only events or interactive grid",
+        "proposedPropScope": "date,events,onDayIntent",
+        "behaviorAcceptance": "If interactive grid, date keyboard contract required",
+        "openDesignDecision": "Calendar tier premium and full calendar library licensing",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "kanban",
@@ -8820,7 +9140,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Pressed state semantic, not checkbox selection",
+        "proposedPropScope": "pressed,defaultPressed,onPressedChange",
+        "behaviorAcceptance": "Button Space/Enter toggles once",
+        "openDesignDecision": "ToggleGroup single/multiple interaction model",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "toggle-group",
@@ -9375,6 +9703,14 @@
           "credential storage",
           "password verification"
         ]
+      },
+      "componentSpecificPolicy": {
+        "semantics": "Native password input and accessible visibility toggle",
+        "proposedPropScope": "name,value,defaultValue,onChange,visibility",
+        "behaviorAcceptance": "Hide/reveal button type=button, associated label; don't store/log passwords",
+        "openDesignDecision": "Password manager/autocomplete policies",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
       }
     },
     {
@@ -9849,7 +10185,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Dropzone supplements native chooser and stays optional",
+        "proposedPropScope": "accept,multiple,onFilesSelected",
+        "behaviorAcceptance": "Keyboard equivalent to drag/drop and descriptive error",
+        "openDesignDecision": "File security scanning/upload remain app",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "confirm-action",
@@ -10743,7 +11087,15 @@
         "MF-API-001",
         "MF-API-002",
         "MF-API-003"
-      ]
+      ],
+      "componentSpecificPolicy": {
+        "semantics": "Untrusted markdown must never become executable HTML",
+        "proposedPropScope": "content,components?,sanitizer?",
+        "behaviorAcceptance": "Links keyboard-accessible, headings semantic, no script/event injection",
+        "openDesignDecision": "Trust boundary/library sanitizer and SSR rendering",
+        "evidenceStatus": "proposed-needs-provider-and-consumer-review",
+        "releaseRequirement": "Typed API fixture + keyboard/AT review with identical semantics across four divergent skins"
+      }
     },
     {
       "id": "file-preview",

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-component-behavior.schema.json",
   "title": "Moonframe component behavior contract entry (documentation only)",
-  "description": "Draft-2020-12 structural schema. No TS/runtime implementation and no claim that schema engine is installed. Cross-document ID/state/keyboard semantics verified by scripts/validate-contracts.mjs.",
+  "description": "151 proposed component API records. High-risk explicit policy entries remain provisional; no actual exported code.",
   "type": "object",
   "required": [
     "id",
@@ -239,6 +239,39 @@
     },
     "optionalFeatures": {
       "type": "string"
+    },
+    "componentSpecificPolicy": {
+      "type": "object",
+      "required": [
+        "semantics",
+        "proposedPropScope",
+        "behaviorAcceptance",
+        "openDesignDecision",
+        "evidenceStatus",
+        "releaseRequirement"
+      ],
+      "properties": {
+        "semantics": {
+          "type": "string",
+          "minLength": 4
+        },
+        "proposedPropScope": {
+          "type": "string"
+        },
+        "behaviorAcceptance": {
+          "type": "string",
+          "minLength": 4
+        },
+        "openDesignDecision": {
+          "type": "string"
+        },
+        "evidenceStatus": {
+          "const": "proposed-needs-provider-and-consumer-review"
+        },
+        "releaseRequirement": {
+          "type": "string"
+        }
+      }
     }
   },
   "additionalProperties": false
