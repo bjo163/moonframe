@@ -432,7 +432,7 @@ Existing issue #1 **is** MF-003 consumer environments. The superseded old roadma
 **Stable ID:** MFI-012  
 **Type:** governance · **Priority:** P2 · **Area:** github · **Status:** proposed · **Owner:** unassigned
 
-**Problem / evidence:** Repo baru punya enam issue berlabel kosong; belum ada issue form pada snapshot; manual drafting sering tidak konsisten.
+**Problem / evidence:** Pada snapshot awal, enam issue pertama belum memakai label dan belum ada issue template; drafting manual berisiko tidak konsisten. Audit settings terbaru dan keputusan template dicatat di bawah acceptance.
 
 **Scope / method:** Usulkan satu issue form YAML atau Markdown template ringan, verifikasi label yang tersedia sebelum memakainya.
 
@@ -443,10 +443,10 @@ Existing issue #1 **is** MF-003 consumer environments. The superseded old roadma
 **Affected canonical files/contracts:** `.github/ISSUE_TEMPLATE/`, `docs/backlog/master-integration-issue-bible.md`
 
 **Acceptance checklist:**
-- [ ] Template memuat stable ID, problem, evidence, scope/non-goals, dependency, acceptance, DoD.
-- [ ] Agent instruction membaca canonical docs dan menahan out-of-scope changes.
-- [ ] Tidak mengasumsikan milestone, Projects, label atau assignee sudah ada.
-- [ ] Validasi YAML dilakukan jika YAML form jadi dipilih.
+- [x] Template memuat stable ID, problem, evidence, scope/non-goals, dependency, acceptance, DoD.
+- [x] Agent instruction membaca canonical docs dan menahan out-of-scope changes.
+- [x] Tidak mengasumsikan milestone, Projects, label atau assignee sudah ada.
+- [x] Markdown template dipilih; issue-form YAML tidak dipilih, sehingga parser YAML form tidak diperlukan. Required `name`/`about` front matter diperiksa manual.
 
 **Validation plan:** Manual template sample dan YAML parser bila dipakai.
 
@@ -459,6 +459,8 @@ Existing issue #1 **is** MF-003 consumer environments. The superseded old roadma
 **Definition of Done:** All acceptance checks evidenced; tests actually run are reported honestly; dependencies and README/roadmap links corrected; no unrelated file edits or new branches. 
 
 **AI-agent contract:** Read README, docs/moonframe-ui-design-system-bible-v1.3.md, docs/architecture/decisions-and-governance.md, relevant contracts/ADRs, and dependency issues before editing; do not change stable IDs, public API, or production assets beyond approved scope.
+
+**MFI-012 settings audit and decision (2026-10-25):** GitHub API reports a public repository, `main` default branch, Issues/Projects/Wiki features enabled, zero milestones, one assignable account, and ten standard labels. No `.github/ISSUE_TEMPLATE/` existed. Project-list access was unavailable because the authenticated token lacks `read:project`; this template makes no project selection. A single Markdown template was added at `.github/ISSUE_TEMPLATE/task.md`; it sets no labels, assignee, milestone, or project and does not change blank-issue behavior. Markdown issue templates belong in `.github/ISSUE_TEMPLATE/` and use `name`/`about` YAML front matter per [GitHub documentation](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates). No YAML issue form was selected, no YAML parser dependency was added, and no GitHub issues were created.
 
 ## Publish / dedupe discipline
 

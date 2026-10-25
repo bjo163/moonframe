@@ -1626,7 +1626,7 @@ function markdownLinkProblems(source,content,resolveLocal,readMarkdown){
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
 });
-const markdownFiles=['README.md','TODO.md',...walk('docs').filter(x=>x.endsWith('.md'))].map(p=>p.split(path.sep).join('/'));
+const markdownFiles=['README.md','TODO.md',...walk('docs').filter(x=>x.endsWith('.md')),...walk('.github').filter(x=>x.endsWith('.md'))].map(p=>p.split(path.sep).join('/'));
 const resolveMarkdownTarget=(source,href)=>{
  const absolute=href.startsWith('/')?path.resolve(root,href.slice(1)):path.resolve(root,path.dirname(source),href||path.basename(source));
  const relative=path.relative(root,absolute);
