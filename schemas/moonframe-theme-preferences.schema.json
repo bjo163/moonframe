@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-theme-preferences.schema.json",
+  "title": "Moonframe theme preference + effective snapshot candidate",
+  "description": "No ThemeProvider implemented; validation is structural only. Canonical enums and fallback rules belong to moonframe-theme-contract-v1.3.json.",
+  "type": "object",
+  "required": [
+    "requested",
+    "effective"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "requested": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "skinId": {
+          "enum": [
+            "moonpunk",
+            "moonriot",
+            "moonzine",
+            "moonhalftone",
+            "moonglitch",
+            "moonsmash",
+            "moonink",
+            "mooncrash",
+            "moonpanel",
+            "moonscrawl",
+            "moonraw",
+            "moonchrome",
+            "classic",
+            "moonquest",
+            "moonledger"
+          ]
+        },
+        "modePreference": {
+          "enum": [
+            "light",
+            "dark",
+            "system"
+          ]
+        },
+        "densityPreference": {
+          "enum": [
+            "compact",
+            "comfortable",
+            "spacious"
+          ]
+        },
+        "motionPreference": {
+          "enum": [
+            "system",
+            "full",
+            "reduced"
+          ]
+        },
+        "contrastPreference": {
+          "enum": [
+            "system",
+            "normal",
+            "high"
+          ]
+        },
+        "directionPreference": {
+          "enum": [
+            "app-locale",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "effective": {
+      "type": "object",
+      "required": [
+        "skinId",
+        "resolvedMode",
+        "density",
+        "resolvedMotion",
+        "contrast",
+        "direction"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "skinId": {
+          "enum": [
+            "moonpunk",
+            "moonriot",
+            "moonzine",
+            "moonhalftone",
+            "moonglitch",
+            "moonsmash",
+            "moonink",
+            "mooncrash",
+            "moonpanel",
+            "moonscrawl",
+            "moonraw",
+            "moonchrome",
+            "classic",
+            "moonquest",
+            "moonledger"
+          ]
+        },
+        "resolvedMode": {
+          "enum": [
+            "light",
+            "dark"
+          ]
+        },
+        "density": {
+          "enum": [
+            "compact",
+            "comfortable",
+            "spacious"
+          ]
+        },
+        "resolvedMotion": {
+          "enum": [
+            "full",
+            "reduced"
+          ]
+        },
+        "contrast": {
+          "enum": [
+            "normal",
+            "high"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    }
+  }
+}
