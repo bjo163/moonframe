@@ -82,7 +82,7 @@
 
 ## M1 — Package foundation + consumer prerequisites
 
-**Milestone artifact:** local package tarball + synthetic importer. **Gate:** blocked: #1/#3/#4 and consumer smoke. Entry: #1 consumers; #3 provider; #4 distribution; no assumed package manager. See [release matrix](docs/architecture/release-train-and-adoption.md) and the [open-gate research brief](docs/research/open-gate-decision-brief.md).
+**Milestone artifact:** local package tarball + synthetic importer. **Gate:** blocked on maintainer provider/distribution decisions (#3/#4) and real runtime consumer smoke. MF-003/#1 inventory is complete; actual installed/runtime versions remain unknown. See [release matrix](docs/architecture/release-train-and-adoption.md) and the [open-gate research brief](docs/research/open-gate-decision-brief.md).
 
 - [x] **MF-003 — Inventory real Moon consumer toolchains/SSR/browser target** · **P1 / S** · **status:** `done` · **lane:** B · **deps:** — · **issue:** [#1](https://github.com/bjo163/moonframe/issues/1)
   - **Expected file owner/scope:** `docs/research/consumer-matrix.md (proposed); ADR-0001`. **AC:** Cite actual commit/version per app or mark unknown; pick synthetic test consumer.
