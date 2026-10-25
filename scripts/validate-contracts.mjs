@@ -45,7 +45,7 @@ function validatePairMatrix(pairs, skinIds) {
 fail(ids.length === 15 && uniq(ids) && ids.every(isString), 'Theme must own 15 unique nonempty IDs');
 fail(theme.counts.skinCount===15 && theme.counts.baselineAppearances===30 && theme.counts.pairwiseSkinComparisons===105, 'Theme declared counts drifted');
 fail(theme.appearanceModes.includes('light') && theme.appearanceModes.includes('dark') && theme.appearanceModes.includes('system'), 'Appearance preference modes missing');
-fail(theme.preferenceResolution?.rootDataMode?.includes('light') && theme.tokens?.canonicalSource===null, 'Effective mode/canonical-value-source distinction missing');
+fail(sameSet(theme.preferenceResolution?.effectiveAppearance || [], ['light','dark']) && theme.tokens?.canonicalSource===null, 'Effective mode/canonical-value-source distinction missing');
 fail(sameSet(ids,theme.independentAxes.skin), 'Theme axis IDs mismatch');
 fail(sameSet(ids,grammar.skins.map(s=>s.id)), 'Grammar skin IDs mismatch');
 fail(sameSet(ids,detail.skins.map(s=>s.id)), 'Detail skin IDs mismatch');
