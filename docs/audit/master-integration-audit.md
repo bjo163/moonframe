@@ -70,3 +70,16 @@ Lihat canonical `docs/research/research-log.md` untuk tanggal akses dan official
 ## Final state / follow-up validation
 
 Audit ini adalah **documentation/governance delivery**, tanpa UI React, token generator runtime, icons/assets, SVG/PNG, audio/SFX, npm release atau branch baru. Setiap commit/push baru harus dicatat dan CI pada SHA baru diperiksa setelah push; baseline success **tidak** otomatis berlaku untuk commit sesudahnya. Next tasks: `MFI-001` → `MFI-002` → `MFI-003`/`MFI-004` → existing #1/#3/#4/#5 dependency decisions → specialist QA.
+
+## Supplemental all-file static scan (after initial integration commit)
+
+**Snapshot inspected:** `main` at `20e9fa08f868bb681f0cf221157f497d6955dc15`; GitHub Actions spec-validator passed on that SHA ([run 40188127130](https://github.com/bjo163/moonframe/actions/runs/40188127130)). Semua pembacaan dilakukan melalui GitHub connector, bukan lokal checkout.
+
+| Scan | Coverage | Actual result | Limitations |
+|---|---|---|---|
+| Markdown link targets | **72/72** `.md` dibaca; **1.266** referensi local path dicek melawan Git tree | **0 missing local targets** | Regex parser Markdown, bukan browser; fragment/anchor, dynamic links dan external URLs tidak diuji menyeluruh |
+| Markdown external references | **717** URL referensi eksternal ditemukan/dilewati | **NOT CHECKED individually** | Tidak membuktikan URL hidup atau isi tepat |
+| JSON syntax | **54/54** `.json` di-parse via `JSON.parse`, termasuk **12** file `schemas/*.schema.json` | **0 parse errors** | Menilai sintaks, **bukan** instance/schema compliance semua fixture atau JSON reference semantics |
+| Key invariants | 15 IDs; 30 pending token values; 105 not-reviewed pairs; 270 not-rendered visual cells; 151 component IDs | **Structural assertions passed** pada kontrak inti | Bukan UI rendering, release, manual review, atau audit aksesibilitas |
+
+**Kesimpulan:** hasil scan memperkuat baseline dan link integrity, tanpa mengubah jumlah findings P0/P1/P2/P3 pada register. `node scripts/validate-contracts.mjs` dilaporkan sukses oleh GitHub Actions, namun tidak dijalankan secara lokal dalam sesi ini; workflow coverage harus dibedakan dari check tambahan di atas. Tidak ada nilai token, screenshot, visual asset, SFX, atau kode komponen yang dibuat dalam fase ini.
