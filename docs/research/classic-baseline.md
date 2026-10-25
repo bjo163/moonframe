@@ -1,12 +1,12 @@
 # Classic visual baseline and upstream reference boundary
 
-**Reviewed:** 2026-10-25 (Asia/Jakarta). This is a visual reference specification, not copied shadcn source and not an upstream compatibility claim. The pinned capture below makes the Classic visual comparison reproducible; implementation/provider adoption remains deferred.
+**Reviewed:** 2026-10-26 (Asia/Jakarta). This is a visual reference specification, not copied shadcn source and not an upstream compatibility claim. The pinned capture below makes the Classic visual comparison reproducible; implementation/provider adoption remains deferred.
 
 ## Reference snapshot
 
 - shadcn's [July 2026 Base UI default announcement](https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default) says new projects now default to Base UI, while Radix remains supported and does not need migration. Its own context says the choice is a new-project default, not a reason to switch a working production app.
 - shadcn's [July 2026 React Aria announcement](https://ui.shadcn.com/docs/changelog/2026-07-react-aria) adds React Aria as another first-class option; it states Base UI remains the default and Radix remains supported. The project therefore represents multiple behavior backends behind a similar source-owned component approach.
-- The current [theming docs](https://ui.shadcn.com/docs/theming), reviewed 2026-10-25, recommend semantic CSS variables and map them into Tailwind utilities with `@theme inline`. Current examples use a `base-nova` style configuration and semantic pairs such as background/foreground. The [Tailwind v4 guide](https://ui.shadcn.com/docs/tailwind-v4) documents `@theme inline` and says its v4/React 19 setup removes `forwardRef` patterns and adds `data-slot` attributes. These are current docs, not a pinned generated template.
+- The current [theming docs](https://ui.shadcn.com/docs/theming), reviewed 2026-10-26, recommend semantic CSS variables and map them into Tailwind utilities with `@theme inline`. Current examples use a `base-nova` style configuration and semantic pairs such as background/foreground. The [Tailwind v4 guide](https://ui.shadcn.com/docs/tailwind-v4) documents `@theme inline` and says its v4/React 19 setup removes `forwardRef` patterns and adds `data-slot` attributes. These are current docs, not a pinned generated template.
 - Current [component pages](https://ui.shadcn.com/docs/components/base/combobox) display Base UI, React Aria, and Radix implementations as selectable alternatives. The current [Next.js install guide](https://ui.shadcn.com/docs/installation/next) is a setup guide, not evidence that Moonframe must use Next.js.
 
 ## Pinned Classic comparison capture
@@ -33,7 +33,7 @@ Use semantic role names and CSS custom properties as the conceptual theming refe
 
 Classic should remain usable if optional assets fail: the contract has no required illustration, and typography must have a legible platform/system fallback. Functional icons and semantic states remain shared rather than skin-specific. Verify text/non-text contrast, visible focus, keyboard/focus restoration, forced-colors, 320px reflow, RTL logical layout, reduced motion, and long localized content in the same fixtures used for Moonpunk, Moonzine, and Moonledger; do not infer passes from upstream accessibility claims.
 
-The four-skin fixture and reviewer workflow belong to [MF-024 / issue #6](https://github.com/bjo163/moonframe/issues/6). Its screenshots and pair-review records remain pending until a rendering implementation exists. Changing this proposed grammar can be reverted in the skin contract and this note without a package migration because no consumer code or dependency was changed.
+The four-skin fixture and reviewer workflow belong to [MF-024 / issue #6](https://github.com/bjo163/moonframe/issues/6) and are specified in [Skin Lab fixtures](../qa/skin-lab-fixtures.md). Its screenshots and pair-review records remain pending until a rendering implementation exists. Changing this proposed grammar can be reverted in the skin contract and this note without a package migration because no consumer code or dependency was changed.
 
 ## Deferred decision
 
