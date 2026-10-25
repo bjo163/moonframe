@@ -1,0 +1,1156 @@
+{
+  "contractVersion": "1.0.0",
+  "contractId": "MF-SKIN-GRAMMAR-001",
+  "product": "Moonframe UI",
+  "status": "specified-not-implemented",
+  "definition": "A skin is a complete visual grammar, not a palette. It must change composition, shape language, type hierarchy, surfaces, data presentation, navigation, media treatment, component recipes and motion while preserving component behavior.",
+  "count": 15,
+  "dimensions": [
+    {
+      "id": "composition",
+      "label": "Page/shell composition",
+      "weight": 1,
+      "description": "Page shell, grid, asymmetry, grouping, panel rhythm and navigation composition"
+    },
+    {
+      "id": "geometry",
+      "label": "Geometry/shape language",
+      "weight": 1,
+      "description": "Corners, frame forms, outline weight, dividers and silhouette"
+    },
+    {
+      "id": "typography",
+      "label": "Type hierarchy",
+      "weight": 1,
+      "description": "Display treatment, scale, family direction, tabular/data typography and hierarchy"
+    },
+    {
+      "id": "surface",
+      "label": "Surface construction",
+      "weight": 1,
+      "description": "Flat/paper/ink/industrial/metal surfaces, border and elevation"
+    },
+    {
+      "id": "dataNavigation",
+      "label": "Data and navigation patterns",
+      "weight": 1,
+      "description": "How users move and how tables, metrics, lists and data are composed"
+    },
+    {
+      "id": "media",
+      "label": "Image/texture treatment",
+      "weight": 1,
+      "description": "Original illustration, collage, screentone, signal, brush, or deliberate absence"
+    },
+    {
+      "id": "componentRecipes",
+      "label": "Component visual recipes",
+      "weight": 1,
+      "description": "Cards, buttons, inputs, tables, badges and overlays visual constructions"
+    },
+    {
+      "id": "motion",
+      "label": "Motion signature",
+      "weight": 1,
+      "description": "Transition character and interaction emphasis, with reduced-motion fallback"
+    }
+  ],
+  "acceptance": {
+    "minimumMateriallyDifferentDimensions": 4,
+    "targetForNeighboringConcepts": 5,
+    "colorCountsAsDimension": false,
+    "logoArtworkCountsAsCompositionProof": false,
+    "grayscaleReviewRequired": true,
+    "decorationOffReviewRequired": true,
+    "sameReferenceScreensRequired": true,
+    "statusForUnreviewedPair": "not-reviewed",
+    "passNeedsHumanReview": true,
+    "scoring": "For each pair, score each dimension 0=no material difference, 1=some difference, 2=strong difference. Require >=4 dimensions scored 2 or clearly documented as materially distinct; total score is supporting evidence, not an automatic pass."
+  },
+  "antiOverlapRules": [
+    "Moonpunk != Moonriot recolored; distinguish block/offset construction from angular riot-editorial disruption.",
+    "Moonzine != Moonhalftone; distinguish editorial collage/paper grammar from manga raster/ink grammar.",
+    "Moonhalftone != Moonpanel; distinguish raster and pacing from rigid modular panel grid.",
+    "Moonink != Moonscrawl; distinguish expressive brush illustration from sketchbook annotation.",
+    "Moonglitch != Moonchrome; distinguish telemetry/signal disturbance from metallic material response.",
+    "Mooncrash != Moonledger; distinguish industrial hazard/operational plates from clean enterprise data workbench.",
+    "Moonraw != Classic; distinguish exposed raw structure from polished conventional baseline.",
+    "Moonsmash != Moonpunk; distinguish explosive focal/radial impact from persistent hard-slab layout.",
+    "Moonquest's game motifs must not leak into core primitives or Moonledger.",
+    "Shared colors or fonts are allowed; shared visual grammar must be reviewed and justified."
+  ],
+  "skins": [
+    {
+      "id": "moonpunk",
+      "name": "Moonpunk",
+      "territory": "acid-lime manga punk / neo-brutalist impact",
+      "composition": "asymmetric block composition; strong framed zones; offset utility rail",
+      "geometry": "thick black outlines; square-to-cut corners; hard offset shadows",
+      "type": "condensed loud display + highly legible neutral body",
+      "surface": "ink-dark planes; exposed borders; controlled grain",
+      "navigation": "command rail with high-contrast active slab",
+      "data": "bold stat slabs; simplified charts with sharp markers",
+      "media": "original manga ink, torn-paper edges, halftone used sparingly",
+      "motion": "snappy 100–180ms; short impact settle; reduced-motion removes overshoot",
+      "antiOverlap": "must not become Moonriot recolored red or Moonsmash with lime"
+    },
+    {
+      "id": "moonriot",
+      "name": "Moonriot",
+      "territory": "riot editorial / angular cyberpunk",
+      "composition": "diagonal split panels; intentionally disrupted editorial columns",
+      "geometry": "sharp cuts; slanted section dividers; asymmetric border breaks",
+      "type": "compressed editorial display + disciplined technical body",
+      "surface": "black fields; signal-red annotations; limited scan distortion",
+      "navigation": "split navigation with angular section markers",
+      "data": "signal strips and segmented metrics; labels remain steady and readable",
+      "media": "riot posters, signal marks, abstract original cut-up forms",
+      "motion": "short directional wipes; glitch only as optional nonessential accent",
+      "antiOverlap": "must not use Moonpunk's hard-slab composition or Moonzine's paper collage grammar"
+    },
+    {
+      "id": "moonzine",
+      "name": "Moonzine",
+      "territory": "underground zine / collage editorial",
+      "composition": "magazine spread; editorial asymmetry; collage-like grouping",
+      "geometry": "paper frames; taped/overlapped labels as decoration, not layout control",
+      "type": "editorial serif or expressive display paired with neutral body",
+      "surface": "paper-like light surfaces and photocopy dark surfaces",
+      "navigation": "index/contents navigation with editorial section labels",
+      "data": "report cards and story summaries; visible source/annotation areas",
+      "media": "original collage, cut paper, xerox grain and editorial crops",
+      "motion": "page-like reveals and gentle layering; reduced motion becomes static",
+      "antiOverlap": "must not collapse into strict comic panels (Moonpanel) or monochrome screentone-only (Moonhalftone)"
+    },
+    {
+      "id": "moonhalftone",
+      "name": "Moonhalftone",
+      "territory": "manga screentone / monochrome ink",
+      "composition": "sequential comic pacing; variable panel density; ink-first hierarchy",
+      "geometry": "panel borders; halftone fields; high-contrast gutters",
+      "type": "manga impact headings + neutral reading text",
+      "surface": "monochrome ink/paper; dot texture used in reserved zones",
+      "navigation": "panel index and clear chapter/section progression",
+      "data": "panelized stories, annotated metrics, clear chart equivalents",
+      "media": "original screentone patterns and abstract ink assets",
+      "motion": "panel reveal and restrained directional transition",
+      "antiOverlap": "must not use Moonpanel's rigid uniform grid as its entire identity"
+    },
+    {
+      "id": "moonglitch",
+      "name": "Moonglitch",
+      "territory": "terminal telemetry / controlled digital distortion",
+      "composition": "telemetry rails; console bands; data-centric dashboard zones",
+      "geometry": "thin technical rules; signal bars; occasional deliberate displacement",
+      "type": "monospaced labels/metrics + readable sans body",
+      "surface": "near-black terminal surfaces with scanline and signal accents",
+      "navigation": "command-oriented navigation with system-state indicators",
+      "data": "live event stream, logs, time-series and compact telemetry",
+      "media": "original abstract signal traces; glitch never obscures text",
+      "motion": "signal transitions; no perpetual flashing; reduced motion disables distortion",
+      "antiOverlap": "must remain functional telemetry, not decorative cyberpunk or neon-only styling"
+    },
+    {
+      "id": "moonsmash",
+      "name": "Moonsmash",
+      "territory": "kinetic impact / explosive graphic composition",
+      "composition": "one dominant focal zone; radial grouping; dramatic scale changes",
+      "geometry": "burst outlines; radial marks; bold oversized planes",
+      "type": "oversized expressive display + concise supportive copy",
+      "surface": "high-impact layered panels with clear quiet areas for data",
+      "navigation": "action-first navigation and strong primary focal route",
+      "data": "milestone meters and high-visibility stats; detail views remain calm",
+      "media": "original abstract burst, speed lines and impact forms",
+      "motion": "brief radial or scale response with reduced-motion static replacement",
+      "antiOverlap": "must not share Moonpunk's persistent slab framing or Moonriot's diagonal signal language"
+    },
+    {
+      "id": "moonink",
+      "name": "Moonink",
+      "territory": "expressive brush-ink / illustration-led",
+      "composition": "organic directional flow around a clear reading column",
+      "geometry": "brush-edged decorative separators; functional controls remain precise",
+      "type": "ink-like display accents + calm readable body",
+      "surface": "paper/ink planes, expressive strokes confined to decoration",
+      "navigation": "illustrated section markers and simple linear navigation",
+      "data": "annotated narrative charts and editorial callouts",
+      "media": "original vector brush strokes and ink wash assets",
+      "motion": "stroke-draw accents are optional; never required to understand state",
+      "antiOverlap": "must not become sketchbook notes (Moonscrawl) or monochrome raster texture (Moonhalftone)"
+    },
+    {
+      "id": "mooncrash",
+      "name": "Mooncrash",
+      "territory": "industrial utility / mechanical hazard",
+      "composition": "stacked work zones; plate-like panels; clear functional grouping",
+      "geometry": "mechanical borders; numbered plates; warning stripes only for actual emphasis",
+      "type": "industrial condensed labels + utilitarian body",
+      "surface": "matte metal-inspired surfaces; restrained hazard highlights",
+      "navigation": "equipment/operation hierarchy with numbered sections",
+      "data": "resource gauges, logs and operational status blocks",
+      "media": "original industrial motifs and abstract technical markings",
+      "motion": "mechanical slide/click feedback; no decorative shaking on errors",
+      "antiOverlap": "must not use Moonchrome's reflective material or Moonglitch's terminal telemetry treatment"
+    },
+    {
+      "id": "moonpanel",
+      "name": "Moonpanel",
+      "territory": "strict comic-panel system / modular framing",
+      "composition": "explicit grid; consistent gutters; panel hierarchy controls page rhythm",
+      "geometry": "rectangular frames; varied panel spans; clear panel titles",
+      "type": "comic chapter heads + strong, consistent body hierarchy",
+      "surface": "clearly bounded panels and contrasting gutters",
+      "navigation": "panel map/index and predictable section grid",
+      "data": "modular visual summaries and panels with consistent data placement",
+      "media": "original panel motifs; illustrative content stays inside bounded frames",
+      "motion": "panel focus/slide transitions; consistent grid continuity",
+      "antiOverlap": "must not become Moonhalftone with different colors; its identity is structural grid and panel span"
+    },
+    {
+      "id": "moonscrawl",
+      "name": "Moonscrawl",
+      "territory": "sketchbook / hand-annotated exploratory workspace",
+      "composition": "canvas with margin notes and exploratory clusters",
+      "geometry": "loose hand-drawn annotation around precise functional controls",
+      "type": "hand-lettered labels used sparingly + readable body",
+      "surface": "draft-paper and sketch marks with low visual interference",
+      "navigation": "notebook tabs, margin index or workspace sections",
+      "data": "annotated diagrams, brainstorm maps and exploratory flows",
+      "media": "original sketches, arrows, circles and handwritten callouts",
+      "motion": "draw-on annotations optional; static fallback is complete",
+      "antiOverlap": "must remain intentional and structured, not Moonzine collage or Moonink brush painting"
+    },
+    {
+      "id": "moonraw",
+      "name": "Moonraw",
+      "territory": "raw minimal brutalism / exposed structure",
+      "composition": "rigid clear page frame; low ornament; content-led blocks",
+      "geometry": "plain rectangles, exposed separators, square edges",
+      "type": "direct heavy headings + neutral body; no decorative display by default",
+      "surface": "flat materials; nearly no gradients or shadows",
+      "navigation": "straightforward text-first side/top navigation",
+      "data": "plain dense tables and direct metrics with minimal framing",
+      "media": "typography and structure dominate; textures mostly absent",
+      "motion": "minimal transitions; immediate state feedback",
+      "antiOverlap": "must not borrow Moonledger's enterprise-specific compact workbench or Classic's polished neutral finish"
+    },
+    {
+      "id": "moonchrome",
+      "name": "Moonchrome",
+      "territory": "futuristic metallic / precision material",
+      "composition": "layered focal surface with precise contour accents",
+      "geometry": "thin metallic contours and controlled bevel cues",
+      "type": "geometric display + high-legibility modern body",
+      "surface": "reflective metallic gradient cues and restrained spectral highlights",
+      "navigation": "layered surface navigation with clear selected state",
+      "data": "precision gauges, orbital metrics and crisp visualizations",
+      "media": "original abstract chrome, orbit and spectral forms",
+      "motion": "light-shift/reflection effects only on demand; reduced motion uses static materials",
+      "antiOverlap": "must not become generic glassmorphism or Mooncrash industrial plating"
+    },
+    {
+      "id": "classic",
+      "name": "Classic",
+      "territory": "shadcn-style reference / restrained application baseline",
+      "composition": "conventional app shell; predictable content hierarchy",
+      "geometry": "standard rounded controls; subtle borders and restrained elevation",
+      "type": "neutral modern sans with conventional heading scale",
+      "surface": "clean semantic surfaces; minimal decoration",
+      "navigation": "standard sidebar/topbar/tabs/breadcrumbs",
+      "data": "familiar tables, forms and cards with conservative styling",
+      "media": "no skin-specific illustration requirement; functional icon defaults",
+      "motion": "restrained conventional transition; respect reduced motion",
+      "antiOverlap": "must be documented as Moonframe's compatibility baseline, not official shadcn branding"
+    },
+    {
+      "id": "moonquest",
+      "name": "Moonquest",
+      "territory": "RPG adventure HUD / quest journal",
+      "composition": "quest journal, inventory and status HUD; clear game-oriented zones",
+      "geometry": "framed panels, rarity treatments, map/journal motifs",
+      "type": "adventure display headings + highly readable body/data",
+      "surface": "fantasy/sci-fi material layers without reducing text contrast",
+      "navigation": "journal / inventory / map / progression navigation patterns",
+      "data": "XP/progression, rarity, quest lists and item slots as presentation only",
+      "media": "original game-inspired symbols, map textures and item-frame assets",
+      "motion": "reward/level-up accents are opt-in; reduced motion keeps progress information",
+      "antiOverlap": "must not place game rules, rewards, inventory persistence or scoring logic in the UI package"
+    },
+    {
+      "id": "moonledger",
+      "name": "Moonledger",
+      "territory": "professional ERP / clean compact data workbench",
+      "composition": "dense workspace; persistent filter area; table/detail split panes",
+      "geometry": "precise aligned grids; restrained radius; subtle separators",
+      "type": "high-legibility enterprise sans with tabular numerals",
+      "surface": "neutral surfaces and muted chrome; strong data hierarchy",
+      "navigation": "persistent workspace navigation, breadcrumbs and contextual actions",
+      "data": "dense but readable tables, filters, saved views and audit timelines",
+      "media": "minimal; charts/tables carry the interface, decorative art is excluded",
+      "motion": "subtle transitions; prioritize feedback latency and stability",
+      "antiOverlap": "must not shrink controls below tested target requirements or inherit Moonquest's game treatment"
+    }
+  ],
+  "pairwiseReviewMatrix": [
+    {
+      "a": "moonpunk",
+      "b": "moonriot",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonzine",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonhalftone",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonglitch",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonsmash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpunk",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonzine",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonhalftone",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonglitch",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonsmash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonriot",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonhalftone",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonglitch",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonsmash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonzine",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonglitch",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonsmash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonhalftone",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonsmash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonglitch",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonink",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonsmash",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "mooncrash",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonink",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonpanel",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "mooncrash",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "moonscrawl",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonpanel",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonscrawl",
+      "b": "moonraw",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonscrawl",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonscrawl",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonscrawl",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonscrawl",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonraw",
+      "b": "moonchrome",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonraw",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonraw",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonraw",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonchrome",
+      "b": "classic",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonchrome",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonchrome",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "classic",
+      "b": "moonquest",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "classic",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    },
+    {
+      "a": "moonquest",
+      "b": "moonledger",
+      "status": "not-reviewed",
+      "reviewDimensions": [],
+      "notes": "",
+      "evidence": []
+    }
+  ],
+  "requiredEvidence": [
+    "same-screen screenshots",
+    "grayscale specimen",
+    "decoration-off specimen",
+    "notes on material differences",
+    "reviewer/date",
+    "decision/status"
+  ],
+  "validStatuses": [
+    "not-reviewed",
+    "in-review",
+    "pass",
+    "needs-revision",
+    "exception-approved"
+  ],
+  "exceptionPolicy": "Any failed pair requires a visual revision or a documented exception with owner, rationale, and revisit date. No pair is considered passed by default.",
+  "references": [
+    "../docs/moonframe-ui-design-system-bible-v1.3.md",
+    "./moonframe-theme-contract-v1.3.json"
+  ]
+}
