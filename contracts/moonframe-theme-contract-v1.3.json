@@ -66,7 +66,8 @@
     "mode": "data-mode",
     "density": "data-density",
     "motion": "data-motion",
-    "contrast": "data-contrast"
+    "contrast": "data-contrast",
+    "direction": "dir"
   },
   "fallbacks": {
     "unknownSkin": "classic",
@@ -75,7 +76,10 @@
     "invalidMotion": "system-preference",
     "invalidContrast": "system-preference",
     "failedDecorativeAsset": "omit-decoration-retain-usable-layout",
-    "invalidTokenReference": "fail-ci-validation"
+    "invalidTokenReference": "fail-ci-validation",
+    "invalidDirection": "ltr",
+    "missingAppearanceMap": "compile-time hard error; runtime use last-known-good complete map or packaged Classic safe appearance if available, never partially apply missing tokens",
+    "storageUnavailable": "render with validated in-memory preference and safe defaults; never crash"
   },
   "runtimeRequirements": [
     "Resolve and validate preferences before paint where SSR supports it.",
@@ -577,7 +581,151 @@
       "light",
       "dark"
     ],
-    "rootDataMode": "effective appearance only, never system",
-    "ssr": "Resolve preference before paint where technically possible; no implementation yet."
+    "rootDataMode": "resolved effective light|dark, never the literal preference system",
+    "ssr": "Resolve preference before paint where technically possible; no implementation yet.",
+    "modelVersion": "0.1-proposed",
+    "preferenceFields": {
+      "skinId": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "modePreference": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "densityPreference": [
+        "compact",
+        "comfortable",
+        "spacious"
+      ],
+      "motionPreference": [
+        "system",
+        "full",
+        "reduced"
+      ],
+      "contrastPreference": [
+        "system",
+        "normal",
+        "high"
+      ],
+      "directionPreference": [
+        "app-locale",
+        "ltr",
+        "rtl"
+      ]
+    },
+    "resolvedFields": {
+      "skinId": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "resolvedMode": [
+        "light",
+        "dark"
+      ],
+      "density": [
+        "compact",
+        "comfortable",
+        "spacious"
+      ],
+      "resolvedMotion": [
+        "full",
+        "reduced"
+      ],
+      "contrast": [
+        "normal",
+        "high"
+      ],
+      "direction": [
+        "ltr",
+        "rtl"
+      ]
+    },
+    "precedence": [
+      "explicit controlled prop (only when truly controlled)",
+      "validated saved user preference (if persistence adapter enabled)",
+      "OS media values only for system/unset eligible axis",
+      "application default (fallback when media missing/unavailable)",
+      "hardcoded safe fallback"
+    ],
+    "axisRules": {
+      "skinId": "No OS source; controlled > saved > app default > classic",
+      "modePreference": "Save requested light|dark|system; system resolves via prefers-color-scheme; never persist resolvedMode",
+      "densityPreference": "No OS source; controlled > saved > app default > comfortable; compact cannot shrink hit targets below approved a11y gate",
+      "motionPreference": "system follows prefers-reduced-motion; full/reduced explicit; forced safety overrides prohibited flashing regardless",
+      "contrastPreference": "system follows OS high contrast where available; forced-colors is user-agent layer, not a 3rd mode or a normal custom palette",
+      "directionPreference": "Inherit app locale direction unless explicit controlled dir; never guess from OS theme media"
+    },
+    "persistence": {
+      "default": "none; consumer-provided optional adapter",
+      "controlledVsDefault": "controlledPreferences overrides saved; defaultPreferences does NOT override validated saved preference",
+      "allowedAdapters": [
+        "app/server resolved preferences when SSR can do so",
+        "app-approved browser storage + CSP-aware prepaint bootstrap after measurement",
+        "no-storage and accessible fallback"
+      ],
+      "persist": [
+        "skinId",
+        "modePreference",
+        "densityPreference",
+        "motionPreference",
+        "contrastPreference",
+        "directionPreference if user chooses explicitly"
+      ],
+      "neverPersist": [
+        "resolvedMode",
+        "resolvedMotion",
+        "OS forced-colors derived state"
+      ],
+      "storageFailure": "catch read/write errors, do not throw or block rendering",
+      "multiTab": "optional storage event synchronization only for participating adapter, never overwrite controlled props",
+      "privacy": "No analytics/phone-home; host app owns consent and storage policy"
+    },
+    "changeHandling": [
+      "On OS mode change recalculate only if requested mode=system",
+      "On OS reduce motion recalculate only if motionPreference=system/unset",
+      "Re-evaluate forced-colors irrespective of skin for accessibility",
+      "Compute all effective fields then atomically commit root attrs within host render boundary; avoid contradictory intermediate styles",
+      "Unknown skin and malformed enums follow explicit fallbacks"
+    ],
+    "osMapping": {
+      "prefersColorSchemeDark": "system->dark when true, otherwise light",
+      "prefersReducedMotion": "system->reduced when true, otherwise full",
+      "forcedColors": "UA forced-colors stylesheet/system colors; do not force normal custom-color rendering",
+      "contrast": "high if supported/requested; unknown media uses normal unless explicitly high"
+    },
+    "serverHydration": {
+      "status": "open-framework-decision",
+      "requirement": "Match server+client initial resolved root attributes wherever OS mode can be known; consider prepaint bootstrap only after CSP/SSR comparison",
+      "noJavascript": "Readable packaged Classic fallback; can follow prefers-color-scheme via CSS where possible",
+      "flashPolicy": "measure FOUC with first paint screenshots; no unjustified claims"
+    }
   }
 }

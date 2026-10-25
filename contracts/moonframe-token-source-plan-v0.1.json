@@ -5,17 +5,27 @@
   "status": "source-values-not-created",
   "dictionary": "moonframe-token-dictionary-v0.1.json",
   "proposedCanonicalValueSource": "tokens/source/**/*.tokens.json (future; not present)",
-  "formatDecision": "DTCG-2025.10-compatible-subset-proposed-pending-processor-spike",
+  "formatDecision": "PROPOSED bounded DTCG 2025.10 source (full conformance not claimed); ADR-0002 pending MF-013 fixture.",
   "subset": {
     "proposedProperties": [
       "$type",
       "$value",
       "$description",
+      "$deprecated",
       "$extensions"
     ],
-    "aliasSyntax": "{path.to.token} only after resolver proof",
-    "allowedTypes": "pending approval from DTCG and implementation spike",
-    "unsupportedFeatures": "resolver/color module features are unverified; forbid relying on them until tests exist",
+    "aliasSyntax": "{path.to.token} whole-token references only; no $ref/property refs until compatibility spike",
+    "allowedTypes": [
+      "color",
+      "dimension",
+      "duration",
+      "number",
+      "fontFamily",
+      "fontWeight",
+      "cubicBezier",
+      "shadow"
+    ],
+    "unsupportedFeatures": "Resolver module modifiers, $extends, arbitrary CSS strings/URL references, property-level $ref, complex gradients, unverified wide-gamut transforms. Reject or defer at boundary.",
     "validation": [
       "schema validation",
       "token type checks",
@@ -25,7 +35,8 @@
       "mode coverage",
       "contrast role/surface pairs",
       "deterministic generation"
-    ]
+    ],
+    "typeDecisionStatus": "proposed; shadow transforms especially unverified; no processor selected"
   },
   "outputTargets": [
     "CSS custom properties",
@@ -326,5 +337,143 @@
       "contrastReport": null
     }
   ],
-  "implementationGate": "All required tokens resolved for all 30 slots; no incomplete production value source may pass."
+  "implementationGate": "All required tokens resolved for all 30 slots; no incomplete production value source may pass.",
+  "sourceOfTruth": {
+    "skinIds": "moonframe-theme-contract-v1.3.json",
+    "vocabulary": "moonframe-token-dictionary-v0.1.json",
+    "valueSourceStatus": "not-created",
+    "valueSourcePlan": "THIS FILE",
+    "visualRecipes": "moonframe-skin-specifications-v1.0.json",
+    "preferenceAndFallback": "moonframe-theme-contract-v1.3.json",
+    "pairReview": "moonframe-skin-grammar-contract-v1.0.json",
+    "assetRefs": "moonframe-asset-manifest-v0.1.json"
+  },
+  "sourceLayout": {
+    "status": "planned-only-no-production-files",
+    "paths": [
+      "tokens/source/reference.tokens.json",
+      "tokens/source/semantic/common.tokens.json",
+      "tokens/source/semantic/light.tokens.json",
+      "tokens/source/semantic/dark.tokens.json",
+      "tokens/source/skins/<skin-id>/common.tokens.json",
+      "tokens/source/skins/<skin-id>/light.tokens.json",
+      "tokens/source/skins/<skin-id>/dark.tokens.json"
+    ],
+    "note": "Paths illustrate a sparse inheritance scheme. The source tree does NOT exist now. Not all skin/mode override files must physically exist; missing overrides are empty, but all final roles must resolve.",
+    "overlayOrder": [
+      "reference-only-definition",
+      "semantic/common",
+      "semantic/<effective-mode>",
+      "skins/<skin-id>/common",
+      "skins/<skin-id>/<effective-mode>"
+    ],
+    "crossFileAliases": "Merge namespace first, resolve whole-token aliases second; reject ambiguous, unresolved, cyclic or type-incompatible references",
+    "duplicatePaths": "Unexpected repeated token names in same precedence tier are errors; deliberate higher-tier overrides require identical declared type and provenance.",
+    "expectedResolvedAppearances": 30
+  },
+  "typesAndValues": {
+    "color": {
+      "type": "color",
+      "value": "sRGB structured DTCG color object with colorSpace, components, optional alpha; future OKLCH requires gamut+fallback approval"
+    },
+    "dimension": {
+      "type": "dimension",
+      "units": [
+        "px",
+        "rem"
+      ],
+      "value": "finite numeric value + unit; no CSS calc/untrusted text"
+    },
+    "duration": {
+      "type": "duration",
+      "units": [
+        "ms"
+      ],
+      "value": "finite >= 0"
+    },
+    "number": {
+      "type": "number",
+      "value": "finite number; layer order validated separately"
+    },
+    "fontFamily": {
+      "type": "fontFamily",
+      "value": "string or list per supported parser; font rights reviewed before assets"
+    },
+    "fontWeight": {
+      "type": "fontWeight",
+      "value": "number or named per verified DTCG subset"
+    },
+    "cubicBezier": {
+      "type": "cubicBezier",
+      "value": "4 finite numbers, parser proof pending"
+    },
+    "shadow": {
+      "type": "shadow",
+      "value": "composite; transform support pending and must fail if unsupported"
+    }
+  },
+  "outputStrategy": {
+    "decisionStatus": "proposed-not-benchmarked",
+    "candidate": "one consolidated base semantic CSS file with 30 complete appearance mappings; optional heavy skin decoration lazy-loaded",
+    "alternatives": [
+      "split by skin + SSR/preload",
+      "dynamic on-demand CSS injection (higher FOUC risk)"
+    ],
+    "emit": [
+      "generated/moonframe-tokens.css",
+      "generated/moonframe-tailwind.css",
+      "generated/moonframe-token-ids.d.ts",
+      "generated/moonframe-resolved-appearances.json",
+      "generated/moonframe-coverage-report.json"
+    ],
+    "generatedHeader": "AUTO-GENERATED; source paths and generator/version/hash; do not edit",
+    "checkMode": "no filesystem mutation; compare byte-identical generated outputs and fail drift",
+    "manualOverrides": "consumer-owned documented semantic CSS override layer only; never edit generator output",
+    "tailwind": "static @theme inline aliases for utility names + runtime --mf semantic custom properties; no bg-${skin} dynamic classes"
+  },
+  "coverageReportContract": {
+    "perAppearance": [
+      "skinId",
+      "mode",
+      "requiredCount",
+      "resolvedCount",
+      "missingNames",
+      "unknownNames",
+      "invalidTypes",
+      "unresolvedAliases",
+      "cycles",
+      "contrastFailures",
+      "contrastManualReview",
+      "recipeReferencesMissing",
+      "deprecatedReferences",
+      "sourceLineage",
+      "humanApprovalStatus"
+    ],
+    "gate": "all 30 rows must have full required roles and no hard failures, plus manual contrast/visual review, before release"
+  },
+  "versioning": {
+    "schemaDraft": "2020-12 structural proposal",
+    "dictionaryContract": "0.1.0 preserved",
+    "themeContract": "1.3.0 preserved",
+    "tokenSetVersion": "not-created",
+    "generatorVersion": "not-selected",
+    "publishedPackageSemver": "not-published",
+    "breaking": [
+      "remove or rename token ID",
+      "token type or semantic meaning changes",
+      "root attribute/fallback changes",
+      "public theme resolver API changes",
+      "CSS export rename"
+    ]
+  },
+  "security": {
+    "untrustedTokenInputs": "Reject CSS injection, arbitrary selectors, URLs, external assets and malformed values; no raw CSS concatenation from user content",
+    "privacy": "No default telemetry; preference storage is app-configured and optional",
+    "performance": "measure generated CSS bytes and first paint in pinned future consumer; no current benchmark"
+  },
+  "researchReferences": [
+    "https://www.w3.org/community/reports/design-tokens/CG-FINAL-format-20251028/",
+    "https://styledictionary.com/info/dtcg/",
+    "https://tailwindcss.com/docs/theme"
+  ]
 }
