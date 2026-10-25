@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Auth & Security UI Integration (2026-10-25)
 
 - [Auth/Security UI repository audit](docs/audit/auth-security-ui-audit.md)
+- [Auth & Security UI delivery report and CI evidence](docs/audit/auth-security-ui-delivery-2026-10-25.md)
 - [Current security standards and provider research](docs/research/auth-security-ui-research-log.md)
 - [Expanded canonical Auth & Security UI Bible](docs/premium/auth-ui-suite.md)
 - [62 flow contracts, 20 states and 26 guarded transitions](contracts/moonframe-auth-flow-contract-v0.1.json)
