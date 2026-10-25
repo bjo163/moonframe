@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-AUTH-PRESENTATION-001",
+  "status": "specification-only",
+  "levelOwnership": {
+    "buildingBlocks": "contracts/moonframe-block-manifest-v0.1.json",
+    "pageTemplates": "contracts/moonframe-page-template-manifest-v0.1.json",
+    "providerAdapters": "contracts/moonframe-integration-manifest-v0.1.json"
+  },
+  "securityBoundary": "Moonframe renders and emits intent only. Consumer/auth provider owns credential verification, rate limiting, WebAuthn challenge, redirects, session issuance, CSRF, MFA verification, lockouts, encryption, policy and audit.",
+  "globalEvents": [
+    "intent.submit",
+    "intent.retry",
+    "intent.resend",
+    "intent.cancel",
+    "intent.continue",
+    "intent.switchProvider",
+    "intent.recover",
+    "intent.manageSession"
+  ],
+  "uiStateVocabulary": [
+    "idle",
+    "editing",
+    "invalid",
+    "submitting",
+    "pending",
+    "success-reported-by-provider",
+    "failure-reported-by-provider",
+    "expired",
+    "offline",
+    "permission-denied",
+    "locked",
+    "cancelled"
+  ],
+  "authBlocks": [
+    "block-sign-in-form",
+    "block-sign-in-social",
+    "block-sign-in-passkey",
+    "block-sign-up-form",
+    "block-magic-link-request",
+    "block-magic-link-status",
+    "block-password-recovery",
+    "block-password-reset-form",
+    "block-email-verification",
+    "block-otp-challenge",
+    "block-mfa-challenge",
+    "block-recovery-codes",
+    "block-sso-discovery",
+    "block-idp-redirect-status",
+    "block-invitation-accept",
+    "block-session-expired",
+    "block-account-locked",
+    "block-connected-accounts",
+    "block-active-sessions",
+    "block-organization-switcher",
+    "block-team-invitation-list",
+    "block-welcome-checklist",
+    "block-workspace-setup",
+    "block-onboarding-stepper",
+    "block-auth-error-panel",
+    "block-permission-request"
+  ],
+  "flowGroups": {
+    "signIn": [
+      "block-sign-in-form",
+      "block-sign-in-social",
+      "block-sign-in-passkey",
+      "block-sso-discovery",
+      "block-idp-redirect-status"
+    ],
+    "registration": [
+      "block-sign-up-form",
+      "block-email-verification",
+      "block-invitation-accept"
+    ],
+    "recovery": [
+      "block-password-recovery",
+      "block-password-reset-form",
+      "block-magic-link-request",
+      "block-magic-link-status"
+    ],
+    "challenge": [
+      "block-otp-challenge",
+      "block-mfa-challenge",
+      "block-recovery-codes"
+    ],
+    "account": [
+      "block-active-sessions",
+      "block-connected-accounts",
+      "block-organization-switcher",
+      "block-team-invitation-list"
+    ],
+    "onboarding": [
+      "block-welcome-checklist",
+      "block-workspace-setup",
+      "block-onboarding-stepper"
+    ],
+    "errors": [
+      "block-account-locked",
+      "block-session-expired",
+      "block-auth-error-panel",
+      "block-permission-request"
+    ]
+  },
+  "layoutVariants": [
+    "minimal",
+    "split-screen",
+    "branded",
+    "enterprise"
+  ],
+  "validationOwnership": "Field-level UI hints and errors are app-supplied; provider/server validation final",
+  "providerBranding": "Replaceable slot, provider terms/logo rights to be verified by consumer",
+  "sensitiveDataFixtures": "placeholder-only; no actual secrets, passkeys or recovery codes",
+  "recommendedEventPayload": "{eventId, flowId, intent, safeFormValueReference, interactionId}; do not log raw secret fields",
+  "accessibilityAcceptance": [
+    "programmatic labels/errors",
+    "keyboard focus to failed input",
+    "announced pending/outcome",
+    "accessible OTP group and resend",
+    "passkey/SSO fallback",
+    "no revealing account existence"
+  ],
+  "supportedModes": [
+    "light",
+    "dark"
+  ],
+  "skinIds": [
+    "moonpunk",
+    "moonriot",
+    "moonzine",
+    "moonhalftone",
+    "moonglitch",
+    "moonsmash",
+    "moonink",
+    "mooncrash",
+    "moonpanel",
+    "moonscrawl",
+    "moonraw",
+    "moonchrome",
+    "classic",
+    "moonquest",
+    "moonledger"
+  ],
+  "providerIntegrationStatus": "none-installed",
+  "implementationStatus": "not-implemented"
+}

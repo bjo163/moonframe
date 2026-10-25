@@ -4,11 +4,11 @@
   "contractId": "MF-COMPONENTS-001",
   "status": "catalog-specified-not-implemented",
   "counts": {
-    "total": 103,
+    "total": 151,
     "byTier": {
-      "core-v1": 69,
+      "core-v1": 106,
       "future": 8,
-      "premium-block": 14,
+      "premium-block": 25,
       "specialized-optional": 12
     }
   },
@@ -67,7 +67,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "skin-selector",
@@ -122,7 +125,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "mode-selector",
@@ -177,7 +183,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "density-selector",
@@ -232,7 +241,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "responsive-container",
@@ -287,7 +299,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "stack",
@@ -342,7 +357,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "inline",
@@ -397,7 +415,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "grid",
@@ -452,7 +473,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "divider",
@@ -507,7 +531,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "visually-hidden",
@@ -562,7 +589,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "icon",
@@ -617,7 +647,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "focus-ring",
@@ -672,7 +705,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "error-boundary",
@@ -727,7 +763,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "button",
@@ -782,7 +821,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "icon-button",
@@ -837,7 +879,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "link",
@@ -892,7 +937,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "button-group",
@@ -947,7 +995,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "breadcrumbs",
@@ -1002,7 +1053,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "tabs",
@@ -1057,7 +1111,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "segmented-control",
@@ -1112,7 +1169,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "pagination",
@@ -1167,7 +1227,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "navigation-menu",
@@ -1222,7 +1285,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "sidebar",
@@ -1277,7 +1343,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "app-shell",
@@ -1332,7 +1401,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "topbar",
@@ -1387,7 +1459,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "navigation-rail",
@@ -1442,7 +1517,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "mobile-navigation",
@@ -1497,7 +1575,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "dropdown-menu",
@@ -1552,7 +1633,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "context-menu",
@@ -1607,7 +1691,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "menubar",
@@ -1662,7 +1749,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "command-palette",
@@ -1717,7 +1807,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "kbd",
@@ -1772,7 +1865,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "input",
@@ -1827,7 +1923,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "textarea",
@@ -1882,7 +1981,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "label",
@@ -1937,7 +2039,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "field",
@@ -1992,7 +2097,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "fieldset",
@@ -2047,7 +2155,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "form-message",
@@ -2102,7 +2213,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "checkbox",
@@ -2157,7 +2271,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "radio-group",
@@ -2212,7 +2329,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "switch",
@@ -2267,7 +2387,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "select",
@@ -2322,7 +2445,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "combobox",
@@ -2377,7 +2503,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "search-input",
@@ -2432,7 +2561,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "number-input",
@@ -2487,7 +2619,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "slider",
@@ -2542,7 +2677,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "validation-summary",
@@ -2597,7 +2735,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "autocomplete",
@@ -2652,7 +2793,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "multi-select",
@@ -2707,7 +2851,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "date-picker",
@@ -2762,7 +2909,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "date-range-picker",
@@ -2817,7 +2967,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "currency-input",
@@ -2872,7 +3025,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "file-upload",
@@ -2927,7 +3083,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "otpinput",
@@ -2982,7 +3141,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "unsaved-changes",
@@ -3037,7 +3199,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "dialog",
@@ -3092,7 +3257,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "alert-dialog",
@@ -3147,7 +3315,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "drawer",
@@ -3202,7 +3373,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "popover",
@@ -3257,7 +3431,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "tooltip",
@@ -3312,7 +3489,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "toast",
@@ -3367,7 +3547,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "alert",
@@ -3422,7 +3605,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "callout",
@@ -3477,7 +3663,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "progress",
@@ -3532,7 +3721,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "spinner",
@@ -3587,7 +3779,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "skeleton",
@@ -3642,7 +3837,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "empty-state",
@@ -3697,7 +3895,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "error-state",
@@ -3752,7 +3953,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "status-badge",
@@ -3807,7 +4011,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "badge",
@@ -3862,7 +4069,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "avatar",
@@ -3917,7 +4127,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "accordion",
@@ -3972,7 +4185,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "collapsible",
@@ -4027,7 +4243,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "offline-state",
@@ -4082,7 +4301,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "chip",
@@ -4137,7 +4359,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "avatar-group",
@@ -4192,7 +4417,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "timeline",
@@ -4247,7 +4475,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "activity-feed",
@@ -4302,7 +4533,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "table",
@@ -4358,7 +4592,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "data-table",
@@ -4414,7 +4651,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "filter-bar",
@@ -4470,7 +4710,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "bulk-action-toolbar",
@@ -4526,7 +4769,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P1",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "column-visibility",
@@ -4582,7 +4828,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "row-selection",
@@ -4638,7 +4887,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "saved-views",
@@ -4694,7 +4946,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "tree-view",
@@ -4750,7 +5005,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "calendar",
@@ -4806,7 +5064,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "kanban",
@@ -4862,7 +5123,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "chart-container",
@@ -4918,7 +5182,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "chart-legend",
@@ -4974,7 +5241,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "data-export",
@@ -5030,7 +5300,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P2",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "quest-card",
@@ -5086,7 +5359,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "rarity-badge",
@@ -5142,7 +5418,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "inventory-slot",
@@ -5198,7 +5477,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "progress-indicator",
@@ -5254,7 +5536,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "journal-frame",
@@ -5310,7 +5595,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "ledger-filter-workspace",
@@ -5366,7 +5654,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "split-detail-pane",
@@ -5422,7 +5713,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "audit-timeline",
@@ -5478,7 +5772,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "B",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "service-health-panel",
@@ -5534,7 +5831,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "event-stream",
@@ -5590,7 +5890,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "log-viewer",
@@ -5646,7 +5949,10 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
     },
     {
       "id": "editorial-spread",
@@ -5702,7 +6008,2747 @@
       ],
       "publicAPIStability": "proposed",
       "owner": "unassigned",
-      "implementationStatus": "not-implemented"
+      "implementationStatus": "not-implemented",
+      "level": "A",
+      "priority": "P3",
+      "maturity": "specified-not-implemented"
+    },
+    {
+      "id": "container",
+      "name": "Container",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Container presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "flex",
+      "name": "Flex",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Flex presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Typography presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "scroll-area",
+      "name": "ScrollArea",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable ScrollArea presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "resizable",
+      "name": "Resizable",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "B",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Resizable presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "logo-slot",
+      "name": "LogoSlot",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable LogoSlot presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "aspect-ratio",
+      "name": "AspectRatio",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable AspectRatio presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "surface",
+      "name": "Surface",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Surface presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "spacing-token-probe",
+      "name": "SpacingTokenProbe",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable SpacingTokenProbe presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "motion-preference",
+      "name": "MotionPreference",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable MotionPreference presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "form-layout",
+      "name": "FormLayout",
+      "group": "foundation",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable FormLayout presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Toggle presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "toggle-group",
+      "name": "ToggleGroup",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable ToggleGroup presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "hover-card",
+      "name": "HoverCard",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable HoverCard presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "split-button",
+      "name": "SplitButton",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable SplitButton presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "action-menu",
+      "name": "ActionMenu",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "B",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable ActionMenu presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "skip-link",
+      "name": "SkipLink",
+      "group": "actions",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable SkipLink presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "time-picker",
+      "name": "TimePicker",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "B",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable TimePicker presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "password-field",
+      "name": "PasswordField",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable PasswordField presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "phone-input",
+      "name": "PhoneInput",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable PhoneInput presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "pin-input",
+      "name": "PinInput",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable PinInput presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "field-array",
+      "name": "FieldArray",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "B",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable FieldArray presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "nested-field-group",
+      "name": "NestedFieldGroup",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable NestedFieldGroup presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "password-strength-meter",
+      "name": "PasswordStrengthMeter",
+      "group": "forms",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable PasswordStrengthMeter presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "file-dropzone",
+      "name": "FileDropzone",
+      "group": "forms",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable FileDropzone presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Form labels, errors and focus association; no secret echoed to logs",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "confirm-action",
+      "name": "ConfirmAction",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "B",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable ConfirmAction presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "inline-error",
+      "name": "InlineError",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable InlineError presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "permission-denied",
+      "name": "PermissionDenied",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable PermissionDenied presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "connection-error",
+      "name": "ConnectionError",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable ConnectionError presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "maintenance-notice",
+      "name": "MaintenanceNotice",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable MaintenanceNotice presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "session-expired-notice",
+      "name": "SessionExpiredNotice",
+      "group": "feedback",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable SessionExpiredNotice presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable Card presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "stat-card",
+      "name": "StatCard",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable StatCard presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "description-list",
+      "name": "DescriptionList",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable DescriptionList presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "copy-button",
+      "name": "CopyButton",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable CopyButton presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "code-block",
+      "name": "CodeBlock",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable CodeBlock presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "markdown-content",
+      "name": "MarkdownContent",
+      "group": "content",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable MarkdownContent presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "file-preview",
+      "name": "FilePreview",
+      "group": "content",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable FilePreview presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "media-frame",
+      "name": "MediaFrame",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable MediaFrame presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "metric-delta",
+      "name": "MetricDelta",
+      "group": "content",
+      "tier": "core-v1",
+      "level": "A",
+      "priority": "P1",
+      "packageExport": "pending",
+      "purpose": "Reusable MetricDelta presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Named role, focus-visible, keyboard parity and visual focus affordance",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "expandable-row",
+      "name": "ExpandableRow",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "A",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable ExpandableRow presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "data-grid-facade",
+      "name": "DataGridFacade",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable DataGridFacade presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "table-cell-renderer",
+      "name": "TableCellRenderer",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "A",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable TableCellRenderer presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "column-chooser",
+      "name": "ColumnChooser",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable ColumnChooser presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "filter-chip",
+      "name": "FilterChip",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "A",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable FilterChip presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "saved-view-picker",
+      "name": "SavedViewPicker",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable SavedViewPicker presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "export-menu",
+      "name": "ExportMenu",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "B",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable ExportMenu presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "query-state-banner",
+      "name": "QueryStateBanner",
+      "group": "data",
+      "tier": "premium-block",
+      "level": "A",
+      "priority": "P2",
+      "packageExport": "pending",
+      "purpose": "Reusable QueryStateBanner presentation primitive or composite, no network/domain behavior",
+      "proposedAPI": {
+        "props": "planned typed props/slots after provider ADR",
+        "controlledUncontrolled": "explicit per interactive control",
+        "size": [
+          "compact",
+          "default",
+          "large"
+        ],
+        "variant": [
+          "surface",
+          "quiet",
+          "emphasis"
+        ]
+      },
+      "states": [
+        "default",
+        "hover",
+        "focus-visible",
+        "disabled",
+        "pending/invalid/selected when applicable"
+      ],
+      "a11y": "Preserve column semantics, keyboard selection and screen reader reading order",
+      "keyboard": "Use native pattern or matching WAI-ARIA APG",
+      "responsive": "Touch/zoom/RTL/long-label support",
+      "skinRecipe": "Consume semantic roles and skin-specific construction",
+      "density": "independent axis",
+      "reducedMotion": "no motion-only meaning",
+      "errorEmpty": "specify on applicable input",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "public API",
+        "state stories",
+        "a11y",
+        "consumer setup"
+      ],
+      "testRequirements": [
+        "keyboard",
+        "states",
+        "screen reader as needed",
+        "responsive",
+        "skin sample"
+      ],
+      "publicAPIStability": "proposed",
+      "implementationStatus": "not-implemented",
+      "owner": "unassigned"
     }
-  ]
+  ],
+  "catalogEdition": "premium-scope-2026-10-25"
 }
