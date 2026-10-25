@@ -16,12 +16,12 @@
 
 | Stable ID | Issue | Intent | Disposition |
 |---|---|---|---|
-| MF-003 | #1 | [Consumer environment](https://github.com/bjo163/moonframe/issues/1) | existing-open; reuse |
+| MF-003 | #1 | [Consumer environment](https://github.com/bjo163/moonframe/issues/1) | closed; reuse, no duplicate |
 | MF-004 | #2 | [Classic baseline](https://github.com/bjo163/moonframe/issues/2) | existing-open; reuse |
 | MF-005 | #3 | [Primitive provider](https://github.com/bjo163/moonframe/issues/3) | existing-open; reuse |
 | MF-006 | #4 | [Package boundary](https://github.com/bjo163/moonframe/issues/4) | existing-open; reuse |
 | MF-013 | #5 | [DTCG subset](https://github.com/bjo163/moonframe/issues/5) | existing-open; reuse |
-| MF-024 | #6 | [Skin Lab fixture](https://github.com/bjo163/moonframe/issues/6) | existing-open; reuse |
+| MF-024 | #6 | [Skin Lab fixture](https://github.com/bjo163/moonframe/issues/6) | closed after fixture-spec acceptance; reuse, no duplicate |
 
 Existing issue #1 **is** MF-003 consumer environments. The superseded old roadmap text calling MF-003 a shadcn audit is **not** another new issue. Existing #2 Classic baseline / #3 provider spike cover that territory.
 
@@ -472,7 +472,7 @@ Baseline record; canonical owners; contradiction register; non-cyclic dependency
 
 ## First publication batch (verified 2026-10-25)
 
-- [MFI-001 — GitHub #7](https://github.com/bjo163/moonframe/issues/7): issue **open**, spec/governance task not completed, no labels or assignees assigned.
-- [MFI-002 — GitHub #8](https://github.com/bjo163/moonframe/issues/8): issue **open**, depends on MFI-001 (#7); no claim of native GitHub blocker edge.
+- [MFI-001 - GitHub #7](https://github.com/bjo163/moonframe/issues/7): issue **closed** after task acceptance; no labels or assignees were assigned.
+- [MFI-002 - GitHub #8](https://github.com/bjo163/moonframe/issues/8): issue **closed** after task acceptance; depends on MFI-001 (#7); no claim of native GitHub blocker edge.
 - MFI-003–MFI-012 remain **proposed markdown only**, not 10 GitHub issues.
-- Original six GitHub #1–#6 remain untouched. Original integration docs commit [5c5c1abb](https://github.com/bjo163/moonframe/commit/5c5c1abb2f095e2e1bb95ce8c02a434f296a607d) passed [spec-only CI](https://github.com/bjo163/moonframe/actions/runs/40187919987). This does not constitute UI/a11y QA.
+- At the original integration docs commit, GitHub #1 through #6 were left untouched. Issue #6 was later closed after fixture-spec acceptance; no duplicates were created. Original integration docs commit [5c5c1abb](https://github.com/bjo163/moonframe/commit/5c5c1abb2f095e2e1bb95ce8c02a434f296a607d) passed [spec-only CI](https://github.com/bjo163/moonframe/actions/runs/40187919987). This does not constitute UI/a11y QA.
