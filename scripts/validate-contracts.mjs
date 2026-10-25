@@ -42,6 +42,90 @@ function validatePairMatrix(pairs, skinIds) {
   }
   return failures;
 }
+
+// Stable issue identity is read from the existing integration backlog table;
+// GitHub remains the live status owner and CI never queries the network.
+function taskIdentityProblems(records) {
+  const problems = [];
+  const byId = new Map(), byIssue = new Map();
+  for (const record of records) {
+    const prior = byId.get(record.id);
+    if (prior && (prior.outcome !== record.outcome || prior.issue !== record.issue || prior.url !== record.url))
+      problems.push(`${record.id}: conflicting task meaning or issue mapping in ${prior.source} and ${record.source}`);
+    else if (!prior) byId.set(record.id, record);
+    const issueOwner = byIssue.get(record.issue);
+    if (issueOwner && issueOwner.id !== record.id)
+      problems.push(`#${record.issue}: assigned to ${issueOwner.id} in ${issueOwner.source} and ${record.id} in ${record.source}`);
+    else if (!issueOwner) byIssue.set(record.issue, record);
+    if (!/^https:\/\/github\.com\/bjo163\/moonframe\/issues\/(\d+)$/.test(record.url) ||
+        Number(record.url.match(/\/(\d+)$/)?.[1]) !== record.issue)
+      problems.push(`${record.id}: invalid canonical issue URL in ${record.source}`);
+  }
+  return problems;
+}
+function markdownTableRecords(content, source, headerPattern, issueColumn=-1) {
+  const lines = content.split(/\r?\n/);
+  const header = lines.findIndex(line => headerPattern.test(line));
+  if (header < 0) return [];
+  const records = [];
+  for (const line of lines.slice(header + 2)) {
+    if (!line.trim().startsWith('|')) break;
+    const cells = line.split('|').slice(1, -1).map(cell => cell.trim());
+    const id = cells[0]?.match(/\bMFI?-\d{3}\b/)?.[0];
+    const issueCell = cells.at(issueColumn) || '';
+    const issue = issueCell.match(/\/issues\/(\d+)/) || issueCell.match(/#(\d+)/);
+    if (id && issue) records.push({id, issue:Number(issue[1]), url:`https://github.com/bjo163/moonframe/issues/${issue[1]}`,
+      outcome:cells[2] || cells[0], source});
+  }
+  return records;
+}
+function taskIdentityAudit(contents) {
+  const bible = markdownTableRecords(contents.bible, 'master issue Bible', /^\| Stable ID \| Issue \| Intent \| Disposition \|/, 1);
+  const integration = markdownTableRecords(contents.bible, 'master issue Bible', /^\| ID \| Priority \| Type \| Area \| Dependencies \| GitHub issue \|/);
+  const initial = markdownTableRecords(contents.initial, 'initial-issues.md', /^\| Task \| GitHub issue \| Dependencies \| State \|/, 1);
+  const registry = [...bible, ...integration];
+  const problems = taskIdentityProblems(registry);
+  const expected = new Map(registry.map(record => [record.id, record]));
+  for (const record of initial) {
+    const canonical = expected.get(record.id);
+    if (!canonical || canonical.issue !== record.issue || canonical.url !== record.url)
+      problems.push(`${record.id}: issue mapping differs between ${record.source} and master issue Bible`);
+  }
+  // Active roadmap/TODO declarations are limited to task-list lines. Historical prose is ignored.
+  for (const [source, content] of [['implementation-roadmap.md', contents.roadmap], ['TODO.md', contents.todo]]) {
+    for (const line of content.split(/\r?\n/)) {
+      const match = line.match(/^\s*- \[ \] \*\*(MFI?-\d{3})\b.*?\[?#(\d+)\]?\]?\((https:\/\/github\.com\/bjo163\/moonframe\/issues\/(\d+))\)/);
+      if (!match) continue;
+      const [, id, issueNumber, url, urlNumber] = match;
+      const canonical = expected.get(id);
+      if (!canonical || canonical.issue !== Number(issueNumber) || canonical.issue !== Number(urlNumber) || canonical.url !== url)
+        problems.push(`${id}: active issue reference in ${source} (${issueNumber}/${urlNumber}, ${url}) conflicts with master issue Bible (${canonical?.issue ?? 'unmapped'}, ${canonical?.url ?? 'unmapped'})`);
+    }
+  }
+  return {problems, registry};
+}
+const identityAudit = taskIdentityAudit({
+  bible:fs.readFileSync(path.join(root,'docs/backlog/master-integration-issue-bible.md'),'utf8'),
+  initial:fs.readFileSync(path.join(root,'docs/backlog/initial-issues.md'),'utf8'),
+  roadmap:fs.readFileSync(path.join(root,'docs/implementation-roadmap.md'),'utf8'),
+  todo:fs.readFileSync(path.join(root,'TODO.md'),'utf8')
+});
+for (const problem of identityAudit.problems) errors.push('Task identity: '+problem);
+if (process.argv.includes('--self-test')) {
+  assert.equal(identityAudit.problems.length, 0, 'Canonical task identity sources must agree: '+identityAudit.problems.join('; '));
+  assert(identityAudit.registry.some(x=>x.id==='MF-003'&&x.issue===1));
+  assert(identityAudit.registry.some(x=>x.id==='MFI-001'&&x.issue===7));
+  assert(identityAudit.registry.some(x=>x.id==='MFI-002'&&x.issue===8));
+  const sample={id:'MF-003',issue:1,url:'https://github.com/bjo163/moonframe/issues/1',outcome:'consumer environment',source:'valid fixture'};
+  assert.equal(taskIdentityProblems([sample]).length,0,'Valid identity fixture should pass');
+  const collision=taskIdentityProblems([sample,{...sample,outcome:'shadcn audit',source:'conflicting fixture'}]);
+  assert(collision.some(x=>x.includes('MF-003')&&x.includes('valid fixture')&&x.includes('conflicting fixture')),
+    'Incompatible outcome fixture should identify ID and both sources');
+  const reusedIssue=taskIdentityProblems([sample,{...sample,id:'MF-004',outcome:'Classic baseline',source:'duplicate issue fixture'}]);
+  assert(reusedIssue.some(x=>x.includes('#1')&&x.includes('MF-003')&&x.includes('MF-004')),
+    'Duplicate GitHub issue fixture should identify issue and both IDs');
+  console.log('PASS: task identity mapping (MF-003 ↔ #1; MFI-001 ↔ #7; MFI-002 ↔ #8) and valid/ID-collision/duplicate-issue fixtures');
+}
 fail(ids.length === 15 && uniq(ids) && ids.every(isString), 'Theme must own 15 unique nonempty IDs');
 fail(theme.counts.skinCount===15 && theme.counts.baselineAppearances===30 && theme.counts.pairwiseSkinComparisons===105, 'Theme declared counts drifted');
 fail(theme.appearanceModes.includes('light') && theme.appearanceModes.includes('dark') && theme.appearanceModes.includes('system'), 'Appearance preference modes missing');
