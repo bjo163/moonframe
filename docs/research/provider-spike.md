@@ -52,6 +52,12 @@ This retains the ordinal scoring solely as a review aid. It is **not a provider 
 
 The repository CI and local runtime are pinned to Node 24.22.1 LTS via `.nvmrc`; the fixture uses that same Node version in a temporary isolated directory. Keep the issue open and ADR proposed until outstanding coverage and maintainer review exist. No dependency, public API, or production consumer changes are included in this research.
 
+## Reproduction run on 2026-10-25
+
+I reran npm run test:e2e with Node 24.22.1 from the retained temporary fixture. In the original fixture, Playwright ran 36 cases and reported 34 passed, 2 failed: Radix Select did not return to the first option after the Home-key assertion, and Radix nested-menu Escape closed the root menu rather than leaving the parent menu open. In escape-wrapper-experiment, the same 36-case suite reported 35 passed, 1 failed: the Base UI Home-key assertion still received the last option after the prior End-key selection. The wrapper corrected the Radix submenu Escape case in this rerun.
+
+These results do not establish why Home-key outcomes differ from the earlier temporary run, nor whether every provider must support that specific selection behavior. Treat the Home/End result as an unresolved fixture expectation and the Radix default Escape behavior as a reproduced difference. The fixture remains temporary, browser-only evidence; manual AT, Windows forced-colors and maintainer review remain outstanding.
+
 ## Sources
 
 - [Base UI Dialog](https://base-ui.com/react/components/dialog), [Select](https://base-ui.com/react/components/select), [Combobox](https://base-ui.com/react/components/combobox), [Menu](https://base-ui.com/react/components/menu), [composition](https://base-ui.com/react/handbook/composition).
