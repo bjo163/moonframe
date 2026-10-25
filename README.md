@@ -6,6 +6,9 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 
 ## Master integration audit & execution index (2026-10-25)
 
+- **[Root TODO.md](TODO.md)** — 57 dependency-aware tasks across M0–M12; references existing GitHub issues and planned tasks.
+- **[M0 Local Coding Agent Prompt](docs/handoff/moonframe-local-coding-agent-execution-prompt.md)** — first task MFI-001/#7, limited to contract/governance validation.
+- **[Release Train & Adoption](docs/architecture/release-train-and-adoption.md)** — milestone artifacts, release gates, parallel lanes and consumer adoption.
 - [Master integration audit & contradiction register](docs/audit/master-integration-audit.md) — verified HEAD snapshot, P0–P3 findings, structural results and not-run limits.
 - [Canonical source-of-truth registry](docs/architecture/decisions-and-governance.md#master-integration-registry--cross-domain-ownership-2026-10-25) — one policy owner per domain, machine-contract references and status transitions.
 - [Master Integration Issue Bible & deduplicated backlog](docs/backlog/master-integration-issue-bible.md) — MFI tasks, dependencies, acceptance/DoD; existing GitHub issues #1–#6 remain authoritative.
