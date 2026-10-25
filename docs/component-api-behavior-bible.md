@@ -146,3 +146,9 @@ Readiness vocabulary never conflated: `proposed` candidate → `specified` revie
 [Live audit](audit/component-api-behavior-audit.md) · [Primary research](research/component-api-research-log.md) · [Provider ADR](adr/0001-primitive-provider.md) · [Component API backlog](backlog/component-api-atomic-issues.md) · [Validation schema](../schemas/moonframe-component-behavior.schema.json).
 
 **No React component, generated asset, SFX, package publication, screen-reader certification, provider migration or ThemeProvider implementation was produced by this specification.**
+
+---
+
+## Cross-component cosmetic feedback authority (2026-10-25)
+
+[Motion, Interaction & SFX Bible](motion/motion-interaction-sfx-bible.md) and [18 interaction mappings](../contracts/moonframe-motion-interactions-v0.1.json) reference **this** Bible for focus/keyboard/native/controlled state. [25 motion recipes](../contracts/moonframe-motion-recipes-v0.1.json) are optional visual treatments; cannot delay `onValueChange`, semantic state, dialog restoration or form validity, and must settle correctly if disabled/canceled. Existing SFX [event ID taxonomy](../contracts/moonframe-sfx-contract-v0.1.json) remains opt-in and off by default. These contracts do **not** add a public component prop or runtime implementation.

@@ -98,3 +98,9 @@ The [SFX Contract](../../contracts/moonframe-sfx-contract-v0.1.json) **alone own
 ### Dedicated asset QA coverage ledger
 
 The [120-cell appearance review ledger](../../contracts/moonframe-asset-qa-coverage-v0.1.json) documents planned Light/Dark asset contexts and tracks future screenshots, rights and reviewer evidence separately from per-asset metadata and the 105 global grammar pairs. Zero cells have a produced artifact, review or pass. A master mark tested in 15 skins remains **one asset identity**, not 15 unique logos. See [asset QA](../qa/original-asset-validation-plan.md).
+
+---
+
+## Motion/SFX runtime relationship (2026-10-25)
+
+The focused [Motion, Interaction & SFX Bible](../motion/motion-interaction-sfx-bible.md) owns **sound-event/playback policy, reduced stimulation and optional sound eligibility**; the [existing SFX contract](../../contracts/moonframe-sfx-contract-v0.1.json) stays canonical for the six event IDs. **This Asset Bible remains exclusive authority** for any future sound source/master/export rights, provenance, file checksum and legally cleared distribution. No audio or visual asset produced by motion specification, no 15 mandatory sound packs. [ADR-0007](../adr/0007-motion-and-optional-audio-engines.md) does not select or install an engine.

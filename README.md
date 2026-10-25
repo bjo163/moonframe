@@ -43,6 +43,21 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Motion, Interaction & SFX (2026-10-25)
+
+- [Repository audit and P0–P3 evidence](docs/audit/motion-interaction-sfx-audit.md)
+- [Primary WCAG, browser motion and sound research](docs/research/motion-interaction-sfx-research-log.md)
+- [Motion, Interaction & SFX Bible](docs/motion/motion-interaction-sfx-bible.md)
+- [25 named motion recipes, interrupt and reduced fallbacks](contracts/moonframe-motion-recipes-v0.1.json)
+- [18 cross-component interaction patterns](contracts/moonframe-motion-interactions-v0.1.json)
+- [15 distinct but behavior-stable motion directions](contracts/moonframe-motion-skin-matrix-v0.1.json)
+- [Existing canonical six-event SFX contract, enriched safely](contracts/moonframe-sfx-contract-v0.1.json)
+- [180 unrendered motion/interaction appearance QA cells](contracts/moonframe-motion-qa-coverage-v0.1.json)
+- [Proposed motion recipe schema](schemas/moonframe-motion-recipe.schema.json) and [12 negative fixtures](contracts/fixtures/motion-interaction-sfx-v0.1.json)
+- [ADR-0007 — native CSS / WAAPI / View Transition / Motion and audio engine options](docs/adr/0007-motion-and-optional-audio-engines.md)
+- [QA/release validation plan](docs/qa/motion-interaction-sfx-validation-plan.md) and [14 atomic tasks](docs/backlog/motion-interaction-sfx-atomic-issues.md)
+
+
 ### Original Asset & Brand (2026-10-25)
 
 - [Live asset inventory, provenance gaps and P0–P3 audit](docs/audit/original-asset-brand-audit.md)
