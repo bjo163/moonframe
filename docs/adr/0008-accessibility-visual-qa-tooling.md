@@ -4,7 +4,7 @@
 
 ## Why tools cannot be selected unconditionally today
 
-Existing Node22 GitHub Actions validates 103-file specs (at audited SHA), not JSX/DOM. Tools need compatible framework/build, browser targets, CI runtime/storage, font licensing, deterministic fixture data, release ownership and a supported environment. No screenshot threshold or browser support contract is measurable without a runnable consumer.
+Existing Node 24.22.1 LTS GitHub Actions validates 103-file specs (at audited SHA), not JSX/DOM. Tools need compatible framework/build, browser targets, CI runtime/storage, font licensing, deterministic fixture data, release ownership and a supported environment. No screenshot threshold or browser support contract is measurable without a runnable consumer.
 
 ## Candidate comparison, primary sources and limits
 

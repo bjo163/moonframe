@@ -30,7 +30,7 @@
 
 ## Actual near-term baseline / blocker map
 
-- Repository as audited has no package manifest, lockfile, React components, token generator or production assets. GitHub CI checks `node scripts/validate-contracts.mjs` and `--self-test` with Node 22; [baseline passing run](https://github.com/bjo163/moonframe/actions/runs/40188542601).
+- Repository as audited has no package manifest, lockfile, React components, token generator or production assets. Current GitHub CI reads Node 24.22.1 LTS from `.nvmrc` and checks `node scripts/validate-contracts.mjs` plus `--self-test`; [latest verified pinned-runtime run](https://github.com/bjo163/moonframe/actions/runs/40195541911). The older baseline run predates this runtime pin.
 - [#7 MFI-001](https://github.com/bjo163/moonframe/issues/7) P0: stabilize issue/roadmap task identity; [#8 MFI-002](https://github.com/bjo163/moonframe/issues/8) P1: one canonical owner and references. Both **open**; neither completed. M0 cannot be marked `done` from green CI alone.
 - [#1 MF-003](https://github.com/bjo163/moonframe/issues/1) consumer versions/SSR, [#3 MF-005](https://github.com/bjo163/moonframe/issues/3) primitive spike, [#4 MF-006](https://github.com/bjo163/moonframe/issues/4) package distribution: hard prerequisites for M1 build/publish claims. [#5 MF-013](https://github.com/bjo163/moonframe/issues/5) token tool subset gates M2 and may be researched concurrently.
 - [#2 MF-004](https://github.com/bjo163/moonframe/issues/2) Classic policy and [#6 MF-024](https://github.com/bjo163/moonframe/issues/6) deterministic fixture gate M4, alongside M3.

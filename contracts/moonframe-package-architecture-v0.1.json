@@ -227,7 +227,7 @@
       "node": "22.14.0",
       "npm": "11.5.1",
       "distTags": "npm >=11.21.0 or >=12.2.0",
-      "note": "npm docs current at 2026-10-25; contract runner Node22 does not verify this"
+      "note": "npm docs current at 2026-10-25; contract runner Node 24.22.1 LTS does not verify this"
     }
   },
   "readinessVocabulary": [

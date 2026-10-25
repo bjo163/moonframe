@@ -104,11 +104,11 @@ Do not paste into production until exports, CSS, types, React peer and app targe
 
 ## 7. Workspace/build graph and package tooling: phase triggers
 
-**Today:** one spec repository, Node22 Actions checker only; **no installed bundler/framework/package manager**. Prefer one package with simple scripts initially, not Turbo/Nx or 8 idle packages. [ADR-0009](../adr/0009-package-topology.md) weighs workspace alternatives:
+**Today:** one spec repository, Node 24.22.1 LTS Actions checker only; **no installed bundler/framework/package manager**. Prefer one package with simple scripts initially, not Turbo/Nx or 8 idle packages. [ADR-0009](../adr/0009-package-topology.md) weighs workspace alternatives:
 - no workspace (one package) is simplest; a future docs/Skin Lab app is independent dev-only consumer;
 - npm workspaces if simple multi-package and CLI already chosen, pnpm workspaces if verified existing consumer workflows need its linking/filter behavior—[pnpm](https://pnpm.io/workspaces) requires `pnpm-workspace.yaml`;
 - Turbo/Nx only when a measured multi-target build graph/remote cache justifies adding orchestrator.
-- reject cycles, accidental dev-only dependencies in npm tarball and unpublished workspace aliases; deterministic lockfile and `packageManager`/Node pin chosen by maintainer after consumer matrix. Current CI Node22 is a **contract runner**, NOT proven package `engines.node` minimum.
+- reject cycles, accidental dev-only dependencies in npm tarball and unpublished workspace aliases; deterministic lockfile and `packageManager`/Node pin chosen by maintainer after consumer matrix. Current CI Node 24.22.1 LTS is a **contract runner**, NOT proven package `engines.node` minimum.
 
 **Future package task order (not runnable today):** `validate contracts → generate approved tokens → build .d.ts + ESM JS → CSS entrypoints → static export integrity → typecheck/lint/unit → component/keyboard/AT → npm pack --dry-run --json → unpack/install packed tarball into clean Vite → verified SSR consumer → tree-shaking/optional dependency isolation → release evidence review`. Source map contents and source-package exposure require review for privacy/licensing.
 
@@ -132,7 +132,7 @@ DX metric **plans** (all baseline `not-measured`): time-to-first-render in clean
 
 | Gate | Present evidence | Future blocking criteria |
 |---|---|---|
-| S0 specification | Node22 `node scripts/validate-contracts.mjs` and `--self-test`, JSON link/reference checks, 15/30/105 and future package contract check | Present only, does NOT validate npm `exports` in Node |
+| S0 specification | Node 24.22.1 LTS `node scripts/validate-contracts.mjs` and `--self-test`, JSON link/reference checks, 15/30/105 and future package contract check | Present only, does NOT validate npm `exports` in Node |
 | S1 runtime package (later) | **none** | React+TS types, API naming/refs, CSS generated, dual-mode token resolver, typed exports, no unmet dependency |
 | S2 Vite consumer (later) | **none** | Pack/unpack clean Vite, CSS/Tailwind v4 scan, React peer singleton, imports and tree-shaking |
 | S3 supported SSR consumer (later) | **none** | Hydration, no DOM import-time, theme first paint/nonce/CSP and correct focus |

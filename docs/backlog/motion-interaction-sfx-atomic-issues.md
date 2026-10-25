@@ -10,7 +10,7 @@
 - **Acceptance checklist:** Consumer browsers, SSR and native vs optional animation scope confirmed; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-002 — Review current motion tokens and candidate aliases
@@ -21,7 +21,7 @@
 - **Acceptance checklist:** Five canonical typed names unchanged; proposed names approved/rejected with schema proof; no invented numeric values; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-003 — Review 25 recipe purpose/reduced/interrupt metadata
@@ -32,7 +32,7 @@
 - **Acceptance checklist:** Every recipe includes trigger, end state, focus/audio and no-motion fallback; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-004 — Review 18 cross-component interaction mappings
@@ -43,7 +43,7 @@
 - **Acceptance checklist:** Every component ID exists and native focus/keyboard stays authoritative; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-005 — OS preference/SSR/live interruption proof plan
@@ -54,7 +54,7 @@
 - **Acceptance checklist:** system/full/reduced mapping, first paint and runtime cancel with focus preserved; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-006 — Approve 15 derivative motion signatures
@@ -65,7 +65,7 @@
 - **Acceptance checklist:** Distinct accent/fallback but same interactions; all reviews remain unreviewed until visual proof; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-007 — SFX existing six-event taxonomy and opt-in review
@@ -76,7 +76,7 @@
 - **Acceptance checklist:** No alias breaking change; each event visible/AT equivalent, consent/master mute/cooldown/unknown silent; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-008 — Native CSS vs WAAPI vs View Transition/React motion ADR spike
@@ -87,7 +87,7 @@
 - **Acceptance checklist:** Real same-content tests and version/license/bundle/profile evidence before selecting library; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-009 — Audio engine / browser-autoplay spike plan
@@ -98,7 +98,7 @@
 - **Acceptance checklist:** Native or no engine default, browser reject/mid-play mute no-op, no SFX files now; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-010 — Schema and negative static contract CI
@@ -109,7 +109,7 @@
 - **Acceptance checklist:** Reject bad refs/reduced/focus/false tested, all 180 coverage pending; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-011 — Browser/AT and 30-appearance QA proof plan
@@ -120,7 +120,7 @@
 - **Acceptance checklist:** Zero false review; six scenarios×30 modes/skins, four-skin first, AT/focus/perf and forced-colors; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-012 — Consumer implementation pilot (future only)
@@ -131,7 +131,7 @@
 - **Acceptance checklist:** Proof only after provider, token, licensing and motion-engine decision; not authorized here; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-013 — Optional SFX production/licensing pilot (future only)
@@ -142,7 +142,7 @@
 - **Acceptance checklist:** No audio before consent, rights, codec/loudness and visible-equivalent proofs; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 ## MOT-014 — Release/compatibility sign-off and migration
@@ -153,7 +153,7 @@
 - **Acceptance checklist:** Version IDs/events/token changes documented, artifact and AT proofs, no false released status; preserve source-of-truth boundaries and stable skin IDs, six SFX events, five token names and 25 existing recipe IDs when touched.
 - **Non-goals:** no unrelated component behavior forks, production UI, art, binary audio, license speculation, installed packages or backend/business logic in this task.
 - **Keyboard/accessibility/security/performance:** require instant usable result, reduced-motion/forced-colors/keyboard focus, consent/no-audio status, cleanup/cancel, provenance when media affected; record exceptions and owner approval.
-- **Tests/commands:** only the verified Node22 repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
+- **Tests/commands:** only the verified Node 24.22.1 LTS repo commands `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` apply now (static contracts). Runtime/browser/AT/audio commands are **not verified or installed**; specify before running.
 - **Definition of Done:** focused change, source/ADR and owner evidence, docs links updated, risk/semver/migration/rollback notes, real command transcript or explicit not-run; status cannot advance beyond `specified` from JSON tests.
 
 

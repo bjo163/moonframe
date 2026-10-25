@@ -1,6 +1,6 @@
 # Moonframe — Accessibility & Visual QA atomic, issue-ready backlog
 
-**2026-10-25.** These **16 items are proposed roadmap tasks**, **not** GitHub issues, not React/QA implementation and not visual/a11y release evidence. Check [existing GitHub #1–#6](https://github.com/bjo163/moonframe/issues) before creating a future issue. Existing MF-024/#6 covers Skin Lab fixtures, MF-090 suite testing, MF-092 reduced-motion/contrast/viewport review; no duplicates created. The existing documentation only has a Node22 static validator, not Playwright/axe/Storybook. No branch was created by this task.
+**2026-10-25.** These **16 items are proposed roadmap tasks**, **not** GitHub issues, not React/QA implementation and not visual/a11y release evidence. Check [existing GitHub #1–#6](https://github.com/bjo163/moonframe/issues) before creating a future issue. Existing MF-024/#6 covers Skin Lab fixtures, MF-090 suite testing, MF-092 reduced-motion/contrast/viewport review; no duplicates created. The existing documentation only has a Node 24.22.1 LTS static validator, not Playwright/axe/Storybook. No branch was created by this task.
 
 ## AVQA-001 — Approve initial consumer/browser/AT support profile
 
@@ -11,7 +11,7 @@
 - **Acceptance tests and evidence:** Browser, SSR, locale/density/RTL and human AT owners listed with version/timing evidence. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -24,7 +24,7 @@
 - **Acceptance tests and evidence:** Verify WCAG A/AA/advisory AAA, exceptions and completeness for actual product surfaces; don't equate bounded map with full WCAG. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -37,7 +37,7 @@
 - **Acceptance tests and evidence:** No fake pass or waiver; real reviewer, issue, scope, expiry, mitigation and test proof required. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -50,7 +50,7 @@
 - **Acceptance tests and evidence:** Keyboard pattern and canonical state join, high-risk widget manual AT gates and WCAG applicability accepted. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -63,7 +63,7 @@
 - **Acceptance tests and evidence:** 9 specimen IDs, stable realistic redacted mock data, locale, date/time, stable images and no invented captures. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -76,7 +76,7 @@
 - **Acceptance tests and evidence:** Pinned OS/browser/fonts/DPR; double-run screenshots, variability/noise measurements, no automatic baseline approval. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -89,7 +89,7 @@
 - **Acceptance tests and evidence:** Document violations/passes/incomplete vs manual, package/CI cost and choice from measured real DOM. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -102,7 +102,7 @@
 - **Acceptance tests and evidence:** Four skins×Light/Dark with real renderer screenshot, keyboard/AT and grayscale/decoration-off review. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -115,7 +115,7 @@
 - **Acceptance tests and evidence:** NVDA Firefox/Chrome and VoiceOver Safari on high-risk Dialog/Combo/Table; tested OS/AT versions, named reviewers. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -128,7 +128,7 @@
 - **Acceptance tests and evidence:** Resolved alpha/texture contrast; 24 CSS px or evaluated 2.5.8 exception; 2.4.11 focus; 320px reflow with valid table exceptions. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -141,7 +141,7 @@
 - **Acceptance tests and evidence:** Compact/comfortable/spacious sample; Indonesian long labels, supported RTL, touch non-drag action and 200/400% zoom. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -154,7 +154,7 @@
 - **Acceptance tests and evidence:** 270 planned cells have real capture evidence for in-scope screens; every accepted baseline reviewed; no autoaccept. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -167,7 +167,7 @@
 - **Acceptance tests and evidence:** Same-data color/grayscale/decoration-off; eight dimensions, reviewer/date, next action, no clone matrix. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -180,7 +180,7 @@
 - **Acceptance tests and evidence:** Blocker→CI/release policy, flaky snapshot handling, supervised exceptions with expiry and rollback. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -193,7 +193,7 @@
 - **Acceptance tests and evidence:** Evidence-backed supported scope, outstanding ACT/incomplete cases, manual AT, user impact, package/consumer QA and signed release decision. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
@@ -206,7 +206,7 @@
 - **Acceptance tests and evidence:** 51 criterion refs, 151 QA joins, 9×30 cells, 0 fabricated approvals, 14 rejected fixtures; only spec CI active. Record a real commit SHA, source of truth, owner/reviewer, criteria IDs and impact to any of 15/30/105/151.
 - **Explicit non-goals:** no unrelated React component build, icon/audio/font generation, unapproved test package, legal WCAG certificate, arbitrary screenshot pass or new branch.
 - **Accessibility/visual acceptance:** real keyboard/contrast/forced colors/zoom and manual screen reader evidence required if task interacts with rendered UI; static spec work must remain `specified-not-tested`.
-- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node22 GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
+- **Verified commands (docs-only):** `node scripts/validate-contracts.mjs` and `node scripts/validate-contracts.mjs --self-test` (Node 24.22.1 LTS GitHub workflow). Future Playwright/axe commands cannot be specified as tested or installed yet.
 - **Risks / compatibility:** exposed test status, token/skin IDs, public component contracts, license and baseline changes require owner review, versioning and rollback strategy; avoid mass migrations.
 - **Documentation and Definition of Done:** canonical file updated, cross-file refs and README links correct, actual Node CI result recorded, manual proof linked only if it happened, status remains honest; scoped defect/exception IDs used, not a silently edited snapshot.
 
