@@ -1,0 +1,4995 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-PAGE-TEMPLATES-001",
+  "status": "specified-not-implemented",
+  "authority": "Page template ownership only; concrete blocks in moonframe-block-manifest-v0.1.json",
+  "count": 72,
+  "priorityVocabulary": [
+    "P0",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "templates": [
+    {
+      "id": "template-sign-in-minimal",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Simple login screen",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-sign-in-form",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-sign-in-split",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Split cover / auth form",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-sign-in-form",
+        "block-sign-in-social"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-sign-in-branded",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Branded compact login",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-sign-in-form",
+        "block-sign-in-passkey"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-sign-in-enterprise",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "SSO-first enterprise login",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-sso-discovery",
+        "block-idp-redirect-status"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-sign-up",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Registration page",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-sign-up-form",
+        "block-email-verification"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-magic-link",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Magic-link request and outcome",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-magic-link-request",
+        "block-magic-link-status"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-forgot-password",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Recovery request",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-password-recovery",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-reset-password",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Password reset and token-invalid",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-password-reset-form",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-verify-email",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Email confirmation page",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-email-verification",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-mfa-verify",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "OTP/2FA challenge page",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-mfa-challenge",
+        "block-otp-challenge"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-passkey-signin",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Passkey and fallback UI",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-sign-in-passkey",
+        "block-sign-in-form"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-sso-callback",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Redirect and provider error",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-idp-redirect-status",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-invite-accept",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Invitation acceptance page",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-invitation-accept",
+        "block-auth-error-panel"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-account-locked",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Locked/recovery entry",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-account-locked",
+        "block-password-recovery"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-auth-onboarding",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Workspace/welcome wizard",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-welcome-checklist",
+        "block-onboarding-stepper",
+        "block-workspace-setup"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-security-center",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Sessions/account identities",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-active-sessions",
+        "block-connected-accounts",
+        "block-security-settings"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-team-membership",
+      "level": "D",
+      "category": "authentication",
+      "purpose": "Organization switch/invites",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-organization-switcher",
+        "block-team-invitation-list"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-dashboard-overview",
+      "level": "D",
+      "category": "dashboard",
+      "purpose": "Metrics trends and activity",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-kpi-grid",
+        "block-trend-panel",
+        "block-activity-feed"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-analytics-workspace",
+      "level": "D",
+      "category": "dashboard",
+      "purpose": "Range and segment analysis",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-date-range-toolbar",
+        "block-analytics-filter-bar",
+        "block-chart-legend-summary"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-service-dashboard",
+      "level": "D",
+      "category": "dashboard",
+      "purpose": "Service health and event state",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-status-overview",
+        "block-service-health",
+        "block-event-log-viewer"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-executive-dashboard",
+      "level": "D",
+      "category": "dashboard",
+      "purpose": "Period comparison and KPIs",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-kpi-grid",
+        "block-comparison-period",
+        "block-recent-records"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-records-table",
+      "level": "D",
+      "category": "data",
+      "purpose": "Record list with sorting and pagination",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-sortable-table",
+        "block-paginated-table",
+        "block-table-no-results"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-data-workspace",
+      "level": "D",
+      "category": "data",
+      "purpose": "Advanced data filtering and detail",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-searchable-record-list",
+        "block-filter-toolbar",
+        "block-bulk-action-bar",
+        "block-detail-drawer"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-data-filter-builder",
+      "level": "D",
+      "category": "data",
+      "purpose": "Complex filter settings and saved views",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-filter-builder",
+        "block-filter-chips",
+        "block-saved-views"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-data-audit",
+      "level": "D",
+      "category": "data",
+      "purpose": "Searchable audit record explorer",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-audit-log-list",
+        "block-filter-toolbar"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-responsive-records",
+      "level": "D",
+      "category": "data",
+      "purpose": "Mobile records list alternative",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-table-responsive-card",
+        "block-filter-toolbar"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-data-grid-lab",
+      "level": "D",
+      "category": "data",
+      "purpose": "Experimental editable enterprise grid",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-editable-grid-toolbar",
+        "block-server-query-status"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-users-directory",
+      "level": "D",
+      "category": "admin",
+      "purpose": "Member list with role presentation",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-member-list",
+        "block-role-summary"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-team-admin",
+      "level": "D",
+      "category": "admin",
+      "purpose": "Invitations and member actions",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-member-list",
+        "block-team-invitation-list"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-api-key-settings",
+      "level": "D",
+      "category": "admin",
+      "purpose": "API key summary",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-api-key-list",
+        "block-destructive-confirm"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-integrations-panel",
+      "level": "D",
+      "category": "admin",
+      "purpose": "Connector health",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-integration-status",
+        "block-service-health"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-resource-detail",
+      "level": "D",
+      "category": "crud",
+      "purpose": "Read-only entity with history",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-resource-header",
+        "block-resource-metadata",
+        "block-history-timeline"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-resource-create",
+      "level": "D",
+      "category": "crud",
+      "purpose": "Create form and validation",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-resource-edit-form",
+        "block-destructive-confirm"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-resource-edit",
+      "level": "D",
+      "category": "crud",
+      "purpose": "Edit resource and unsaved warning",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-resource-edit-form",
+        "block-unsaved-changes-bar"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-resource-delete",
+      "level": "D",
+      "category": "crud",
+      "purpose": "Safe destructive intent UI",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-destructive-confirm",
+        "block-resource-header"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-billing-overview",
+      "level": "D",
+      "category": "billing",
+      "purpose": "Subscription, quota and invoices",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-usage-quota",
+        "block-invoice-summary"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-plans-and-pricing",
+      "level": "D",
+      "category": "billing",
+      "purpose": "Plans comparison selection UI",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-pricing-comparison",
+        "block-subscription-change"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-payment-outcome",
+      "level": "D",
+      "category": "billing",
+      "purpose": "Payment pending, failure, success",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-payment-outcome",
+        "block-invoice-summary"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-profile-preferences",
+      "level": "D",
+      "category": "settings",
+      "purpose": "Account profile and preferences",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-profile-settings",
+        "block-notification-settings"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-appearance-preferences",
+      "level": "D",
+      "category": "settings",
+      "purpose": "Theme/density/motion settings",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-appearance-settings",
+        "block-unsaved-changes-bar"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-organization-preferences",
+      "level": "D",
+      "category": "settings",
+      "purpose": "Organization and integrations",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-organization-settings",
+        "block-integration-status"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-project-hub",
+      "level": "D",
+      "category": "projects",
+      "purpose": "Projects, tasks and milestones",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-project-overview",
+        "block-task-list"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-kanban-workspace",
+      "level": "D",
+      "category": "projects",
+      "purpose": "Kanban board and task drawer",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-kanban-board",
+        "block-task-drawer"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-project-schedule",
+      "level": "D",
+      "category": "projects",
+      "purpose": "Milestones and schedule",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-project-timeline",
+        "block-project-overview"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-calendar-month",
+      "level": "D",
+      "category": "calendar",
+      "purpose": "Month/week calendar overview",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-calendar-toolbar",
+        "block-event-detail"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-calendar-event-editor",
+      "level": "D",
+      "category": "calendar",
+      "purpose": "Event create/edit including recurrence UI",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-event-editor",
+        "block-calendar-toolbar"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-messages-workspace",
+      "level": "D",
+      "category": "communication",
+      "purpose": "Inbox/conversation split panes",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-conversation-list",
+        "block-message-stream",
+        "block-message-composer"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-thread-view",
+      "level": "D",
+      "category": "communication",
+      "purpose": "Thread replies and retry states",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-thread-replies",
+        "block-message-retry"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-ai-chat",
+      "level": "D",
+      "category": "ai",
+      "purpose": "AI chat/conversation display",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-ai-chat-shell",
+        "block-ai-prompt-composer",
+        "block-ai-stream-state"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-ai-agent-activity",
+      "level": "D",
+      "category": "ai",
+      "purpose": "Tool calls and human approval",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-ai-tool-activity",
+        "block-ai-approval-request"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-ai-sources",
+      "level": "D",
+      "category": "ai",
+      "purpose": "Sources and artifact preview",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-ai-source-citations",
+        "block-ai-artifact-preview"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-file-manager",
+      "level": "D",
+      "category": "files",
+      "purpose": "File browser, upload and preview",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-file-browser",
+        "block-upload-progress",
+        "block-file-preview"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-content-editor",
+      "level": "D",
+      "category": "files",
+      "purpose": "Publishing and version history UI",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-content-publisher",
+        "block-document-history"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-operations-console",
+      "level": "D",
+      "category": "operations",
+      "purpose": "Service, event and deployment console",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-service-health",
+        "block-event-log-viewer",
+        "block-deployment-history"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-webhook-inspector",
+      "level": "D",
+      "category": "operations",
+      "purpose": "Delivery and request logs",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-webhook-delivery",
+        "block-api-inspector"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-queue-monitor",
+      "level": "D",
+      "category": "operations",
+      "purpose": "Background jobs display",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-job-queue",
+        "block-service-health"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-moonledger-home",
+      "level": "D",
+      "category": "erp",
+      "purpose": "ERP records and metrics workbench",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-erp-filter-workbench",
+        "block-erp-approval-queue"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-moonledger-invoices",
+      "level": "D",
+      "category": "erp",
+      "purpose": "Invoice detail/edit shells",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-erp-invoice-editor-shell",
+        "block-invoice-summary"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-moonledger-inventory",
+      "level": "D",
+      "category": "erp",
+      "purpose": "Stock inventory list",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-erp-inventory-summary",
+        "block-saved-views"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-moonquest-home",
+      "level": "D",
+      "category": "rpg",
+      "purpose": "Quest overview and status",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-quest-journal",
+        "block-rpg-party-status"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-moonquest-inventory",
+      "level": "D",
+      "category": "rpg",
+      "purpose": "Inventory/rarity interface",
+      "priority": "P3",
+      "releaseTier": "specialized-future",
+      "blockRefs": [
+        "block-rpg-inventory-grid",
+        "block-rpg-rewards"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-public-landing",
+      "level": "D",
+      "category": "marketing",
+      "purpose": "Landing page with hero and feature grid",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-hero-section",
+        "block-feature-grid",
+        "block-faq-section"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-public-pricing",
+      "level": "D",
+      "category": "marketing",
+      "purpose": "Public pricing and CTA",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-pricing-section",
+        "block-faq-section"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-public-contact",
+      "level": "D",
+      "category": "marketing",
+      "purpose": "Help, contact and waitlist",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-contact-section",
+        "block-waitlist-form"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-documentation-landing",
+      "level": "D",
+      "category": "marketing",
+      "purpose": "Documentation landing shell and navigation",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-hero-section",
+        "block-feature-grid"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-legal-content",
+      "level": "D",
+      "category": "marketing",
+      "purpose": "Accessible long legal copy shell",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-hero-section"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-not-found",
+      "level": "D",
+      "category": "universal",
+      "purpose": "No page or resource",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-no-results"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-error-page",
+      "level": "D",
+      "category": "universal",
+      "purpose": "Retryable and unrecoverable failures",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-service-error"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-offline-page",
+      "level": "D",
+      "category": "universal",
+      "purpose": "Offline retry and stale state",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-offline-banner",
+        "block-stale-data-warning"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-access-denied",
+      "level": "D",
+      "category": "universal",
+      "purpose": "Permission denied presentation",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-permission-denied"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-maintenance",
+      "level": "D",
+      "category": "universal",
+      "purpose": "Under maintenance page",
+      "priority": "P2",
+      "releaseTier": "premium-v1.x",
+      "blockRefs": [
+        "block-maintenance-page"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    },
+    {
+      "id": "template-first-run-empty",
+      "level": "D",
+      "category": "universal",
+      "purpose": "Empty onboarding application",
+      "priority": "P1",
+      "releaseTier": "core-v1-pages",
+      "blockRefs": [
+        "block-empty-first-run",
+        "block-welcome-checklist"
+      ],
+      "routePattern": "consumer-owned",
+      "slots": [
+        "appShell",
+        "pageHeader",
+        "primaryContent",
+        "secondaryRail",
+        "overlayOutlet",
+        "footer-if-applicable"
+      ],
+      "dataContract": {
+        "kind": "consumer-provided view models",
+        "schema": "future typed props; no untrusted network data assumed",
+        "ownership": "consumer fetches and validates"
+      },
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "empty",
+        "no-results",
+        "error",
+        "permission-denied",
+        "offline",
+        "suspended-as-applicable"
+      ],
+      "responsive": {
+        "mobile": "meaningful stack/reflow",
+        "tablet": "adaptive rail or progressive disclosure",
+        "desktop": "active skin shell distinct in geometry/composition"
+      },
+      "a11y": [
+        "heading hierarchy and landmarks",
+        "keyboard traversal matches reading order",
+        "error summary and recovery focus",
+        "at zoom 200–400% no loss of function",
+        "WCAG 2.2 AA target pending real evaluation"
+      ],
+      "theme": {
+        "skins": "all-15-planned",
+        "appearance": [
+          "light",
+          "dark"
+        ],
+        "density": "independent",
+        "status": "specified-not-rendered"
+      },
+      "integrationBoundary": "No domain backend, credentials/session engine, data fetching, authorization or persistence",
+      "acceptance": [
+        "realistic synthetic seed data contract",
+        "full state variants",
+        "keyboard/screen-reader criteria",
+        "mobile/desktop same task",
+        "skin composition not just recolored",
+        "no hidden outbound requests"
+      ],
+      "status": "specified-not-implemented",
+      "owner": "unassigned"
+    }
+  ]
+}

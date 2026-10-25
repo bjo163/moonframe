@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-DATA-WORKSPACE-001",
+  "status": "design-contract-not-implemented",
+  "authority": "This file owns behavioral state/API & acceptance; concrete UI blocks in moonframe-block-manifest-v0.1.json",
+  "tiers": [
+    {
+      "id": "simple-table",
+      "priority": "P1",
+      "featureScope": [
+        "semantic HTML table",
+        "header/body/footer/caption",
+        "formatting/empty-state"
+      ],
+      "nonGoals": [
+        "filter engine",
+        "virtualization",
+        "server querying"
+      ],
+      "recommendedEngine": "native table semantics"
+    },
+    {
+      "id": "data-table",
+      "priority": "P1",
+      "featureScope": [
+        "column sorting",
+        "controlled pagination",
+        "row selection",
+        "loading/empty/error",
+        "column headers",
+        "keyboard"
+      ],
+      "nonGoals": [
+        "editing",
+        "pivoting",
+        "full spreadsheet"
+      ],
+      "recommendedEngine": "TanStack Table candidate; adapter decision after spike"
+    },
+    {
+      "id": "advanced-workspace",
+      "priority": "P2",
+      "featureScope": [
+        "search and query state",
+        "filters/chips",
+        "saved views",
+        "grouping",
+        "column chooser",
+        "bulk toolbar",
+        "detail drawer",
+        "server-state/pagination/export intent"
+      ],
+      "nonGoals": [
+        "database persistence",
+        "server-side authorization",
+        "download implementation"
+      ],
+      "recommendedEngine": "TanStack Table candidate + controlled composition; query optional"
+    },
+    {
+      "id": "enterprise-grid",
+      "priority": "P3",
+      "featureScope": [
+        "row/column virtualization",
+        "editable cells",
+        "pinning",
+        "aggregation",
+        "pivot/spreadsheet-like"
+      ],
+      "nonGoals": [
+        "claim parity with commercial grids in v1"
+      ],
+      "recommendedEngine": "spike TanStack Virtual vs separately licensed grid; no decision"
+    }
+  ],
+  "controlledStateModel": {
+    "sorting": "{columnId,desc}[]",
+    "pagination": "{pageIndex,pageSize,totalCount?,cursor?}",
+    "columnVisibility": "Record<columnId,boolean>",
+    "rowSelection": "Set<stableRowId>",
+    "filter": "AST with id,field,operator,value; validate by consumer",
+    "search": "text/query model, controlled and debounced by consumer",
+    "expanded": "Set<stableRowId>",
+    "grouping": "columnId[] (advanced only)",
+    "savedView": "id + query model (consumer-owned persistence)",
+    "export": "format + filtered/sorted selection intent (consumer executes)",
+    "asyncStatus": "idle|loading|refreshing|stale|offline|error|ready|permission-denied"
+  },
+  "serverContract": {
+    "queryIntent": "{pagination,sort,filter,search,grouping}",
+    "result": "{rows,totalCount?,nextCursor?,lastUpdated?,status}",
+    "callbacks": [
+      "onQueryChange",
+      "onRowAction",
+      "onSelectionChange",
+      "onExportIntent",
+      "onSaveViewIntent",
+      "onRetry"
+    ],
+    "ownership": "consumer controls fetch/caching/permission/backend; UI never hardcodes API",
+    "dangerousStates": [
+      "row update conflict",
+      "authorization revoked",
+      "stale totals",
+      "cancelled export",
+      "partial server data"
+    ]
+  },
+  "renderAcceptance": [
+    "semantic table with headers and tabular numbers",
+    "focus and selection maintained across sort/filter/pagination",
+    "virtualization must preserve screen-reader/keyboard access",
+    "responsive alternative preserves all critical operations",
+    "SSR/render vs hydration consistency when enabled",
+    "performance budgets measured only after implementation"
+  ],
+  "emptyStates": [
+    "no records",
+    "no match",
+    "loading",
+    "offline",
+    "error",
+    "forbidden",
+    "stale",
+    "partial"
+  ],
+  "fixtures": [
+    "12 rows",
+    "500 rows",
+    "50000 synthetic rows (optional virtualization spike)",
+    "long RTL text",
+    "missing cells",
+    "permissions changes",
+    "cursor pagination",
+    "bulk selected across page"
+  ],
+  "primarySources": [
+    "https://tanstack.com/table/latest/docs/overview",
+    "https://tanstack.com/virtual/latest/docs/introduction",
+    "https://mui.com/x/introduction/licensing/"
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-STARTERS-001",
+  "status": "specified-not-implemented",
+  "authority": "Composition of pageRefs only; page details live in page manifest",
+  "starters": [
+    {
+      "id": "starter-admin-workspace",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for admin-workspace",
+      "priority": "P2",
+      "pageRefs": [
+        "template-dashboard-overview",
+        "template-users-directory",
+        "template-resource-detail",
+        "template-profile-preferences",
+        "template-error-page"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-dashboard-overview",
+        "template-users-directory",
+        "template-resource-detail",
+        "template-profile-preferences",
+        "template-error-page"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-auth-onboarding",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for auth-onboarding",
+      "priority": "P2",
+      "pageRefs": [
+        "template-sign-in-minimal",
+        "template-sign-up",
+        "template-forgot-password",
+        "template-verify-email",
+        "template-auth-onboarding",
+        "template-account-locked"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-sign-in-minimal",
+        "template-sign-up",
+        "template-forgot-password",
+        "template-verify-email",
+        "template-auth-onboarding",
+        "template-account-locked"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-data-admin",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for data-admin",
+      "priority": "P2",
+      "pageRefs": [
+        "template-records-table",
+        "template-data-workspace",
+        "template-resource-detail",
+        "template-data-audit",
+        "template-access-denied"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-records-table",
+        "template-data-workspace",
+        "template-resource-detail",
+        "template-data-audit",
+        "template-access-denied"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-analytics-portal",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for analytics-portal",
+      "priority": "P2",
+      "pageRefs": [
+        "template-analytics-workspace",
+        "template-executive-dashboard",
+        "template-dashboard-overview",
+        "template-error-page"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-analytics-workspace",
+        "template-executive-dashboard",
+        "template-dashboard-overview",
+        "template-error-page"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-operations-console",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for operations-console",
+      "priority": "P3",
+      "pageRefs": [
+        "template-operations-console",
+        "template-webhook-inspector",
+        "template-queue-monitor",
+        "template-offline-page"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-operations-console",
+        "template-webhook-inspector",
+        "template-queue-monitor",
+        "template-offline-page"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-moonledger-erp",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for moonledger-erp",
+      "priority": "P3",
+      "pageRefs": [
+        "template-moonledger-home",
+        "template-moonledger-invoices",
+        "template-moonledger-inventory",
+        "template-organization-preferences"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-moonledger-home",
+        "template-moonledger-invoices",
+        "template-moonledger-inventory",
+        "template-organization-preferences"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-moonquest-adventure",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for moonquest-adventure",
+      "priority": "P3",
+      "pageRefs": [
+        "template-moonquest-home",
+        "template-moonquest-inventory",
+        "template-profile-preferences"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-moonquest-home",
+        "template-moonquest-inventory",
+        "template-profile-preferences"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    },
+    {
+      "id": "starter-content-marketing",
+      "level": "E",
+      "purpose": "Multi-page UI route composition for content-marketing",
+      "priority": "P2",
+      "pageRefs": [
+        "template-public-landing",
+        "template-public-pricing",
+        "template-public-contact",
+        "template-documentation-landing",
+        "template-legal-content"
+      ],
+      "routeOwnership": "Consumer app must choose router and route protection",
+      "sampleData": "Deterministic fictional fixture with no real identities, secrets, payments or user records",
+      "integrationSeams": [
+        "auth/session (consumer)",
+        "data loader/mutation (consumer)",
+        "navigation/routing (consumer)",
+        "persistent settings (consumer)"
+      ],
+      "states": [
+        "initial",
+        "loading",
+        "ready",
+        "offline",
+        "permission-denied",
+        "error"
+      ],
+      "a11y": "Layout/reflow and focus/heading/keyboard navigation across routes; WCAG 2.2 AA target",
+      "security": "Never imply demo auth is secure; no executable backend/auth/payment/game/infra logic",
+      "dependencies": [
+        "template-public-landing",
+        "template-public-pricing",
+        "template-public-contact",
+        "template-documentation-landing",
+        "template-legal-content"
+      ],
+      "skinCoverageSource": "15 skins × light/dark planned, use page recipes not recolor",
+      "definitionOfDone": [
+        "linked routes and sample data defined",
+        "all referenced pages built and manually reviewed",
+        "consumer install/build fixture",
+        "no hidden network calls or sensitive fixtures",
+        "responsive and cross-route focus checks"
+      ],
+      "status": "specified-not-implemented"
+    }
+  ]
+}
