@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-motion-recipe.schema.json",
+  "title": "Moonframe Motion Recipe Record — bounded proposed Draft 2020-12 schema",
+  "description": "No independent generic schema engine is installed; Node semantic validator separately checks referential integrity. This is NOT a motion runtime implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "displayName",
+    "purpose",
+    "componentIds",
+    "trigger",
+    "visual",
+    "tokenRefs",
+    "candidateTokenRefs",
+    "reducedMotion",
+    "interruption",
+    "continuous",
+    "autoStarts",
+    "pausePolicy",
+    "noMotionNoAudio",
+    "focusAndAria",
+    "audio",
+    "performance",
+    "skinRef",
+    "testsRequired",
+    "readiness",
+    "evidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^mot\\.[a-z]+(?:-[a-z]+)*$"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "enum": [
+        "feedback",
+        "orientation",
+        "continuity",
+        "hierarchy",
+        "progress",
+        "expression"
+      ]
+    },
+    "componentIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]+$"
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "required": [
+        "semanticFrom",
+        "semanticTo",
+        "authority"
+      ],
+      "properties": {
+        "semanticFrom": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semanticTo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "visual": {
+      "type": "object",
+      "required": [
+        "proposal",
+        "exit",
+        "intensity"
+      ],
+      "properties": {
+        "proposal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intensity": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "tokenRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^motion\\.[a-z0-9.-]+$"
+      }
+    },
+    "candidateTokenRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^motion\\.[a-z0-9.-]+$"
+      }
+    },
+    "reducedMotion": {
+      "type": "object",
+      "required": [
+        "strategy",
+        "equivalent",
+        "requiresHumanExceptionApproval"
+      ],
+      "properties": {
+        "strategy": {
+          "enum": [
+            "none",
+            "static-equivalent",
+            "shortened",
+            "opacity-only",
+            "essential"
+          ]
+        },
+        "equivalent": {
+          "type": "string",
+          "minLength": 5
+        },
+        "requiresHumanExceptionApproval": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "interruption": {
+      "type": "object",
+      "required": [
+        "onCancel",
+        "onPreferenceChange",
+        "onUnmount",
+        "onHiddenTab",
+        "mustNotWaitForAnimation"
+      ],
+      "properties": {
+        "onCancel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "onPreferenceChange": {
+          "type": "string",
+          "minLength": 1
+        },
+        "onUnmount": {
+          "type": "string",
+          "minLength": 1
+        },
+        "onHiddenTab": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mustNotWaitForAnimation": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "continuous": {
+      "const": false
+    },
+    "autoStarts": {
+      "const": false
+    },
+    "pausePolicy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "noMotionNoAudio": {
+      "type": "string",
+      "minLength": 5
+    },
+    "focusAndAria": {
+      "type": "string",
+      "minLength": 5
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "candidateEventId",
+        "eligibility",
+        "neverOnlyFeedback"
+      ],
+      "properties": {
+        "candidateEventId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eligibility": {
+          "enum": [
+            "optional-with-explicit-consumer-opt-in",
+            "none-by-default"
+          ]
+        },
+        "neverOnlyFeedback": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "performance": {
+      "type": "object",
+      "required": [
+        "benchmark",
+        "risk"
+      ],
+      "properties": {
+        "benchmark": {
+          "const": "not-run"
+        },
+        "risk": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "skinRef": {
+      "const": "moonframe-motion-skin-matrix-v0.1.json"
+    },
+    "testsRequired": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "readiness": {
+      "const": "specified-not-implemented"
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "browser",
+        "manualAT",
+        "reviewer",
+        "screenshot"
+      ],
+      "properties": {
+        "browser": {
+          "type": "null"
+        },
+        "manualAT": {
+          "type": "null"
+        },
+        "reviewer": {
+          "type": "null"
+        },
+        "screenshot": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "reducedMotion": {
+            "properties": {
+              "strategy": {
+                "const": "essential"
+              }
+            }
+          }
+        },
+        "required": [
+          "reducedMotion"
+        ]
+      },
+      "then": {
+        "properties": {
+          "reducedMotion": {
+            "properties": {
+              "requiresHumanExceptionApproval": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

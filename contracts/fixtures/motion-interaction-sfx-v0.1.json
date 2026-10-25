@@ -1,0 +1,961 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-MOTION-FIXTURES-001",
+  "status": "synthetic-contract-only",
+  "schemaRef": "schemas/moonframe-motion-recipe.schema.json",
+  "valid": [
+    {
+      "id": "planned-press-recipe",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "no-reduced",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "bad-reduced",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "ignore-os",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "essential-unreviewed",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "essential",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "missing-interruption",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "auto-loop",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": true,
+        "autoStarts": true,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "unknown-component",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "fake-component"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "unknown-token",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.unknown.duration"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "false-reviewed",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "reviewed",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "false-browser-evidence",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": "passed-without-test",
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "motion-only-state",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "illegal-sfx",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+        "audio": {
+          "candidateEventId": "whoosh-click",
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    },
+    {
+      "id": "missing-focus-rule",
+      "reason": "Expected rejection by bounded semantic validator, not proof of renderer",
+      "recipe": {
+        "id": "mot.press",
+        "displayName": "press",
+        "purpose": "feedback",
+        "componentIds": [
+          "button",
+          "icon-button",
+          "toggle",
+          "switch"
+        ],
+        "trigger": {
+          "semanticFrom": "resting",
+          "semanticTo": "pressed",
+          "authority": "component/consumer state, not animation event"
+        },
+        "visual": {
+          "proposal": "brief press outline/surface accent",
+          "exit": "semantic cleanup independent of cosmetic animation finish",
+          "intensity": "to-be-reviewed-no-final-number"
+        },
+        "tokenRefs": [
+          "motion.duration.normal",
+          "motion.easing.standard"
+        ],
+        "candidateTokenRefs": [
+          "motion.easing.enter"
+        ],
+        "reducedMotion": {
+          "strategy": "static-equivalent",
+          "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+          "requiresHumanExceptionApproval": false
+        },
+        "interruption": {
+          "onCancel": "cancel animation and settle target immediately",
+          "onPreferenceChange": "cancel effect; do not reset state/focus",
+          "onUnmount": "dispose handles, remove ghost and timers",
+          "onHiddenTab": "pause decorative, never defer essential state",
+          "mustNotWaitForAnimation": true
+        },
+        "continuous": false,
+        "autoStarts": false,
+        "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+        "noMotionNoAudio": "same semantic state accessible immediately",
+        "focusAndAria": "",
+        "audio": {
+          "candidateEventId": null,
+          "eligibility": "none-by-default",
+          "neverOnlyFeedback": true
+        },
+        "performance": {
+          "benchmark": "not-run",
+          "risk": "avoid layout thrash/continuous paints"
+        },
+        "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+        "testsRequired": [
+          "immediate state with animations disabled",
+          "reduced motion live/first paint",
+          "interruption and unmount",
+          "keyboard/touch/AT invariance",
+          "forced-colors and zoom",
+          "15 skins Light/Dark"
+        ],
+        "readiness": "specified-not-implemented",
+        "evidence": {
+          "browser": null,
+          "manualAT": null,
+          "reviewer": null,
+          "screenshot": null
+        }
+      }
+    }
+  ],
+  "notes": [
+    "No actual animation/timing values/browser/sound tested.",
+    "A generic Draft 2020-12 schema engine has not been run, fixtures validated via Node custom rules only.",
+    "All records are proposed documentation; no render/audio files."
+  ]
+}
