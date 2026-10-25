@@ -1,0 +1,560 @@
+{
+  "schemaVersion": "1.3.0",
+  "contractId": "MF-THEME-001",
+  "product": "Moonframe UI",
+  "status": "specified-not-implemented",
+  "promise": "15 distinct visual grammars; each has light and dark appearances; one behavioral component system",
+  "counts": {
+    "skinCount": 15,
+    "baselineAppearances": 30,
+    "pairwiseSkinComparisons": 105
+  },
+  "appearanceModes": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "systemResolution": {
+    "systemResolvesTo": [
+      "light",
+      "dark"
+    ],
+    "systemIsNotASkin": true
+  },
+  "independentAxes": {
+    "skin": [
+      "moonpunk",
+      "moonriot",
+      "moonzine",
+      "moonhalftone",
+      "moonglitch",
+      "moonsmash",
+      "moonink",
+      "mooncrash",
+      "moonpanel",
+      "moonscrawl",
+      "moonraw",
+      "moonchrome",
+      "classic",
+      "moonquest",
+      "moonledger"
+    ],
+    "appearance": [
+      "light",
+      "dark",
+      "system"
+    ],
+    "density": [
+      "compact",
+      "comfortable",
+      "spacious"
+    ],
+    "motion": [
+      "full",
+      "reduced"
+    ],
+    "contrast": [
+      "normal",
+      "high"
+    ],
+    "viewport": [
+      "responsive-state-not-skin"
+    ]
+  },
+  "rootAttributes": {
+    "skin": "data-skin",
+    "mode": "data-mode",
+    "density": "data-density",
+    "motion": "data-motion",
+    "contrast": "data-contrast"
+  },
+  "fallbacks": {
+    "unknownSkin": "classic",
+    "invalidMode": "system",
+    "invalidDensity": "comfortable",
+    "invalidMotion": "system-preference",
+    "invalidContrast": "system-preference",
+    "failedDecorativeAsset": "omit-decoration-retain-usable-layout",
+    "invalidTokenReference": "fail-ci-validation"
+  },
+  "runtimeRequirements": [
+    "Resolve and validate preferences before paint where SSR supports it.",
+    "Prevent avoidable flash of wrong theme.",
+    "Keep user-selected system mode distinct from its resolved light/dark result.",
+    "Do not create unbounded dynamic Tailwind class names.",
+    "Load heavy skin art and sound packs only when required and allowed.",
+    "Preference persistence failure must not break UI rendering."
+  ],
+  "skinSchema": {
+    "requiredFields": [
+      "id",
+      "name",
+      "territory",
+      "composition",
+      "geometry",
+      "type",
+      "surface",
+      "navigation",
+      "data",
+      "media",
+      "motion",
+      "antiOverlap",
+      "modes"
+    ],
+    "modeRequirements": [
+      "semanticColorMap",
+      "focusTreatment",
+      "surfaceMapping",
+      "contrastValidation"
+    ],
+    "visualRecipeDimensions": [
+      "composition",
+      "geometry",
+      "type",
+      "surface",
+      "navigation",
+      "data",
+      "media",
+      "motion"
+    ]
+  },
+  "skins": [
+    {
+      "id": "moonpunk",
+      "name": "Moonpunk",
+      "territory": "acid-lime manga punk / neo-brutalist impact",
+      "composition": "asymmetric block composition; strong framed zones; offset utility rail",
+      "geometry": "thick black outlines; square-to-cut corners; hard offset shadows",
+      "type": "condensed loud display + highly legible neutral body",
+      "surface": "ink-dark planes; exposed borders; controlled grain",
+      "navigation": "command rail with high-contrast active slab",
+      "data": "bold stat slabs; simplified charts with sharp markers",
+      "media": "original manga ink, torn-paper edges, halftone used sparingly",
+      "motion": "snappy 100–180ms; short impact settle; reduced-motion removes overshoot",
+      "antiOverlap": "must not become Moonriot recolored red or Moonsmash with lime",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonriot",
+      "name": "Moonriot",
+      "territory": "riot editorial / angular cyberpunk",
+      "composition": "diagonal split panels; intentionally disrupted editorial columns",
+      "geometry": "sharp cuts; slanted section dividers; asymmetric border breaks",
+      "type": "compressed editorial display + disciplined technical body",
+      "surface": "black fields; signal-red annotations; limited scan distortion",
+      "navigation": "split navigation with angular section markers",
+      "data": "signal strips and segmented metrics; labels remain steady and readable",
+      "media": "riot posters, signal marks, abstract original cut-up forms",
+      "motion": "short directional wipes; glitch only as optional nonessential accent",
+      "antiOverlap": "must not use Moonpunk's hard-slab composition or Moonzine's paper collage grammar",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonzine",
+      "name": "Moonzine",
+      "territory": "underground zine / collage editorial",
+      "composition": "magazine spread; editorial asymmetry; collage-like grouping",
+      "geometry": "paper frames; taped/overlapped labels as decoration, not layout control",
+      "type": "editorial serif or expressive display paired with neutral body",
+      "surface": "paper-like light surfaces and photocopy dark surfaces",
+      "navigation": "index/contents navigation with editorial section labels",
+      "data": "report cards and story summaries; visible source/annotation areas",
+      "media": "original collage, cut paper, xerox grain and editorial crops",
+      "motion": "page-like reveals and gentle layering; reduced motion becomes static",
+      "antiOverlap": "must not collapse into strict comic panels (Moonpanel) or monochrome screentone-only (Moonhalftone)",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonhalftone",
+      "name": "Moonhalftone",
+      "territory": "manga screentone / monochrome ink",
+      "composition": "sequential comic pacing; variable panel density; ink-first hierarchy",
+      "geometry": "panel borders; halftone fields; high-contrast gutters",
+      "type": "manga impact headings + neutral reading text",
+      "surface": "monochrome ink/paper; dot texture used in reserved zones",
+      "navigation": "panel index and clear chapter/section progression",
+      "data": "panelized stories, annotated metrics, clear chart equivalents",
+      "media": "original screentone patterns and abstract ink assets",
+      "motion": "panel reveal and restrained directional transition",
+      "antiOverlap": "must not use Moonpanel's rigid uniform grid as its entire identity",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonglitch",
+      "name": "Moonglitch",
+      "territory": "terminal telemetry / controlled digital distortion",
+      "composition": "telemetry rails; console bands; data-centric dashboard zones",
+      "geometry": "thin technical rules; signal bars; occasional deliberate displacement",
+      "type": "monospaced labels/metrics + readable sans body",
+      "surface": "near-black terminal surfaces with scanline and signal accents",
+      "navigation": "command-oriented navigation with system-state indicators",
+      "data": "live event stream, logs, time-series and compact telemetry",
+      "media": "original abstract signal traces; glitch never obscures text",
+      "motion": "signal transitions; no perpetual flashing; reduced motion disables distortion",
+      "antiOverlap": "must remain functional telemetry, not decorative cyberpunk or neon-only styling",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonsmash",
+      "name": "Moonsmash",
+      "territory": "kinetic impact / explosive graphic composition",
+      "composition": "one dominant focal zone; radial grouping; dramatic scale changes",
+      "geometry": "burst outlines; radial marks; bold oversized planes",
+      "type": "oversized expressive display + concise supportive copy",
+      "surface": "high-impact layered panels with clear quiet areas for data",
+      "navigation": "action-first navigation and strong primary focal route",
+      "data": "milestone meters and high-visibility stats; detail views remain calm",
+      "media": "original abstract burst, speed lines and impact forms",
+      "motion": "brief radial or scale response with reduced-motion static replacement",
+      "antiOverlap": "must not share Moonpunk's persistent slab framing or Moonriot's diagonal signal language",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonink",
+      "name": "Moonink",
+      "territory": "expressive brush-ink / illustration-led",
+      "composition": "organic directional flow around a clear reading column",
+      "geometry": "brush-edged decorative separators; functional controls remain precise",
+      "type": "ink-like display accents + calm readable body",
+      "surface": "paper/ink planes, expressive strokes confined to decoration",
+      "navigation": "illustrated section markers and simple linear navigation",
+      "data": "annotated narrative charts and editorial callouts",
+      "media": "original vector brush strokes and ink wash assets",
+      "motion": "stroke-draw accents are optional; never required to understand state",
+      "antiOverlap": "must not become sketchbook notes (Moonscrawl) or monochrome raster texture (Moonhalftone)",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "mooncrash",
+      "name": "Mooncrash",
+      "territory": "industrial utility / mechanical hazard",
+      "composition": "stacked work zones; plate-like panels; clear functional grouping",
+      "geometry": "mechanical borders; numbered plates; warning stripes only for actual emphasis",
+      "type": "industrial condensed labels + utilitarian body",
+      "surface": "matte metal-inspired surfaces; restrained hazard highlights",
+      "navigation": "equipment/operation hierarchy with numbered sections",
+      "data": "resource gauges, logs and operational status blocks",
+      "media": "original industrial motifs and abstract technical markings",
+      "motion": "mechanical slide/click feedback; no decorative shaking on errors",
+      "antiOverlap": "must not use Moonchrome's reflective material or Moonglitch's terminal telemetry treatment",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonpanel",
+      "name": "Moonpanel",
+      "territory": "strict comic-panel system / modular framing",
+      "composition": "explicit grid; consistent gutters; panel hierarchy controls page rhythm",
+      "geometry": "rectangular frames; varied panel spans; clear panel titles",
+      "type": "comic chapter heads + strong, consistent body hierarchy",
+      "surface": "clearly bounded panels and contrasting gutters",
+      "navigation": "panel map/index and predictable section grid",
+      "data": "modular visual summaries and panels with consistent data placement",
+      "media": "original panel motifs; illustrative content stays inside bounded frames",
+      "motion": "panel focus/slide transitions; consistent grid continuity",
+      "antiOverlap": "must not become Moonhalftone with different colors; its identity is structural grid and panel span",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonscrawl",
+      "name": "Moonscrawl",
+      "territory": "sketchbook / hand-annotated exploratory workspace",
+      "composition": "canvas with margin notes and exploratory clusters",
+      "geometry": "loose hand-drawn annotation around precise functional controls",
+      "type": "hand-lettered labels used sparingly + readable body",
+      "surface": "draft-paper and sketch marks with low visual interference",
+      "navigation": "notebook tabs, margin index or workspace sections",
+      "data": "annotated diagrams, brainstorm maps and exploratory flows",
+      "media": "original sketches, arrows, circles and handwritten callouts",
+      "motion": "draw-on annotations optional; static fallback is complete",
+      "antiOverlap": "must remain intentional and structured, not Moonzine collage or Moonink brush painting",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonraw",
+      "name": "Moonraw",
+      "territory": "raw minimal brutalism / exposed structure",
+      "composition": "rigid clear page frame; low ornament; content-led blocks",
+      "geometry": "plain rectangles, exposed separators, square edges",
+      "type": "direct heavy headings + neutral body; no decorative display by default",
+      "surface": "flat materials; nearly no gradients or shadows",
+      "navigation": "straightforward text-first side/top navigation",
+      "data": "plain dense tables and direct metrics with minimal framing",
+      "media": "typography and structure dominate; textures mostly absent",
+      "motion": "minimal transitions; immediate state feedback",
+      "antiOverlap": "must not borrow Moonledger's enterprise-specific compact workbench or Classic's polished neutral finish",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonchrome",
+      "name": "Moonchrome",
+      "territory": "futuristic metallic / precision material",
+      "composition": "layered focal surface with precise contour accents",
+      "geometry": "thin metallic contours and controlled bevel cues",
+      "type": "geometric display + high-legibility modern body",
+      "surface": "reflective metallic gradient cues and restrained spectral highlights",
+      "navigation": "layered surface navigation with clear selected state",
+      "data": "precision gauges, orbital metrics and crisp visualizations",
+      "media": "original abstract chrome, orbit and spectral forms",
+      "motion": "light-shift/reflection effects only on demand; reduced motion uses static materials",
+      "antiOverlap": "must not become generic glassmorphism or Mooncrash industrial plating",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "classic",
+      "name": "Classic",
+      "territory": "shadcn-style reference / restrained application baseline",
+      "composition": "conventional app shell; predictable content hierarchy",
+      "geometry": "standard rounded controls; subtle borders and restrained elevation",
+      "type": "neutral modern sans with conventional heading scale",
+      "surface": "clean semantic surfaces; minimal decoration",
+      "navigation": "standard sidebar/topbar/tabs/breadcrumbs",
+      "data": "familiar tables, forms and cards with conservative styling",
+      "media": "no skin-specific illustration requirement; functional icon defaults",
+      "motion": "restrained conventional transition; respect reduced motion",
+      "antiOverlap": "must be documented as Moonframe's compatibility baseline, not official shadcn branding",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonquest",
+      "name": "Moonquest",
+      "territory": "RPG adventure HUD / quest journal",
+      "composition": "quest journal, inventory and status HUD; clear game-oriented zones",
+      "geometry": "framed panels, rarity treatments, map/journal motifs",
+      "type": "adventure display headings + highly readable body/data",
+      "surface": "fantasy/sci-fi material layers without reducing text contrast",
+      "navigation": "journal / inventory / map / progression navigation patterns",
+      "data": "XP/progression, rarity, quest lists and item slots as presentation only",
+      "media": "original game-inspired symbols, map textures and item-frame assets",
+      "motion": "reward/level-up accents are opt-in; reduced motion keeps progress information",
+      "antiOverlap": "must not place game rules, rewards, inventory persistence or scoring logic in the UI package",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    },
+    {
+      "id": "moonledger",
+      "name": "Moonledger",
+      "territory": "professional ERP / clean compact data workbench",
+      "composition": "dense workspace; persistent filter area; table/detail split panes",
+      "geometry": "precise aligned grids; restrained radius; subtle separators",
+      "type": "high-legibility enterprise sans with tabular numerals",
+      "surface": "neutral surfaces and muted chrome; strong data hierarchy",
+      "navigation": "persistent workspace navigation, breadcrumbs and contextual actions",
+      "data": "dense but readable tables, filters, saved views and audit timelines",
+      "media": "minimal; charts/tables carry the interface, decorative art is excluded",
+      "motion": "subtle transitions; prioritize feedback latency and stability",
+      "antiOverlap": "must not shrink controls below tested target requirements or inherit Moonquest's game treatment",
+      "modes": {
+        "light": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        },
+        "dark": {
+          "required": true,
+          "semanticColorMap": "required-and-contrast-tested"
+        }
+      },
+      "status": "specified-not-implemented",
+      "reviewedPairwise": false
+    }
+  ],
+  "tokens": {
+    "canonicalSource": "contracts/moonframe-token-dictionary-v0.1.json",
+    "requiredFamilies": [
+      "color",
+      "typography",
+      "spacing",
+      "sizing",
+      "geometry",
+      "elevation-material",
+      "motion",
+      "layering",
+      "density",
+      "component",
+      "asset-reference"
+    ]
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 AA baseline",
+    "requiresKeyboard": true,
+    "requiresFocusVisible": true,
+    "requiresReducedMotion": true,
+    "requiresForcedColorsReview": true,
+    "noColorOnlyStatus": true
+  },
+  "releaseGates": [
+    "schema-valid",
+    "token-coverage-pass",
+    "all-30-appearances-render",
+    "component-state-matrix-pass",
+    "all-105-pairs-reviewed",
+    "asset-provenance-pass",
+    "accessibility-review-pass",
+    "consumer-build-pass"
+  ],
+  "nonGoals": [
+    "15 component forks",
+    "color-only skins",
+    "business/domain logic in generic UI",
+    "autoplay audio",
+    "assets without provenance"
+  ],
+  "references": {
+    "bible": "docs/moonframe-ui-design-system-bible-v1.3.md",
+    "skinGrammar": "contracts/moonframe-skin-grammar-contract-v1.0.json",
+    "tokenDictionary": "contracts/moonframe-token-dictionary-v0.1.json",
+    "roadmap": "docs/implementation-roadmap.md"
+  }
+}
