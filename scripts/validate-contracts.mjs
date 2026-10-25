@@ -459,6 +459,163 @@ if(process.argv.includes('--self-test')){
  console.log('PASS: component negatives (missing ID, orphan keyboard pattern, invalid state, fake review, reverse index)');
 }
 
+
+// Advanced Data Workspace — documentation contract/fixture checks only.
+// These do not run Ajv, compile TypeScript, render React, simulate browser AT,
+// sanitize/export CSV files or validate server authorization.
+const dataSpec=read('contracts/moonframe-data-workspace-contract-v0.1.json');
+const dataCoverage=read('contracts/moonframe-data-skin-coverage-v0.1.json');
+const dataPresets=read('contracts/moonframe-data-preset-catalog-v0.1.json');
+const dataSchema=read('schemas/moonframe-data-query.schema.json');
+const dataFixtures=read('contracts/fixtures/data-workspace-v0.1.json');
+const capabilityIds=dataSpec.capabilities.map(x=>x.id);
+const actualBlockIds=new Set(blocks.blocks.filter(x=>x.kind==='concrete-block').map(x=>x.id));
+const actualPageIds=new Set(pages.templates.map(x=>x.id));
+fail(dataSpec.status==='design-contract-not-implemented'&&
+     dataSpec.specificationStatus==='specified-provisional-not-implemented'&&
+     dataSpec.engineDecision==='proposed-ADR-0004-unapproved',
+     'Data architecture falsely approved/implemented');
+fail(dataSpec.tiers.length===4 && sameSet(dataSpec.tiers.map(x=>x.id),
+     ['simple-table','data-table','advanced-workspace','enterprise-grid']),
+     'Existing data tier contract changed unexpectedly');
+fail(uniq(capabilityIds)&&capabilityIds.length>=25, 'Data capability catalog duplicated or incomplete');
+const priorityValues=new Set(['P0','P1','P2','P3']);
+for(const c of dataSpec.capabilities){
+ fail(priorityValues.has(c.priority)&&c.status==='specified-not-implemented'&&
+      c.actualTestStatus==='not-run'&&c.reviewer===null,
+      'Unreviewed Data Workspace capability claimed implemented '+c.id);
+ for(const dep of c.dependsOn||[])fail(capabilityIds.includes(dep),'Unknown capability prerequisite: '+c.id+' -> '+dep);
+}
+function hasCycle(entries){
+ const byId=new Map(entries.map(x=>[x.id,x.dependsOn||[]]));
+ const visited=new Set(),active=new Set();
+ function walk(id){if(active.has(id))return true;if(visited.has(id))return false;
+ active.add(id);for(const d of byId.get(id)||[])if(byId.has(d)&&walk(d))return true;
+ active.delete(id);visited.add(id);return false;}
+ return entries.some(x=>walk(x.id));
+}
+fail(!hasCycle(dataSpec.capabilities),'Data capability dependency cycle');
+fail(dataSpec.selectionContract.variants.includes('query-all-except')&&
+     dataSpec.selectionContract.invariants.some(x=>x.includes('Server'))&&
+     dataSpec.exportContract.csv.formulaRisk.includes('OWASP')&&
+     dataSpec.rowIdentity.forbidden.includes('array-index'),
+     'Data selection/export/row identity safeguards removed');
+fail(dataSpec.queryState.fields.pagination.includes('kind:') &&
+     dataSpec.queryState.queryMode.invariants.some(x=>x.includes('No double')),
+     'Cursor and offset query-state boundary lost');
+fail(dataSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     dataSchema.$defs?.filterAST&&dataSchema.$defs?.selection&&dataSchema.$defs?.pagination,
+     'Proposed Data Workspace JSON Schema missing structures');
+fail(sameSet(dataCoverage.recipes.map(x=>x.skinId),ids),
+     'Data skin-specific recipes must reference all canonical skin IDs');
+fail(dataCoverage.recipes.every(r=>r.reviewStatus==='not-rendered-not-reviewed'&&
+     isString(r.tableSurfaceAndHeader)&&isString(r.mobileReflow)&&
+     isString(r.selectionFocusSortFilterLanguage)&&isString(r.decorationAndAccessibilityRisk)),
+     'Incomplete or prematurely approved data skin recipe');
+fail(sameSet(dataCoverage.modes,['light','dark'])&&dataCoverage.systemExtraMode===false,
+     'Data skin coverage must not treat system as additional mode');
+fail(sameSet(dataCoverage.fixtures.map(x=>x.itemId),
+     ['template-records-table','template-data-workspace','template-data-filter-builder',
+      'template-data-audit','template-responsive-records','template-data-grid-lab']),
+     'Data page reference coverage changed or invalid');
+fail(dataCoverage.fixtures.every(f=>actualPageIds.has(f.itemId)),
+     'Data coverage points at nonexistent page');
+const expectedDataCells=ids.flatMap(id=>['light','dark'].flatMap(mode=>
+ dataCoverage.fixtures.map(f=>id+'::'+mode+'::'+f.itemId)));
+const foundDataCells=dataCoverage.cells.map(x=>x.skinId+'::'+x.mode+'::'+x.itemId);
+fail(dataCoverage.expectedCells===expectedDataCells.length&&
+     sameSet(expectedDataCells,foundDataCells),'Data coverage missing/duplicate/out-of-scope cells');
+fail(dataCoverage.actualScreenshots===0&&dataCoverage.passCount===0&&
+     dataCoverage.cells.every(x=>x.reviewStatus==='not-rendered'&&
+       x.screenshot===null&&x.reviewer===null&&
+       x.keyboardEvidence===null&&x.contrastEvidence===null&&x.manualATEvidence===null),
+     'False data visual review evidence');
+fail(uniq(dataPresets.presets.map(x=>x.id))&&dataPresets.presets.length>=6,
+     'Duplicate/incomplete Data Workspace presets');
+for(const x of dataPresets.presets){
+ fail(actualPageIds.has(x.pageRef)&&x.blockRefs.every(y=>actualBlockIds.has(y)),
+      'Data preset missing canonical block/page ref: '+x.id);
+ fail(x.status==='specified-not-implemented'&&x.consumerBoundary.includes('Backend'),
+      'Data preset asserts implementation or domain logic: '+x.id);
+}
+// A strict, deliberately bounded semantic fixture checker. This is NOT generic
+// JSON Schema 2020-12 evaluation or a production filter/query engine.
+function validateDataFixture(sample,fixtureColumns){
+ const e=[];const columns=new Map(fixtureColumns.map(x=>[x.id,x]));
+ if(!sample||typeof sample!=='object'||!sample.query||!sample.selection||!sample.exportRequest)
+  return ['missing document/query/selection/export'];
+ const q=sample.query,sel=sample.selection,ex=sample.exportRequest;
+ if(q.version!==1||!['server','client'].includes(q.mode))e.push('bad version or query mode');
+ if(!Array.isArray(q.sorting)||q.sorting.some(s=>!columns.has(s.columnId)||
+      typeof s.descending!=='boolean'))e.push('invalid sort field/type');
+ if(!q.pagination||!['offset','cursor'].includes(q.pagination.kind)||
+      !Number.isInteger(q.pagination.pageSize)||q.pagination.pageSize<1||
+      (q.pagination.kind==='offset'&&(!Number.isInteger(q.pagination.pageIndex)||
+       q.pagination.pageIndex<0||'cursor'in q.pagination))||
+      (q.pagination.kind==='cursor'&&'pageIndex'in q.pagination))
+      e.push('pagination mode mixing or invalid size');
+ let count=0;
+ function walk(n,depth){
+  count++;if(depth>4||count>30){e.push('filter bounds exceeded');return;}
+  if(!n||typeof n!=='object'){e.push('invalid filter node');return;}
+  if(n.kind==='group'){if(!['and','or'].includes(n.logic)||!Array.isArray(n.children))
+     e.push('invalid group');
+   else n.children.forEach(c=>walk(c,depth+1));
+  }else if(n.kind==='predicate'){
+   const col=columns.get(n.fieldId);
+   if(!col)e.push('unknown filter field');
+   else if(!col.allowedOperators.includes(n.operator))e.push('invalid type/operator');
+   if(['isNull','isNotNull'].includes(n.operator)&&'value'in n)e.push('null operator takes no value');
+   if(['between','in','notIn'].includes(n.operator)&&
+     (!Array.isArray(n.value)||n.value.length===0||n.value.length>100))
+     e.push('range/list missing');
+  }else e.push('unknown filter node kind');
+ }
+ if(q.filters?.version!==1||q.filters?.root?.kind!=='group')
+  e.push('bad filter AST envelope');
+ else walk(q.filters.root,1);
+ if(sel.kind==='explicit-ids'){
+  if(!['current-page','loaded','cross-page'].includes(sel.scope)||
+      !Array.isArray(sel.ids)||new Set(sel.ids).size!==sel.ids.length)e.push('duplicate/invalid selected ID');
+ }else if(sel.kind==='query-all-except'){
+  if(!isString(sel.snapshotId)||!isString(sel.queryFingerprint)||
+    !Array.isArray(sel.excludedIds)||new Set(sel.excludedIds).size!==sel.excludedIds.length||
+    !Number.isFinite(Date.parse(sel.expiresAt))||sel.confirmationRequired!==true)
+    e.push('invalid query-all snapshot');
+ }else e.push('unknown selection kind');
+ if(!['csv','xlsx','pdf'].includes(ex.format)||!
+     ['visible-page','loaded','selected-explicit','all-query-matches'].includes(ex.scope))
+    e.push('invalid export type/scope');
+ if(!Array.isArray(ex.columnIds)||!ex.columnIds.length||
+    ex.columnIds.some(x=>!columns.has(x))||!uniq(ex.columnIds))e.push('unknown/duplicate export column');
+ if(ex.scope==='all-query-matches'&&(!ex.selection||
+    ex.selection.kind!=='query-all-except'))e.push('all-query export needs query selection');
+ if(ex.scope==='selected-explicit'&&(!ex.selection||
+    ex.selection.kind!=='explicit-ids'))e.push('explicit export needs explicit selection');
+ if((ex.selection?.kind==='query-all-except')&&
+    (ex.selection.queryFingerprint!==ex.queryFingerprint||
+     ex.selection.confirmationRequired!==true))
+    e.push('export query selection fingerprint mismatch');
+ return e;
+}
+fail(dataFixtures.valid.length>0&&dataFixtures.invalid.length>=8,
+     'Data semantic positive and negative fixtures missing');
+for(const v of dataFixtures.valid){
+ for(const msg of validateDataFixture(v.sample,dataFixtures.columns))
+  errors.push('Valid data fixture '+v.id+' failed: '+msg);
+}
+if(process.argv.includes('--self-test')){
+ for(const v of dataFixtures.invalid){
+  const problems=validateDataFixture(v.sample,dataFixtures.columns);
+  assert(problems.length>0, 'Invalid data fixture unexpectedly passed: '+v.id);
+ }
+ assert(hasCycle([...dataSpec.capabilities,{
+   id:'intentional-cycle',dependsOn:['intentional-cycle']}]));
+ assert(!sameSet(expectedDataCells,foundDataCells.slice(1)));
+ console.log('PASS: Data Workspace negative fixtures ('+dataFixtures.invalid.length+
+   ' malformed query/filter/selection/export cases, cycle and coverage drift)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
