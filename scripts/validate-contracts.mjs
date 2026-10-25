@@ -104,6 +104,55 @@ function taskIdentityAudit(contents) {
   }
   return {problems, registry};
 }
+// This deliberately supports the one canonical Markdown table, local repo paths,
+// compact ADR ranges (ADR-0002/3), and issue refs backed by the offline MFI map.
+// Prose, arbitrary Markdown patterns, URL reachability, and heading anchors are out of scope.
+function ownershipRegistryProblems(rows, issueNumbers, exists, readmeLinked) {
+  const problems=[];
+  if(rows.length<15) problems.push(`registry has ${rows.length} concerns; expected at least 15`);
+  const seen=new Set();
+  const localRefs=text=>[...text.matchAll(/(?:^|[\s(`])((?:docs|contracts|schemas)\/[A-Za-z0-9._/-]+)(?=$|[\s),;`])/g)].map(m=>m[1]);
+  for(const row of rows){
+    if(!row.concern.trim()||!row.owner.trim()){
+      problems.push(`${row.concern||'(unnamed concern)'}: canonical policy owner is empty`);continue;
+    }
+    if(seen.has(row.concern)) problems.push(`${row.concern}: duplicate concern row has more than one registry owner`);
+    seen.add(row.concern);
+    const ownerRefs=localRefs(row.owner);
+    if(row.owner.includes('this document')) ownerRefs.push('docs/architecture/decisions-and-governance.md');
+    if(!ownerRefs.length) problems.push(`${row.concern}: canonical owner has no supported local document reference`);
+    if(ownerRefs.length!==1) problems.push(`${row.concern}: expected exactly one canonical policy owner, found ${ownerRefs.length}`);
+    const refs=[...ownerRefs,...localRefs(row.machine),...localRefs(row.dependencies)];
+    for(const ref of new Set(refs)) if(!exists(ref)) problems.push(`${row.concern}: missing local reference ${ref}`);
+    const issues=[...row.dependencies.matchAll(/#(\d+)\b/g)].map(m=>Number(m[1]));
+    for(const issue of issues) if(!issueNumbers.has(issue)) problems.push(`${row.concern}: unmapped GitHub issue #${issue}`);
+    for(const match of row.dependencies.matchAll(/ADR-(\d{4})(?:\/(\d{1,4}))?/g)){
+      const numbers=[Number(match[1])];
+      if(match[2]) numbers.push(Number(match[2].padStart(4,'0')));
+      for(const number of numbers){
+        const prefix=`docs/adr/${String(number).padStart(4,'0')}-`;
+        if(!exists(prefix+'*')) problems.push(`${row.concern}: missing ADR reference ${prefix}*`);
+      }
+    }
+  }
+  if(!readmeLinked) problems.push('README.md: missing link to the canonical ownership registry');
+  return problems;
+}
+function parseOwnershipRegistry(content){
+  const lines=content.split(/\r?\n/);
+  const heading=lines.findIndex(line=>/^## Master integration registry \/ cross-domain ownership\b/.test(line));
+  if(heading<0) return [];
+  const header=lines.findIndex((line,index)=>index>heading&&/^\| Concern \| Canonical policy owner \| Canonical machine contract \| Depends on \/ evidence gate \| Current maturity \|$/.test(line));
+  if(header<0) return [];
+  const rows=[];
+  for(const line of lines.slice(header+2)){
+    if(!line.trim().startsWith('|')) break;
+    const cells=line.split('|').slice(1,-1).map(cell=>cell.trim());
+    if(cells.length!==5) { rows.push({concern:cells[0]||'(malformed row)',owner:'',machine:'',dependencies:''});continue; }
+    rows.push({concern:cells[0],owner:cells[1],machine:cells[2],dependencies:cells[3]});
+  }
+  return rows;
+}
 const identityAudit = taskIdentityAudit({
   bible:fs.readFileSync(path.join(root,'docs/backlog/master-integration-issue-bible.md'),'utf8'),
   initial:fs.readFileSync(path.join(root,'docs/backlog/initial-issues.md'),'utf8'),
@@ -111,6 +160,16 @@ const identityAudit = taskIdentityAudit({
   todo:fs.readFileSync(path.join(root,'TODO.md'),'utf8')
 });
 for (const problem of identityAudit.problems) errors.push('Task identity: '+problem);
+const governancePath='docs/architecture/decisions-and-governance.md';
+const ownershipRows=parseOwnershipRegistry(fs.readFileSync(path.join(root,governancePath),'utf8'));
+const readmeHasOwnershipLink=/\[Canonical source-of-truth registry\]\(docs\/architecture\/decisions-and-governance\.md#master-integration-registry--cross-domain-ownership-2026-10-25\)/.test(fs.readFileSync(path.join(root,'README.md'),'utf8'));
+const localReferenceExists=ref=>{
+  if(ref.endsWith('*')) return fs.readdirSync(path.join(root,'docs/adr')).some(name=>name.startsWith(path.basename(ref,'*')));
+  const target=path.resolve(root,ref),relative=path.relative(root,target);
+  return relative!== '..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative)&&fs.existsSync(target);
+};
+const ownershipAuditProblems=ownershipRegistryProblems(ownershipRows,new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,readmeHasOwnershipLink);
+for(const problem of ownershipAuditProblems) errors.push('Ownership registry: '+problem);
 if (process.argv.includes('--self-test')) {
   assert.equal(identityAudit.problems.length, 0, 'Canonical task identity sources must agree: '+identityAudit.problems.join('; '));
   assert(identityAudit.registry.some(x=>x.id==='MF-003'&&x.issue===1));
@@ -125,6 +184,20 @@ if (process.argv.includes('--self-test')) {
   assert(reusedIssue.some(x=>x.includes('#1')&&x.includes('MF-003')&&x.includes('MF-004')),
     'Duplicate GitHub issue fixture should identify issue and both IDs');
   console.log('PASS: task identity mapping (MF-003 ↔ #1; MFI-001 ↔ #7; MFI-002 ↔ #8) and valid/ID-collision/duplicate-issue fixtures');
+  assert.equal(ownershipAuditProblems.length,0,'Canonical owner/path registry must pass: '+ownershipAuditProblems.join('; '));
+  assert.equal(ownershipRows.length,17,'Current registry has 17 concern rows (the issue minimum is 15)');
+  const duplicateConcern=ownershipRegistryProblems([...ownershipRows,{...ownershipRows[0],owner:'docs/architecture/decisions-and-governance.md'}],new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,true);
+  assert(duplicateConcern.some(x=>x.includes('Product scope/principles')&&x.includes('duplicate concern')));
+  const missingRef=ownershipRegistryProblems([{...ownershipRows[0],owner:'docs/does-not-exist.md'}],new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,true);
+  assert(missingRef.some(x=>x.includes('Product scope/principles')&&x.includes('docs/does-not-exist.md')));
+  const multipleOwners=ownershipRegistryProblems([{...ownershipRows[0],owner:'docs/moonframe-ui-design-system-bible-v1.3.md + docs/audit/master-integration-audit.md'}],new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,true);
+  assert(multipleOwners.some(x=>x.includes('Product scope/principles')&&x.includes('exactly one canonical policy owner')));
+  const missingIssue=ownershipRegistryProblems([{...ownershipRows[0],dependencies:'#999'}],new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,true);
+  assert(missingIssue.some(x=>x.includes('unmapped GitHub issue #999')));
+  assert(ownershipRegistryProblems(ownershipRows,new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,false).some(x=>x.includes('README.md')));
+  const externalRef=ownershipRegistryProblems([{...ownershipRows[0],dependencies:'https://example.invalid/docs/external.md'}],new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,true);
+  assert(!externalRef.some(x=>x.includes('missing local reference')),'External URLs must not be treated as local files');
+  console.log('PASS: ownership registry (17 unique concerns), path/issue/README negative fixtures; external URLs are not fetched');
 }
 fail(ids.length === 15 && uniq(ids) && ids.every(isString), 'Theme must own 15 unique nonempty IDs');
 fail(theme.counts.skinCount===15 && theme.counts.baselineAppearances===30 && theme.counts.pairwiseSkinComparisons===105, 'Theme declared counts drifted');

@@ -102,8 +102,8 @@ Do **not** create another Data Workspace Bible. [Existing Data Workspace](../pre
 |---|---|---|---|---|
 | Product scope/principles | `docs/moonframe-ui-design-system-bible-v1.3.md` | `contracts/moonframe-theme-contract-v1.3.json` (IDs only) | Maintainer approval; no runtime | specified |
 | Repository audit | `docs/audit/master-integration-audit.md` | none | GitHub baseline SHA | verified-snapshot |
-| Skin IDs / requested vs effective mode | this document + Theme Contract as ID authority | `contracts/moonframe-theme-contract-v1.3.json` | 15 unique / 2 baseline modes | validated-structure |
-| Skin grammar / 105 pair reviews | `docs/moonframe-ui-design-system-bible-v1.3.md` (policy) | `contracts/moonframe-skin-grammar-contract-v1.0.json` (review authority) | visual evidence, human review | 105 not-reviewed |
+| Skin IDs / requested vs effective mode | `docs/architecture/decisions-and-governance.md` | `contracts/moonframe-theme-contract-v1.3.json` (canonical IDs and resolution) | 15 unique / 2 baseline modes | validated-structure |
+| Skin grammar / 105 pair reviews | `docs/moonframe-ui-design-system-bible-v1.3.md` | `contracts/moonframe-skin-grammar-contract-v1.0.json` (pair review evidence) | visual evidence, human review | 105 not-reviewed |
 | Detailed visual recipe | `docs/moonframe-ui-design-system-bible-v1.3.md` (law) | `contracts/moonframe-skin-specifications-v1.0.json` | pair-review condition | specified |
 | Token taxonomy / future values | `docs/architecture/token-pipeline.md` | `contracts/moonframe-token-dictionary-v0.1.json`, `contracts/moonframe-token-source-plan-v0.1.json` | #5 + ADR-0002/3; final values pending | 30 pending |
 | Component API/behavior | `docs/component-api-behavior-bible.md` | `contracts/moonframe-component-api-contract-v0.1.json` | #3 primitive selection / manual APG | specified |
@@ -115,8 +115,10 @@ Do **not** create another Data Workspace Bible. [Existing Data Workspace](../pre
 | Motion/interactions/SFX | `docs/motion/motion-interaction-sfx-bible.md` | `contracts/moonframe-motion-interactions-v0.1.json`, `contracts/moonframe-sfx-contract-v0.1.json` | reduced motion; SFX opt-in | specified-no-audio |
 | Accessibility / visual QA | `docs/qa/accessibility-visual-qa-bible.md` | `contracts/moonframe-visual-baseline-matrix-v0.1.json`, `contracts/moonframe-accessibility-qa-evidence-v0.1.json` | actual screenshots/AT/reviewer | 270 not-rendered |
 | Package architecture/DX | `docs/architecture/package-architecture-dx-bible.md` | `contracts/moonframe-package-architecture-v0.1.json` | #1/#4; ADR-0009/10 | proposed-no-package |
-| Research & ADR | `docs/research/research-log.md` (cross-domain index) + domain-specific logs for domain evidence | ADR files in `docs/adr/` | official sources; version pins | researched, decisions pending |
-| Roadmap / tasks / GitHub status | `docs/implementation-roadmap.md` (phases) + GitHub Issues (published task truth) | `docs/backlog/master-integration-issue-bible.md` (staging only) | issue dedupe and task evidence | proposed/open separated |
+| Research & ADR | `docs/research/research-log.md` (cross-domain index) | ADR files in `docs/adr/`; domain-specific research logs | official sources; version pins | researched, decisions pending |
+| Roadmap / tasks / GitHub status | `docs/implementation-roadmap.md` (phases) | `docs/backlog/master-integration-issue-bible.md` (staging only) | issue dedupe and task evidence | proposed/open separated; GitHub owns live published issue state |
+
+Each row names exactly one **document policy owner**. The machine-contract column may list multiple data authorities; external GitHub Issues own their live state, and specialist research logs provide evidence. Those roles do not create additional document policy owners.
 
 **Term boundaries:** Skin = non-color visual grammar; appearance = skin + effective light/dark; `system` = requested preference; density/contrast/motion/direction = orthogonal axes. Token = typed value/alias, recipe = design composition, component = stable behavior/API, block = composition, template = page, starter = app shell composition, adapter = optional integration, asset = provenance-tracked graphic, SFX = off-by-default supplementary audio. Auth backend, game engine, accounting rules, query execution and tenant permissions belong to consuming applications.
 
