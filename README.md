@@ -16,6 +16,8 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 
 **Scope of integration phase:** documentation/governance/contract validation only; no UI, production assets, SFX or published package. The 15 IDs/30 modes/105 pairs are structural checks, not visual review results.
 
+**Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml). See the [Node runtime policy](docs/architecture/node-runtime.md).
+
 ## Current status
 
 **Verified 2026-10-25:** repository has specifications only. Contracts and a documentation-level validator are not working UI or approved token values. Provider, production token values, npm exports, assets, and SFX are intentionally pending. The 105 skin pair reviews remain unreviewed until real screenshots exist.

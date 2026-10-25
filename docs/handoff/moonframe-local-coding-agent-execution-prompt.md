@@ -42,7 +42,7 @@ git rev-list --left-right --count HEAD...origin/main
 ```
 
 6. If checked out on clean `main`, origin is correct and no divergence exists, `git pull --ff-only origin main`. If branches diverge, behind/ahead has unreviewed changes, or branch rules forbid direct main, **STOP** instead of forcing a reset or new speculative branch. Re-read the latest tasks/CI/ADRs if HEAD advanced. Record exact SHA before/after.
-7. Check which tools exist rather than installing: `node --version`, `npm --version` if installed, `gh --version` if installed. Baseline CI uses **Node 22** and only Node built-ins for existing validator; use a compatible Node version if available. A local Node mismatch is an environment blocker, not permission to rewrite package code.
+7. Check which tools exist rather than installing: `node --version`, `npm --version` if installed, `gh --version` if installed. Baseline CI and local development use the exact version in [.nvmrc](../../.nvmrc), currently Node.js 24.22.1 LTS, with only Node built-ins for the existing validator. See the [runtime policy](../architecture/node-runtime.md). A local Node mismatch is an environment blocker, not permission to rewrite package code.
 
 ## 2. Read canonical sources *before editing*
 
