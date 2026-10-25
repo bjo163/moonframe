@@ -7,6 +7,24 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 const fail = (condition, message) => { if (!condition) errors.push(message); };
+function runtimePolicyProblems(pin, workflow, readme, policy) {
+  const problems = [];
+  if (!/^\d+\.\d+\.\d+$/.test(pin.trim())) problems.push('.nvmrc must contain one exact Node.js version');
+  if (!/uses:\s*actions\/setup-node@[^\s]+[\s\S]*?node-version-file:\s*['"]?\.nvmrc['"]?/.test(workflow))
+    problems.push('CI must use actions/setup-node with node-version-file: .nvmrc');
+  if (/node-version:\s*['"]?\d/.test(workflow)) problems.push('CI must not duplicate the Node.js version');
+  const version = pin.trim();
+  if (!readme.includes(`Node.js ${version} LTS`) || !policy.includes(`Node.js **${version} LTS**`))
+    problems.push('README and Node runtime policy must document the exact pinned LTS version');
+  return problems;
+}
+const runtimePolicy = runtimePolicyProblems(
+  fs.readFileSync(path.join(root, '.nvmrc'), 'utf8'),
+  fs.readFileSync(path.join(root, '.github/workflows/contract-validation.yml'), 'utf8'),
+  fs.readFileSync(path.join(root, 'README.md'), 'utf8'),
+  fs.readFileSync(path.join(root, 'docs/architecture/node-runtime.md'), 'utf8'),
+);
+for (const problem of runtimePolicy) errors.push(`Node.js runtime policy: ${problem}`);
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const uniq = (a) => new Set(a).size === a.length;
 const sameSet = (a, b) => uniq(a) && uniq(b) && a.length === b.length && a.every(v => b.includes(v));
@@ -1657,6 +1675,16 @@ if(process.argv.includes('--self-test')){
  assert.equal(markdownLinkProblems('README.md','[remote](https://example.invalid/a?x=1#remote)',()=>null,()=>null).length,0);
  assert(markdownLinkProblems('docs/parent/page.md','[escape](../../../../secret.md)',()=>null,()=>null)[0].includes('broken local Markdown link'));
  console.log('PASS: Markdown links (nested paths, query/fragment, duplicate headings); invalid target/anchor, traversal and external-URL fixtures');
+}
+if (process.argv.includes('--self-test')) {
+  const validRuntime = '24.22.1';
+  const validWorkflow = "uses: actions/setup-node@v7\nwith:\n  node-version-file: '.nvmrc'";
+  const validReadme = 'Node.js 24.22.1 LTS';
+  const validPolicy = 'Node.js **24.22.1 LTS**';
+  assert.deepEqual(runtimePolicyProblems(validRuntime, validWorkflow, validReadme, validPolicy), []);
+  assert(runtimePolicyProblems(validRuntime, validWorkflow.replace("node-version-file: '.nvmrc'", 'node-version: 22'), validReadme, validPolicy).length > 0);
+  assert(runtimePolicyProblems('24', validWorkflow, validReadme, validPolicy).length > 0);
+  console.log('PASS: Node.js LTS pin consistency (exact .nvmrc, shared CI source, README/policy agreement)');
 }
 if (process.argv.includes('--self-test')) {
   assert.equal(validatePairMatrix(grammar.pairwiseReviewMatrix,ids).length,0);
