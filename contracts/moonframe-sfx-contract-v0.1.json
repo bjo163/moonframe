@@ -95,5 +95,16 @@
   "formatsPlan": [
     "short compressed web audio format with fallback after browser proof"
   ],
-  "producedAssets": []
+  "producedAssets": [],
+  "assetProvenancePolicyRef": "docs/brand/original-asset-brand-bible.md",
+  "assetRecordSchemaRef": "schemas/moonframe-asset-record.schema.json",
+  "productionGates": {
+    "status": "planned-no-files",
+    "sourceRights": "none-cleared",
+    "codecChoice": "pending-browser-and-format-spike",
+    "normalizationTargets": "not-set-until-real-audio-metrics",
+    "consentBehavior": "existing defaultEnabled/explicitConsent/mute and event taxonomy authoritative",
+    "distinguishSoundSignature": "common neutral cues if approved; skin-specific celebratory cues optional only",
+    "evidence": "no media test/binaries/published pack"
+  }
 }

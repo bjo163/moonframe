@@ -43,6 +43,20 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Original Asset & Brand (2026-10-25)
+
+- [Live asset inventory, provenance gaps and P0–P3 audit](docs/audit/original-asset-brand-audit.md)
+- [Original Asset & Brand Bible — canonical identity and rights policy](docs/brand/original-asset-brand-bible.md)
+- [Research log: SVG 2, SVGO, fonts/OFL, licensing, formats, autoplay](docs/research/original-asset-brand-research-log.md)
+- [Existing asset manifest, clarified as planned candidate pool](contracts/moonframe-asset-manifest-v0.1.json)
+- [15 written skin asset briefs and anti-overlap constraints](contracts/moonframe-skin-asset-briefs-v0.1.json)
+- [Conditional proposed Draft 2020-12 asset-record schema](schemas/moonframe-asset-record.schema.json)
+- [Planned metadata and 10 synthetic invalid fixtures](contracts/fixtures/original-asset-v0.1.json)
+- [ADR-0006 shared Moonframe brand and provenance pipeline — proposed](docs/adr/0006-original-asset-pipeline-and-brand.md)
+- [Original asset-specific QA and provenance gates](docs/qa/original-asset-validation-plan.md)
+- [15 issue-ready small follow-up tasks](docs/backlog/original-asset-atomic-issues.md)
+
+
 ### Auth & Security UI Integration (2026-10-25)
 
 - [Auth/Security UI repository audit](docs/audit/auth-security-ui-audit.md)
