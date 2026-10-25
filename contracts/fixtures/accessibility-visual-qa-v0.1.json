@@ -1,0 +1,670 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-A11Y-QA-FIXTURES-001",
+  "status": "synthetic-plans-not-real-tests",
+  "recordSchema": "schemas/moonframe-accessibility-qa-record.schema.json",
+  "valid": [
+    {
+      "id": "planned-focus-review",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "fake-automated-pass",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "automated-check-passed",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-manual-pass",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "manual-review-passed",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": "pass"
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-at-reviewed",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "assistive-tech-reviewed",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": "pass"
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-release-verified",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "verified-for-release-scope",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-waiver",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "waived-with-rationale",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "unknown-criterion",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-9.9.9",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "unknown-component",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "imaginary-component",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "unknown-skin",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "moonrandom",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "third-baseline-mode",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "system",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-commit-in-planned",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": "0000000000000000000000000000000000000000",
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "fake-reviewer-in-planned",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": "random-name",
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "duplicate-unknown-status",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "all-accessible",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "invalid-id",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "../escape",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": null,
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    },
+    {
+      "id": "invented-proof",
+      "why": "Expected bounded validator rejection, no real browser/AT evidence",
+      "record": {
+        "schemaVersion": "0.1.0",
+        "recordId": "avqa.planned-dialog-check",
+        "kind": "observation",
+        "status": "specified",
+        "criterionRef": "wcag-2.4.11",
+        "scope": {
+          "componentId": "dialog",
+          "skinId": "classic",
+          "mode": "light",
+          "specimenId": "overlays-menus",
+          "viewport": null,
+          "state": "focus-visible",
+          "consumer": null
+        },
+        "evidence": {
+          "commitSHA": null,
+          "testRunUrl": null,
+          "capturePath": "artifacts/never-rendered.png",
+          "baselineHash": null,
+          "manualNotes": null,
+          "atLog": null,
+          "environment": null
+        },
+        "review": {
+          "reviewer": null,
+          "reviewedAt": null,
+          "verdict": null
+        },
+        "exception": {
+          "issueUrl": null,
+          "owner": null,
+          "rationale": null,
+          "userImpact": null,
+          "mitigation": null,
+          "expiry": null,
+          "approvedBy": null,
+          "scopeBoundary": null
+        }
+      }
+    }
+  ]
+}

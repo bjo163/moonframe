@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-A11Y-QA-EVIDENCE-001",
+  "status": "no-rendered-ui-no-test-results",
+  "recordSchema": "../schemas/moonframe-accessibility-qa-record.schema.json",
+  "requirementAuthority": "moonframe-accessibility-requirements-v0.1.json",
+  "componentAuthority": "moonframe-component-qa-profiles-v0.1.json",
+  "visualAuthority": "moonframe-visual-baseline-matrix-v0.1.json",
+  "pairwiseAuthority": "moonframe-skin-grammar-contract-v1.0.json",
+  "records": [],
+  "exceptions": [],
+  "defects": [],
+  "counts": {
+    "realObservations": 0,
+    "approvedWaivers": 0,
+    "trackedActualDefects": 0,
+    "automatedAxePasses": 0,
+    "manualATReviews": 0,
+    "visualBaselines": 0,
+    "pairwiseApprovals": 0
+  },
+  "statuses": [
+    "not-assessed",
+    "specified",
+    "automated-check-passed",
+    "manual-review-passed",
+    "assistive-tech-reviewed",
+    "known-issue",
+    "waived-with-rationale",
+    "verified-for-release-scope"
+  ],
+  "severity": [
+    "blocker",
+    "critical",
+    "high",
+    "medium",
+    "low"
+  ],
+  "defectTypes": [
+    "semantic",
+    "keyboard",
+    "focus",
+    "contrast",
+    "screen-reader",
+    "responsive-reflow",
+    "motion",
+    "visual-regression",
+    "skin-distinctness",
+    "asset-failure",
+    "harness-flake",
+    "documentation",
+    "compatibility"
+  ],
+  "reproducibility": [
+    "deterministic",
+    "intermittent",
+    "environment-specific"
+  ],
+  "gateRule": "No release or WCAG conformance claim from empty evidence. Exceptions require affected scope/issue/owner/rationale/mitigation/expiry/approver; unresolved AA criterion in claimed scope cannot be hidden by waiver."
+}
