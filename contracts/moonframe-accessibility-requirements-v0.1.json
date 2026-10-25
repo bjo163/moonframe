@@ -1,0 +1,2124 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-A11Y-REQ-001",
+  "status": "requirements-specified-not-tested",
+  "standard": {
+    "id": "WCAG-2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "type": "W3C-Recommendation",
+    "publicationDate": "2024-12-12",
+    "levelTarget": "AA-proposed-not-conformant"
+  },
+  "actFormat": {
+    "id": "ACT-Rules-Format-1.1",
+    "url": "https://www.w3.org/TR/act-rules-format/",
+    "status": "W3C-Recommendation-2026-02-05",
+    "note": "A format for partial automated/manual rules, not proof of conformance"
+  },
+  "scope": "Representative high-risk A/AA criteria plus two AAA advisory checks, not a complete product-specific WCAG evaluation; missing criteria must be evaluated on feature use",
+  "canonicalComponentGroups": "moonframe-component-manifest-v0.1.json",
+  "canonicalTheme": "moonframe-theme-contract-v1.3.json",
+  "statusVocabulary": [
+    "specified-not-tested",
+    "not-applicable-with-rationale",
+    "automated-check-passed",
+    "manual-review-passed",
+    "assistive-tech-reviewed",
+    "known-issue",
+    "waived-with-rationale",
+    "verified-for-release-scope"
+  ],
+  "expectedRequirementCount": 51,
+  "requirements": [
+    {
+      "id": "wcag-1.1.1",
+      "criterion": "1.1.1",
+      "title": "Non-text Content",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#1-1-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-media",
+      "appliesToGroups": [
+        "content"
+      ],
+      "procedure": "Visual meaningful image/icon alt text; decorative image hidden and informative image equivalence checked",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.3.1",
+      "criterion": "1.3.1",
+      "title": "Info and Relationships",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#1-3-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-content",
+      "appliesToGroups": [
+        "foundation",
+        "forms",
+        "data",
+        "content",
+        "specialized"
+      ],
+      "procedure": "Inspect semantic headings, form/field labels, table header associations, lists and grouping",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.3.2",
+      "criterion": "1.3.2",
+      "title": "Meaningful Sequence",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#1-3-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-layout",
+      "appliesToGroups": [
+        "foundation",
+        "data",
+        "content"
+      ],
+      "procedure": "Compare DOM/AT read sequence and CSS reordering in responsive/RTL views",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.3.3",
+      "criterion": "1.3.3",
+      "title": "Sensory Characteristics",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#1-3-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-interaction",
+      "appliesToGroups": [],
+      "procedure": "Instructions have text/name not only location, shape, sound or color",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.3.4",
+      "criterion": "1.3.4",
+      "title": "Orientation",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-3-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-responsive",
+      "appliesToGroups": [],
+      "procedure": "Check portrait/landscape and note actual essential exception only",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.3.5",
+      "criterion": "1.3.5",
+      "title": "Identify Input Purpose",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-3-5",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-personal-input",
+      "appliesToGroups": [
+        "forms"
+      ],
+      "procedure": "Review autocomplete semantics for supported user information fields",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.1",
+      "criterion": "1.4.1",
+      "title": "Use of Color",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-meaningful-status",
+      "appliesToGroups": [
+        "feedback",
+        "data",
+        "specialized"
+      ],
+      "procedure": "Turn grayscale on and check status/chart/error differentiated without hue only",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.3",
+      "criterion": "1.4.3",
+      "title": "Contrast (Minimum)",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-readable-text",
+      "appliesToGroups": [
+        "foundation",
+        "forms",
+        "content"
+      ],
+      "procedure": "Measure real text/background including overlays, translucency, font size and exemptions; >=4.5 normal, >=3 large",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.4",
+      "criterion": "1.4.4",
+      "title": "Resize Text",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-text",
+      "appliesToGroups": [
+        "content"
+      ],
+      "procedure": "Resize text 200 percent without content/function loss",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.5",
+      "criterion": "1.4.5",
+      "title": "Images of Text",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-5",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-text-images",
+      "appliesToGroups": [],
+      "procedure": "Do not use baked editorial images for actual labels/content except permitted cases",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.10",
+      "criterion": "1.4.10",
+      "title": "Reflow",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-10",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-layout",
+      "appliesToGroups": [
+        "foundation",
+        "data",
+        "content",
+        "specialized"
+      ],
+      "procedure": "At 320 CSS px width equivalent or 256 height equivalent check no loss/2D scroll except essential regions",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.11",
+      "criterion": "1.4.11",
+      "title": "Non-text Contrast",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-11",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-essential-ui",
+      "appliesToGroups": [
+        "actions",
+        "feedback",
+        "data"
+      ],
+      "procedure": "Check 3:1 necessary control boundaries, focus/state indicators and graphics against adjacent colors",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.12",
+      "criterion": "1.4.12",
+      "title": "Text Spacing",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-12",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-readable-text",
+      "appliesToGroups": [],
+      "procedure": "Override line/paragraph/letter/word spacing per criterion without clipping or overlap",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-1.4.13",
+      "criterion": "1.4.13",
+      "title": "Content on Hover or Focus",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#1-4-13",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-tooltip",
+      "appliesToGroups": [],
+      "procedure": "Dismissible, hoverable and persistent hover/focus content unless valid exception",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.1.1",
+      "criterion": "2.1.1",
+      "title": "Keyboard",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-1-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-interaction",
+      "appliesToGroups": [
+        "actions",
+        "forms",
+        "data",
+        "specialized"
+      ],
+      "procedure": "Operate functions using keyboard incl controls without requiring timed gestures",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.1.2",
+      "criterion": "2.1.2",
+      "title": "No Keyboard Trap",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-1-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-composites",
+      "appliesToGroups": [],
+      "procedure": "Tab/Shift+Tab/Escape, popup/drawer/iframe correctly exit or give clear escape",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.1.4",
+      "criterion": "2.1.4",
+      "title": "Character Key Shortcuts",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-1-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-shortcut",
+      "appliesToGroups": [],
+      "procedure": "Single-character shortcut disable/remap or active focus-only when used",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.2.1",
+      "criterion": "2.2.1",
+      "title": "Timing Adjustable",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-2-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-session-time",
+      "appliesToGroups": [],
+      "procedure": "Session/OTP/toast timeouts have permitted mechanisms or justified exceptions",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.2.2",
+      "criterion": "2.2.2",
+      "title": "Pause, Stop, Hide",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-2-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-moving-update",
+      "appliesToGroups": [
+        "feedback"
+      ],
+      "procedure": "Automatically moving >5s or auto-updating parallel content has pause/stop/hide or update-frequency control per criterion",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.3.1",
+      "criterion": "2.3.1",
+      "title": "Three Flashes or Below Threshold",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-3-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-animation",
+      "appliesToGroups": [
+        "feedback"
+      ],
+      "procedure": "No flashing above general/red flash thresholds; prefer no intentional strobe",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual",
+        "visual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.3.3",
+      "criterion": "2.3.3",
+      "title": "Animation from Interactions",
+      "level": "AAA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-3-3",
+      "normative": "WCAG-2.2",
+      "target": "advisory-beyond-AA",
+      "applicability": "advisory-motion",
+      "appliesToGroups": [],
+      "procedure": "Nonessential interaction motion can be disabled; Moonframe stronger product policy, NOT AA obligation",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "manual-advisory",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.1",
+      "criterion": "2.4.1",
+      "title": "Bypass Blocks",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-page-shell",
+      "appliesToGroups": [],
+      "procedure": "Skip repetitive nav; landmarks/skip link keyboard usability",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.2",
+      "criterion": "2.4.2",
+      "title": "Page Titled",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-page",
+      "appliesToGroups": [],
+      "procedure": "Meaningful document title per route/screen",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.3",
+      "criterion": "2.4.3",
+      "title": "Focus Order",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-interaction",
+      "appliesToGroups": [
+        "actions",
+        "data"
+      ],
+      "procedure": "DOM and keyboard focus order preserves meaning across grid, mobile, overlays",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.4",
+      "criterion": "2.4.4",
+      "title": "Link Purpose (In Context)",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-navigation",
+      "appliesToGroups": [],
+      "procedure": "Links have meaningful destination in link text/context",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.5",
+      "criterion": "2.4.5",
+      "title": "Multiple Ways",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-5",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-page-set",
+      "appliesToGroups": [],
+      "procedure": "Locate nonprocess page within site using permitted multiple methods",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.6",
+      "criterion": "2.4.6",
+      "title": "Headings and Labels",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-6",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-forms-content",
+      "appliesToGroups": [],
+      "procedure": "Headings/labels describe purpose and are navigable",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.7",
+      "criterion": "2.4.7",
+      "title": "Focus Visible",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-7",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-keyboard-interaction",
+      "appliesToGroups": [
+        "foundation",
+        "actions",
+        "forms",
+        "feedback",
+        "data",
+        "specialized"
+      ],
+      "procedure": "Focus indicator visible in all 30 appearances, high-contrast and texture overlays",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.11",
+      "criterion": "2.4.11",
+      "title": "Focus Not Obscured (Minimum)",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-11",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-focusable",
+      "appliesToGroups": [
+        "foundation",
+        "actions",
+        "feedback",
+        "specialized"
+      ],
+      "procedure": "Focused component not entirely hidden by author sticky/overlay elements (preferred stronger no-cover)",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.4.13",
+      "criterion": "2.4.13",
+      "title": "Focus Appearance",
+      "level": "AAA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-4-13",
+      "normative": "WCAG-2.2",
+      "target": "advisory-beyond-AA",
+      "applicability": "advisory-focus",
+      "appliesToGroups": [],
+      "procedure": "Strong focus area/contrast product aspiration; AAA not required for AA claim",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "manual-advisory",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.1",
+      "criterion": "2.5.1",
+      "title": "Pointer Gestures",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-gestures",
+      "appliesToGroups": [],
+      "procedure": "Multipoint/path-based gestures have single-pointer alternative",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.2",
+      "criterion": "2.5.2",
+      "title": "Pointer Cancellation",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-pointer",
+      "appliesToGroups": [
+        "actions"
+      ],
+      "procedure": "Down event does not irreversibly commit action; up/abort/undo behavior valid",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.3",
+      "criterion": "2.5.3",
+      "title": "Label in Name",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-labelled-actions",
+      "appliesToGroups": [
+        "actions"
+      ],
+      "procedure": "Accessible name includes visible label on controls",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.4",
+      "criterion": "2.5.4",
+      "title": "Motion Actuation",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-device-motion",
+      "appliesToGroups": [],
+      "procedure": "Device/user motion gestures have conventional alternatives and disable control",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.7",
+      "criterion": "2.5.7",
+      "title": "Dragging Movements",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-7",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-drag",
+      "appliesToGroups": [
+        "data",
+        "specialized"
+      ],
+      "procedure": "Single pointer non-drag alternative exists; keyboard alternative alone is insufficient",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-2.5.8",
+      "criterion": "2.5.8",
+      "title": "Target Size (Minimum)",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#2-5-8",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-pointer",
+      "appliesToGroups": [
+        "actions",
+        "forms",
+        "data",
+        "specialized"
+      ],
+      "procedure": "24×24 CSS px or demonstrate specific spacing/equivalent/inline/UA/essential exception",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "browser",
+        "visual",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.1.1",
+      "criterion": "3.1.1",
+      "title": "Language of Page",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-1-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-page",
+      "appliesToGroups": [
+        "content"
+      ],
+      "procedure": "html lang correct; locale/mixed text supplied by app",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.1.2",
+      "criterion": "3.1.2",
+      "title": "Language of Parts",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-1-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-multilingual",
+      "appliesToGroups": [],
+      "procedure": "Language changes marked when needed for screen reader pronunciation",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.2.1",
+      "criterion": "3.2.1",
+      "title": "On Focus",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-2-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-keyboard-interaction",
+      "appliesToGroups": [],
+      "procedure": "Focus alone does not trigger unexpected context change",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.2.2",
+      "criterion": "3.2.2",
+      "title": "On Input",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-2-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-forms",
+      "appliesToGroups": [],
+      "procedure": "Input changes do not unexpectedly change context without notification",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.2.3",
+      "criterion": "3.2.3",
+      "title": "Consistent Navigation",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-2-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-page-set",
+      "appliesToGroups": [],
+      "procedure": "Navigation locations/order consistent across templates/modes",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.2.4",
+      "criterion": "3.2.4",
+      "title": "Consistent Identification",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-2-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-repeated-components",
+      "appliesToGroups": [],
+      "procedure": "Same-function UI identified consistently across skins and pages",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.2.6",
+      "criterion": "3.2.6",
+      "title": "Consistent Help",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-2-6",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-help",
+      "appliesToGroups": [],
+      "procedure": "Repeated help mechanisms keep same relative order when present",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.1",
+      "criterion": "3.3.1",
+      "title": "Error Identification",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-1",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-form-error",
+      "appliesToGroups": [
+        "forms"
+      ],
+      "procedure": "Field/problem indicated in text and bound to appropriate control",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "interaction",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.2",
+      "criterion": "3.3.2",
+      "title": "Labels or Instructions",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-forms",
+      "appliesToGroups": [
+        "forms"
+      ],
+      "procedure": "User input has visible/name/description and correct grouping",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.3",
+      "criterion": "3.3.3",
+      "title": "Error Suggestion",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-form-error",
+      "appliesToGroups": [
+        "forms"
+      ],
+      "procedure": "Give helpful suggestion when known and safe, not expose security secrets",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.4",
+      "criterion": "3.3.4",
+      "title": "Error Prevention (Legal, Financial, Data)",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-4",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-risky-submit",
+      "appliesToGroups": [],
+      "procedure": "Review/correct/confirm or reversibility for qualifying data/legal/financial commitments",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.7",
+      "criterion": "3.3.7",
+      "title": "Redundant Entry",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-7",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-multistep",
+      "appliesToGroups": [],
+      "procedure": "Previous entries reused/autopopulated or choice exception recognized",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-3.3.8",
+      "criterion": "3.3.8",
+      "title": "Accessible Authentication (Minimum)",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#3-3-8",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-auth",
+      "appliesToGroups": [],
+      "procedure": "Support cognitive-test alternative/assistance and account for allowed exceptions, paste/password manager",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "interaction",
+        "manual",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-manual-release-gate",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-4.1.2",
+      "criterion": "4.1.2",
+      "title": "Name, Role, Value",
+      "level": "A",
+      "source": "https://www.w3.org/TR/WCAG22/#4-1-2",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "all-interaction",
+      "appliesToGroups": [
+        "foundation",
+        "actions",
+        "forms",
+        "feedback",
+        "data",
+        "specialized"
+      ],
+      "procedure": "Native name/role/state/value available, correctly updated in ARIA/custom composites",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "interaction",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    },
+    {
+      "id": "wcag-4.1.3",
+      "criterion": "4.1.3",
+      "title": "Status Messages",
+      "level": "AA",
+      "source": "https://www.w3.org/TR/WCAG22/#4-1-3",
+      "normative": "WCAG-2.2",
+      "target": "baseline-AA-or-A",
+      "applicability": "conditional-status",
+      "appliesToGroups": [
+        "forms",
+        "feedback",
+        "data"
+      ],
+      "procedure": "Async errors/successes status exposed programmatically without grabbing focus and spamming",
+      "fixtureRefs": [
+        "visual-baseline-matrix:conditional-representative-state",
+        "component-state-matrix:applicable"
+      ],
+      "methods": [
+        "automated",
+        "interaction",
+        "AT"
+      ],
+      "expectedOutcome": "real rendered UI satisfies exact linked criterion when this feature applies; exempt conditions documented and reviewed",
+      "evidenceRequired": [
+        "actual browser/build revision",
+        "test log or DOM/AX tree where meaningful",
+        "applicable screenshot/video or manual steps",
+        "reviewer/date when criterion requires judgment"
+      ],
+      "owner": "accessibility-reviewer-and-implementing-component/app-owner",
+      "ciDisposition": "future-blocking-on-reviewed-violations",
+      "limitations": "Automated checks cover only a subset; applicable exceptions and actual consumer content need human review",
+      "status": "specified-not-tested",
+      "review": {
+        "testRun": null,
+        "manualEvidence": null,
+        "atEvidence": null,
+        "reviewer": null,
+        "date": null,
+        "verdict": null
+      }
+    }
+  ]
+}
