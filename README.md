@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Package Architecture & Developer Experience (2026-10-25)
 
 - [Audited live repo and P0–P3 package/DX findings](docs/audit/package-architecture-dx-audit.md)
+- [Verified package/DX research delivery report and CI evidence](docs/audit/package-architecture-dx-delivery-2026-10-25.md)
 - [Official npm/Node/TS/Vite/Tailwind/registry/OIDC research](docs/research/package-architecture-dx-research-log.md)
 - [Canonical Package Architecture & Developer Experience Bible](docs/architecture/package-architecture-dx-bible.md)
 - [ADR-0009 — Package topology, single runtime candidate](docs/adr/0009-package-topology.md)
