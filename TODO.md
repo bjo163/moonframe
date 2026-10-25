@@ -52,13 +52,14 @@
 
 ## M0 — Repository / Contract Trust
 
-**Milestone artifact:** validated specification snapshot/docs checkpoint. **Gate:** docs-only checkpoint pending MFI-001/002 tests. Entry: Baseline CI and #7 first; then #8; remaining spec governance checks. See [release matrix](docs/architecture/release-train-and-adoption.md).
+**Milestone artifact:** validated specification snapshot/docs checkpoint. **Gate:** docs-only checkpoint pending MFI-002 and remaining spec governance checks. Entry: baseline CI and #7 first; then #8. See [release matrix](docs/architecture/release-train-and-adoption.md).
 
-- [ ] **MFI-001 — Guard GitHub issue ↔ roadmap stable ID collision** · **P0 / S** · **status:** `ready` · **lane:** A · **deps:** — · **issue:** [#7](https://github.com/bjo163/moonframe/issues/7)
+- [x] **MFI-001 — Guard GitHub issue ↔ roadmap stable ID collision** · **P0 / S** · **status:** `done` · **lane:** A · **deps:** — · **issue:** [#7](https://github.com/bjo163/moonframe/issues/7)
   - **Expected file owner/scope:** `scripts/validate-contracts.mjs; docs/backlog`. **AC:** True meaning of MF-003 cannot be reassigned; valid fixture passes, collision fixture fails with file+ID.
   - **Validation/evidence:** node scripts/validate-contracts.mjs; node scripts/validate-contracts.mjs --self-test; assert invalid fixture fails. **Risk/rollback:** Rollback validator rule if false positives while retaining regression fixture. **Adoption/output:** validated specification snapshot/docs checkpoint. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Verified evidence:** [code commit](https://github.com/bjo163/moonframe/commit/e8cf0ff541f84b073ce6d9c7cb5713e1c522ec55), [Node 22 CI](https://github.com/bjo163/moonframe/actions/runs/40191629703), [#7 evidence comment](https://github.com/bjo163/moonframe/issues/7#issuecomment-6397419631); issue closed after acceptance checks passed.
 
-- [ ] **MFI-002 — Check one canonical owner per concern and valid refs** · **P1 / S** · **status:** `blocked` · **lane:** A · **deps:** MFI-001 · **issue:** [#8](https://github.com/bjo163/moonframe/issues/8)
+- [ ] **MFI-002 — Check one canonical owner per concern and valid refs** · **P1 / S** · **status:** `ready` · **lane:** A · **deps:** MFI-001 · **issue:** [#8](https://github.com/bjo163/moonframe/issues/8)
   - **Expected file owner/scope:** `docs/architecture/decisions-and-governance.md; scripts/`. **AC:** Registry covers all domains; negative owner/ref fixtures fail deterministically.
   - **Validation/evidence:** node scripts/validate-contracts.mjs; --self-test plus owner negatives. **Risk/rollback:** Avoid second mutable registry; revert checker with fixtures only if proven false-positive. **Adoption/output:** validated specification snapshot/docs checkpoint. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
 
