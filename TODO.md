@@ -15,7 +15,7 @@
 
 | ID | Goal | Entry / blockers | Adoptable artifact | Actual state / release decision | Tasks |
 |---|---|---|---|---|---:|
-| M0 | Repository / Contract Trust | MFI-001/#7 and MFI-002/#8 passed; continue remaining spec governance checks | validated specification snapshot/docs checkpoint | docs-only checkpoint pending MFI-004 and task-template disposition | 5 |
+| M0 | Repository / Contract Trust | MFI-001/#7 and MFI-002/#8 passed; continue remaining spec governance checks | validated specification snapshot/docs checkpoint | docs-only checkpoint pending task-template disposition | 5 |
 | M1 | Package foundation + consumer prerequisites | #1 consumers; #3 provider; #4 distribution; no assumed package manager | local package tarball + synthetic importer | blocked: #1/#3/#4 and consumer smoke | 6 |
 | M2 | Token source and generator slice | #5 bounded DTCG ADR; may research independently of M1 | deterministic fixture CSS/types | blocked: #5 and generator proof | 5 |
 | M3 | Theme runtime slice | Token CSS fixture + package+SSR constraints | theme-preview reference consumer | blocked: token/runtime implementation | 4 |
@@ -44,7 +44,7 @@
 
 **Hard critical path:** `MFI-001 → MFI-002 → (MFI-003/MFI-004)`; `MF-003 → MF-005 → MF-006 → MF-BOOT-001 → MF-BOOT-002`; `MF-013 → MF-TOKEN-001 → MF-TOKEN-002 → MF-THEME-001 → MF-THEME-002/003 → MF-SKINLAB-001`; `MF-004 + MF-024 → MF-SKINLAB-002/003 → MF-COMP-* → MF-FORM-* → MF-BLOCK-* / MF-DATA-* → MF-QA-* → MF-REL-*`. Do not create branch/force-push; integrate source changes sequentially on approved `main`, or adopt approved PR flow if repo policy changes. All additions must pass an integration checkpoint before another lane consumes outputs.
 
-**M0 execution progress:** [MFI-001 / #7](https://github.com/bjo163/moonframe/issues/7), [MFI-002 / #8](https://github.com/bjo163/moonframe/issues/8), and MFI-003 are complete with evidence below. The linked [initial local execution prompt](docs/handoff/moonframe-local-coding-agent-execution-prompt.md) is historical and limited to MFI-001. MFI-004 is the next eligible Lane A task; continue under this TODO's dependencies and release gates.
+**M0 execution progress:** [MFI-001 / #7](https://github.com/bjo163/moonframe/issues/7), [MFI-002 / #8](https://github.com/bjo163/moonframe/issues/8), MFI-003, and MFI-004 are complete with evidence below. The linked [initial local execution prompt](docs/handoff/moonframe-local-coding-agent-execution-prompt.md) is historical and limited to MFI-001. MFI-012 is optional and proceeds only after the GitHub settings audit; no implementation lane starts before its documented gates.
 
 ## Canonical detailed catalogs (reference, not duplicate mutable data)
 
@@ -52,7 +52,7 @@
 
 ## M0 — Repository / Contract Trust
 
-**Milestone artifact:** validated specification snapshot/docs checkpoint. **Gate:** docs-only checkpoint pending MFI-004 and task-template disposition. MFI-001/#7 and MFI-002/#8 are complete; see [release matrix](docs/architecture/release-train-and-adoption.md).
+**Milestone artifact:** validated specification snapshot/docs checkpoint. **Gate:** docs-only checkpoint pending MFI-012 disposition and any remaining spec governance review. MFI-001/#7 and MFI-002/#8 are complete; see [release matrix](docs/architecture/release-train-and-adoption.md).
 
 - [x] **MFI-001 — Guard GitHub issue ↔ roadmap stable ID collision** · **P0 / S** · **status:** `done` · **lane:** A · **deps:** — · **issue:** [#7](https://github.com/bjo163/moonframe/issues/7)
   - **Expected file owner/scope:** `scripts/validate-contracts.mjs; docs/backlog`. **AC:** True meaning of MF-003 cannot be reassigned; valid fixture passes, collision fixture fails with file+ID.
@@ -69,9 +69,10 @@
   - **Validation/evidence:** node scripts/validate-contracts.mjs; dedicated fixture test. **Risk/rollback:** Anchor slug dialect risk; rollback only checker changes after fixing fixtures. **Adoption/output:** validated specification snapshot/docs checkpoint. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
   - **Verified evidence:** [commit](https://github.com/bjo163/moonframe/commit/fa93f0d00aff185fb0f9ac85611f04f37e697543), [Node 22 CI](https://github.com/bjo163/moonframe/actions/runs/40192231044); inline local links in README/TODO/docs checked, external URL reachability not tested.
 
-- [ ] **MFI-004 — Normalize spec/implemented/tested/reviewed/released evidence** · **P1 / S** · **status:** `ready` · **lane:** A · **deps:** MFI-002 · **issue:** not-created
+- [x] **MFI-004 — Normalize spec/implemented/tested/reviewed/released evidence** · **P1 / S** · **status:** `done` · **lane:** A · **deps:** MFI-002 · **issue:** not-created
   - **Expected file owner/scope:** `docs/architecture/decisions-and-governance.md; docs/qa/`. **AC:** All stages separate; 30 pending, 105 unreviewed, 270 not-rendered unchanged.
   - **Validation/evidence:** node scripts/validate-contracts.mjs; human sampled status review. **Risk/rollback:** No fabricated progress; revert accidental status upgrades. **Adoption/output:** validated specification snapshot/docs checkpoint. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Verified evidence:** [commit](https://github.com/bjo163/moonframe/commit/af5ddd14621e9b6984bcf76c53cb3584c59fa506), [Node 22 CI](https://github.com/bjo163/moonframe/actions/runs/40192403045); manually sampled four canonical contracts and negative maturity fixtures passed.
 
 - [ ] **MFI-012 — Propose minimal task template after settings audit** · **P2 / S** · **status:** `blocked` · **lane:** A · **deps:** MFI-001,MFI-002 · **issue:** not-created
   - **Expected file owner/scope:** `docs/backlog/; .github/ISSUE_TEMPLATE/ (optional)`. **AC:** No invented assignees/milestones/labels; templates preserve scope/DoD.
