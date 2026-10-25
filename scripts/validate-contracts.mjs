@@ -352,6 +352,113 @@ if(process.argv.includes('--self-test')) {
   console.log('PASS: proposed token fixture negatives (unknown alias, cycle, type, unit, color, unsupported)');
 }
 
+
+// Component API/behavior specs: structural and referential checks ONLY.
+// A green result does not compile TS nor test live keyboard/ARIA/React components.
+const apiContract = read('contracts/moonframe-component-api-contract-v0.1.json');
+const componentStates = read('contracts/moonframe-component-state-matrix-v0.1.json');
+const keyboardMatrix = read('contracts/moonframe-keyboard-interaction-matrix-v0.1.json');
+const componentApiSchema=read('schemas/moonframe-component-behavior.schema.json');
+const componentMatrixSchema=read('schemas/moonframe-component-matrix.schema.json');
+const stateIds=componentStates.stateDimensions.map(x=>x.id);
+const patternIds=keyboardMatrix.patterns.map(x=>x.id);
+const publicIds=cmp.map(c=>c.id);
+const byPublic=new Map(cmp.map(x=>[x.id,x]));
+const byAPI=new Map(apiContract.components.map(x=>[x.id,x]));
+const byKeyboard=new Map(keyboardMatrix.componentMappings.map(x=>[x.componentId,x]));
+const byState=new Map(componentStates.components.map(x=>[x.componentId,x]));
+function componentCoverageProblems(a,sm,km){
+ const e=[],mapApi=new Map(a.components.map(x=>[x.id,x]));
+ const stateMap=new Map(sm.components.map(x=>[x.componentId,x]));
+ const keyMap=new Map(km.componentMappings.map(x=>[x.componentId,x]));
+ const patternsSet=new Set(km.patterns.map(x=>x.id));
+ const appStatuses=new Set(sm.applicabilityVocabulary);
+ function checkIds(label,actual){
+  if(!sameSet(actual,publicIds))e.push(label+' missing/duplicate/unknown component ID');
+ }
+ checkIds('API',a.components.map(x=>x.id));
+ checkIds('state',sm.components.map(x=>x.componentId));
+ checkIds('keyboard',km.componentMappings.map(x=>x.componentId));
+ if(!uniq(km.patterns.map(x=>x.id)))e.push('duplicate keyboard patterns');
+ if(!uniq(sm.stateDimensions.map(x=>x.id))||sm.stateDimensions.length<15)e.push('invalid state dimensions');
+ for(const c of a.components) {
+  const orig=byPublic.get(c.id);
+  if(!orig){e.push('unknown API ID '+c.id);continue;}
+  if(c.name!==orig.name||c.category!==orig.group||c.catalogTier!==orig.tier||
+    c.catalogLevel!==orig.level||c.priority!==orig.priority)
+   e.push('API canonical manifest drift '+c.id);
+  if(c.readiness!=='specified-provisional-not-implemented'||c.publicExport?.status!=='unapproved'||
+     c.propContract?.status!=='proposed-family-derived')
+   e.push('Unverified API claimed as ready '+c.id);
+  if(!patternsSet.has(c.keyboardPattern))e.push('unknown keyboard pattern '+c.id);
+  if(c.statesMatrixRef!==('moonframe-component-state-matrix-v0.1.json#'+c.id) ||
+     c.keyboardMatrixRef!==('moonframe-keyboard-interaction-matrix-v0.1.json#'+c.keyboardPattern))
+    e.push('broken machine-readable cross-reference '+c.id);
+  if(!Array.isArray(c.accessibilityRequirements)||c.accessibilityRequirements.length<3||
+     !Array.isArray(c.testsRequired)||c.testsRequired.length<2||
+     !Array.isArray(c.docsRequired)||c.docsRequired.length<2)
+     e.push('missing component evidence requirements '+c.id);
+  if(c.themeContractRef!=='moonframe-theme-contract-v1.3.json'||
+     c.visualRecipeRef!=='moonframe-skin-specifications-v1.0.json')
+    e.push('misowned skin/theme authority '+c.id);
+  const sr=stateMap.get(c.id),kr=keyMap.get(c.id);
+  if(!sr||!kr){e.push('missing state/keyboard row '+c.id);continue;}
+  if(sr.keyboardPattern!==c.keyboardPattern||kr.patternId!==c.keyboardPattern)
+   e.push('keyboard mismatch for '+c.id);
+  const actual=Object.keys(sr.states||{});
+  if(!sameSet(actual,sm.stateDimensions.map(x=>x.id)))e.push('state dimensions incomplete '+c.id);
+  if(actual.some(s=>!appStatuses.has(sr.states[s])))e.push('state applicability invalid '+c.id);
+  if(!sameSet(sr.applicable||[],actual.filter(s=>sr.states[s]==='applicable')) ||
+     !sameSet(sr.notApplicable||[],actual.filter(s=>sr.states[s]==='not-applicable')) ||
+     !sameSet(sr.deferred||[],actual.filter(s=>sr.states[s]==='deferred')))
+    e.push('state partition contradictory '+c.id);
+  if(sr.reviewStatus!=='specified-family-derived-not-tested'||kr.status!=='specified-not-tested')
+    e.push('invented component state/keyboard review '+c.id);
+  if(sr.deferred?.length && !(Array.isArray(sr.deferredReasons)&&sr.deferredReasons.length))
+    e.push('deferred states missing reason '+c.id);
+  const pat=km.patterns.find(x=>x.id===c.keyboardPattern);
+  if(!pat?.componentIds?.includes(c.id))e.push('pattern reverse index incomplete '+c.id);
+  if(c.risk==='high'&&kr.manualReview!=='required-before-release')
+    e.push('high risk missing manual AT gate '+c.id);
+ }
+ for(const p of km.patterns){
+  const mapped=km.componentMappings.filter(x=>x.patternId===p.id).map(x=>x.componentId);
+  if(!sameSet(mapped,p.componentIds))e.push('keyboard reverse index out of sync '+p.id);
+  if(p.readiness!=='specified-pattern-not-implemented'||!isString(p.keyboardContract)||!isString(p.primarySource))
+    e.push('keyboard pattern unjustified or prematurely validated '+p.id);
+ }
+ if(a.components.length!==cmp.length||sm.components.length!==cmp.length||km.componentMappings.length!==cmp.length)
+  e.push('151-component coverage count drift');
+ return e;
+}
+for(const issue of componentCoverageProblems(apiContract,componentStates,keyboardMatrix))
+ errors.push('Component contract: '+issue);
+fail(componentApiSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     componentMatrixSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     componentApiSchema.properties?.keyboardPattern&&componentMatrixSchema.properties?.states,
+     'Component API structural schemas missing/malformed');
+fail(apiContract.status==='specified-family-derived-not-implemented' &&
+     componentStates.status==='planned-no-component-tests' &&
+     keyboardMatrix.status==='specified-not-tested',
+     'Component documents incorrectly claim UI implementation/test readiness');
+if(process.argv.includes('--self-test')){
+ assert.equal(componentCoverageProblems(apiContract,componentStates,keyboardMatrix).length,0);
+ const badMissing=structuredClone(apiContract);badMissing.components.shift();
+ assert(componentCoverageProblems(badMissing,componentStates,keyboardMatrix).some(x=>x.includes('API missing')));
+ const badPattern=structuredClone(apiContract);badPattern.components[0].keyboardPattern='magic-nonexistent';
+ assert(componentCoverageProblems(badPattern,componentStates,keyboardMatrix).some(x=>x.includes('unknown keyboard pattern')));
+ const badState=structuredClone(componentStates);
+ badState.components[0].states['resting']='invalid-flag';
+ assert(componentCoverageProblems(apiContract,badState,keyboardMatrix).some(x=>x.includes('state applicability invalid')));
+ const badFalseReview=structuredClone(componentStates);
+ badFalseReview.components[0].reviewStatus='tested';
+ assert(componentCoverageProblems(apiContract,badFalseReview,keyboardMatrix).some(x=>x.includes('invented component state')));
+ const badReverse=structuredClone(keyboardMatrix);
+ badReverse.patterns[0].componentIds=['wrong-component'];
+ assert(componentCoverageProblems(apiContract,componentStates,badReverse).some(x=>x.includes('keyboard reverse index')));
+ console.log('PASS: component negatives (missing ID, orphan keyboard pattern, invalid state, fake review, reverse index)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];

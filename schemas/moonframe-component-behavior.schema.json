@@ -219,6 +219,26 @@
     },
     "specificBoundary": {
       "type": "object"
+    },
+    "catalogLevel": {
+      "enum": [
+        "A",
+        "B"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "canonicalBehaviorBible": {
+      "const": "../docs/component-api-behavior-bible.md"
+    },
+    "optionalFeatures": {
+      "type": "string"
     }
   },
   "additionalProperties": false
