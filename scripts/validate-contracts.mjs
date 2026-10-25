@@ -1254,6 +1254,141 @@ if(process.argv.includes('--self-test')){
    ' invalid evidence+waivers; 51 WCAG, 151 component profiles, 270 unrendered slots)');
 }
 
+
+// Moonframe package/DX SPEC-ONLY metadata. Not npm package, build, tarball, registry, release or consumer tests.
+const packageArch=read('contracts/moonframe-package-architecture-v0.1.json');
+const packageDX=read('contracts/moonframe-developer-experience-v0.1.json');
+const packageSchema=read('schemas/moonframe-package-architecture.schema.json');
+const packageFixtures=read('contracts/fixtures/package-architecture-dx-v0.1.json');
+const knownPublicExports=['.','./theme','./styles.css','./tokens.css','./tailwind.css','./components/button'];
+function packageProblems(p){
+ const e=[];
+ if(!p||typeof p!=='object')return ['missing package record'];
+ if(p.schemaVersion!=='0.1.0'||p.contractId!=='MF-PKG-ARCH-001'||
+    p.status!=='specified-candidates-not-implemented')
+   e.push('bad package schema version/status');
+ if(p.ownerDecisionIssue!=='https://github.com/bjo163/moonframe/issues/4'||
+    p.auditedRepository!=='bjo163/moonframe')e.push('orphan package decision');
+ if(p.skinAppearance?.expectedSkinCount!==15||
+    p.skinAppearance?.expectedResolvedAppearances!==30||
+    !sameSet(p.skinAppearance?.modeOptions||[],['light','dark'])||
+    p.skinAppearance?.systemIsPreferenceNotThirdMode!==true)
+   e.push('skin/mode baseline changed');
+ if(!['one-runtime-package-first','small-npm-workspace','hybrid-runtime-plus-source-registry','monorepo-multiple-apps-and-packages'].includes(p.topology?.preferred))
+   e.push('unknown topology');
+ if(p.topology?.decisionStatus!=='proposed-open'||
+    p.topology?.workspaceManager!=='unselected'||p.topology?.buildTool!=='unselected'||
+    p.topology?.nodeVersionRange!==null)
+   e.push('unreviewed tooling or peer version claimed');
+ if(p.distribution?.publicationStatus!=='never-published'||
+    p.distribution?.publishedVersions?.length!==0||
+    p.distribution?.registryItems?.length!==0||
+    p.distribution?.audioPacks!==0||p.distribution?.customCLI!=='not-authorized')
+   e.push('false published package/registry/asset');
+ if(!Array.isArray(p.packages)||p.packages.length!==1||
+    !uniq(p.packages.map(x=>x.id))||p.packages[0]?.id!=='ui-core')
+   e.push('spurious package topology/split');
+ for(const x of p.packages||[]){
+   if(x.nameCandidate!=='@moonframe/ui'||x.nameStatus!=='proposed-unverified'||
+      x.packageMetadataStatus!=='no-package-json-no-package-published'||
+      x.version!==null||x.license!==null||x.engines!==null||
+      x.reactPeerVersion!==null||x.reactDomPeerVersion!==null||
+      x.typescriptSupportRange!==null||x.nodeSupportRange!==null||
+      x.browserSupportRange!==null||x.packageJsonPath!==null||
+      x.publishConfig!==null||x.filesWhitelist!==null)
+     e.push('false npm name/version/license/consumer approval');
+   if(x.cjsDecision!=='deferred-needs-consumer-proof'||
+      !Array.isArray(x.exports)||!sameSet(x.exports.map(z=>z.id),knownPublicExports))
+     e.push('unknown/duplicate proposed export IDs');
+   for(const v of x.exports||[]){
+     if(v.publicStability!=='proposed-unverified'||
+        v.outputPath!==null||v.declarationPath!==null||
+        !v.candidateConsumerImport.startsWith('@moonframe/ui')||
+        !Array.isArray(v.conditions)||
+        v.conditions.some(c=>!['types','import','default'].includes(c))||
+        (v.id.includes('src/')||v.id.includes('internal')||v.id.includes('../')))
+       e.push('false compiled/public or internal export '+v.id);
+     if(v.id.endsWith('.css')&&v.cssSideEffect!==true)
+       e.push('CSS side-effect dropped '+v.id);
+     if(!v.id.endsWith('.css')&&v.cssSideEffect!==false)
+       e.push('unknown JS side effects '+v.id);
+   }
+ }
+ if(p.generatedCss?.status!=='not-generated'||
+    p.generatedCss?.canonicalInputs!=='moonframe-token-source-plan-v0.1.json')
+   e.push('invented generated CSS');
+ if(p.consumerProof?.status!=='not-run'||
+    p.consumerProof?.skin105PairwiseReviews!==0||
+    Object.entries(p.consumerProof||{}).some(([k,v])=>
+      !['status','skin105PairwiseReviews'].includes(k)&&v!==false))
+   e.push('fabricated consumer install/pack/bundle/AT evidence');
+ if(p.release?.status!=='not-configured'||
+    p.release?.npmScopeApproved!==false||
+    p.release?.codeLicenseApproved!==false||
+    p.release?.artRightsApproved!==false||
+    p.release?.version!==null||
+    p.release?.tagsVerified!==null||
+    p.release?.githubReleasesObserved!==0||
+    p.release?.trustedPublisherEnabled!==false||
+    p.release?.provenanceAttested!==false||
+    p.release?.oidcWorkflowConfigured!==false||
+    p.release?.distTagsGranted!==false||
+    p.release?.packageTarball!==null||
+    p.release?.registryInstall!==null)
+   e.push('fabricated publish/provenance/OIDC approval');
+ return e;
+}
+function dxProblems(d){
+ const e=[];
+ if(d.schemaVersion!=='0.1.0'||d.status!=='specified-not-implemented'||
+    d.packageAuthority!=='moonframe-package-architecture-v0.1.json')
+   e.push('DX source/status bad');
+ if(!Array.isArray(d.journeys)||d.journeys.length!==11||
+    !uniq(d.journeys.map(x=>x.id))||
+    d.journeys.some(x=>x.currentStatus!=='not-executable-no-package'||
+      x.testedInConsumer!==false||x.docsPath!==null||
+      !isString(x.acceptanceEvidence)))
+   e.push('DX journeys falsely implemented');
+ if(!Array.isArray(d.diagnostics)||d.diagnostics.length!==13||
+    !uniq(d.diagnostics.map(x=>x.code))||
+    d.diagnostics.some(x=>!/^MF_DX_[A-Z_]+$/.test(x.code)||
+      x.status!=='proposal-not-implemented'||!isString(x.remediation)))
+   e.push('DX diagnostics missing/implemented');
+ if(!Array.isArray(d.metrics)||d.metrics.length!==6||
+    d.metrics.some(x=>x.baseline!==null||x.status!=='not-measured')||
+    d.actualExecutableQuickstart!==false||
+    d.actualDocumentedPackageVersion!==null)
+   e.push('fabricated measured DX');
+ return e;
+}
+for(const problem of packageProblems(packageArch))
+ errors.push('Package architecture: '+problem);
+for(const problem of dxProblems(packageDX))
+ errors.push('Package DX: '+problem);
+fail(packageSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+     packageSchema.properties?.packages&&packageSchema.properties?.release&&
+     Array.isArray(packageSchema.allOf),
+     'Proposed package Draft 2020-12 schema lacks essential structure');
+fail(packageFixtures.valid.length>=1&&packageFixtures.invalid.length>=16,
+     'Package architecture synthetic fixtures missing');
+for(const v of packageFixtures.valid)
+ for(const problem of packageProblems(v.record))
+   errors.push('Valid package fixture '+v.id+': '+problem);
+if(process.argv.includes('--self-test')){
+ for(const f of packageFixtures.invalid)
+   assert(packageProblems(f.record).length>0,
+      'Invalid package fixture accidentally accepted '+f.id);
+ const badDX=structuredClone(packageDX);badDX.journeys[0].testedInConsumer=true;
+ assert(dxProblems(badDX).some(x=>x.includes('falsely implemented')));
+ const fakeName=structuredClone(packageArch);fakeName.packages[0].nameStatus='approved';
+ assert(packageProblems(fakeName).some(x=>x.includes('false npm name')));
+ const fakeCSS=structuredClone(packageArch);
+ fakeCSS.packages[0].exports.find(x=>x.id==='./styles.css').cssSideEffect=false;
+ assert(packageProblems(fakeCSS).some(x=>x.includes('CSS side-effect')));
+ console.log('PASS: package/DX negative fixtures ('+packageFixtures.invalid.length+
+ ' bad package/export/license/OIDC/consumer proofs; 11 planned journeys and 13 diagnostics)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
