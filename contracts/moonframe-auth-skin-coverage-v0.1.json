@@ -1,0 +1,2489 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-AUTH-SKIN-COVERAGE-001",
+  "status": "specified-not-rendered",
+  "skinAuthority": "moonframe-theme-contract-v1.3.json",
+  "semanticAuthority": "moonframe-auth-flow-contract-v0.1.json",
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "systemExtraMode": false,
+  "canonicalSkinIds": [
+    "moonpunk",
+    "moonriot",
+    "moonzine",
+    "moonhalftone",
+    "moonglitch",
+    "moonsmash",
+    "moonink",
+    "mooncrash",
+    "moonpanel",
+    "moonscrawl",
+    "moonraw",
+    "moonchrome",
+    "classic",
+    "moonquest",
+    "moonledger"
+  ],
+  "scenes": [
+    {
+      "id": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "registration",
+      "templateId": "template-sign-up",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "recovery",
+      "templateId": "template-forgot-password",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "passkey",
+      "templateId": "template-passkey-signin",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "mfa",
+      "templateId": "template-mfa-verify",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "security-center",
+      "templateId": "template-security-center",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    },
+    {
+      "id": "team-permissions",
+      "templateId": "template-team-membership",
+      "acceptance": "identical form semantics, trusted provider identity, keyboard/focus and error copy under every skin",
+      "reviewStatus": "not-reviewed"
+    }
+  ],
+  "expectedCells": 240,
+  "cells": [
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "sign-in",
+      "templateId": "template-sign-in-minimal",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "registration",
+      "templateId": "template-sign-up",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "recovery",
+      "templateId": "template-forgot-password",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "passkey",
+      "templateId": "template-passkey-signin",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "mfa",
+      "templateId": "template-mfa-verify",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "enterprise-sso",
+      "templateId": "template-sign-in-enterprise",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "security-center",
+      "templateId": "template-security-center",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "specimenId": "team-permissions",
+      "templateId": "template-team-membership",
+      "status": "not-rendered",
+      "screenshot": null,
+      "manualATReview": null,
+      "reviewer": null
+    }
+  ],
+  "counts": {
+    "notRendered": 240,
+    "passed": 0,
+    "reviewed": 0
+  },
+  "notes": "No UI snapshots. 105 global skin-grammar pair comparisons remain unreviewed."
+}
