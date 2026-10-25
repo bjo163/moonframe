@@ -23,23 +23,25 @@ This document records the verified local runtime, reusable component library (`@
   - Complete `@theme inline` variable bridging in [src/tailwind.css](../src/tailwind.css).
 - [src/theme.js](../src/theme.js) implements `ThemeProvider` (controlled/uncontrolled + `syncDocumentElement`), `ThemeScript`, `getThemeInitScript`, `useTheme`, `resolveTheme`, `normalizePreferences`, and `getThemeAttributes`.
 
-## 3. Reusable Component & Level C Composite Block Library (`M5`, `M6`, `M8`)
+## 3. Reusable Component, Block & Vector/SFX Library (`M5`, `M6`, `M8`, `M10`)
 
-All **66+ exports** in [src/components.js](../src/components.js) and [src/components.d.ts](../src/components.d.ts) are reusable across any Next.js consumer:
+All **70+ exports** in [src/components.js](../src/components.js) and [src/components.d.ts](../src/components.d.ts) are reusable across any Next.js consumer:
 
 - **Foundation & Layout:** `Slot` (`asChild`), `AppShell`, `Sidebar`, `Main`, `Header`, `Nav`, `NavItem`, `Hero`, `Grid`, `Separator`, `Skeleton`, `Kbd`, `CodeBlock`
-- **Actions & Theme:** `Button`, `SkinSelector`, `ModeSelector`
+- **Actions & Theme:** `Button`, `SkinSelector`, `ModeSelector`, `SkinBrandMark`, `SkinArtwork`, `SFXProvider`, `useSFX`
 - **Forms & Rich Inputs:** `Field`, `FieldDescription`, `FieldError`, `Label`, `Input`, `Textarea`, `Select`, `Checkbox`, `Switch`, `RadioGroup`, `OTPInput`, `PasswordField`, `SearchInput`, `Slider`, `TagInput`, `SegmentedControl`, `FileDropzone`
 - **Navigation:** `Tabs`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Stepper`
 - **Overlays & Command:** `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`
 - **Feedback & Status:** `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`, `Progress`, `Badge`, `EmptyState`
 - **Data & Visualization:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `StatCard`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`, `BarChart`, `Sparkline`, `Timeline`, `Avatar`, `AvatarGroup`, `DescriptionList`, `DescriptionTerm`, `DescriptionDetails`, `Accordion`
 - **Level C Reusable Composite Blocks:** `PageHeader`, `MetricGrid`, `AuthCard`, `PricingCard`, `SettingsSection`, `ActivityFeed`
+- **M10 Vector Marks & SFX Runtime:** 15 distinct geometric vector brand marks (`SkinBrandMark`), adaptive artwork figure (`SkinArtwork` honoring `data-decorations="off"` per `MF-BRAND-BRIEFS-001`), and opt-in WebAudio synthesizer runtime (`SFXProvider`, `useSFX` honoring `MF-SFX-001` rate limiting and reduced-motion suppression).
 
-## 4. Wave-A Production Page Templates (`M7` — 22 Templates)
+## 4. 43 Production-Ready Page Templates (Wave-A & Wave-B)
 
 Implemented in [apps/moonframe/templates/index.tsx](../apps/moonframe/templates/index.tsx) and cataloged in [apps/moonframe/lib/catalog.ts](../apps/moonframe/lib/catalog.ts):
 
+### Wave-A Templates (22):
 1. `template-dashboard-overview` — Executive Dashboard Overview
 2. `template-analytics-workspace` — Telemetry & Analytics Workspace
 3. `template-data-workspace` — Enterprise Records & Data Workspace
@@ -62,3 +64,47 @@ Implemented in [apps/moonframe/templates/index.tsx](../apps/moonframe/templates/
 20. `template-documentation-landing` — Technical Documentation Portal
 21. `template-not-found` — 404 Not Found System Screen
 22. `template-maintenance` — Scheduled Maintenance & Status Page
+
+### Wave-B Templates (21):
+23. `template-sign-in-minimal` — Minimalist Authentication Entry
+24. `template-verify-email` — Email Verification with Resend Timer
+25. `template-auth-onboarding` — Multi-Step Workspace Setup Wizard
+26. `template-account-locked` — Security Incident Recovery Flow
+27. `template-records-table` — High-Volume Records Explorer
+28. `template-resource-detail` — Entity Inspector with Audit History
+29. `template-data-audit` — Immutable Audit Logs with JSON Diff
+30. `template-executive-dashboard` — Quarterly Executive Deck & KPIs
+31. `template-operations-console` — Infrastructure & Incident Console
+32. `template-webhook-inspector` — Webhook Delivery Logs & Payload Inspector
+33. `template-queue-monitor` — Background Queue Health & Dead-Letter Workbench
+34. `template-moonledger-home` — ERP General Ledger & Purchase Order Approvals
+35. `template-moonledger-inventory` — Multi-Warehouse SKU Stock Management
+36. `template-organization-preferences` — Enterprise Organization & SSO Preferences
+37. `template-moonquest-inventory` — RPG Relic Vault & Equipment Workbench
+38. `template-public-pricing` — Public Pricing Tiers & Feature Matrix
+39. `template-public-contact` — Enterprise Contact, Demo & SLA Form
+40. `template-legal-content` — Terms of Service & Privacy Policy Copy
+41. `template-error-page` — 500 Uncaught Exception Recovery Screen
+42. `template-access-denied` — 403 Forbidden & Access Request Flow
+43. `template-offline-page` — Offline Network Interruption Screen
+
+## 5. 8 Level E Multi-Route Starter Applications
+
+Fulfills 100% of starter application compositions defined in [moonframe-starter-manifest-v0.1.json](../contracts/moonframe-starter-manifest-v0.1.json) (`MF-STARTERS-001`):
+
+1. **`starter-admin-workspace`** (5 routes, recommended skin: `classic`): Executive overview, users directory, resource detail, profile preferences, and error recovery.
+2. **`starter-auth-onboarding`** (6 routes, recommended skin: `moonpunk`): Minimal login, registration, recovery, email OTP verification, team wizard, and account lockout.
+3. **`starter-data-admin`** (5 routes, recommended skin: `moonpanel`): Master records table, advanced filter workspace, resource inspector, audit log, and 403 access denied.
+4. **`starter-analytics-portal`** (4 routes, recommended skin: `moonglitch`): Range analytics, executive KPI deck, dashboard overview, and error fallback.
+5. **`starter-operations-console`** (4 routes, recommended skin: `mooncrash`): Ops health, webhook delivery inspector, background queue monitor, and offline page.
+6. **`starter-moonledger-erp`** (4 routes, recommended skin: `moonledger`): ERP overview, accounts reconciliation, warehouse inventory, and organization preferences.
+7. **`starter-moonquest-adventure`** (3 routes, recommended skin: `moonquest`): Adventure chronicle, relic vault/inventory, and adventurer preferences.
+8. **`starter-content-marketing`** (5 routes, recommended skin: `moonzine`): Landing page, pricing comparison, contact sales, documentation, and legal terms.
+
+## 6. Moonframe CLI Scaffolder (`scripts/moonframe-cli.mjs`)
+
+Zero-dependency Node.js ESM tool runnable via `pnpm run cli`:
+- `pnpm run cli list` — Lists 15 skins, 43 templates, and 8 starters with route counts.
+- `pnpm run cli info <id>` — Displays detailed metadata, connected page refs, and integration seams.
+- `pnpm run cli add <template-id>` — Scaffolds single Next.js page component.
+- `pnpm run cli add <starter-id>` — Scaffolds multi-route starter directory with `layout.tsx` (ThemeProvider/ThemeScript) and sub-route `page.tsx` files.

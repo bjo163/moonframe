@@ -22,6 +22,7 @@
     "dev": "pnpm --filter moonframe dev",
     "build": "pnpm --filter moonframe build",
     "start": "pnpm --filter moonframe start",
+    "cli": "node scripts/moonframe-cli.mjs",
     "test": "node --test tests/runtime.test.mjs",
     "test:browser": "playwright test",
     "typecheck": "tsc --noEmit",

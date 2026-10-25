@@ -1778,3 +1778,267 @@ export const ActivityFeed = forwardRef(function ActivityFeed({
   );
 });
 
+/* M10 Original 15-Skin Vector Brand Marks & Decorative Artwork */
+
+const SKIN_VECTOR_PATHS = {
+  moonpunk: [
+    { tag: 'polygon', attrs: { points: '6,4 26,2 28,22 18,28 4,24', fill: 'none', stroke: 'currentColor', strokeWidth: '2.5' } },
+    { tag: 'path', attrs: { d: 'M18 5L10 17H16L13 27L23 14H16L18 5Z', fill: 'currentColor' } },
+  ],
+  moonriot: [
+    { tag: 'polygon', attrs: { points: '3,6 29,3 25,27 3,22', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2' } },
+    { tag: 'polygon', attrs: { points: '8,11 24,8 20,21 8,19', fill: 'currentColor' } },
+  ],
+  moonzine: [
+    { tag: 'rect', attrs: { x: '4', y: '5', width: '22', height: '22', fill: 'none', stroke: 'currentColor', strokeWidth: '1.8', strokeDasharray: '4 2' } },
+    { tag: 'path', attrs: { d: 'M8 11H22M8 16H19M8 21H15', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'square' } },
+  ],
+  moonhalftone: [
+    { tag: 'rect', attrs: { x: '3', y: '3', width: '26', height: '26', fill: 'none', stroke: 'currentColor', strokeWidth: '2.5' } },
+    { tag: 'circle', attrs: { cx: '10', cy: '10', r: '2.5', fill: 'currentColor' } },
+    { tag: 'circle', attrs: { cx: '20', cy: '10', r: '1.8', fill: 'currentColor' } },
+    { tag: 'circle', attrs: { cx: '10', cy: '20', r: '1.8', fill: 'currentColor' } },
+    { tag: 'circle', attrs: { cx: '20', cy: '20', r: '3.2', fill: 'currentColor' } },
+  ],
+  moonglitch: [
+    { tag: 'path', attrs: { d: 'M4 10V4H10M22 4H28V10M28 22V28H22M10 28H4V22', fill: 'none', stroke: 'currentColor', strokeWidth: '2' } },
+    { tag: 'path', attrs: { d: 'M7 16H13L15 11L18 21L20 16H25', fill: 'none', stroke: 'currentColor', strokeWidth: '2' } },
+  ],
+  moonsmash: [
+    { tag: 'polygon', attrs: { points: '16,2 20,11 30,9 23,17 29,26 19,23 15,30 12,21 3,24 9,15 3,7 13,10', fill: 'currentColor' } },
+  ],
+  moonink: [
+    { tag: 'path', attrs: { d: 'M24 9C20 5 11 6 8 13C5 20 11 27 19 26C24 25 27 21 26 17', fill: 'none', stroke: 'currentColor', strokeWidth: '3.2', strokeLinecap: 'round' } },
+    { tag: 'circle', attrs: { cx: '18', cy: '15', r: '2.5', fill: 'currentColor' } },
+  ],
+  mooncrash: [
+    { tag: 'polygon', attrs: { points: '9,3 23,3 29,9 29,23 23,29 9,29 3,23 3,9', fill: 'none', stroke: 'currentColor', strokeWidth: '2.4' } },
+    { tag: 'path', attrs: { d: 'M9 21L16 10L23 21H9Z', fill: 'currentColor' } },
+  ],
+  moonpanel: [
+    { tag: 'rect', attrs: { x: '3', y: '3', width: '11', height: '11', fill: 'currentColor' } },
+    { tag: 'rect', attrs: { x: '17', y: '3', width: '12', height: '11', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2' } },
+    { tag: 'rect', attrs: { x: '3', y: '17', width: '26', height: '12', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2' } },
+  ],
+  moonscrawl: [
+    { tag: 'path', attrs: { d: 'M6 24C4 14 11 5 21 7C28 9 28 21 20 24C13 26 9 19 13 13C16 9 22 11 20 16', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2', strokeLinecap: 'round' } },
+  ],
+  moonraw: [
+    { tag: 'rect', attrs: { x: '3', y: '3', width: '26', height: '26', fill: 'none', stroke: 'currentColor', strokeWidth: '2.5' } },
+    { tag: 'path', attrs: { d: 'M3 16H29M16 3V29', stroke: 'currentColor', strokeWidth: '2.5' } },
+  ],
+  moonchrome: [
+    { tag: 'polygon', attrs: { points: '16,3 29,16 16,29 3,16', fill: 'none', stroke: 'currentColor', strokeWidth: '2' } },
+    { tag: 'polygon', attrs: { points: '16,8 24,16 16,24 8,16', fill: 'currentColor' } },
+  ],
+  classic: [
+    { tag: 'rect', attrs: { x: '4', y: '4', width: '24', height: '24', rx: '6', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2' } },
+    { tag: 'circle', attrs: { cx: '16', cy: '16', r: '5', fill: 'currentColor' } },
+  ],
+  moonquest: [
+    { tag: 'path', attrs: { d: 'M16 3L27 7V16C27 23 22 27 16 29C10 27 5 23 5 16V7L16 3Z', fill: 'none', stroke: 'currentColor', strokeWidth: '2.2' } },
+    { tag: 'polygon', attrs: { points: '16,8 18,14 24,16 18,18 16,24 14,18 8,16 14,14', fill: 'currentColor' } },
+  ],
+  moonledger: [
+    { tag: 'rect', attrs: { x: '4', y: '4', width: '24', height: '24', rx: '2', fill: 'none', stroke: 'currentColor', strokeWidth: '2' } },
+    { tag: 'path', attrs: { d: 'M4 11H28M12 11V28M20 11V28M4 19H28', stroke: 'currentColor', strokeWidth: '1.8' } },
+  ],
+};
+
+export const SkinBrandMark = forwardRef(function SkinBrandMark({
+  skin: skinProp,
+  size = 28,
+  decorative = true,
+  label,
+  className,
+  ...props
+}, ref) {
+  let themeSkin = 'classic';
+  try {
+    const theme = useTheme();
+    if (theme?.skin) themeSkin = theme.skin;
+  } catch {
+    themeSkin = 'classic';
+  }
+  const activeSkin = skinProp && SKIN_VECTOR_PATHS[skinProp] ? skinProp : themeSkin;
+  const shapes = SKIN_VECTOR_PATHS[activeSkin] || SKIN_VECTOR_PATHS.classic;
+  const ariaLabel = label || `${activeSkin} brand mark`;
+
+  return h('svg', {
+    ...props,
+    ref,
+    width: size,
+    height: size,
+    viewBox: '0 0 32 32',
+    role: decorative ? undefined : 'img',
+    'aria-hidden': decorative ? 'true' : undefined,
+    'aria-label': decorative ? undefined : ariaLabel,
+    'data-skin-mark': activeSkin,
+    className: cx('mf-brand-mark', className),
+  }, shapes.map((shape, idx) => h(shape.tag, { key: idx, ...shape.attrs })));
+});
+
+export const SkinArtwork = forwardRef(function SkinArtwork({
+  skin: skinProp,
+  title,
+  caption,
+  className,
+  ...props
+}, ref) {
+  let themeSkin = 'classic';
+  try {
+    const theme = useTheme();
+    if (theme?.skin) themeSkin = theme.skin;
+  } catch {
+    themeSkin = 'classic';
+  }
+  const activeSkin = skinProp && SKIN_VECTOR_PATHS[skinProp] ? skinProp : themeSkin;
+
+  return h('figure', {
+    ...props,
+    ref,
+    'data-skin-artwork': activeSkin,
+    className: cx('mf-skin-artwork', className),
+  },
+    h('div', { className: 'mf-skin-artwork-canvas', 'aria-hidden': 'true' },
+      h(SkinBrandMark, { skin: activeSkin, size: 56, decorative: true }),
+      h('div', { className: 'mf-skin-artwork-grid' })
+    ),
+    (title || caption) && h('figcaption', { className: 'mf-skin-artwork-caption' },
+      title && h('strong', null, title),
+      caption && h('span', null, caption)
+    )
+  );
+});
+
+/* M10 Opt-In, Muted-by-Default WebAudio Synthesizer SFX Runtime (MF-SFX-001) */
+
+const SFX_EVENT_PROFILES = {
+  success: { freq: [523.25, 659.25], durationMs: 110, type: 'sine' },
+  warning: { freq: [392.0, 349.23], durationMs: 130, type: 'triangle' },
+  error: { freq: [293.66, 246.94], durationMs: 140, type: 'triangle' },
+  notification: { freq: [587.33, 880.0], durationMs: 95, type: 'sine' },
+  confirmation: { freq: [440.0, 554.37], durationMs: 90, type: 'sine' },
+  'quest-reward': { freq: [523.25, 659.25, 783.99], durationMs: 160, type: 'triangle' },
+};
+
+const SFX_ALIASES = {
+  'confirm.success': 'success',
+  'confirm.warning': 'warning',
+  'confirm.error': 'error',
+  'notification.incoming': 'notification',
+  'operation.progress-complete': 'success',
+  'game.reward': 'quest-reward',
+};
+
+const SFXContext = createContext({
+  enabled: false,
+  muted: true,
+  volume: 0.35,
+  consentGranted: false,
+  lastEvent: null,
+  grantConsent: () => {},
+  revokeConsent: () => {},
+  setMuted: () => {},
+  setVolume: () => {},
+  play: () => ({ played: false, reason: 'provider-missing' }),
+});
+
+export function SFXProvider({
+  defaultEnabled = false,
+  defaultMuted = true,
+  defaultVolume = 0.35,
+  children,
+}) {
+  const [consentGranted, setConsentGranted] = useState(Boolean(defaultEnabled));
+  const [muted, setMutedState] = useState(defaultEnabled ? Boolean(defaultMuted) : true);
+  const [volume, setVolumeState] = useState(() => Math.max(0, Math.min(1, Number(defaultVolume) || 0.35)));
+  const [lastEvent, setLastEvent] = useState(null);
+  const timingRef = useRef({ lastPlayedAt: 0, byEvent: {} });
+
+  function setVolume(next) {
+    const clamped = Math.max(0, Math.min(1, Number(next)));
+    if (Number.isFinite(clamped)) setVolumeState(clamped);
+  }
+
+  function grantConsent() {
+    setConsentGranted(true);
+    setMutedState(false);
+  }
+
+  function revokeConsent() {
+    setConsentGranted(false);
+    setMutedState(true);
+  }
+
+  function play(rawEventId) {
+    const canonicalId = SFX_ALIASES[rawEventId] || rawEventId;
+    const profile = SFX_EVENT_PROFILES[canonicalId];
+    if (!profile) return { played: false, reason: 'unknown-event' };
+    if (!consentGranted || muted || volume <= 0) return { played: false, reason: 'muted-or-no-consent' };
+    if (typeof window === 'undefined' || typeof document === 'undefined') return { played: false, reason: 'ssr' };
+    if (document.visibilityState === 'hidden') return { played: false, reason: 'background-tab' };
+
+    const rootMotion = document.documentElement?.getAttribute('data-motion');
+    const prefersReduced = typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (rootMotion === 'reduced' || prefersReduced) {
+      return { played: false, reason: 'reduced-motion' };
+    }
+
+    const now = Date.now();
+    const lastGlobal = timingRef.current.lastPlayedAt || 0;
+    const lastSame = timingRef.current.byEvent[canonicalId] || 0;
+    if (now - lastGlobal < 1000) return { played: false, reason: 'rate-limited' };
+    if (now - lastSame < 2000) return { played: false, reason: 'deduplicated' };
+
+    timingRef.current.lastPlayedAt = now;
+    timingRef.current.byEvent[canonicalId] = now;
+    setLastEvent({ id: canonicalId, timestamp: now });
+
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) {
+        const ctx = new AudioCtx();
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(Math.max(0.01, volume * 0.25), ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + profile.durationMs / 1000);
+        gain.connect(ctx.destination);
+
+        profile.freq.forEach((f, idx) => {
+          const osc = ctx.createOscillator();
+          osc.type = profile.type;
+          osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.045);
+          osc.connect(gain);
+          osc.start(ctx.currentTime + idx * 0.045);
+          osc.stop(ctx.currentTime + (profile.durationMs / 1000) + idx * 0.045);
+        });
+      }
+    } catch {
+      // Graceful silent fallback per MF-SFX-001
+    }
+
+    return { played: true, eventId: canonicalId };
+  }
+
+  const value = useMemo(() => ({
+    enabled: consentGranted && !muted,
+    muted,
+    volume,
+    consentGranted,
+    lastEvent,
+    grantConsent,
+    revokeConsent,
+    setMuted: setMutedState,
+    setVolume,
+    play,
+  }), [consentGranted, muted, volume, lastEvent]);
+
+  return h(SFXContext.Provider, { value }, children);
+}
+
+export function useSFX() {
+  return useContext(SFXContext);
+}
+
+

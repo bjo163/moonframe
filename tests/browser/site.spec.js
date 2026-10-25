@@ -46,8 +46,16 @@ test('Skins gallery, skin detail, components catalog, templates marketplace, and
   await page.goto('/components/auth-and-rich-inputs');
   await expect(page.getByRole('heading', { name: /OTPInput, PasswordField/i })).toBeVisible();
 
+  await page.goto('/starters');
+  await expect(page.getByRole('heading', { name: 'Production Starter Applications' })).toBeVisible();
+  await page.screenshot({ path: path.join(siteCaptureDir, 'starters-marketplace.png'), fullPage: false, animations: 'disabled' });
+
+  await page.goto('/starters/starter-admin-workspace');
+  await expect(page.getByRole('heading', { name: /Admin Workspace Starter/i })).toBeVisible();
+  await expect(page.locator('.mf-preview-iframe')).toBeVisible();
+
   await page.goto('/templates');
-  await expect(page.getByRole('heading', { name: '22 Production-Ready Next.js Page Templates' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '43 Production-Ready Next.js Page Templates' })).toBeVisible();
   await page.screenshot({ path: path.join(siteCaptureDir, 'templates-marketplace.png'), fullPage: false, animations: 'disabled' });
 
   await page.goto('/templates/template-dashboard-overview');
@@ -58,11 +66,15 @@ test('Skins gallery, skin detail, components catalog, templates marketplace, and
   await expect(page.locator('.mf-code-block')).toContainText('MetricGrid');
   await page.screenshot({ path: path.join(siteCaptureDir, 'template-detail.png'), fullPage: false, animations: 'disabled' });
 
+  await page.goto('/templates/template-moonledger-home');
+  await expect(page.getByRole('heading', { name: /Moonledger ERP Command Center/i })).toBeVisible();
+
   await page.goto('/preview/template-moonledger-invoices?skin=moonledger&mode=light');
   await expect(page.getByRole('heading', { name: 'General Ledger & Accounts Receivable' })).toBeVisible();
 
   await page.goto('/docs');
   await expect(page.getByRole('heading', { name: 'Next.js 16 & pnpm Integration Guide' })).toBeVisible();
+  await expect(page.getByText('Moonframe Interactive Studio & Playground')).toBeVisible();
 
   expect(errors).toEqual([]);
 });

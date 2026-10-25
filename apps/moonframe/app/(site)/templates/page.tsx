@@ -48,8 +48,8 @@ export default function TemplatesMarketplacePage() {
     <div>
       <PageHeader
         eyebrow="Premium Template Marketplace"
-        title="22 Production-Ready Next.js Page Templates"
-        badge="Wave A · 22 Templates"
+        title="43 Production-Ready Next.js Page Templates"
+        badge="Wave A + B · 43 Templates"
         description="Every template is built exclusively from public @moonframe/ui components and Level C composite blocks. Open any template to test responsive viewports, switch across all 15 skins, or copy the TSX code."
         breadcrumbs={[
           { label: 'Showcase', href: '/' },

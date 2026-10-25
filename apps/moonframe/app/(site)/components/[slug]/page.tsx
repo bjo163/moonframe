@@ -48,6 +48,7 @@ import {
   ModeSelector,
 } from '@moonframe/ui';
 import { COMPONENT_CATALOG, getComponentBySlug } from '../../../../lib/catalog';
+import { InteractivePlayground } from '../../../../components/site/InteractivePlayground';
 
 export function generateStaticParams() {
   return COMPONENT_CATALOG.map(c => ({ slug: c.slug }));
@@ -55,6 +56,8 @@ export function generateStaticParams() {
 
 function LiveComponentSpecimen({ slug }: { slug: string }) {
   switch (slug) {
+    case 'brand-and-sfx':
+      return <InteractivePlayground />;
     case 'button':
       return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>

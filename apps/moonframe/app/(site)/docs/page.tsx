@@ -14,6 +14,7 @@ import {
   CodeBlock,
   DescriptionList,
 } from '@moonframe/ui';
+import { InteractivePlayground } from '../../../components/site/InteractivePlayground';
 
 export default function DocsPage() {
   return (
@@ -22,15 +23,20 @@ export default function DocsPage() {
         eyebrow="Developer Documentation"
         title="Next.js 16 & pnpm Integration Guide"
         badge="Node.js 24.22.1 LTS"
-        description="Everything you need to run the Moonframe workspace with pnpm, integrate @moonframe/ui into Next.js App Router, and compose pages with 15 skins and 66+ reusable exports."
+        description="Everything you need to run the Moonframe workspace with pnpm, integrate @moonframe/ui into Next.js App Router, scaffold multi-route starters with the CLI, and compose pages with 15 skins and 70+ reusable exports."
         breadcrumbs={[
           { label: 'Showcase', href: '/' },
           { label: 'Documentation', current: true },
         ]}
         actions={
-          <Button size="sm" asChild>
-            <Link href="/components">Browse Component API →</Link>
-          </Button>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <Button size="sm" variant="secondary" asChild>
+              <Link href="/starters">Browse 8 Starters →</Link>
+            </Button>
+            <Button size="sm" asChild>
+              <Link href="/components">Browse Component API →</Link>
+            </Button>
+          </div>
         }
       />
 
@@ -115,6 +121,38 @@ export default function DocsPage() {
           </Card>
         </Grid>
 
+        <Grid columns={2}>
+          <Card>
+            <CardHeader>
+              <Badge variant="secondary">6. Moonframe CLI Scaffolder</Badge>
+              <CardTitle style={{ marginTop: '0.5rem' }}>Zero-Dependency Code Generation</CardTitle>
+              <CardDescription>Scaffold 43 individual page templates or 8 multi-route starter apps</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <CodeBlock
+                language="bash"
+                code={`# List all 15 skins, 43 templates, and 8 starters\npnpm run cli list\n\n# Inspect starter composition & connected routes\npnpm run cli info starter-admin-workspace\n\n# Scaffold starter layout & routes into your Next.js app\npnpm run cli add starter-admin-workspace --skin moonledger`}
+              />
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <Badge variant="secondary">7. M10 Vectors &amp; Opt-In WebAudio SFX</Badge>
+              <CardTitle style={{ marginTop: '0.5rem' }}>Deterministic Vectors &amp; Synth Audio</CardTitle>
+              <CardDescription>15 geometric brand marks and zero-dependency synthesizer</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <CodeBlock
+                language="tsx"
+                code={`import { SkinBrandMark, SkinArtwork, SFXProvider, useSFX } from '@moonframe/ui';\n\n// Brand mark adapting to active skin & currentColor\n<SkinBrandMark size={32} />\n\n// Opt-in audio event trigger (muted by default)\nconst { play, grantConsent } = useSFX();\nplay('quest-reward'); // 1000ms rate limit, 2000ms dedupe`}
+              />
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <InteractivePlayground />
+
         <Card>
           <CardHeader>
             <CardTitle>Exported Subpaths &amp; Package Architecture</CardTitle>
@@ -124,11 +162,12 @@ export default function DocsPage() {
             <DescriptionList
               columns={2}
               items={[
-                { term: '@moonframe/ui', details: '66+ components, Level C blocks, hooks, ThemeProvider, ThemeScript, skins' },
-                { term: '@moonframe/ui/styles.css', details: 'Complete CSS recipes for all 15 skins × Light/Dark + components' },
+                { term: '@moonframe/ui', details: '70+ components, Level C blocks, SkinBrandMark, SkinArtwork, SFXProvider, useSFX, theme, skins' },
+                { term: '@moonframe/ui/styles.css', details: 'Complete CSS recipes for all 15 skins × Light/Dark + components + vector styling' },
                 { term: '@moonframe/ui/tailwind.css', details: 'Optional Tailwind v4 @theme inline + @custom-variant dark bridge' },
                 { term: '@moonframe/ui/theme', details: 'ThemeProvider, ThemeScript, useTheme, resolveTheme, normalizePreferences' },
                 { term: '@moonframe/ui/skins', details: 'Canonical 15 skins array and skinIds list' },
+                { term: 'pnpm run cli', details: 'Zero-dependency code scaffolder for 43 templates and 8 Level E starter applications' },
                 { term: 'pnpm run tokens', details: 'Deterministic DTCG token subset generator & CSS bridge verifier' },
               ]}
             />

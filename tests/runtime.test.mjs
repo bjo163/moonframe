@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import { execFileSync } from 'node:child_process';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import {
@@ -58,6 +61,10 @@ import {
   PricingCard,
   SettingsSection,
   ActivityFeed,
+  SkinBrandMark,
+  SkinArtwork,
+  SFXProvider,
+  useSFX,
 } from '../src/index.js';
 import * as themeSubpath from '../src/theme.js';
 import * as skinsSubpath from '../src/skins.js';
@@ -311,4 +318,56 @@ test('deterministic token generator and runtime CSS variable bridge pass verific
   const coverage = verifyRuntimeCssCoverage();
   assert.equal(coverage.skinCount, 15);
   assert.equal(coverage.appearanceCount, 30);
+});
+
+test('M10 SkinBrandMark, SkinArtwork, and SFXProvider server-render cleanly and enforce opt-in consent', () => {
+  for (const id of skinIds) {
+    const markHtml = renderToString(createElement(SkinBrandMark, { skin: id, size: 32, decorative: false, label: `${id} mark` }));
+    assert.ok(markHtml.includes(`data-skin-mark="${id}"`), `${id} brand mark renders`);
+    assert.ok(markHtml.includes('viewBox="0 0 32 32"'), 'has viewBox');
+  }
+
+  const artworkHtml = renderToString(createElement(SkinArtwork, {
+    skin: 'moonpunk',
+    title: 'Moonpunk Canvas',
+    caption: 'Cybernetic neon geometry',
+  }));
+  assert.ok(artworkHtml.includes('data-skin-artwork="moonpunk"'));
+  assert.ok(artworkHtml.includes('Moonpunk Canvas'));
+  assert.ok(artworkHtml.includes('Cybernetic neon geometry'));
+
+  const sfxHtml = renderToString(createElement(SFXProvider, {
+    defaultEnabled: false,
+    defaultMuted: true,
+  }, createElement('div', null, 'Audio Context Ready')));
+  assert.ok(sfxHtml.includes('Audio Context Ready'));
+});
+
+test('Moonframe CLI lists catalog and scaffolds templates and multi-route starters', () => {
+  const cliScript = path.resolve('scripts/moonframe-cli.mjs');
+  const listOutput = execFileSync(process.execPath, [cliScript, 'list'], { encoding: 'utf8' });
+  assert.ok(listOutput.includes('starter-admin-workspace'));
+  assert.ok(listOutput.includes('template-sign-in-minimal'));
+  assert.ok(listOutput.includes('Level E Starter Applications (8)'));
+
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mf-cli-test-'));
+  try {
+    const addOutput = execFileSync(process.execPath, [
+      cliScript,
+      'add',
+      'starter-admin-workspace',
+      '--target',
+      tempDir,
+      '--skin',
+      'moonledger',
+    ], { encoding: 'utf8' });
+    assert.ok(addOutput.includes('Successfully scaffolded starter-admin-workspace'));
+
+    const starterDir = path.join(tempDir, 'starter-admin-workspace');
+    assert.ok(fs.existsSync(path.join(starterDir, 'layout.tsx')), 'layout.tsx exists');
+    assert.ok(fs.existsSync(path.join(starterDir, 'dashboard-overview', 'page.tsx')), 'dashboard page exists');
+    assert.ok(fs.existsSync(path.join(starterDir, 'resource-detail', 'page.tsx')), 'resource detail page exists');
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
 });

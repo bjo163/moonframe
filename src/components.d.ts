@@ -526,3 +526,63 @@ export interface ActivityFeedProps extends Omit<React.HTMLAttributes<HTMLElement
 }
 export const ActivityFeed: RefComponent<HTMLElement, ActivityFeedProps>;
 
+/* M10 Original 15-Skin Vector Marks & Opt-In SFX */
+
+export interface SkinBrandMarkProps extends React.SVGAttributes<SVGSVGElement> {
+  skin?: SkinId;
+  size?: number | string;
+  decorative?: boolean;
+  label?: string;
+}
+export const SkinBrandMark: RefComponent<SVGSVGElement, SkinBrandMarkProps>;
+
+export interface SkinArtworkProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  skin?: SkinId;
+  title?: React.ReactNode;
+  caption?: React.ReactNode;
+}
+export const SkinArtwork: RefComponent<HTMLElement, SkinArtworkProps>;
+
+export type SFXEventId =
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'notification'
+  | 'confirmation'
+  | 'quest-reward'
+  | 'confirm.success'
+  | 'confirm.warning'
+  | 'confirm.error'
+  | 'notification.incoming'
+  | 'operation.progress-complete'
+  | 'game.reward';
+
+export interface SFXPlayResult {
+  played: boolean;
+  eventId?: string;
+  reason?: string;
+}
+
+export interface SFXContextValue {
+  enabled: boolean;
+  muted: boolean;
+  volume: number;
+  consentGranted: boolean;
+  lastEvent: { id: string; timestamp: number } | null;
+  grantConsent: () => void;
+  revokeConsent: () => void;
+  setMuted: (muted: boolean) => void;
+  setVolume: (volume: number) => void;
+  play: (eventId: SFXEventId) => SFXPlayResult;
+}
+
+export interface SFXProviderProps {
+  defaultEnabled?: boolean;
+  defaultMuted?: boolean;
+  defaultVolume?: number;
+  children?: React.ReactNode;
+}
+export function SFXProvider(props: SFXProviderProps): React.ReactElement;
+export function useSFX(): SFXContextValue;
+
+

@@ -40,17 +40,17 @@ export default function ShowcaseHomePage() {
             One React Library. Fifteen Radical Worlds.
           </h1>
           <p style={{ fontSize: '1.08rem', color: 'var(--mf-muted)', maxWidth: '64ch', margin: '0 0 1.5rem' }}>
-            Build production Next.js applications with 66+ accessible components, reusable Level C composite blocks, and 22 ready-to-ship page templates — each engineered to transform across 15 distinct non-color visual grammars.
+            Build production Next.js applications with 70+ accessible components, 8 Level E multi-route starters, and 43 ready-to-ship page templates — each engineered to transform across 15 distinct non-color visual grammars.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.5rem' }}>
             <Button size="lg" asChild>
-              <Link href="/templates">Explore 22 Templates →</Link>
+              <Link href="/templates">Explore 43 Templates →</Link>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <Link href="/components">Browse 66+ Components</Link>
+              <Link href="/starters">8 Multi-Route Starters</Link>
             </Button>
             <Button variant="ghost" size="lg" asChild>
-              <Link href="/lab">Open Interactive Skin Lab</Link>
+              <Link href="/components">Browse 70+ Components</Link>
             </Button>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', alignItems: 'center' }}>
@@ -76,8 +76,8 @@ export default function ShowcaseHomePage() {
           columns={4}
           items={[
             { label: 'Canonical Skins', value: '15', delta: '30 Modes', detail: 'Light & Dark recipes per skin', trend: [3, 6, 9, 12, 15] },
-            { label: 'Reusable Exports', value: '66+', delta: '100% Typed', detail: 'Primitives + Level C Blocks', trend: [20, 35, 46, 58, 66] },
-            { label: 'Page Templates', value: '22', delta: '9 Verticals', detail: 'Live preview + copyable TSX', trend: [4, 8, 14, 18, 22] },
+            { label: 'Reusable Exports', value: '70+', delta: '100% Typed', detail: 'Primitives + Level C Blocks + SFX', trend: [20, 35, 46, 58, 70] },
+            { label: 'Page Templates', value: '43', delta: '8 Starters', detail: 'Live preview + copyable TSX', trend: [4, 8, 14, 22, 43] },
             { label: 'Contrast Floor', value: '4.5:1', delta: 'WCAG AA', detail: 'Verified across all 30 modes', trend: [4.5, 5.2, 6.1, 7.0, 7.4] },
           ]}
         />

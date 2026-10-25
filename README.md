@@ -2,7 +2,7 @@
 
 > **One behavioral system. Fifteen distinct visual grammars. Thirty core appearances.**
 
-Moonframe UI provides **66+ reusable React components & Level C composite blocks**, **15 distinct skins (each in Light and Dark)**, a persistent Next.js/SSR-safe theme runtime, and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) featuring **22 production Wave-A page templates**.
+Moonframe UI provides **70+ reusable React components & Level C composite blocks**, **15 distinct skins (each in Light and Dark)**, a persistent Next.js/SSR-safe theme runtime, original M10 geometric vector brand marks (`SkinBrandMark`), an opt-in WebAudio synthesizer runtime (`SFXProvider`), the **Moonframe CLI Scaffolder** (`pnpm run cli`), and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) featuring **43 production page templates** and **8 Level E Multi-Route Starter Applications**.
 
 ## Start using it
 
@@ -14,12 +14,13 @@ pnpm run dev
 ```
 
 Running `pnpm run dev` at the repository root launches the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) at `http://localhost:3000`:
-- **`/`** — Landing page, live 15-skin interactive wall, featured templates, and quickstart
+- **`/`** — Landing page, live 15-skin interactive wall, featured starters, templates, and quickstart
+- **`/starters` & `/starters/[id]`** — **8 Level E Multi-Route Starter Applications** with live multi-route workspace switcher and CLI generator
 - **`/skins` & `/skins/[id]`** — 15-skin gallery and deep-dive non-color visual grammar specs
-- **`/components` & `/components/[slug]`** — Interactive playground for all **66+ reusable components & Level C composite blocks**
-- **`/templates` & `/templates/[id]`** — **22 Wave-A production page templates** with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), and copyable TSX source code
+- **`/components` & `/components/[slug]`** — Interactive playground for all **70+ reusable components**, Level C composite blocks, and M10 vector/SFX suite
+- **`/templates` & `/templates/[id]`** — **43 production page templates (Wave A & B)** with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), Download `.tsx`, and copyable CLI commands
 - **`/lab` & `/lab/behavior`** — Deterministic 15-skin comparison lab and keyboard/ARIA behavior test harness
-- **`/docs`** — Complete Next.js App Router, SSR anti-FOUC `ThemeScript`, Tailwind v4 bridge, and API guide
+- **`/docs`** — Complete Next.js App Router, SSR anti-FOUC `ThemeScript`, Tailwind v4 bridge, CLI scaffolder guide, and interactive playground
 
 Build the production Next.js showcase with `pnpm run build`, or pack a local consumer tarball (`moonframe-ui-0.1.0.tgz`) with `pnpm run pack:local`:
 

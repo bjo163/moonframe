@@ -19,6 +19,8 @@ export function PreviewFrame({ template }: { template: TemplateCatalogEntry }) {
   const [skin, setSkin] = useState<SkinId>(template.recommendedSkin);
   const [mode, setMode] = useState<'light' | 'dark'>(template.recommendedMode);
   const [copied, setCopied] = useState(false);
+  const [cliCopied, setCliCopied] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
   const previewUrl = `/preview/${template.id}?skin=${skin}&mode=${mode}`;
   const iframeWidth = viewport === 'desktop' ? '100%' : viewport === 'tablet' ? '768px' : '375px';
@@ -30,6 +32,34 @@ export function PreviewFrame({ template }: { template: TemplateCatalogEntry }) {
       setTimeout(() => setCopied(false), 2500);
     } catch {
       setCopied(false);
+    }
+  }
+
+  async function handleCopyCli() {
+    try {
+      await navigator.clipboard.writeText(`pnpm run cli add ${template.id} --skin ${skin}`);
+      setCliCopied(true);
+      setTimeout(() => setCliCopied(false), 2500);
+    } catch {
+      setCliCopied(false);
+    }
+  }
+
+  function handleDownloadTsx() {
+    try {
+      const blob = new Blob([template.code], { type: 'text/typescript' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = `${template.id}.tsx`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+      URL.revokeObjectURL(url);
+      setDownloaded(true);
+      setTimeout(() => setDownloaded(false), 2500);
+    } catch {
+      setDownloaded(false);
     }
   }
 
@@ -84,6 +114,14 @@ export function PreviewFrame({ template }: { template: TemplateCatalogEntry }) {
               { value: 'dark', label: 'Dark' },
             ]}
           />
+
+          <Button size="sm" variant="ghost" onClick={handleCopyCli}>
+            {cliCopied ? 'Copied CLI!' : 'Copy CLI'}
+          </Button>
+
+          <Button size="sm" variant="ghost" onClick={handleDownloadTsx}>
+            {downloaded ? 'Downloaded!' : 'Download .tsx'}
+          </Button>
 
           {tab === 'code' ? (
             <Button size="sm" variant="secondary" onClick={handleCopy}>

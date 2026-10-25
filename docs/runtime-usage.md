@@ -118,23 +118,39 @@ export default function WorkspacePage() {
 
 ### Subpath exports
 
-- `@moonframe/ui` — Full component library, layout primitives, `Slot`, `DataTable`, and theme runtime
+- `@moonframe/ui` — Full component library, layout primitives, `Slot`, `DataTable`, M10 `SkinBrandMark`, `SkinArtwork`, `SFXProvider`, `useSFX`, and theme runtime
 - `@moonframe/ui/theme` — `ThemeProvider`, `ThemeScript`, `getThemeInitScript`, `useTheme`, `resolveTheme`, `normalizePreferences`, `getThemeAttributes`
 - `@moonframe/ui/skins` — Pure `skins` catalog and `skinIds` array (safe in Server Components, Edge middleware, and Node scripts)
 - `@moonframe/ui/styles.css` — Self-contained stylesheet for all 15 skins in Light and Dark
 - `@moonframe/ui/tailwind.css` — Optional Tailwind CSS v4 `@theme inline` bridge mapping `--color-mf-*`, `--radius-mf`, `--shadow-mf`, and `--font-mf` to Moonframe's live CSS variables
 
-## Components and styling (66+ Exports)
+## Components and styling (70+ Exports)
 
 Available exports include:
 - **Theme & Polymorphism:** `ThemeProvider`, `ThemeScript`, `getThemeInitScript`, `useTheme`, `SkinSelector`, `ModeSelector`, `Slot`
+- **Brand Marks & SFX Runtime (M10):** `SkinBrandMark` (15 geometric vector marks), `SkinArtwork` (with `data-decorations="off"` support), `SFXProvider`, `useSFX` (opt-in WebAudio synthesizer with 6 canonical events)
 - **Layout & Shell:** `AppShell`, `Sidebar`, `Main`, `Header`, `Nav`, `NavItem`, `Hero`, `Grid`, `StatCard`
 - **Actions & Form Inputs:** `Button`, `Input`, `Textarea`, `Label`, `Select`, `Checkbox`, `Switch`, `RadioGroup`, `Field`, `FieldDescription`, `FieldError`, `OTPInput`, `PasswordField`, `SearchInput`, `Slider`, `TagInput`, `SegmentedControl`, `FileDropzone`
 - **Display, Charts & Data:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Badge`, `Avatar`, `AvatarGroup`, `Progress`, `Separator`, `Skeleton`, `EmptyState`, `Kbd`, `CodeBlock`, `DescriptionList`, `DescriptionTerm`, `DescriptionDetails`, `Stepper`, `Timeline`, `BarChart`, `Sparkline`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`
 - **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`
 - **Level C Reusable Composite Blocks:** `PageHeader`, `MetricGrid`, `AuthCard`, `PricingCard`, `SettingsSection`, `ActivityFeed`
 
-See the [Implementation Status & Evidence Report](implementation-status.md) for the full 66+ component inventory, 22 Wave-A page templates, and milestone verification summary.
+## Moonframe CLI Scaffolder (`pnpm run cli`)
+
+The CLI (`scripts/moonframe-cli.mjs`) allows consumers to list and scaffold page templates or multi-route starter packs directly into their projects:
+
+```bash
+# List all 15 skins, 43 templates, and 8 starters
+pnpm run cli list
+
+# Inspect starter details
+pnpm run cli info starter-admin-workspace
+
+# Scaffold starter application with layout & routes
+pnpm run cli add starter-admin-workspace --target my-app --skin moonledger
+```
+
+See the [Implementation Status & Evidence Report](implementation-status.md) for the full 70+ component inventory, 43 page templates, 8 Level E Multi-Route Starters, and milestone verification summary.
 
 Dialog and Drawer use the browser's native modal top layer, keyboard containment and Escape handling. Tabs use arrow keys, Home/End and a single tab stop. Accordion uses native disclosures. `Field` automatically wires `id`, `aria-describedby`, and `aria-invalid` onto its child control.
 

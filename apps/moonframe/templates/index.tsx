@@ -59,6 +59,8 @@ import {
   ActivityFeed,
   SkinSelector,
   ModeSelector,
+  SkinBrandMark,
+  SkinArtwork,
 } from '@moonframe/ui';
 
 export function TemplateRenderer({ id }: { id: string }) {
@@ -1148,6 +1150,798 @@ export function TemplateRenderer({ id }: { id: string }) {
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Button asChild><a href="/">Return to Showcase Home</a></Button>
                 <Button variant="secondary" asChild><a href="/templates">Browse 22 Templates</a></Button>
+              </div>
+            }
+          />
+        </div>
+      );
+
+    case 'template-sign-in-minimal':
+      return (
+        <div style={{ padding: '2rem 1.5rem', maxWidth: '28rem', margin: '0 auto' }}>
+          <AuthCard
+            eyebrow="Direct Authentication"
+            title="Sign In to Studio"
+            description="Enter your authorized workspace credentials."
+          >
+            <Field label="Work Email" required>
+              <Input type="email" defaultValue="alex@moonframe.dev" />
+            </Field>
+            <Field label="Password" required>
+              <PasswordField defaultValue="OrbitPass#2026" />
+            </Field>
+            <Checkbox label="Keep this session active for 30 days" defaultChecked />
+            <Button onClick={() => setNotice('Authenticated successfully.')}>Sign In</Button>
+          </AuthCard>
+        </div>
+      );
+
+    case 'template-verify-email':
+      return (
+        <div style={{ padding: '2rem 1.5rem', maxWidth: '30rem', margin: '0 auto' }}>
+          <AuthCard
+            eyebrow="Two-Step Verification"
+            title="Check your email"
+            description="We sent a 6-digit confirmation code to alex@moonframe.dev."
+          >
+            <OTPInput length={6} defaultValue="739104" />
+            <Callout title="Code expires in 10 minutes" variant="primary">
+              Didn't receive it? Check spam folder or request a new code below.
+            </Callout>
+            <Button onClick={() => setNotice('Email verified.')}>Confirm Code</Button>
+            <Button variant="ghost" size="sm">Resend verification code</Button>
+          </AuthCard>
+        </div>
+      );
+
+    case 'template-auth-onboarding':
+      return (
+        <div style={{ padding: '2rem 1.5rem', maxWidth: '38rem', margin: '0 auto', display: 'grid', gap: '1.5rem' }}>
+          <Stepper
+            currentStep={2}
+            steps={[
+              { title: 'Identity', description: 'Account verified' },
+              { title: 'Workspace', description: 'Naming & scope' },
+              { title: 'Appearance', description: 'Choose initial skin' },
+            ]}
+          />
+          <AuthCard
+            eyebrow="Step 2 of 3"
+            title="Setup Your Team Workspace"
+            description="Configure initial parameters for your engineering organization."
+          >
+            <Field label="Workspace Name" required>
+              <Input defaultValue="Aether Systems Lab" />
+            </Field>
+            <Field label="Default Team Role">
+              <RadioGroup
+                label="Select Role"
+                defaultValue="lead"
+                items={[
+                  { value: 'lead', label: 'Team Lead / Architect', description: 'Full access to themes & tokens' },
+                  { value: 'dev', label: 'Frontend Developer', description: 'Component implementation access' },
+                ]}
+              />
+            </Field>
+            <Field label="Initial Active Skin">
+              <SkinSelector />
+            </Field>
+            <Button onClick={() => setNotice('Workspace created.')}>Continue to Next Step</Button>
+          </AuthCard>
+        </div>
+      );
+
+    case 'template-account-locked':
+      return (
+        <div style={{ padding: '3rem 1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+          <EmptyState
+            icon={<Badge variant="danger">SECURITY PROTOCOL 104</Badge>}
+            title="Workspace Access Temporarily Locked"
+            description="Multiple failed authentication attempts triggered automated rate limiting on this IP."
+            action={
+              <div style={{ display: 'grid', gap: '1rem', width: '100%', maxWidth: '24rem', marginTop: '1rem' }}>
+                <Callout title="Reference Incident ID: SEC-88910-K">
+                  An unlock verification link has been sent to the workspace owner.
+                </Callout>
+                <Button onClick={() => setNotice('Unlock instructions resent.')}>Send Unlock Email</Button>
+                <Button variant="secondary" asChild><a href="/">Return to Showcase Home</a></Button>
+              </div>
+            }
+          />
+        </div>
+      );
+
+    case 'template-records-table':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Data Engine"
+            title="Master Configuration Records"
+            badge="1,420 Records"
+            description="High-volume tabular registry supporting multi-column sort, search filters, and batch exports."
+            actions={<Button size="sm">Export Master CSV</Button>}
+          />
+          <Card>
+            <CardHeader>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <CardTitle>Telemetry Partitions</CardTitle>
+                <SegmentedControl
+                  size="sm"
+                  defaultValue="all"
+                  items={[{ value: 'all', label: 'All (1,420)' }, { value: 'p0', label: 'Tier P0' }, { value: 'archived', label: 'Archived' }]}
+                />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <DataTable
+                searchable
+                searchPlaceholder="Search by ID, partition name, or cluster…"
+                columns={[
+                  { key: 'code', header: 'Record ID', sortable: true },
+                  { key: 'title', header: 'Partition Name', sortable: true },
+                  { key: 'region', header: 'Region', sortable: true },
+                  { key: 'tier', header: 'Priority' },
+                  { key: 'status', header: 'Integrity' },
+                ]}
+                data={[
+                  { id: '1', code: 'REC-001', title: 'Edge Cluster Alpha', region: 'us-east1', tier: 'P0', status: 'Healthy' },
+                  { id: '2', code: 'REC-002', title: 'Telemetry Node Beta', region: 'europe-west1', tier: 'P1', status: 'Healthy' },
+                  { id: '3', code: 'REC-003', title: 'Storage Partition Gamma', region: 'asia-east1', tier: 'P2', status: 'Syncing' },
+                  { id: '4', code: 'REC-004', title: 'Audit Ledger Delta', region: 'global', tier: 'P0', status: 'Locked' },
+                ]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-resource-detail':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Resource Inspector"
+            title="Cluster Partition: Edge-APAC-Singapore-01"
+            badge="Active"
+            description="Detailed operational metadata, assigned microservices, and live telemetry log."
+            actions={
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <Button size="sm" variant="secondary">Restart Workloads</Button>
+                <Button size="sm" variant="danger">Drain Node</Button>
+              </div>
+            }
+          />
+          <DescriptionList
+            columns={3}
+            items={[
+              { term: 'Cluster ID', details: 'sin1-edge-409' },
+              { term: 'Uptime SLA', details: '99.992%' },
+              { term: 'Allocated VCPU', details: '128 Cores' },
+              { term: 'Memory Saturation', details: '42.8 GB / 128 GB' },
+            ]}
+          />
+          <Tabs
+            items={[
+              {
+                value: 'overview',
+                label: 'Service Topology',
+                content: (
+                  <div style={{ display: 'grid', gap: '1rem' }}>
+                    <Callout title="Node Health Check" variant="primary">
+                      All 16 internal daemon sets report zero memory leak warnings over the last 72 hours.
+                    </Callout>
+                    <Grid columns={3}>
+                      <Card><CardContent><strong>Ingress Proxy</strong><p style={{ margin: 0, color: 'var(--mf-muted)' }}>0.01% Error Rate</p></CardContent></Card>
+                      <Card><CardContent><strong>Auth Service</strong><p style={{ margin: 0, color: 'var(--mf-muted)' }}>14ms p99 Latency</p></CardContent></Card>
+                      <Card><CardContent><strong>Worker Pool</strong><p style={{ margin: 0, color: 'var(--mf-muted)' }}>99.8% Queue Throughput</p></CardContent></Card>
+                    </Grid>
+                  </div>
+                ),
+              },
+              {
+                value: 'activity',
+                label: 'Audit History',
+                content: (
+                  <Timeline
+                    items={[
+                      { title: 'Rolling update applied', time: '14:20 UTC', badge: 'v2.4.1', description: 'Zero dropped connections during canary deployment.' },
+                      { title: 'Certificate renewed', time: 'Yesterday', badge: 'TLS', description: 'Automated ACME challenge completed.' },
+                    ]}
+                  />
+                ),
+              },
+            ]}
+          />
+        </div>
+      );
+
+    case 'template-data-audit':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Security & Governance"
+            title="Immutable Compliance Audit Ledger"
+            badge="Cryptographically Sealed"
+            description="Comprehensive audit logging for all policy changes, key rotations, and privileged operator sessions."
+          />
+          <Grid columns={2}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Audit Event Journal</CardTitle>
+                <CardDescription>Click any event to inspect its cryptographic payload</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <DataTable
+                  searchable
+                  columns={[
+                    { key: 'seq', header: 'Seq #', sortable: true },
+                    { key: 'actor', header: 'Operator' },
+                    { key: 'action', header: 'Event' },
+                    { key: 'time', header: 'Timestamp' },
+                  ]}
+                  data={[
+                    { id: '1', seq: 'AUD-9912', actor: 'ci-bot@github', action: 'ROTATE_KEY', time: '10m ago' },
+                    { id: '2', seq: 'AUD-9911', actor: 'alex@moonframe.dev', action: 'UPDATE_ROLE', time: '42m ago' },
+                    { id: '3', seq: 'AUD-9910', actor: 'system-agent', action: 'SNAPSHOT_DB', time: '2h ago' },
+                  ]}
+                />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Verified Event Payload</CardTitle>
+                <CardDescription>AUD-9912: ROTATE_KEY cryptographic signature</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '1rem' }}>
+                <CodeBlock
+                  language="json"
+                  code={`{\n  "eventId": "AUD-9912",\n  "action": "ROTATE_API_KEY",\n  "actor": "ci-bot@github",\n  "keyFingerprint": "sha256:4f8a...991e",\n  "signature": "MEUCIQD...",\n  "status": "VERIFIED_VALID"\n}`}
+                />
+                <Callout title="Audit Integrity Confirmed" variant="primary">
+                  Hash chain matches previous entry AUD-9911 with zero block divergence.
+                </Callout>
+              </CardContent>
+            </Card>
+          </Grid>
+        </div>
+      );
+
+    case 'template-executive-dashboard':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Quarterly Briefing"
+            title="Executive Strategy & Telemetry"
+            badge="FY26 Q4"
+            description="Aggregated key performance indicators, ARR expansion metrics, and global infrastructure economics."
+          />
+          <MetricGrid
+            columns={4}
+            items={[
+              { label: 'Annual Recurring Revenue', value: '$4.82M', delta: '+28.4%', trend: [2.1, 2.8, 3.4, 4.1, 4.82] },
+              { label: 'Net Revenue Retention', value: '138%', delta: '+6%', trend: [120, 124, 130, 134, 138] },
+              { label: 'Operating Margin', value: '31.2%', delta: '+4.5%', trend: [18, 22, 26, 29, 31.2] },
+              { label: 'Active Enterprise Seats', value: '18,490', delta: '+412 this mo', trend: [12, 14, 16, 17.5, 18.49] },
+            ]}
+          />
+          <Grid columns={2}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Quarterly Revenue Expansion ($ Millions)</CardTitle>
+                <CardDescription>Trailing 5 quarters revenue trajectory</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <BarChart
+                  label="Quarterly Run Rate ($M)"
+                  data={[
+                    { label: 'Q4 25', value: 2.1 },
+                    { label: 'Q1 26', value: 2.8 },
+                    { label: 'Q2 26', value: 3.4 },
+                    { label: 'Q3 26', value: 4.1 },
+                    { label: 'Q4 26', value: 4.82 },
+                  ]}
+                />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Regional Infrastructure Distribution</CardTitle>
+                <CardDescription>Compute expenditure by tier</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '0.85rem' }}>
+                <Progress value={45} label="North America (45% · $84,000/mo)" />
+                <Progress value={32} label="Asia-Pacific (32% · $60,000/mo)" />
+                <Progress value={23} label="Europe (23% · $43,000/mo)" />
+              </CardContent>
+            </Card>
+          </Grid>
+        </div>
+      );
+
+    case 'template-operations-console':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Mission Control"
+            title="Global Infrastructure Command Console"
+            badge="38 Clusters Online"
+            description="Real-time cluster telemetry, automated failover controls, and active incident response."
+            actions={<Button size="sm" variant="danger">Initiate Drill</Button>}
+          />
+          <MetricGrid
+            columns={3}
+            items={[
+              { label: 'Active Edge Clusters', value: '38 of 38', delta: '100% Online', detail: 'Zero degraded nodes' },
+              { label: 'Global Traffic Volume', value: '2.4M req/min', delta: '+8%', detail: 'Steady state' },
+              { label: 'Median Latency', value: '18.2 ms', delta: '-2.4 ms', detail: 'Within SLA target' },
+            ]}
+          />
+          <Card>
+            <CardHeader>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <CardTitle>Cluster State & Controls</CardTitle>
+                <Switch label="Automated BGP traffic rerouting" defaultChecked />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <DataTable
+                columns={[
+                  { key: 'cluster', header: 'Cluster ID' },
+                  { key: 'location', header: 'Region' },
+                  { key: 'load', header: 'Compute Load' },
+                  { key: 'status', header: 'Health Status' },
+                ]}
+                data={[
+                  { id: '1', cluster: 'iad-cluster-01', location: 'Northern Virginia', load: '64%', status: 'Nominal' },
+                  { id: '2', cluster: 'sin-cluster-02', location: 'Singapore', load: '58%', status: 'Nominal' },
+                  { id: '3', cluster: 'fra-cluster-01', location: 'Frankfurt', load: '72%', status: 'Nominal' },
+                ]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-webhook-inspector':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Developer Tooling"
+            title="Webhook Event Dispatcher & Inspector"
+            badge="200 OK"
+            description="Inspect outbound webhook payloads, examine headers, and trigger manual event replays."
+            actions={<Button size="sm">Dispatch Test Event</Button>}
+          />
+          <Grid columns={2}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent Dispatches</CardTitle>
+                <CardDescription>Click to view JSON payload</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <DataTable
+                  columns={[
+                    { key: 'id', header: 'Delivery ID' },
+                    { key: 'event', header: 'Event Name' },
+                    { key: 'code', header: 'Status' },
+                  ]}
+                  data={[
+                    { id: 'dlv_101', event: 'invoice.settled', code: '200 OK' },
+                    { id: 'dlv_102', event: 'user.onboarded', code: '200 OK' },
+                    { id: 'dlv_103', event: 'cluster.alarm', code: '504 Timeout' },
+                  ]}
+                />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Dispatched Payload (dlv_101)</CardTitle>
+                <CardDescription>POST https://api.consumer.com/webhooks</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '1rem' }}>
+                <CodeBlock
+                  language="json"
+                  code={`{\n  "deliveryId": "dlv_101",\n  "event": "invoice.settled",\n  "data": {\n    "voucher": "VCH-2026-881",\n    "client": "Aether Robotics",\n    "amount": 43600.00\n  }\n}`}
+                />
+                <Button size="sm" onClick={() => setNotice('Webhook dlv_101 replayed.')}>Replay Payload</Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        </div>
+      );
+
+    case 'template-queue-monitor':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Task Processing"
+            title="Background Worker Queue Telemetry"
+            badge="Throughput 840/s"
+            description="Live queue depth metrics, worker concurrency quotas, and dead-letter queue management."
+            actions={<Button size="sm">Purge Dead Letters</Button>}
+          />
+          <MetricGrid
+            columns={3}
+            items={[
+              { label: 'Active Jobs', value: '412', delta: 'Running', detail: '16 workers online' },
+              { label: 'Completed (24h)', value: '1.84M', delta: '99.98%', detail: 'Zero fatal crashes' },
+              { label: 'Dead Letter Queue', value: '12 jobs', delta: 'Attention', deltaTone: 'danger', detail: 'Awaiting retry' },
+            ]}
+          />
+          <Card>
+            <CardHeader>
+              <CardTitle>Dead Letter Entries (Failed Tasks)</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <DataTable
+                columns={[
+                  { key: 'id', header: 'Job ID' },
+                  { key: 'queue', header: 'Target Queue' },
+                  { key: 'attempts', header: 'Retries' },
+                  { key: 'error', header: 'Error Cause' },
+                ]}
+                data={[
+                  { id: 'job_481', queue: 'email-dispatch', attempts: '5 / 5', error: 'SMTP Timeout: 504' },
+                  { id: 'job_482', queue: 'invoice-pdf', attempts: '5 / 5', error: 'V8 Out of Memory' },
+                ]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-moonledger-home':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Moonledger Command Center"
+            title="Corporate Treasury & Ledger Summary"
+            badge="Live Sync"
+            description="Unified view of cash balances, accounts receivable, and pending purchase orders."
+            actions={<Button size="sm">Generate Fiscal Statement</Button>}
+          />
+          <MetricGrid
+            columns={4}
+            items={[
+              { label: 'Consolidated Cash', value: '$3,840,210.00', delta: '+12.4%', detail: '4 tier-1 accounts' },
+              { label: 'Net Receivables', value: '$284,910.00', delta: '18 open', detail: 'Avg DSO 14 days' },
+              { label: 'Payables (Due 15d)', value: '$92,400.00', delta: '6 bills', detail: 'Scheduled' },
+              { label: 'VAT Provision', value: '$64,120.00', delta: 'Reserved', detail: 'Audit verified' },
+            ]}
+          />
+          <Grid columns={2}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Pending Purchase Orders</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <DataTable
+                  columns={[
+                    { key: 'po', header: 'PO Number' },
+                    { key: 'vendor', header: 'Vendor' },
+                    { key: 'amount', header: 'Total' },
+                    { key: 'status', header: 'Approval' },
+                  ]}
+                  data={[
+                    { id: '1', po: 'PO-2026-091', vendor: 'TSMC Silicon Labs', amount: '$140,000.00', status: 'Pending CFO' },
+                    { id: '2', po: 'PO-2026-092', vendor: 'Global Logistics Corp', amount: '$18,400.00', status: 'Approved' },
+                  ]}
+                />
+              </CardContent>
+            </Card>
+            <ActivityFeed
+              title="Treasury Ledger Audit"
+              description="Real-time transaction entries"
+              items={[
+                { title: 'Inward Wire: $85,000.00', time: '14:10 UTC', badge: 'Deposit', description: 'Novastra Cloud invoice cleared.' },
+                { title: 'Tax Escrow Settled: $7,650.00', time: '11:00 UTC', badge: 'VAT', description: 'Monthly VAT reserve allocation.' },
+              ]}
+            />
+          </Grid>
+        </div>
+      );
+
+    case 'template-moonledger-inventory':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Supply Chain & Inventory"
+            title="Multi-Warehouse SKU Tracking"
+            badge="4 Warehouses"
+            description="Manage stock inventory levels, reorder triggers, and supplier contracts."
+            actions={<Button size="sm">Create SKU</Button>}
+          />
+          <Card>
+            <CardHeader>
+              <CardTitle>Warehouse Stock Inventory</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <DataTable
+                searchable
+                columns={[
+                  { key: 'sku', header: 'SKU Code', sortable: true },
+                  { key: 'name', header: 'Product Item', sortable: true },
+                  { key: 'location', header: 'Warehouse' },
+                  { key: 'qty', header: 'In Stock', sortable: true },
+                  { key: 'status', header: 'Replenishment' },
+                ]}
+                data={[
+                  { id: '1', sku: 'SKU-NEO-01', name: 'Neural Accelerator Pod', location: 'Singapore Hub', qty: '840', status: 'Sufficient' },
+                  { id: '2', sku: 'SKU-NEO-02', name: 'Optical Bus Module', location: 'Frankfurt Depot', qty: '42', status: 'Reorder Triggered' },
+                  { id: '3', sku: 'SKU-NEO-03', name: 'Thermal Heatsink S-1', location: 'Austin Storage', qty: '1,200', status: 'Sufficient' },
+                ]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-organization-preferences':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Enterprise Governance"
+            title="Organization & Fiscal Preferences"
+            badge="Multi-Entity Active"
+            description="Configure reporting currency, tax jurisdiction rules, SAML SSO bindings, and audit log retention."
+          />
+          <SettingsSection
+            title="Fiscal Calendar & Base Currency"
+            description="Authoritative accounting rules across all corporate ledgers."
+            action={<Button size="sm">Save Currency</Button>}
+          >
+            <Field label="Base Operating Currency">
+              <Select defaultValue="USD">
+                <option value="USD">USD ($) — United States Dollar</option>
+                <option value="EUR">EUR (€) — Euro</option>
+                <option value="SGD">SGD (S$) — Singapore Dollar</option>
+              </Select>
+            </Field>
+            <Field label="Fiscal Year End">
+              <Select defaultValue="12">
+                <option value="12">December 31st</option>
+                <option value="3">March 31st</option>
+              </Select>
+            </Field>
+          </SettingsSection>
+          <SettingsSection
+            title="Single Sign-On & Access Control"
+            description="Enforce corporate identity provider across all team members."
+            action={<Button size="sm">Test SAML Connection</Button>}
+          >
+            <Switch label="Enforce SAML SSO login for all members" defaultChecked />
+            <Switch label="Require hardware WebAuthn key on treasury operations" defaultChecked />
+          </SettingsSection>
+        </div>
+      );
+
+    case 'template-moonquest-inventory':
+      return (
+        <div style={{ padding: '1.5rem', display: 'grid', gap: '1.5rem' }}>
+          <PageHeader
+            eyebrow="Guild Vault"
+            title="Adventurer Reliquary & Armory"
+            badge="Legendary Items"
+            description="Equipped relics, attuned artifacts, and guild progression resources."
+            actions={<Button size="sm">Attune Relic</Button>}
+          />
+          <Grid columns={3}>
+            <Card>
+              <CardHeader>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Badge variant="primary">LEGENDARY</Badge>
+                  <SkinBrandMark skin="moonquest" size={28} />
+                </div>
+                <CardTitle style={{ marginTop: '0.5rem' }}>Solar Aegis of Dawn</CardTitle>
+                <CardDescription>Attuned shield crafted in the Astral Citadel</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '0.75rem' }}>
+                <Progress value={92} label="Attunement Progress (92%)" />
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--mf-muted)' }}>
+                  +48 Divine Ward · +12 Luminance aura to surrounding companions.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Badge variant="secondary">EPIC</Badge>
+                  <SkinBrandMark skin="moonquest" size={28} />
+                </div>
+                <CardTitle style={{ marginTop: '0.5rem' }}>Chronicler's Quill</CardTitle>
+                <CardDescription>Inscribed with runic memory seals</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '0.75rem' }}>
+                <Progress value={78} label="Resonance (78%)" />
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--mf-muted)' }}>
+                  Auto-records expedition waypoints with zero lost entries.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Badge variant="secondary">RARE</Badge>
+                  <SkinBrandMark skin="moonquest" size={28} />
+                </div>
+                <CardTitle style={{ marginTop: '0.5rem' }}>Ironwright's Tongs</CardTitle>
+                <CardDescription>Masterwork blacksmithing instrument</CardDescription>
+              </CardHeader>
+              <CardContent style={{ display: 'grid', gap: '0.75rem' }}>
+                <Progress value={100} label="Durability (100%)" />
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--mf-muted)' }}>
+                  +25% Critical forge chance on all celestial armor upgrades.
+                </p>
+              </CardContent>
+            </Card>
+          </Grid>
+        </div>
+      );
+
+    case 'template-public-pricing':
+      return (
+        <div style={{ padding: '2rem 1.5rem', display: 'grid', gap: '2rem', maxWidth: '64rem', margin: '0 auto' }}>
+          <PageHeader
+            eyebrow="Predictable Pricing"
+            title="Simple, Transparent Plans for Every Team"
+            badge="No Hidden Fees"
+            description="Choose the right tier to ship Next.js applications that stand out from the crowd."
+          />
+          <Grid columns={3}>
+            <PricingCard
+              name="Starter"
+              price="$29"
+              period="/month"
+              description="Ideal for indie hackers and individual builders."
+              features={['5 Core skins', 'Next.js 16 App Router', 'Community support']}
+              ctaLabel="Start with Starter"
+              onSelect={() => setNotice('Selected Starter plan.')}
+            />
+            <PricingCard
+              name="Professional"
+              price="$99"
+              period="/month"
+              featured
+              badge="MOST POPULAR"
+              description="Complete access to the 15-skin visual design system."
+              features={['All 15 skins (30 modes)', '43 Page templates', 'Full TypeScript source', 'Priority support']}
+              ctaLabel="Upgrade to Pro"
+              onSelect={() => setNotice('Selected Professional plan.')}
+            />
+            <PricingCard
+              name="Studio & Enterprise"
+              price="$299"
+              period="/month"
+              description="Dedicated design system tooling and multi-seat licensing."
+              features={['8 Level E Starter apps', 'CLI Scaffolder', 'Custom skin recipes', 'Direct Slack channel']}
+              ctaLabel="Contact Enterprise"
+              onSelect={() => setNotice('Selected Enterprise plan.')}
+            />
+          </Grid>
+          <Card>
+            <CardHeader><CardTitle>Frequently Asked Questions</CardTitle></CardHeader>
+            <CardContent>
+              <Accordion
+                items={[
+                  { value: 'faq-1', title: 'Can I use Moonframe in commercial Next.js projects?', content: 'Yes, full commercial use is supported for client and proprietary applications.' },
+                  { value: 'faq-2', title: 'Does Moonframe require an external font or icon CDN?', content: 'No, Moonframe uses zero external network dependencies and self-contained SVG vectors.' },
+                ]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-public-contact':
+      return (
+        <div style={{ padding: '2rem 1.5rem', display: 'grid', gap: '1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+          <PageHeader
+            eyebrow="Enterprise Engagement"
+            title="Book an Architecture Consultation"
+            description="Speak directly with design system engineers to evaluate Moonframe for your stack."
+          />
+          <Card>
+            <CardContent style={{ display: 'grid', gap: '1rem', paddingTop: '1.5rem' }}>
+              <Field label="Work Email" required><Input type="email" defaultValue="alex@enterprise.com" /></Field>
+              <Field label="Company Name" required><Input defaultValue="Novastra Cloud" /></Field>
+              <Field label="Current Frontend Framework">
+                <Select defaultValue="next16">
+                  <option value="next16">Next.js 16 (App Router)</option>
+                  <option value="react19">React 19 SPA</option>
+                </Select>
+              </Field>
+              <Field label="Project Scope & Notes">
+                <Textarea rows={4} defaultValue="We are looking to migrate 3 core portals to use distinct visual skins." />
+              </Field>
+              <Button onClick={() => setNotice('Inquiry submitted.')}>Schedule Consultation</Button>
+            </CardContent>
+          </Card>
+        </div>
+      );
+
+    case 'template-legal-content':
+      return (
+        <AppShell>
+          <Sidebar>
+            <strong>LEGAL DIRECTORY</strong>
+            <Nav aria-label="Legal terms index" style={{ marginTop: '1rem' }}>
+              <NavItem active href="#terms">Terms of Service</NavItem>
+              <NavItem href="#privacy">Privacy Policy</NavItem>
+              <NavItem href="#security">Security Architecture</NavItem>
+            </Nav>
+          </Sidebar>
+          <Main>
+            <PageHeader
+              eyebrow="Legal Framework"
+              title="Terms of Service & Licensing Policy"
+              badge="Version 2026.1"
+              description="Standard software licensing, redistribution terms, and client usage boundaries."
+            />
+            <Callout title="Effective Date: October 26, 2026" variant="primary">
+              These terms govern the use of the Moonframe UI component library and associated templates.
+            </Callout>
+            <Card style={{ marginTop: '1.5rem' }}>
+              <CardHeader><CardTitle>1. Commercial Software License</CardTitle></CardHeader>
+              <CardContent>
+                <p>
+                  Subject to these terms, Moonframe grants consumers a non-exclusive license to build, deploy, and distribute commercial web applications utilizing @moonframe/ui components.
+                </p>
+              </CardContent>
+            </Card>
+          </Main>
+        </AppShell>
+      );
+
+    case 'template-error-page':
+      return (
+        <div style={{ padding: '3rem 1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+          <EmptyState
+            icon={<Badge variant="danger">500 INTERNAL SERVER ERROR</Badge>}
+            title="Unexpected Runtime Exception"
+            description="The server encountered an error while assembling the requested view model."
+            action={
+              <div style={{ display: 'grid', gap: '1rem', width: '100%', maxWidth: '24rem', marginTop: '1rem' }}>
+                <Callout title="Diagnostic Trace ID: ERR-500-AP892">
+                  Our automated telemetry service has captured this trace for immediate triage.
+                </Callout>
+                <Button onClick={() => window.location.reload()}>Retry Operation</Button>
+                <Button variant="secondary" asChild><a href="/">Return to Showcase Home</a></Button>
+              </div>
+            }
+          />
+        </div>
+      );
+
+    case 'template-access-denied':
+      return (
+        <div style={{ padding: '3rem 1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+          <EmptyState
+            icon={<Badge variant="danger">403 FORBIDDEN</Badge>}
+            title="Insufficient Permissions"
+            description="You do not have the required RBAC privileges to access this administrative route."
+            action={
+              <div style={{ display: 'grid', gap: '1rem', width: '100%', maxWidth: '24rem', marginTop: '1rem' }}>
+                <Callout title="Required Role: SuperAdmin">
+                  Contact your workspace administrator to request elevated role permissions.
+                </Callout>
+                <Button onClick={() => setNotice('Role elevation request submitted.')}>Request Elevated Role</Button>
+                <Button variant="secondary" asChild><a href="/">Back to Safe Territory</a></Button>
+              </div>
+            }
+          />
+        </div>
+      );
+
+    case 'template-offline-page':
+      return (
+        <div style={{ padding: '3rem 1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+          <EmptyState
+            icon={<Badge variant="secondary">OFFLINE MODE ACTIVE</Badge>}
+            title="Network Connection Unavailable"
+            description="Your device appears to be disconnected from the internet. Local edits are cached safely."
+            action={
+              <div style={{ display: 'grid', gap: '1rem', width: '100%', maxWidth: '24rem', marginTop: '1rem' }}>
+                <Progress value={100} label="Local Cache Synchronized (100%)" />
+                <Button onClick={() => setNotice('Checking connection status…')}>Reconnect Now</Button>
               </div>
             }
           />

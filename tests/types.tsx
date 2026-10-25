@@ -54,6 +54,10 @@ import {
   PricingCard,
   SettingsSection,
   ActivityFeed,
+  SkinBrandMark,
+  SkinArtwork,
+  SFXProvider,
+  useSFX,
   skins,
   type SkinId,
 } from '@moonframe/ui';
@@ -169,7 +173,11 @@ function Example() {
             />
             <Pagination page={1} totalPages={5} onPageChange={() => {}} />
             <EmptyState title="Empty" description="No items" />
-            <Kbd>⌘K</Kbd>
+            <SkinBrandMark skin={skin} size={32} />
+            <SkinArtwork skin={skin} title="Art" caption="Theme art" />
+            <SFXProvider defaultEnabled={false}>
+              <Kbd>⌘K</Kbd>
+            </SFXProvider>
             <CodeBlock language="tsx" code="const x = 1;" />
           </Main>
         </AppShell>

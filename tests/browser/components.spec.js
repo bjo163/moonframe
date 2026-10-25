@@ -129,3 +129,15 @@ test('Next.js asChild link, Field, DropdownMenu, Popover, Tooltip, DataTable, OT
   await page.getByRole('button', { name: 'Show password' }).click();
   await expect(pwInput).toHaveAttribute('type', 'text');
 });
+
+test('brand-and-sfx component detail page renders 15 vector marks and interactive SFX studio', async ({ page }) => {
+  await page.goto('/components/brand-and-sfx');
+  await expect(page.getByRole('heading', { name: 'Brand Marks, Skin Artwork & Opt-In SFX' })).toBeVisible();
+  await expect(page.getByText('Moonframe Interactive Studio & Playground')).toBeVisible();
+  await page.getByRole('tab', { name: '2. 15-Skin Vector Marks (M10)' }).click();
+  await expect(page.locator('[data-skin-mark]').first()).toBeVisible();
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await expect(page.getByText('Consent: Not Granted')).toBeVisible();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await expect(page.getByText('Consent: Granted')).toBeVisible();
+});

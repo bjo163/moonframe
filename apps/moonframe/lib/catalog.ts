@@ -546,6 +546,29 @@ export function CompositeBlocksDemo() {
   );
 }`,
   },
+  {
+    slug: 'brand-and-sfx',
+    name: 'Brand Marks, Skin Artwork & Opt-In SFX',
+    exports: ['SkinBrandMark', 'SkinArtwork', 'SFXProvider', 'useSFX'],
+    category: 'Actions & Theme',
+    summary: 'Original 15-skin vector marks, adaptive artwork containers honoring data-decorations="off", and an opt-in WebAudio synthesizer runtime with 6 canonical event signatures.',
+    a11y: 'Vector marks include accessible SVG titles or decorative hiding; SFX is muted by default with explicit consent and reduced-motion suppression.',
+    code: `import { SkinBrandMark, SkinArtwork, SFXProvider, useSFX, Button } from '@moonframe/ui';
+
+export function BrandAndSfxDemo() {
+  const sfx = useSFX();
+  return (
+    <div style={{ display: 'grid', gap: '1rem' }}>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <SkinBrandMark skin="moonpunk" size={36} />
+        <SkinBrandMark skin="moonledger" size={36} />
+        <SkinBrandMark skin="moonquest" size={36} />
+      </div>
+      <Button onClick={() => sfx.play('success')}>Test Play SFX</Button>
+    </div>
+  );
+}`,
+  },
 ];
 
 export type TemplateCategory =
@@ -1132,7 +1155,620 @@ export default function MaintenanceTemplate() {
   );
 }`,
   },
+  /* Wave B: 21 Additional Production Templates (43 Total) */
+  {
+    id: 'template-sign-in-minimal',
+    title: 'Minimalist Single-Column Login',
+    category: 'Auth',
+    summary: 'Focused, distraction-free sign-in form with email/password validation, passkey quick-login, and accessible error summary.',
+    recommendedSkin: 'classic',
+    recommendedMode: 'light',
+    componentsUsed: ['AuthCard', 'Field', 'Input', 'PasswordField', 'Checkbox', 'Button', 'Callout'],
+    code: `import { AuthCard, Field, Input, PasswordField, Checkbox, Button } from '@moonframe/ui';
+
+export default function SignInMinimal() {
+  return (
+    <div style={{ maxWidth: '26rem', margin: '3rem auto' }}>
+      <AuthCard eyebrow="Welcome Back" title="Sign In" description="Enter your credentials to continue.">
+        <Field label="Email" required><Input type="email" defaultValue="alex@moonframe.dev" /></Field>
+        <Field label="Password" required><PasswordField defaultValue="Secret#2026" /></Field>
+        <Checkbox label="Remember this device" defaultChecked />
+        <Button>Sign In</Button>
+      </AuthCard>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-verify-email',
+    title: 'Email OTP Verification & Cooldown',
+    category: 'Auth',
+    summary: 'Dedicated 6-digit OTP code input with resend cooldown timer, security callout, and change email address modal.',
+    recommendedSkin: 'moonink',
+    recommendedMode: 'light',
+    componentsUsed: ['AuthCard', 'OTPInput', 'Callout', 'Button', 'Badge'],
+    code: `import { AuthCard, OTPInput, Callout, Button } from '@moonframe/ui';
+
+export default function VerifyEmailTemplate() {
+  return (
+    <AuthCard eyebrow="Verification" title="Check your inbox" description="We sent a 6-digit verification code to alex@moonframe.dev.">
+      <OTPInput length={6} defaultValue="739104" />
+      <Callout title="Security tip">The code expires in 10 minutes.</Callout>
+      <Button>Confirm Verification</Button>
+    </AuthCard>
+  );
+}`,
+  },
+  {
+    id: 'template-auth-onboarding',
+    title: 'Workspace Onboarding Wizard',
+    category: 'Auth',
+    summary: 'Multi-step guided setup with Stepper progress, workspace slug generator, role selection RadioGroup, and skin initialization.',
+    recommendedSkin: 'moonpunk',
+    recommendedMode: 'dark',
+    componentsUsed: ['Stepper', 'AuthCard', 'Field', 'Input', 'RadioGroup', 'SkinSelector', 'Button'],
+    code: `import { Stepper, AuthCard, Field, Input, RadioGroup, SkinSelector, Button } from '@moonframe/ui';
+
+export default function AuthOnboardingTemplate() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem', maxWidth: '36rem', margin: '0 auto' }}>
+      <Stepper currentStep={2} steps={[{ title: 'Profile' }, { title: 'Workspace' }, { title: 'Theme' }]} />
+      <AuthCard title="Setup your workspace" description="Configure team parameters and initial skin.">
+        <Field label="Workspace Name"><Input defaultValue="Aether Labs" /></Field>
+        <RadioGroup label="Workspace Role" defaultValue="lead" items={[{ value: 'lead', label: 'Team Lead' }, { value: 'member', label: 'Contributor' }]} />
+        <Field label="Default Skin"><SkinSelector /></Field>
+        <Button>Complete Setup</Button>
+      </AuthCard>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-account-locked',
+    title: 'Security Lockout & Recovery Screen',
+    category: 'Auth',
+    summary: 'Incident security lock status with reference hash, biometric verification recovery options, and direct support request.',
+    recommendedSkin: 'mooncrash',
+    recommendedMode: 'dark',
+    componentsUsed: ['Card', 'EmptyState', 'Callout', 'Button', 'Badge', 'CodeBlock'],
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+
+export default function AccountLockedTemplate() {
+  return (
+    <EmptyState
+      icon={<Badge variant="danger">SECURITY LOCKOUT</Badge>}
+      title="Access Temporarily Suspended"
+      description="Too many invalid authentication attempts were detected from an unrecognized IP address."
+      action={<Button>Verify with Hardware Key</Button>}
+    />
+  );
+}`,
+  },
+  {
+    id: 'template-records-table',
+    title: 'Master Records Table & Batch Operations',
+    category: 'Data',
+    summary: 'High-volume administrative records table with multi-column sorting, row selection checkmarks, bulk export, and saved filters.',
+    recommendedSkin: 'moonraw',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'DataTable', 'SegmentedControl', 'SearchInput', 'Button', 'Badge'],
+    code: `import { PageHeader, DataTable, Button, Badge } from '@moonframe/ui';
+
+export default function RecordsTableTemplate() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Data Engine" title="Master Records Index" actions={<Button size="sm">Export CSV</Button>} />
+      <DataTable
+        searchable
+        columns={[
+          { key: 'code', header: 'Record ID', sortable: true },
+          { key: 'title', header: 'Entity Name', sortable: true },
+          { key: 'tier', header: 'Tier' },
+          { key: 'status', header: 'Integrity' },
+        ]}
+        data={[
+          { id: '1', code: 'REC-001', title: 'Telemetry Node Alpha', tier: 'P0', status: 'Active' },
+          { id: '2', code: 'REC-002', title: 'Storage Partition Gamma', tier: 'P1', status: 'Verified' },
+        ]}
+      />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-resource-detail',
+    title: 'Entity & Resource Inspector',
+    category: 'Data',
+    summary: 'Two-column entity detail workbench with DescriptionList metadata, tabbed audit telemetry, and resource mutation actions.',
+    recommendedSkin: 'moonpanel',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'DescriptionList', 'Tabs', 'Card', 'Badge', 'Button', 'ActivityFeed'],
+    code: `import { PageHeader, DescriptionList, Tabs, Button } from '@moonframe/ui';
+
+export default function ResourceDetailTemplate() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Entity Inspector" title="Resource: Cluster-US-East-4" actions={<Button size="sm">Revoke Key</Button>} />
+      <DescriptionList
+        columns={3}
+        items={[
+          { term: 'Provider', details: 'GCP us-central1' },
+          { term: 'Uptime', details: '99.99%' },
+          { term: 'Workloads', details: '48 pods active' },
+        ]}
+      />
+      <Tabs items={[{ value: 'overview', label: 'Overview', content: 'Cluster operational telemetry.' }]} />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-data-audit',
+    title: 'Compliance Audit Trail & Payload Inspector',
+    category: 'Data',
+    summary: 'Append-only tamper-evident compliance audit trail with diff payload CodeBlocks, actor filters, and security seals.',
+    recommendedSkin: 'moonglitch',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'DataTable', 'CodeBlock', 'Callout', 'Badge', 'SearchInput'],
+    code: `import { PageHeader, DataTable, CodeBlock } from '@moonframe/ui';
+
+export default function DataAuditTemplate() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Governance" title="Compliance Audit Ledger" />
+      <DataTable
+        searchable
+        columns={[
+          { key: 'seq', header: 'Seq #', sortable: true },
+          { key: 'actor', header: 'Actor' },
+          { key: 'action', header: 'Mutation' },
+          { key: 'timestamp', header: 'Timestamp' },
+        ]}
+        data={[{ id: '1', seq: 'AUD-8812', actor: 'ci-runner', action: 'DEPLOY_SECRET', timestamp: '2026-10-26 04:12 UTC' }]}
+      />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-executive-dashboard',
+    title: 'Executive KPI Deck & Unit Economics',
+    category: 'Dashboard',
+    summary: 'Executive leadership briefing screen with quarter-over-quarter BarCharts, ARR MetricGrid, and operating margin breakdown.',
+    recommendedSkin: 'moonchrome',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'MetricGrid', 'BarChart', 'Sparkline', 'Card', 'Badge', 'DataTable'],
+    code: `import { PageHeader, MetricGrid, BarChart } from '@moonframe/ui';
+
+export default function ExecutiveDashboard() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Executive Briefing" title="Quarterly Operations & ARR" />
+      <MetricGrid columns={4} items={[{ label: 'ARR', value: '$4.8M', delta: '+22%' }]} />
+      <BarChart label="Monthly Run Rate" data={[{ label: 'Q1', value: 80 }, { label: 'Q2', value: 110 }]} />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-operations-console',
+    title: 'Infrastructure Operations Console',
+    category: 'Workspace',
+    summary: 'Real-time infrastructure operations console with multi-region cluster health, incident responder switches, and telemetry status.',
+    recommendedSkin: 'mooncrash',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'Callout', 'Badge', 'Switch', 'Button'],
+    code: `import { PageHeader, MetricGrid, DataTable, Switch } from '@moonframe/ui';
+
+export default function OperationsConsole() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Site Reliability" title="Global Infrastructure Command" />
+      <MetricGrid columns={3} items={[{ label: 'Clusters', value: '38 Active' }]} />
+      <Switch label="Automated failover routing" defaultChecked />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-webhook-inspector',
+    title: 'Webhook Dispatch Inspector & Replay',
+    category: 'Workspace',
+    summary: 'Developer webhook payload inspector with HTTP status indicators, JSON request/response CodeBlocks, and manual event replay.',
+    recommendedSkin: 'moonglitch',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'DataTable', 'CodeBlock', 'Callout', 'Badge', 'Button'],
+    code: `import { PageHeader, DataTable, CodeBlock, Button } from '@moonframe/ui';
+
+export default function WebhookInspector() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Developer Tools" title="Webhook Event Dispatcher" actions={<Button size="sm">Send Test Ping</Button>} />
+      <CodeBlock language="json" code='{"event": "invoice.settled", "id": "evt_991"}' />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-queue-monitor',
+    title: 'Worker Queue & Dead-Letter Monitor',
+    category: 'Workspace',
+    summary: 'Background job throughput telemetry, failure rate sparklines, dead-letter queue inspection, and batch retry triggers.',
+    recommendedSkin: 'moonraw',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'Progress', 'Button', 'Badge'],
+    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonframe/ui';
+
+export default function QueueMonitor() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Task Processing" title="Worker Queue Monitor" actions={<Button size="sm">Retry Failed (12)</Button>} />
+      <MetricGrid columns={3} items={[{ label: 'Queue Depth', value: '412 jobs' }]} />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-moonledger-home',
+    title: 'Moonledger ERP Command Center',
+    category: 'Domain',
+    summary: 'Financial executive command center with live cash-flow telemetry, general ledger reconciliation status, and pending approvals.',
+    recommendedSkin: 'moonledger',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'MetricGrid', 'DataTable', 'ActivityFeed', 'Button', 'Badge'],
+    code: `import { PageHeader, MetricGrid, DataTable, Button } from '@moonframe/ui';
+
+export default function MoonledgerHome() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="ERP Command" title="Treasury & General Ledger" actions={<Button size="sm">Reconcile All</Button>} />
+      <MetricGrid columns={4} items={[{ label: 'Net Cash Flow', value: '$1,920,400.00', delta: '+14.2%' }]} />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-moonledger-inventory',
+    title: 'Moonledger Multi-Warehouse Inventory',
+    category: 'Domain',
+    summary: 'Multi-location inventory tracking with SKU search, minimum stock reorder thresholds, inventory valuation, and supplier links.',
+    recommendedSkin: 'moonledger',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'DataTable', 'Badge', 'Button', 'Callout', 'SearchInput'],
+    code: `import { PageHeader, DataTable, Button } from '@moonframe/ui';
+
+export default function MoonledgerInventory() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Supply Chain" title="SKU & Warehouse Inventory" actions={<Button size="sm">New Stock Entry</Button>} />
+      <DataTable searchable columns={[{ key: 'sku', header: 'SKU' }, { key: 'qty', header: 'Quantity' }]} data={[{ id: '1', sku: 'SKU-099', qty: '480' }]} />
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-organization-preferences',
+    title: 'Enterprise Organization & RBAC Settings',
+    category: 'Settings',
+    summary: 'Enterprise workspace configuration with fiscal calendar, currency, multi-jurisdiction VAT, SSO SAML bindings, and audit retention.',
+    recommendedSkin: 'moonledger',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'SettingsSection', 'Field', 'Input', 'Select', 'Switch', 'Button'],
+    code: `import { PageHeader, SettingsSection, Field, Input, Select, Switch, Button } from '@moonframe/ui';
+
+export default function OrganizationPreferences() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Enterprise" title="Organization & Fiscal Governance" />
+      <SettingsSection title="Legal Entity" description="Operating currency and registration.">
+        <Field label="Legal Name"><Input defaultValue="Moonframe Technologies Ltd." /></Field>
+      </SettingsSection>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-moonquest-inventory',
+    title: 'Moonquest Equipment Vault & Relics',
+    category: 'Domain',
+    summary: 'RPG character inventory vault with equipment gear slots, rarity badges, stat progress bars, and crafting materials.',
+    recommendedSkin: 'moonquest',
+    recommendedMode: 'dark',
+    componentsUsed: ['PageHeader', 'Card', 'Badge', 'Progress', 'Grid', 'Button', 'SkinBrandMark'],
+    code: `import { PageHeader, Card, Badge, Progress, Button, SkinBrandMark } from '@moonframe/ui';
+
+export default function MoonquestInventory() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem' }}>
+      <PageHeader eyebrow="Guild Reliquary" title="Adventurer Vault & Equipment" actions={<Button size="sm">Craft Artifact</Button>} />
+      <Card><Progress value={88} label="Solar Aegis Attunement (88%)" /></Card>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-public-pricing',
+    title: 'Public Pricing & Plan Comparison',
+    category: 'Public',
+    summary: 'Three-tier pricing table with PricingCard components, feature comparison checklist, billing frequency toggle, and FAQ accordion.',
+    recommendedSkin: 'moonsmash',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'PricingCard', 'SegmentedControl', 'Accordion', 'Badge', 'Grid'],
+    code: `import { PageHeader, PricingCard, Accordion, Grid } from '@moonframe/ui';
+
+export default function PublicPricing() {
+  return (
+    <div style={{ display: 'grid', gap: '2rem' }}>
+      <PageHeader eyebrow="Transparent Pricing" title="Choose Your Moonframe Tier" />
+      <Grid columns={3}>
+        <PricingCard name="Starter" price="$29" features={['5 skins', 'Next.js 16']} />
+        <PricingCard name="Pro" price="$99" featured features={['All 15 skins', '22 Templates']} />
+        <PricingCard name="Studio" price="$299" features={['Full source', '8 Starters']} />
+      </Grid>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-public-contact',
+    title: 'Enterprise Contact & Demo Booking',
+    category: 'Public',
+    summary: 'High-touch enterprise inquiry page with calendar scheduling, requirement tags, SLA details, and regional sales offices.',
+    recommendedSkin: 'moonriot',
+    recommendedMode: 'light',
+    componentsUsed: ['PageHeader', 'Field', 'Input', 'Textarea', 'TagInput', 'Button', 'Card'],
+    code: `import { PageHeader, Field, Input, Textarea, Button } from '@moonframe/ui';
+
+export default function PublicContact() {
+  return (
+    <div style={{ display: 'grid', gap: '1.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+      <PageHeader eyebrow="Get in Touch" title="Book an Architecture Review" />
+      <Field label="Work Email"><Input type="email" defaultValue="cto@enterprise.com" /></Field>
+      <Field label="Project Scope"><Textarea rows={4} defaultValue="Evaluating Moonframe across 4 Next.js applications." /></Field>
+      <Button>Schedule Review Call</Button>
+    </div>
+  );
+}`,
+  },
+  {
+    id: 'template-legal-content',
+    title: 'Editorial Terms of Service & Privacy',
+    category: 'Public',
+    summary: 'Long-form editorial legal agreement layout with floating section index, revision timeline, and printable formatting.',
+    recommendedSkin: 'moonzine',
+    recommendedMode: 'light',
+    componentsUsed: ['AppShell', 'Sidebar', 'Main', 'PageHeader', 'Timeline', 'Callout', 'Badge'],
+    code: `import { AppShell, Sidebar, Main, PageHeader, Timeline } from '@moonframe/ui';
+
+export default function LegalContent() {
+  return (
+    <AppShell>
+      <Sidebar>Legal Articles</Sidebar>
+      <Main>
+        <PageHeader eyebrow="Legal Framework" title="Terms of Service & Licensing" />
+        <Timeline items={[{ title: 'Version 1.0 released', time: 'October 2026', badge: 'Active' }]} />
+      </Main>
+    </AppShell>
+  );
+}`,
+  },
+  {
+    id: 'template-error-page',
+    title: '500 Runtime Exception Recovery',
+    category: 'System',
+    summary: 'Branded 500 server error screen with unique trace diagnostic code, status callout, and instant retry or report triggers.',
+    recommendedSkin: 'moonriot',
+    recommendedMode: 'dark',
+    componentsUsed: ['Card', 'EmptyState', 'Callout', 'Button', 'Badge', 'CodeBlock'],
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+
+export default function ErrorPageTemplate() {
+  return (
+    <EmptyState
+      icon={<Badge variant="danger">500 SERVER ERROR</Badge>}
+      title="Unexpected Runtime Exception"
+      description="An unhandled exception occurred in the server-side rendering pipeline."
+      action={<Button onClick={() => window.location.reload()}>Retry Operation</Button>}
+    />
+  );
+}`,
+  },
+  {
+    id: 'template-access-denied',
+    title: '403 Permission Denied & Role Request',
+    category: 'System',
+    summary: '403 Forbidden access barrier explaining missing RBAC privileges with a one-click role elevation request form.',
+    recommendedSkin: 'mooncrash',
+    recommendedMode: 'light',
+    componentsUsed: ['EmptyState', 'Callout', 'Button', 'Badge', 'Field', 'Textarea'],
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+
+export default function AccessDeniedTemplate() {
+  return (
+    <EmptyState
+      icon={<Badge variant="warning">403 FORBIDDEN</Badge>}
+      title="Elevated Privileges Required"
+      description="Your account role does not have authorization to view this resource."
+      action={<Button>Request Role Elevation</Button>}
+    />
+  );
+}`,
+  },
+  {
+    id: 'template-offline-page',
+    title: 'Offline / Disconnected Resilience State',
+    category: 'System',
+    summary: 'Network disconnection state screen with local cached draft status, offline mode indicator, and automatic reconnect polling.',
+    recommendedSkin: 'moonscrawl',
+    recommendedMode: 'light',
+    componentsUsed: ['EmptyState', 'Callout', 'Button', 'Badge', 'Progress'],
+    code: `import { EmptyState, Callout, Button, Badge } from '@moonframe/ui';
+
+export default function OfflinePageTemplate() {
+  return (
+    <EmptyState
+      icon={<Badge variant="secondary">OFFLINE</Badge>}
+      title="Connection Interrupted"
+      description="Your network connection was lost. Local edits are cached safely."
+      action={<Button>Reconnect Now</Button>}
+    />
+  );
+}`,
+  },
 ];
+
+/* Level E Starter Applications */
+
+export interface StarterCatalogEntry {
+  id: string;
+  title: string;
+  level: 'E';
+  purpose: string;
+  priority: 'P2' | 'P3';
+  recommendedSkin: SkinId;
+  recommendedMode: 'light' | 'dark';
+  pageRefs: string[];
+  integrationSeams: string[];
+}
+
+export const STARTER_CATALOG: readonly StarterCatalogEntry[] = [
+  {
+    id: 'starter-admin-workspace',
+    title: 'Admin Workspace Starter',
+    level: 'E',
+    purpose: 'Multi-page UI route composition for administrative management, user directories, resource inspectors, and preferences.',
+    priority: 'P2',
+    recommendedSkin: 'classic',
+    recommendedMode: 'dark',
+    pageRefs: [
+      'template-dashboard-overview',
+      'template-users-directory',
+      'template-resource-detail',
+      'template-profile-preferences',
+      'template-error-page',
+    ],
+    integrationSeams: ['auth/session', 'data loader/mutation', 'navigation/routing', 'persistent settings'],
+  },
+  {
+    id: 'starter-auth-onboarding',
+    title: 'Auth & Onboarding Starter',
+    level: 'E',
+    purpose: 'Complete authentication journey spanning sign-in, account creation, password recovery, OTP email verification, and workspace setup.',
+    priority: 'P2',
+    recommendedSkin: 'moonpunk',
+    recommendedMode: 'light',
+    pageRefs: [
+      'template-sign-in-minimal',
+      'template-sign-up',
+      'template-forgot-password',
+      'template-verify-email',
+      'template-auth-onboarding',
+      'template-account-locked',
+    ],
+    integrationSeams: ['auth/session', 'credential validation', 'email delivery', 'workspace provisioning'],
+  },
+  {
+    id: 'starter-data-admin',
+    title: 'Data & Governance Admin Starter',
+    level: 'E',
+    purpose: 'Enterprise records administration, multi-filter data workspaces, resource details, compliance audit trails, and access rejection.',
+    priority: 'P2',
+    recommendedSkin: 'moonpanel',
+    recommendedMode: 'light',
+    pageRefs: [
+      'template-records-table',
+      'template-data-workspace',
+      'template-resource-detail',
+      'template-data-audit',
+      'template-access-denied',
+    ],
+    integrationSeams: ['query AST/pagination', 'bulk mutation', 'audit log writer', 'RBAC evaluation'],
+  },
+  {
+    id: 'starter-analytics-portal',
+    title: 'Analytics & Telemetry Portal Starter',
+    level: 'E',
+    purpose: 'Real-time telemetry streaming, quarterly executive KPI dashboards, regional breakdown workspaces, and fault resilience.',
+    priority: 'P2',
+    recommendedSkin: 'moonglitch',
+    recommendedMode: 'dark',
+    pageRefs: [
+      'template-analytics-workspace',
+      'template-executive-dashboard',
+      'template-dashboard-overview',
+      'template-error-page',
+    ],
+    integrationSeams: ['telemetry stream', 'time range aggregation', 'export service', 'alerting hook'],
+  },
+  {
+    id: 'starter-operations-console',
+    title: 'Operations Console Starter',
+    level: 'E',
+    purpose: 'Infrastructure observability, real-time worker queue monitoring, webhook dispatch inspection, and offline disconnected states.',
+    priority: 'P3',
+    recommendedSkin: 'mooncrash',
+    recommendedMode: 'dark',
+    pageRefs: [
+      'template-operations-console',
+      'template-webhook-inspector',
+      'template-queue-monitor',
+      'template-offline-page',
+    ],
+    integrationSeams: ['cluster health probe', 'webhook replay engine', 'queue controller', 'offline sync cache'],
+  },
+  {
+    id: 'starter-moonledger-erp',
+    title: 'Moonledger ERP Starter',
+    level: 'E',
+    purpose: 'General ledger command center, invoice settlement register, multi-warehouse inventory tracking, and fiscal settings.',
+    priority: 'P3',
+    recommendedSkin: 'moonledger',
+    recommendedMode: 'light',
+    pageRefs: [
+      'template-moonledger-home',
+      'template-moonledger-invoices',
+      'template-moonledger-inventory',
+      'template-organization-preferences',
+    ],
+    integrationSeams: ['treasury sync', 'accounting engine', 'SKU inventory db', 'tax/organization config'],
+  },
+  {
+    id: 'starter-moonquest-adventure',
+    title: 'Moonquest RPG Adventure Starter',
+    level: 'E',
+    purpose: 'Guild chronicle expedition journal, character equipment & relic vault, and adventurer guild profile preferences.',
+    priority: 'P3',
+    recommendedSkin: 'moonquest',
+    recommendedMode: 'dark',
+    pageRefs: [
+      'template-moonquest-home',
+      'template-moonquest-inventory',
+      'template-profile-preferences',
+    ],
+    integrationSeams: ['character state save', 'item inventory catalog', 'expedition progression event', 'audio SFX hook'],
+  },
+  {
+    id: 'starter-content-marketing',
+    title: 'Content & Marketing Platform Starter',
+    level: 'E',
+    purpose: 'High-converting SaaS public landing page, pricing comparison matrix, enterprise contact form, developer documentation, and legal terms.',
+    priority: 'P2',
+    recommendedSkin: 'moonzine',
+    recommendedMode: 'light',
+    pageRefs: [
+      'template-public-landing',
+      'template-public-pricing',
+      'template-public-contact',
+      'template-documentation-landing',
+      'template-legal-content',
+    ],
+    integrationSeams: ['lead capture API', 'checkout redirect', 'docs search index', 'cookie consent'],
+  },
+];
+
+export function getStarterById(id: string): StarterCatalogEntry | undefined {
+  return STARTER_CATALOG.find(s => s.id === id);
+}
 
 export function getSkinById(id: string): SkinCatalogEntry | undefined {
   return SKIN_CATALOG.find(s => s.id === id);
@@ -1147,3 +1783,4 @@ export function getTemplateById(id: string): TemplateCatalogEntry | undefined {
 }
 
 export { skins };
+

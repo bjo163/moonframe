@@ -542,3 +542,46 @@
   .mf-nav-item[aria-current="page"], .mf-tabs-trigger[aria-selected="true"] { outline: 2px solid Highlight; }
   .mf-progress { border: 1px solid CanvasText; }
 }
+
+/* M10 Original 15-Skin Vector Brand Marks & Artwork */
+.mf-brand-mark {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--mf-accent);
+  flex-shrink: 0;
+}
+
+.mf-skin-artwork {
+  margin: 0;
+  border: var(--mf-border-width, 1px) solid var(--mf-border);
+  border-radius: var(--mf-radius);
+  background: var(--mf-surface);
+  box-shadow: var(--mf-shadow);
+  overflow: hidden;
+}
+
+.mf-skin-artwork-canvas {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 7.5rem;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--mf-accent) 10%, var(--mf-bg));
+}
+
+.mf-skin-artwork-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.82rem;
+  border-top: 1px solid var(--mf-border);
+}
+
+[data-decorations="off"] .mf-skin-artwork,
+.mf-decorations-off .mf-skin-artwork {
+  display: none !important;
+}
+

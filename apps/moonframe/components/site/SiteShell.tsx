@@ -9,10 +9,11 @@ import {
   SkinSelector,
   ModeSelector,
   CommandPalette,
+  SkinBrandMark,
   useTheme,
   type SkinId,
 } from '@moonframe/ui';
-import { SKIN_CATALOG, COMPONENT_CATALOG, TEMPLATE_CATALOG } from '../../lib/catalog';
+import { SKIN_CATALOG, COMPONENT_CATALOG, TEMPLATE_CATALOG, STARTER_CATALOG } from '../../lib/catalog';
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -36,6 +37,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       keywords: [t.id, t.summary],
       onSelect: () => router.push(`/templates/${t.id}`),
     })),
+    ...STARTER_CATALOG.map(s => ({
+      id: `starter-${s.id}`,
+      label: `Starter: ${s.title}`,
+      group: 'Level E Starters',
+      shortcut: s.recommendedSkin,
+      keywords: [s.id, s.purpose],
+      onSelect: () => router.push(`/starters/${s.id}`),
+    })),
     ...COMPONENT_CATALOG.map(c => ({
       id: `comp-${c.slug}`,
       label: `Component: ${c.name}`,
@@ -50,6 +59,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     { href: '/skins', label: '15 Skins' },
     { href: '/components', label: 'Components' },
     { href: '/templates', label: 'Templates' },
+    { href: '/starters', label: 'Starters' },
     { href: '/docs', label: 'Docs' },
     { href: '/lab', label: 'Skin Lab' },
   ];
@@ -60,7 +70,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="mf-site-header-inner">
           <div className="mf-site-brand-row">
             <Link href="/" className="mf-site-logo">
-              <span className="mf-site-logo-mark" aria-hidden="true">m•</span>
+              <SkinBrandMark size={26} style={{ marginRight: '0.4rem' }} />
               <span className="mf-site-logo-text">
                 moonframe
                 <small>UI &amp; TEMPLATE SYSTEM</small>
