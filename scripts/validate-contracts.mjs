@@ -1463,12 +1463,14 @@ if(process.argv.includes('--self-test')){
 }
 
 
-// Moonframe package/DX SPEC-ONLY metadata. Not npm package, build, tarball, registry, release or consumer tests.
+// Moonframe package/DX contracts distinguish private local skeleton proof from public consumer/release proof.
 const packageArch=read('contracts/moonframe-package-architecture-v0.1.json');
 const packageDX=read('contracts/moonframe-developer-experience-v0.1.json');
 const packageSchema=read('schemas/moonframe-package-architecture.schema.json');
 const packageFixtures=read('contracts/fixtures/package-architecture-dx-v0.1.json');
 const knownPublicExports=['.','./theme','./styles.css','./tokens.css','./tailwind.css','./components/button'];
+const localPackage=read('package.json');
+const localEntryPath=path.join(root,'src/index.js');
 function packageProblems(p){
  const e=[];
  if(!p||typeof p!=='object')return ['missing package record'];
@@ -1498,12 +1500,12 @@ function packageProblems(p){
    e.push('spurious package topology/split');
  for(const x of p.packages||[]){
    if(x.nameCandidate!=='@moonframe/ui'||x.nameStatus!=='proposed-unverified'||
-      x.packageMetadataStatus!=='no-package-json-no-package-published'||
+      x.packageMetadataStatus!=='private-local-skeleton-unpublished'||
       x.version!==null||x.license!==null||x.engines!==null||
       x.reactPeerVersion!==null||x.reactDomPeerVersion!==null||
       x.typescriptSupportRange!==null||x.nodeSupportRange!==null||
-      x.browserSupportRange!==null||x.packageJsonPath!==null||
-      x.publishConfig!==null||x.filesWhitelist!==null)
+      x.browserSupportRange!==null||x.packageJsonPath!=='package.json'||
+      x.publishConfig!==null||!sameSet(x.filesWhitelist||[],['src/']))
      e.push('false npm name/version/license/consumer approval');
    if(x.cjsDecision!=='deferred-needs-consumer-proof'||
       !Array.isArray(x.exports)||!sameSet(x.exports.map(z=>z.id),knownPublicExports))
@@ -1530,6 +1532,21 @@ function packageProblems(p){
     Object.entries(p.consumerProof||{}).some(([k,v])=>
       !['status','skin105PairwiseReviews'].includes(k)&&v!==false))
    e.push('fabricated consumer install/pack/bundle/AT evidence');
+ const local=p.localSkeleton;
+ if(local?.status!=='private-local-only'||local.packageJsonPath!=='package.json'||
+    local.sourceEntryPath!=='src/index.js'||
+    local.manifest?.name!=='@moonframe/ui'||local.manifest?.version!=='0.0.0-private'||
+    local.manifest?.private!==true||local.manifest?.type!=='module'||
+    JSON.stringify(local.manifest?.exports)!==JSON.stringify({'.':'./src/index.js'})||
+    !sameSet(local.manifest?.files||[],['src/'])||
+    local.localSmoke?.nodeVersion!=='24.22.1'||
+    local.localSmoke?.packageSelfImport!=='passed'||local.localSmoke?.packDryRun!=='passed'||
+    !sameSet(local.localSmoke?.packFileList||[],['README.md','package.json','src/index.js'])||
+    local.localSmoke?.tarballWritten!==false||local.localSmoke?.published!==false||
+    local.publicDecisions?.name!=='unapproved'||local.publicDecisions?.license!=='unapproved'||
+    local.publicDecisions?.peerRanges!=='unapproved'||local.publicDecisions?.tooling!=='unselected'||
+    local.publicDecisions?.publicExports!=='unapproved')
+   e.push('local private skeleton/import/pack evidence is inaccurate or overclaims approval');
  if(p.release?.status!=='not-configured'||
     p.release?.npmScopeApproved!==false||
     p.release?.codeLicenseApproved!==false||
@@ -1571,6 +1588,11 @@ function dxProblems(d){
 }
 for(const problem of packageProblems(packageArch))
  errors.push('Package architecture: '+problem);
+if(localPackage.name!=='@moonframe/ui'||localPackage.version!=='0.0.0-private'||
+   localPackage.private!==true||localPackage.type!=='module'||
+   JSON.stringify(localPackage.exports)!==JSON.stringify({'.':'./src/index.js'})||
+   !sameSet(localPackage.files||[],['src/'])||!fs.existsSync(localEntryPath))
+ errors.push('Local package skeleton: manifest or entry does not match the recorded private ESM package');
 for(const problem of dxProblems(packageDX))
  errors.push('Package DX: '+problem);
 fail(packageSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
@@ -1593,6 +1615,8 @@ if(process.argv.includes('--self-test')){
  const fakeCSS=structuredClone(packageArch);
  fakeCSS.packages[0].exports.find(x=>x.id==='./styles.css').cssSideEffect=false;
  assert(packageProblems(fakeCSS).some(x=>x.includes('CSS side-effect')));
+ const fakeSmoke=structuredClone(packageArch);fakeSmoke.localSkeleton.localSmoke.packDryRun='not-run';
+ assert(packageProblems(fakeSmoke).some(x=>x.includes('local private skeleton')));
  console.log('PASS: package/DX negative fixtures ('+packageFixtures.invalid.length+
  ' bad package/export/license/OIDC/consumer proofs; 11 planned journeys and 13 diagnostics)');
 }
@@ -1702,4 +1726,4 @@ if (process.argv.includes('--production')) {
 if (errors.length) {
  for(const e of errors) console.error('FAIL:',e);
  process.exitCode=1;
-} else console.log('PASS: specification-only structural checks; 15 skins, 30 pending mode slots, 105 unreviewed pairs, catalogs, policy and docs links. No UI QA implied.');
+} else console.log('PASS: specification structural checks plus private local package skeleton consistency; 15 skins, 30 pending mode slots, 105 unreviewed pairs, catalogs, policy and docs links. No UI QA or public package support implied.');

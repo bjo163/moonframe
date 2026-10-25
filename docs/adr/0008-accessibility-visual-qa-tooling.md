@@ -1,6 +1,6 @@
 # ADR-0008 — Accessibility automation, screenshots and human QA tooling
 
-**2026-10-25 — Status:** `proposed-unresolved-consumer-stack`. No package.json, React implementation, CI browser runner or screenshot history exists. Record decision only after [consumer matrix #1](https://github.com/bjo163/moonframe/issues/1), [provider #3](https://github.com/bjo163/moonframe/issues/3), [package #4](https://github.com/bjo163/moonframe/issues/4) and [Skin Lab #6](https://github.com/bjo163/moonframe/issues/6).
+**2026-10-25 — Status:** `proposed-unresolved-consumer-stack`. A private local ESM package shell exists, but no React implementation, CI browser runner or screenshot history exists. Record decision only after [consumer matrix #1](https://github.com/bjo163/moonframe/issues/1), [provider #3](https://github.com/bjo163/moonframe/issues/3), [package #4](https://github.com/bjo163/moonframe/issues/4) and [Skin Lab #6](https://github.com/bjo163/moonframe/issues/6).
 
 ## Why tools cannot be selected unconditionally today
 

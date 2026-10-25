@@ -1,6 +1,6 @@
 # ADR-0010 — npm runtime vs source registry / hybrid
 
-**Date:** 2026-10-25. **Status:** PROPOSED (open pending consumer proof and owner review). **No registry.json, CLI, npm package or hosted registry was built.** [Official registry docs](https://ui.shadcn.com/docs/registry/getting-started), [npm package exports](https://nodejs.org/api/packages.html) and [package Bible](../architecture/package-architecture-dx-bible.md).
+**Date:** 2026-10-25. **Status:** PROPOSED (open pending consumer proof and owner review). A private local ESM package skeleton and temporary tarball consumer smoke now exist by user approval; no public npm package, registry.json, CLI or hosted registry was built. [Official registry docs](https://ui.shadcn.com/docs/registry/getting-started), [npm package exports](https://nodejs.org/api/packages.html) and [package Bible](../architecture/package-architecture-dx-bible.md).
 
 ## Different ownership contracts
 

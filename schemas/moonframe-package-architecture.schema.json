@@ -18,6 +18,7 @@
     "privatePaths",
     "generatedCss",
     "consumerProof",
+    "localSkeleton",
     "release",
     "readinessVocabulary",
     "nonGoals"
@@ -85,6 +86,7 @@
           "id",
           "nameCandidate",
           "nameStatus",
+          "packageMetadataStatus",
           "version",
           "license",
           "engines",
@@ -104,6 +106,9 @@
           "nameStatus": {
             "const": "proposed-unverified"
           },
+          "packageMetadataStatus": {
+            "const": "private-local-skeleton-unpublished"
+          },
           "version": {
             "type": "null"
           },
@@ -117,7 +122,16 @@
             "type": "null"
           },
           "packageJsonPath": {
-            "type": "null"
+            "const": "package.json"
+          },
+          "filesWhitelist": {
+            "type": "array",
+            "prefixItems": [
+              { "const": "src/" }
+            ],
+            "items": false,
+            "minItems": 1,
+            "maxItems": 1
           },
           "exports": {
             "type": "array",
@@ -234,6 +248,78 @@
         },
         "skin105PairwiseReviews": {
           "const": 0
+        }
+      }
+    },
+    "localSkeleton": {
+      "type": "object",
+      "required": [
+        "status",
+        "packageJsonPath",
+        "sourceEntryPath",
+        "manifest",
+        "localSmoke",
+        "publicDecisions"
+      ],
+      "properties": {
+        "status": { "const": "private-local-only" },
+        "packageJsonPath": { "const": "package.json" },
+        "sourceEntryPath": { "const": "src/index.js" },
+        "manifest": {
+          "type": "object",
+          "required": ["name", "version", "private", "type", "exports", "files"],
+          "properties": {
+            "name": { "const": "@moonframe/ui" },
+            "version": { "const": "0.0.0-private" },
+            "private": { "const": true },
+            "type": { "const": "module" },
+            "exports": {
+              "type": "object",
+              "required": ["."],
+              "properties": { ".": { "const": "./src/index.js" } },
+              "additionalProperties": false
+            },
+            "files": {
+              "type": "array",
+              "prefixItems": [{ "const": "src/" }],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            }
+          }
+        },
+        "localSmoke": {
+          "type": "object",
+          "required": ["nodeVersion", "packageSelfImport", "packDryRun", "packFileList", "tarballWritten", "published"],
+          "properties": {
+            "nodeVersion": { "const": "24.22.1" },
+            "packageSelfImport": { "const": "passed" },
+            "packDryRun": { "const": "passed" },
+            "packFileList": {
+              "type": "array",
+              "prefixItems": [
+                { "const": "README.md" },
+                { "const": "package.json" },
+                { "const": "src/index.js" }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "tarballWritten": { "const": false },
+            "published": { "const": false }
+          }
+        },
+        "publicDecisions": {
+          "type": "object",
+          "required": ["name", "license", "peerRanges", "tooling", "publicExports"],
+          "properties": {
+            "name": { "const": "unapproved" },
+            "license": { "const": "unapproved" },
+            "peerRanges": { "const": "unapproved" },
+            "tooling": { "const": "unselected" },
+            "publicExports": { "const": "unapproved" }
+          }
         }
       }
     },

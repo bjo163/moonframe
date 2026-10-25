@@ -1,8 +1,8 @@
 # Moonframe UI — Package Architecture & Developer Experience Bible
 
-**Edition:** 2026-10-25. **Authority:** packaging, public exports, consumer setup, distribution topology, docs/playground isolation, tooling/release governance. **Readiness:** `specified-not-implemented`. No npm package, CLI, source registry, build outputs, production CSS, UI components, binaries, audio or publishing configuration created. [Live audit](../audit/package-architecture-dx-audit.md) · [official research](../research/package-architecture-dx-research-log.md) · [ADR-0009](../adr/0009-package-topology.md) · [ADR-0010](../adr/0010-package-distribution.md).
+**Edition:** 2026-10-25. **Authority:** packaging, public exports, consumer setup, distribution topology, docs/playground isolation, tooling/release governance. **Readiness:** `specified-not-implemented`; a private local ESM shell (`package.json`, `src/index.js`) and temporary Node/Vite tarball smoke exist under explicit local-only approval. No published package, CLI, source registry, build outputs, production CSS, UI components, binaries, audio or publishing configuration. [Live audit](../audit/package-architecture-dx-audit.md) · [official research](../research/package-architecture-dx-research-log.md) · [ADR-0009](../adr/0009-package-topology.md) · [ADR-0010](../adr/0010-package-distribution.md).
 
-> Package what consumers need, not everything that might one day exist. A green specification validator proves only contracts. All examples and commands below are **proposals/acceptance targets, not runnable now**.
+> Package what consumers need, not everything that might one day exist. A green specification validator proves only contracts. The empty local shell supports only its verified root ESM import; all other examples and commands below are **proposals/acceptance targets, not runnable now**.
 
 ## 1. Product decomposition and canonical ownership
 

@@ -70,10 +70,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -83,7 +83,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -218,6 +220,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -328,10 +366,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -341,7 +379,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -476,6 +516,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -733,6 +809,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -989,6 +1101,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -1096,10 +1244,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -1109,7 +1257,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -1244,6 +1394,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -1352,10 +1538,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -1365,7 +1551,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -1500,6 +1688,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -1757,6 +1981,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -2012,6 +2272,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -2269,6 +2565,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -2376,10 +2708,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -2389,7 +2721,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -2525,6 +2859,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -2633,10 +3003,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -2646,7 +3016,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -2781,6 +3153,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -2889,10 +3297,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -2902,7 +3310,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -3037,6 +3447,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -3293,6 +3739,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -3566,6 +4048,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -3838,6 +4356,42 @@
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
         },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
+        },
         "release": {
           "status": "not-configured",
           "npmScopeApproved": false,
@@ -3947,10 +4501,10 @@
             "id": "ui-core",
             "nameCandidate": "@moonframe/ui",
             "nameStatus": "proposed-unverified",
-            "packageMetadataStatus": "no-package-json-no-package-published",
+            "packageMetadataStatus": "private-local-skeleton-unpublished",
             "tier": "core-v1-candidate",
             "dependencyBoundary": "react-rendered-generic-UI-only",
-            "packageJsonPath": null,
+            "packageJsonPath": "package.json",
             "version": null,
             "license": null,
             "engines": null,
@@ -3960,7 +4514,9 @@
             "nodeSupportRange": null,
             "browserSupportRange": null,
             "publishConfig": null,
-            "filesWhitelist": null,
+            "filesWhitelist": [
+              "src/"
+            ],
             "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
             "typeFieldCandidate": "module",
             "cjsDecision": "deferred-needs-consumer-proof",
@@ -4095,6 +4651,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",
@@ -4466,6 +5058,42 @@
           "tokenAliasCoverage": false,
           "accessibilityManual": false,
           "skin105PairwiseReviews": 0
+        },
+        "localSkeleton": {
+          "status": "private-local-only",
+          "packageJsonPath": "package.json",
+          "sourceEntryPath": "src/index.js",
+          "manifest": {
+            "name": "@moonframe/ui",
+            "version": "0.0.0-private",
+            "private": true,
+            "type": "module",
+            "exports": {
+              ".": "./src/index.js"
+            },
+            "files": [
+              "src/"
+            ]
+          },
+          "localSmoke": {
+            "nodeVersion": "24.22.1",
+            "packageSelfImport": "passed",
+            "packDryRun": "passed",
+            "packFileList": [
+              "README.md",
+              "package.json",
+              "src/index.js"
+            ],
+            "tarballWritten": false,
+            "published": false
+          },
+          "publicDecisions": {
+            "name": "unapproved",
+            "license": "unapproved",
+            "peerRanges": "unapproved",
+            "tooling": "unselected",
+            "publicExports": "unapproved"
+          }
         },
         "release": {
           "status": "not-configured",

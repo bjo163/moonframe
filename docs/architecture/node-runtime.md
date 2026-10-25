@@ -6,4 +6,4 @@ Use the exact version in `.nvmrc` for local development and CI. GitHub Actions r
 
 Node.js 24.22.1 is the latest LTS release at this review date, per the [official download page](https://nodejs.org/en/download) and [release list](https://nodejs.org/en/blog/release). This repository standardizes on that one LTS line and exact patch to keep local and CI behavior aligned. Historical evidence may name an older Node version when that version was actually used; it is not the current runtime policy.
 
-This repository has no package manifest yet, so there is no `engines` field to set. Add one when the first package manifest is approved, matching the supported Node policy and validating compatibility before widening its range.
+The repository now has a private local package skeleton. It deliberately has no `engines` field: Node 24.22.1 LTS is the development/CI pin, not an approved consumer minimum. Add a package support range only after consumer compatibility evidence and owner review.
