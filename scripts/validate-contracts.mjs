@@ -204,6 +204,16 @@ const schemaSupportedTypes=new Set(tokenSubsetSchema.$defs.token.properties.$typ
 fail(tokenSubsetSchema.$schema==='https://json-schema.org/draft/2020-12/schema' &&
      themePrefsSchema.$schema==='https://json-schema.org/draft/2020-12/schema',
      'Token/preference schemas must declare JSON Schema Draft 2020-12');
+
+// Primitive aliases are strings; avoid JSON Schema oneOf between an arbitrary
+// string and a reference-pattern string (a reference satisfies both).
+for(const type of ['fontFamily','fontWeight']){
+ const branch=tokenSubsetSchema.$defs.token.allOf.find(x=>x.if?.properties?.$type?.const===type);
+ fail(Array.isArray(branch?.then?.properties?.$value?.anyOf) &&
+      !branch?.then?.properties?.$value?.oneOf,
+      'Token schema must allow font string aliases without overlapping oneOf branches: '+type);
+}
+
 fail(tokenSubsetSchema.$defs?.group && tokenSubsetSchema.$defs?.token &&
      tokenSubsetSchema.$defs?.reference,'Incomplete proposed bounded DTCG schema');
 fail(sameSet(themePrefsSchema.properties.requested.properties.skinId.enum,ids) &&

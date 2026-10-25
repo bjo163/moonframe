@@ -251,7 +251,7 @@
           "then": {
             "properties": {
               "$value": {
-                "oneOf": [
+                "anyOf": [
                   {
                     "type": "string"
                   },
@@ -284,7 +284,7 @@
           "then": {
             "properties": {
               "$value": {
-                "oneOf": [
+                "anyOf": [
                   {
                     "type": "number"
                   },
