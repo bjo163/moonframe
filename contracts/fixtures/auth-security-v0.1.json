@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-AUTH-FIXTURES-001",
+  "status": "synthetic-only",
+  "valid": [
+    {
+      "id": "sign-in-intent",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    },
+    {
+      "id": "trusted-confirmation",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "success-confirmed",
+        "trustedResult": true,
+        "safeReferenceId": "case-1"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "unknown-flow",
+      "explanation": "Unknown canonical flow rejected",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-not-existing",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    },
+    {
+      "id": "secret-password",
+      "explanation": "Private credentials never enter shared UI event payload",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1",
+        "password": "fixture-not-a-real-password"
+      }
+    },
+    {
+      "id": "secret-otp",
+      "explanation": "One-time codes never enter shared event envelope",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1",
+        "otp": "demo-not-real"
+      }
+    },
+    {
+      "id": "token-key",
+      "explanation": "Auth bearer tokens may not enter shared callback event",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1",
+        "access_token": "synthetic-only"
+      }
+    },
+    {
+      "id": "success-before-trust",
+      "explanation": "No authenticated-looking success without provider confirmation",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "success-confirmed",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    },
+    {
+      "id": "bad-state",
+      "explanation": "Unknown state vocabulary disallowed",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "authenticated-on-click",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    },
+    {
+      "id": "raw-redirect",
+      "explanation": "UI event must contain validated destination ID, not arbitrary URLs",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1",
+        "returnTo": "https://example.invalid/redirect"
+      }
+    },
+    {
+      "id": "unknown-action",
+      "explanation": "Semantic action must match canonical events or flow-permitted intent",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "run-unsafe-action",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    },
+    {
+      "id": "unexpected-provider-callback",
+      "explanation": "Direct OAuth callback code is outside UI presentation data",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "ui-request-1",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1",
+        "authorization_code": "demo-auth-code"
+      }
+    },
+    {
+      "id": "duplicate-or-unknown-correlation",
+      "explanation": "A presentation event must have an interaction correlation ID",
+      "sample": {
+        "schemaVersion": 1,
+        "flowId": "auth-email-password-signin",
+        "actionId": "submit",
+        "interactionId": "",
+        "presentationState": "submitting",
+        "trustedResult": false,
+        "safeReferenceId": "case-1"
+      }
+    }
+  ],
+  "notes": [
+    "No real credentials, sessions, callback URLs, user IDs or WebAuthn challenges stored.",
+    "Schema file is Draft 2020-12 candidate; custom Node validation checks a bounded semantic subset, not full JSON Schema engine.",
+    "Do not use this shared event envelope to submit password/OTP to identity provider. Consumer-owned transient secure form layer handles secret submission."
+  ]
+}

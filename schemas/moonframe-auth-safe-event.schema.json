@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-auth-safe-event.schema.json",
+  "title": "Moonframe Auth Safe Presentation Envelope",
+  "description": "Bounded proposed safe public UI-event envelope, not a credential submission API nor full JSON Schema engine executed. Semantic validation performed by Node validator fixtures.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "flowId",
+    "actionId",
+    "interactionId",
+    "presentationState",
+    "trustedResult",
+    "safeReferenceId"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "flowId": {
+      "type": "string",
+      "pattern": "^auth-[a-z]+(?:-[a-z]+)*$"
+    },
+    "actionId": {
+      "type": "string",
+      "pattern": "^[a-z]+(?:-[a-z]+)*$"
+    },
+    "interactionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "presentationState": {
+      "enum": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "verification-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "failure-terminal",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported",
+        "permission-denied",
+        "stale-result-ignored",
+        "locked",
+        "session-revoked"
+      ]
+    },
+    "trustedResult": {
+      "type": "boolean"
+    },
+    "safeReferenceId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100,
+      "pattern": "^[A-Za-z0-9._:-]*$"
+    },
+    "safeErrorCode": {
+      "enum": [
+        "invalid-input",
+        "generic-credentials-rejected",
+        "expired-challenge",
+        "user-cancelled",
+        "provider-unavailable",
+        "unsupported",
+        "rate-limited",
+        "network-error",
+        "permission-denied",
+        "session-expired",
+        "unknown-safe-error"
+      ]
+    },
+    "retryAfterSeconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "destinationId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "presentationState": {
+            "const": "success-confirmed"
+          }
+        },
+        "required": [
+          "presentationState"
+        ]
+      },
+      "then": {
+        "properties": {
+          "trustedResult": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}
