@@ -84,9 +84,9 @@
 
 **Milestone artifact:** local package tarball + synthetic importer. **Gate:** blocked: #1/#3/#4 and consumer smoke. Entry: #1 consumers; #3 provider; #4 distribution; no assumed package manager. See [release matrix](docs/architecture/release-train-and-adoption.md).
 
-- [ ] **MF-003 — Inventory real Moon consumer toolchains/SSR/browser target** · **P1 / S** · **status:** `ready` · **lane:** B · **deps:** — · **issue:** [#1](https://github.com/bjo163/moonframe/issues/1)
+- [x] **MF-003 — Inventory real Moon consumer toolchains/SSR/browser target** · **P1 / S** · **status:** `done` · **lane:** B · **deps:** — · **issue:** [#1](https://github.com/bjo163/moonframe/issues/1)
   - **Expected file owner/scope:** `docs/research/consumer-matrix.md (proposed); ADR-0001`. **AC:** Cite actual commit/version per app or mark unknown; pick synthetic test consumer.
-  - **Validation/evidence:** Review source links, Node/browser/SSR matrix; no install claim. **Risk/rollback:** No guessed consumers; document fallback and unsupported targets. **Adoption/output:** local package tarball + synthetic importer. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Validation/evidence:** [Pinned-source consumer matrix](docs/research/consumer-matrix.md); [ADR-0001 update](docs/adr/0001-primitive-provider.md). Public manifests audited at linked commits; installed/runtime versions, browser matrix, RTL, and execution remain unknown. **Risk/rollback:** No consumer changes or framework installs. **Adoption/output:** synthetic consumer fixture; XIV board recommended for later real-app smoke behind approval gates. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
 
 - [ ] **MF-005 — Equal-fixture Base UI/Radix/React Aria provider spike** · **P1 / M** · **status:** `blocked` · **lane:** B/E · **deps:** MF-003 · **issue:** [#3](https://github.com/bjo163/moonframe/issues/3)
   - **Expected file owner/scope:** `docs/adr/0001-primitive-provider.md; docs/research/`. **AC:** Dialog, Select, editable Combobox, nested Menu: keyboard/focus/RTL/SSR + bundle measurements or unmeasured.
