@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-package-architecture.schema.json",
+  "title": "Moonframe package architecture proposal contract (not a publishable package.json)",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "contractVersion",
+    "contractId",
+    "status",
+    "auditedRepository",
+    "ownerDecisionIssue",
+    "sources",
+    "skinAppearance",
+    "topology",
+    "distribution",
+    "packages",
+    "privatePaths",
+    "generatedCss",
+    "consumerProof",
+    "release",
+    "readinessVocabulary",
+    "nonGoals"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "contractVersion": {
+      "type": "string"
+    },
+    "contractId": {
+      "const": "MF-PKG-ARCH-001"
+    },
+    "status": {
+      "const": "specified-candidates-not-implemented"
+    },
+    "auditedRepository": {
+      "const": "bjo163/moonframe"
+    },
+    "ownerDecisionIssue": {
+      "const": "https://github.com/bjo163/moonframe/issues/4"
+    },
+    "skinAppearance": {
+      "type": "object",
+      "required": [
+        "expectedSkinCount",
+        "expectedResolvedAppearances",
+        "modeOptions",
+        "systemIsPreferenceNotThirdMode"
+      ],
+      "properties": {
+        "expectedSkinCount": {
+          "const": 15
+        },
+        "expectedResolvedAppearances": {
+          "const": 30
+        },
+        "modeOptions": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "light"
+            },
+            {
+              "const": "dark"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "systemIsPreferenceNotThirdMode": {
+          "const": true
+        }
+      }
+    },
+    "packages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nameCandidate",
+          "nameStatus",
+          "version",
+          "license",
+          "engines",
+          "reactPeerVersion",
+          "packageJsonPath",
+          "exports"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]+$"
+          },
+          "nameCandidate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nameStatus": {
+            "const": "proposed-unverified"
+          },
+          "version": {
+            "type": "null"
+          },
+          "license": {
+            "type": "null"
+          },
+          "engines": {
+            "type": "null"
+          },
+          "reactPeerVersion": {
+            "type": "null"
+          },
+          "packageJsonPath": {
+            "type": "null"
+          },
+          "exports": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "role",
+                "candidateConsumerImport",
+                "conditions",
+                "outputPath",
+                "declarationPath",
+                "publicStability",
+                "cssSideEffect"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^\\.(?:/[a-z0-9.*-]+(?:\\.[a-z0-9]+)?)?$"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "candidateConsumerImport": {
+                  "type": "string"
+                },
+                "conditions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "enum": [
+                      "types",
+                      "import",
+                      "default"
+                    ]
+                  }
+                },
+                "outputPath": {
+                  "type": "null"
+                },
+                "declarationPath": {
+                  "type": "null"
+                },
+                "publicStability": {
+                  "const": "proposed-unverified"
+                },
+                "cssSideEffect": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "properties": {
+        "publicationStatus": {
+          "const": "never-published"
+        },
+        "publishedVersions": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "registryItems": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "audioPacks": {
+          "const": 0
+        }
+      }
+    },
+    "consumerProof": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "not-run"
+        },
+        "freshViteTarballInstall": {
+          "const": false
+        },
+        "ssrConsumerInstall": {
+          "const": false
+        },
+        "typescriptTypesResolution": {
+          "const": false
+        },
+        "reactSingleton": {
+          "const": false
+        },
+        "cssSideEffectsRetention": {
+          "const": false
+        },
+        "tailwindV4Scan": {
+          "const": false
+        },
+        "treeShaking": {
+          "const": false
+        },
+        "privateExportRejection": {
+          "const": false
+        },
+        "distFileListInspection": {
+          "const": false
+        },
+        "tokenAliasCoverage": {
+          "const": false
+        },
+        "accessibilityManual": {
+          "const": false
+        },
+        "skin105PairwiseReviews": {
+          "const": 0
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "not-configured"
+        },
+        "npmScopeApproved": {
+          "const": false
+        },
+        "codeLicenseApproved": {
+          "const": false
+        },
+        "artRightsApproved": {
+          "const": false
+        },
+        "version": {
+          "type": "null"
+        },
+        "tagsVerified": {
+          "type": "null"
+        },
+        "githubReleasesObserved": {
+          "const": 0
+        },
+        "trustedPublisherEnabled": {
+          "const": false
+        },
+        "provenanceAttested": {
+          "const": false
+        },
+        "oidcWorkflowConfigured": {
+          "const": false
+        },
+        "distTagsGranted": {
+          "const": false
+        },
+        "packageTarball": {
+          "type": "null"
+        },
+        "registryInstall": {
+          "type": "null"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "specified-candidates-not-implemented"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "distribution": {
+            "properties": {
+              "publicationStatus": {
+                "const": "never-published"
+              }
+            }
+          },
+          "release": {
+            "properties": {
+              "status": {
+                "const": "not-configured"
+              },
+              "trustedPublisherEnabled": {
+                "const": false
+              },
+              "npmScopeApproved": {
+                "const": false
+              },
+              "provenanceAttested": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
