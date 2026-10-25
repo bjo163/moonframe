@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Token Architecture & Theme Engine (2026-10-25)
 
 - [Live token/theme audit](docs/audit/token-theme-engine-audit.md)
+- [Token/theme delivery and verification report](docs/audit/token-theme-engine-delivery-2026-10-25.md)
 - [Token/theme primary-source research](docs/research/token-theme-engine-research.md)
 - [Authoritative token pipeline & runtime spec](docs/architecture/token-pipeline.md)
 - [ADR-0002 bounded DTCG format and generator (proposed)](docs/adr/0002-token-format-and-generator.md)
