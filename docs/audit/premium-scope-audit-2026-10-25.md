@@ -41,3 +41,7 @@
 ## Status and validation caveat
 
 Any green specification validator only checks syntactic/structural/relationship invariants. User-facing `specified` is not `implemented`, nor `tested` or `reviewed`. All 660 specimen cells and 105 pair records remain pending without browser/visual evidence. Manual testing, screen readers, performance, bundle, security, license compliance and actual app installation remain future tasks.
+
+## Historical ID namespace collision discovered by expanded validator
+
+The first cross-catalog validator run detected **`app-shell`** both as a component ID in the A/B manifest and as an old C-family blueprint ID in the 13-record legacy block family list. This is a real pre-existing naming ambiguity, not a new Level C concrete block collision. To preserve stable historical identifiers, old families now declare qualified IDs `family:<id>`, including `family:app-shell`; the concrete Level C catalog keeps its independent `block-*` IDs. Full A/B → concrete-C → D → E → F uniqueness is enforced. This named exception must be resolved by an ADR before any future breaking rename, rather than silently modifying existing references.

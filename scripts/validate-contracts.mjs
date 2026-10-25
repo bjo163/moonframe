@@ -95,8 +95,14 @@ const legacyBlocks=b.filter(x=>x.recordKind==='family-blueprint');
 const pageItems=pages.templates, starterItems=starters.starters, optionalItems=integrations.candidates;
 const priorities=new Set(['P0','P1','P2','P3']);
 const atLeast=(arr,n)=>Array.isArray(arr)&&arr.length>=n;
-const scopedIdSets=[cmp.map(x=>x.id),b.map(x=>x.id),pageItems.map(x=>x.id),starterItems.map(x=>x.id),optionalItems.map(x=>x.id)];
+const scopedIdSets=[cmp.map(x=>x.id),concreteBlocks.map(x=>x.id),pageItems.map(x=>x.id),starterItems.map(x=>x.id),optionalItems.map(x=>x.id)];
 const allIds=scopedIdSets.flat();
+// Historical family blueprints are NOT Level C concrete public item IDs. Their qualified
+// namespace is family:<id>; preserve historical app-shell ID without aliasing component app-shell.
+const historicalCollisions=legacyBlocks.filter(x=>cmp.some(c=>c.id===x.id)).map(x=>x.id);
+fail(sameSet(historicalCollisions,['app-shell']), 'Unexpected component/family collision; migrate deliberately instead of silently renaming');
+fail(legacyBlocks.every(x=>x.qualifiedId==='family:'+x.id), 'Legacy family namespace missing');
+
 fail(uniq(allIds),'Duplicate ID across A/B/C/D/E/F');
 for(const [index,entries] of scopedIdSets.entries())
   fail(uniq(entries)&&entries.every(isString),'Malformed IDs in level '+index);

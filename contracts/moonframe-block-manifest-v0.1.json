@@ -67,7 +67,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:app-shell"
     },
     {
       "id": "dashboard",
@@ -132,7 +133,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:dashboard"
     },
     {
       "id": "crud-list-detail",
@@ -197,7 +199,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:crud-list-detail"
     },
     {
       "id": "resource-detail",
@@ -262,7 +265,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:resource-detail"
     },
     {
       "id": "settings-workspace",
@@ -325,7 +329,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:settings-workspace"
     },
     {
       "id": "analytics-reporting",
@@ -388,7 +393,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:analytics-reporting"
     },
     {
       "id": "empty-loading-error-offline",
@@ -451,7 +457,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P2"
+      "priority": "P2",
+      "qualifiedId": "family:empty-loading-error-offline"
     },
     {
       "id": "operations-command-center",
@@ -515,7 +522,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:operations-command-center"
     },
     {
       "id": "communication-workspace",
@@ -579,7 +587,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:communication-workspace"
     },
     {
       "id": "erp-workbench",
@@ -643,7 +652,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:erp-workbench"
     },
     {
       "id": "rpg-quest-journal",
@@ -707,7 +717,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:rpg-quest-journal"
     },
     {
       "id": "editorial-panel-workspace",
@@ -771,7 +782,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:editorial-panel-workspace"
     },
     {
       "id": "data-exploration",
@@ -835,7 +847,8 @@
       ],
       "recordKind": "family-blueprint",
       "level": "C-family",
-      "priority": "P3"
+      "priority": "P3",
+      "qualifiedId": "family:data-exploration"
     },
     {
       "id": "block-sign-in-form",
@@ -9436,5 +9449,14 @@
       "marketing": 6,
       "universal": 10
     }
+  },
+  "legacyIdCollisionPolicy": {
+    "collision": "app-shell",
+    "competingRecords": [
+      "component:app-shell",
+      "family:app-shell"
+    ],
+    "behavior": "Unqualified app-shell is valid only inside its owning manifest. Cross-level references must use a qualified namespace; no automatic rename or public export implied.",
+    "reviewStatus": "documented-existing; migration ADR required before any ID rename"
   }
 }
