@@ -1,0 +1,1959 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-KEYBOARD-001",
+  "status": "specified-not-tested",
+  "canonicalComponents": "moonframe-component-manifest-v0.1.json",
+  "patterns": [
+    {
+      "id": "native-button",
+      "title": "Native button Space/Enter activation",
+      "semanticElement": "button",
+      "keyboardContract": "Tab focus; Enter and Space activate once; disabled not focusable in normal tab order",
+      "invariants": [
+        "Button type=button unless submit explicitly chosen; no nested interactive elements",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "button",
+        "icon-button",
+        "filter-chip"
+      ]
+    },
+    {
+      "id": "native-link",
+      "title": "Native navigation hyperlink",
+      "semanticElement": "a[href]",
+      "keyboardContract": "Tab, Enter follows href; no Space-as-button",
+      "invariants": [
+        "No href => no link semantics; no fake disabled link without explicit policy",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "link",
+        "skip-link"
+      ]
+    },
+    {
+      "id": "text-input",
+      "title": "Native editable input",
+      "semanticElement": "input/textarea",
+      "keyboardContract": "Tab; typing/editing/selection native; Enter submit only by form behavior",
+      "invariants": [
+        "Preserve name/value/required/readOnly, label and error relationships",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://react.dev/reference/react-dom/components/input",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "input",
+        "textarea",
+        "search-input",
+        "number-input",
+        "currency-input",
+        "password-field",
+        "phone-input"
+      ]
+    },
+    {
+      "id": "file-input",
+      "title": "Native file control",
+      "semanticElement": "input[type=file]",
+      "keyboardContract": "Tab to input or labeled trigger; Enter/Space opens picker",
+      "invariants": [
+        "Do not simulate upload; app owns files, size/type validation",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "file-upload",
+        "file-dropzone"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "title": "Native checkbox",
+      "semanticElement": "input[type=checkbox]",
+      "keyboardContract": "Tab to box; Space toggles once",
+      "invariants": [
+        "checked/defaultChecked and onCheckedChange proposal; preserve name/indeterminate separately",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "checkbox",
+        "row-selection"
+      ]
+    },
+    {
+      "id": "radio-group",
+      "title": "Radio group APG / native radios",
+      "semanticElement": "fieldset + input[type=radio]",
+      "keyboardContract": "Tab into group; arrow movement between enabled radios; Space selects",
+      "invariants": [
+        "Group name, required state and native form participation",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/radio/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "radio-group"
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "Accessible switch",
+      "semanticElement": "button[role=switch] or checkbox role switch",
+      "keyboardContract": "Tab and Space toggle; Enter provider-specific must be tested",
+      "invariants": [
+        "Checked state and label; not color-only",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/switch/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "switch"
+      ]
+    },
+    {
+      "id": "native-select",
+      "title": "Native single selection baseline",
+      "semanticElement": "select",
+      "keyboardContract": "Tab; browser/platform keyboard selection",
+      "invariants": [
+        "Prefer native select where appropriate; custom popup requires separate pattern",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "skin-selector",
+        "mode-selector",
+        "density-selector"
+      ]
+    },
+    {
+      "id": "select-popup",
+      "title": "Select-only popup",
+      "semanticElement": "select or button+listbox",
+      "keyboardContract": "Open from trigger; arrows/typeahead; Enter select; Escape close/restore",
+      "invariants": [
+        "Custom popup semantics/form serialization must be proven before API approval",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "select",
+        "saved-views",
+        "saved-view-picker"
+      ]
+    },
+    {
+      "id": "combobox",
+      "title": "Editable combobox/listbox",
+      "semanticElement": "input[role=combobox] + listbox",
+      "keyboardContract": "Tab focus input; ArrowDown/Up navigate; Enter commits; Escape dismisses; typeahead native",
+      "invariants": [
+        "Keyboard model varies with popup kind; async results don't steal focus",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "combobox",
+        "autocomplete"
+      ]
+    },
+    {
+      "id": "multi-select",
+      "title": "Multi-selection widget",
+      "semanticElement": "listbox multiselect or checkbox group",
+      "keyboardContract": "Tab enter; arrows navigate; Space toggle; selection remains explicit",
+      "invariants": [
+        "Exact keyboard model and form serialization pending provider fixture",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "multi-select"
+      ]
+    },
+    {
+      "id": "menu",
+      "title": "Menu button / menu items",
+      "semanticElement": "button+menu",
+      "keyboardContract": "Enter/Space open; arrows/Home/End/typeahead items; Escape closes and returns focus",
+      "invariants": [
+        "Action menu not ordinary navigation; submenus must match APG",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "dropdown-menu",
+        "context-menu",
+        "column-visibility",
+        "data-export",
+        "split-button",
+        "action-menu",
+        "column-chooser",
+        "export-menu"
+      ]
+    },
+    {
+      "id": "menubar",
+      "title": "Menubar",
+      "semanticElement": "menubar",
+      "keyboardContract": "ArrowLeft/Right top-level; ArrowUp/Down submenu; Escape collapses; typeahead",
+      "invariants": [
+        "RTL reversals must be tested; no arbitrary navigation bar role",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "menubar"
+      ]
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs manual activation proposal",
+      "semanticElement": "tablist/tab/tabpanel",
+      "keyboardContract": "Tab to selected tab; arrows/Home/End move focus; Enter/Space activate manual tab",
+      "invariants": [
+        "Auto activation only if no latency and explicitly chosen",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "tabs"
+      ]
+    },
+    {
+      "id": "dialog",
+      "title": "Modal dialog",
+      "semanticElement": "dialog modal",
+      "keyboardContract": "Trigger Enter/Space; Tab/Shift+Tab within modal; Escape dismisses unless justified",
+      "invariants": [
+        "Initial focus and restoration, inert backdrop, labeled title; nested overlays",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "dialog",
+        "drawer"
+      ]
+    },
+    {
+      "id": "alert-dialog",
+      "title": "AlertDialog confirmation",
+      "semanticElement": "alertdialog",
+      "keyboardContract": "Tab through actions, Escape policy explicitly documented, focus safe action first when destructive",
+      "invariants": [
+        "No implicit confirmation on mount; async confirmation completion app-owned",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "alert-dialog",
+        "confirm-action"
+      ]
+    },
+    {
+      "id": "popover",
+      "title": "Non-modal interactive popover",
+      "semanticElement": "button+dialog/group appropriate",
+      "keyboardContract": "Trigger Enter/Space; Tab normal interaction within; Escape closes and restores focus as appropriate",
+      "invariants": [
+        "Not a tooltip; modality and outside interaction specified by component",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "popover",
+        "hover-card"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "title": "Informational tooltip",
+      "semanticElement": "tooltip",
+      "keyboardContract": "Focus/hover trigger opens; Escape dismisses; focus stays trigger",
+      "invariants": [
+        "No interactive controls in tooltip; APG pattern still work in progress",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "tooltip"
+      ]
+    },
+    {
+      "id": "disclosure",
+      "title": "Accordion/collapsible disclosure",
+      "semanticElement": "button[aria-expanded]",
+      "keyboardContract": "Enter/Space toggle, Tab through headers; arrows only in approved accordion pattern",
+      "invariants": [
+        "Associate controlled region, orientation and disabled behavior",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "accordion",
+        "collapsible",
+        "expandable-row"
+      ]
+    },
+    {
+      "id": "toggle",
+      "title": "Toggle button",
+      "semanticElement": "button[aria-pressed]",
+      "keyboardContract": "Tab; Enter/Space toggle once; announce pressed state",
+      "invariants": [
+        "Don't treat pressed state as checkbox unless semantics fit",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "toggle"
+      ]
+    },
+    {
+      "id": "toggle-group",
+      "title": "Group of toggles",
+      "semanticElement": "group/toolbar",
+      "keyboardContract": "Tab to group, arrows optional per toolbar model; Enter/Space toggles",
+      "invariants": [
+        "Selection single/multiple discriminated union required",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "segmented-control",
+        "toggle-group"
+      ]
+    },
+    {
+      "id": "slider",
+      "title": "Slider",
+      "semanticElement": "input[type=range] or role slider",
+      "keyboardContract": "Arrow keys +/- step; Home/End min/max; PageUp/Down optional consistent",
+      "invariants": [
+        "Accessible min/max/now/text; RTL horizontal behavior validate",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "slider"
+      ]
+    },
+    {
+      "id": "calendar-grid",
+      "title": "Calendar date/grid selection",
+      "semanticElement": "grid",
+      "keyboardContract": "Arrows move date focus; Home/End week; PageUp/Down months per selected pattern",
+      "invariants": [
+        "Locale, timezone, disabled dates; don't invent date engine",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "date-picker",
+        "date-range-picker",
+        "calendar",
+        "time-picker"
+      ]
+    },
+    {
+      "id": "treeview",
+      "title": "Tree view",
+      "semanticElement": "tree/treeitem",
+      "keyboardContract": "Arrows navigate; Right expand/Left collapse; Home/End; typeahead",
+      "invariants": [
+        "Separate focus/selection/expansion, keyboard screen reader review",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "tree-view"
+      ]
+    },
+    {
+      "id": "table-static",
+      "title": "Native semantic data table",
+      "semanticElement": "table",
+      "keyboardContract": "Tab only interactive cells; no roving tabindex in plain table",
+      "invariants": [
+        "th/scope/caption/row headings; no grid role unless true interactive grid",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "table"
+      ]
+    },
+    {
+      "id": "table-controlled",
+      "title": "Controlled sortable/paged table",
+      "semanticElement": "table plus controls",
+      "keyboardContract": "Sort header is button; Tab navigates controls; row selection via checkbox",
+      "invariants": [
+        "Headless engine optional; advanced grid keys not promised",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://tanstack.com/table/latest/docs/overview",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "data-table",
+        "kanban",
+        "data-grid-facade",
+        "table-cell-renderer"
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation/landmark",
+      "semanticElement": "nav / aside / header",
+      "keyboardContract": "Tab through links/buttons, native activation; Escape only overlay variant",
+      "invariants": [
+        "No menubar arrow model for basic nav; adapt reading/focus order on mobile",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "button-group",
+        "breadcrumbs",
+        "navigation-menu",
+        "sidebar",
+        "app-shell",
+        "topbar",
+        "navigation-rail",
+        "mobile-navigation",
+        "kbd",
+        "bulk-action-toolbar"
+      ]
+    },
+    {
+      "id": "pagination",
+      "title": "Page navigation",
+      "semanticElement": "nav + buttons/links",
+      "keyboardContract": "Tab and Enter/Space per element, announce current page",
+      "invariants": [
+        "Cursor backend may not know total; never fabricate page totals",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "pagination"
+      ]
+    },
+    {
+      "id": "command",
+      "title": "Search-and-command dialog",
+      "semanticElement": "combobox/dialog/listbox",
+      "keyboardContract": "Open by trigger/approved shortcut; arrows navigate; Enter executes intent; Escape dismisses",
+      "invariants": [
+        "Never capture platform shortcuts globally without opt-in",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "command-palette"
+      ]
+    },
+    {
+      "id": "otp",
+      "title": "One-time code fields",
+      "semanticElement": "group + inputs",
+      "keyboardContract": "Native typing/paste/delete; deterministic focus advance, backspace and arrow behavior",
+      "invariants": [
+        "Never log OTP/password; full form handling by consumer",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "pin-input"
+      ]
+    },
+    {
+      "id": "resizable",
+      "title": "Resizable separator",
+      "semanticElement": "separator aria-valuenow",
+      "keyboardContract": "Keyboard arrows resize; Home/End reach bounds; pointer drag parity",
+      "invariants": [
+        "Persisting pane sizes is app-owned; reduced motion",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/patterns/window-splitter/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "resizable"
+      ]
+    },
+    {
+      "id": "toast",
+      "title": "Announced non-modal notification",
+      "semanticElement": "status or alert as appropriate",
+      "keyboardContract": "No focus theft, Tab to dismissal/action if present, Escape not universal",
+      "invariants": [
+        "Live region urgency, pause timeout, readable duration; no duplicate announcements",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "toast"
+      ]
+    },
+    {
+      "id": "copy",
+      "title": "Copy-action button",
+      "semanticElement": "button",
+      "keyboardContract": "Tab, Enter/Space once; announce copy outcome after app/browser confirmation",
+      "invariants": [
+        "Clipboard permission failure must be reported, not invented success",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "copy-button"
+      ]
+    },
+    {
+      "id": "static",
+      "title": "Noninteractive semantic presentation",
+      "semanticElement": "semantic HTML",
+      "keyboardContract": "No added keyboard stops unless child is interactive",
+      "invariants": [
+        "No focus/hover/disabled APIs unless meaningful per child",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "theme-provider",
+        "responsive-container",
+        "stack",
+        "inline",
+        "grid",
+        "divider",
+        "visually-hidden",
+        "icon",
+        "focus-ring",
+        "error-boundary",
+        "alert",
+        "callout",
+        "status-badge",
+        "badge",
+        "avatar",
+        "chip",
+        "avatar-group",
+        "timeline",
+        "activity-feed",
+        "chart-container",
+        "chart-legend",
+        "quest-card",
+        "rarity-badge",
+        "inventory-slot",
+        "journal-frame",
+        "ledger-filter-workspace",
+        "split-detail-pane",
+        "audit-timeline",
+        "editorial-spread",
+        "container",
+        "flex",
+        "typography",
+        "scroll-area",
+        "logo-slot",
+        "aspect-ratio",
+        "surface",
+        "spacing-token-probe",
+        "motion-preference",
+        "card",
+        "stat-card",
+        "description-list",
+        "code-block",
+        "markdown-content",
+        "media-frame",
+        "metric-delta"
+      ]
+    },
+    {
+      "id": "async",
+      "title": "State-driven presentation/status",
+      "semanticElement": "status/region",
+      "keyboardContract": "Only contained real controls tabbable; retry is button/link",
+      "invariants": [
+        "No hidden fetch/network, success state controlled externally",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "empty-state",
+        "error-state",
+        "offline-state",
+        "service-health-panel",
+        "event-stream",
+        "log-viewer",
+        "inline-error",
+        "permission-denied",
+        "connection-error",
+        "maintenance-notice",
+        "session-expired-notice",
+        "file-preview",
+        "query-state-banner"
+      ]
+    },
+    {
+      "id": "progress",
+      "title": "Progress indication",
+      "semanticElement": "progress or role progressbar",
+      "keyboardContract": "Not focusable by default; announce status and value where relevant",
+      "invariants": [
+        "Indeterminate and determinate are separate states; no motion-only progress",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://www.w3.org/WAI/ARIA/apg/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "progress",
+        "spinner",
+        "skeleton",
+        "progress-indicator",
+        "password-strength-meter"
+      ]
+    },
+    {
+      "id": "form-composition",
+      "title": "Form labels/field associations",
+      "semanticElement": "label/fieldset/legend/output/p",
+      "keyboardContract": "Native control focus; no extra custom shortcuts",
+      "invariants": [
+        "Field owns associations, input owns value/DOM; FormMessage owns message contents",
+        "Cross-skin behavior/focus/aria is invariant; 15 skins × 2 effective modes"
+      ],
+      "primarySource": "https://html.spec.whatwg.org/",
+      "verification": [
+        "keyboard manual",
+        "screen reader where relevant",
+        "pointer/touch parity",
+        "RTL/zoom/forced-colors/reduced-motion if applicable"
+      ],
+      "readiness": "specified-pattern-not-implemented",
+      "componentIds": [
+        "label",
+        "field",
+        "fieldset",
+        "form-message",
+        "validation-summary",
+        "otpinput",
+        "unsaved-changes",
+        "filter-bar",
+        "form-layout",
+        "field-array",
+        "nested-field-group"
+      ]
+    }
+  ],
+  "componentMappings": [
+    {
+      "componentId": "theme-provider",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "skin-selector",
+      "patternId": "native-select",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "mode-selector",
+      "patternId": "native-select",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "density-selector",
+      "patternId": "native-select",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "responsive-container",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "stack",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "inline",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "grid",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "divider",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "visually-hidden",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "icon",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "focus-ring",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "error-boundary",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "button",
+      "patternId": "native-button",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "icon-button",
+      "patternId": "native-button",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "link",
+      "patternId": "native-link",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "button-group",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "breadcrumbs",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "tabs",
+      "patternId": "tabs",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "segmented-control",
+      "patternId": "toggle-group",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "pagination",
+      "patternId": "pagination",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "navigation-menu",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "sidebar",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "app-shell",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "topbar",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "navigation-rail",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "mobile-navigation",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "dropdown-menu",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "context-menu",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "menubar",
+      "patternId": "menubar",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "command-palette",
+      "patternId": "command",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "kbd",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "input",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "textarea",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "label",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "field",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "fieldset",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "form-message",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "checkbox",
+      "patternId": "checkbox",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "radio-group",
+      "patternId": "radio-group",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "switch",
+      "patternId": "switch",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "select",
+      "patternId": "select-popup",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "combobox",
+      "patternId": "combobox",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "search-input",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "number-input",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "slider",
+      "patternId": "slider",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "validation-summary",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "autocomplete",
+      "patternId": "combobox",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "multi-select",
+      "patternId": "multi-select",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "date-picker",
+      "patternId": "calendar-grid",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "date-range-picker",
+      "patternId": "calendar-grid",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "currency-input",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "file-upload",
+      "patternId": "file-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "otpinput",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "unsaved-changes",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "dialog",
+      "patternId": "dialog",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "alert-dialog",
+      "patternId": "alert-dialog",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "drawer",
+      "patternId": "dialog",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "popover",
+      "patternId": "popover",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "tooltip",
+      "patternId": "tooltip",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "toast",
+      "patternId": "toast",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "alert",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "callout",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "progress",
+      "patternId": "progress",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "spinner",
+      "patternId": "progress",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "skeleton",
+      "patternId": "progress",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "empty-state",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "error-state",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "status-badge",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "badge",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "avatar",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "accordion",
+      "patternId": "disclosure",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "collapsible",
+      "patternId": "disclosure",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "offline-state",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "chip",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "avatar-group",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "timeline",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "activity-feed",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "table",
+      "patternId": "table-static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "data-table",
+      "patternId": "table-controlled",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "filter-bar",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "bulk-action-toolbar",
+      "patternId": "navigation",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "column-visibility",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "row-selection",
+      "patternId": "checkbox",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "saved-views",
+      "patternId": "select-popup",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "tree-view",
+      "patternId": "treeview",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "calendar",
+      "patternId": "calendar-grid",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "kanban",
+      "patternId": "table-controlled",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "chart-container",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "chart-legend",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "data-export",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "quest-card",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "rarity-badge",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "inventory-slot",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "progress-indicator",
+      "patternId": "progress",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "journal-frame",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "ledger-filter-workspace",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "split-detail-pane",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "audit-timeline",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "service-health-panel",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "event-stream",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "log-viewer",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "editorial-spread",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "container",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "flex",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "typography",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "scroll-area",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "resizable",
+      "patternId": "resizable",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "logo-slot",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "aspect-ratio",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "surface",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "spacing-token-probe",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "motion-preference",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "form-layout",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "toggle",
+      "patternId": "toggle",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "toggle-group",
+      "patternId": "toggle-group",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "hover-card",
+      "patternId": "popover",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "split-button",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "action-menu",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "skip-link",
+      "patternId": "native-link",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "time-picker",
+      "patternId": "calendar-grid",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "password-field",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "phone-input",
+      "patternId": "text-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "pin-input",
+      "patternId": "otp",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "field-array",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "nested-field-group",
+      "patternId": "form-composition",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "password-strength-meter",
+      "patternId": "progress",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "file-dropzone",
+      "patternId": "file-input",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "confirm-action",
+      "patternId": "alert-dialog",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "inline-error",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "permission-denied",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "connection-error",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "maintenance-notice",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "session-expired-notice",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "card",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "stat-card",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "description-list",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "copy-button",
+      "patternId": "copy",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "code-block",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "markdown-content",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "file-preview",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "media-frame",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "metric-delta",
+      "patternId": "static",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "expandable-row",
+      "patternId": "disclosure",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "data-grid-facade",
+      "patternId": "table-controlled",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "table-cell-renderer",
+      "patternId": "table-controlled",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "column-chooser",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "filter-chip",
+      "patternId": "native-button",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "saved-view-picker",
+      "patternId": "select-popup",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "export-menu",
+      "patternId": "menu",
+      "applicability": "required",
+      "manualReview": "required-before-release",
+      "status": "specified-not-tested"
+    },
+    {
+      "componentId": "query-state-banner",
+      "patternId": "async",
+      "applicability": "required",
+      "manualReview": "risk-based",
+      "status": "specified-not-tested"
+    }
+  ]
+}
