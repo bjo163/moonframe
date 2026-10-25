@@ -59,3 +59,25 @@ These sources were opened/verified on 2026-10-25; where the official site did no
 | R34 | [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | WCAG 2.2 Recommendation dated 2024-12-12, manual+automated review needed |
 
 **Research gaps:** Recharts official accessibility/feature docs not sufficiently verified during this pass, so treat chart engine as candidate without a technical/library claim. Actual bundle-size benchmarks, licenses of exact versions, SSR/RTL tests, auth-provider callback integrations and final framework support need prototype evidence before selection.
+
+
+## Master Integration: verified primary-source addendum (2026-10-25)
+
+The links below were checked against official current documentation on **2026-10-25**; publication/version is recorded where the upstream page states it. They guide governance/specification, not evidence of installed dependencies or GitHub Project configuration.
+
+| ID | Publisher / source | Publication/version | Official fact, Moonframe implication | Confidence/caveat |
+|---|---|---|---|---|
+| INT-R01 | [DTCG Design Tokens 2025.10](https://www.designtokens.org/TR/2025.10/format/) | Final Community Group Report, 2025-10-28 | Stable interchange format with `$value` and optional `$type`, aliases; **not a W3C Recommendation**. Lock approved subset/tool versions under existing #5 and ADR-0002. | high; tooling conformity not tested |
+| INT-R02 | [GitHub sub-issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues) | Official current docs, no publication date verified | Parent-child issues supported with permissions; use sparingly for one outcome per task. | high; repository Project views/config not verified |
+| INT-R03 | [GitHub issue dependencies](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-issue-dependencies) | Official current docs, no date verified | Blocked-by/blocking relationships exist; textual MFI dependency IDs safe until connector support confirmed. | high; do not claim native relationships already created |
+| INT-R04 | [GitHub issue forms](https://docs.github.com/en/issues/building-community/configuring-issue-templates-for-your-repository) | Official docs | YAML forms/templates possible; first audit existing forms/labels/milestones before adding. | high; actual installed policy may differ |
+| INT-R05 | [Tailwind v4 theme variables](https://tailwindcss.com/docs/theme) | Current docs v4; no page date verified | `@theme` defines compile-time utility namespace and CSS variables; runtime active skin still requires resolved CSS variable semantics. | high; toolchain not installed |
+| INT-R06 | [shadcn/ui theming](https://ui.shadcn.com/docs/theming) | Current docs, no date verified | Uses semantic CSS property pairs. Classic can be visually inspired without affiliation or automatic upstream selection. | high; pinned upstream version pending #2 |
+| INT-R07 | [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) | W3C Recommendation (2023, updated 2024) | Testable accessibility target but not claimable from docs alone; manual assistive-tech evidence remains gate. | high |
+| INT-R08 | [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | Official current guidance | Component-specific semantics and keyboard patterns; shared across skins. | high; APG guidance not a substitute for testing |
+| INT-R09 | [Storybook accessibility](https://storybook.js.org/docs/writing-tests/accessibility-testing) | Current docs | axe checks are automated subset; incomplete/manual checks required; avoid 'fully accessible' claims. | high; Storybook not installed |
+| INT-R10 | [Playwright visual comparisons](https://playwright.dev/docs/test-snapshots) | Current docs | Stable OS/fonts/browser/fixture required to compare screenshots; no screenshot exists yet. | high |
+| INT-R11 | [Node.js package exports](https://nodejs.org/api/packages.html) | Current version varies | `exports` controls public subpaths; consumer import proof and support ranges before publication. | high; future decision #4 |
+| INT-R12 | [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/) | Current docs | OIDC avoids long-lived npm tokens; prerequisites include supported npm/Node versions; not configured here. | high; actual publisher setup not verified |
+
+**Impact:** Confirms current no-implementation direction; highlights issue identity drift `MF-003` (document audit), separation of build and runtime token layers, production test-evidence gap and need for explicit permission checks. Research logs per specialty remain evidence supplements, not duplicate canonical owner maps.

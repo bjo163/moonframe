@@ -4,6 +4,15 @@
 
 Moonframe UI is the planned first-party React design system for the Moon ecosystem. It aims to provide a premium, reusable component library and a genuinely multi-skin design engine—not a color-switcher.
 
+## Master integration audit & execution index (2026-10-25)
+
+- [Master integration audit & contradiction register](docs/audit/master-integration-audit.md) — verified HEAD snapshot, P0–P3 findings, structural results and not-run limits.
+- [Canonical source-of-truth registry](docs/architecture/decisions-and-governance.md#master-integration-registry--cross-domain-ownership-2026-10-25) — one policy owner per domain, machine-contract references and status transitions.
+- [Master Integration Issue Bible & deduplicated backlog](docs/backlog/master-integration-issue-bible.md) — MFI tasks, dependencies, acceptance/DoD; existing GitHub issues #1–#6 remain authoritative.
+- [Implementation roadmap](docs/implementation-roadmap.md) — dependent gates; [primary-source research](docs/research/research-log.md#master-integration-verified-primary-source-addendum-2026-10-25).
+
+**Scope of integration phase:** documentation/governance/contract validation only; no UI, production assets, SFX or published package. The 15 IDs/30 modes/105 pairs are structural checks, not visual review results.
+
 ## Current status
 
 **Verified 2026-10-25:** repository has specifications only. Contracts and a documentation-level validator are not working UI or approved token values. Provider, production token values, npm exports, assets, and SFX are intentionally pending. The 105 skin pair reviews remain unreviewed until real screenshots exist.
