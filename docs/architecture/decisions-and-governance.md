@@ -32,14 +32,19 @@ Start from one source-controlled workspace until consumers and release cadence j
 
 ## Lifecycle vocabulary
 
-- `proposed`: idea, no approved contract.
-- `specified`: contract written, internally validated, not code.
-- `implemented`: source exists, tests not yet complete.
-- `tested`: automated + relevant manual evidence linked.
-- `reviewed`: accepted by relevant owner.
-- `released`: tagged/published with compatibility/support evidence.
+Keep five evidence dimensions distinct. These are interpretation categories, not a requirement to copy five mutable fields into every contract; each contract remains the authority for its domain-specific status vocabulary.
 
-Use separate **specStatus**, **implementationStatus**, and **reviewStatus** when ambiguity is likely; `not-reviewed` refers to human evidence review and is not a release state.
+| Dimension | What it answers | Minimum evidence for a positive claim |
+|---|---|---|
+| `specStatus` | Is the contract or requirement written with a stated scope? | Canonical source, scoped acceptance criteria, and structural validation where applicable |
+| `implementationStatus` | Does the product behavior exist in source code? | Source path and identifiable behavior/scope; a written contract alone is not implementation |
+| `testStatus` | Did the named automated or manual check actually run? | Command/check, source SHA, environment, result, and run record; spec validation is not a UI test |
+| `reviewStatus` | Did the responsible human review the stated artifact and scope? | Reviewer, date, verdict, and linked evidence; a test pass alone is not review |
+| `releaseStatus` | Was the reviewed artifact approved and distributed for a stated scope? | Version/tag, compatibility/support scope, and distribution evidence |
+
+No dimension advances another automatically. `proposed` and `specified` describe specification maturity; `implemented` describes source existence; `tested` requires actual run evidence; `reviewed` requires a human record; `released` requires distribution evidence. Domain values such as `pending-values-and-contrast-review`, `not-reviewed`, `not-rendered`, and `no-rendered-ui-no-test-results` retain their source-specific meaning and must not be converted to a generic pass.
+
+Four current contracts illustrate the separation: the token source plan says `source-values-not-created` and all 30 value slots remain pending; the Skin Grammar contract is `specified-not-implemented` while all 105 pair reviews remain `not-reviewed`; the visual baseline matrix is planned with 270 cells `not-rendered`; the QA evidence ledger says `no-rendered-ui-no-test-results` and contains no records. None of these specification statuses claims implementation, test execution, human review, or release.
 
 ## Change control and release
 

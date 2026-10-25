@@ -1374,8 +1374,26 @@ function a11ySystemProblems(req,profiles,visual,ledger) {
    e.push('missing QA conditional schema');
  return e;
 }
+function evidenceStageProblems(tokenPlan,skinGrammar,visual,ledger){
+ const e=[];
+ if(tokenPlan.status!=='source-values-not-created'||tokenPlan.coverageSlots.length!==30||
+    tokenPlan.coverageSlots.some(x=>x.status!=='pending-values-and-contrast-review'||x.valuesSource!==null))
+   e.push('token specification/pending-value state falsely advanced');
+ if(skinGrammar.status!=='specified-not-implemented'||skinGrammar.pairwiseReviewMatrix.length!==105||
+    skinGrammar.pairwiseReviewMatrix.some(x=>x.status!=='not-reviewed'))
+   e.push('skin specification/review state falsely advanced');
+ if(visual.status!=='planned-no-screenshots-or-approvals'||visual.count.plannedCells!==270||
+    visual.count.rendered!==0||visual.count.manualApproved!==0||visual.cells.some(x=>x.status!=='not-rendered'))
+   e.push('visual test/review state falsely advanced');
+ if(ledger.status!=='no-rendered-ui-no-test-results'||ledger.records.length||ledger.exceptions.length||
+    ledger.defects.length||Object.values(ledger.counts).some(x=>x!==0))
+   e.push('QA test/review evidence falsely claimed');
+ return e;
+}
 for(const e of a11ySystemProblems(a11yReq,a11yProfiles,a11yVisual,a11yLedger))
  errors.push('Accessibility/Visual QA: '+e);
+const evidenceStageAudit=evidenceStageProblems(source,grammar,a11yVisual,a11yLedger);
+for(const e of evidenceStageAudit) errors.push('Evidence stage: '+e);
 fail(a11ySchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
     Array.isArray(a11ySchema.allOf)&&a11ySchema.allOf.length>=5&&
     a11ySchema.properties?.evidence&&a11ySchema.properties?.scope,
@@ -1385,6 +1403,18 @@ fail(a11yFixtures.valid.length>=1&&a11yFixtures.invalid.length>=14,
 for(const f of a11yFixtures.valid)
  for(const problem of a11yEvidenceProblems(f.record))
    errors.push('Valid a11y fixture '+f.id+': '+problem);
+if(process.argv.includes('--self-test')){
+ assert.equal(evidenceStageAudit.length,0,'Four representative contracts must retain distinct maturity dimensions');
+ const fakeTokenStage=structuredClone(source);fakeTokenStage.coverageSlots[0].valuesSource='claimed-production-value';
+ assert(evidenceStageProblems(fakeTokenStage,grammar,a11yVisual,a11yLedger).some(x=>x.includes('token specification')));
+ const fakeSkinReview=structuredClone(grammar);fakeSkinReview.pairwiseReviewMatrix[0].status='pass';
+ assert(evidenceStageProblems(source,fakeSkinReview,a11yVisual,a11yLedger).some(x=>x.includes('skin specification')));
+ const fakeRendered=structuredClone(a11yVisual);fakeRendered.cells[0].status='rendered';
+ assert(evidenceStageProblems(source,grammar,fakeRendered,a11yLedger).some(x=>x.includes('visual test')));
+ const fakeTestEvidence=structuredClone(a11yLedger);fakeTestEvidence.counts.automatedAxePasses=1;
+ assert(evidenceStageProblems(source,grammar,a11yVisual,fakeTestEvidence).some(x=>x.includes('QA test/review')));
+ console.log('PASS: evidence-stage crosswalk (token, skin-pair, visual, QA ledger); no inferred implementation/test/review/release pass');
+}
 if(process.argv.includes('--self-test')){
  for(const f of a11yFixtures.invalid)
    assert(a11yEvidenceProblems(f.record).length>0,
