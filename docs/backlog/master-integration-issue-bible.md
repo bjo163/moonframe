@@ -25,27 +25,27 @@
 
 Existing issue #1 **is** MF-003 consumer environments. The superseded old roadmap text calling MF-003 a shadcn audit is **not** another new issue. Existing #2 Classic baseline / #3 provider spike cover that territory.
 
-## Dependency-aware master integration backlog (12 proposed tasks)
+## Dependency-aware master integration backlog (12 tasks: 2 published, 10 proposed)
 
-| ID | Priority | Type | Area | Dependencies |
-|---|---|---|---|---|
-| MFI-001 | P0 | validation | governance | none |
-| MFI-002 | P1 | validation | governance | MFI-001 |
-| MFI-003 | P1 | validation | docs | MFI-002 |
-| MFI-004 | P1 | docs | governance | MFI-002 |
-| MFI-005 | P1 | decision | tokens-theme | MFI-002; #5 (MF-013) |
-| MFI-006 | P1 | contract | component-api | MFI-004; #3 (MF-005) |
-| MFI-007 | P1 | docs | premium | MFI-006 |
-| MFI-008 | P1 | docs | auth-data | MFI-007 |
-| MFI-009 | P2 | docs | assets-motion | MFI-002 |
-| MFI-010 | P1 | test | qa | #6 (MF-024); MFI-004 |
-| MFI-011 | P1 | decision | package | #1 (MF-003); #4 (MF-006); MFI-002 |
-| MFI-012 | P2 | governance | github | MFI-001; MFI-002 |
+| ID | Priority | Type | Area | Dependencies | GitHub issue |
+|---|---|---|---|---|---|
+| MFI-001 | P0 | validation | governance | none | [#7](https://github.com/bjo163/moonframe/issues/7) |
+| MFI-002 | P1 | validation | governance | MFI-001 | [#8](https://github.com/bjo163/moonframe/issues/8) |
+| MFI-003 | P1 | validation | docs | MFI-002 | not-created |
+| MFI-004 | P1 | docs | governance | MFI-002 | not-created |
+| MFI-005 | P1 | decision | tokens-theme | MFI-002; #5 (MF-013) | not-created |
+| MFI-006 | P1 | contract | component-api | MFI-004; #3 (MF-005) | not-created |
+| MFI-007 | P1 | docs | premium | MFI-006 | not-created |
+| MFI-008 | P1 | docs | auth-data | MFI-007 | not-created |
+| MFI-009 | P2 | docs | assets-motion | MFI-002 | not-created |
+| MFI-010 | P1 | test | qa | #6 (MF-024); MFI-004 | not-created |
+| MFI-011 | P1 | decision | package | #1 (MF-003); #4 (MF-006); MFI-002 | not-created |
+| MFI-012 | P2 | governance | github | MFI-001; MFI-002 | not-created |
 
 ### MFI-001 — Deteksi benturan task ID antara roadmap, backlog dan GitHub Issues
 
 **Stable ID:** MFI-001  
-**Type:** validation · **Priority:** P0 · **Area:** governance · **Status:** proposed · **Owner:** unassigned
+**Type:** validation · **Priority:** P0 · **Area:** governance · **Status:** spec-proposed; GitHub issue open · **Owner:** unassigned
 
 **Problem / evidence:** MF-003 di roadmap lama berarti audit shadcn, sedangkan issue #1 berarti consumer environment. CI saat ini tidak membuktikan konsistensi identitas task lintas dokumen.
 
@@ -80,7 +80,7 @@ Existing issue #1 **is** MF-003 consumer environments. The superseded old roadma
 ### MFI-002 — Validasi canonical ownership registry dan cross-domain references
 
 **Stable ID:** MFI-002  
-**Type:** validation · **Priority:** P1 · **Area:** governance · **Status:** proposed · **Owner:** unassigned
+**Type:** validation · **Priority:** P1 · **Area:** governance · **Status:** spec-proposed; GitHub issue open · **Owner:** unassigned
 
 **Problem / evidence:** Governance sudah memetakan pemilik domain tetapi mesin belum membuktikan keunikan owner dan keberadaan semua path.
 
@@ -467,3 +467,10 @@ Before creating an issue: search both open and closed, compare desired outcome, 
 ## Release gates for documentation sprint
 
 Baseline record; canonical owners; contradiction register; non-cyclic dependency IDs; 15 unique skin IDs; 30 pending slots; 105 unreviewed pairs; Markdown/JSON where actually tested; never promote QA status without evidence. Spec-validator passes **cannot** declare WCAG compliance, visual uniqueness or package readiness. Full release requires consumers, approved ADRs, production values, real implementation, tests, accessibility/visual evidence, provenance/licensing and package release governance.
+
+## First publication batch (verified 2026-10-25)
+
+- [MFI-001 — GitHub #7](https://github.com/bjo163/moonframe/issues/7): issue **open**, spec/governance task not completed, no labels or assignees assigned.
+- [MFI-002 — GitHub #8](https://github.com/bjo163/moonframe/issues/8): issue **open**, depends on MFI-001 (#7); no claim of native GitHub blocker edge.
+- MFI-003–MFI-012 remain **proposed markdown only**, not 10 GitHub issues.
+- Original six GitHub #1–#6 remain untouched. Original integration docs commit [5c5c1abb](https://github.com/bjo163/moonframe/commit/5c5c1abb2f095e2e1bb95ce8c02a434f296a607d) passed [spec-only CI](https://github.com/bjo163/moonframe/actions/runs/40187919987). This does not constitute UI/a11y QA.
