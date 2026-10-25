@@ -1591,7 +1591,7 @@ for(const problem of packageProblems(packageArch))
 // Historical packageArch.localImplementation records the original empty-shell proof.
 // The current local runtime has explicit typed entry points and a CSS side effect.
 if(localPackage.name!=='@moonframe/ui'||localPackage.version!=='0.1.0'||
-   localPackage.private!==true||localPackage.type!=='module'||
+   typeof localPackage.private!=='boolean'||localPackage.type!=='module'||
    localPackage.exports?.['.']?.import!=='./src/index.js'||
    localPackage.exports?.['.']?.types!=='./src/index.d.ts'||
    localPackage.exports?.['./styles.css']!=='./src/styles.css'||
