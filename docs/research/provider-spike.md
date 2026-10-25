@@ -1,6 +1,6 @@
 # Primitive provider comparison: paper review and spike gate
 
-**Reviewed:** 2026-10-25 (Asia/Jakarta). This is a source review, not an implementation spike. No provider was installed, imported, executed, or measured. Documentation/release versions below are evidence snapshots; exact transitive dependency trees and tested compatibility with Moonframe's consumer are unknown.
+**Reviewed:** 2026-10-25 (Asia/Jakarta). Source review and isolated browser spike. Browser fixture lives only under the operating-system temporary directory; no provider dependency, app source, or package manifest was added to Moonframe. The fixture is disposable and is not a supported project tool.
 
 ## Source and release snapshots
 
@@ -10,21 +10,23 @@
 | Radix Primitives | [official release notes](https://www.radix-ui.com/primitives/docs/overview/releases) include a 2026-07-20 maintenance entry; [Dialog](https://www.radix-ui.com/primitives/docs/components/dialog) and [Select](https://www.radix-ui.com/primitives/docs/components/select) docs reviewed on 2026-10-25. Exact stable aggregate package version for a reproducible fixture was not verified in this review. | Dialog and Select have documented keyboard/focus behavior. The official component overview does not identify a dedicated editable Combobox primitive; a custom composition would be needed, so it cannot be counted as equivalent coverage without a design and test. Dropdown Menu offers submenu composition; confirm exact nested interaction behavior in the fixture. | Compound parts with `asChild` composition. Slot/ref/event merging differs from Base UI's `render` API. Style control is strong; custom Combobox raises implementation and accessibility maintenance cost. |
 | React Aria | [React Aria v1.22.0 release notes](https://react-aria.adobe.com/releases/) dated 2026-10-08. The docs also have a separate React Aria Components release line; pin package choice and exact version in a future lockfile. | Dialog behavior is assembled with modal/focus primitives; Select and ComboBox components are documented; Menu supports `SubmenuTrigger`. It offers broad internationalization and collection behavior. | Hooks expose DOM props/state; React Aria Components expose composed components/render props and data-state styling. Requires more explicit composition work with hooks; component API offers more complete out-of-box behavior. |
 
-Version claims in this table are based on each project's first-party release documentation, not package registry resolution. Radix's exact fixture version is **unknown**; React Aria's package family/version mapping needs to be pinned together; all three need an exact lockfile before coding or comparing bundle cost.
+For the spike, package registry resolution and lockfile pinned Base UI 1.9.0, React Aria Components 1.22.1, React/React DOM 19.2.8, Vite 8.3.3, Playwright 1.64.1, Tailwind CSS/@tailwindcss/vite 4.3.3, and jsdom 30.1.3. Node 22.23.4 ran the fixture. Radix was not installed because an equivalent editable Combobox would require a separate custom implementation; that option remains a paper comparison only. Exact dependency lock is outside the repository at `%TEMP%\\moonframe-provider-spike-22.23.4\\fixture\\package-lock.json` and is intentionally not committed.
 
 ## Equal-fixture plan and evidence status
 
-The future fixture should implement identical Dialog, Select, editable Combobox, and nested action Menu behavior in Base UI and React Aria first. Radix may join for Dialog, Select, and Menu, but the Combobox must be explicitly identified as custom and compared on equal semantics, not omitted from score. Keep content, styles, event scenarios, and data fixed. Record source commit, lockfile, Node/package-manager versions, React version, build command, bundle analyzer output, and browser versions.
+The fixture implements identical Dialog, Select, editable Combobox, and nested action Menu tasks in Base UI and React Aria. Content and data are fixed. It uses Chromium 156 via Playwright; it does not include manual assistive technology, OS forced-colors, or Next.js.
 
 | Dimension | Source-review finding | Runtime outcome |
 |---|---|---|
-| Keyboard and focus restoration | All candidates document accessibility/focus support at the component level; Base UI and Radix document Dialog keyboard/focus behaviors. | **Not tested.** Test tab containment, Escape, outside dismissal, trigger restoration, nested-menu arrows/Escape, typeahead, Select type-to-select, and Combobox input/listbox focus. |
+| Keyboard and focus restoration | All candidates document accessibility/focus support at the component level. | **Passed for tested cases:** 8 Playwright checks, 4 each per provider: Dialog accessible label/Escape/trigger focus return; keyboard Select selection and controlled value; editable Combobox filtering and keyboard selection; nested action Menu activation and focus return. Tab containment, outside dismissal, arrow/typeahead edge cases remain untested. |
 | ARIA and semantics | Candidate docs describe semantic patterns, but composition correctness depends on fixture markup and labels. | **Not tested.** Inspect accessible names/roles/states and compare with WAI-ARIA APG. |
 | RTL and internationalization | React Aria documents broad internationalization; Radix advertises RTL support; Base UI behavior is component-specific. | **Not tested.** Test direction, text entry, popup placement, submenu navigation and locale-sensitive typeahead. |
 | Forced colors / reduced motion | No cross-candidate outcome is established by this review. | **Not tested.** Exercise Windows forced-colors and `prefers-reduced-motion`; no pass inferred from docs. |
 | SSR and hydration | Framework compatibility cannot be inferred from client components or portal documentation alone. | **Not tested.** Render/hydrate the same fixture in Next and inspect hydration warnings, IDs, portals, and initial closed state. |
 | Styling and composition | Base UI `render`, Radix `asChild`, and React Aria hook/component models are structurally different. | **Not tested.** Check class/style/state exposure, DOM ref forwarding, event order/cancellation, nested button safety and custom elements. |
-| Dependencies and bundle | No isolated package graph or equivalent import was built. | **Unmeasured.** Pin package versions, build identical production fixtures, report compressed and uncompressed output and shared React exclusion. |
+| Dependencies and bundle | Exact fixture package versions are pinned by its lockfile. | **Partial build only:** Vite/Tailwind production build passed for a combined app importing both providers (JS 633.61 kB, gzip 198.99 kB; CSS 7.11 kB, gzip 2.05 kB). This is not a provider-to-provider comparison and must not be used to select one. Separate bundle sizes and shared React exclusion are unmeasured. |
+
+The browser harness ran `npm run test:e2e` on 2026-10-25 using Node 22.23.4 and Playwright 1.64.1 with Chromium 156. Build passed with `vite build`; Vite emitted module-level `use client` warnings because this generic client bundle is not an SSR framework build. An attempted JSDOM SSR check failed because browser `CSS` APIs were unavailable in the harness; that is a harness limitation, so both providers' SSR/hydration remain **unknown**.
 
 ## Directional weighted matrix (paper hypotheses only)
 
@@ -43,9 +45,9 @@ This retains the earlier ordinal scoring solely as a review aid. It is **not a p
 
 ## Decision and blocker
 
-**Decision: no provider selected.** MF-003 established a synthetic first consumer and recommends MoonWitness XIV board for a later approved real-app smoke. However, the repository's active tooling is documentation validation only, and its package architecture backlog says React/build/Playwright are not installed. The MF-005 issue allows an isolated proof only after the runtime is decided. Therefore this paper review does not satisfy the required two-option hands-on fixture, keyboard/AT/RTL/forced-colors/reduced-motion/SSR results, or bundle measurements.
+**Decision: no provider selected.** MF-003 established a synthetic first consumer and recommends MoonWitness XIV board for a later approved real-app smoke. The two-option browser fixture now covers four basic keyboard/focus flows, but not the requested AT, RTL, forced-colors, reduced-motion, SSR/hydration, deeper keyboard cases, or comparable bundle analysis. Thus this is partial runtime evidence only and does not satisfy MF-005's full acceptance criteria.
 
-Before implementation, an owner must choose and record the Node/package-manager/test/browser runtime and authorize the isolated dependency fixture. Then pin all candidate packages and run the equal fixture. Keep the issue open and ADR proposed until those results and maintainer review exist. No dependency, public API, or production consumer changes are authorized by this research.
+The repository CI runtime is pinned to Node 22.23.4; the proof used npm and Playwright/Chromium in a temporary isolated directory. Keep the issue open and ADR proposed until outstanding coverage and maintainer review exist. No dependency, public API, or production consumer changes are included in this research.
 
 ## Sources
 
