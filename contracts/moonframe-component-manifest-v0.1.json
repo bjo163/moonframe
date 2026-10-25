@@ -1,0 +1,5708 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-COMPONENTS-001",
+  "status": "catalog-specified-not-implemented",
+  "counts": {
+    "total": 103,
+    "byTier": {
+      "core-v1": 69,
+      "future": 8,
+      "premium-block": 14,
+      "specialized-optional": 12
+    }
+  },
+  "apiWarning": "Names and prop stubs are intentions, NOT approved TypeScript signatures or exported code.",
+  "components": [
+    {
+      "id": "theme-provider",
+      "name": "ThemeProvider",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ThemeProvider UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "skin-selector",
+      "name": "SkinSelector",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable SkinSelector UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "mode-selector",
+      "name": "ModeSelector",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ModeSelector UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "density-selector",
+      "name": "DensitySelector",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable DensitySelector UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "responsive-container",
+      "name": "ResponsiveContainer",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ResponsiveContainer UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Stack UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "inline",
+      "name": "Inline",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Inline UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Grid UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "divider",
+      "name": "Divider",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Divider UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "visually-hidden",
+      "name": "VisuallyHidden",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable VisuallyHidden UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "icon",
+      "name": "Icon",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Icon UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "focus-ring",
+      "name": "FocusRing",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable FocusRing UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "error-boundary",
+      "name": "ErrorBoundary",
+      "group": "foundation",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ErrorBoundary UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Button UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "icon-button",
+      "name": "IconButton",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable IconButton UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "link",
+      "name": "Link",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Link UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "button-group",
+      "name": "ButtonGroup",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ButtonGroup UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Breadcrumbs UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Tabs UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "segmented-control",
+      "name": "SegmentedControl",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable SegmentedControl UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Pagination UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "navigation-menu",
+      "name": "NavigationMenu",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable NavigationMenu UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "sidebar",
+      "name": "Sidebar",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Sidebar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "app-shell",
+      "name": "AppShell",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable AppShell UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "topbar",
+      "name": "Topbar",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Topbar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "navigation-rail",
+      "name": "NavigationRail",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable NavigationRail UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "mobile-navigation",
+      "name": "MobileNavigation",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable MobileNavigation UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "dropdown-menu",
+      "name": "DropdownMenu",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable DropdownMenu UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "context-menu",
+      "name": "ContextMenu",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ContextMenu UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "menubar",
+      "name": "Menubar",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Menubar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "command-palette",
+      "name": "CommandPalette",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable CommandPalette UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "kbd",
+      "name": "Kbd",
+      "group": "actions",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Kbd UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Input UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "textarea",
+      "name": "Textarea",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Textarea UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "label",
+      "name": "Label",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Label UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "field",
+      "name": "Field",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Field UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "fieldset",
+      "name": "Fieldset",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Fieldset UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "form-message",
+      "name": "FormMessage",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable FormMessage UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Checkbox UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "radio-group",
+      "name": "RadioGroup",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable RadioGroup UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Switch UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Select UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "combobox",
+      "name": "Combobox",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Combobox UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "search-input",
+      "name": "SearchInput",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable SearchInput UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "number-input",
+      "name": "NumberInput",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable NumberInput UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Slider UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "validation-summary",
+      "name": "ValidationSummary",
+      "group": "forms",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ValidationSummary UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "autocomplete",
+      "name": "Autocomplete",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable Autocomplete UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "multi-select",
+      "name": "MultiSelect",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable MultiSelect UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "date-picker",
+      "name": "DatePicker",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable DatePicker UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "date-range-picker",
+      "name": "DateRangePicker",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable DateRangePicker UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "currency-input",
+      "name": "CurrencyInput",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable CurrencyInput UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "file-upload",
+      "name": "FileUpload",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable FileUpload UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "otpinput",
+      "name": "OTPInput",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable OTPInput UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Programmatic label, error association, values, disabled/invalid states, touch targets",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "unsaved-changes",
+      "name": "UnsavedChanges",
+      "group": "forms",
+      "tier": "future",
+      "packageExport": "pending",
+      "purpose": "Reusable UnsavedChanges UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "dialog",
+      "name": "Dialog",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Dialog UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "APG dialog focus trap/restoration; labelled title, Escape semantics, destructive confirmation when relevant",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "alert-dialog",
+      "name": "AlertDialog",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable AlertDialog UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "APG dialog focus trap/restoration; labelled title, Escape semantics, destructive confirmation when relevant",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "drawer",
+      "name": "Drawer",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Drawer UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "APG dialog focus trap/restoration; labelled title, Escape semantics, destructive confirmation when relevant",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "popover",
+      "name": "Popover",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Popover UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Tooltip UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Toast UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Alert UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "callout",
+      "name": "Callout",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Callout UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "progress",
+      "name": "Progress",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Progress UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "spinner",
+      "name": "Spinner",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Spinner UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Skeleton UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "empty-state",
+      "name": "EmptyState",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable EmptyState UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "error-state",
+      "name": "ErrorState",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable ErrorState UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "status-badge",
+      "name": "StatusBadge",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable StatusBadge UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Badge UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Avatar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Accordion UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "collapsible",
+      "name": "Collapsible",
+      "group": "feedback",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Collapsible UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "offline-state",
+      "name": "OfflineState",
+      "group": "feedback",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable OfflineState UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "chip",
+      "name": "Chip",
+      "group": "feedback",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable Chip UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "avatar-group",
+      "name": "AvatarGroup",
+      "group": "feedback",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable AvatarGroup UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "group": "feedback",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable Timeline UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "activity-feed",
+      "name": "ActivityFeed",
+      "group": "feedback",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable ActivityFeed UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "group": "data",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable Table UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Preserve table/list semantics, data headers, keyboard selection and screen-reader summaries",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "data-table",
+      "name": "DataTable",
+      "group": "data",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable DataTable UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Preserve table/list semantics, data headers, keyboard selection and screen-reader summaries",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "filter-bar",
+      "name": "FilterBar",
+      "group": "data",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable FilterBar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "bulk-action-toolbar",
+      "name": "BulkActionToolbar",
+      "group": "data",
+      "tier": "core-v1",
+      "packageExport": "pending",
+      "purpose": "Reusable BulkActionToolbar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "column-visibility",
+      "name": "ColumnVisibility",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable ColumnVisibility UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "row-selection",
+      "name": "RowSelection",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable RowSelection UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Correct popup/listbox/menu pattern, keyboard active descendant/roving semantics, Escape and focus restoration",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "saved-views",
+      "name": "SavedViews",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable SavedViews UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "tree-view",
+      "name": "TreeView",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable TreeView UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Preserve table/list semantics, data headers, keyboard selection and screen-reader summaries",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable Calendar UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Preserve table/list semantics, data headers, keyboard selection and screen-reader summaries",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "kanban",
+      "name": "Kanban",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable Kanban UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Preserve table/list semantics, data headers, keyboard selection and screen-reader summaries",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "chart-container",
+      "name": "ChartContainer",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable ChartContainer UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "chart-legend",
+      "name": "ChartLegend",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable ChartLegend UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "data-export",
+      "name": "DataExport",
+      "group": "data",
+      "tier": "premium-block",
+      "packageExport": "pending",
+      "purpose": "Reusable DataExport UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "Table",
+        "foundation"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "quest-card",
+      "name": "QuestCard",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable QuestCard UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "rarity-badge",
+      "name": "RarityBadge",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable RarityBadge UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "inventory-slot",
+      "name": "InventorySlot",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable InventorySlot UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "progress-indicator",
+      "name": "ProgressIndicator",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable ProgressIndicator UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "journal-frame",
+      "name": "JournalFrame",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable JournalFrame UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "ledger-filter-workspace",
+      "name": "LedgerFilterWorkspace",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable LedgerFilterWorkspace UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "split-detail-pane",
+      "name": "SplitDetailPane",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable SplitDetailPane UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "audit-timeline",
+      "name": "AuditTimeline",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable AuditTimeline UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "service-health-panel",
+      "name": "ServiceHealthPanel",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable ServiceHealthPanel UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "event-stream",
+      "name": "EventStream",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable EventStream UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "log-viewer",
+      "name": "LogViewer",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable LogViewer UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    },
+    {
+      "id": "editorial-spread",
+      "name": "EditorialSpread",
+      "group": "specialized",
+      "tier": "specialized-optional",
+      "packageExport": "pending",
+      "purpose": "Reusable EditorialSpread UI presentation and interactions; no product-specific business logic",
+      "proposedAPI": {
+        "props": "typed contract pending provider spike",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "variant": [
+          "default",
+          "quiet",
+          "strong"
+        ],
+        "controlledUncontrolled": "define per interactive component; no ambiguous ownership"
+      },
+      "states": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "loading/invalid/selected only where applicable"
+      ],
+      "a11y": "Focus-visible, accessible name/role, keyboard behavior, contrast, states and forced-colors",
+      "keyboard": "Follow corresponding WAI-ARIA APG pattern and native behavior",
+      "responsive": "Reflow, long content and overflow without inaccessible clipping",
+      "skinRecipe": "See each skin's componentRecipes or document extension during implementation",
+      "density": "compact/comfortable/spacious independent of skin",
+      "reducedMotion": "prefer instant transition without meaning loss",
+      "errorEmpty": "document per applicable component",
+      "dependencies": [
+        "core foundation",
+        "relevant primitive component"
+      ],
+      "documentation": [
+        "API",
+        "usage",
+        "a11y",
+        "stories",
+        "consumer fixture",
+        "migration"
+      ],
+      "testRequirements": [
+        "interaction",
+        "keyboard",
+        "screen-reader-manual-if-complex",
+        "visual-30-appearance-risk-matrix"
+      ],
+      "publicAPIStability": "proposed",
+      "owner": "unassigned",
+      "implementationStatus": "not-implemented"
+    }
+  ]
+}

@@ -1,0 +1,1444 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractVersion": "1.0.0",
+  "contractId": "MF-SKIN-SPEC-001",
+  "status": "specified-not-implemented",
+  "canonicalSkinIdsFrom": "moonframe-theme-contract-v1.3.json",
+  "referenceGrammar": "moonframe-skin-grammar-contract-v1.0.json",
+  "note": "These 15 proposed recipes are testable art-direction specifications, not rendered visual proof or approved production tokens.",
+  "requiredFields": [
+    "id",
+    "name",
+    "positioning",
+    "signatureShell",
+    "layout",
+    "geometry",
+    "typography",
+    "navigation",
+    "componentRecipes",
+    "dataVisualization",
+    "media",
+    "motion",
+    "appearance",
+    "responsive",
+    "accessibilityRisks",
+    "antiPatterns",
+    "referenceScreenRequirements",
+    "evaluation",
+    "specStatus",
+    "implementationStatus",
+    "approvalStatus"
+  ],
+  "skins": [
+    {
+      "id": "moonpunk",
+      "name": "Moonpunk",
+      "positioning": "Impactful experimental creative dashboards",
+      "signatureShell": "Offset rail beside asymmetric ink slabs",
+      "layout": {
+        "composition": "asymmetric block composition; strong framed zones; offset utility rail",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "thick black outlines; square-to-cut corners; hard offset shadows",
+        "frameAndElevation": "ink-dark planes; exposed borders; controlled grain"
+      },
+      "typography": {
+        "hierarchy": "condensed loud display + highly legible neutral body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "command rail with high-contrast active slab",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "High-impact boxed actions and torn-corner accent",
+        "input": "Thick outlined field, visible focus inside offset plate",
+        "select": "Industrial block select with squared popup frame",
+        "card": "Hard-offset solid card",
+        "dialog": "Poster-slab dialog with intact reading order",
+        "table": "Strong row rules and chunky numeric header",
+        "notification": "Signal-sticker label plus plain text"
+      },
+      "dataVisualization": {
+        "presentation": "bold stat slabs; simplified charts with sharp markers",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original manga ink, torn-paper edges, halftone used sparingly",
+        "decorationRule": "Hard pixel edge, no pseudo-cyber glitch",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "snappy 100–180ms; short impact settle; reduced-motion removes overshoot",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile reorders rail after page title",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Dense decoration can reduce text legibility",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not become Moonriot recolored red or Moonsmash with lime",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonriot",
+      "name": "Moonriot",
+      "positioning": "Angular editorial command surfaces",
+      "signatureShell": "Diagonal editorial masthead and interrupted split navigation",
+      "layout": {
+        "composition": "diagonal split panels; intentionally disrupted editorial columns",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "sharp cuts; slanted section dividers; asymmetric border breaks",
+        "frameAndElevation": "black fields; signal-red annotations; limited scan distortion"
+      },
+      "typography": {
+        "hierarchy": "compressed editorial display + disciplined technical body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "split navigation with angular section markers",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Angular cut button with consistent rectangular hitbox",
+        "input": "Cut-corner border against clean input interior",
+        "select": "Slanted header and orthogonal listbox reading plane",
+        "card": "Split-panel card with red marginal annotations",
+        "dialog": "Asymmetric overlay, straight reading column",
+        "table": "Editorial contrast bands with stable tabular grid",
+        "notification": "Side-edge annotation stripe and explicit copy"
+      },
+      "dataVisualization": {
+        "presentation": "signal strips and segmented metrics; labels remain steady and readable",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "riot posters, signal marks, abstract original cut-up forms",
+        "decorationRule": "No halftone paper; diagonals are structure",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "short directional wipes; glitch only as optional nonessential accent",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile turns diagonals into safe section separators",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Skew must never skew the interactive hit target",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not use Moonpunk's hard-slab composition or Moonzine's paper collage grammar",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonzine",
+      "name": "Moonzine",
+      "positioning": "Independent editorial and content workspaces",
+      "signatureShell": "Magazine spread and collage margins surrounding linear content",
+      "layout": {
+        "composition": "magazine spread; editorial asymmetry; collage-like grouping",
+        "gridRule": "editorial overlap outside semantic controls",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "spacious"
+      },
+      "geometry": {
+        "shapeLanguage": "paper frames; taped/overlapped labels as decoration, not layout control",
+        "frameAndElevation": "paper-like light surfaces and photocopy dark surfaces"
+      },
+      "typography": {
+        "hierarchy": "editorial serif or expressive display paired with neutral body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "index/contents navigation with editorial section labels",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Paper label action with offset print registration",
+        "input": "Typewritten field zone separated from photocopy paper",
+        "select": "Uncluttered menu on editable-paper plane",
+        "card": "Collage-stacked material card, accessible logical order",
+        "dialog": "Editorial clipping frame with full readable content",
+        "table": "Magazine ledger lines, no false photocopy data",
+        "notification": "Margin-note callout backed by solid readable surface"
+      },
+      "dataVisualization": {
+        "presentation": "report cards and story summaries; visible source/annotation areas",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original collage, cut paper, xerox grain and editorial crops",
+        "decorationRule": "Paper texture belongs to decoration layer",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "page-like reveals and gentle layering; reduced motion becomes static",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile flattens collage into semantic article stack",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Texture/overlap must not obscure controls",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not collapse into strict comic panels (Moonpanel) or monochrome screentone-only (Moonhalftone)",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonhalftone",
+      "name": "Moonhalftone",
+      "positioning": "Sequential illustrated storytelling tools",
+      "signatureShell": "Sequential manga pacing with oversized quiet gutters",
+      "layout": {
+        "composition": "sequential comic pacing; variable panel density; ink-first hierarchy",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "panel borders; halftone fields; high-contrast gutters",
+        "frameAndElevation": "monochrome ink/paper; dot texture used in reserved zones"
+      },
+      "typography": {
+        "hierarchy": "manga impact headings + neutral reading text",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "panel index and clear chapter/section progression",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Pure-ink rectangular button with screened shadow",
+        "input": "Plain monochrome field and contrasting focus keyline",
+        "select": "Ink dropdown with screened border outside list text",
+        "card": "Screentone card bounded by gutters",
+        "dialog": "Manga frame dialog with full-body white/ink text area",
+        "table": "Alternating dot-free rows, halftone only outside glyphs",
+        "notification": "Solid ink caption box and dot border"
+      },
+      "dataVisualization": {
+        "presentation": "panelized stories, annotated metrics, clear chart equivalents",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original screentone patterns and abstract ink assets",
+        "decorationRule": "Raster density must degrade cleanly when disabled",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "panel reveal and restrained directional transition",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile preserves ordered panel sequence",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Moiré and contrast risk at zoom",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not use Moonpanel's rigid uniform grid as its entire identity",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonglitch",
+      "name": "Moonglitch",
+      "positioning": "Telemetry, logs and technical monitoring",
+      "signatureShell": "Telemetry header, narrow side diagnostics and log center",
+      "layout": {
+        "composition": "telemetry rails; console bands; data-centric dashboard zones",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "compact"
+      },
+      "geometry": {
+        "shapeLanguage": "thin technical rules; signal bars; occasional deliberate displacement",
+        "frameAndElevation": "near-black terminal surfaces with scanline and signal accents"
+      },
+      "typography": {
+        "hierarchy": "monospaced labels/metrics + readable sans body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "command-oriented navigation with system-state indicators",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Instrument-key action with fixed-state LED metaphor",
+        "input": "Monospaced terminal input on quiet opaque pane",
+        "select": "Console command menu with explicit selected mark",
+        "card": "Telemetry module segmented by status bars",
+        "dialog": "System alert overlay without animated interruption",
+        "table": "Fixed-column logs and alignment rules",
+        "notification": "Status strip plus text, no blinking alerts"
+      },
+      "dataVisualization": {
+        "presentation": "live event stream, logs, time-series and compact telemetry",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original abstract signal traces; glitch never obscures text",
+        "decorationRule": "Signal interruption only as reversible decoration",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "signal transitions; no perpetual flashing; reduced motion disables distortion",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile collapses diagnostics into labeled disclosure",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Flashing, scanlines and tiny text are hazards",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must remain functional telemetry, not decorative cyberpunk or neon-only styling",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonsmash",
+      "name": "Moonsmash",
+      "positioning": "Campaign launches and dramatic hero metrics",
+      "signatureShell": "Large focal word, radial feature and subordinate information runway",
+      "layout": {
+        "composition": "one dominant focal zone; radial grouping; dramatic scale changes",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "burst outlines; radial marks; bold oversized planes",
+        "frameAndElevation": "high-impact layered panels with clear quiet areas for data"
+      },
+      "typography": {
+        "hierarchy": "oversized expressive display + concise supportive copy",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "action-first navigation and strong primary focal route",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Oversized solid-hit action, secondary actions quiet",
+        "input": "Calm rectangular form field isolated from burst",
+        "select": "Standard legible select not burst-shaped",
+        "card": "Strong type-scale collision card but no overlap with text",
+        "dialog": "Bold central declaration with simple close placement",
+        "table": "Stable table inside quiet structural frame",
+        "notification": "High-impact banner plus readable summary"
+      },
+      "dataVisualization": {
+        "presentation": "milestone meters and high-visibility stats; detail views remain calm",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original abstract burst, speed lines and impact forms",
+        "decorationRule": "Radial burst not used for data or focus state",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "brief radial or scale response with reduced-motion static replacement",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile reduces headline scale and radial footprint",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Oversized display hierarchy can hide tasks",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not share Moonpunk's persistent slab framing or Moonriot's diagonal signal language",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonink",
+      "name": "Moonink",
+      "positioning": "Illustrative meditative creative workspaces",
+      "signatureShell": "Asymmetric ink wash around restrained editorial text column",
+      "layout": {
+        "composition": "organic directional flow around a clear reading column",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "spacious"
+      },
+      "geometry": {
+        "shapeLanguage": "brush-edged decorative separators; functional controls remain precise",
+        "frameAndElevation": "paper/ink planes, expressive strokes confined to decoration"
+      },
+      "typography": {
+        "hierarchy": "ink-like display accents + calm readable body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "illustrated section markers and simple linear navigation",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Brush silhouette decoration surrounding reliable hitbox",
+        "input": "Clear line field with painterly flourish outside focus ring",
+        "select": "Minimal quiet menu with hand-ink top stroke",
+        "card": "Watercolor margin card with opaque content base",
+        "dialog": "Paper/ink frame but no ink over body text",
+        "table": "Fine ink-line tables with strong data alignment",
+        "notification": "Ink sweep border and text status"
+      },
+      "dataVisualization": {
+        "presentation": "annotated narrative charts and editorial callouts",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original vector brush strokes and ink wash assets",
+        "decorationRule": "Organic direction through illustration not form distortion",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "stroke-draw accents are optional; never required to understand state",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile reduces wash and maintains reading column",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Poor foreground contrast on wash",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not become sketchbook notes (Moonscrawl) or monochrome raster texture (Moonhalftone)",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "mooncrash",
+      "name": "Mooncrash",
+      "positioning": "Industrial maintenance and equipment UIs",
+      "signatureShell": "Mechanical header and equipment rack left navigation",
+      "layout": {
+        "composition": "stacked work zones; plate-like panels; clear functional grouping",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "mechanical borders; numbered plates; warning stripes only for actual emphasis",
+        "frameAndElevation": "matte metal-inspired surfaces; restrained hazard highlights"
+      },
+      "typography": {
+        "hierarchy": "industrial condensed labels + utilitarian body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "equipment/operation hierarchy with numbered sections",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Machined slab with notched visible border",
+        "input": "Bolted field frame with clean label and focus",
+        "select": "Equipment listbox with unambiguous active state",
+        "card": "Plate-and-fastener card",
+        "dialog": "Inspection hatch dialog with robust accessible title",
+        "table": "Inspection ledger separated by mechanical dividers",
+        "notification": "Safety stripe plus explicit status copy"
+      },
+      "dataVisualization": {
+        "presentation": "resource gauges, logs and operational status blocks",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original industrial motifs and abstract technical markings",
+        "decorationRule": "No raw ERP grid as visual identity",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "mechanical slide/click feedback; no decorative shaking on errors",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile simplifies plates and increases hit area",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Hazard marking can imply false semantic warnings",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not use Moonchrome's reflective material or Moonglitch's terminal telemetry treatment",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonpanel",
+      "name": "Moonpanel",
+      "positioning": "Comic panel structured experiences",
+      "signatureShell": "Strict rectangular multi-panel comic dashboard grid",
+      "layout": {
+        "composition": "explicit grid; consistent gutters; panel hierarchy controls page rhythm",
+        "gridRule": "strict non-overlapping panels",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "rectangular frames; varied panel spans; clear panel titles",
+        "frameAndElevation": "clearly bounded panels and contrasting gutters"
+      },
+      "typography": {
+        "hierarchy": "comic chapter heads + strong, consistent body hierarchy",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "panel map/index and predictable section grid",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Panel-caption action flush to gutter",
+        "input": "Boxed form panel, complete labeled form order",
+        "select": "Panel-linked select menu inside overlay bounds",
+        "card": "Exactly bounded story-grid card",
+        "dialog": "Central overlay inset panel with visible border",
+        "table": "Grid panels may contain true tabular data without splitting rows",
+        "notification": "Caption tab in framed corner plus full label"
+      },
+      "dataVisualization": {
+        "presentation": "modular visual summaries and panels with consistent data placement",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original panel motifs; illustrative content stays inside bounded frames",
+        "decorationRule": "Gutters—not magazine collage—drive identity",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "panel focus/slide transitions; consistent grid continuity",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile serializes frame reading order",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Visual panel order must match DOM/focus order",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not become Moonhalftone with different colors; its identity is structural grid and panel span",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonscrawl",
+      "name": "Moonscrawl",
+      "positioning": "Research notebooks and speculative ideation",
+      "signatureShell": "Notebook canvas with margin ink scribbles and annotation markers",
+      "layout": {
+        "composition": "canvas with margin notes and exploratory clusters",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "loose hand-drawn annotation around precise functional controls",
+        "frameAndElevation": "draft-paper and sketch marks with low visual interference"
+      },
+      "typography": {
+        "hierarchy": "hand-lettered labels used sparingly + readable body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "notebook tabs, margin index or workspace sections",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Hand-underline visual action on rigid semantic button",
+        "input": "Notebook rule input with independent accessible fieldbox",
+        "select": "Quick-pencil popover but conventional menu choices",
+        "card": "Margin-note card and pin marker",
+        "dialog": "Notebook sheet dialog with uncluttered body",
+        "table": "Draft grid guides outside data cells",
+        "notification": "Hand margin arrow and clear semantic text"
+      },
+      "dataVisualization": {
+        "presentation": "annotated diagrams, brainstorm maps and exploratory flows",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original sketches, arrows, circles and handwritten callouts",
+        "decorationRule": "Loose hand annotation rather than brush wash",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "draw-on annotations optional; static fallback is complete",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile hides sidenotes and retains stable content",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Handwritten fonts reduce accessibility",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must remain intentional and structured, not Moonzine collage or Moonink brush painting",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonraw",
+      "name": "Moonraw",
+      "positioning": "No-frills utility and raw structure",
+      "signatureShell": "Bare app frame with explicit raw structural separators",
+      "layout": {
+        "composition": "rigid clear page frame; low ornament; content-led blocks",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "plain rectangles, exposed separators, square edges",
+        "frameAndElevation": "flat materials; nearly no gradients or shadows"
+      },
+      "typography": {
+        "hierarchy": "direct heavy headings + neutral body; no decorative display by default",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "straightforward text-first side/top navigation",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Unadorned rectangular action without shadow",
+        "input": "Native-like solid line field with bold focus outline",
+        "select": "Simple listbox no ornamental tokens",
+        "card": "Exposed border card with visible content rhythm",
+        "dialog": "Unstyled disciplined rectangle with complete semantics",
+        "table": "Visible rules and raw data density",
+        "notification": "Plain text block with border"
+      },
+      "dataVisualization": {
+        "presentation": "plain dense tables and direct metrics with minimal framing",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "typography and structure dominate; textures mostly absent",
+        "decorationRule": "No borrowed Classic polished elevation",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "minimal transitions; immediate state feedback",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile uses equally bare stacked structure",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Minimalism cannot remove affordances",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not borrow Moonledger's enterprise-specific compact workbench or Classic's polished neutral finish",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonchrome",
+      "name": "Moonchrome",
+      "positioning": "Precision futurist premium consoles",
+      "signatureShell": "Precision masthead, luminous material tiers and quiet side stack",
+      "layout": {
+        "composition": "layered focal surface with precise contour accents",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "thin metallic contours and controlled bevel cues",
+        "frameAndElevation": "reflective metallic gradient cues and restrained spectral highlights"
+      },
+      "typography": {
+        "hierarchy": "geometric display + high-legibility modern body",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "layered surface navigation with clear selected state",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Metallic contour button on nonreflective text surface",
+        "input": "Clear inset field, no reflection behind placeholder",
+        "select": "Clean suspended metallic popup, opaque choices",
+        "card": "Contoured spectral rim around readable material core",
+        "dialog": "Reflective peripheral frame, flat text plane",
+        "table": "Fine structured numbers with neutral backing",
+        "notification": "Spectral edge plus explicit written status"
+      },
+      "dataVisualization": {
+        "presentation": "precision gauges, orbital metrics and crisp visualizations",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original abstract chrome, orbit and spectral forms",
+        "decorationRule": "No terminal logs or simulated signal errors",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "light-shift/reflection effects only on demand; reduced motion uses static materials",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile omits reflective highlights first",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Reflections may undermine contrast",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not become generic glassmorphism or Mooncrash industrial plating",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "classic",
+      "name": "Classic",
+      "positioning": "Conventional application baseline",
+      "signatureShell": "Conventional sidebar/topbar and balanced content container",
+      "layout": {
+        "composition": "conventional app shell; predictable content hierarchy",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "standard rounded controls; subtle borders and restrained elevation",
+        "frameAndElevation": "clean semantic surfaces; minimal decoration"
+      },
+      "typography": {
+        "hierarchy": "neutral modern sans with conventional heading scale",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "standard sidebar/topbar/tabs/breadcrumbs",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Standard measured rounded primary action",
+        "input": "Predictable border and clear focus-visible ring",
+        "select": "Conventional select menu with stable alignment",
+        "card": "Subtle border, measured elevation and simple title",
+        "dialog": "Standard readable modal hierarchy",
+        "table": "Quiet striped/ruled data rows",
+        "notification": "Subtle inline notification with icon and text"
+      },
+      "dataVisualization": {
+        "presentation": "familiar tables, forms and cards with conservative styling",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "no skin-specific illustration requirement; functional icon defaults",
+        "decorationRule": "No Moonraw forced bare edges or signature collage",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "restrained conventional transition; respect reduced motion",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile standard nav drawer and content stack",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Avoid claiming official shadcn compatibility",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must be documented as Moonframe's compatibility baseline, not official shadcn branding",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonquest",
+      "name": "Moonquest",
+      "positioning": "Adventure-themed presentation only",
+      "signatureShell": "Quest journal header, map-like index, inventory side panel",
+      "layout": {
+        "composition": "quest journal, inventory and status HUD; clear game-oriented zones",
+        "gridRule": "skin-specific composition; validate against identical reference fixture",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "comfortable"
+      },
+      "geometry": {
+        "shapeLanguage": "framed panels, rarity treatments, map/journal motifs",
+        "frameAndElevation": "fantasy/sci-fi material layers without reducing text contrast"
+      },
+      "typography": {
+        "hierarchy": "adventure display headings + highly readable body/data",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "journal / inventory / map / progression navigation patterns",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Quest accept action with bordered parchment frame",
+        "input": "Journal field with clear text and focus inner border",
+        "select": "Inventory select with labeled rarity independent of color",
+        "card": "Quest-card reward frame and metadata rows",
+        "dialog": "Quest record overlay, semantic dialog unchanged",
+        "table": "Stat/inventory grid with semantic table where tabular",
+        "notification": "Reward banner and readable rarity word"
+      },
+      "dataVisualization": {
+        "presentation": "XP/progression, rarity, quest lists and item slots as presentation only",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "original game-inspired symbols, map textures and item-frame assets",
+        "decorationRule": "Never depend on game state/XP engine",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "reward/level-up accents are opt-in; reduced motion keeps progress information",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile stacks quest journal before inventory",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Rarity colors and fantasy fonts can hide meaning",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not place game rules, rewards, inventory persistence or scoring logic in the UI package",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    },
+    {
+      "id": "moonledger",
+      "name": "Moonledger",
+      "positioning": "Enterprise ERP and dense data workbenches",
+      "signatureShell": "Persistent filter rail and split detail-pane workbench",
+      "layout": {
+        "composition": "dense workspace; persistent filter area; table/detail split panes",
+        "gridRule": "persisted column geometry / split panes",
+        "gutterAndWhitespace": "Responsive by content hierarchy; target readability first",
+        "defaultDensity": "compact"
+      },
+      "geometry": {
+        "shapeLanguage": "precise aligned grids; restrained radius; subtle separators",
+        "frameAndElevation": "neutral surfaces and muted chrome; strong data hierarchy"
+      },
+      "typography": {
+        "hierarchy": "high-legibility enterprise sans with tabular numerals",
+        "fallbackPolicy": "Use reviewable licensed font asset and legible platform/system fallback; tabular-nums for values; no unlicensed fonts."
+      },
+      "navigation": {
+        "visualTreatment": "persistent workspace navigation, breadcrumbs and contextual actions",
+        "keyboardBehavior": "invariant shared component behavior"
+      },
+      "componentRecipes": {
+        "button": "Dense accessible action toolbar and bulk selection control",
+        "input": "Aligned fixed-height fields with explicit validation",
+        "select": "Compact searchable selection with full keyboard focus",
+        "card": "Flat enterprise record pane",
+        "dialog": "Large CRUD editing dialog with clear form hierarchy",
+        "table": "High-density virtualizable-ready header/filter/sort cells",
+        "notification": "Audit status with icon, copy and time"
+      },
+      "dataVisualization": {
+        "presentation": "dense but readable tables, filters, saved views and audit timelines",
+        "chartAlternative": "Text summary and accessible underlying table; never color-only legend"
+      },
+      "media": {
+        "visualSignature": "minimal; charts/tables carry the interface, decorative art is excluded",
+        "decorationRule": "No Mooncrash hazard stripes or decorative rivets",
+        "requiresManifest": true
+      },
+      "motion": {
+        "signature": "subtle transitions; prioritize feedback latency and stability",
+        "reducedMotion": "No impactful movement/flashing; instant or quiet opacity where safe."
+      },
+      "appearance": {
+        "light": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "dark": {
+          "tokenMap": "pending-values-and-contrast-review",
+          "artworkLegibility": "pending-visual-evidence"
+        },
+        "system": "preference only; must resolve to light or dark"
+      },
+      "responsive": {
+        "behavior": "Mobile replaces split pane with drill-down navigation",
+        "overflow": "Never hide primary operations or reorder reading/focus traversal"
+      },
+      "accessibilityRisks": [
+        "Small targets, overflow, sticky heading and focus traps",
+        "Forced-colors, focus indication, text contrast and localized text require real review"
+      ],
+      "antiPatterns": [
+        "must not shrink controls below tested target requirements or inherit Moonquest's game treatment",
+        "Must remain distinguishable in grayscale and decoration-off variants."
+      ],
+      "referenceScreenRequirements": [
+        "dashboard-same-fixture",
+        "table-same-fixture",
+        "form-same-fixture",
+        "modal-same-fixture",
+        "navigation-same-fixture"
+      ],
+      "evaluation": {
+        "dimensions": [
+          "composition",
+          "geometry",
+          "typography",
+          "surface",
+          "dataNavigation",
+          "media",
+          "componentRecipes",
+          "motion"
+        ],
+        "humanReviewRequired": true,
+        "pairwiseStatus": "not-reviewed",
+        "reviewEvidence": []
+      },
+      "specStatus": "specified",
+      "implementationStatus": "not-implemented",
+      "approvalStatus": "pending-visual-review"
+    }
+  ]
+}

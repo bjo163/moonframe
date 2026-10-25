@@ -1,0 +1,802 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-BLOCKS-001",
+  "status": "catalog-specified-not-implemented",
+  "blocks": [
+    {
+      "id": "app-shell",
+      "purpose": "Shared navigation shell",
+      "tier": "premium-block",
+      "inputs": [
+        "nav",
+        "topbar",
+        "content",
+        "mobileNav"
+      ],
+      "slots": [
+        "navSlot",
+        "topbarSlot",
+        "contentSlot",
+        "mobileNavSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "purpose": "Metric/trend/activity workspace",
+      "tier": "premium-block",
+      "inputs": [
+        "metrics",
+        "trends",
+        "activity",
+        "filters"
+      ],
+      "slots": [
+        "metricsSlot",
+        "trendsSlot",
+        "activitySlot",
+        "filtersSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "crud-list-detail",
+      "purpose": "Search/filter/table/selection/detail",
+      "tier": "premium-block",
+      "inputs": [
+        "rows",
+        "columns",
+        "filters",
+        "detail"
+      ],
+      "slots": [
+        "rowsSlot",
+        "columnsSlot",
+        "filtersSlot",
+        "detailSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "resource-detail",
+      "purpose": "Resource metadata and history",
+      "tier": "premium-block",
+      "inputs": [
+        "resource",
+        "metadata",
+        "history",
+        "tabs"
+      ],
+      "slots": [
+        "resourceSlot",
+        "metadataSlot",
+        "historySlot",
+        "tabsSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "settings-workspace",
+      "purpose": "Validated settings forms",
+      "tier": "premium-block",
+      "inputs": [
+        "fields",
+        "sections",
+        "dirtyState"
+      ],
+      "slots": [
+        "fieldsSlot",
+        "sectionsSlot",
+        "dirtyStateSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "analytics-reporting",
+      "purpose": "Charts, summaries and accessible tables",
+      "tier": "premium-block",
+      "inputs": [
+        "series",
+        "summary",
+        "table"
+      ],
+      "slots": [
+        "seriesSlot",
+        "summarySlot",
+        "tableSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "empty-loading-error-offline",
+      "purpose": "All fallback states",
+      "tier": "premium-block",
+      "inputs": [
+        "title",
+        "description",
+        "recovery"
+      ],
+      "slots": [
+        "titleSlot",
+        "descriptionSlot",
+        "recoverySlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "operations-command-center",
+      "purpose": "Operations display (no infrastructure controls)",
+      "tier": "specialized-optional",
+      "inputs": [
+        "services",
+        "events",
+        "metrics"
+      ],
+      "slots": [
+        "servicesSlot",
+        "eventsSlot",
+        "metricsSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "communication-workspace",
+      "purpose": "Communication UI (no transport)",
+      "tier": "specialized-optional",
+      "inputs": [
+        "threads",
+        "messages",
+        "draft"
+      ],
+      "slots": [
+        "threadsSlot",
+        "messagesSlot",
+        "draftSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "erp-workbench",
+      "purpose": "Moonledger workbench (no accounting)",
+      "tier": "specialized-optional",
+      "inputs": [
+        "records",
+        "savedFilters",
+        "detail"
+      ],
+      "slots": [
+        "recordsSlot",
+        "savedFiltersSlot",
+        "detailSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "rpg-quest-journal",
+      "purpose": "Moonquest presentation (no game engine)",
+      "tier": "specialized-optional",
+      "inputs": [
+        "quests",
+        "inventory",
+        "progress"
+      ],
+      "slots": [
+        "questsSlot",
+        "inventorySlot",
+        "progressSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "editorial-panel-workspace",
+      "purpose": "Moonzine/Moonpanel editorial display",
+      "tier": "specialized-optional",
+      "inputs": [
+        "articles",
+        "media",
+        "panels"
+      ],
+      "slots": [
+        "articlesSlot",
+        "mediaSlot",
+        "panelsSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    },
+    {
+      "id": "data-exploration",
+      "purpose": "Tables, data graphs, related records",
+      "tier": "specialized-optional",
+      "inputs": [
+        "dataset",
+        "relationships",
+        "filters"
+      ],
+      "slots": [
+        "datasetSlot",
+        "relationshipsSlot",
+        "filtersSlot"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "error",
+        "ready",
+        "offline-where-applicable"
+      ],
+      "responsiveVariants": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "sampleDataFixture": "pending-reviewed-non-sensitive-data",
+      "skinApplicability": [
+        "moonpunk",
+        "moonriot",
+        "moonzine",
+        "moonhalftone",
+        "moonglitch",
+        "moonsmash",
+        "moonink",
+        "mooncrash",
+        "moonpanel",
+        "moonscrawl",
+        "moonraw",
+        "moonchrome",
+        "classic",
+        "moonquest",
+        "moonledger"
+      ],
+      "visualRules": "Use the active skin composition recipe, not a shared recolored shell",
+      "a11y": "Semantic landmarks, keyboard order, accessible tables/charts and preserved focus when responsive",
+      "dependencies": [
+        "foundation",
+        "core-v1",
+        "domain-neutral-presentation"
+      ],
+      "businessLogic": "forbidden",
+      "status": "specified-not-implemented",
+      "acceptance": [
+        "same source data in reference fixtures",
+        "responsive and overflow",
+        "meaningful empty/error/loading states",
+        "no implicit network requests",
+        "no auth/domain decisions"
+      ]
+    }
+  ]
+}

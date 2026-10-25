@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-SFX-001",
+  "status": "specification-only-no-audio",
+  "defaultEnabled": false,
+  "requiresExplicitConsent": true,
+  "autoplayOnLoad": false,
+  "audioIsSupplementary": true,
+  "userPreferences": {
+    "mute": true,
+    "volumeRange": [
+      0,
+      1
+    ],
+    "categoriesCanDisable": true,
+    "persistOnlyWithConsent": true
+  },
+  "events": [
+    {
+      "id": "success",
+      "role": "short affirmative, optional",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    },
+    {
+      "id": "warning",
+      "role": "low intensity, supplementary",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    },
+    {
+      "id": "error",
+      "role": "non-punitive, supplementary",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    },
+    {
+      "id": "notification",
+      "role": "throttled, not per item",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    },
+    {
+      "id": "confirmation",
+      "role": "nonintrusive on explicit user action",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    },
+    {
+      "id": "quest-reward",
+      "role": "optional only for Moonquest presentation",
+      "defaultEnabled": false,
+      "minimumGapMs": 1000,
+      "deduplicateWithinMs": 2000,
+      "requiresUserGesture": true
+    }
+  ],
+  "neverSound": [
+    "page load",
+    "typing each key",
+    "every mouse hover",
+    "focus navigation",
+    "screen-reader-only updates",
+    "rapid repetitive data events",
+    "critical alert without visual/text equivalent"
+  ],
+  "reducedStimulation": "disable sound by default when explicit reduced-stimulation preference is set; never infer medical status",
+  "gracefulFailure": "if blocked or missing asset remain silent without throwing",
+  "assetRecordFields": [
+    "id",
+    "eventId",
+    "sourcePath",
+    "exportPath",
+    "format",
+    "durationMs",
+    "sizeBytes",
+    "normalizationTarget",
+    "creator",
+    "license",
+    "checksum",
+    "version",
+    "approvalState"
+  ],
+  "formatsPlan": [
+    "short compressed web audio format with fallback after browser proof"
+  ],
+  "producedAssets": []
+}

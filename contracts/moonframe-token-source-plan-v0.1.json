@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-TOKEN-SOURCE-PLAN-001",
+  "status": "source-values-not-created",
+  "dictionary": "moonframe-token-dictionary-v0.1.json",
+  "proposedCanonicalValueSource": "tokens/source/**/*.tokens.json (future; not present)",
+  "formatDecision": "DTCG-2025.10-compatible-subset-proposed-pending-processor-spike",
+  "subset": {
+    "proposedProperties": [
+      "$type",
+      "$value",
+      "$description",
+      "$extensions"
+    ],
+    "aliasSyntax": "{path.to.token} only after resolver proof",
+    "allowedTypes": "pending approval from DTCG and implementation spike",
+    "unsupportedFeatures": "resolver/color module features are unverified; forbid relying on them until tests exist",
+    "validation": [
+      "schema validation",
+      "token type checks",
+      "alias resolution",
+      "cycle detection",
+      "no shadowing",
+      "mode coverage",
+      "contrast role/surface pairs",
+      "deterministic generation"
+    ]
+  },
+  "outputTargets": [
+    "CSS custom properties",
+    "Tailwind v4 bridge with @theme for chosen utility names",
+    "TypeScript helpers/types",
+    "Skin Lab JSON"
+  ],
+  "expectedRequiredTokenNameCount": 78,
+  "requiredTokenNames": [
+    "color.surface.canvas",
+    "color.surface.default",
+    "color.surface.raised",
+    "color.surface.sunken",
+    "color.text.primary",
+    "color.text.secondary",
+    "color.text.muted",
+    "color.text.inverse",
+    "color.action.primary",
+    "color.action.primary.foreground",
+    "color.action.secondary",
+    "color.border.default",
+    "color.border.subtle",
+    "color.border.strong",
+    "color.focus.ring",
+    "color.selection.background",
+    "color.overlay.scrim",
+    "color.status.success",
+    "color.status.warning",
+    "color.status.danger",
+    "color.status.info",
+    "color.data.series.1",
+    "color.data.series.2",
+    "color.data.series.3",
+    "type.family.body",
+    "type.family.heading",
+    "type.family.display",
+    "type.family.mono",
+    "type.family.data",
+    "type.size.xs",
+    "type.size.sm",
+    "type.size.body",
+    "type.size.lg",
+    "type.size.display",
+    "type.weight.regular",
+    "type.weight.medium",
+    "type.weight.semibold",
+    "type.weight.bold",
+    "type.lineHeight.tight",
+    "type.lineHeight.normal",
+    "type.lineHeight.relaxed",
+    "space.0",
+    "space.1",
+    "space.2",
+    "space.3",
+    "space.4",
+    "space.6",
+    "space.8",
+    "space.12",
+    "space.16",
+    "size.control.sm",
+    "size.control.md",
+    "size.control.lg",
+    "size.icon.sm",
+    "size.icon.md",
+    "size.target.minimum",
+    "geometry.radius.none",
+    "geometry.radius.control",
+    "geometry.radius.card",
+    "geometry.border.default",
+    "geometry.focus.outline",
+    "elevation.raised",
+    "elevation.popover",
+    "elevation.dialog",
+    "motion.duration.fast",
+    "motion.duration.normal",
+    "motion.duration.slow",
+    "motion.easing.standard",
+    "motion.distance.small",
+    "layer.sticky",
+    "layer.dropdown",
+    "layer.popover",
+    "layer.dialog",
+    "layer.toast",
+    "layer.tooltip",
+    "density.compact.controlHeight",
+    "density.comfortable.controlHeight",
+    "density.spacious.controlHeight"
+  ],
+  "coverageSlots": [
+    {
+      "skinId": "moonpunk",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonpunk",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonriot",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonzine",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonhalftone",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonglitch",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonsmash",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonink",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "mooncrash",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonpanel",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonscrawl",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonraw",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonchrome",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "classic",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonquest",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "light",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    },
+    {
+      "skinId": "moonledger",
+      "mode": "dark",
+      "status": "pending-values-and-contrast-review",
+      "valuesSource": null,
+      "contrastReport": null
+    }
+  ],
+  "implementationGate": "All required tokens resolved for all 30 slots; no incomplete production value source may pass."
+}
