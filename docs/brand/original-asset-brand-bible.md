@@ -94,3 +94,7 @@ The [SFX Contract](../../contracts/moonframe-sfx-contract-v0.1.json) **alone own
 [Dedicated QA](../qa/original-asset-validation-plan.md) specifies positive/negative metadata fixtures, rights and checksum provenance, file path traversal, malicious SVG, font licenses, 30 appearance coverage, 105 global pair review, raster/performance, silent audio and screen reader/focus. [Atomic roadmap](../backlog/original-asset-atomic-issues.md) scopes work in small tasks. Existing MF-080–086 are *future production* seeds; no real issue creation or installation here.
 
 **Blocking owner decisions:** (1) approve umbrella and edition naming, (2) master mark trademark/search, (3) repository/public package and art pack licenses separately, (4) exact font families/redistribution, (5) per-platform favicon requirements, (6) source/design asset publishing/storage rights, (7) audio/no-audio commercial strategy. No final logo, SVG, PNG, font, raster, SFX, application build or production assets authorized by this task.
+
+### Dedicated asset QA coverage ledger
+
+The [120-cell appearance review ledger](../../contracts/moonframe-asset-qa-coverage-v0.1.json) documents planned Light/Dark asset contexts and tracks future screenshots, rights and reviewer evidence separately from per-asset metadata and the 105 global grammar pairs. Zero cells have a produced artifact, review or pass. A master mark tested in 15 skins remains **one asset identity**, not 15 unique logos. See [asset QA](../qa/original-asset-validation-plan.md).

@@ -27,3 +27,7 @@ The scoped validator must parse strict JSON, verify 15 unique briefs match Theme
 **Release blockers:** missing repo/art license owner decision; prohibited upstream media; unknown copyright/trademark; SVG active content; stale generated export; absent checksum/source; no accessible fallback; unreadable focus/text at zoom or forced colors; unlicensed font RFN/relicense; automatically playing sound; false published/rights-cleared flag. Passing spec CI is not asset production, design review or legal clearance.
 
 Current verified commands in workflow: node scripts/validate-contracts.mjs and node scripts/validate-contracts.mjs --self-test. No image rendering, font/audio test or screen reader test at this time.
+
+### Machine-readable visual review ledger (2026-10-25)
+
+[Asset QA coverage](../../contracts/moonframe-asset-qa-coverage-v0.1.json) references **15 skin IDs × Light/Dark × four context cases = 120 proposed cells**, all `not-rendered`. The four cases are umbrella master brand, edition signature motif, functional icon and decoration-off fallback. None demands fifteen independent logos or production binary files. It intentionally has zero rendered/reviewed/passed screenshots and 0 human reviewer attestations, checked by the existing validator. Global 105 grammar pair comparisons stay in the original [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) and are not a second set of 105 approval records.

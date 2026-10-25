@@ -50,6 +50,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 - [Research log: SVG 2, SVGO, fonts/OFL, licensing, formats, autoplay](docs/research/original-asset-brand-research-log.md)
 - [Existing asset manifest, clarified as planned candidate pool](contracts/moonframe-asset-manifest-v0.1.json)
 - [15 written skin asset briefs and anti-overlap constraints](contracts/moonframe-skin-asset-briefs-v0.1.json)
+- [120 unrendered review cells across 30 Light/Dark appearances](contracts/moonframe-asset-qa-coverage-v0.1.json)
 - [Conditional proposed Draft 2020-12 asset-record schema](schemas/moonframe-asset-record.schema.json)
 - [Planned metadata and 10 synthetic invalid fixtures](contracts/fixtures/original-asset-v0.1.json)
 - [ADR-0006 shared Moonframe brand and provenance pipeline — proposed](docs/adr/0006-original-asset-pipeline-and-brand.md)
