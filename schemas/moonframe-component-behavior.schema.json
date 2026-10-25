@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-component-behavior.schema.json",
+  "title": "Moonframe component behavior contract entry (documentation only)",
+  "description": "Draft-2020-12 structural schema. No TS/runtime implementation and no claim that schema engine is installed. Cross-document ID/state/keyboard semantics verified by scripts/validate-contracts.mjs.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "behaviorLayer",
+    "catalogTier",
+    "readiness",
+    "propContract",
+    "keyboardPattern",
+    "formSemantics",
+    "accessibilityRequirements",
+    "themeContractRef",
+    "visualRecipeRef",
+    "testsRequired",
+    "owner",
+    "openQuestions",
+    "risk",
+    "releaseGate"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+(?:-[a-z]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Za-z0-9]*$"
+    },
+    "category": {
+      "enum": [
+        "foundation",
+        "actions",
+        "forms",
+        "feedback",
+        "data",
+        "specialized",
+        "content"
+      ]
+    },
+    "behaviorLayer": {
+      "enum": [
+        "theme-bridge",
+        "native-layout",
+        "styled-base",
+        "composite",
+        "behavioral-composite",
+        "domain-agnostic-pattern",
+        "specialized-presentation"
+      ]
+    },
+    "catalogTier": {
+      "enum": [
+        "core-v1",
+        "future",
+        "premium-block",
+        "specialized-optional"
+      ]
+    },
+    "readiness": {
+      "const": "specified-provisional-not-implemented"
+    },
+    "canonicalManifest": {
+      "const": "moonframe-component-manifest-v0.1.json"
+    },
+    "publicExport": {
+      "type": "object",
+      "required": [
+        "candidate",
+        "status",
+        "subpath"
+      ],
+      "properties": {
+        "candidate": {
+          "type": "string"
+        },
+        "status": {
+          "const": "unapproved"
+        },
+        "subpath": {
+          "type": "string"
+        }
+      }
+    },
+    "propContract": {
+      "type": "object",
+      "required": [
+        "status",
+        "nativeSemantic",
+        "proposedNames",
+        "controlledOwnership",
+        "controlledUncontrolled",
+        "compositionModel",
+        "refStrategy",
+        "classNamePolicy",
+        "eventPolicy"
+      ],
+      "properties": {
+        "status": {
+          "const": "proposed-family-derived"
+        },
+        "nativeSemantic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proposedNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "controlledOwnership": {
+          "type": "string"
+        },
+        "controlledUncontrolled": {
+          "type": "string"
+        },
+        "compositionModel": {
+          "type": "string"
+        },
+        "refStrategy": {
+          "type": "string"
+        },
+        "classNamePolicy": {
+          "type": "string"
+        },
+        "eventPolicy": {
+          "type": "string"
+        },
+        "requiredNullability": {
+          "type": "string"
+        }
+      }
+    },
+    "keyboardPattern": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statesMatrixRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keyboardMatrixRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accessibilityRequirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 3
+    },
+    "formSemantics": {
+      "type": "string"
+    },
+    "themeContractRef": {
+      "const": "moonframe-theme-contract-v1.3.json"
+    },
+    "visualRecipeRef": {
+      "const": "moonframe-skin-specifications-v1.0.json"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "peerDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "testsRequired": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2
+    },
+    "docsRequired": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2
+    },
+    "releaseGate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string"
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk": {
+      "enum": [
+        "normal",
+        "high"
+      ]
+    },
+    "nextTaskIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "specificBoundary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

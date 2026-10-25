@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-component-matrix.schema.json",
+  "title": "Moonframe component state applicability record",
+  "type": "object",
+  "required": [
+    "componentId",
+    "keyboardPattern",
+    "states",
+    "applicable",
+    "notApplicable",
+    "deferred",
+    "reviewStatus",
+    "tests"
+  ],
+  "properties": {
+    "componentId": {
+      "type": "string",
+      "pattern": "^[a-z]+(?:-[a-z]+)*$"
+    },
+    "keyboardPattern": {
+      "type": "string",
+      "minLength": 1
+    },
+    "states": {
+      "type": "object",
+      "minProperties": 20,
+      "additionalProperties": {
+        "enum": [
+          "applicable",
+          "not-applicable",
+          "deferred"
+        ]
+      }
+    },
+    "applicable": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "notApplicable": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "deferred": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewStatus": {
+      "const": "specified-family-derived-not-tested"
+    },
+    "skinParityRule": {
+      "type": "string"
+    },
+    "tests": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
