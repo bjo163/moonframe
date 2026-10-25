@@ -44,6 +44,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ## Documentation
 
 - [Baseline repository audit](docs/audit/repository-baseline-audit.md)
+- [Refinement delivery report](docs/audit/refinement-delivery-2026-10-25.md)
 - [Primary-source research log](docs/research/research-log.md)
 - [Primitive provider ADR (open)](docs/adr/0001-primitive-provider.md)
 - [Architecture, ownership and governance](docs/architecture/decisions-and-governance.md)

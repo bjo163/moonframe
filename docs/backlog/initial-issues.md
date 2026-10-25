@@ -57,3 +57,16 @@ MF-014 token validator/invalid fixtures; MF-020 runtime preference model; MF-021
 - [ ] Documentation/source-of-truth links preserved.
 - [ ] Accessibility/security/compatibility and rollback considerations addressed.
 - [ ] No fake implementation/review/release status.
+
+## Verified GitHub issue links (created 2026-10-25)
+
+| Task | GitHub issue | Dependencies | State |
+|---|---|---|---|
+| MF-003 | [#1](https://github.com/bjo163/moonframe/issues/1) | baseline audit | open |
+| MF-004 | [#2](https://github.com/bjo163/moonframe/issues/2) | #1 | open |
+| MF-005 | [#3](https://github.com/bjo163/moonframe/issues/3) | #1 | open |
+| MF-006 | [#4](https://github.com/bjo163/moonframe/issues/4) | #1, #3 | open |
+| MF-013 | [#5](https://github.com/bjo163/moonframe/issues/5) | token dictionary/source plan | open |
+| MF-024 | [#6](https://github.com/bjo163/moonframe/issues/6) | #2, #5 | open |
+
+Live GitHub issue state is authoritative if it changes after this snapshot. Do not create duplicate issues merely because the older task list has unchecked boxes.
