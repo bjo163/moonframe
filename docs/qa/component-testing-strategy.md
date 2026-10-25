@@ -38,3 +38,7 @@ Each future implemented exported component requires: TS props + exports, canonic
 ### Current validated scope
 
 Existing CI runs Node static contract checks and intentional mutation-negative fixtures. **No React/TS test runner, browser test, axe scan, Storybook, compile, screenshot or manual AT evaluation has occurred** in this repo at this date.
+
+## Cross-cutting Accessibility & Visual QA evidence (2026-10-25)
+
+The [151 component QA profiles](../../contracts/moonframe-component-qa-profiles-v0.1.json) join the component manifest, per-component [states](../../contracts/moonframe-component-state-matrix-v0.1.json), [keyboard patterns](../../contracts/moonframe-keyboard-interaction-matrix-v0.1.json) and bounded [WCAG 2.2 requirements](../../contracts/moonframe-accessibility-requirements-v0.1.json); **no profiles have implementation/test evidence**. The focused [Accessibility & Visual QA Bible](accessibility-visual-qa-bible.md) owns manual/automated evidence and release waivers, with [270 not-rendered same-content appearance specimens](../../contracts/moonframe-visual-baseline-matrix-v0.1.json); [ADR-0008](../adr/0008-accessibility-visual-qa-tooling.md) is proposed. Do not duplicate component props/API/keyboard semantics or assume component tests are run because Node validates metadata.

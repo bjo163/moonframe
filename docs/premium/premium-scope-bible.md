@@ -60,3 +60,7 @@ A single package at first is preferable to a speculative monorepo until consumer
 ### Authentication product boundary refinement — 2026-10-25
 
 The **existing** [Auth UI Bible](auth-ui-suite.md) now owns security-flow integration/trust/normalized statuses. The existing [auth catalog](../../contracts/moonframe-auth-ui-catalog-v0.1.json), [block](../../contracts/moonframe-block-manifest-v0.1.json) and [page](../../contracts/moonframe-page-template-manifest-v0.1.json) manifests still own their separate 26/17 IDs. [Flow maps](../../contracts/moonframe-auth-flow-contract-v0.1.json) and [provider matrix](../../contracts/moonframe-auth-provider-capability-matrix-v0.1.json) are referenced contracts, not new blocks or runtime SDKs. UI never authenticates, enforces policy, manages sessions, implements OAuth/OIDC/WebAuthn or stores user credentials.
+
+## Accessibility & visual QA cross-catalog evidence (2026-10-25)
+
+[Focused QA Bible](../qa/accessibility-visual-qa-bible.md) and [9×30 planned reference visuals](../../contracts/moonframe-visual-baseline-matrix-v0.1.json) JOIN existing 131 concrete block and 72 template IDs, not clone their content or replace [660 premium reference cells](../../contracts/moonframe-premium-coverage-v0.1.json). The [51 WCAG evidence requirements](../../contracts/moonframe-accessibility-requirements-v0.1.json) and [151 component QA profiles](../../contracts/moonframe-component-qa-profiles-v0.1.json) are spec-only and **do not mean any premium page is rendered, accessible, manually reviewed, or released**.

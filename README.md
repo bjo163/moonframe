@@ -43,6 +43,21 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Accessibility & Visual QA (2026-10-25)
+
+- [Live repository accessibility/visual QA audit](docs/audit/accessibility-visual-qa-baseline.md)
+- [WCAG/ACT/axe/Storybook/Playwright primary-source research](docs/research/accessibility-visual-qa-research-log.md)
+- [Accessibility & Visual QA Bible — canonical methodology](docs/qa/accessibility-visual-qa-bible.md)
+- [51 WCAG criteria and evidence/verification mapping](contracts/moonframe-accessibility-requirements-v0.1.json)
+- [151 component QA profiles joined to the canonical state/keyboard inventory](contracts/moonframe-component-qa-profiles-v0.1.json)
+- [270 unrendered baseline slots — nine reference screens × 30 appearances](contracts/moonframe-visual-baseline-matrix-v0.1.json)
+- [Empty QA/waiver/defect evidence ledger](contracts/moonframe-accessibility-qa-evidence-v0.1.json)
+- [Proposed conditional QA evidence JSON Schema](schemas/moonframe-accessibility-qa-record.schema.json)
+- [14 synthetic invalid QA evidence fixtures](contracts/fixtures/accessibility-visual-qa-v0.1.json)
+- [ADR-0008 — testing tools and browser/AT decision pending](docs/adr/0008-accessibility-visual-qa-tooling.md)
+- [16 issue-ready QA tasks](docs/backlog/accessibility-visual-qa-atomic-issues.md)
+
+
 ### Motion, Interaction & SFX (2026-10-25)
 
 - [Repository audit and P0–P3 evidence](docs/audit/motion-interaction-sfx-audit.md)
