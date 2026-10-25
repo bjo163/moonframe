@@ -1,6 +1,6 @@
 # ADR-0002 — Bounded DTCG token source; generator candidate decision
 
-**Date:** 2026-10-25. **Status:** `proposed` / **fixture proof passes; maintainer review and exact runtime pin pending**. This is an architectural recommendation, **not** a production generator selection or a claim of DTCG-2025.10 conformance.
+**Date:** 2026-10-25. **Status:** `proposed` / **fixture proof passes; repository runtime is pinned to Node 24.22.1 LTS; maintainer acceptance pending**. This is an architectural recommendation, **not** a production generator selection or a claim of DTCG-2025.10 conformance.
 
 ## Context and evidence
 
