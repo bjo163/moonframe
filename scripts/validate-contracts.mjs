@@ -1546,18 +1546,84 @@ if(process.argv.includes('--self-test')){
  ' bad package/export/license/OIDC/consumer proofs; 11 planned journeys and 13 diagnostics)');
 }
 
-// Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
+function markdownAnchors(content){
+ const anchors=new Set(),counts=new Map();let inFence=false,fenceChar='',fenceLength=0;
+ for(const line of content.split(/\r?\n/)){
+  const fence=line.match(/^\s{0,3}(`{3,}|~{3,})/);
+  if(fence){
+   if(!inFence){inFence=true;fenceChar=fence[1][0];fenceLength=fence[1].length;}
+   else if(fence[1][0]===fenceChar&&fence[1].length>=fenceLength){inFence=false;}
+   continue;
+  }
+  if(inFence) continue;
+  const heading=line.match(/^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/);
+  if(!heading) continue;
+  const label=heading[1].replace(/!?\[([^\]]+)\]\([^)]*\)/g,'$1').replace(/`([^`]*)`/g,'$1').replace(/<[^>]*>/g,'');
+  const base=label.toLowerCase().replace(/\s+/g,'-').replace(/[^\p{L}\p{N}-]/gu,'');
+  const count=counts.get(base)||0;counts.set(base,count+1);anchors.add(count?`${base}-${count}`:base);
+ }
+ return anchors;
+}
+function markdownLinkProblems(source,content,resolveLocal,readMarkdown){
+ const problems=[];
+ let inFence=false,fenceChar='',fenceLength=0;
+ const visible=content.split(/\r?\n/).filter(line=>{
+  const fence=line.match(/^\s{0,3}(`{3,}|~{3,})/);
+  if(fence){if(!inFence){inFence=true;fenceChar=fence[1][0];fenceLength=fence[1].length;}
+    else if(fence[1][0]===fenceChar&&fence[1].length>=fenceLength)inFence=false;return false;}
+  return !inFence;
+ }).join('\n').replace(/`[^`]*`/g,'');
+ for(const match of visible.matchAll(/\]\(([^)]*)\)/g)){
+  const raw=match[1].trim();
+  const href=raw.startsWith('<')?(raw.match(/^<([^>]*)>/)?.[1]||''):raw.split(/\s+/)[0];
+  if(!href||/^[a-z][a-z0-9+.-]*:/i.test(href)||href.startsWith('//'))continue;
+  const hash=href.indexOf('#');let pathname=hash<0?href:href.slice(0,hash),fragment=hash<0?'':href.slice(hash+1);
+  const query=pathname.indexOf('?');if(query>=0)pathname=pathname.slice(0,query);
+  try{pathname=decodeURIComponent(pathname);fragment=decodeURIComponent(fragment);}
+  catch{problems.push(`${source}: malformed percent-encoding in ${href}`);continue;}
+  const target=resolveLocal(source,pathname);
+  if(!target){problems.push(`${source}: broken local Markdown link target ${href}`);continue;}
+  if(hash>=0&&fragment&&target.toLowerCase().endsWith('.md')){
+   const targetContent=readMarkdown(target);
+   const anchors=targetContent===null?null:markdownAnchors(targetContent);
+   if(anchors&&!anchors.has(fragment))problems.push(`${source}: missing heading anchor #${fragment} in ${target}`);
+  }
+ }
+ return problems;
+}
+
+// Local inline Markdown links in README, TODO and docs; remote URLs are deliberately not fetched.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
 });
-for (const md of ['README.md',...walk('docs').filter(x=>x.endsWith('.md'))]) {
+const markdownFiles=['README.md','TODO.md',...walk('docs').filter(x=>x.endsWith('.md'))].map(p=>p.split(path.sep).join('/'));
+const resolveMarkdownTarget=(source,href)=>{
+ const absolute=href.startsWith('/')?path.resolve(root,href.slice(1)):path.resolve(root,path.dirname(source),href||path.basename(source));
+ const relative=path.relative(root,absolute);
+ if(relative==='..'||relative.startsWith('..'+path.sep)||path.isAbsolute(relative)||!fs.existsSync(absolute))return null;
+ return relative.split(path.sep).join('/');
+};
+const readMarkdown=target=>target.toLowerCase().endsWith('.md')?fs.readFileSync(path.join(root,target),'utf8'):null;
+for(const md of markdownFiles){
  const content=fs.readFileSync(path.join(root,md),'utf8');
- for (const match of content.matchAll(/\]\(([^)]+)\)/g)) {
-   let href=match[1].split(' ')[0].split('#')[0];
-   if (!href || href.startsWith('/') || href.startsWith('#') || /^[a-z][a-z0-9+.-]*:/i.test(href)) continue;
-   try { href=decodeURIComponent(href); }catch { errors.push('Bad percent-encoding in '+md);continue; }
-   fail(fs.existsSync(path.resolve(path.dirname(path.join(root,md)),href)), 'Broken local Markdown link: '+md+' -> '+href);
- }
+ for(const problem of markdownLinkProblems(md,content,resolveMarkdownTarget,readMarkdown))errors.push('Markdown link: '+problem);
+}
+if(process.argv.includes('--self-test')){
+ const fixtureFiles=new Map([
+  ['docs/parent/page.md','# Same page\n\n[nearby](../shared/target.md?raw=1#valid-heading)\n[duplicate](../shared/target.md#repeat-1)\n[self](#same-page)\n[missing file](../shared/missing.md)\n[missing anchor](../shared/target.md#absent)'],
+  ['docs/shared/target.md','# Valid Heading\n\n# Repeat\n\n# Repeat']
+ ]);
+ const fixtureResolve=(source,href)=>{
+  const target=href.startsWith('/')?href.slice(1):path.posix.normalize(path.posix.join(path.posix.dirname(source),href||path.posix.basename(source)));
+  return target==='..'||target.startsWith('../')||!fixtureFiles.has(target)?null:target;
+ };
+ const fixtureProblems=markdownLinkProblems('docs/parent/page.md',fixtureFiles.get('docs/parent/page.md'),fixtureResolve,target=>fixtureFiles.get(target)??null);
+ assert.equal(fixtureProblems.length,2,'Valid nested/query/fragment, duplicate-heading and same-file links should pass');
+ assert(fixtureProblems.some(x=>x.includes('broken local Markdown link target ../shared/missing.md')));
+ assert(fixtureProblems.some(x=>x.includes('missing heading anchor #absent')));
+ assert.equal(markdownLinkProblems('README.md','[remote](https://example.invalid/a?x=1#remote)',()=>null,()=>null).length,0);
+ assert(markdownLinkProblems('docs/parent/page.md','[escape](../../../../secret.md)',()=>null,()=>null)[0].includes('broken local Markdown link'));
+ console.log('PASS: Markdown links (nested paths, query/fragment, duplicate headings); invalid target/anchor, traversal and external-URL fixtures');
 }
 if (process.argv.includes('--self-test')) {
   assert.equal(validatePairMatrix(grammar.pairwiseReviewMatrix,ids).length,0);

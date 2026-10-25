@@ -2,6 +2,12 @@
 
 **Status:** test blueprint, 2026-10-25; no UI implementation/tests exist yet. Contract-only static validator is a narrower gate.
 
+## Markdown link validation limits
+
+The spec validator checks relative inline Markdown links in `README.md`, `TODO.md`, and `docs/**/*.md`. It resolves local paths (including nested paths and percent-encoded names), strips query strings for file lookup, and validates fragments against GitHub-style Markdown heading slugs, including duplicate-heading suffixes. Fragment-only links resolve within the current document. External schemes and protocol-relative URLs are deliberately not fetched; this check does not claim network reachability.
+
+Reference-style links (`[label][ref]`), raw HTML links/IDs, anchors in non-Markdown files, and nested-parenthesis destinations are outside the supported parser. Heading slug support covers ordinary ATX headings, inline code/links, punctuation removal and duplicate suffixes; full GitHub rendering edge cases are not guaranteed. These limits are static-check boundaries, not claims that external destinations or HTML anchors work.
+
 ## Coverage without a wasteful Cartesian explosion
 
 1. **30 baseline appearances:** canonical 15 skins × effective `light`/`dark`. `system` resolves; never screenshot it as a 31st identity.
