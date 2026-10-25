@@ -91,10 +91,10 @@ function taskIdentityAudit(contents) {
     if (!canonical || canonical.issue !== record.issue || canonical.url !== record.url)
       problems.push(`${record.id}: issue mapping differs between ${record.source} and master issue Bible`);
   }
-  // Active roadmap/TODO declarations are limited to task-list lines. Historical prose is ignored.
+  // Roadmap/TODO declarations are limited to task-list lines, checked or unchecked. Historical prose is ignored.
   for (const [source, content] of [['implementation-roadmap.md', contents.roadmap], ['TODO.md', contents.todo]]) {
     for (const line of content.split(/\r?\n/)) {
-      const match = line.match(/^\s*- \[ \] \*\*(MFI?-\d{3})\b.*?\[?#(\d+)\]?\]?\((https:\/\/github\.com\/bjo163\/moonframe\/issues\/(\d+))\)/);
+      const match = line.match(/^\s*- \[[ xX]\] \*\*(MFI?-\d{3})\b.*?\[?#(\d+)\]?\]?\((https:\/\/github\.com\/bjo163\/moonframe\/issues\/(\d+))\)/);
       if (!match) continue;
       const [, id, issueNumber, url, urlNumber] = match;
       const canonical = expected.get(id);
