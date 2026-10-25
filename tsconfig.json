@@ -6,7 +6,18 @@
     "strict": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "paths": {
+      "@moonframe/ui": ["./src/index.d.ts"],
+      "@moonframe/ui/skins": ["./src/skins.d.ts"],
+      "@moonframe/ui/theme": ["./src/theme.d.ts"],
+      "@moonwitness/ui": ["./src/index.d.ts"],
+      "@moonwitness/ui/skins": ["./src/skins.d.ts"],
+      "@moonwitness/ui/theme": ["./src/theme.d.ts"],
+      "@moonwitness/moonframe": ["./src/index.d.ts"],
+      "@moonwitness/moonframe/skins": ["./src/skins.d.ts"],
+      "@moonwitness/moonframe/theme": ["./src/theme.d.ts"]
+    }
   },
   "include": ["src/**/*.d.ts", "tests/types.tsx"],
   "exclude": ["apps", "node_modules"]

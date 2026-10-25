@@ -1590,7 +1590,7 @@ for(const problem of packageProblems(packageArch))
  errors.push('Package architecture: '+problem);
 // Historical packageArch.localImplementation records the original empty-shell proof.
 // The current local runtime has explicit typed entry points and a CSS side effect.
-if(localPackage.name!=='@moonframe/ui'||localPackage.version!=='0.1.0'||
+if(!['@moonframe/ui','@moonwitness/ui','@moonwitness/moonframe'].includes(localPackage.name)||localPackage.version!=='0.1.0'||
    typeof localPackage.private!=='boolean'||localPackage.type!=='module'||
    localPackage.exports?.['.']?.import!=='./src/index.js'||
    localPackage.exports?.['.']?.types!=='./src/index.d.ts'||
