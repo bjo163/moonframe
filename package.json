@@ -25,7 +25,8 @@
     "test:browser": "playwright test",
     "typecheck": "tsc --noEmit",
     "validate": "node scripts/validate-contracts.mjs",
-    "pack:local": "npm pack"
+    "pack:local": "npm pack",
+    "build:example": "cd examples/nextjs-app && npm run build"
   },
   "peerDependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" },
   "devDependencies": {

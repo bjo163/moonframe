@@ -13,6 +13,7 @@ The user's request to finish a usable 15-skin product authorizes local runtime i
 - `npm run test:browser`: PASS (browser tests passed across all 15 skins in light and dark, contrast >= 4.5:1, 360px responsive, RTL, theme switching, dialog modal focus trap & escape, tabs roving focus, accordion, form controls, asChild next/link, Field, DropdownMenu, Popover, Tooltip, DataTable, and workspace demo)
 - Full-page appearance screenshots for all 15 skins (30 PNG files) captured to `artifacts/skins/`
 - Local packaging: `npm run pack:local` (`npm pack`) successfully generated `moonframe-ui-0.1.0.tgz` (12 package files including typed subpaths @moonframe/ui/theme, @moonframe/ui/skins, @moonframe/ui/styles.css, and optional Tailwind v4 @moonframe/ui/tailwind.css)
+- Next.js real consumer build: PASS (`npm run build:example` verified Next.js 16.4.2 App Router static/SSR compilation in `examples/nextjs-app`)
 
 The milestone entries below retain the original wider roadmap and its historical evidence. Formal human reviews, premium catalog completion, optional assets and public release are separate from the usable local runtime; their checkboxes remain evidence-dependent.
 
