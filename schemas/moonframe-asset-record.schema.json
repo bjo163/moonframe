@@ -1,0 +1,757 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-asset-record.schema.json",
+  "title": "Moonframe original asset lifecycle record (draft structural contract)",
+  "description": "Proposed Draft 2020-12. Record metadata only, not a claim of a produced file. Full generic schema engine NOT installed. Conditional gates must also be enforced by asset release validator and human review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "recordVersion",
+    "assetId",
+    "displayName",
+    "assetType",
+    "brandScope",
+    "skinId",
+    "purpose",
+    "status",
+    "provenanceType",
+    "license",
+    "source",
+    "exports",
+    "accessibility",
+    "review",
+    "owner",
+    "fallbackAssetId"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "recordVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "assetId": {
+      "type": "string",
+      "pattern": "^mf\\.(brand|skin|icon|illustration|pattern|preview|font|sound)\\.[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assetType": {
+      "enum": [
+        "brand-mark",
+        "wordmark",
+        "skin-signature",
+        "functional-icon",
+        "decorative-pattern",
+        "illustration",
+        "preview-media",
+        "favicon",
+        "app-icon",
+        "font",
+        "optional-audio"
+      ]
+    },
+    "brandScope": {
+      "enum": [
+        "moonframe-master",
+        "skin-edition",
+        "consumer-owned",
+        "shared-functional"
+      ]
+    },
+    "skinId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 4
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "brief-approved",
+        "source-created",
+        "provenance-reviewed",
+        "rights-pending",
+        "license-cleared",
+        "accessibility-reviewed",
+        "optimized",
+        "visual-reviewed",
+        "accepted",
+        "published",
+        "quarantined",
+        "rejected",
+        "deprecated",
+        "example-only"
+      ]
+    },
+    "provenanceType": {
+      "enum": [
+        "original-created",
+        "generated-needs-review",
+        "third-party-licensed",
+        "public-domain-verified",
+        "customer-provided",
+        "unknown",
+        "rejected"
+      ]
+    },
+    "license": {
+      "$ref": "#/$defs/license"
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/source"
+        }
+      ]
+    },
+    "exports": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/export"
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "role",
+        "fallbackText",
+        "decorative",
+        "reviewEvidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "decorative",
+            "informative",
+            "functional",
+            "branding",
+            "typography",
+            "audio"
+          ]
+        },
+        "fallbackText": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decorative": {
+          "type": "boolean"
+        },
+        "reviewEvidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contrastNote": {
+          "type": "string"
+        },
+        "motionFallback": {
+          "type": "string"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "approvedBy",
+        "approvedAt",
+        "evidence",
+        "rightsCleared",
+        "visualAccepted"
+      ],
+      "properties": {
+        "approvedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approvedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rightsCleared": {
+          "type": "boolean"
+        },
+        "visualAccepted": {
+          "type": "boolean"
+        },
+        "sourceIntegrityPassed": {
+          "type": "boolean"
+        },
+        "securityReviewPassed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fallbackAssetId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "usedBy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedTokenRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themeModes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "light",
+          "dark"
+        ]
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "generatedBy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersededBy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "safePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)[a-zA-Z0-9_./@-]+$"
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "licenseId",
+        "evidenceUrl",
+        "attribution",
+        "distributionApproved",
+        "reviewer"
+      ],
+      "properties": {
+        "licenseId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidenceUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attribution": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "distributionApproved": {
+          "type": "boolean"
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reservedFontNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "commercialUse": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "modificationsAllowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "format",
+        "sha256",
+        "creator",
+        "createdAt"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/safePath"
+        },
+        "format": {
+          "enum": [
+            "svg",
+            "png",
+            "webp",
+            "avif",
+            "jpg",
+            "ico",
+            "otf",
+            "ttf",
+            "woff2",
+            "wav",
+            "flac",
+            "ogg",
+            "mp3",
+            "css",
+            "ai",
+            "eps",
+            "psd",
+            "fig",
+            "other"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "creator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "toolVersion": {
+          "type": "string"
+        },
+        "originalUrl": {
+          "type": "string"
+        },
+        "editHistory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "export": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "format",
+        "sha256",
+        "bytes"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/safePath"
+        },
+        "format": {
+          "enum": [
+            "svg",
+            "png",
+            "webp",
+            "avif",
+            "jpg",
+            "ico",
+            "woff2",
+            "ogg",
+            "mp3"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "viewBox": {
+          "type": "string"
+        },
+        "transparent": {
+          "type": "boolean"
+        },
+        "colorProfile": {
+          "type": "string"
+        },
+        "durationMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "codec": {
+          "type": "string"
+        },
+        "normalizeTool": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "planned",
+              "example-only"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "type": "null"
+          },
+          "exports": {
+            "maxItems": 0
+          },
+          "license": {
+            "properties": {
+              "distributionApproved": {
+                "const": false
+              }
+            }
+          },
+          "review": {
+            "properties": {
+              "approvedBy": {
+                "type": "null"
+              },
+              "approvedAt": {
+                "type": "null"
+              },
+              "rightsCleared": {
+                "const": false
+              },
+              "visualAccepted": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "accepted",
+              "published"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/source"
+          },
+          "exports": {
+            "minItems": 1
+          },
+          "license": {
+            "properties": {
+              "licenseId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidenceUrl": {
+                "type": "string",
+                "minLength": 1
+              },
+              "distributionApproved": {
+                "const": true
+              },
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "review": {
+            "properties": {
+              "approvedBy": {
+                "type": "string",
+                "minLength": 1
+              },
+              "approvedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "evidence": {
+                "minItems": 1
+              },
+              "rightsCleared": {
+                "const": true
+              },
+              "visualAccepted": {
+                "const": true
+              },
+              "sourceIntegrityPassed": {
+                "const": true
+              },
+              "securityReviewPassed": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assetType": {
+            "enum": [
+              "brand-mark",
+              "wordmark",
+              "skin-signature",
+              "functional-icon",
+              "favicon",
+              "app-icon"
+            ]
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "published"
+            ]
+          }
+        },
+        "required": [
+          "assetType",
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exports": {
+            "contains": {
+              "type": "object",
+              "required": [
+                "viewBox"
+              ],
+              "properties": {
+                "format": {
+                  "const": "svg"
+                },
+                "viewBox": {
+                  "type": "string",
+                  "minLength": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assetType": {
+            "enum": [
+              "decorative-pattern",
+              "illustration",
+              "preview-media"
+            ]
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "published"
+            ]
+          }
+        },
+        "required": [
+          "assetType",
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exports": {
+            "contains": {
+              "type": "object",
+              "required": [
+                "width",
+                "height"
+              ],
+              "properties": {
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assetType": {
+            "const": "font"
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "published"
+            ]
+          }
+        },
+        "required": [
+          "assetType",
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "license": {
+            "required": [
+              "reservedFontNames"
+            ]
+          },
+          "exports": {
+            "contains": {
+              "properties": {
+                "format": {
+                  "const": "woff2"
+                }
+              },
+              "required": [
+                "format"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assetType": {
+            "const": "optional-audio"
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "published"
+            ]
+          }
+        },
+        "required": [
+          "assetType",
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "exports": {
+            "contains": {
+              "required": [
+                "durationMs",
+                "codec",
+                "bytes"
+              ],
+              "properties": {
+                "durationMs": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "codec": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

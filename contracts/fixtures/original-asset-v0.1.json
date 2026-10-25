@@ -1,0 +1,525 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "MF-ASSET-METADATA-FIXTURES-001",
+  "status": "synthetic-examples-only",
+  "schemaRef": "schemas/moonframe-asset-record.schema.json",
+  "canonicalSkinRef": "moonframe-theme-contract-v1.3.json",
+  "valid": [
+    {
+      "id": "planned-moonzine-signature",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "fake-published",
+      "why": "Missing source/exports/reviewer/license cannot publish",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "published",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "fake-accepted",
+      "why": "False approved art record",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "accepted",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": true
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "unsafe-asset-id",
+      "why": "Unsafe ID",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "../../escape",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "unknown-skin",
+      "why": "Noncanonical skin",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonfoo",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "unsafe-export-path",
+      "why": "Path traversal from source",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "source-created",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": {
+          "path": "../escape.svg",
+          "format": "svg",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "creator": "fixture-only",
+          "createdAt": "2026-01-01T00:00:00Z"
+        },
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "planned-with-export",
+      "why": "No fictitious planned export",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [
+          {
+            "path": "generated/no-file.svg",
+            "format": "svg",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "bytes": 400
+          }
+        ],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "planned-rights-fraud",
+      "why": "No made-up rights",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": true,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "duplicate-metadata",
+      "why": "Source cannot be untracked on planned",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": {
+          "path": "fake.svg",
+          "format": "svg",
+          "sha256": "bad",
+          "creator": "demo",
+          "createdAt": "2026-01-01T00:00:00Z"
+        },
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "role-error",
+      "why": "No illegal accessibility status",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "sound-only-required",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": null,
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": false
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    },
+    {
+      "id": "fake-review",
+      "why": "No fake approval",
+      "sample": {
+        "schemaVersion": "0.1.0",
+        "recordVersion": "0.1.0",
+        "assetId": "mf.skin.moonzine.signature-texture",
+        "displayName": "Moonzine texture planned (sample only)",
+        "assetType": "decorative-pattern",
+        "brandScope": "skin-edition",
+        "skinId": "moonzine",
+        "purpose": "Planned textured collage direction, no source yet",
+        "status": "example-only",
+        "provenanceType": "unknown",
+        "license": {
+          "licenseId": null,
+          "evidenceUrl": null,
+          "attribution": null,
+          "distributionApproved": false,
+          "reviewer": null
+        },
+        "source": null,
+        "exports": [],
+        "accessibility": {
+          "role": "decorative",
+          "fallbackText": null,
+          "decorative": true,
+          "reviewEvidence": null
+        },
+        "review": {
+          "approvedBy": "someone",
+          "approvedAt": null,
+          "evidence": [],
+          "rightsCleared": false,
+          "visualAccepted": true
+        },
+        "owner": null,
+        "fallbackAssetId": null,
+        "themeModes": [
+          "light",
+          "dark"
+        ],
+        "notes": "Illustrative metadata only. No source file exists."
+      }
+    }
+  ],
+  "warning": "These are metadata examples not file existence, original artwork, completed provenance or rights verification. Generic JSON Schema engine may not be installed."
+}
