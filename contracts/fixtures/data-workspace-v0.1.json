@@ -1,0 +1,729 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "MF-DATA-FIXTURES-001",
+  "status": "spec-fixtures-only",
+  "columns": [
+    {
+      "id": "name",
+      "valueType": "text",
+      "allowedOperators": [
+        "eq",
+        "neq",
+        "contains",
+        "startsWith",
+        "in",
+        "isNull"
+      ]
+    },
+    {
+      "id": "status",
+      "valueType": "enum",
+      "allowedOperators": [
+        "eq",
+        "neq",
+        "in",
+        "notIn",
+        "isNull"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "id": "r1",
+      "name": "Alice Example",
+      "status": "active"
+    },
+    {
+      "id": "r2",
+      "name": "Budi Example",
+      "status": "inactive"
+    }
+  ],
+  "valid": [
+    {
+      "id": "server-cursor-basic",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "dual-offset-cursor",
+      "why": "Discriminated pagination cannot use both strategies",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "offset",
+            "pageIndex": 0,
+            "pageSize": 25,
+            "cursor": "abc"
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "unknown-filter-field",
+      "why": "Filter field must be allowlisted for consumer schema",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "__sql__",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "invalid-type-operator",
+      "why": "Numeric comparison on text enum is invalid",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "gt",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "duplicate-selected-ids",
+      "why": "Cannot double-count record selection",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r1"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "query-all-missing-snapshot",
+      "why": "No all-query without server snapshot/expiry/confirmation",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "query-all-except",
+          "snapshotId": "",
+          "queryFingerprint": "",
+          "excludedIds": [],
+          "expiresAt": "",
+          "confirmationRequired": false
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "select-all-no-export-snapshot",
+      "why": "Export all-query must carry matching query selection",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "all-query-matches",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "bad-filter-nesting",
+      "why": "Unbounded filter groups rejected",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "group",
+                  "logic": "and",
+                  "children": [
+                    {
+                      "kind": "group",
+                      "logic": "and",
+                      "children": [
+                        {
+                          "kind": "group",
+                          "logic": "and",
+                          "children": [
+                            {
+                              "kind": "group",
+                              "logic": "and",
+                              "children": [
+                                {
+                                  "kind": "group",
+                                  "logic": "and",
+                                  "children": [
+                                    {
+                                      "kind": "group",
+                                      "logic": "and",
+                                      "children": [
+                                        {
+                                          "kind": "group",
+                                          "logic": "and",
+                                          "children": [
+                                            {
+                                              "kind": "group",
+                                              "logic": "and",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "unsafe-csv-format",
+      "why": "Unsupported format is not silently accepted",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "html-executable",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "unknown-server-sort",
+      "why": "Sorting columns must match allowed schemas",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "not-permitted",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "name",
+            "status"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    },
+    {
+      "id": "unknown-export-column",
+      "why": "Exporting hidden/unapproved fields invalid",
+      "sample": {
+        "query": {
+          "version": 1,
+          "mode": "server",
+          "globalSearch": "",
+          "sorting": [
+            {
+              "columnId": "name",
+              "descending": false
+            }
+          ],
+          "filters": {
+            "version": 1,
+            "root": {
+              "kind": "group",
+              "logic": "and",
+              "children": [
+                {
+                  "kind": "predicate",
+                  "fieldId": "status",
+                  "operator": "eq",
+                  "value": "active"
+                }
+              ]
+            }
+          },
+          "pagination": {
+            "kind": "cursor",
+            "cursor": null,
+            "pageSize": 25
+          },
+          "savedViewId": null
+        },
+        "selection": {
+          "kind": "explicit-ids",
+          "scope": "current-page",
+          "ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        "exportRequest": {
+          "scope": "visible-page",
+          "format": "csv",
+          "queryFingerprint": "q42",
+          "columnIds": [
+            "secret-billing-token"
+          ],
+          "locale": "id-ID",
+          "timeZone": "Asia/Jakarta",
+          "numberSerialization": "canonical"
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Fixture validator checks a bounded structural/semantic subset, not all JSON Schema draft 2020-12 keywords.",
+    "Synthetic names only, no actual subscriber/customer data.",
+    "CSV formula injection is threat model/test contract, not serializer implementation."
+  ]
+}

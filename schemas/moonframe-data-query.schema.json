@@ -1,0 +1,447 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bjo163/moonframe/blob/main/schemas/moonframe-data-query.schema.json",
+  "title": "Moonframe Data Workspace serializable query/selection/export fixture candidate",
+  "description": "Draft 2020-12 schema for future shared wire model. It defines structural candidate; semantic allowlist/type/privacy and cross-contract status handled by no-dependency Node validator. No AJV engine installed, so do not claim generic schema execution.",
+  "type": "object",
+  "required": [
+    "query",
+    "selection",
+    "exportRequest"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "$ref": "#/$defs/query"
+    },
+    "selection": {
+      "$ref": "#/$defs/selection"
+    },
+    "exportRequest": {
+      "$ref": "#/$defs/exportRequest"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "sort": {
+      "type": "object",
+      "required": [
+        "columnId",
+        "descending"
+      ],
+      "properties": {
+        "columnId": {
+          "$ref": "#/$defs/id"
+        },
+        "descending": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "offset": {
+      "type": "object",
+      "required": [
+        "kind",
+        "pageIndex",
+        "pageSize"
+      ],
+      "properties": {
+        "kind": {
+          "const": "offset"
+        },
+        "pageIndex": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "totalCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "cursor": {
+      "type": "object",
+      "required": [
+        "kind",
+        "pageSize"
+      ],
+      "properties": {
+        "kind": {
+          "const": "cursor"
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "cursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nextCursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previousCursor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "totalCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "pagination": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/offset"
+        },
+        {
+          "$ref": "#/$defs/cursor"
+        }
+      ]
+    },
+    "predicate": {
+      "type": "object",
+      "required": [
+        "kind",
+        "fieldId",
+        "operator"
+      ],
+      "properties": {
+        "kind": {
+          "const": "predicate"
+        },
+        "fieldId": {
+          "$ref": "#/$defs/id"
+        },
+        "operator": {
+          "enum": [
+            "eq",
+            "neq",
+            "contains",
+            "startsWith",
+            "gt",
+            "gte",
+            "lt",
+            "lte",
+            "between",
+            "in",
+            "notIn",
+            "before",
+            "after",
+            "isNull",
+            "isNotNull"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "maxItems": 100
+        }
+      },
+      "additionalProperties": false
+    },
+    "group": {
+      "type": "object",
+      "required": [
+        "kind",
+        "logic",
+        "children"
+      ],
+      "properties": {
+        "kind": {
+          "const": "group"
+        },
+        "logic": {
+          "enum": [
+            "and",
+            "or"
+          ]
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          },
+          "maxItems": 30
+        }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/predicate"
+        },
+        {
+          "$ref": "#/$defs/group"
+        }
+      ]
+    },
+    "filterAST": {
+      "type": "object",
+      "required": [
+        "version",
+        "root"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "root": {
+          "$ref": "#/$defs/group"
+        }
+      },
+      "additionalProperties": false
+    },
+    "query": {
+      "type": "object",
+      "required": [
+        "version",
+        "mode",
+        "globalSearch",
+        "sorting",
+        "filters",
+        "pagination"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "mode": {
+          "enum": [
+            "client",
+            "server"
+          ]
+        },
+        "globalSearch": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "sorting": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sort"
+          },
+          "maxItems": 8
+        },
+        "filters": {
+          "$ref": "#/$defs/filterAST"
+        },
+        "pagination": {
+          "$ref": "#/$defs/pagination"
+        },
+        "savedViewId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "scope",
+            "ids"
+          ],
+          "properties": {
+            "kind": {
+              "const": "explicit-ids"
+            },
+            "scope": {
+              "enum": [
+                "current-page",
+                "loaded",
+                "cross-page"
+              ]
+            },
+            "ids": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "maxItems": 10000
+            },
+            "queryFingerprint": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "snapshotId",
+            "queryFingerprint",
+            "excludedIds",
+            "expiresAt",
+            "confirmationRequired"
+          ],
+          "properties": {
+            "kind": {
+              "const": "query-all-except"
+            },
+            "snapshotId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "queryFingerprint": {
+              "type": "string",
+              "minLength": 1
+            },
+            "excludedIds": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "expiresAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "totalCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "confirmationRequired": {
+              "const": true
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "exportRequest": {
+      "type": "object",
+      "required": [
+        "scope",
+        "format",
+        "queryFingerprint",
+        "columnIds",
+        "locale",
+        "timeZone"
+      ],
+      "properties": {
+        "scope": {
+          "enum": [
+            "visible-page",
+            "loaded",
+            "selected-explicit",
+            "all-query-matches"
+          ]
+        },
+        "format": {
+          "enum": [
+            "csv",
+            "xlsx",
+            "pdf"
+          ]
+        },
+        "queryFingerprint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selection": {
+          "$ref": "#/$defs/selection"
+        },
+        "columnIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "locale": {
+          "type": "string",
+          "minLength": 2
+        },
+        "timeZone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numberSerialization": {
+          "enum": [
+            "canonical",
+            "localized"
+          ]
+        },
+        "filenameHint": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "enum": [
+                  "selected-explicit",
+                  "all-query-matches"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "selection"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}
