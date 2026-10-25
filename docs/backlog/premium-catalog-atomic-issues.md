@@ -1,0 +1,22 @@
+# Moonframe premium catalog — 10 atomic issue-ready tasks
+
+**Status:** issue-ready markdown **only**; repository already has [issues #1–#6](initial-issues.md), so none of these 10 are created automatically. **Branch policy:** reuse existing `main` unless a future rule requires PR. Dependencies reference existing issue IDs where applicable. Scope currently **documentation/contract only**.
+
+**Common task DoD:** exactly scoped canonical manifest/doc changes; no hidden business behavior; independent validation command `node scripts/validate-contracts.mjs --self-test`; output changed paths, source URLs/versions, acceptance evidence, unresolved risks, rollback plan; preserve zero false production statuses. No speculative new branch.
+
+| Order | Task ID | Objective and exact edit scope | Depends on | Acceptance evidence / completion gate |
+|---|---|---|---|---|
+| 1 | MF-PREM-001 | Final review of 6-level A–F taxonomy; [scope Bible](../premium/premium-scope-bible.md) and manifests | Current audit | Reviewer confirms no component/block/page/starter conflation; verify all foreign keys, preserve 15 skin IDs |
+| 2 | MF-PREM-002 | Define P1 authentication form APIs and error semantics; [Auth UI contract](../../contracts/moonframe-auth-ui-catalog-v0.1.json), [auth guidance](../premium/auth-ui-suite.md) | MF-PREM-001, existing #3 provider ADR for implementation | Sign-in/sign-up/magic-link/reset/OTP each has typed proposed inputs, intent callbacks, 8+ states; no credential backend |
+| 3 | MF-PREM-003 | Formalize 4 auth layout variants including enterprise SSO/mobile; page refs in [page manifest](../../contracts/moonframe-page-template-manifest-v0.1.json) | MF-PREM-002 | Same flow fields across minimal/split/branded/enterprise; offline/locked/expired plus keyboard/RTL/zoom specification |
+| 4 | MF-PREM-004 | Approve simple table/DataTable state contract; [data workspace contract](../../contracts/moonframe-data-workspace-contract-v0.1.json) | existing #3 and #5 research choices | Stable IDs, sort/page/selection/server-state examples and APG checklist; no grid/editing baked into core |
+| 5 | MF-PREM-005 | Expand filter/saved-view/bulk/export intent specs; data block refs and async states | MF-PREM-004 | Controlled query AST, pagination cursors, row selection across pages, permission and stale-data caveats |
+| 6 | MF-PREM-006 | Normalize 72 page compositions with C-level dependencies; [page manifest](../../contracts/moonframe-page-template-manifest-v0.1.json) | MF-PREM-001 | No missing blockRef, domain backend or route policy; each has mobile and five failure/recovery states |
+| 7 | MF-PREM-007 | Review eight multi-route starter profiles; [starter manifest](../../contracts/moonframe-starter-manifest-v0.1.json) | MF-PREM-006 | No missing pageRef, routes remain consumer-owned, safe synthetic fixture plan and error/permissions routes |
+| 8 | MF-PREM-008 | License/adapter feasibility spike for Table, Virtual, RHF/Zod, auth, calendar, rich text and grid; [integration manifest](../../contracts/moonframe-integration-manifest-v0.1.json), [comparison](../research/premium-competitive-analysis.md) | existing #1 consumer matrix, MF-PREM-004 | License by pinned version, optional import/bundle measurement, provider compatibility; no install by default |
+| 9 | MF-PREM-009 | Define premium screenshot fixtures and QA risk matrix; [coverage](../../contracts/moonframe-premium-coverage-v0.1.json) + [QA](../qa/validation-strategy.md) | existing #6, MF-PREM-003, MF-PREM-006 | Maintain 30 modes × 22 references = 660 `not-rendered` until screenshots; test grievance, forced colors, RTL, density, zoom |
+| 10 | MF-PREM-010 | Validate catalog foreign keys, status counts and negative fixtures; [validator](../../scripts/validate-contracts.mjs) | MF-PREM-001 through MF-PREM-009 | CI validates six levels, duplicate IDs/refs and tampered missing reference; no production-ready claim |
+
+## Dependency and status note
+
+The existing issues #1–#6 remain primary architecture prerequisites; tasks above are **new planning scopes** and not GitHub issues yet. Suggested first implementation after all necessary research approval: a small vertical slice `Button + Field + Form → sign-in block → minimal auth page` and `Table → controlled DataTable → records table page`, each on Classic, Moonpunk, Moonzine, Moonledger in Light/Dark. UI implementation is **not** authorized within this specification work.

@@ -41,3 +41,9 @@ Use WCAG 2.2 AA [normative criteria](https://www.w3.org/TR/WCAG22/) and [WAI-ARI
 - **G4 Release candidate:** consumer install, semver/migration, licenses/provenance, CI/manual QA signoff.
 
 Do not mark G1–G4 passed in this repo while no product code exists.
+
+## Premium scope QA extension (planned, not tested)
+
+The [premium coverage manifest](../../contracts/moonframe-premium-coverage-v0.1.json) defines **22** representative premium block/page fixtures across **15 skins × 2 resolved modes = 660** explicitly `not-rendered` reference cells. Every other catalog item is planned as applicable to all 30 appearances unless a future reviewed exception exists; 660 is not exhaustive item-level validation. Separate 105 pairwise comparisons remain `not-reviewed`.
+
+Minimum future test scenarios: auth idle/pending/failure/offline/expired/locked/OTP and passkey fallback; data sort/page/filter/bulk selection/server error/stale/permission; page 200–400% zoom, keyboard and screen reader, long/RTL locale; same data across skins and desktop/tablet/mobile; forced-color/reduced-motion/grayscale/decoration disabled; optional dependency failed-to-load fallback; no hidden network requests, credential logs or paid-license code in core. Validate page/block/starter graph statically in CI **without** asserting UI accessibility or rendering proof.

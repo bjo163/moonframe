@@ -32,3 +32,30 @@
 ## Evidence interpretation
 
 Official library claims (such as 'accessible') describe authors' intent/features, not evidence of WCAG conformance in Moonframe. Every proposed choice and future package version must be re-verified near implementation. No community popularity score is treated as a factual performance benchmark.
+
+## 2026-10-25 Premium Scope research extension (R17–R34)
+
+These sources were opened/verified on 2026-10-25; where the official site did not clearly state a package version or release date, it remains *not confirmed*. The [competitive decision matrix](premium-competitive-analysis.md) records benefits, caveats, optionality and license constraints.
+
+| Ref | Official source | Observed / decision |
+|---|---|---|
+| R17 | [shadcn components](https://ui.shadcn.com/docs/components) and [blocks](https://ui.shadcn.com/blocks) | Clear product distinction component vs reusable sections/page composition; benchmark structure only |
+| R18 | [shadcn login blocks](https://ui.shadcn.com/blocks/login) | Login variants include minimal, cover/split and branded page layouts; no basis to claim they implement server auth |
+| R19 | [React](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/docs/) | Candidate platform API/types; no installed versions proven |
+| R20 | [Base UI about](https://base-ui.com/react/overview/about) and [releases](https://base-ui.com/react/overview/releases) | Official site reported Base UI 1.9.0 on **2026-10-09**; candidate, not approved |
+| R21 | [Radix overview](https://www.radix-ui.com/primitives/docs/overview/introduction), [React Aria](https://react-aria.adobe.com/getting-started) | Accessibility-focused primitives; compare in existing ADR, no package selected |
+| R22 | [TanStack Table overview](https://tanstack.com/table/latest/docs/overview) | Headless table engine; UI surface belongs to Moonframe; compare with external grid |
+| R23 | [TanStack Virtual introduction](https://tanstack.com/virtual/latest/docs/introduction) | Virtualizer is headless; optional feature needs keyboard/AT proof |
+| R24 | [React Hook Form useForm](https://react-hook-form.com/docs/useform) | Forms state adapter candidate; observed docs labeled v7; not an installed version |
+| R25 | [Zod basics](https://zod.dev/basics) | Schema/type validation; official banner showed Zod 4.6; no runtime dependency |
+| R26 | [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview) | Cache/server-state alternative; observed React docs v5; core remains fetch-neutral |
+| R27 | [Storybook testing](https://storybook.js.org/docs/writing-tests), [Playwright screenshots](https://playwright.dev/docs/test-snapshots) | UI docs/tests; hosted visual services optional; local fallback |
+| R28 | [FullCalendar React](https://fullcalendar.io/docs/react), [license](https://fullcalendar.io/license) | Standard MIT distinct from Premium commercial/qualifying AGPL; license review required |
+| R29 | [Tiptap editor](https://tiptap.dev/docs/editor/getting-started/overview) | Headless editor OSS/paid extensions split; optional |
+| R30 | [MUI X licensing](https://mui.com/x/introduction/licensing/) | Community MIT, Pro and Premium commercial; not a core dependency |
+| R31 | [Auth.js](https://authjs.dev/getting-started) | Official docs present migration to Better Auth; status and app fit must be reviewed |
+| R32 | [Better Auth](https://better-auth.com/docs/introduction), [plugins](https://better-auth.com/docs/plugins) | Auth/session/security provider with passkey/MFA/org abilities, not a UI primitive |
+| R33 | [Clerk sign-in](https://clerk.com/components/sign-in) | Managed auth component/service; vendor coupling remains consumer decision |
+| R34 | [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | WCAG 2.2 Recommendation dated 2024-12-12, manual+automated review needed |
+
+**Research gaps:** Recharts official accessibility/feature docs not sufficiently verified during this pass, so treat chart engine as candidate without a technical/library claim. Actual bundle-size benchmarks, licenses of exact versions, SSR/RTL tests, auth-provider callback integrations and final framework support need prototype evidence before selection.

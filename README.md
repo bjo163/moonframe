@@ -43,6 +43,18 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Premium package specifications (2026-10-25)
+
+- [Premium Scope Bible — six levels A–F](docs/premium/premium-scope-bible.md)
+- [Premium scope audit with P0–P3 findings](docs/audit/premium-scope-audit-2026-10-25.md)
+- [Research and competitive analysis](docs/research/premium-competitive-analysis.md)
+- [Authentication UI suite](docs/premium/auth-ui-suite.md) and [Auth flow references](contracts/moonframe-auth-ui-catalog-v0.1.json)
+- [Four-tier Data Workspace](docs/premium/data-workspace.md) and [Data contract](contracts/moonframe-data-workspace-contract-v0.1.json)
+- [151 proposed components](contracts/moonframe-component-manifest-v0.1.json), [144 block records (13 families + 131 concrete)](contracts/moonframe-block-manifest-v0.1.json)
+- [72 page templates](contracts/moonframe-page-template-manifest-v0.1.json), [8 starter applications](contracts/moonframe-starter-manifest-v0.1.json)
+- [16 optional integrations](contracts/moonframe-integration-manifest-v0.1.json), [660 pending reference specimens](contracts/moonframe-premium-coverage-v0.1.json)
+- [10 atomic issue-ready premium tasks](docs/backlog/premium-catalog-atomic-issues.md)
+
 - [Baseline repository audit](docs/audit/repository-baseline-audit.md)
 - [Refinement delivery report](docs/audit/refinement-delivery-2026-10-25.md)
 - [Primary-source research log](docs/research/research-log.md)

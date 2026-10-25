@@ -469,3 +469,15 @@ This amendment updates **interpretation, not product implementation**. Start wit
 7. **Validation scope:** [contract validator and CI](../scripts/validate-contracts.mjs) check structural consistency; no claims about production quality, contrast, browser compatibility, bundle or WCAG compliance follow from a green docs-only run. See [QA strategy](qa/validation-strategy.md).
 
 Authoritative references and versioning rules are in [governance](architecture/decisions-and-governance.md). No dependency, framework, package namespace, license, artwork or SFX was selected or shipped in this refinement.
+
+---
+
+## 19. Premium UI package scope extension — 2026-10-25
+
+[Premium Scope Bible](premium/premium-scope-bible.md) is the authoritative cross-catalog interpretation for six levels A (primitive) through F (optional integration), while **IDs and item-level semantics are owned by their JSON manifests**. This extends, rather than supersedes, the original 15-skin design laws, token system, 30 Light/Dark baseline appearances and shared component behavior contract.
+
+The existing high-level 13 `block` entries are retained as `family-blueprint`, while 131 new concrete blocks are marked Level C. Level D [page templates](../contracts/moonframe-page-template-manifest-v0.1.json) depend on Level C records; Level E [starter apps](../contracts/moonframe-starter-manifest-v0.1.json) depend on Level D page IDs; Level F [integrations](../contracts/moonframe-integration-manifest-v0.1.json) are optional candidates, not core dependencies. Component inventory now has 151 specified entries, **no shipped code**.
+
+Security non-goals are deliberate: presentation and callbacks do **not** grant auth/session/security, execute payments or ERP bookkeeping, fetch/mutate backend records, run AI tools, store files, send messages, enforce permissions, or control infrastructure. The auth suite must never be sold or documented as a security service. Data table is not an enterprise spreadsheet/grid. FullCalendar Premium, MUI X Pro/Premium and Tiptap paid modules require separate licensing reviews, not silent inclusion.
+
+[Auth suite](premium/auth-ui-suite.md), [data workspace](premium/data-workspace.md), [primary-source comparison](research/premium-competitive-analysis.md), [premium scope audit](audit/premium-scope-audit-2026-10-25.md), [initial priority breakdown](backlog/premium-catalog-atomic-issues.md) and [QA strategy](qa/validation-strategy.md) define the engineering readiness gates. A 660-cell **planned** premium reference matrix is not 660 passed tests; 105 visual pairs remain `not-reviewed`.

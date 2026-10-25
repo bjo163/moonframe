@@ -70,3 +70,7 @@ MF-014 token validator/invalid fixtures; MF-020 runtime preference model; MF-021
 | MF-024 | [#6](https://github.com/bjo163/moonframe/issues/6) | #2, #5 | open |
 
 Live GitHub issue state is authoritative if it changes after this snapshot. Do not create duplicate issues merely because the older task list has unchecked boxes.
+
+## Premium scope follow-up without duplicate GitHub issues
+
+The [10 new atomic premium catalog tasks](premium-catalog-atomic-issues.md) are backlog-only, **not created** as GitHub issues in this planning phase. Existing six GitHub issues remain linked above and take precedence where dependencies overlap.

@@ -134,3 +134,17 @@ Do not collapse these states into one “done” checkbox.
 The repository baseline audit and new documentation-level contracts are recorded in [audit](audit/repository-baseline-audit.md), [research](research/research-log.md), [ADR](adr/0001-primitive-provider.md), [source plan](../contracts/moonframe-token-source-plan-v0.1.json) and [initial issue backlog](backlog/initial-issues.md). The historical checkboxes above remain intentionally unchanged: evidence of completed audit documents does not mean every part of a broad implementation issue has been satisfied.
 
 **Before implementation:** verify existing GitHub issues and current branch; tackle provider spike, token-format proof, source-owned distribution decision, and same-data four-skin reference fixtures. Do not open a new branch unless repo policy requires it. Never treat the docs-only validator as production token validation. The next workflow is deliberately modest: specification -> local spike -> reviewed decision -> targeted component implementation -> 30 appearance tests -> 105 visual pair reviews -> release.
+
+---
+
+## Premium package planning phases (2026-10-25; non-implementation scope)
+
+Detailed issue-ready work and dependencies: [premium atomic backlog](backlog/premium-catalog-atomic-issues.md). Existing [issues #1–#6](backlog/initial-issues.md) remain the foundation blockers; do not create duplicates automatically.
+
+- **Gate S0, verified scope:** classify 151 components, 13 family + 131 concrete blocks, 72 page templates, 8 starter apps, 16 integration candidates into non-overlapping A–F levels and P0–P3 priorities.
+- **Gate S1, auth + data:** specify core sign-in/registration/recovery forms and data table controlled query/state contracts without backend. Narrow prototype slice after provider/consumer decision.
+- **Gate S2, premium compositions:** validate page-to-block and starter-to-page foreign keys, safe integration seams, complete state/RTL/mobile requirements.
+- **Gate S3, visual QA plan:** 15 skins × 2 modes, 22 representative premium pages/blocks × 30 = 660 planned screenshots, plus 105 actual skin-distinctness pair reviews in a later UI implementation phase.
+- **Gate S4, future implementation:** begin with 4 proof skins and two vertical slices only after token/provider ADR, accessibility and license constraints resolved. Avoid dumping all optional integrations into core.
+
+No production code/assets/SFX nor additional GitHub issues were authorized by this planning addendum.
