@@ -1,0 +1,35 @@
+# Token Architecture & Theme Engine — current primary-source research
+
+**Accessed:** 2026-10-25. Source facts are distinguished from Moonframe proposals; a published upstream release is **not** a locally installed dependency. Version not visible = unverified, not guessed.
+
+| Research question | Publisher / verified primary URL | Publication/version | Source fact (F) | Moonframe inference, alternative and confidence |
+|---|---|---|---|---|
+| Status of DTCG | [DTCG technical reports](https://www.designtokens.org/tr/2025.10/) | Final CG report **28 Oct 2025** | F: Format, Color, Resolver are CG reports; NOT W3C Recommendations | Choose subset, avoid W3C Recommendation claim; high |
+| Metadata, token groups, aliases | [DTCG Format](https://www.w3.org/community/reports/design-tokens/CG-FINAL-format-20251028/) §§5–8 | **2025.10**, 28 Oct 2025 | F: `$type`, `$value`, `$description`, `$extensions`, `$deprecated`, group defaults and `{path}` references; JSON pointers/property aliases also defined | Start with whole-token aliases only. Advanced `$ref`/group extension later; high |
+| Color tokens | [DTCG Color Module](https://www.w3.org/community/reports/design-tokens/CG-FINAL-color-20251028/) | **2025.10** | F: structured color-space/components/alpha representation, beyond raw hex | Use bounded `srgb` color object at first; OKLCH only after compatible transform/gamut proof; medium |
+| Resolver capabilities | [DTCG Resolver Module](https://www.w3.org/community/reports/design-tokens/CG-FINAL-resolver-20251028/) | **2025.10** | F: formal resolver spec exists independently from base format | Do not claim full resolver compatibility; select explicit Moonframe overlay algorithm; medium |
+| Style Dictionary and DTCG | [Style Dictionary DTCG](https://styledictionary.com/info/dtcg/), [config](https://styledictionary.com/reference/config/) | Current documentation mentions **v5** | F: first-class DTCG since v4, but docs expressly say latest **2025.10 not fully supported** | Tool candidate, not approved. Compare small deterministic generator for subset; high |
+| Tailwind `@theme` / `inline` | [Tailwind theme variables](https://tailwindcss.com/docs/theme) | docs displayed **v4.3** | F: `@theme` generates theme utilities; `@theme inline` can use referenced variables | Generate utility aliases from stable semantic CSS runtime vars; don't hardcode 30 palettes in utility classes; high |
+| Manual dark selector | [Tailwind dark mode](https://tailwindcss.com/docs/dark-mode) | docs v4.3 | F: `@custom-variant dark` can target data attributes instead of OS automatically | Match `[data-mode=dark]`, separate saved `system` from effective root; high |
+| Static class scanning | [Tailwind detecting classes](https://tailwindcss.com/docs/detecting-classes-in-source-files) | docs v4.3 | F: class scanning requires discoverable complete tokens; dynamic concatenation fragile | Static variants, runtime vars; no `bg-${skin}` construction; high |
+| CSS custom properties | [MDN CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) | Living docs; specific release not verified | F: cascading custom props and fallbacks | Use `--mf-*` private prefix and explicit layers; inspect computed styles in future test; high |
+| Color scheme/system preferences | [MDN color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) | Living docs | F: color-scheme influences UA controls, OS color preference observable through media | Derive resolved Light/Dark without persisting derived result; high |
+| Reduced motion/forced colors | [MDN reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) | Living docs | F: OS overrides can affect animations and colors | Honor OS forced colors independently of high-contrast app token overlays; high |
+| Advanced CSS | [MDN `@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) | Living docs | F: registered custom property supports typing/inheritance controls | Optional enhancement only; don't require it for core theme first paint; medium |
+| Accessibility ratios/targets | [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | WCAG 2.2 **12 Dec 2024** | F: SC 1.4.3 normal text 4.5:1, large text 3:1; 1.4.11 non-text 3:1 where applicable; focus visible AA, 2.4.13 Focus Appearance is AAA | Role/surface + rendered context checks, not "all text 4.5" or automated compliance claim; high |
+| CSS Color gamut | [CSS Color 4](https://www.w3.org/TR/css-color-4/) | latest TR version not pinned | F: wide gamut and color functions have defined behavior | Start sRGB fallback; future OKLCH source requires consistent conversion and visual tests; medium |
+| JSON Schema | [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12) | published **16 June 2022** | F: documented draft and meta-schema | Structural schema, plus independent semantic validation for cycles/overlays/contrast; high |
+| Reference baseline | [shadcn theming](https://ui.shadcn.com/docs/theming), [installation](https://ui.shadcn.com/docs/installation) | docs current; version not pinned | F: CSS variable theme pattern and source-owned components | Inspiration only; no upstream affiliation or automatic primitive selection; high |
+| React runtime | [React documentation](https://react.dev/) | version not pinned | F: React has provider/state APIs but no consumer framework proven here | Do not prescribe Next.js, storage or hydration hook until MF-003 consumer evidence; high |
+
+## Tool comparison / bounded selection criteria
+
+| Candidate | Benefits | Risks / evidence gap | Recommendation |
+|---|---|---|---|
+| Style Dictionary v5 (pinned future version) | Built-in transforms, output formats and DTCG awareness | Official site says **2025.10 incomplete**; need exact plugin test, alias/structural transforms | Candidate for fixture spike MF-013, not installed |
+| Minimal bespoke deterministic generator | Few output targets; explicit runtime vars; easier to inspect small subset | Must own parsing/alias/type/color/gamut, more maintenance if format evolves | Alternative for proof only; production selection **open** |
+| Hand-authored CSS for 30 appearances | Simple at first | Drift, missing coverage, impossible token lineage, poor migration | Reject as canonical strategy |
+
+## Open evidence requirements
+
+Test the actual DTCG subset with pinned processor versions and valid/invalid fixtures; verify exact React/SSR consumer (MF-003), CSS weight of consolidated vs modular outputs, legacy-browser fallback if requested, authorized font/glyph assets, contrast of actual composited surfaces, token type migration and versioning in downstream apps. No Web research alone can certify runtime behavior.
