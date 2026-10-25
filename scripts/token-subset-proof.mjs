@@ -80,7 +80,11 @@ function flattenTokens(tree, prefix = '', result = new Map()) {
 }
 
 function validateColor(value, label) {
-  if (!value || typeof value !== 'object' || value.colorSpace !== 'srgb') fail(`${label}: expected sRGB color object`);
+  if (!value || typeof value !== 'object' || Array.isArray(value)) fail(`${label}: expected sRGB color object`);
+  for (const key of Object.keys(value)) {
+    if (!['colorSpace', 'components', 'alpha'].includes(key)) fail(`${label}: unsupported color field ${key}`);
+  }
+  if (value.colorSpace !== 'srgb') fail(`${label}: expected sRGB color object`);
   if (!Array.isArray(value.components) || value.components.length !== 3 || value.components.some((part) => !Number.isFinite(part) || part < 0 || part > 1)) {
     fail(`${label}: expected three sRGB components in [0, 1]`);
   }
@@ -102,9 +106,15 @@ function resolveToken(token, tokenMap, stack = []) {
   switch (token.$type) {
     case 'color': validateColor(value, 'color'); break;
     case 'dimension':
+      if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some((key) => !['value', 'unit'].includes(key))) {
+        fail('dimension supports only value and unit fields');
+      }
       if (!value || !Number.isFinite(value.value) || !['px', 'rem'].includes(value.unit)) fail('dimension requires finite numeric value and px/rem unit');
       break;
     case 'duration':
+      if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).some((key) => !['value', 'unit'].includes(key))) {
+        fail('duration supports only value and unit fields');
+      }
       if (!value || !Number.isFinite(value.value) || value.value < 0 || value.unit !== 'ms') fail('duration requires finite non-negative value in ms');
       break;
     case 'number': if (typeof value !== 'number' || !Number.isFinite(value)) fail('number requires a finite numeric value'); break;
@@ -196,6 +206,15 @@ expectFailure('missing required semantic name', () => {
 }, /missing required token/);
 
 expectFailure('invalid value/type', () => resolveToken({ $type: 'color', $value: '#336699' }, new Map()), /sRGB color object/);
+expectFailure('unsupported sRGB color value field', () => resolveToken({
+  $type: 'color', $value: { colorSpace: 'srgb', components: [0.1, 0.2, 0.3], hex: '#19334d' },
+}, new Map()), /unsupported color field hex/);
+expectFailure('unsupported dimension value field', () => resolveToken({
+  $type: 'dimension', $value: { value: 1, unit: 'rem', fallback: '1rem' },
+}, new Map()), /dimension supports only value and unit fields/);
+expectFailure('unsupported duration value field', () => resolveToken({
+  $type: 'duration', $value: { value: 1, unit: 'ms', css: '1ms' },
+}, new Map()), /duration supports only value and unit fields/);
 expectFailure('invalid type', () => resolveToken({ $type: 'paint', $value: 'blue' }, new Map()), /unsupported type/);
 expectFailure('missing token type', () => resolveToken({ $value: 1 }, new Map()), /token must have \$type and \$value/);
 expectFailure('missing token value', () => resolveToken({ $type: 'number' }, new Map()), /token must have \$type and \$value/);
