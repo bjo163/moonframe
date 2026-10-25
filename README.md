@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Motion, Interaction & SFX (2026-10-25)
 
 - [Repository audit and P0–P3 evidence](docs/audit/motion-interaction-sfx-audit.md)
+- [Verified Motion / Interaction / SFX delivery and CI report](docs/audit/motion-interaction-sfx-delivery-2026-10-25.md)
 - [Primary WCAG, browser motion and sound research](docs/research/motion-interaction-sfx-research-log.md)
 - [Motion, Interaction & SFX Bible](docs/motion/motion-interaction-sfx-bible.md)
 - [25 named motion recipes, interrupt and reduced fallbacks](contracts/moonframe-motion-recipes-v0.1.json)
