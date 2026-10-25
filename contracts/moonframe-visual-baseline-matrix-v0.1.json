@@ -60,7 +60,7 @@
       ],
       "requiredStates": [
         "resting",
-        "loading",
+        "pending",
         "empty",
         "focus-visible"
       ],

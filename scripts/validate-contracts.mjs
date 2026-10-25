@@ -1149,7 +1149,7 @@ function a11ySystemProblems(req,profiles,visual,ledger) {
  const levels={A:0,AA:0,AAA:0};
  for(const x of criteria){
    if(!/^wcag-[0-9]\.[0-9]\.[0-9]+$/.test(x.id||'')||
-      x.criterion!=='wcag-'&&x.id!=='wcag-'+x.criterion||
+      x.id!=='wcag-'+x.criterion||
       !['A','AA','AAA'].includes(x.level)||
       x.status!=='specified-not-tested'||!isString(x.procedure)||
       !Array.isArray(x.methods)||!x.methods.length||
