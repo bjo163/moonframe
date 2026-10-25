@@ -102,6 +102,26 @@ The initial six pairwise review queue is intentionally a mix of baseline contras
 
 For each pair, a future reviewer compares matching full-color, grayscale, and decoration-off captures, then records observations for the canonical eight Skin Grammar dimensions: composition, geometry, typography, surface, data/navigation, media, component recipes, and motion. Record named reviewer/date, exact pair key, mode and screen coverage, screenshot/evidence links, findings, follow-up, and verdict in the **existing Skin Grammar pair record only**. This document is not a second review ledger. The proposed six are still `not-reviewed` until comparable screenshots and human evidence exist.
 
+**Per-pair reviewer worksheet:** complete this for each review session, then transfer the evidence, dimension observations, reviewer, date, and overall status to that exact pair in the canonical `pairwiseReviewMatrix`. Keep the worksheet with the review evidence; do not create a second mutable status ledger.
+
+| Field | Reviewer records |
+|---|---|
+| Canonical pair key | Skin IDs `a` and `b`, matching one existing unordered pair exactly |
+| Fixture and capture | Fixture version/hash; screen IDs; effective mode; viewport; locale/direction; density; motion/contrast switches |
+| Comparable evidence | Full-color screenshot links for both skins; grayscale links for both; decoration-off links for both; capture commit and environment metadata |
+| Composition | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Geometry | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Typography | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Surface | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Data/navigation | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Media | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Component recipes | Observation for `a` / `b`; evidence link; overlap or distinction to investigate |
+| Motion | Observation for `a` / `b`; evidence link; reduced-motion fallback evidence where applicable |
+| Accessibility/manual review | Keyboard/focus, color-independent cues, forced-colors and assistive-technology notes; unresolved risks |
+| Reviewer and disposition | Reviewer name, review date, follow-up owner/action, and one canonical status: `in-review`, `pass`, `needs-revision`, or `exception-approved`; use `not-reviewed` until evidence exists |
+
+The rubric is descriptive, not an automatic score. Record overlap as a concrete follow-up; do not convert a numeric distinctness threshold into legal originality, trademark, or accessibility clearance.
+
 After the pilot queue, process the remaining canonical unordered pairs in `contracts/moonframe-skin-grammar-contract-v1.0.json` exactly once each (total 105). Do not create duplicate pair IDs or infer success from distance scores. The existing contract remains the sole status source; all 105 remain `not-reviewed` until actual review evidence is entered there. If two skins look alike without optional decoration, record the overlap and a design follow-up instead of changing the data or declaring a pass.
 
 Eight dimensions and verdict use the existing [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) definitions and [QA review protocol](accessibility-visual-qa-bible.md). Distinctness scoring is an editorial signal, not legal/trademark clearance or accessibility certification.
