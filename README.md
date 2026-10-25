@@ -45,6 +45,8 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ### Component API & Behavior (2026-10-25)
 
+- [Component API delivery report with CI evidence](docs/audit/component-api-delivery-2026-10-25.md)
+
 - [Live component behavior audit](docs/audit/component-api-behavior-audit.md)
 - [Current primary-source research log](docs/research/component-api-research-log.md)
 - [Component API & Behavior Bible — canonical API convention](docs/component-api-behavior-bible.md)
