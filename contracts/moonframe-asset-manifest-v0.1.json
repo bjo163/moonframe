@@ -320,5 +320,76 @@
     "checksum",
     "source/export parity"
   ],
-  "examplesAreNotProduced": true
+  "examplesAreNotProduced": true,
+  "brandAuthority": "docs/brand/original-asset-brand-bible.md",
+  "designBriefRef": "moonframe-skin-asset-briefs-v0.1.json",
+  "recordSchemaRef": "../schemas/moonframe-asset-record.schema.json",
+  "pipelineAdrRef": "docs/adr/0006-original-asset-pipeline-and-brand.md",
+  "brandHierarchy": {
+    "status": "proposed-pending-owner-approval",
+    "model": "one-umbrella-brand-with-15-visual-editions",
+    "coreBrandMarkStatus": "not-produced",
+    "coreWordmarkStatus": "not-produced",
+    "independentLegalBrands": false,
+    "skinBadgePolicy": "optional-by-reviewed-need; not always a different logo",
+    "hostBrand": "consumer-app-owns-logo-and-favicon"
+  },
+  "categoriesAreCandidatePoolNotRequiredPerSkin": true,
+  "categoriesClarification": "Historical plannedPerSkin.categories lists candidate categories NOT ten mandatory produced asset families. No standalone skin logo obligation. Approved minimum scoped by documented skin brief.",
+  "approvedAssets": [],
+  "assetRegistryPolicy": {
+    "status": "planned-no-assets",
+    "namespaceProposed": "mf.brand.*, mf.skin.<canonicalSkinId>.*, mf.icon.*, mf.illustration.*, mf.font.*, mf.sound.optional.*",
+    "filePathSemantics": "logical ID stable; generated paths versioned/content-hashed and never source of truth",
+    "distributableRequirements": [
+      "accepted status backed by reviewer/time",
+      "rights/provenance cleared and license text evidence",
+      "real source and exports exist and path safe",
+      "SHA-256 source/output recorded",
+      "SVG vetted safe content and markup",
+      "accessible context-tested variant or fallback",
+      "distribution rights for package clear"
+    ],
+    "prohibited": [
+      "claim produced from empty array",
+      "publish unreviewed generated artwork",
+      "copy unlabeled online asset",
+      "ship source without license",
+      "infinite SVG references",
+      "unsafe inline SVG",
+      "font without RFN/redistribution check"
+    ],
+    "fallback": "missing decorative asset renders without decoration; missing functional asset blocks release"
+  },
+  "approvalWorkflow": {
+    "stages": [
+      "requested",
+      "brief-approved",
+      "source-created",
+      "provenance-reviewed",
+      "license-cleared",
+      "accessibility-reviewed",
+      "optimized",
+      "visual-reviewed",
+      "accepted",
+      "published",
+      "deprecated"
+    ],
+    "holds": [
+      "quarantined",
+      "rejected"
+    ],
+    "currentStage": "requested",
+    "approvalsCompleted": [],
+    "evidenceCount": 0
+  },
+  "licenseGovernance": {
+    "repoCodeLicense": "not-selected-no-LICENSE-present",
+    "brandTrademarkStatus": "not-reviewed",
+    "brandMarkLicense": "not-selected",
+    "fontsLicense": "per-file-not-selected",
+    "soundRights": "not-selected",
+    "publicRedistribution": "blocked-pending-owner-rights-decision",
+    "spdxCurrentVersionSeen": "3.29.0 2026-09-16"
+  }
 }

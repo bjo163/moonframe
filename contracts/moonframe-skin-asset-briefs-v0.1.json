@@ -1,0 +1,1374 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-BRAND-BRIEFS-001",
+  "status": "briefs-specified-no-art-produced",
+  "canonicalSkinIdsFrom": "moonframe-theme-contract-v1.3.json",
+  "visualIdentityAuthority": "moonframe-skin-grammar-contract-v1.0.json",
+  "baseBrand": "Moonframe",
+  "brandModel": "single-umbrella-fifteen-endorsed-editions-proposed",
+  "ownerApproved": false,
+  "notes": [
+    "15 derivative *written* design briefs do not replace canonical skin grammar or signify art/image assets.",
+    "Each skin minimum is its distinctive direction/recipe rather than requiring ten binary assets or full per-skin logo.",
+    "No screenshots, separate vector source, PNG, font, audio or approved wordmark created."
+  ],
+  "briefs": [
+    {
+      "skinId": "moonpunk",
+      "displayName": "Moonpunk",
+      "briefId": "MF-BRAND-BRIEF-01",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonpunk",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonpunk",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Asymmetric manga-punk frame with hard-offset slabs; acid lime is optional token accent",
+      "masterMarkRecommendation": "shared-master-with-distinct-punk-annotation",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Utility slab corner notch, zippy ink-impact border fragments; no skews on controls",
+      "patternAndTexture": {
+        "artDirection": "Rigid offset outline plus strategic ink burst in margins; no full-surface texture",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Angular burst/handdrawn action marks in noninteractive empty space",
+      "typography": {
+        "direction": "Punk display condensed + legible neutral body; no baked text",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonriot",
+          "moonsmash"
+        ],
+        "rule": "Do not use riot diagonal signal tape as primary identity; no radial Moonsmash poster grammar",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Large offset shadows/ink noise could hide focus and fields",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonriot",
+      "displayName": "Moonriot",
+      "briefId": "MF-BRAND-BRIEF-02",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonriot",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonriot",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Directional riot editorial wedge and pointed signal marker with regulated reading alignment",
+      "masterMarkRecommendation": "shared-master-with-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Cut-paper angles and corner signal-red annotation, not hard brick shadow slabs",
+      "patternAndTexture": {
+        "artDirection": "Directional diagonal partitions in headers only; data cells straight",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Signal flashes/static shards outside meaningful text",
+      "typography": {
+        "direction": "Compact editorial heading with measured utilitarian labels",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonpunk",
+          "moonzine"
+        ],
+        "rule": "Not Moonpunk hard slab frame or Moonzine photocopy collage",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Diagonal decoration may distort touch targets, panic-color cues",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonzine",
+      "displayName": "Moonzine",
+      "briefId": "MF-BRAND-BRIEF-03",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonzine",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonzine",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Underground editorial collage of original irregular paper scraps and cropped type frames",
+      "masterMarkRecommendation": "shared-master-with-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Source-created publication folio/tape shapes and torn margin registration guides",
+      "patternAndTexture": {
+        "artDirection": "Soft xerox grain only in gutters or cover art; content on clean paper",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Cutout collage/photo-frame placeholders without unlicensed imagery",
+      "typography": {
+        "direction": "Editorial serif/expressive display plus neutral legible body",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonhalftone",
+          "moonpanel"
+        ],
+        "rule": "Not uniform panels (Moonpanel) nor screentone-only (Moonhalftone)",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Photocopy grain/text overlap, external collage licenses",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonhalftone",
+      "displayName": "Moonhalftone",
+      "briefId": "MF-BRAND-BRIEF-04",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonhalftone",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonhalftone",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Original black-and-white screentone raster density and manga pacing marks",
+      "masterMarkRecommendation": "shared-master-minimal-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Abstract dot gradient/ink cut with no recognizable manga characters",
+      "patternAndTexture": {
+        "artDirection": "Tileable dot set with density clamps and moire-tested scales, never field background",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Original speed/spacing marks with no borrowed IP",
+      "typography": {
+        "direction": "Manga-impact headline with neutral body and controlled captions",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonzine",
+          "moonpanel"
+        ],
+        "rule": "Screentone is primary medium; no rigid equal-panel grid as sole identity",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Moiré/contrast at 200–400% zoom or high DPI",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonglitch",
+      "displayName": "Moonglitch",
+      "briefId": "MF-BRAND-BRIEF-05",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonglitch",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonglitch",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Precise telemetry diagnostic strokes and low-amplitude signal dropout",
+      "masterMarkRecommendation": "shared-master-with-status-strip-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Technical pulse/scan slot and glitch splice restricted to decoration",
+      "patternAndTexture": {
+        "artDirection": "Stationary subtle scanline bands away from forms/data; no flicker",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Abstract wire graph/noise lines without simulated dangerous warnings",
+      "typography": {
+        "direction": "Monospaced metadata + readable sans body with stable digits",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonchrome",
+          "mooncrash"
+        ],
+        "rule": "Not reflective Moonchrome metal nor Mooncrash hazard plate",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Motion/photosensitivity, typography distortion and status ambiguity",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonsmash",
+      "displayName": "Moonsmash",
+      "briefId": "MF-BRAND-BRIEF-06",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonsmash",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonsmash",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "One explosive kinetic typographic focal device with radial burst geometry",
+      "masterMarkRecommendation": "shared-master-with-rare-large-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Unique outward kinetic starbursts and variable speed-line fan geometry",
+      "patternAndTexture": {
+        "artDirection": "No repeating text-cell texture; sparse oversized header/hero accents",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Impact crest/spotlight without appropriated comic property",
+      "typography": {
+        "direction": "Oversized headlines + quiet supports; responsive scale bounds",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonpunk",
+          "moonriot"
+        ],
+        "rule": "No persistent Moonpunk slabs or Moonriot angled editorial tape",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Oversized marks may obscure task, clip viewport, hide buttons",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonink",
+      "displayName": "Moonink",
+      "briefId": "MF-BRAND-BRIEF-07",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonink",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonink",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Expressive nonfigurative brushstroke and restrained ink-wash edge marks",
+      "masterMarkRecommendation": "shared-master-with-ink-flourish-outside-mark",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Organic brush stroke with documented original hand/source trace",
+      "patternAndTexture": {
+        "artDirection": "Ink-wash at canvas/margins only with calibrated contrast and alpha",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Painted negative-space motifs, no text labels drawn as image",
+      "typography": {
+        "direction": "Expressive brush heading accents with readable standard type",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonscrawl",
+          "moonhalftone"
+        ],
+        "rule": "Not exploratory sketchbook penciling nor screentone",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Low contrast on wash, embedded illegible labels and rights",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "mooncrash",
+      "displayName": "Mooncrash",
+      "briefId": "MF-BRAND-BRIEF-08",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#mooncrash",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#mooncrash",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Industrial equipment marking and modular plate seams with reliable warning semantics",
+      "masterMarkRecommendation": "shared-master-with-metal-plate-framing",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Plate rivet corner slots, technical grid and mechanical alignment guide",
+      "patternAndTexture": {
+        "artDirection": "Sparse machine-plate trims, genuine caution stripe only for actual warnings",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Abstract utility gears/seams, never unsafe certification badges",
+      "typography": {
+        "direction": "Utilitarian compressed header with tabular numeral body",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonledger",
+          "moonchrome"
+        ],
+        "rule": "Not reflective chrome or low-deco ERP data surface",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "False warning affordance and narrow click targets",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonpanel",
+      "displayName": "Moonpanel",
+      "briefId": "MF-BRAND-BRIEF-09",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonpanel",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonpanel",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Bounded modular comic panel and consistent gutter rhythm",
+      "masterMarkRecommendation": "shared-master-with-panel-frame-edition-label",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Four-corner panel border system with intentional span/hierarchy",
+      "patternAndTexture": {
+        "artDirection": "Panels and gutter separators; little/no material texture",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Narrative panel numbering in nonessential gutters",
+      "typography": {
+        "direction": "Chapter heading with consistent reading body",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonhalftone",
+          "moonzine"
+        ],
+        "rule": "Grid/span geometry defines it, not dot screentone or collage",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "CSS visual order diverging DOM reading/focus order",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonscrawl",
+      "displayName": "Moonscrawl",
+      "briefId": "MF-BRAND-BRIEF-10",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonscrawl",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonscrawl",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Exploratory notebook annotations, rough pencil arrows and margin cycles",
+      "masterMarkRecommendation": "shared-master-with-hand-label-only",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Sketch registration circles/arrows with imperfect but controlled stroke",
+      "patternAndTexture": {
+        "artDirection": "Paper margin sketches outside active fields, no illegible pencil body",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Annotation line motifs tied to editorial margin",
+      "typography": {
+        "direction": "Handwritten accents limited; readable normal form labels",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonink",
+          "moonzine"
+        ],
+        "rule": "Not painted ink wash and not photocopied cutout montage",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Low legibility and deceptive form affordances",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonraw",
+      "displayName": "Moonraw",
+      "briefId": "MF-BRAND-BRIEF-11",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonraw",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonraw",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Unvarnished exposed structure with deliberate absence of image texture",
+      "masterMarkRecommendation": "shared-master-no-unique-mark",
+      "markRationale": "No additional per-skin mark needed; composition conveys identity",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Single structural hairline and exposed alignment guides via CSS",
+      "patternAndTexture": {
+        "artDirection": "No texture production unless proven essential",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "CSS-only/no asset allowed"
+      },
+      "illustrationDirection": "No illustrated device required; optional stark alignment imprint",
+      "typography": {
+        "direction": "System-generic typography with blunt hierarchy",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label",
+        "optional reviewed preview screenshot"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "classic",
+          "moonledger"
+        ],
+        "rule": "Not Classic soft polish nor Ledger dense ERP layout",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Minimalism cannot remove focus, names or state borders",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonchrome",
+      "displayName": "Moonchrome",
+      "briefId": "MF-BRAND-BRIEF-12",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonchrome",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonchrome",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Future material precision contours with restrained spectral metallic highlight",
+      "masterMarkRecommendation": "shared-master-with-contour-device",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Machined thin contour and calibrated rim sheen outside controls",
+      "patternAndTexture": {
+        "artDirection": "Subtle metallic reflection only at hero shell; no global glass blur",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Abstract chrome bend/no generic sci-fi company badge",
+      "typography": {
+        "direction": "Precision geometric display + legible metrics/body",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonglitch",
+          "mooncrash"
+        ],
+        "rule": "No telemetry broken signal or hazard plate",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Blur/spectral glare reducing contrast and performance",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "classic",
+      "displayName": "Classic",
+      "briefId": "MF-BRAND-BRIEF-13",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#classic",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#classic",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Neutral high-trust shadcn-style familiarity without upstream brand borrowing",
+      "masterMarkRecommendation": "shared-master-no-unique-mark",
+      "markRationale": "No additional per-skin mark needed; composition conveys identity",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "No independent icon family required; stable functional icons only",
+      "patternAndTexture": {
+        "artDirection": "No signature texture required; quiet plain surfaces",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "CSS-only/no asset allowed"
+      },
+      "illustrationDirection": "No illustrations unless needed for content contexts",
+      "typography": {
+        "direction": "Neutral typography hierarchy, system font fallbacks",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label",
+        "optional reviewed preview screenshot"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonraw",
+          "moonledger"
+        ],
+        "rule": "Not branded as official shadcn; not Moonraw aggressively exposed frame",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Over-neutral design may fail differentiation, but do not add decoration to force novelty",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonquest",
+      "displayName": "Moonquest",
+      "briefId": "MF-BRAND-BRIEF-14",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonquest",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonquest",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Original quest journal/inventory/adventure motif and parchment-style frame",
+      "masterMarkRecommendation": "shared-master-with-quest-chapter-badge",
+      "markRationale": "Master Moonframe wordmark remains recognizable; optional label/skin device only if brand review justifies",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Unique abstract quest compass/journal corners avoiding game IP",
+      "patternAndTexture": {
+        "artDirection": "Journal edge/map texture in panels, not input labels",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "lazy and avoid focus/content; measured size cap after prototyping"
+      },
+      "illustrationDirection": "Original adventure frame symbols, no famous game characters or runes",
+      "typography": {
+        "direction": "Quest display hierarchy with accessible ordinary body",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label/badge",
+        "decorative pattern",
+        "hero illustration",
+        "fitted monochrome motif export",
+        "optional original skin mark after rights review"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "moonledger",
+          "moonpanel"
+        ],
+        "rule": "Not accounting Ledger, game reward UI is presentation only",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Game visual cues shouldn't masquerade as authorization/reward engine",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    },
+    {
+      "skinId": "moonledger",
+      "displayName": "Moonledger",
+      "briefId": "MF-BRAND-BRIEF-15",
+      "status": "specified-not-implemented",
+      "grammarRef": "moonframe-skin-grammar-contract-v1.0.json#moonledger",
+      "visualSpecRef": "moonframe-skin-specifications-v1.0.json#moonledger",
+      "role": "Named visual edition of shared Moonframe umbrella, never legal company/product cert",
+      "signatureVisualLanguage": "Clean ERP workbench with measured data hierarchy and minimal engineered dividers",
+      "masterMarkRecommendation": "shared-master-no-unique-mark",
+      "markRationale": "No additional per-skin mark needed; composition conveys identity",
+      "functionalIconTreatment": "same semantic action labels, viewBox/optical sizing and accessible meaning across all skins; decoration may frame, not replace icon",
+      "signatureMotif": "Precise ledger column markers and structured data rail without icons",
+      "patternAndTexture": {
+        "artDirection": "No decorative texture required, only purposeful grid rule",
+        "allowedLocations": [
+          "shell margins",
+          "noninteractive hero backdrop",
+          "optional preview/demo"
+        ],
+        "forbiddenLocations": [
+          "over form labels",
+          "focus outlines",
+          "critical status text",
+          "dense table cell text"
+        ],
+        "costRule": "CSS-only/no asset allowed"
+      },
+      "illustrationDirection": "No illustrated objects necessary; numeric navigation safe",
+      "typography": {
+        "direction": "Tabular numeric/readable professional font and balanced density",
+        "licenses": "font family/weight/version/RFN, script coverage and redistribution permission review before file packaging; fallback must remain legible"
+      },
+      "modeStrategy": "One semantic vector where contrast allows, monochrome/reverse when tested; no demanded 2x binary for simple vectors",
+      "referenceColorIndependence": "shape/geometry must remain recognizable in monochrome/grayscale without signature accent; semantic color tokens handled by Theme Bible",
+      "effectBudget": "No numeric budget approved; effects should be optional and removable, never flash, must respect reduced-motion and low-power mode",
+      "fallback": "Decoration-off clean semantic baseline preserves reading/focus and all actions; no hidden text in images",
+      "sourceAndExportPlan": "svg-safe-subset or css-first for geometry; raster only with visible texture need",
+      "minimumRequired": [
+        "approved written signature motif/direction",
+        "documented CSS/vector/raster need with rights plan",
+        "empty/busy/error decoration-off parity plan",
+        "one future same-content skin-lab specimen proposal"
+      ],
+      "optionalAssets": [
+        "edition label",
+        "optional reviewed preview screenshot"
+      ],
+      "prohibitedOverlap": {
+        "nearestSkins": [
+          "mooncrash",
+          "classic"
+        ],
+        "rule": "Not rugged hazard machinery or classic generic marketing card",
+        "originalityProof": "compare geometry/composition/surface/material/type in grayscale/decoration-off; no automatic trademark proof"
+      },
+      "accessibilityAndPerformanceRisks": [
+        "Compact density must not shrink hit targets and field labels",
+        "Must show focus and text in forced colors, all Light/Dark and zoom",
+        "No essential meaning communicated only by texture, hue or motion"
+      ],
+      "reviewChecklist": [
+        "Light/Dark same behavior and logo name",
+        "grayscale and decoration-off distinct from nearest skins",
+        "focus/legibility at 200/400% zoom",
+        "SVG/raster security/rights/format",
+        "font/fallback/license",
+        "reviewed evidence and reviewer"
+      ],
+      "references": [
+        {
+          "title": "Existing skin grammar",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-grammar-contract-v1.0.json"
+        },
+        {
+          "title": "Existing skin specifications",
+          "url": "https://github.com/bjo163/moonframe/blob/main/contracts/moonframe-skin-specifications-v1.0.json"
+        }
+      ],
+      "review": {
+        "reviewer": null,
+        "reviewedAt": null,
+        "sourceFile": null,
+        "artifactHash": null,
+        "accepted": false
+      },
+      "implementationStatus": "not-produced"
+    }
+  ]
+}
