@@ -3,7 +3,7 @@
   "contractVersion": "0.1.0",
   "contractId": "MF-DATA-WORKSPACE-001",
   "status": "design-contract-not-implemented",
-  "authority": "This file owns behavioral state/API & acceptance; concrete UI blocks in moonframe-block-manifest-v0.1.json",
+  "authority": "Canonical data-workspace capability and ownership contract; serializable models and policies below are canonical; component-level shared props still owned by Component API Bible; Level C/D catalogs still owned by block/page manifests.",
   "tiers": [
     {
       "id": "simple-table",
@@ -139,5 +139,1184 @@
     "https://tanstack.com/table/latest/docs/overview",
     "https://tanstack.com/virtual/latest/docs/introduction",
     "https://mui.com/x/introduction/licensing/"
-  ]
+  ],
+  "specificationStatus": "specified-provisional-not-implemented",
+  "engineDecision": "proposed-ADR-0004-unapproved",
+  "hierarchy": [
+    {
+      "id": "semantic-table",
+      "level": "component",
+      "tier": "P1",
+      "owns": "native caption, row/column semantics, formatting and overflow",
+      "doesNotOwn": [
+        "query engine",
+        "row selection controller",
+        "server fetching"
+      ],
+      "canonicalRef": "moonframe-component-manifest-v0.1.json#table"
+    },
+    {
+      "id": "data-table",
+      "level": "composite",
+      "tier": "P1",
+      "owns": "controlled sort/page/selection interactions and accessible table UI",
+      "doesNotOwn": [
+        "SQL",
+        "pagination service",
+        "export execution"
+      ],
+      "canonicalRef": "moonframe-component-api-contract-v0.1.json#data-table"
+    },
+    {
+      "id": "advanced-workspace",
+      "level": "composed-block",
+      "tier": "P2",
+      "owns": "filters, saved-view UI, bulk toolbar, detail presentation and query intent",
+      "doesNotOwn": [
+        "saved-view storage",
+        "server rights decisions"
+      ],
+      "canonicalRef": "moonframe-block-manifest-v0.1.json#block-filter-toolbar"
+    },
+    {
+      "id": "enterprise-grid",
+      "level": "optional-module",
+      "tier": "P3",
+      "owns": "future editing, cell navigation, virtualization, pivoting, pinning under separately approved engine",
+      "doesNotOwn": [
+        "spreadsheet formula engine guaranteed",
+        "redistribution rights"
+      ],
+      "canonicalRef": "moonframe-integration-manifest-v0.1.json#enterprise-grid"
+    },
+    {
+      "id": "domain-preset",
+      "level": "illustrative-presentation",
+      "tier": "P2",
+      "owns": "synthetic columns/example formatting for users/invoices/inventory/audit",
+      "doesNotOwn": [
+        "accounting/domain policy",
+        "authorization"
+      ],
+      "canonicalRef": "moonframe-page-template-manifest-v0.1.json#template-data-workspace"
+    },
+    {
+      "id": "workspace-page",
+      "level": "template",
+      "tier": "P1",
+      "owns": "page shell/route composition of core blocks",
+      "doesNotOwn": [
+        "data fetching",
+        "backend"
+      ],
+      "canonicalRef": "moonframe-page-template-manifest-v0.1.json#template-data-workspace"
+    }
+  ],
+  "capabilityVocabulary": [
+    "sort",
+    "filter",
+    "search",
+    "pagination",
+    "selection",
+    "column-visibility",
+    "column-order",
+    "column-sizing",
+    "column-pinning",
+    "group",
+    "expand",
+    "aggregation",
+    "edit",
+    "virtualize",
+    "saved-view",
+    "export-intent",
+    "import-preview",
+    "audit-history",
+    "responsive-alternative",
+    "chart-link"
+  ],
+  "capabilities": [
+    {
+      "id": "semantic-markup",
+      "priority": "P1",
+      "owner": "semantic-table",
+      "dependsOn": [],
+      "acceptance": "Native table caption/th/scope and long-cell alternatives, no ARIA grid",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "stable-row-identity",
+      "priority": "P0",
+      "owner": "data-table",
+      "dependsOn": [],
+      "acceptance": "Consumer supplies non-empty stable rowId; never source array index",
+      "releaseTier": "foundation",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "typed-columns",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "stable-row-identity"
+      ],
+      "acceptance": "Accessor/display columns unique IDs; export and aria labels",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "controlled-query",
+      "priority": "P0",
+      "owner": "data-table",
+      "dependsOn": [
+        "stable-row-identity"
+      ],
+      "acceptance": "One query owner; mode-discriminated sort/filter/pagination",
+      "releaseTier": "foundation",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "sorting",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "controlled-query",
+        "typed-columns"
+      ],
+      "acceptance": "Stable/locale-aware client or allowlisted server sort; aria-sort only primary descriptor",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "pagination",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "controlled-query"
+      ],
+      "acceptance": "Offset and cursor disjoint, known/unknown total",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "row-selection",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "stable-row-identity",
+        "controlled-query"
+      ],
+      "acceptance": "page/loaded/query-match typed scope with explicit confirmation",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "async-results",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "controlled-query"
+      ],
+      "acceptance": "request identity, abort/stale, ready/loading/error/offline/forbidden",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "responsive-view",
+      "priority": "P1",
+      "owner": "data-table",
+      "dependsOn": [
+        "semantic-markup"
+      ],
+      "acceptance": "Mobile list/detail retains critical fields/actions",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "search",
+      "priority": "P1",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "controlled-query"
+      ],
+      "acceptance": "Controlled text/query, debounce only app-owned",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "column-filter",
+      "priority": "P1",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "controlled-query",
+        "typed-columns"
+      ],
+      "acceptance": "Allowlisted operators by type; unsupported rejected",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "filter-builder",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "column-filter"
+      ],
+      "acceptance": "Versioned AST, AND/OR nesting budget and validation",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "filter-chips",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "column-filter"
+      ],
+      "acceptance": "Remove one or reset, synchronized query state",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "column-chooser",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "typed-columns"
+      ],
+      "acceptance": "Hide/show but cannot remove all identifying fields",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "saved-views",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "filter-builder"
+      ],
+      "acceptance": "Serialized view reference, migration and storage consumer-owned",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "bulk-action",
+      "priority": "P1",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "row-selection",
+        "async-results"
+      ],
+      "acceptance": "Explicit scope/count confirmation, app authorization",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "export-intent",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "controlled-query",
+        "row-selection"
+      ],
+      "acceptance": "No client assumption of permission, CSV injection protection",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "detail-drawer",
+      "priority": "P1",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "stable-row-identity"
+      ],
+      "acceptance": "Accessible focus-return, app-owned record loading",
+      "releaseTier": "core-v1",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "audit-log",
+      "priority": "P2",
+      "owner": "domain-preset",
+      "dependsOn": [
+        "semantic-markup"
+      ],
+      "acceptance": "Actor/time/status and readable long IDs, no log backend",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "master-detail",
+      "priority": "P2",
+      "owner": "workspace-page",
+      "dependsOn": [
+        "detail-drawer"
+      ],
+      "acceptance": "Split view preserves focus order",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "column-reorder",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "column-chooser"
+      ],
+      "acceptance": "Keyboard equivalent and reconciliation to saved view",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "column-resize",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "typed-columns"
+      ],
+      "acceptance": "Keyboard resize, min/max, zoom/reflow test",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "column-pin",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "column-reorder"
+      ],
+      "acceptance": "Sticky overlays/focus and accessibility proof",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "grouping",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "controlled-query"
+      ],
+      "acceptance": "Stable group IDs and typed group row semantics",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "aggregation",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "grouping"
+      ],
+      "acceptance": "Server/local accuracy and numeric precision app-owned",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "virtualization",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "stable-row-identity",
+        "async-results"
+      ],
+      "acceptance": "Focused row survival, AT alternative, benchmark",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "inline-editing",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "stable-row-identity"
+      ],
+      "acceptance": "Edit/commit/cancel validation, conflict and rollback from app",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "pivoting",
+      "priority": "P3",
+      "owner": "enterprise-grid",
+      "dependsOn": [
+        "grouping",
+        "aggregation"
+      ],
+      "acceptance": "Only optional engine and license approval",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "import-preview",
+      "priority": "P3",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "typed-columns"
+      ],
+      "acceptance": "Preview with file limits, row errors, safe consumer backend",
+      "releaseTier": "specialized-optional",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "background-export-status",
+      "priority": "P2",
+      "owner": "advanced-workspace",
+      "dependsOn": [
+        "export-intent"
+      ],
+      "acceptance": "Job statuses, expiry, retry/cancel intent; no job engine",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    },
+    {
+      "id": "linked-charts",
+      "priority": "P2",
+      "owner": "workspace-page",
+      "dependsOn": [
+        "controlled-query"
+      ],
+      "acceptance": "Shared filter/period and accessible table summaries",
+      "releaseTier": "premium-v1.x",
+      "status": "specified-not-implemented",
+      "actualTestStatus": "not-run",
+      "evidenceRequired": [
+        "typed/public API review",
+        "keyboard/AT according to risk",
+        "browser/SSR and consistent 15-skin semantics"
+      ],
+      "nonGoals": [
+        "backend business rules",
+        "authorization",
+        "data storage"
+      ],
+      "reviewer": null
+    }
+  ],
+  "columnContract": {
+    "specVersion": 1,
+    "identifiers": "Unique stable nonempty columnId independent of translated label/header",
+    "types": [
+      "text",
+      "integer",
+      "decimal",
+      "currency",
+      "percent",
+      "boolean",
+      "date",
+      "timestamp",
+      "enum",
+      "status",
+      "display"
+    ],
+    "kind": [
+      "accessor",
+      "display"
+    ],
+    "required": [
+      "id",
+      "kind",
+      "valueType",
+      "headerLabel",
+      "visibility",
+      "sorting",
+      "filtering",
+      "exportPolicy"
+    ],
+    "accessorRule": "accessor reads application row path or typed accessor at runtime; functions are NEVER serialized to URL/saved view; display column cannot assume sortable or exportable",
+    "formatting": {
+      "number": "Intl.NumberFormat(locale,options), canonical numeric values kept separately",
+      "datetime": "Intl.DateTimeFormat(locale,{timeZone}), distinguish date-only from instant",
+      "currency": "value stored amount/minor-unit policy explicitly defined by consumer; no floating money calculation in UI",
+      "boolean": "visible localized text/icons; not color-only"
+    },
+    "sortFilter": "Only declared capability and app/server allowlisted keys; unsupported rejected",
+    "width": {
+      "unit": "px-constraint-future",
+      "minMax": "min<=max; responsive content cannot disappear permanently"
+    },
+    "exportPolicy": [
+      "included-if-authorized",
+      "excluded",
+      "masked-by-server"
+    ],
+    "aria": "unique human-readable header, th/scope/headers; numeric alignment with tabular numbers; full value accessible if visually truncated",
+    "columnSchemaMigration": "Unknown persisted IDs discarded with notice; at least one identifying column visible"
+  },
+  "rowIdentity": {
+    "required": "getRowId(row) returns stable string (or declared server primary key) independent of position",
+    "forbidden": "array-index used as primary key across sorting/filter/paging/virtualization",
+    "scope": "Stable across page, same record across refreshed results; group IDs prefixed and isolated from record IDs",
+    "onDuplicate": "fatal configuration warning; disable selection/bulk/export until fixed",
+    "missingId": "do not manufacture ID for selection; fallback read-only presentation with visible error",
+    "onDeletion": "remove record from loaded display and reconcile selection by server authority"
+  },
+  "queryState": {
+    "version": 1,
+    "owner": "consumer app; Moonframe emits intent; setQueryState wholly controlled or defaultQueryState uncontrolled with documented reset; do not switch lifetime",
+    "fields": {
+      "globalSearch": "string; app owns debounce and PII redaction",
+      "sorting": "[{columnId,descending:boolean}] allowlisted; stable tie by rowId; server ordering authoritative in server mode",
+      "filters": "filterAST versioned, allowed field/operator pairs, no executable predicates serialized",
+      "pagination": "discriminated union: {kind:'offset',pageIndex>=0,pageSize>=1,totalCount?:integer|null} OR {kind:'cursor',cursor?:opaque|null,pageSize>=1,nextCursor?:opaque|null,prevCursor?:opaque|null,totalCount?:integer|null}; forbid pageIndex with cursor",
+      "columnVisibility": "Record<columnId,boolean>; invalid IDs pruned",
+      "columnOrder": "columnId[] unique; preserve required identifiers",
+      "columnSizing": "Record<columnId,finitePositivePx>; optional",
+      "columnPinning": "{left:columnId[],right:columnId[]} optional P3",
+      "expanded": "stable record/group ID[] optional",
+      "grouping": "columnId[] optional P3",
+      "density": "compact|comfortable|spacious, theme/default/instance precedence external to query",
+      "savedViewId": "string|null, consumer persistence external"
+    },
+    "queryMode": {
+      "kind": [
+        "client",
+        "server"
+      ],
+      "invariants": [
+        "No double pagination/sorting/filtering in server mode",
+        "Server mode display results as returned, do not perform hidden second pass",
+        "Changing filter/search resets offset page to 0 or cursor to null while keeping permitted sort",
+        "Sort/selection IDs must survive paging and refresh",
+        "Unknown total must stay unknown; avoid fake last page"
+      ]
+    },
+    "callbacks": [
+      "onQueryChange(next,details)",
+      "onSelectionChange(next,details)",
+      "onColumnStateChange(next,details)",
+      "onExportIntent(request)",
+      "onRetryIntent(requestId)"
+    ],
+    "changeRules": [
+      "Controlled updates never re-emit an intent callback",
+      "One user action emits one semantic change",
+      "Async response accepted only when matching most recent request ID/query fingerprint"
+    ],
+    "privacy": "No auth token, user identifiers, sensitive filters in URL or persisted client cache unless consuming app explicitly approves."
+  },
+  "filterContract": {
+    "version": 1,
+    "root": "{version:1,root:{kind:'group',logic:'and'|'or',children:FilterNode[]}}",
+    "nodeTypes": [
+      "group",
+      "predicate"
+    ],
+    "predicate": "{kind:'predicate',fieldId,operator,value?}; fieldId must come from server/app allowlist, not arbitrary SQL path",
+    "supportedTypes": [
+      "text",
+      "integer",
+      "decimal",
+      "date",
+      "timestamp",
+      "enum",
+      "boolean",
+      "nullable"
+    ],
+    "operatorsByType": {
+      "text": [
+        "eq",
+        "neq",
+        "contains",
+        "startsWith",
+        "in",
+        "isNull",
+        "isNotNull"
+      ],
+      "number": [
+        "eq",
+        "neq",
+        "gt",
+        "gte",
+        "lt",
+        "lte",
+        "between",
+        "in",
+        "isNull",
+        "isNotNull"
+      ],
+      "date": [
+        "eq",
+        "before",
+        "after",
+        "between",
+        "isNull",
+        "isNotNull"
+      ],
+      "enum": [
+        "eq",
+        "neq",
+        "in",
+        "notIn",
+        "isNull"
+      ],
+      "boolean": [
+        "eq",
+        "isNull"
+      ]
+    },
+    "limits": {
+      "maxDepth": 4,
+      "maxNodes": 30,
+      "maxItemsInList": 100
+    },
+    "nullRule": "isNull/isNotNull carry no value; null never silently equals empty string, 0 or undefined",
+    "timezoneRule": "Date-only ISO yyyy-mm-dd versus UTC instant separately typed; app/server owns inclusive/exclusive window normalization and DST.",
+    "validation": "Reject unknown field, mismatched value type, unsupported operator, incomplete ranges, excessive nesting; no raw SQL generation",
+    "sensitive": "Filter values may contain PII and must not be automatically serialized to URL/logs",
+    "serverAdapter": "Only application maps validated AST to allowlisted backend query"
+  },
+  "selectionContract": {
+    "version": 1,
+    "variants": [
+      "explicit-ids",
+      "query-all-except"
+    ],
+    "explicit": "{kind:'explicit-ids',scope:'current-page'|'loaded'|'cross-page',ids:string[],queryFingerprint?}",
+    "queryAll": "{kind:'query-all-except',snapshotId:string,queryFingerprint:string,totalCount?:integer|null,excludedIds:string[],expiresAt:string,confirmationRequired:true}",
+    "actions": [
+      "select-page",
+      "select-loaded",
+      "select-results-request",
+      "clear",
+      "exclude-one",
+      "reconcile"
+    ],
+    "invariants": [
+      "Select page != select all matching results",
+      "No query-all without server-issued authorized snapshot/token and explicit confirmation",
+      "Selection is not authorization; backend rechecks every ID/snapshot on mutation or export",
+      "Filter/search changes invalidate query-all; sorting/pagination may preserve explicit stable IDs if app permits",
+      "Counts distinguish loaded selected, cross-page explicit selected and all-query estimated count",
+      "Expired/permission-revoked selection becomes invalid before bulk intent"
+    ],
+    "bulkIntent": "{actionId,scope,selectionSnapshot,expectedCount?,displaySummary,confirmationState}; consume app authorizes and executes"
+  },
+  "serverAdapter": {
+    "kind": "optional adapter interface, NOT API implementation",
+    "request": "{requestId,queryFingerprint,query,mode:'server',abortSignal?:runtimeOnly,revision?:string}",
+    "response": "{requestId,queryFingerprint,rows:[...],rowIds,revision?,totalCount?:number|null,nextCursor?:string|null,previousCursor?:string|null,facets?:allowlisted values,serverTimestamp?:isoUTC}",
+    "status": [
+      "idle",
+      "initial-loading",
+      "refreshing",
+      "ready",
+      "empty",
+      "no-results",
+      "stale",
+      "offline",
+      "retryable-error",
+      "fatal-error",
+      "permission-denied"
+    ],
+    "error": "{kind:'network'|'timeout'|'validation'|'permission'|'not-found'|'conflict'|'unknown',messageSafe,retryable,retryAfter?}; never raw stack/token in UI",
+    "race": "Abort previous request when supported; ignore late response if requestId or queryFingerprint is stale, and preserve older data explicitly marked stale",
+    "permission": "Server always filters/authorizes records, columns, exports and bulk ops. Do not trust hidden UI actions.",
+    "queryStateSource": "Client/sort/filter/paginate entirely on complete client dataset OR server performs them; never double apply",
+    "optimistic": "No default implicit optimistic mutation. Consumer supplies version/conflict/rollback results.",
+    "offline": "No inferred connectivity from fetch status alone; show consumer-reported offline."
+  },
+  "savedViews": {
+    "schemaVersion": 1,
+    "identity": "viewId, ownerId (opaque), schemaVersion, recordSchemaVersion, revision/etag",
+    "scope": [
+      "personal",
+      "team",
+      "shared"
+    ],
+    "fields": [
+      "id",
+      "name",
+      "visibility",
+      "ownerRef",
+      "columnSchemaVersion",
+      "revision",
+      "query",
+      "columnPreferences",
+      "updatedAt"
+    ],
+    "doNotStore": [
+      "credentials",
+      "secrets",
+      "access tokens",
+      "sensitive PII filter values in broadly shared views",
+      "function-valued cell renderers"
+    ],
+    "adapter": "load/save/rename/duplicate/delete/publish intent only; backend owns permission, ETag compare and storage",
+    "migration": "Known column ID changes via app-supplied migration registry; orphan columns/filters dropped with warning, never silently broaden dataset",
+    "sharing": "Sharable URL holds safe referenced view ID, not privileged query or owner token",
+    "conflict": "409/ETag mismatch -> compare/reload/copy; no silent overwrite",
+    "localStorage": "opt-in non-sensitive preferences only; cannot assume authorized cross-user saved state"
+  },
+  "urlState": {
+    "version": 1,
+    "allowlist": [
+      "page/pageSize (offset only)",
+      "sort column IDs/order",
+      "safe non-sensitive filter AST with strict length cap",
+      "safe savedViewId reference",
+      "explicitly allowed search string"
+    ],
+    "never": [
+      "password/token/session/credentials",
+      "private identifiers",
+      "sensitive user fields",
+      "raw SQL/regex",
+      "server issued selection snapshots",
+      "raw export authorization"
+    ],
+    "parse": "Versioned, length capped, validated by schema and current column allowlist; reject and recover to safe defaults, inform user",
+    "merge": "URL deep-link defaults < controlled app policy; do not override current server permissions",
+    "serialization": "stable key order/encoding via URLSearchParams; no implicit URL history mutation by core"
+  },
+  "exportContract": {
+    "version": 1,
+    "request": "{scope:'visible-page'|'loaded'|'selected-explicit'|'all-query-matches',format:'csv'|'xlsx'|'pdf',queryFingerprint,selection?,columnIds,locale,timeZone,numberSerialization,filenameHint?}",
+    "job": {
+      "states": [
+        "draft",
+        "authorization-pending",
+        "queued",
+        "running",
+        "ready",
+        "failed",
+        "cancelled",
+        "expired"
+      ],
+      "fields": [
+        "jobId",
+        "status",
+        "progressPercent?",
+        "safeMessage?",
+        "expiryTime?",
+        "downloadIntent?",
+        "retryable?"
+      ]
+    },
+    "auth": "Application/server reauthorizes request, row/column visibility and download; no client trust of hidden column or saved view",
+    "scope": "Visible page / loaded / selected explicit / all matching require distinct user labels, result count and confirmation",
+    "large": "Prefer consumer-owned background job for server query/full results; UI never exports unseen unauthorized data",
+    "csv": {
+      "baseline": "RFC4180 delimiter/CRLF/double-quote escaping, charset UTF-8 and encoding choice explicit; actual serializer not provided",
+      "formulaRisk": "OWASP: untrusted cell contents potentially interpreted as formulas (leading = + - @, tabs/CR/LF, separator or quote shift). Quoting alone is not reliable after spreadsheet re-save.",
+      "mitigation": "Future app-owned CSV serializer requires spreadsheet-tested neutralization policy per target client, formula-risk audit, defense in depth and safe alternative XLSX text-cell export; do not claim single quote/escaping always solves it",
+      "tests": [
+        "formula-like input",
+        "embedded comma/quote/newline",
+        "Unicode/RTL",
+        "Excel reopen and save-reopen",
+        "locale decimal separator",
+        "large data/memory"
+      ]
+    },
+    "import": "P3 preview/row-error/dedupe UI only, app file scanning, validation, transaction and background processing"
+  },
+  "accessibilityContract": {
+    "base": "Native table semantics with caption, th/scope and actual button for sort; no role=grid unless full cell-keyboard interaction is implemented",
+    "sorting": "Sort button in column header, aria-sort on correct header; announce direction and result count politely without duplicate",
+    "selection": "Checkbox names use row identifying text; header checkbox scope explicitly says current page/loaded; indeterminate conveyed programmatically",
+    "paging": "Keyboard reachable, current page named; announce known/unknown totals accurately",
+    "filters": "Group label, applied chips removable by keyboard, invalid summary and focus return",
+    "overlays": "Column chooser/row actions/detail dialog use component Bible focus restoration and escape",
+    "virtualization": "No offscreen keyboard trap, AT row count/position honest, provide nonvirtual read-only alternative if needed",
+    "responsive": "Mobile card/list retains label/value and every critical operation; horizontal scroll signaled and keyboard reachable",
+    "visual": "15 skin identities with same interaction; focus visible, 200%/400% zoom, forced colors, reduced motion, RTL, no color-only statuses",
+    "wcagTarget": "WCAG 2.2 AA target pending real manual and browser proof"
+  },
+  "localization": {
+    "canonical": "Data values raw (number, ISO date-only, UTC instant, boolean) not strings formatted for UI",
+    "render": "Intl.NumberFormat/DateTimeFormat with explicit timeZone and options; server sort compares canonical data",
+    "sort": "Locale collation/case/numeric semantics specify app or server; backend consistency tested",
+    "timezone": "For date-only keep calendar date; for timestamp store UTC and display chosen timezone; DST boundaries application-owned",
+    "rtl": "Mixed-script cells isolate/bdi; align numeric according to reading needs; keyboard model tested",
+    "plurals": "Use locale-aware message/plural handling with unknown totals rather than hardcoded English count"
+  },
+  "performance": {
+    "baseline": "No benchmark yet. Illustrative fixture volumes 12/500/50000 synthetic rows; thresholds TBD from measured consumer device and target support matrix",
+    "modeSelection": "Use server pagination first when entire dataset cannot be loaded; virtualization optional after measurements and AT proof",
+    "reducedMotion": "No automatic animated row-scrolling dependence",
+    "stability": [
+      "stable rowIds",
+      "memoized row model only when correct",
+      "request ID guard",
+      "scroll restoration after sort",
+      "dynamic row height/zoom"
+    ],
+    "bundles": "Measure JS/CSS sizes before enabling large optional engine; no library selected"
+  },
+  "specificPlans": {
+    "proofSkins": [
+      "classic",
+      "moonpunk",
+      "moonzine",
+      "moonledger"
+    ],
+    "wholeAppearanceTarget": "15 canonical skins × light/dark; separate QA ledger, not rendered",
+    "roleBindings": [
+      "color.surface.canvas",
+      "color.text.primary",
+      "color.focus.ring"
+    ],
+    "componentTokenExceptionPolicy": "table-specific tokens only after neutral semantic roles proven insufficient; no hardcoded hex or Moonledger global compact override",
+    "densityPrecedence": "explicit instance > controlled app/user selection > skin suggested default > global safe comfortable fallback; actual theme resolution authority remains Theme Contract"
+  }
 }
