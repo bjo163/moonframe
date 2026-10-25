@@ -824,3 +824,957 @@ export const DataTable = forwardRef(function DataTable({
     )
   );
 });
+
+/* ============================================================================
+ * Extended Inputs, Charts, Navigation & Level C Reusable Composite Blocks
+ * ========================================================================== */
+
+export const OTPInput = forwardRef(function OTPInput({
+  length = 6,
+  value,
+  defaultValue = '',
+  onValueChange,
+  onComplete,
+  disabled = false,
+  label = 'Verification code',
+  className,
+  ...props
+}, ref) {
+  const count = Math.max(4, Math.min(8, Number(length) || 6));
+  const [code, setCode] = useControllable(value, defaultValue, onValueChange);
+  const inputsRef = useRef([]);
+  const digits = Array.from({ length: count }, (_, idx) => (code || '')[idx] || '');
+
+  function updateAt(index, char) {
+    const clean = char.replace(/\D/g, '').slice(-1);
+    const next = digits.slice();
+    next[index] = clean;
+    const joined = next.join('');
+    setCode(joined);
+    if (clean && index < count - 1) {
+      inputsRef.current[index + 1]?.focus();
+    }
+    if (joined.length === count && !next.includes('')) {
+      onComplete?.(joined);
+    }
+  }
+
+  function onPaste(event) {
+    const pasted = (event.clipboardData?.getData('text') || '').replace(/\D/g, '').slice(0, count);
+    if (!pasted) return;
+    event.preventDefault();
+    setCode(pasted);
+    const focusIdx = Math.min(pasted.length, count - 1);
+    inputsRef.current[focusIdx]?.focus();
+    if (pasted.length === count) {
+      onComplete?.(pasted);
+    }
+  }
+
+  return h('div', {
+    ...props,
+    ref,
+    role: 'group',
+    'aria-label': label,
+    className: cx('mf-otp-group', className),
+  }, digits.map((digit, index) => h('input', {
+    key: index,
+    ref: node => { inputsRef.current[index] = node; },
+    type: 'text',
+    inputMode: 'numeric',
+    pattern: '[0-9]*',
+    maxLength: 1,
+    disabled,
+    value: digit,
+    autoComplete: index === 0 ? 'one-time-code' : 'off',
+    'aria-label': `${label} digit ${index + 1} of ${count}`,
+    className: 'mf-input mf-otp-slot',
+    onPaste,
+    onChange: e => updateAt(index, e.currentTarget.value),
+    onKeyDown: e => {
+      if (e.key === 'Backspace' && !digit && index > 0) {
+        inputsRef.current[index - 1]?.focus();
+      } else if (e.key === 'ArrowLeft' && index > 0) {
+        e.preventDefault();
+        inputsRef.current[index - 1]?.focus();
+      } else if (e.key === 'ArrowRight' && index < count - 1) {
+        e.preventDefault();
+        inputsRef.current[index + 1]?.focus();
+      }
+    },
+  })));
+});
+
+export const PasswordField = forwardRef(function PasswordField({
+  defaultVisible = false,
+  showStrength = false,
+  toggleLabel,
+  value,
+  defaultValue,
+  onChange,
+  className,
+  ...props
+}, ref) {
+  const [visible, setVisible] = useState(defaultVisible);
+  const [internal, setInternal] = useState(defaultValue ?? '');
+  const current = value !== undefined ? String(value) : String(internal);
+
+  const score = useMemo(() => {
+    if (!current) return 0;
+    let pts = 0;
+    if (current.length >= 8) pts += 1;
+    if (/[A-Z]/.test(current) && /[a-z]/.test(current)) pts += 1;
+    if (/\d/.test(current)) pts += 1;
+    if (/[^A-Za-z0-9]/.test(current)) pts += 1;
+    return pts;
+  }, [current]);
+
+  const strengthLabels = ['Too short', 'Weak', 'Fair', 'Good', 'Strong'];
+
+  return h('div', { className: cx('mf-password-root', className) },
+    h('div', { className: 'mf-password-row' },
+      h(Input, {
+        ...props,
+        ref,
+        type: visible ? 'text' : 'password',
+        value: value !== undefined ? value : internal,
+        onChange: e => {
+          if (value === undefined) setInternal(e.currentTarget.value);
+          onChange?.(e);
+        },
+      }),
+      h(Button, {
+        type: 'button',
+        variant: 'secondary',
+        size: 'sm',
+        className: 'mf-password-toggle',
+        'aria-label': toggleLabel ?? (visible ? 'Hide password' : 'Show password'),
+        onClick: () => setVisible(v => !v),
+      }, visible ? 'Hide' : 'Show')
+    ),
+    showStrength && h('div', { className: 'mf-password-strength', 'aria-live': 'polite' },
+      h('div', { className: 'mf-password-bars' },
+        [1, 2, 3, 4].map(level => h('span', {
+          key: level,
+          className: 'mf-password-bar',
+          'data-active': score >= level ? 'true' : undefined,
+        }))
+      ),
+      h('span', { className: 'mf-field-description' }, strengthLabels[score])
+    )
+  );
+});
+
+export const SearchInput = forwardRef(function SearchInput({
+  value,
+  defaultValue = '',
+  onValueChange,
+  onClear,
+  shortcut,
+  placeholder = 'Search…',
+  className,
+  onChange,
+  ...props
+}, ref) {
+  const [query, setQuery] = useControllable(value, defaultValue, onValueChange);
+
+  return h('div', { className: cx('mf-search-input-wrap', className) },
+    h('span', { className: 'mf-search-icon', 'aria-hidden': true }, '⌕'),
+    h(Input, {
+      ...props,
+      ref,
+      type: 'search',
+      placeholder,
+      value: query,
+      className: 'mf-search-input',
+      onChange: e => {
+        setQuery(e.currentTarget.value);
+        onChange?.(e);
+      },
+      onKeyDown: e => {
+        props.onKeyDown?.(e);
+        if (e.key === 'Escape' && query) {
+          setQuery('');
+          onClear?.();
+        }
+      },
+    }),
+    query
+      ? h('button', {
+          type: 'button',
+          className: 'mf-search-clear',
+          'aria-label': 'Clear search',
+          onClick: () => {
+            setQuery('');
+            onClear?.();
+          },
+        }, '×')
+      : shortcut && h(Kbd, { className: 'mf-search-shortcut' }, shortcut)
+  );
+});
+
+export const Slider = forwardRef(function Slider({
+  min = 0,
+  max = 100,
+  step = 1,
+  value,
+  defaultValue = 50,
+  onValueChange,
+  label,
+  showValue = false,
+  formatValue,
+  className,
+  onChange,
+  ...props
+}, ref) {
+  const [current, setCurrent] = useControllable(value, defaultValue, onValueChange);
+  const display = formatValue ? formatValue(Number(current)) : `${current}`;
+
+  return h('div', { className: cx('mf-slider-wrap', className) },
+    (label || showValue) && h('div', { className: 'mf-slider-header' },
+      label && h('span', { className: 'mf-label' }, label),
+      showValue && h('output', { className: 'mf-slider-output' }, display)
+    ),
+    h('input', {
+      ...props,
+      ref,
+      type: 'range',
+      min,
+      max,
+      step,
+      value: current,
+      'aria-label': props['aria-label'] ?? (typeof label === 'string' ? label : 'Slider'),
+      className: 'mf-slider',
+      onChange: e => {
+        const next = Number(e.currentTarget.value);
+        setCurrent(next);
+        onChange?.(e);
+      },
+    })
+  );
+});
+
+export const TagInput = forwardRef(function TagInput({
+  value,
+  defaultValue = [],
+  onValueChange,
+  placeholder = 'Add tag and press Enter…',
+  disabled = false,
+  label = 'Tags',
+  className,
+  ...props
+}, ref) {
+  const [tags, setTags] = useControllable(value, defaultValue, onValueChange);
+  const [draft, setDraft] = useState('');
+
+  function addTag(raw) {
+    const trimmed = String(raw || '').trim();
+    if (!trimmed) return;
+    if (!tags.includes(trimmed)) {
+      setTags([...tags, trimmed]);
+    }
+    setDraft('');
+  }
+
+  function removeTag(target) {
+    setTags(tags.filter(t => t !== target));
+  }
+
+  return h('div', {
+    ...props,
+    ref,
+    role: 'group',
+    'aria-label': label,
+    className: cx('mf-tag-input', className),
+  },
+    tags.map(tag => h(Badge, { key: tag, variant: 'secondary', className: 'mf-tag-chip' },
+      h('span', null, tag),
+      !disabled && h('button', {
+        type: 'button',
+        className: 'mf-tag-remove',
+        'aria-label': `Remove ${tag}`,
+        onClick: () => removeTag(tag),
+      }, '×')
+    )),
+    h('input', {
+      type: 'text',
+      disabled,
+      value: draft,
+      placeholder,
+      'aria-label': placeholder,
+      className: 'mf-tag-field',
+      onChange: e => setDraft(e.currentTarget.value),
+      onKeyDown: e => {
+        if (e.key === 'Enter' || e.key === ',') {
+          e.preventDefault();
+          addTag(draft);
+        } else if (e.key === 'Backspace' && !draft && tags.length > 0) {
+          removeTag(tags[tags.length - 1]);
+        }
+      },
+      onBlur: () => {
+        if (draft.trim()) addTag(draft);
+      },
+    })
+  );
+});
+
+export const SegmentedControl = forwardRef(function SegmentedControl({
+  items = [],
+  value,
+  defaultValue,
+  onValueChange,
+  label = 'Options',
+  size = 'md',
+  className,
+  ...props
+}, ref) {
+  const [selected, setSelected] = useControllable(
+    value,
+    defaultValue ?? items.find(i => !i.disabled)?.value,
+    onValueChange,
+  );
+
+  return h('div', {
+    ...props,
+    ref,
+    role: 'group',
+    'aria-label': label,
+    'data-size': size,
+    className: cx('mf-segmented', className),
+  }, items.map(item => {
+    const active = selected === item.value;
+    return h('button', {
+      key: item.value,
+      type: 'button',
+      disabled: item.disabled,
+      'aria-pressed': active,
+      'data-active': active ? 'true' : undefined,
+      className: 'mf-segmented-item',
+      onClick: () => setSelected(item.value),
+    }, item.label);
+  }));
+});
+
+export const FileDropzone = forwardRef(function FileDropzone({
+  accept,
+  multiple = false,
+  disabled = false,
+  title = 'Drop files here or click to browse',
+  description = 'Supports standard documents and media files.',
+  onFilesSelected,
+  className,
+  ...props
+}, ref) {
+  const inputRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const [selectedNames, setSelectedNames] = useState([]);
+
+  function handleFiles(fileList) {
+    if (!fileList || disabled) return;
+    const files = Array.from(fileList);
+    setSelectedNames(files.map(f => f.name));
+    onFilesSelected?.(files);
+  }
+
+  return h('div', {
+    ...props,
+    ref,
+    role: 'button',
+    tabIndex: disabled ? -1 : 0,
+    'aria-disabled': disabled || undefined,
+    'data-dragging': dragging ? 'true' : undefined,
+    className: cx('mf-dropzone', className),
+    onClick: () => { if (!disabled) inputRef.current?.click(); },
+    onKeyDown: e => {
+      if (!disabled && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        inputRef.current?.click();
+      }
+    },
+    onDragOver: e => {
+      e.preventDefault();
+      if (!disabled) setDragging(true);
+    },
+    onDragLeave: () => setDragging(false),
+    onDrop: e => {
+      e.preventDefault();
+      setDragging(false);
+      handleFiles(e.dataTransfer?.files);
+    },
+  },
+    h('input', {
+      ref: inputRef,
+      type: 'file',
+      accept,
+      multiple,
+      disabled,
+      hidden: true,
+      onChange: e => handleFiles(e.currentTarget.files),
+    }),
+    h('strong', { className: 'mf-dropzone-title' }, title),
+    description && h('span', { className: 'mf-dropzone-description' }, description),
+    selectedNames.length > 0 && h('div', { className: 'mf-dropzone-files' },
+      selectedNames.map(name => h(Badge, { key: name, variant: 'primary' }, name))
+    )
+  );
+});
+
+export const BarChart = forwardRef(function BarChart({
+  data = [],
+  height = 180,
+  label = 'Bar chart',
+  formatValue,
+  className,
+  ...props
+}, ref) {
+  const maxVal = Math.max(1, ...data.map(d => Number(d.value) || 0));
+  const width = Math.max(240, data.length * 56);
+  const chartHeight = Math.max(120, Number(height) || 180);
+  const plotHeight = chartHeight - 36;
+
+  return h('div', { ...props, ref, className: cx('mf-chart-wrap', className) },
+    h('svg', {
+      role: 'img',
+      'aria-label': label,
+      viewBox: `0 0 ${width} ${chartHeight}`,
+      className: 'mf-bar-chart',
+    },
+      h('title', null, label),
+      data.map((item, index) => {
+        const val = Math.max(0, Number(item.value) || 0);
+        const barHeight = Math.max(4, Math.round((val / maxVal) * (plotHeight - 20)));
+        const slotWidth = width / Math.max(1, data.length);
+        const barWidth = Math.max(16, Math.min(40, slotWidth * 0.58));
+        const x = index * slotWidth + (slotWidth - barWidth) / 2;
+        const y = plotHeight - barHeight;
+        return h('g', { key: item.label ?? index, className: 'mf-bar-group' },
+          h('rect', {
+            x,
+            y,
+            width: barWidth,
+            height: barHeight,
+            rx: 3,
+            className: 'mf-bar-rect',
+            'data-tone': item.tone,
+          }),
+          h('text', {
+            x: x + barWidth / 2,
+            y: Math.max(12, y - 6),
+            textAnchor: 'middle',
+            className: 'mf-bar-value',
+          }, formatValue ? formatValue(val) : String(val)),
+          h('text', {
+            x: x + barWidth / 2,
+            y: chartHeight - 10,
+            textAnchor: 'middle',
+            className: 'mf-bar-label',
+          }, item.label)
+        );
+      })
+    )
+  );
+});
+
+export const Sparkline = forwardRef(function Sparkline({
+  data = [],
+  width = 120,
+  height = 36,
+  label = 'Trend sparkline',
+  variant = 'primary',
+  className,
+  ...props
+}, ref) {
+  const points = data.length >= 2 ? data.map(Number) : [0, 0];
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const span = max - min || 1;
+  const pad = 4;
+  const w = Math.max(48, Number(width) || 120);
+  const hgt = Math.max(20, Number(height) || 36);
+
+  const coords = points.map((val, idx) => {
+    const x = pad + (idx / (points.length - 1)) * (w - pad * 2);
+    const y = hgt - pad - ((val - min) / span) * (hgt - pad * 2);
+    return [Number(x.toFixed(1)), Number(y.toFixed(1))];
+  });
+  const polyline = coords.map(([x, y]) => `${x},${y}`).join(' ');
+  const area = `${coords[0][0]},${hgt - pad} ${polyline} ${coords[coords.length - 1][0]},${hgt - pad}`;
+
+  return h('svg', {
+    ...props,
+    ref,
+    role: 'img',
+    'aria-label': label,
+    viewBox: `0 0 ${w} ${hgt}`,
+    width: w,
+    height: hgt,
+    'data-variant': variant,
+    className: cx('mf-sparkline', className),
+  },
+    h('title', null, label),
+    h('polygon', { points: area, className: 'mf-sparkline-area' }),
+    h('polyline', { points: polyline, fill: 'none', className: 'mf-sparkline-line' })
+  );
+});
+
+export const Stepper = forwardRef(function Stepper({
+  steps = [],
+  currentStep = 0,
+  orientation = 'horizontal',
+  label = 'Progress steps',
+  className,
+  ...props
+}, ref) {
+  return h('ol', {
+    ...props,
+    ref,
+    'aria-label': label,
+    'data-orientation': orientation,
+    className: cx('mf-stepper', className),
+  }, steps.map((step, index) => {
+    const status = step.status ?? (index < currentStep ? 'complete' : index === currentStep ? 'current' : 'upcoming');
+    return h('li', {
+      key: step.id ?? step.title ?? index,
+      'aria-current': status === 'current' ? 'step' : undefined,
+      'data-status': status,
+      className: 'mf-stepper-item',
+    },
+      h('span', { className: 'mf-stepper-indicator', 'aria-hidden': true },
+        status === 'complete' ? '✓' : String(index + 1)
+      ),
+      h('div', { className: 'mf-stepper-copy' },
+        h('strong', { className: 'mf-stepper-title' }, step.title),
+        step.description && h('span', { className: 'mf-stepper-description' }, step.description)
+      )
+    );
+  }));
+});
+
+export const Timeline = forwardRef(function Timeline({
+  items = [],
+  className,
+  ...props
+}, ref) {
+  return h('ol', { ...props, ref, className: cx('mf-timeline', className) },
+    items.map((item, index) => h('li', {
+      key: item.id ?? index,
+      'data-tone': item.tone,
+      className: 'mf-timeline-item',
+    },
+      h('span', { className: 'mf-timeline-marker', 'aria-hidden': true }, item.icon ?? '•'),
+      h('div', { className: 'mf-timeline-body' },
+        h('div', { className: 'mf-timeline-header' },
+          h('strong', { className: 'mf-timeline-title' }, item.title),
+          item.badge && h(Badge, { variant: item.tone ?? 'secondary' }, item.badge),
+          item.time && h('time', { className: 'mf-timeline-time' }, item.time)
+        ),
+        item.description && h('p', { className: 'mf-timeline-description' }, item.description)
+      )
+    ))
+  );
+});
+
+export const AvatarGroup = forwardRef(function AvatarGroup({
+  items = [],
+  max = 4,
+  label = 'Team members',
+  className,
+  ...props
+}, ref) {
+  const limit = Math.max(1, Number(max) || 4);
+  const visible = items.slice(0, limit);
+  const remaining = Math.max(0, items.length - visible.length);
+
+  return h('div', {
+    ...props,
+    ref,
+    role: 'group',
+    'aria-label': label,
+    className: cx('mf-avatar-group', className),
+  },
+    visible.map((item, idx) => h(Avatar, {
+      key: item.id ?? item.alt ?? idx,
+      src: item.src,
+      alt: item.alt,
+      fallback: item.fallback,
+      className: 'mf-avatar-group-item',
+    })),
+    remaining > 0 && h('span', {
+      className: 'mf-avatar mf-avatar-group-item mf-avatar-overflow',
+      'aria-label': `${remaining} more members`,
+    }, `+${remaining}`)
+  );
+});
+
+export const DescriptionTerm = element('dt', 'mf-dl-term');
+export const DescriptionDetails = element('dd', 'mf-dl-details');
+
+export const DescriptionList = forwardRef(function DescriptionList({
+  items,
+  columns = 2,
+  className,
+  children,
+  ...props
+}, ref) {
+  return h('dl', {
+    ...props,
+    ref,
+    'data-columns': columns,
+    className: cx('mf-dl', className),
+  },
+    Array.isArray(items)
+      ? items.map((item, idx) => h('div', { key: item.term ?? idx, className: 'mf-dl-row' },
+          h(DescriptionTerm, null, item.term),
+          h(DescriptionDetails, null, item.details)
+        ))
+      : children
+  );
+});
+
+export const Callout = forwardRef(function Callout({
+  title,
+  variant = 'secondary',
+  icon,
+  action,
+  dismissible = false,
+  onDismiss,
+  className,
+  children,
+  ...props
+}, ref) {
+  const [dismissed, setDismissed] = useState(false);
+  if (dismissed) return null;
+
+  return h('section', {
+    ...props,
+    ref,
+    role: 'region',
+    'aria-label': typeof title === 'string' ? title : 'Notice',
+    'data-variant': variant,
+    className: cx('mf-callout', className),
+  },
+    icon && h('span', { className: 'mf-callout-icon', 'aria-hidden': true }, icon),
+    h('div', { className: 'mf-callout-body' },
+      title && h('strong', { className: 'mf-callout-title' }, title),
+      children && h('div', { className: 'mf-callout-content' }, children)
+    ),
+    action && h('div', { className: 'mf-callout-action' }, action),
+    dismissible && h('button', {
+      type: 'button',
+      className: 'mf-callout-dismiss',
+      'aria-label': 'Dismiss notice',
+      onClick: () => {
+        setDismissed(true);
+        onDismiss?.();
+      },
+    }, '×')
+  );
+});
+
+export const Banner = Callout;
+
+export const CommandPalette = forwardRef(function CommandPalette({
+  open,
+  defaultOpen = false,
+  onOpenChange,
+  items = [],
+  placeholder = 'Type a command or search…',
+  emptyText = 'No matching commands.',
+  title = 'Command Palette',
+  trigger,
+  enableHotkey = false,
+  className,
+  ...props
+}, ref) {
+  const [isOpen, setOpen] = useControllable(open, defaultOpen, onOpenChange);
+  const [query, setQuery] = useState('');
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (!enableHotkey) return;
+    const onKeyDown = (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setOpen(!isOpen);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [enableHotkey, isOpen, setOpen]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return items;
+    return items.filter(item => {
+      const hay = [item.label, item.group, ...(item.keywords || [])].filter(Boolean).join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }, [items, query]);
+
+  const enabledItems = filtered.filter(i => !i.disabled);
+
+  return h(Dialog, {
+    ...props,
+    ref,
+    open: isOpen,
+    onOpenChange: next => {
+      setOpen(next);
+      if (!next) setQuery('');
+    },
+    title,
+    trigger,
+    className: cx('mf-command-palette', className),
+  },
+    h('div', { className: 'mf-command-search' },
+      h(SearchInput, {
+        placeholder,
+        value: query,
+        onValueChange: val => {
+          setQuery(val);
+          setActiveIndex(0);
+        },
+        onKeyDown: e => {
+          if (!enabledItems.length) return;
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            setActiveIndex(i => (i + 1) % enabledItems.length);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            setActiveIndex(i => (i - 1 + enabledItems.length) % enabledItems.length);
+          } else if (e.key === 'Enter') {
+            const chosen = enabledItems[activeIndex];
+            if (chosen) {
+              e.preventDefault();
+              chosen.onSelect?.(chosen);
+              setOpen(false);
+            }
+          }
+        },
+      })
+    ),
+    h('div', { role: 'listbox', 'aria-label': title, className: 'mf-command-list' },
+      filtered.length > 0
+        ? filtered.map((item, idx) => {
+            const isSelected = enabledItems[activeIndex]?.id === item.id;
+            return h('button', {
+              key: item.id ?? idx,
+              type: 'button',
+              role: 'option',
+              disabled: item.disabled,
+              'aria-selected': isSelected,
+              'data-active': isSelected ? 'true' : undefined,
+              className: 'mf-command-item',
+              onClick: () => {
+                if (item.disabled) return;
+                item.onSelect?.(item);
+                setOpen(false);
+              },
+            },
+              h('div', { className: 'mf-command-item-copy' },
+                item.group && h('small', { className: 'mf-command-group' }, item.group),
+                h('span', { className: 'mf-command-label' }, item.label)
+              ),
+              item.shortcut && h(Kbd, null, item.shortcut)
+            );
+          })
+        : h('p', { className: 'mf-command-empty' }, emptyText)
+    )
+  );
+});
+
+/* ============================================================================
+ * Level C Reusable Composite Blocks (Exported from @moonframe/ui)
+ * ========================================================================== */
+
+export const PageHeader = forwardRef(function PageHeader({
+  breadcrumbs,
+  eyebrow,
+  title,
+  description,
+  badge,
+  actions,
+  className,
+  children,
+  ...props
+}, ref) {
+  return h('header', { ...props, ref, className: cx('mf-page-header', className) },
+    Array.isArray(breadcrumbs) && breadcrumbs.length > 0 && h(Breadcrumb, null,
+      breadcrumbs.map((bc, idx) => h(BreadcrumbItem, { key: bc.label ?? idx },
+        h(BreadcrumbLink, { href: bc.href, current: bc.current ?? idx === breadcrumbs.length - 1 }, bc.label)
+      ))
+    ),
+    !Array.isArray(breadcrumbs) && breadcrumbs,
+    h('div', { className: 'mf-page-header-row' },
+      h('div', { className: 'mf-page-header-copy' },
+        eyebrow && h('span', { className: 'mf-page-header-eyebrow' }, eyebrow),
+        h('div', { className: 'mf-page-header-title-row' },
+          h('h1', { className: 'mf-page-header-title' }, title),
+          badge && h(Badge, { variant: 'primary' }, badge)
+        ),
+        description && h('p', { className: 'mf-page-header-description' }, description)
+      ),
+      actions && h('div', { className: 'mf-page-header-actions' }, actions)
+    ),
+    children
+  );
+});
+
+export const MetricGrid = forwardRef(function MetricGrid({
+  items = [],
+  columns,
+  className,
+  ...props
+}, ref) {
+  return h(Grid, { ...props, ref, columns, className: cx('mf-metric-grid', className) },
+    items.map((item, idx) => h(StatCard, {
+      key: item.id ?? item.label ?? idx,
+      label: item.label,
+      value: item.value,
+      detail: item.detail,
+      icon: item.delta ? h(Badge, { variant: item.deltaTone ?? 'primary' }, item.delta) : item.icon,
+    },
+      Array.isArray(item.trend) && item.trend.length >= 2 && h('div', { className: 'mf-metric-spark' },
+        h(Sparkline, { data: item.trend, label: `${item.label} trend` })
+      )
+    ))
+  );
+});
+
+export const AuthCard = forwardRef(function AuthCard({
+  eyebrow,
+  title,
+  description,
+  logo,
+  error,
+  status,
+  socialActions,
+  footer,
+  className,
+  children,
+  ...props
+}, ref) {
+  return h(Card, { ...props, ref, className: cx('mf-auth-card', className) },
+    h(CardHeader, { className: 'mf-auth-card-header' },
+      logo && h('div', { className: 'mf-auth-logo' }, logo),
+      eyebrow && h(Badge, { variant: 'secondary' }, eyebrow),
+      h(CardTitle, null, title),
+      description && h(CardDescription, null, description)
+    ),
+    h(CardContent, { className: 'mf-auth-card-body' },
+      error && h(Alert, { variant: 'danger', title: 'Authentication error', role: 'alert' }, error),
+      status && h(Alert, { variant: 'primary', title: 'Status' }, status),
+      children,
+      socialActions && h('div', { className: 'mf-auth-social' },
+        h(Separator, null),
+        h('div', { className: 'mf-auth-social-buttons' }, socialActions)
+      )
+    ),
+    footer && h(CardFooter, { className: 'mf-auth-card-footer' }, footer)
+  );
+});
+
+export const PricingCard = forwardRef(function PricingCard({
+  name,
+  price,
+  period = '/month',
+  description,
+  badge,
+  featured = false,
+  features = [],
+  ctaLabel = 'Select plan',
+  onSelect,
+  footer,
+  className,
+  ...props
+}, ref) {
+  return h(Card, {
+    ...props,
+    ref,
+    'data-featured': featured ? 'true' : undefined,
+    className: cx('mf-pricing-card', className),
+  },
+    h(CardHeader, null,
+      h('div', { className: 'mf-pricing-header-top' },
+        h(CardTitle, null, name),
+        badge && h(Badge, { variant: featured ? 'primary' : 'secondary' }, badge)
+      ),
+      description && h(CardDescription, null, description),
+      h('div', { className: 'mf-pricing-price' },
+        h('strong', { className: 'mf-pricing-amount' }, price),
+        period && h('span', { className: 'mf-pricing-period' }, period)
+      )
+    ),
+    h(CardContent, null,
+      h('ul', { className: 'mf-pricing-features' },
+        features.map((feat, idx) => h('li', { key: idx, className: 'mf-pricing-feature' },
+          h('span', { 'aria-hidden': true, className: 'mf-pricing-check' }, '✓'),
+          h('span', null, feat)
+        ))
+      )
+    ),
+    h(CardFooter, { className: 'mf-pricing-footer' },
+      h(Button, {
+        variant: featured ? 'primary' : 'secondary',
+        className: 'mf-pricing-cta',
+        onClick: onSelect,
+      }, ctaLabel),
+      footer
+    )
+  );
+});
+
+export const SettingsSection = forwardRef(function SettingsSection({
+  title,
+  description,
+  badge,
+  footer,
+  action,
+  className,
+  children,
+  ...props
+}, ref) {
+  return h('section', { ...props, ref, className: cx('mf-settings-section', className) },
+    h('div', { className: 'mf-settings-meta' },
+      h('div', { className: 'mf-settings-title-row' },
+        h('h2', { className: 'mf-settings-title' }, title),
+        badge && h(Badge, { variant: 'secondary' }, badge)
+      ),
+      description && h('p', { className: 'mf-settings-description' }, description)
+    ),
+    h(Card, { className: 'mf-settings-card' },
+      h(CardContent, { className: 'mf-settings-body' }, children),
+      (footer || action) && h(CardFooter, { className: 'mf-settings-footer' },
+        footer && h('span', { className: 'mf-field-description' }, footer),
+        action && h('div', { className: 'mf-settings-action' }, action)
+      )
+    )
+  );
+});
+
+export const ActivityFeed = forwardRef(function ActivityFeed({
+  title = 'Recent activity',
+  description,
+  items = [],
+  action,
+  emptyTitle = 'No recent activity',
+  emptyDescription = 'Events and audit entries will appear here.',
+  className,
+  ...props
+}, ref) {
+  return h(Card, { ...props, ref, className: cx('mf-activity-feed', className) },
+    h(CardHeader, { className: 'mf-activity-header' },
+      h('div', null,
+        h(CardTitle, null, title),
+        description && h(CardDescription, null, description)
+      ),
+      action
+    ),
+    h(CardContent, null,
+      items.length > 0
+        ? h(Timeline, { items })
+        : h(EmptyState, { title: emptyTitle, description: emptyDescription })
+    )
+  );
+});
+

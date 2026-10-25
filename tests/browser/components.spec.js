@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => { await page.goto('/behavior.html'); });
+test.beforeEach(async ({ page }) => {
+  await page.goto('/lab/behavior');
+});
 
 test('native modal traps focus, closes on Escape, and restores opener focus', async ({ page }) => {
   const opener = page.getByRole('button', { name: 'Open dialog', exact: true });
@@ -29,7 +31,7 @@ test('controlled dialog can close through parent state and native Escape', async
 });
 
 test('default-open modal survives StrictMode effect cleanup and reinitialization', async ({ page }) => {
-  await page.goto('/behavior.html?initial=1');
+  await page.goto('/lab/behavior?initial=1');
   const dialog = page.getByRole('dialog', { name: 'Initially open' });
   await expect(dialog).toBeVisible();
   await page.keyboard.press('Tab');
@@ -86,14 +88,14 @@ test('form controls keep native selection, keyboard and disabled behavior', asyn
   await expect(select).toHaveValue('my');
 });
 
-test('Next.js asChild link, Field, DropdownMenu, Popover, Tooltip and DataTable work interactively', async ({ page }) => {
+test('Next.js asChild link, Field, DropdownMenu, Popover, Tooltip, DataTable, OTPInput and PasswordField work interactively', async ({ page }) => {
   const link = page.getByRole('link', { name: 'Next Route Link' });
   await expect(link).toHaveClass(/mf-button/);
   await expect(link).toHaveAttribute('href', '#next-route');
 
   const slugInput = page.getByLabel(/Project slug/);
   await expect(slugInput).toHaveAttribute('aria-invalid', 'true');
-  await expect(page.getByRole('alert')).toContainText('Slug already in use');
+  await expect(page.locator('.mf-field-error')).toContainText('Slug already in use');
 
   await page.getByRole('button', { name: 'Open menu' }).click();
   const menu = page.getByRole('menu', { name: 'Project actions' });
@@ -117,4 +119,13 @@ test('Next.js asChild link, Field, DropdownMenu, Popover, Tooltip and DataTable 
   await page.getByPlaceholder('Filter deployments').fill('Zulu');
   await expect(page.locator('.mf-data-table tbody tr')).toHaveCount(1);
   await expect(page.locator('.mf-data-table tbody tr').first()).toContainText('Zulu API');
+
+  const otpFirst = page.getByLabel('MFA code digit 1 of 6');
+  await otpFirst.fill('9');
+  await expect(otpFirst).toHaveValue('9');
+
+  const pwInput = page.getByLabel('Account password');
+  await expect(pwInput).toHaveAttribute('type', 'password');
+  await page.getByRole('button', { name: 'Show password' }).click();
+  await expect(pwInput).toHaveAttribute('type', 'text');
 });

@@ -20,3 +20,24 @@ jobs:
         run: node scripts/validate-contracts.mjs --self-test
       - name: Prove bounded token fixture
         run: node scripts/token-subset-proof.mjs
+
+  runtime-and-showcase:
+    runs-on: ubuntu-latest
+    needs: spec-contracts
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Verify deterministic token generator & CSS bridge
+        run: pnpm run tokens
+      - name: Run unit & SSR tests
+        run: pnpm test
+      - name: Run TypeScript typecheck
+        run: pnpm run typecheck && pnpm --filter moonframe typecheck
+      - name: Build Next.js moonframe showcase app
+        run: pnpm run build

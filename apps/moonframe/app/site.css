@@ -1,0 +1,302 @@
+/* Moonframe Showcase Site CSS — 100% driven by --mf-* tokens */
+body {
+  margin: 0;
+  background-color: var(--mf-bg);
+  color: var(--mf-text);
+  font-family: var(--mf-font);
+}
+
+.mf-site-wrapper {
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mf-bg);
+  color: var(--mf-text);
+}
+
+.mf-site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 60;
+  border-block-end: 1px solid var(--mf-border);
+  background: color-mix(in srgb, var(--mf-surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.mf-site-header-inner {
+  max-inline-size: 86rem;
+  margin-inline: auto;
+  padding: .75rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mf-site-brand-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.mf-site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  text-decoration: none;
+  color: var(--mf-text);
+  font-family: var(--mf-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -.03em;
+}
+
+.mf-site-logo-mark {
+  display: inline-grid;
+  place-content: center;
+  inline-size: 2.15rem;
+  block-size: 2.15rem;
+  border-radius: var(--mf-radius);
+  border: 1px solid var(--mf-border);
+  background: var(--mf-accent);
+  color: var(--mf-accent-text);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.mf-site-logo-text {
+  display: grid;
+  line-height: 1.05;
+}
+
+.mf-site-logo-text small {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--mf-muted);
+  margin-block-start: .15rem;
+}
+
+.mf-site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem;
+}
+
+.mf-site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: .4rem .75rem;
+  border-radius: var(--mf-radius);
+  border: 1px solid transparent;
+  color: var(--mf-muted);
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 650;
+  transition: background-color var(--mf-duration), color var(--mf-duration), border-color var(--mf-duration);
+}
+
+.mf-site-nav-link:hover {
+  color: var(--mf-text);
+  background: var(--mf-surface-raised);
+}
+
+.mf-site-nav-link[data-active="true"] {
+  color: var(--mf-accent-text);
+  background: var(--mf-accent);
+  border-color: var(--mf-border);
+}
+
+.mf-site-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.mf-site-skin-select,
+.mf-site-mode-select {
+  inline-size: auto;
+  min-block-size: 2.15rem;
+  padding: .3rem 1.8rem .3rem .65rem;
+  font-size: .82rem;
+}
+
+.mf-site-main {
+  flex: 1 1 auto;
+  max-inline-size: 86rem;
+  inline-size: 100%;
+  margin-inline: auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.mf-site-section {
+  margin-block-end: 3.5rem;
+}
+
+.mf-site-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+.mf-site-section-head h2 {
+  margin: .25rem 0 0;
+  font-family: var(--mf-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
+.mf-site-section-head p {
+  margin: .35rem 0 0;
+  color: var(--mf-muted);
+  max-inline-size: 62ch;
+}
+
+.mf-skin-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1.25rem;
+}
+
+.mf-skin-showcase-item .mf-root {
+  min-block-size: auto;
+  border-radius: var(--mf-radius);
+}
+
+.mf-skin-preview-card {
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mf-template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  gap: 1.25rem;
+}
+
+.mf-component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.25rem;
+}
+
+.mf-preview-frame-root {
+  display: grid;
+  gap: 1rem;
+}
+
+.mf-preview-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .75rem 1rem;
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius);
+  background: var(--mf-surface);
+  box-shadow: var(--mf-shadow);
+}
+
+.mf-preview-toolbar-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+}
+
+.mf-preview-stage {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius);
+  background: var(--mf-surface-raised);
+  overflow-x: auto;
+}
+
+.mf-preview-iframe {
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius);
+  background: var(--mf-bg);
+  block-size: 46rem;
+  max-inline-size: 100%;
+  transition: width var(--mf-duration);
+}
+
+.mf-preview-code-stage {
+  padding: 1rem;
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius);
+  background: var(--mf-surface);
+}
+
+.mf-site-footer {
+  border-block-start: 1px solid var(--mf-border);
+  background: var(--mf-surface);
+  padding: 2.5rem 1.25rem;
+}
+
+.mf-site-footer-inner {
+  max-inline-size: 86rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.mf-site-footer-brand {
+  max-inline-size: 32rem;
+}
+
+.mf-site-footer-brand strong {
+  font-family: var(--mf-display);
+  font-size: 1.2rem;
+}
+
+.mf-site-footer-brand p {
+  margin: .5rem 0 0;
+  color: var(--mf-muted);
+  font-size: .9rem;
+}
+
+.mf-site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.mf-site-footer-links a {
+  color: var(--mf-text);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: .9rem;
+}
+
+.mf-site-footer-links a:hover {
+  color: var(--mf-accent);
+}
+
+@media (max-width: 640px) {
+  .mf-site-header-inner {
+    padding: .65rem .85rem;
+  }
+  .mf-site-main {
+    padding: 1.25rem .85rem 2.5rem;
+  }
+  .mf-skin-wall-grid,
+  .mf-template-grid,
+  .mf-component-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

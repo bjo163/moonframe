@@ -33,6 +33,27 @@ import {
   CodeBlock,
   ToastProvider,
   useToast,
+  OTPInput,
+  PasswordField,
+  SearchInput,
+  Slider,
+  TagInput,
+  SegmentedControl,
+  FileDropzone,
+  BarChart,
+  Sparkline,
+  Stepper,
+  Timeline,
+  AvatarGroup,
+  DescriptionList,
+  Callout,
+  CommandPalette,
+  PageHeader,
+  MetricGrid,
+  AuthCard,
+  PricingCard,
+  SettingsSection,
+  ActivityFeed,
   skins,
   type SkinId,
 } from '@moonframe/ui';
@@ -75,6 +96,15 @@ function Example() {
                 </BreadcrumbItem>
               </Breadcrumb>
             </Header>
+            <PageHeader
+              eyebrow="Overview"
+              title="Moonframe Workspace"
+              description="Typed composite blocks"
+              badge="v0.1"
+            />
+            <MetricGrid
+              items={[{ label: 'Skins', value: skins.length, delta: '+15', trend: [5, 10, 15] }]}
+            />
             <StatCard label="Skins" value={skins.length} detail="Active" />
             <Button ref={ref} onClick={() => { setSkin('moonquest'); setPreferences({ density: 'compact' }); toast({ title: 'Saved' }); }}>
               {mode}
@@ -85,6 +115,29 @@ function Example() {
             <Field label="Name" description="Public handle" error="Required" required>
               <Input aria-label="Name" />
             </Field>
+            <OTPInput length={6} defaultValue="123456" />
+            <PasswordField showStrength defaultValue="StrongP@ss1" />
+            <SearchInput shortcut="⌘K" placeholder="Filter…" />
+            <Slider label="Opacity" defaultValue={80} showValue />
+            <TagInput defaultValue={['ui', 'skins']} />
+            <SegmentedControl items={[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }]} />
+            <FileDropzone title="Drop files" />
+            <BarChart data={[{ label: 'Q1', value: 42 }]} />
+            <Sparkline data={[1, 3, 2, 5]} />
+            <Stepper currentStep={1} steps={[{ title: 'Step 1' }, { title: 'Step 2' }]} />
+            <Timeline items={[{ title: 'Created', time: '1m' }]} />
+            <AvatarGroup items={[{ fallback: 'MF' }]} />
+            <DescriptionList items={[{ term: 'Engine', details: 'Next.js 16' }]} />
+            <Callout title="Note" dismissible>Ready</Callout>
+            <CommandPalette items={[{ id: '1', label: 'Switch Skin', shortcut: '⌘K' }]} />
+            <AuthCard title="Sign in">
+              <Input placeholder="Email" />
+            </AuthCard>
+            <PricingCard name="Pro" price="$29" features={['15 skins']} featured />
+            <SettingsSection title="General">
+              <Input placeholder="Workspace name" />
+            </SettingsSection>
+            <ActivityFeed items={[{ title: 'Updated skin', time: 'Now' }]} />
             <Select aria-label="Country">
               <option>Indonesia</option>
             </Select>

@@ -1,22 +1,30 @@
 # Using Moonframe
 
-The local runtime implements all 15 skin IDs in light and dark, shared React components, Next.js SSR/App Router theme helpers, an optional Tailwind CSS v4 bridge, and a workspace demo. Use Node.js 24.22.1 LTS from `.nvmrc` for repository scripts; consumer apps support Node `>=22.0.0` and React `^19.0.0`.
+The local runtime implements all 15 skin IDs in light and dark, **66+ shared React components and Level C composite blocks**, Next.js SSR/App Router theme helpers, an optional Tailwind CSS v4 bridge, and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) with **22 Wave-A page templates**. Use Node.js 24.22.1 LTS from `.nvmrc` for repository scripts; consumer apps support Node `>=22.0.0` and React `^19.0.0`.
 
-## Run the demo
+## Run the `moonframe` Showcase & Template Marketplace
 
 ```sh
-npm ci
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
-Open the local URL printed by Vite. Select any skin, appearance and density. The workspace lets you create projects, search and sort data, and explore shared components. `npm run build` generates a static demo in `dist/`; `npm run preview` serves it locally.
+Open `http://localhost:3000`. Running `pnpm run dev` at the repository root starts the `apps/moonframe` Next.js 16 application via pnpm workspaces (`"@moonframe/ui": "workspace:*"`):
+- **`/`** — Landing page, live 15-skin interactive wall, featured templates, and quickstart
+- **`/skins` & `/skins/[id]`** — 15-skin gallery and deep-dive non-color visual grammar specs
+- **`/components` & `/components/[slug]`** — Interactive playground for all 66+ components & composite blocks
+- **`/templates` & `/templates/[id]`** — 22 Wave-A production page templates with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), and copyable TSX source code
+- **`/lab` & `/lab/behavior`** — Deterministic 15-skin comparison lab and keyboard/ARIA behavior test harness
+- **`/docs`** — Complete Next.js App Router, SSR anti-FOUC `ThemeScript`, Tailwind v4 bridge, and API guide
+
+`pnpm run build` compiles the production Next.js 16 showcase (`apps/moonframe/.next`); `pnpm run start` serves the production build locally.
 
 ## Install in a Next.js or React app
 
-From this repository, run `npm run pack:local` (or `npm pack`). In your Next.js (15/16) or React 19 app, install the resulting local tarball:
+Inside this monorepo, workspace apps consume `"@moonframe/ui": "workspace:*"`. For an external Next.js (15/16) or React 19 project, run `pnpm run pack:local` (or `pnpm pack`) at the repository root and install the resulting local tarball:
 
 ```sh
-npm install /path/to/moonframe-ui-0.1.0.tgz
+pnpm add /path/to/moonframe-ui-0.1.0.tgz
 ```
 
 ### Next.js App Router (`app/layout.tsx`)
@@ -116,14 +124,17 @@ export default function WorkspacePage() {
 - `@moonframe/ui/styles.css` — Self-contained stylesheet for all 15 skins in Light and Dark
 - `@moonframe/ui/tailwind.css` — Optional Tailwind CSS v4 `@theme inline` bridge mapping `--color-mf-*`, `--radius-mf`, `--shadow-mf`, and `--font-mf` to Moonframe's live CSS variables
 
-## Components and styling
+## Components and styling (66+ Exports)
 
 Available exports include:
 - **Theme & Polymorphism:** `ThemeProvider`, `ThemeScript`, `getThemeInitScript`, `useTheme`, `SkinSelector`, `ModeSelector`, `Slot`
 - **Layout & Shell:** `AppShell`, `Sidebar`, `Main`, `Header`, `Nav`, `NavItem`, `Hero`, `Grid`, `StatCard`
-- **Actions & Inputs:** `Button`, `Input`, `Textarea`, `Label`, `Select`, `Checkbox`, `Switch`, `RadioGroup`, `Field`, `FieldDescription`, `FieldError`
-- **Display & Data:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Badge`, `Avatar`, `Progress`, `Separator`, `Skeleton`, `EmptyState`, `Kbd`, `CodeBlock`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`
-- **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `ToastProvider`, `useToast`
+- **Actions & Form Inputs:** `Button`, `Input`, `Textarea`, `Label`, `Select`, `Checkbox`, `Switch`, `RadioGroup`, `Field`, `FieldDescription`, `FieldError`, `OTPInput`, `PasswordField`, `SearchInput`, `Slider`, `TagInput`, `SegmentedControl`, `FileDropzone`
+- **Display, Charts & Data:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Badge`, `Avatar`, `AvatarGroup`, `Progress`, `Separator`, `Skeleton`, `EmptyState`, `Kbd`, `CodeBlock`, `DescriptionList`, `DescriptionTerm`, `DescriptionDetails`, `Stepper`, `Timeline`, `BarChart`, `Sparkline`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`
+- **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`
+- **Level C Reusable Composite Blocks:** `PageHeader`, `MetricGrid`, `AuthCard`, `PricingCard`, `SettingsSection`, `ActivityFeed`
+
+See the [Implementation Status & Evidence Report](implementation-status.md) for the full 66+ component inventory, 22 Wave-A page templates, and milestone verification summary.
 
 Dialog and Drawer use the browser's native modal top layer, keyboard containment and Escape handling. Tabs use arrow keys, Home/End and a single tab stop. Accordion uses native disclosures. `Field` automatically wires `id`, `aria-describedby`, and `aria-invalid` onto its child control.
 

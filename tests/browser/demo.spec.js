@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('workspace creates projects, updates progress, searches, filters, sorts, and persists', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/lab');
   await page.getByRole('button', { name: 'Create project', exact: true }).click();
   const dialog = page.getByRole('dialog', { name: 'Give your idea a home.' });
   await dialog.getByLabel('Project name').fill('Astra launch');
@@ -28,7 +28,7 @@ test('workspace creates projects, updates progress, searches, filters, sorts, an
 
 test('appearance controls change attributes and preserve requested system mode', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark', reducedMotion: 'reduce' });
-  await page.goto('/');
+  await page.goto('/lab');
   const root = page.locator('.mf-root');
   await page.getByRole('button', { name: /Moonquest/ }).click();
   await expect(root).toHaveAttribute('data-skin', 'moonquest');
@@ -55,7 +55,7 @@ test('appearance controls change attributes and preserve requested system mode',
 });
 
 test('component gallery has working tabs, disclosure, preferences, dialog and feedback', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/lab');
   await page.getByRole('button', { name: 'Components UI', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Everything, in your style.' })).toBeVisible();
   await page.getByRole('tab', { name: 'Details', exact: true }).click();
@@ -79,7 +79,7 @@ test('malformed saved workspace cannot crash the demo and query previews overrid
     localStorage.setItem('moonframe-demo-projects-v1', JSON.stringify([{ id: 'bad', name: 'Bad', category: 'x', owner: 'x', date: '2026-99-99', status: 'Planned', progress: 0 }]));
     localStorage.setItem('moonframe-demo-theme-v1', JSON.stringify({ skin: 'moonquest', mode: 'dark' }));
   });
-  await page.goto('/?skin=moonpunk&mode=light');
+  await page.goto('/lab?skin=moonpunk&mode=light');
   await expect(page.getByText('Orbit design system', { exact: true })).toBeVisible();
   await expect(page.locator('.mf-root')).toHaveAttribute('data-skin', 'moonpunk');
   await expect(page.locator('.mf-root')).toHaveAttribute('data-mode', 'light');

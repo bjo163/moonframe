@@ -266,3 +266,263 @@ export interface DataTableProps<T = Record<string, unknown>> extends React.HTMLA
   pageSize?: number;
 }
 export const DataTable: RefComponent<HTMLDivElement, DataTableProps<any>>;
+
+/* Extended Inputs, Charts, Navigation & Level C Reusable Composite Blocks */
+
+export interface OTPInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
+  length?: number;
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  onComplete?: (value: string) => void;
+  disabled?: boolean;
+  label?: string;
+}
+export const OTPInput: RefComponent<HTMLDivElement, OTPInputProps>;
+
+export interface PasswordFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  defaultVisible?: boolean;
+  showStrength?: boolean;
+  toggleLabel?: string;
+}
+export const PasswordField: RefComponent<HTMLInputElement, PasswordFieldProps>;
+
+export interface SearchInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  onClear?: () => void;
+  shortcut?: React.ReactNode;
+}
+export const SearchInput: RefComponent<HTMLInputElement, SearchInputProps>;
+
+export interface SliderProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'defaultValue'> {
+  min?: number;
+  max?: number;
+  step?: number;
+  value?: number;
+  defaultValue?: number;
+  onValueChange?: (value: number) => void;
+  label?: React.ReactNode;
+  showValue?: boolean;
+  formatValue?: (value: number) => string;
+}
+export const Slider: RefComponent<HTMLInputElement, SliderProps>;
+
+export interface TagInputProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
+  value?: string[];
+  defaultValue?: string[];
+  onValueChange?: (tags: string[]) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  label?: string;
+}
+export const TagInput: RefComponent<HTMLDivElement, TagInputProps>;
+
+export interface SegmentedOption {
+  value: string;
+  label: React.ReactNode;
+  disabled?: boolean;
+}
+export interface SegmentedControlProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
+  items: SegmentedOption[];
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  label?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+export const SegmentedControl: RefComponent<HTMLDivElement, SegmentedControlProps>;
+
+export interface FileDropzoneProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  accept?: string;
+  multiple?: boolean;
+  disabled?: boolean;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  onFilesSelected?: (files: File[]) => void;
+}
+export const FileDropzone: RefComponent<HTMLDivElement, FileDropzoneProps>;
+
+export interface BarChartDatum {
+  label: string;
+  value: number;
+  tone?: Variant;
+}
+export interface BarChartProps extends React.HTMLAttributes<HTMLDivElement> {
+  data: BarChartDatum[];
+  height?: number;
+  label?: string;
+  formatValue?: (value: number) => string;
+}
+export const BarChart: RefComponent<HTMLDivElement, BarChartProps>;
+
+export interface SparklineProps extends React.SVGAttributes<SVGSVGElement> {
+  data: number[];
+  width?: number;
+  height?: number;
+  label?: string;
+  variant?: Variant;
+}
+export const Sparkline: RefComponent<SVGSVGElement, SparklineProps>;
+
+export interface StepItem {
+  id?: string;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  status?: 'complete' | 'current' | 'upcoming';
+}
+export interface StepperProps extends React.OlHTMLAttributes<HTMLOListElement> {
+  steps: StepItem[];
+  currentStep?: number;
+  orientation?: 'horizontal' | 'vertical';
+  label?: string;
+}
+export const Stepper: RefComponent<HTMLOListElement, StepperProps>;
+
+export interface TimelineItem {
+  id?: string;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  time?: React.ReactNode;
+  badge?: React.ReactNode;
+  icon?: React.ReactNode;
+  tone?: Variant;
+}
+export interface TimelineProps extends React.OlHTMLAttributes<HTMLOListElement> {
+  items: TimelineItem[];
+}
+export const Timeline: RefComponent<HTMLOListElement, TimelineProps>;
+
+export interface AvatarGroupItem {
+  id?: string;
+  src?: string;
+  alt?: string;
+  fallback?: React.ReactNode;
+}
+export interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+  items: AvatarGroupItem[];
+  max?: number;
+  label?: string;
+}
+export const AvatarGroup: RefComponent<HTMLDivElement, AvatarGroupProps>;
+
+export interface DescriptionListItem {
+  term: React.ReactNode;
+  details: React.ReactNode;
+}
+export interface DescriptionListProps extends React.HTMLAttributes<HTMLDListElement> {
+  items?: DescriptionListItem[];
+  columns?: 1 | 2 | 3;
+}
+export const DescriptionList: RefComponent<HTMLDListElement, DescriptionListProps>;
+export const DescriptionTerm: RefComponent<HTMLElement, React.HTMLAttributes<HTMLElement> & AsChildProps>;
+export const DescriptionDetails: RefComponent<HTMLElement, React.HTMLAttributes<HTMLElement> & AsChildProps>;
+
+export interface CalloutProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  title?: React.ReactNode;
+  variant?: Variant;
+  icon?: React.ReactNode;
+  action?: React.ReactNode;
+  dismissible?: boolean;
+  onDismiss?: () => void;
+}
+export const Callout: RefComponent<HTMLElement, CalloutProps>;
+export const Banner: RefComponent<HTMLElement, CalloutProps>;
+
+export interface CommandPaletteItem {
+  id: string;
+  label: string;
+  group?: string;
+  shortcut?: string;
+  keywords?: string[];
+  disabled?: boolean;
+  onSelect?: (item: CommandPaletteItem) => void;
+}
+export interface CommandPaletteProps extends Omit<DialogProps, 'title'> {
+  items: CommandPaletteItem[];
+  placeholder?: string;
+  emptyText?: React.ReactNode;
+  title?: React.ReactNode;
+  enableHotkey?: boolean;
+}
+export const CommandPalette: RefComponent<HTMLDialogElement, CommandPaletteProps>;
+
+/* Level C Reusable Composite Blocks */
+
+export interface BreadcrumbEntry {
+  label: React.ReactNode;
+  href?: string;
+  current?: boolean;
+}
+export interface PageHeaderProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  breadcrumbs?: BreadcrumbEntry[] | React.ReactNode;
+  eyebrow?: React.ReactNode;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  badge?: React.ReactNode;
+  actions?: React.ReactNode;
+}
+export const PageHeader: RefComponent<HTMLElement, PageHeaderProps>;
+
+export interface MetricItem {
+  id?: string;
+  label: React.ReactNode;
+  value: React.ReactNode;
+  delta?: React.ReactNode;
+  deltaTone?: Variant;
+  detail?: React.ReactNode;
+  trend?: number[];
+  icon?: React.ReactNode;
+}
+export interface MetricGridProps extends React.HTMLAttributes<HTMLDivElement> {
+  items: MetricItem[];
+  columns?: number;
+}
+export const MetricGrid: RefComponent<HTMLDivElement, MetricGridProps>;
+
+export interface AuthCardProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  eyebrow?: React.ReactNode;
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  logo?: React.ReactNode;
+  error?: React.ReactNode;
+  status?: React.ReactNode;
+  socialActions?: React.ReactNode;
+  footer?: React.ReactNode;
+}
+export const AuthCard: RefComponent<HTMLElement, AuthCardProps>;
+
+export interface PricingCardProps extends React.HTMLAttributes<HTMLElement> {
+  name: React.ReactNode;
+  price: React.ReactNode;
+  period?: React.ReactNode;
+  description?: React.ReactNode;
+  badge?: React.ReactNode;
+  featured?: boolean;
+  features: React.ReactNode[];
+  ctaLabel?: React.ReactNode;
+  onSelect?: () => void;
+  footer?: React.ReactNode;
+}
+export const PricingCard: RefComponent<HTMLElement, PricingCardProps>;
+
+export interface SettingsSectionProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  title: React.ReactNode;
+  description?: React.ReactNode;
+  badge?: React.ReactNode;
+  footer?: React.ReactNode;
+  action?: React.ReactNode;
+}
+export const SettingsSection: RefComponent<HTMLElement, SettingsSectionProps>;
+
+export interface ActivityFeedProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  items: TimelineItem[];
+  action?: React.ReactNode;
+  emptyTitle?: React.ReactNode;
+  emptyDescription?: React.ReactNode;
+}
+export const ActivityFeed: RefComponent<HTMLElement, ActivityFeedProps>;
+

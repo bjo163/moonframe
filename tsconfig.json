@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2022", "module": "NodeNext", "moduleResolution": "NodeNext",
-    "strict": true, "noEmit": true, "jsx": "react-jsx", "skipLibCheck": false
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": false
   },
-  "include": ["src/**/*.d.ts", "tests/types.tsx"]
+  "include": ["src/**/*.d.ts", "tests/types.tsx"],
+  "exclude": ["apps", "node_modules"]
 }

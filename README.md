@@ -2,37 +2,45 @@
 
 > **One behavioral system. Fifteen distinct visual grammars. Thirty core appearances.**
 
-Moonframe UI provides React components with **15 distinct skins, each in Light and Dark**, a persistent theme runtime, and an interactive workspace demo.
+Moonframe UI provides **66+ reusable React components & Level C composite blocks**, **15 distinct skins (each in Light and Dark)**, a persistent Next.js/SSR-safe theme runtime, and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) featuring **22 production Wave-A page templates**.
 
 ## Start using it
 
-Use **Node.js 24.22.1 LTS**, pinned in [.nvmrc](.nvmrc).
+Use **Node.js 24.22.1 LTS**, pinned in [.nvmrc](.nvmrc), and **pnpm** (`corepack enable`).
 
 ```sh
-npm ci
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
-Open the local URL printed by Vite. Try every skin, change appearance and density, create a project, search the project table, and explore the components. Build the static demo with `npm run build`.
+Running `pnpm run dev` at the repository root launches the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) at `http://localhost:3000`:
+- **`/`** — Landing page, live 15-skin interactive wall, featured templates, and quickstart
+- **`/skins` & `/skins/[id]`** — 15-skin gallery and deep-dive non-color visual grammar specs
+- **`/components` & `/components/[slug]`** — Interactive playground for all **66+ reusable components & Level C composite blocks**
+- **`/templates` & `/templates/[id]`** — **22 Wave-A production page templates** with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), and copyable TSX source code
+- **`/lab` & `/lab/behavior`** — Deterministic 15-skin comparison lab and keyboard/ARIA behavior test harness
+- **`/docs`** — Complete Next.js App Router, SSR anti-FOUC `ThemeScript`, Tailwind v4 bridge, and API guide
 
-For another React app, run `npm pack`, install the resulting tarball, and import:
+Build the production Next.js showcase with `pnpm run build`, or pack a local consumer tarball (`moonframe-ui-0.1.0.tgz`) with `pnpm run pack:local`:
 
 ```tsx
-import { ThemeProvider, Button } from '@moonframe/ui';
+import { ThemeProvider, ThemeScript, Button } from '@moonframe/ui';
 import '@moonframe/ui/styles.css';
 
 export default function App() {
-  return <ThemeProvider defaultSkin="moonpunk" defaultMode="system">
-    <Button>Start building</Button>
-  </ThemeProvider>;
+  return (
+    <ThemeProvider defaultSkin="moonpunk" defaultMode="system" syncDocumentElement>
+      <Button>Start building</Button>
+    </ThemeProvider>
+  );
 }
 ```
 
-[Usage and component API](docs/runtime-usage.md) ? [TODO and delivery status](TODO.md) ? [Node runtime policy](docs/architecture/node-runtime.md)
+[Usage and component API](docs/runtime-usage.md) · [Implementation status](docs/implementation-status.md) · [TODO and delivery status](TODO.md) · [Node runtime policy](docs/architecture/node-runtime.md)
 
 ## Implementation and review status
 
-The local package contains working React components, CSS skin recipes and a demo. It remains private and has not been published to npm. The larger historical specifications below also cover future premium components, assets and release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
+The repository is structured as a **pnpm workspace** combining the `@moonframe/ui` runtime library (`src/`) and the `moonframe` Next.js 16 showcase application (`apps/moonframe`). It remains private (`"private": true`) and has not been published to npm. The larger historical specifications below also cover future catalog items, optional original assets, and formal release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
 
 **Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml).
 

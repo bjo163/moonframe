@@ -19,4 +19,6 @@
   --font-mf-display: var(--mf-display);
   --spacing-mf: var(--mf-space);
   --spacing-mf-gap: var(--mf-gap);
+  --spacing-mf-control: var(--mf-control-height);
+  --transition-duration-mf: var(--mf-duration);
 }

@@ -36,9 +36,32 @@ import {
   Kbd,
   CodeBlock,
   ToastProvider,
+  OTPInput,
+  PasswordField,
+  SearchInput,
+  Slider,
+  TagInput,
+  SegmentedControl,
+  FileDropzone,
+  BarChart,
+  Sparkline,
+  Stepper,
+  Timeline,
+  AvatarGroup,
+  DescriptionList,
+  Callout,
+  Banner,
+  CommandPalette,
+  PageHeader,
+  MetricGrid,
+  AuthCard,
+  PricingCard,
+  SettingsSection,
+  ActivityFeed,
 } from '../src/index.js';
 import * as themeSubpath from '../src/theme.js';
 import * as skinsSubpath from '../src/skins.js';
+import { generateDeterministicTokenArtifacts, verifyRuntimeCssCoverage } from '../scripts/generate-tokens.mjs';
 
 test('all canonical skins are available once, with both CSS appearances', () => {
   const contract = JSON.parse(fs.readFileSync(new URL('../contracts/moonframe-theme-contract-v1.3.json', import.meta.url)));
@@ -186,4 +209,106 @@ test('Next.js workspace layout, form fields, selectors, and DataTable server-ren
   assert.equal(typeof themeSubpath.ThemeProvider, 'function');
   assert.equal(typeof themeSubpath.ThemeScript, 'function');
   assert.equal(skinsSubpath.skinIds.length, 15);
+});
+
+test('all extended components and Level C reusable composite blocks server-render cleanly', () => {
+  const html = renderToString(
+    createElement(
+      ThemeProvider,
+      { defaultSkin: 'moonpunk', defaultMode: 'dark' },
+      createElement(PageHeader, {
+        eyebrow: 'Workspace',
+        title: 'Control Center',
+        description: 'Reusable composite blocks',
+        badge: 'Live',
+        breadcrumbs: [{ label: 'Home', href: '/' }, { label: 'Control Center', current: true }],
+      }),
+      createElement(MetricGrid, {
+        items: [
+          { label: 'MRR', value: '$48,200', delta: '+14.2%', trend: [12, 19, 25, 31, 48] },
+        ],
+      }),
+      createElement(OTPInput, { length: 6, defaultValue: '482910' }),
+      createElement(PasswordField, { defaultValue: 'Sup3rS3cret!', showStrength: true, 'aria-label': 'Password' }),
+      createElement(SearchInput, { defaultValue: 'moonframe', shortcut: '⌘K' }),
+      createElement(Slider, { label: 'Volume', defaultValue: 75, showValue: true }),
+      createElement(TagInput, { defaultValue: ['nextjs', 'react19'] }),
+      createElement(SegmentedControl, {
+        items: [{ value: 'monthly', label: 'Monthly' }, { value: 'annual', label: 'Annual' }],
+        defaultValue: 'annual',
+      }),
+      createElement(FileDropzone, { title: 'Upload SVG asset' }),
+      createElement(BarChart, {
+        label: 'Deployments per day',
+        data: [{ label: 'Mon', value: 14 }, { label: 'Tue', value: 22 }],
+      }),
+      createElement(Sparkline, { data: [4, 8, 6, 15, 19] }),
+      createElement(Stepper, {
+        currentStep: 1,
+        steps: [{ title: 'Account' }, { title: 'Workspace' }, { title: 'Launch' }],
+      }),
+      createElement(Timeline, {
+        items: [{ title: 'Deployed v0.1.0', time: '2m ago', badge: 'Success' }],
+      }),
+      createElement(AvatarGroup, {
+        max: 2,
+        items: [{ fallback: 'AL' }, { fallback: 'BK' }, { fallback: 'CM' }],
+      }),
+      createElement(DescriptionList, {
+        items: [{ term: 'Skin', details: 'Moonpunk' }],
+      }),
+      createElement(Callout, { title: 'System ready', variant: 'primary' }, 'All 15 skins loaded'),
+      createElement(Banner, { title: 'Banner alias' }, 'Reusable banner'),
+      createElement(CommandPalette, {
+        items: [{ id: 'skins', label: 'Browse 15 Skins', group: 'Navigation', shortcut: 'G S' }],
+      }),
+      createElement(AuthCard, {
+        eyebrow: 'Security',
+        title: 'Sign in to Moonframe',
+        description: 'Enter your credentials',
+      }, createElement(Input, { 'aria-label': 'Email' })),
+      createElement(PricingCard, {
+        name: 'Studio',
+        price: '$49',
+        badge: 'Popular',
+        featured: true,
+        features: ['All 15 skins', '22 page templates', 'Next.js 16 App Router'],
+      }),
+      createElement(SettingsSection, {
+        title: 'Appearance',
+        description: 'Configure default skin and mode',
+      }, createElement(SkinSelector, null)),
+      createElement(ActivityFeed, {
+        items: [{ title: 'Key rotated', time: 'Just now' }],
+      })
+    )
+  );
+  assert.ok(html.includes('Control Center'));
+  assert.ok(html.includes('$48,200'));
+  assert.match(html, /autocomplete="one-time-code"/i);
+  assert.ok(html.includes('Sign in to Moonframe'));
+  assert.ok(html.includes('All 15 skins'));
+  assert.ok(html.includes('+1'));
+});
+
+test('deterministic token generator and runtime CSS variable bridge pass verification', () => {
+  const tree = {
+    reference: {
+      color: {
+        brand: { $type: 'color', $value: { colorSpace: 'srgb', components: [0.2, 0.3, 0.7] } },
+      },
+    },
+    modes: {
+      light: { accent: { $type: 'color', $value: '{color.brand}' } },
+      dark: { accent: { $type: 'color', $value: '{color.brand}' } },
+    },
+  };
+  const first = generateDeterministicTokenArtifacts(tree);
+  const second = generateDeterministicTokenArtifacts(tree);
+  assert.equal(first.css, second.css);
+  assert.equal(first.dts, second.dts);
+  assert.ok(first.css.includes('--mf-accent: rgb(51 77 179);'));
+  const coverage = verifyRuntimeCssCoverage();
+  assert.equal(coverage.skinCount, 15);
+  assert.equal(coverage.appearanceCount, 30);
 });

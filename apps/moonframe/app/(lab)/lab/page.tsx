@@ -1,17 +1,28 @@
+'use client';
+
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { createRoot } from 'react-dom/client';
 import {
   ThemeProvider, useTheme, skins, Button, Input, Textarea, Label, Select,
   Badge, Card, CardHeader, CardTitle, CardDescription, CardContent,
   Checkbox, Switch, Progress, Avatar, Alert, Skeleton, Separator,
   Dialog, Tabs, Accordion, Table, TableHeader, TableBody, TableRow,
   TableHead, TableCell, TableCaption,
-} from '../src/index.js';
-import '../src/styles.css';
-import './demo.css';
+  type SkinId, type Mode, type Density, type Motion, type Contrast,
+} from '@moonframe/ui';
+import './lab.css';
+
+interface ProjectItem {
+  id: string;
+  name: string;
+  category: string;
+  status: string;
+  progress: number;
+  owner: string;
+  date: string;
+}
 
 const STORAGE_KEY = 'moonframe-demo-projects-v1';
-const seedProjects = [
+const seedProjects: ProjectItem[] = [
   { id: 'mf-01', name: 'Orbit design system', category: 'Design systems', status: 'In progress', progress: 72, owner: 'AL', date: '2026-11-12' },
   { id: 'mf-02', name: 'Lunar commerce', category: 'Product design', status: 'In review', progress: 92, owner: 'JK', date: '2026-11-18' },
   { id: 'mf-03', name: 'Mission control', category: 'Development', status: 'In progress', progress: 48, owner: 'SR', date: '2026-11-24' },
@@ -20,7 +31,7 @@ const seedProjects = [
 ];
 const statusValues = ['Planned', 'In progress', 'In review', 'Completed'];
 const palette = ['#c1e65b','#ff635d','#ce976b','#8d8d8d','#48c9a0','#ffaa40','#b6a084','#e5b751','#d8b5ed','#9ab578','#a7a7aa','#a0b5dc','#afa2ff','#c9aa6e','#72b0df'];
-const icons = {
+const icons: Record<string, string> = {
   grid: 'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',
   layers: 'm12 3 10 5-10 5L2 8z M2 12l10 5 10-5 M2 16l10 5 10-5',
   plus: 'M12 5v14 M5 12h14',
@@ -31,45 +42,60 @@ const icons = {
   sun: 'M12 3v2 M12 19v2 M3 12h2 M19 12h2 M5.6 5.6 1.4 1.4 M17 17l1.4 1.4 M5.6 18.4 1.4-1.4 M17 7l1.4-1.4 M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0',
   clock: 'M12 8v4l3 2 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0',
 };
-function Icon({ name, size = 18 }) {
+function Icon({ name, size = 18 }: { name: string; size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={icons[name] || icons.grid} /></svg>;
 }
-function loadProjects() {
+function loadProjects(): ProjectItem[] {
   try {
-    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const raw = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    if (!raw) return seedProjects;
+    const stored = JSON.parse(raw);
     if (Array.isArray(stored) && stored.length <= 500 && stored.every(p => p && typeof p.id === 'string' && typeof p.name === 'string' && typeof p.category === 'string' && typeof p.owner === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(Date.parse(p.date)) && statusValues.includes(p.status) && Number.isFinite(p.progress) && p.progress >= 0 && p.progress <= 100)) return stored;
   } catch { /* In-memory workspace still works when storage is unavailable. */ }
   return seedProjects;
 }
 
-function App() {
+function LabWorkspace() {
   const theme = useTheme();
-  const [page, setPage] = useState('workspace');
-  const [projects, setProjects] = useState(loadProjects);
+  const [page, setPage] = useState<'workspace' | 'components'>('workspace');
+  const [projects, setProjects] = useState<ProjectItem[]>(seedProjects);
+  const [hydrated, setHydrated] = useState(false);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('All statuses');
-  const [sort, setSort] = useState('date');
+  const [sort, setSort] = useState<'date' | 'name' | 'progress'>('date');
   const [dialog, setDialog] = useState(false);
-  const [direction, setDirection] = useState('ltr');
+  const [direction, setDirection] = useState<'ltr' | 'rtl'>('ltr');
   const [notice, setNotice] = useState('');
   const [storageAvailable, setStorageAvailable] = useState(true);
-  const noticeTimer = useRef();
+  const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentSkin = skins.find(s => s.id === theme.skin) || skins[0];
-  const announce = (message) => {
+
+  const announce = (message: string) => {
     setNotice(message);
-    clearTimeout(noticeTimer.current);
+    if (noticeTimer.current) clearTimeout(noticeTimer.current);
     noticeTimer.current = setTimeout(() => setNotice(''), 5000);
   };
-  useEffect(() => () => clearTimeout(noticeTimer.current), []);
+
   useEffect(() => {
+    setProjects(loadProjects());
+    setHydrated(true);
+    return () => { if (noticeTimer.current) clearTimeout(noticeTimer.current); };
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(projects)); setStorageAvailable(true); }
     catch { setStorageAvailable(false); }
-  }, [projects]);
+  }, [projects, hydrated]);
+
   useEffect(() => { document.documentElement.dir = direction; }, [direction]);
+
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
-    if (skins.some(s => s.id === query.get('skin'))) theme.setSkin(query.get('skin'));
-    if (['light', 'dark', 'system'].includes(query.get('mode'))) theme.setMode(query.get('mode'));
+    const qSkin = query.get('skin') as SkinId | null;
+    const qMode = query.get('mode') as Mode | null;
+    if (qSkin && skins.some(s => s.id === qSkin)) theme.setSkin(qSkin);
+    if (qMode && ['light', 'dark', 'system'].includes(qMode)) theme.setMode(qMode);
   }, []);
 
   const visibleProjects = useMemo(() => projects
@@ -78,18 +104,18 @@ function App() {
   const complete = projects.filter(p => p.status === 'Completed').length;
   const average = projects.length ? Math.round(projects.reduce((sum, p) => sum + p.progress, 0) / projects.length) : 0;
 
-  function createProject(event) {
+  function createProject(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const name = String(data.get('name')).trim();
     if (!name) return;
-    const project = { id: crypto.randomUUID(), name, category: String(data.get('category')), owner: 'YOU', status: 'Planned', progress: 0, date: String(data.get('date')) };
+    const project: ProjectItem = { id: crypto.randomUUID(), name, category: String(data.get('category')), owner: 'YOU', status: 'Planned', progress: 0, date: String(data.get('date')) };
     setProjects(old => [...old, project]);
     setDialog(false);
     setSearch(''); setFilter('All statuses');
     announce(`${name} created. Your next chapter starts now.`);
   }
-  function updateStatus(id, status) {
+  function updateStatus(id: string, status: string) {
     setProjects(old => old.map(p => p.id === id ? { ...p, status, progress: status === 'Completed' ? 100 : status === 'Planned' ? 0 : status === 'In review' ? 90 : 50 } : p));
     announce('Project status updated.');
   }
@@ -110,7 +136,7 @@ function App() {
       </nav>
       <div className="demo-skin-heading"><span>CHOOSE YOUR WORLD</span><span>15</span></div>
       <div className="demo-skin-list" role="group" aria-label="Choose skin">
-        {skins.map((skin, i) => <button key={skin.id} className="demo-skin-option" data-active={theme.skin === skin.id || undefined} aria-pressed={theme.skin === skin.id} onClick={() => theme.setSkin(skin.id)}><span className="demo-swatch" style={{ '--swatch': palette[i] }} aria-hidden="true" /><span>{skin.name}</span>{theme.skin === skin.id ? <Icon name="check" size={14} /> : <span className="demo-skin-index">{String(i + 1).padStart(2, '0')}</span>}</button>)}
+        {skins.map((skin, i) => <button key={skin.id} className="demo-skin-option" data-active={theme.skin === skin.id || undefined} aria-pressed={theme.skin === skin.id} onClick={() => theme.setSkin(skin.id)}><span className="demo-swatch" style={{ '--swatch': palette[i] } as React.CSSProperties} aria-hidden="true" /><span>{skin.name}</span>{theme.skin === skin.id ? <Icon name="check" size={14} /> : <span className="demo-skin-index">{String(i + 1).padStart(2, '0')}</span>}</button>)}
       </div>
       <div className="demo-sidebar-footer"><Avatar fallback="AL" alt="Alex Lane" /><span>Alex Lane<small>Make something different.</small></span><span className="demo-online" title="Local demo" /></div>
     </aside>
@@ -121,11 +147,11 @@ function App() {
         <div className="demo-header-actions"><Badge>{currentSkin.name}</Badge><span className="demo-version">v0.1 preview</span><Avatar fallback="AL" alt="Alex Lane" /></div>
       </header>
       <div className="demo-controls" aria-label="Appearance settings">
-        <div className="demo-control"><Label htmlFor="appearance">Appearance</Label><Select id="appearance" value={theme.mode} onChange={e => theme.setMode(e.target.value)}><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></Select></div>
-        <div className="demo-control"><Label htmlFor="density">Density</Label><Select id="density" value={theme.density} onChange={e => theme.setDensity(e.target.value)}><option value="compact">Compact</option><option value="comfortable">Comfortable</option><option value="spacious">Spacious</option></Select></div>
-        <div className="demo-control"><Label htmlFor="motion">Motion</Label><Select id="motion" value={theme.motion} onChange={e => theme.setMotion(e.target.value)}><option value="system">System</option><option value="full">Full</option><option value="reduced">Reduced</option></Select></div>
-        <div className="demo-control"><Label htmlFor="contrast">Contrast</Label><Select id="contrast" value={theme.contrast} onChange={e => theme.setContrast(e.target.value)}><option value="system">System</option><option value="normal">Normal</option><option value="high">High</option></Select></div>
-        <div className="demo-control"><Label htmlFor="direction">Direction</Label><Select id="direction" value={direction} onChange={e => setDirection(e.target.value)}><option value="ltr">LTR</option><option value="rtl">RTL</option></Select></div>
+        <div className="demo-control"><Label htmlFor="appearance">Appearance</Label><Select id="appearance" value={theme.mode} onChange={e => theme.setMode(e.target.value as Mode)}><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></Select></div>
+        <div className="demo-control"><Label htmlFor="density">Density</Label><Select id="density" value={theme.density} onChange={e => theme.setDensity(e.target.value as Density)}><option value="compact">Compact</option><option value="comfortable">Comfortable</option><option value="spacious">Spacious</option></Select></div>
+        <div className="demo-control"><Label htmlFor="motion">Motion</Label><Select id="motion" value={theme.motion} onChange={e => theme.setMotion(e.target.value as Motion)}><option value="system">System</option><option value="full">Full</option><option value="reduced">Reduced</option></Select></div>
+        <div className="demo-control"><Label htmlFor="contrast">Contrast</Label><Select id="contrast" value={theme.contrast} onChange={e => theme.setContrast(e.target.value as Contrast)}><option value="system">System</option><option value="normal">Normal</option><option value="high">High</option></Select></div>
+        <div className="demo-control"><Label htmlFor="direction">Direction</Label><Select id="direction" value={direction} onChange={e => setDirection(e.target.value as 'ltr' | 'rtl')}><option value="ltr">LTR</option><option value="rtl">RTL</option></Select></div>
         <Button variant="ghost" size="sm" className="demo-copy" onClick={copySetup}><Icon name="code" size={16} />Copy React setup</Button>
       </div>
 
@@ -136,12 +162,17 @@ function App() {
           <div className="demo-hero-foot"><span>01 / THE WORKSPACE</span><span>{currentSkin.name.toUpperCase()} EDITION <Icon name="arrow" size={14} /></span></div>
         </section>
         <section className="mf-grid demo-metrics" aria-label="Workspace statistics">
-          {[['Total projects', projects.length, 'Ideas taking shape', 'grid'], ['In motion', projects.filter(p => ['In progress', 'In review'].includes(p.status)).length, 'A little closer every day', 'arrow'], ['Completed', complete, 'Worth celebrating', 'check'], ['Overall progress', `${average}%`, 'Across your workspace', 'clock']].map(([label, value, detail, icon]) => <Card className="mf-stat" key={label}><div className="demo-stat-top"><span>{label}</span><Icon name={icon} size={16} /></div><strong className="demo-stat-value">{value}</strong><span className="demo-stat-detail">{detail}</span></Card>)}
+          {([
+            ['Total projects', projects.length, 'Ideas taking shape', 'grid'],
+            ['In motion', projects.filter(p => ['In progress', 'In review'].includes(p.status)).length, 'A little closer every day', 'arrow'],
+            ['Completed', complete, 'Worth celebrating', 'check'],
+            ['Overall progress', `${average}%`, 'Across your workspace', 'clock'],
+          ] as const).map(([label, value, detail, icon]) => <Card className="mf-stat" key={label}><div className="demo-stat-top"><span>{label}</span><Icon name={icon} size={16} /></div><strong className="demo-stat-value">{value}</strong><span className="demo-stat-detail">{detail}</span></Card>)}
         </section>
         <section className="demo-projects" aria-labelledby="projects-title">
           <div className="demo-section-heading"><div><div className="demo-eyebrow">FROM IDEA TO OUT THERE</div><h2 id="projects-title">Your projects<span className="demo-heading-count">{projects.length}</span></h2></div><Button variant="secondary" size="sm" onClick={() => setDialog(true)}><Icon name="plus" size={15} />New project</Button></div>
           <Card>
-            <div className="demo-table-toolbar"><div className="demo-search"><Icon name="search" size={17} /><Input aria-label="Search projects" placeholder="Find a project…" value={search} onChange={e => setSearch(e.target.value)} /></div><Select aria-label="Filter projects by status" value={filter} onChange={e => setFilter(e.target.value)}><option>All statuses</option>{statusValues.map(s => <option key={s}>{s}</option>)}</Select><Select aria-label="Sort projects" value={sort} onChange={e => setSort(e.target.value)}><option value="date">Due date</option><option value="name">Name A–Z</option><option value="progress">Progress</option></Select></div>
+            <div className="demo-table-toolbar"><div className="demo-search"><Icon name="search" size={17} /><Input aria-label="Search projects" placeholder="Find a project…" value={search} onChange={e => setSearch(e.target.value)} /></div><Select aria-label="Filter projects by status" value={filter} onChange={e => setFilter(e.target.value)}><option>All statuses</option>{statusValues.map(s => <option key={s}>{s}</option>)}</Select><Select aria-label="Sort projects" value={sort} onChange={e => setSort(e.target.value as 'date' | 'name' | 'progress')}><option value="date">Due date</option><option value="name">Name A–Z</option><option value="progress">Progress</option></Select></div>
             <div className="demo-table-scroll"><Table><TableCaption className="demo-sr-only">Projects in your workspace. Change a status to update project progress.</TableCaption><TableHeader><TableRow><TableHead>Project</TableHead><TableHead>Status</TableHead><TableHead>Progress</TableHead><TableHead>Owner</TableHead><TableHead>Due date</TableHead></TableRow></TableHeader><TableBody>{visibleProjects.map((p, index) => <TableRow key={p.id}><TableCell><div className="demo-project-name"><span className="demo-project-symbol" aria-hidden="true">{['◈','◒','▦','✳','◇'][index % 5]}</span><span><strong>{p.name}</strong><small>{p.category}</small></span></div></TableCell><TableCell><Select aria-label={`Status for ${p.name}`} value={p.status} className="demo-status-select" onChange={e => updateStatus(p.id, e.target.value)}>{statusValues.map(s => <option key={s}>{s}</option>)}</Select></TableCell><TableCell><div className="demo-project-progress"><Progress value={p.progress} label={`${p.name} progress`} /><span>{p.progress}%</span></div></TableCell><TableCell><Avatar fallback={p.owner} alt={`Owner ${p.owner}`} /></TableCell><TableCell><time dateTime={p.date}>{new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(p.date))}</time></TableCell></TableRow>)}{visibleProjects.length === 0 && <TableRow><TableCell colSpan={5}><div className="demo-empty"><Icon name="search" size={26} /><strong>No projects found</strong><p>Try another search or create something new.</p><Button variant="secondary" onClick={() => { setSearch(''); setFilter('All statuses'); }}>Clear filters</Button></div></TableCell></TableRow>}</TableBody></Table></div>
             <div className="demo-table-footer"><span>Showing {visibleProjects.length} of {projects.length} projects</span><span>{storageAvailable ? 'Saved on this device' : 'Storage unavailable · session only'}</span></div>
           </Card>
@@ -158,7 +189,7 @@ function App() {
   </div>;
 }
 
-function Gallery({ announce, theme, onDialog }) {
+function Gallery({ announce, theme, onDialog }: { announce: (m: string) => void; theme: ReturnType<typeof useTheme>; onDialog: () => void }) {
   const [notifications, setNotifications] = useState(true);
   const [terms, setTerms] = useState(false);
   const [volume, setVolume] = useState(65);
@@ -174,8 +205,17 @@ function Gallery({ announce, theme, onDialog }) {
   </section>;
 }
 
-const previewQuery = new URLSearchParams(window.location.search);
-const previewSkin = skins.some(s => s.id === previewQuery.get('skin')) ? previewQuery.get('skin') : 'classic';
-const previewMode = ['light', 'dark', 'system'].includes(previewQuery.get('mode')) ? previewQuery.get('mode') : 'system';
-const previewStorage = previewQuery.has('skin') || previewQuery.has('mode') ? null : 'moonframe-demo-theme-v1';
-createRoot(document.getElementById('root')).render(<ThemeProvider defaultSkin={previewSkin} defaultMode={previewMode} storageKey={previewStorage}><App /></ThemeProvider>);
+export default function LabPage() {
+  const query = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const qSkin = query?.get('skin') as SkinId | null;
+  const qMode = query?.get('mode') as Mode | null;
+  const previewSkin: SkinId = qSkin && skins.some(s => s.id === qSkin) ? qSkin : 'classic';
+  const previewMode: Mode = qMode && ['light', 'dark', 'system'].includes(qMode) ? qMode : 'system';
+  const previewStorage = query && (query.has('skin') || query.has('mode')) ? null : 'moonframe-demo-theme-v1';
+
+  return (
+    <ThemeProvider defaultSkin={previewSkin} defaultMode={previewMode} storageKey={previewStorage}>
+      <LabWorkspace />
+    </ThemeProvider>
+  );
+}
