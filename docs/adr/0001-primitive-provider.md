@@ -27,6 +27,14 @@ Keep the provider **unselected**. The temporary spike implements identical Dialo
 
 Prefer one primary provider when evidence is sufficient; component-level exceptions require a separate ADR. Moonframe component API must wrap and isolate provider internals; do not leak provider-specific props without a deliberate documented exception. No dependency changes during this documentation phase.
 
+## Migration, lock-in and rollback (proposal, no provider selected)
+
+There is no current provider-backed Moonframe API, dependency or consumer migration. If a provider is later approved, keep provider components behind Moonframe-owned adapters and expose only the agreed Moonframe props, events and accessibility behavior. Do not export provider-specific types or props by default. This limits lock-in but does not remove the work of replacing provider markup, behavior adapters, styles and dependency closure.
+
+A provider change after implementation would require an adapter replacement, a compatibility note for any public API impact, and rerunning the equal Dialog/Select/Combobox/Menu behavior, keyboard, RTL, forced-colors, reduced-motion, SSR/hydration and consumer-build evidence. Treat public behavior changes as a versioned migration; do not claim a no-op swap.
+
+Before a stable release, rollback can revert the provider integration and dependency pins together while retaining the Moonframe adapter contract and fixture. Before any integration exists, rollback is simply to keep the provider unselected. No production migration or rollback has been exercised; this is a proposed containment policy for maintainer review.
+
 ## Acceptance for moving to "accepted"
 
 - Synthetic fixture runtime, React versions, builder and provider versions are pinned; real consumer support remains unverified.
