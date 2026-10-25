@@ -55,3 +55,7 @@ See the dedicated [token/theme validation plan](token-theme-validation-plan.md) 
 ## Component API & Behavior QA extension (2026-10-25)
 
 The [component testing strategy](component-testing-strategy.md) and [API/state/keyboard contracts](../../contracts/moonframe-component-api-contract-v0.1.json) define 151 provisional component contracts, 24 state dimensions and 37 keyboard patterns. New Node checks are structural and negative-fixture based; no browser, TypeScript package, screen reader, accessibility conformance or visual QA exists yet. The theme's 30 appearances and Skin Grammar's 105 separate human pair reviews remain distinct release gates.
+
+## Advanced Data Workspace QA extension (2026-10-25)
+
+[Data Workspace QA](data-workspace-validation-plan.md) covers 31 specified-not-implemented capabilities, 8 domain-neutral presets, query/selection/export fixtures, 180 planned data workspace appearance cells, keyboard/AT and CSV formula-injection threat model. Existing static contract CI is not a browser/SSR/AT/Excel save-reopen test. `not-rendered` and `not-reviewed` states are preserved until actual evidence.

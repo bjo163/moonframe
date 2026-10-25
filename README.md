@@ -43,6 +43,19 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Advanced Data Workspace (2026-10-25)
+
+- [Repository audit and P0–P3 findings](docs/audit/advanced-data-workspace-audit.md)
+- [Canonical existing Data Workspace Bible — expanded](docs/premium/data-workspace.md)
+- [Primary-source research and comparison](docs/research/advanced-data-workspace-research-log.md)
+- [ADR-0004 — engine choice proposed, not approved](docs/adr/0004-data-workspace-engine.md)
+- [Data model, query, selection, saved-view and export contract](contracts/moonframe-data-workspace-contract-v0.1.json)
+- [30 appearance / 15 data workspace recipes and 180 pending cases](contracts/moonframe-data-skin-coverage-v0.1.json)
+- [8 domain-neutral presets referencing existing blocks/pages](contracts/moonframe-data-preset-catalog-v0.1.json)
+- [Proposed query/selection/export JSON Schema](schemas/moonframe-data-query.schema.json) and [fixture cases](contracts/fixtures/data-workspace-v0.1.json)
+- [Data Workspace QA strategy](docs/qa/data-workspace-validation-plan.md) and [14 atomic tasks](docs/backlog/advanced-data-workspace-issues.md)
+
+
 ### Component API & Behavior (2026-10-25)
 
 - [Component API delivery report with CI evidence](docs/audit/component-api-delivery-2026-10-25.md)

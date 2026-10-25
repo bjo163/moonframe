@@ -164,3 +164,11 @@ Proposed phase gate: **S0** names/types/spec validation → **S1** bounded DTCG 
 [Live component audit](audit/component-api-behavior-audit.md) and [primary research](research/component-api-research-log.md) precede the new [canonical API Bible](component-api-behavior-bible.md). [Machine-readable API](../contracts/moonframe-component-api-contract-v0.1.json), [24-state applicability matrix](../contracts/moonframe-component-state-matrix-v0.1.json), [37-pattern keyboard matrix](../contracts/moonframe-keyboard-interaction-matrix-v0.1.json) and [QA strategy](qa/component-testing-strategy.md) provide the **specified-provisional** handoff for later engineering. [12 task-ready issues](backlog/component-api-atomic-issues.md) are *backlog only*, not GitHub issues.
 
 Phases: provider/consumer/distribution evidence (#1/#3/#4) → naming/form/ref/event signatures → prioritize P1 Button/Input/Field/Tabs/Dialog/Combobox/Table/DataTable → identical high-risk keyboard fixtures in 4 skins × 2 modes → 30 appearance/a11y samples and separate 105 visual skin reviews → consumer build and versioned release. Do not mark any original implementation checkbox complete from a static validator result.
+
+---
+
+## Advanced Data Workspace refinement (2026-10-25)
+
+Specialist [Data Workspace Bible](premium/data-workspace.md), [audit](audit/advanced-data-workspace-audit.md), [research](research/advanced-data-workspace-research-log.md), [ADR-0004](adr/0004-data-workspace-engine.md), [structured contract](../contracts/moonframe-data-workspace-contract-v0.1.json) and [14 atomic tasks](backlog/advanced-data-workspace-issues.md) define this docs-only track. Existing MF-PREM-004/005 plus GitHub #1/#3/#4/#5/#6 remain prerequisites: don't create duplicate issues.
+
+Recommended order: consumer/provider/distribution research → stable row identity/column schema → query + offset/cursor + filter AST → selection/bulk → saved view/URL/export security → responsive/native semantics and 15 workspace skin recipes → semantic fixtures/CI → *future approved* Table/DataTable implementation slice → optional grid/virtualization/pivot after business case/license/AT proof. **180 data appearance specimens planned, zero rendered; 105 visual pairs unreviewed.** No UI assets or backend built by this refinement.

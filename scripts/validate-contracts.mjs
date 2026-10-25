@@ -496,7 +496,7 @@ function hasCycle(entries){
 }
 fail(!hasCycle(dataSpec.capabilities),'Data capability dependency cycle');
 fail(dataSpec.selectionContract.variants.includes('query-all-except')&&
-     dataSpec.selectionContract.invariants.some(x=>x.includes('Server'))&&
+     dataSpec.selectionContract.invariants.some(x=>/server|backend/i.test(x))&&
      dataSpec.exportContract.csv.formulaRisk.includes('OWASP')&&
      dataSpec.rowIdentity.forbidden.includes('array-index'),
      'Data selection/export/row identity safeguards removed');

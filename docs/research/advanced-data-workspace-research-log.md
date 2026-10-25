@@ -26,11 +26,11 @@ Weighted dimensions: semantic keyboard/AT feasibility **25**, visual/theming fre
 
 | Strategy | A11y 25 | Skin 20 | Depth 15 | Server 10 | Effort 10 | License 10 | Perf 5 | Lock-in 5 | Hypothesis /100 | Confidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Native `table` + owned simple sort | 4 | 5 | 2 | 3 | 3 | 5 | 4 | 5 | **73** | medium |
-| TanStack Table v9 headless + semantic UI | 4 | 5 | 5 | 5 | 3 | 5 | 4 | 4 | **88** | medium/low |
-| React Aria Table/collection | 5 | 4 | 3 | 4 | 3 | 5 | 3 | 3 | **78** | medium/low |
-| AG Grid full engine | 4 | 3 | 5 | 5 | 4 | 2 | 4 | 2 | **76** | low |
-| MUI X full grid | 4 | 3 | 5 | 5 | 4 | 2 | 4 | 2 | **76** | low |
+| Native `table` + owned simple sort | 4 | 5 | 2 | 3 | 3 | 5 | 4 | 5 | **77** | medium |
+| TanStack Table v9 headless + semantic UI | 4 | 5 | 5 | 5 | 3 | 5 | 4 | 4 | **89** | medium/low |
+| React Aria Table/collection | 5 | 4 | 3 | 4 | 3 | 5 | 3 | 3 | **80** | medium/low |
+| AG Grid full engine | 4 | 3 | 5 | 5 | 4 | 2 | 4 | 2 | **75** | low |
+| MUI X full grid | 4 | 3 | 5 | 5 | 4 | 2 | 4 | 2 | **75** | low |
 
 **Scoring interpretation:** 25% accessibility favors providers with documented navigation but **none has been tested**; skin freedom scores headless higher; full grids gain depth but incur license/skin lock-in; implementation effort estimates low confidence. These are *not a vendor selection*. Once six same-content fixtures and consumer support/versions are known, replace every estimated score with linked measurement and reviewer. Independent keyboard/screen reader failures **disqualify**, regardless of weighted total.
 

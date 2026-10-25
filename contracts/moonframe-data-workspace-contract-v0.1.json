@@ -45,7 +45,6 @@
         "search and query state",
         "filters/chips",
         "saved views",
-        "grouping",
         "column chooser",
         "bulk toolbar",
         "detail drawer",
@@ -54,7 +53,8 @@
       "nonGoals": [
         "database persistence",
         "server-side authorization",
-        "download implementation"
+        "download implementation",
+        "full group-by/aggregation engine (P3 optional, may show UI preview only)"
       ],
       "recommendedEngine": "TanStack Table candidate + controlled composition; query optional"
     },
