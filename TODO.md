@@ -284,9 +284,9 @@
 
 **Milestone artifact:** rights-approved optional packs or blocker record. **Gate:** blocked: rights/production approval. Entry: Asset provenance and explicit production approval. See [release matrix](docs/architecture/release-train-and-adoption.md).
 
-- [ ] **MFI-009 — Keep asset and motion/SFX authority consistent** · **P2 / S** · **status:** `blocked` · **lane:** G · **deps:** MFI-002 · **issue:** not-created
+- [x] **MFI-009 — Keep asset and motion/SFX authority consistent** · **P2 / S** · **status:** `done` · **lane:** G · **deps:** MFI-002 · **issue:** not-created
   - **Expected file owner/scope:** `docs/brand/; docs/motion/; sfx/asset contracts`. **AC:** Rights, off-default audio, accessibility rules no duplicates.
-  - **Validation/evidence:** node scripts/validate-contracts.mjs; reviewer notes. **Risk/rollback:** No asset/music production in this task. **Adoption/output:** rights-approved optional packs or blocker record. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Validation/evidence:** Authority crosswalk verified in [Motion Bible §1](docs/motion/motion-interaction-sfx-bible.md), [Asset Bible §1 and §6–7/§9](docs/brand/original-asset-brand-bible.md), [SFX contract](contracts/moonframe-sfx-contract-v0.1.json), [ADR-0006](docs/adr/0006-original-asset-pipeline-and-brand.md), and [ADR-0007](docs/adr/0007-motion-and-optional-audio-engines.md): the SFX contract owns event IDs, consent/default/mute/cooldown; Motion Bible owns motion and reduced-stimulation eligibility; Asset Bible owns media provenance, licensing and distribution. No competing event catalog found; zero media produced; asset rights remain unapproved. Contract validator and self-tests pass. **Risk/rollback:** No asset/music production in this task. **Adoption/output:** rights-approved optional packs or blocker record. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
 
 - [ ] **MF-ASSET-001 — Produce only approved original asset slice** · **P2 / M** · **status:** `blocked` · **lane:** G · **deps:** MFI-009,MF-SKIN-003 · **issue:** not-created
   - **Expected file owner/scope:** `future optional assets and provenance register`. **AC:** Evidence rights/source/license, asset fallback+contrast verified.
