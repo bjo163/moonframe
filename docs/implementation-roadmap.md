@@ -148,3 +148,11 @@ Detailed issue-ready work and dependencies: [premium atomic backlog](backlog/pre
 - **Gate S4, future implementation:** begin with 4 proof skins and two vertical slices only after token/provider ADR, accessibility and license constraints resolved. Avoid dumping all optional integrations into core.
 
 No production code/assets/SFX nor additional GitHub issues were authorized by this planning addendum.
+
+---
+
+## Token & Theme Engine specification refinement (2026-10-25)
+
+The [token theme audit](audit/token-theme-engine-audit.md), [research](research/token-theme-engine-research.md), [authoritative token pipeline](architecture/token-pipeline.md), [ADR-0002](adr/0002-token-format-and-generator.md), [ADR-0003](adr/0003-theme-runtime-and-css-output.md), [QA](qa/token-theme-validation-plan.md), and [10 issue-ready tasks](backlog/token-theme-atomic-issues.md) refine early MF-010 through MF-026 planning without marking implementation work complete.
+
+Proposed phase gate: **S0** names/types/spec validation → **S1** bounded DTCG proof and current consumer matrix (#1/#5) → **S2** token overlay/contrast/runtime contract signoff → **S3** four divergent skin specimens and SSR first-paint proof (#6) → **S4** future production resolver/theme runtime/generator and 30-complete-map enforcement → **S5** 105 visual pair/consumer QA. Do not create a parallel task truth; existing #5 remains the token format issue.

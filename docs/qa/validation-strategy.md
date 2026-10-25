@@ -47,3 +47,7 @@ Do not mark G1–G4 passed in this repo while no product code exists.
 The [premium coverage manifest](../../contracts/moonframe-premium-coverage-v0.1.json) defines **22** representative premium block/page fixtures across **15 skins × 2 resolved modes = 660** explicitly `not-rendered` reference cells. Every other catalog item is planned as applicable to all 30 appearances unless a future reviewed exception exists; 660 is not exhaustive item-level validation. Separate 105 pairwise comparisons remain `not-reviewed`.
 
 Minimum future test scenarios: auth idle/pending/failure/offline/expired/locked/OTP and passkey fallback; data sort/page/filter/bulk selection/server error/stale/permission; page 200–400% zoom, keyboard and screen reader, long/RTL locale; same data across skins and desktop/tablet/mobile; forced-color/reduced-motion/grayscale/decoration disabled; optional dependency failed-to-load fallback; no hidden network requests, credential logs or paid-license code in core. Validate page/block/starter graph statically in CI **without** asserting UI accessibility or rendering proof.
+
+## Token/theme-specific checks (2026-10-25)
+
+See the dedicated [token/theme validation plan](token-theme-validation-plan.md) for proposed DTCG subset structure, whole-token alias invalid fixtures, coverage report shapes, 30 unresolved appearances and runtime/SSR/manual gates. Present static contract CI checks do not prove typed production values or browser rendering. Keep all 105 skin reviews unreviewed until actual evidence exists.

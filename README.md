@@ -43,6 +43,18 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Token Architecture & Theme Engine (2026-10-25)
+
+- [Live token/theme audit](docs/audit/token-theme-engine-audit.md)
+- [Token/theme primary-source research](docs/research/token-theme-engine-research.md)
+- [Authoritative token pipeline & runtime spec](docs/architecture/token-pipeline.md)
+- [ADR-0002 bounded DTCG format and generator (proposed)](docs/adr/0002-token-format-and-generator.md)
+- [ADR-0003 theme precedence/CSS/SSR (proposed)](docs/adr/0003-theme-runtime-and-css-output.md)
+- [Token/theme QA plan](docs/qa/token-theme-validation-plan.md)
+- [Token subset structural schema](schemas/moonframe-token-subset.schema.json)
+- [Theme preference structural schema](schemas/moonframe-theme-preferences.schema.json)
+- [10 atomic token/theme tasks](docs/backlog/token-theme-atomic-issues.md)
+
 ### Premium package specifications (2026-10-25)
 
 - [Premium scope delivery report — verified commits, tests, issues](docs/audit/premium-scope-delivery-2026-10-25.md)
