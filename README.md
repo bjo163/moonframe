@@ -2,28 +2,48 @@
 
 > **One behavioral system. Fifteen distinct visual grammars. Thirty core appearances.**
 
-Moonframe UI is the planned first-party React design system for the Moon ecosystem. It aims to provide a premium, reusable component library and a genuinely multi-skin design engine—not a color-switcher.
+Moonframe UI provides React components with **15 distinct skins, each in Light and Dark**, a persistent theme runtime, and an interactive workspace demo.
 
-## Master integration audit & execution index (2026-10-25)
+## Start using it
 
-- **[Root TODO.md](TODO.md)** — 57 dependency-aware tasks across M0–M12; references existing GitHub issues and planned tasks.
-- **[M0 Local Coding Agent Prompt](docs/handoff/moonframe-local-coding-agent-execution-prompt.md)** — first task MFI-001/#7, limited to contract/governance validation.
-- **[Release Train & Adoption](docs/architecture/release-train-and-adoption.md)** — milestone artifacts, release gates, parallel lanes and consumer adoption.
-- [Master integration audit & contradiction register](docs/audit/master-integration-audit.md) — verified HEAD snapshot, P0–P3 findings, structural results and not-run limits.
-- [Canonical source-of-truth registry](docs/architecture/decisions-and-governance.md#master-integration-registry--cross-domain-ownership-2026-10-25) — one policy owner per domain, machine-contract references and status transitions.
-- [Master Integration Issue Bible & deduplicated backlog](docs/backlog/master-integration-issue-bible.md) — MFI tasks, dependencies, acceptance/DoD; existing GitHub issues #1–#6 remain authoritative.
-- [Implementation roadmap](docs/implementation-roadmap.md) — dependent gates; [primary-source research](docs/research/research-log.md#master-integration-verified-primary-source-addendum-2026-10-25).
+Use **Node.js 24.22.1 LTS**, pinned in [.nvmrc](.nvmrc).
 
-**Scope of integration phase:** documentation/governance/contract validation only; no UI, production assets, SFX or published package. The 15 IDs/30 modes/105 pairs are structural checks, not visual review results.
+```sh
+npm ci
+npm run dev
+```
 
-**Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml). See the [Node runtime policy](docs/architecture/node-runtime.md).
+Open the local URL printed by Vite. Try every skin, change appearance and density, create a project, search the project table, and explore the components. Build the static demo with `npm run build`.
 
-## Current status
+For another React app, run `npm pack`, install the resulting tarball, and import:
 
-**Verified 2026-10-25:** repository has specifications only. Contracts and a documentation-level validator are not working UI or approved token values. Provider, production token values, npm exports, assets, and SFX are intentionally pending. The 105 skin pair reviews remain unreviewed until real screenshots exist.
+```tsx
+import { ThemeProvider, Button } from '@moonframe/ui';
+import '@moonframe/ui/styles.css';
 
+export default function App() {
+  return <ThemeProvider defaultSkin="moonpunk" defaultMode="system">
+    <Button>Start building</Button>
+  </ThemeProvider>;
+}
+```
 
-**Design specification stage.** This repository currently stores product and engineering contracts. Components, final tokens, original production assets, generated icon sets, and sound packs are not yet implemented or approved.
+[Usage and component API](docs/runtime-usage.md) ? [TODO and delivery status](TODO.md) ? [Node runtime policy](docs/architecture/node-runtime.md)
+
+## Implementation and review status
+
+The local package contains working React components, CSS skin recipes and a demo. It remains private and has not been published to npm. The larger historical specifications below also cover future premium components, assets and release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
+
+**Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml).
+
+## Original planning references
+
+- [Master integration audit](docs/audit/master-integration-audit.md) records the original documentation-only baseline.
+- [Root TODO.md](TODO.md) tracks implemented runtime work and the broader roadmap.
+- [M0 Local Coding Agent Prompt](docs/handoff/moonframe-local-coding-agent-execution-prompt.md) is historical.
+- [Release Train & Adoption](docs/architecture/release-train-and-adoption.md) describes public release gates.
+- [Canonical source-of-truth registry](docs/architecture/decisions-and-governance.md#master-integration-registry--cross-domain-ownership-2026-10-25) records policy owners.
+- [Master Integration Issue Bible](docs/backlog/master-integration-issue-bible.md) and [Implementation roadmap](docs/implementation-roadmap.md) retain the full planned scope.
 
 ## Product promise
 
@@ -53,7 +73,7 @@ Moonframe UI is the planned first-party React design system for the Moon ecosyst
 | 14 | Moonquest | RPG / adventure UI; quest journal, inventory, progression and game-like framing |
 | 15 | Moonledger | Professional ERP; dense and precise data workspaces; compact but accessible controls |
 
-Classic is a proposed Moonframe visual reference informed by dated shadcn documentation; it is not a claim of source compatibility or product affiliation. See the [Classic baseline and reference boundary](docs/research/classic-baseline.md). Upstream generated source is not copied; provider and implementation choices remain behind MF-005 and review gates.
+Classic is a proposed Moonframe visual reference informed by dated shadcn documentation; it is not a claim of source compatibility or product affiliation. See the [Classic baseline and reference boundary](docs/research/classic-baseline.md). Upstream generated source is not copied. The local runtime uses native HTML semantics; the advanced-provider comparison remains open research.
 
 ## Documentation
 

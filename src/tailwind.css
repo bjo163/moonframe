@@ -1,0 +1,22 @@
+/* Optional Tailwind CSS v4 semantic bridge for @moonframe/ui consumers.
+ * Import after @import "tailwindcss"; and @import "@moonframe/ui/styles.css";
+ */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+@theme inline {
+  --color-mf-bg: var(--mf-bg);
+  --color-mf-surface: var(--mf-surface);
+  --color-mf-surface-raised: var(--mf-surface-raised);
+  --color-mf-text: var(--mf-text);
+  --color-mf-muted: var(--mf-muted);
+  --color-mf-border: var(--mf-border);
+  --color-mf-accent: var(--mf-accent);
+  --color-mf-accent-text: var(--mf-accent-text);
+  --color-mf-danger: var(--mf-danger);
+  --radius-mf: var(--mf-radius);
+  --shadow-mf: var(--mf-shadow);
+  --font-mf: var(--mf-font);
+  --font-mf-display: var(--mf-display);
+  --spacing-mf: var(--mf-space);
+  --spacing-mf-gap: var(--mf-gap);
+}

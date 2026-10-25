@@ -1,12 +1,37 @@
 {
   "name": "@moonframe/ui",
-  "version": "0.0.0-private",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "files": [
     "src/"
   ],
+  "description": "React components and fifteen distinct light/dark skins for Moonframe",
+  "types": "./src/index.d.ts",
   "exports": {
-    ".": "./src/index.js"
+    ".": { "types": "./src/index.d.ts", "import": "./src/index.js", "default": "./src/index.js" },
+    "./styles.css": "./src/styles.css",
+    "./tailwind.css": "./src/tailwind.css",
+    "./skins": { "types": "./src/skins.d.ts", "import": "./src/skins.js", "default": "./src/skins.js" },
+    "./theme": { "types": "./src/theme.d.ts", "import": "./src/theme.js", "default": "./src/theme.js" }
+  },
+  "sideEffects": ["**/*.css"],
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/runtime.test.mjs",
+    "test:browser": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "validate": "node scripts/validate-contracts.mjs",
+    "pack:local": "npm pack"
+  },
+  "peerDependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" },
+  "devDependencies": {
+    "react": "19.3.1", "react-dom": "19.3.1",
+    "vite": "8.3.5", "typescript": "7.0.2",
+    "@types/react": "19.3.0", "@types/react-dom": "19.3.0",
+    "@playwright/test": "1.64.1"
   }
 }

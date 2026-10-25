@@ -1588,11 +1588,22 @@ function dxProblems(d){
 }
 for(const problem of packageProblems(packageArch))
  errors.push('Package architecture: '+problem);
-if(localPackage.name!=='@moonframe/ui'||localPackage.version!=='0.0.0-private'||
+// Historical packageArch.localImplementation records the original empty-shell proof.
+// The current local runtime has explicit typed entry points and a CSS side effect.
+if(localPackage.name!=='@moonframe/ui'||localPackage.version!=='0.1.0'||
    localPackage.private!==true||localPackage.type!=='module'||
-   JSON.stringify(localPackage.exports)!==JSON.stringify({'.':'./src/index.js'})||
+   localPackage.exports?.['.']?.import!=='./src/index.js'||
+   localPackage.exports?.['.']?.types!=='./src/index.d.ts'||
+   localPackage.exports?.['./styles.css']!=='./src/styles.css'||
+   localPackage.exports?.['./skins']?.import!=='./src/skins.js'||
+   !localPackage.sideEffects?.includes('**/*.css')||
    !sameSet(localPackage.files||[],['src/'])||!fs.existsSync(localEntryPath))
- errors.push('Local package skeleton: manifest or entry does not match the recorded private ESM package');
+ errors.push('Local runtime package: typed ESM exports or CSS preservation is invalid');
+for(const exportEntry of Object.values(localPackage.exports||{})){
+ const targets=typeof exportEntry==='string'?[exportEntry]:Object.values(exportEntry);
+ for(const target of targets) if(!fs.existsSync(path.join(root,target)))
+  errors.push('Local runtime package: missing export target '+target);
+}
 for(const problem of dxProblems(packageDX))
  errors.push('Package DX: '+problem);
 fail(packageSchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&

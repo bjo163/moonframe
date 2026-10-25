@@ -1,5 +1,24 @@
 # Moonframe UI — Master TODO (live execution index)
 
+## Current implementation · 2026-10-26
+
+The user's request to finish a usable 15-skin product authorizes local runtime implementation and ordinary implementation choices. The package includes a React runtime, scoped themes, 15 CSS recipes with Light/Dark appearances, typed component exports and an interactive demo. See [usage](docs/runtime-usage.md).
+
+**Validation evidence:**
+- `npm run validate`: PASS (specification structural checks, contract links, typed subpath exports verified)
+- `node scripts/validate-contracts.mjs --self-test`: PASS (all governance, ID collision, and contract negative fixtures passed)
+- `npm test`: PASS (7/7 unit runtime tests: canonical skin resolution, fallback handling, system mode, SSR safety, Next.js ThemeScript/getThemeInitScript pre-paint bootstrap, asChild Slot Next.js Link composition, and workspace layout/selectors/DataTable server-rendering)
+- `npm run typecheck`: PASS (TypeScript zero errors across runtime declarations, theme/skins subpaths, and tests)
+- `npm run build`: PASS (Vite production bundle built cleanly in dist/)
+- `npm run test:browser`: PASS (browser tests passed across all 15 skins in light and dark, contrast >= 4.5:1, 360px responsive, RTL, theme switching, dialog modal focus trap & escape, tabs roving focus, accordion, form controls, asChild next/link, Field, DropdownMenu, Popover, Tooltip, DataTable, and workspace demo)
+- Full-page appearance screenshots for all 15 skins (30 PNG files) captured to `artifacts/skins/`
+- Local packaging: `npm run pack:local` (`npm pack`) successfully generated `moonframe-ui-0.1.0.tgz` (12 package files including typed subpaths @moonframe/ui/theme, @moonframe/ui/skins, @moonframe/ui/styles.css, and optional Tailwind v4 @moonframe/ui/tailwind.css)
+
+The milestone entries below retain the original wider roadmap and its historical evidence. Formal human reviews, premium catalog completion, optional assets and public release are separate from the usable local runtime; their checkboxes remain evidence-dependent.
+
+### Historical milestone index
+
+
 **Audited on:** 2026-10-25 (Asia/Jakarta) · **branch:** `main` · **source snapshot HEAD:** `08c72ad009d613f39955b8f9e0bfb3e5e301000b`. This SHA denotes the *audited baseline*, not a claim that this plan matches the latest future commit. Before work **`git fetch` and compare the fresh `origin/main`**; later documentation commits advance the remote. Audit source: [Master Integration Audit](docs/audit/master-integration-audit.md). GitHub CI on baseline [passed](https://github.com/bjo163/moonframe/actions/runs/40188542601).
 
 **Ownership (no duplicate backlog):** this root `TODO.md` is the **ordered index**, [Implementation Roadmap](docs/implementation-roadmap.md) is strategic phase narrative, [Issue Bible](docs/backlog/master-integration-issue-bible.md) and other [domain backlog files](docs/backlog/) own atomic task descriptions, **GitHub Issues own live issue states** once created; [Release Train & Adoption](docs/architecture/release-train-and-adoption.md) owns gates/milestone release policy. A row marked `planned` here is **not a created GitHub issue**. If status differs from GitHub, trust GitHub and update this summary. No root TODO existed at source snapshot.
