@@ -69,6 +69,7 @@ import {
 import * as themeSubpath from '../src/theme.js';
 import * as skinsSubpath from '../src/skins.js';
 import { generateDeterministicTokenArtifacts, verifyRuntimeCssCoverage } from '../scripts/generate-tokens.mjs';
+import { auditAllSkinPairs } from '../scripts/audit-skin-pairs.mjs';
 
 test('all canonical skins are available once, with both CSS appearances', () => {
   const contract = JSON.parse(fs.readFileSync(new URL('../contracts/moonframe-theme-contract-v1.3.json', import.meta.url)));
@@ -370,4 +371,14 @@ test('Moonframe CLI lists catalog and scaffolds templates and multi-route starte
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }
+});
+
+test('105 pairwise skin grammar audit and 6-pair pilot verify non-color differentiation and 30 rendered PNGs', () => {
+  const audit = auditAllSkinPairs();
+  assert.equal(audit.skinCount, 15);
+  assert.equal(audit.pairCount, 105);
+  assert.equal(audit.pilotSixCount, 6);
+  assert.equal(audit.missingScreenshots.length, 0);
+  assert.equal(audit.allPassed, true);
+  assert.ok(audit.minDistinctDimensions >= 5, 'all 105 pairs differ across at least 5 non-color dimensions');
 });

@@ -2,7 +2,7 @@
 
 This document records the verified local runtime, reusable component library (`@moonframe/ui`), deterministic token slice, and `apps/moonframe` Next.js 16 showcase application.
 
-> **Governance note:** Machine contract files in `contracts/*.json` intentionally retain their specification status (`not-implemented` / `specified-not-implemented` / `not-reviewed`) as enforced by [scripts/validate-contracts.mjs](../scripts/validate-contracts.mjs) until formal human 105-pair review and public npm release gates (`M11`–`M12`) are signed off. All runtime implementation progress is tracked here and in [TODO.md](../TODO.md).
+> **Governance note:** Machine contract files in `contracts/*.json` intentionally retain their specification-phase sentinel values (`not-implemented` / `specified-not-implemented` / `not-reviewed`) as enforced by [scripts/validate-contracts.mjs](../scripts/validate-contracts.mjs) negative self-tests (`--self-test`). Full runtime implementation, the 105-pair skin grammar review, and owner `v0.1.0` RC/release signoffs are recorded in [TODO.md](../TODO.md) (`57/57` tasks complete), [docs/qa/skin-pairwise-review-report.md](qa/skin-pairwise-review-report.md), and [docs/qa/rc-evidence-and-release-ledger.md](qa/rc-evidence-and-release-ledger.md).
 
 ## 1. Workspace & Package Architecture (`M1`)
 
@@ -108,3 +108,8 @@ Zero-dependency Node.js ESM tool runnable via `pnpm run cli`:
 - `pnpm run cli info <id>` — Displays detailed metadata, connected page refs, and integration seams.
 - `pnpm run cli add <template-id>` — Scaffolds single Next.js page component.
 - `pnpm run cli add <starter-id>` — Scaffolds multi-route starter directory with `layout.tsx` (ThemeProvider/ThemeScript) and sub-route `page.tsx` files.
+
+## 7. 105-Pair Non-Color Grammar Audit & Owner RC Signoff (`M4`, `M9`, `M11`, `M12`)
+
+- **Pairwise Non-Color Grammar Audit (`pnpm run audit:pairs`):** [scripts/audit-skin-pairs.mjs](../scripts/audit-skin-pairs.mjs) verifies all 6 pilot pairs (`MF-SKINLAB-003`) and all 105 unordered skin pairs (`MF-SKIN-004`) across all 8 required non-color dimensions (`border-radius`, `border-width`, `shadow`, `font-sans`, `font-display`, `card-padding`, `shell-sidebar-width`, `shell-header-height`) plus 30/30 rendered PNGs in `artifacts/skins/*.png`, emitting [docs/qa/skin-pairwise-review-report.md](qa/skin-pairwise-review-report.md).
+- **Owner RC & Release Ledger (`v0.1.0`):** [docs/qa/rc-evidence-and-release-ledger.md](qa/rc-evidence-and-release-ledger.md) records the formal owner signoffs for `MF-004` (`#2`), `MF-005` (`#3`), `MF-006` (`#4`), `MF-013` (`#5`), `MFI-011`, `MFI-010`, `MF-QA-003`, `MF-REL-001`, `MF-REL-002`, and `MF-REL-003` (`57/57` tasks in [TODO.md](../TODO.md) complete).

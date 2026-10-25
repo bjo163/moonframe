@@ -28,6 +28,7 @@
     "typecheck": "tsc --noEmit",
     "validate": "node scripts/validate-contracts.mjs",
     "tokens": "node scripts/generate-tokens.mjs",
+    "audit:pairs": "node scripts/audit-skin-pairs.mjs",
     "pack:local": "pnpm pack",
     "check": "pnpm run validate && pnpm test && pnpm run typecheck && pnpm run build"
   },
