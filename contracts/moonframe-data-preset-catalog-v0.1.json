@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-DATA-PRESETS-001",
+  "status": "specified-not-implemented",
+  "canonicalPages": "moonframe-page-template-manifest-v0.1.json",
+  "canonicalBlocks": "moonframe-block-manifest-v0.1.json",
+  "presets": [
+    {
+      "id": "data-preset-users",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-workspace",
+      "blockRefs": [
+        "block-searchable-record-list",
+        "block-filter-toolbar",
+        "block-detail-drawer"
+      ],
+      "fields": [
+        "id",
+        "displayName",
+        "status",
+        "roleLabel"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No actual role verification",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-invoices",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-records-table",
+      "blockRefs": [
+        "block-sortable-table",
+        "block-paginated-table"
+      ],
+      "fields": [
+        "invoiceId",
+        "dateIssued",
+        "amount",
+        "currency",
+        "status"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No taxes, accounting or payment engine",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-inventory",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-workspace",
+      "blockRefs": [
+        "block-filter-toolbar",
+        "block-bulk-action-bar"
+      ],
+      "fields": [
+        "sku",
+        "itemName",
+        "quantity",
+        "location",
+        "status"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No stock mutations or allocation rules",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-audit-events",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-audit",
+      "blockRefs": [
+        "block-audit-log-list",
+        "block-filter-toolbar"
+      ],
+      "fields": [
+        "timestamp",
+        "actor",
+        "action",
+        "severity",
+        "traceId"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No audit log provenance authority",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-webhook-deliveries",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-audit",
+      "blockRefs": [
+        "block-audit-log-list",
+        "block-detail-drawer"
+      ],
+      "fields": [
+        "deliveryId",
+        "timestamp",
+        "endpointLabel",
+        "status",
+        "retryCount"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No outbound webhook execution",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-projects",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-records-table",
+      "blockRefs": [
+        "block-sortable-table",
+        "block-paginated-table"
+      ],
+      "fields": [
+        "projectId",
+        "title",
+        "ownerLabel",
+        "dueDate",
+        "status"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No task workflow engine",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-master-detail",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-workspace",
+      "blockRefs": [
+        "block-detail-drawer",
+        "block-filter-toolbar"
+      ],
+      "fields": [
+        "id",
+        "title",
+        "summary",
+        "updatedAt"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No fetching or edit persistence",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    },
+    {
+      "id": "data-preset-analytics-report",
+      "level": "domain-preset",
+      "priority": "P2",
+      "status": "specified-not-implemented",
+      "pageRef": "template-data-workspace",
+      "blockRefs": [
+        "block-filter-toolbar",
+        "block-server-query-status"
+      ],
+      "fields": [
+        "period",
+        "metricName",
+        "metricValue"
+      ],
+      "fieldValues": "synthetic only, no secrets/PII",
+      "nonGoal": "No aggregates/financial calculations",
+      "accessibility": "Label/value pairs remain available on desktop/mobile, keyboard row actions and legible numeric formatting",
+      "consumerBoundary": "Backend owns schema/permissions/formatting policy/data source",
+      "skinApplicability": "all 15 canonical skins and Light/Dark, planned only"
+    }
+  ]
+}
