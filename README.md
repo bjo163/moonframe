@@ -46,6 +46,7 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 ### Original Asset & Brand (2026-10-25)
 
 - [Live asset inventory, provenance gaps and P0–P3 audit](docs/audit/original-asset-brand-audit.md)
+- [Original Asset & Brand delivery, validation and owner-decision report](docs/audit/original-asset-brand-delivery-2026-10-25.md)
 - [Original Asset & Brand Bible — canonical identity and rights policy](docs/brand/original-asset-brand-bible.md)
 - [Research log: SVG 2, SVGO, fonts/OFL, licensing, formats, autoplay](docs/research/original-asset-brand-research-log.md)
 - [Existing asset manifest, clarified as planned candidate pool](contracts/moonframe-asset-manifest-v0.1.json)
