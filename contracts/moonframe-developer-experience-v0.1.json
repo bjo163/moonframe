@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-DX-JOURNEYS-001",
+  "status": "specified-not-implemented",
+  "packageAuthority": "moonframe-package-architecture-v0.1.json",
+  "canonicalApi": "moonframe-component-api-contract-v0.1.json",
+  "documentationLanguage": "english-proposal-user-report-indonesian",
+  "dataPrivacy": "all fixtures synthetic; no consumer secrets in diagnostics",
+  "journeys": [
+    {
+      "id": "install",
+      "title": "Install core in clean consumer",
+      "owner": "ui-core",
+      "precondition": "approval of npm scope, license, package and peer versions",
+      "acceptanceEvidence": "verified package manager command + lockfile + tarball install",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "pkg-export-not-found"
+    },
+    {
+      "id": "basic-render",
+      "title": "Import Button/Input, types and styles",
+      "owner": "ui-core",
+      "precondition": "public exports and CSS built",
+      "acceptanceEvidence": "snapshot render + native semantics + peer singleton",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "missing-css"
+    },
+    {
+      "id": "tailwind-v4",
+      "title": "Import optional @theme inline and static utilities",
+      "owner": "ui-core",
+      "precondition": "Tailwind v4 consumer and token outputs",
+      "acceptanceEvidence": "compiled CSS names and preflight integration evidence",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "tailwind-scan"
+    },
+    {
+      "id": "skin-mode",
+      "title": "Set exact skin, light/dark/system and density/motion",
+      "owner": "ui-core",
+      "precondition": "complete 15×2 token map and SSR policy",
+      "acceptanceEvidence": "no FOIT/FOUC + correct effective attributes and fallback",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "unknown-skin"
+    },
+    {
+      "id": "override",
+      "title": "Override documented semantic variable",
+      "owner": "ui-core",
+      "precondition": "stable CSS var names/override layers",
+      "acceptanceEvidence": "after override contrast/forced-colors/zoom",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "unresolved-token"
+    },
+    {
+      "id": "premium-block",
+      "title": "Use premium block from approved catalog",
+      "owner": "premium-block",
+      "precondition": "runtime export or source registry decision",
+      "acceptanceEvidence": "clean install with sample fixtures, no business auth/backend",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "block-dependency"
+    },
+    {
+      "id": "source-owned-registry",
+      "title": "Install source-owned block only if ADR-0010 accepted",
+      "owner": "registry",
+      "precondition": "registry item schema, rights, support/version",
+      "acceptanceEvidence": "disposable install, edited-file conflict and rollback",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "registry-conflict"
+    },
+    {
+      "id": "optional-adapter",
+      "title": "Add chart/data/auth presentation optional adapter",
+      "owner": "optional-adapter",
+      "precondition": "provider API+license/peer support",
+      "acceptanceEvidence": "no unrelated core bundle dep, graceful missing option",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "optional-peer"
+    },
+    {
+      "id": "ssr",
+      "title": "Render in supported SSR consumer",
+      "owner": "ui-core",
+      "precondition": "supported framework Node/React major and nonce/CSP",
+      "acceptanceEvidence": "no DOM side-effect at import, no hydration mismatch",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "ssr-hydration"
+    },
+    {
+      "id": "upgrade",
+      "title": "Upgrade with changelog and migration notes",
+      "owner": "ui-core",
+      "precondition": "SemVer, published versions and clean consumer",
+      "acceptanceEvidence": "clean upgrades and export/token snapshot integrity",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "upgrade-breaking"
+    },
+    {
+      "id": "contribute",
+      "title": "Add component/skin or recipe under canonical governance",
+      "owner": "repository",
+      "precondition": "issue, docs, tests and packaging policy",
+      "acceptanceEvidence": "specified checks, no state/skin ID drift",
+      "currentStatus": "not-executable-no-package",
+      "testedInConsumer": false,
+      "docsPath": null,
+      "diagnosticCategory": "contract-drift"
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "MF_DX_MISSING_CSS",
+      "category": "missing-css",
+      "detectionLayer": "consumer-install-or-browser-visual",
+      "disposition": "blocking-future-consumer-smoke",
+      "remediation": "Verify style import/order and sideEffects; do not assume no CSS side effects.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_UNKNOWN_SKIN",
+      "category": "unknown-skin",
+      "detectionLayer": "build-type-validation-and-runtime-persisted-fallback",
+      "disposition": "build-error-for-invalid-config-dev-warning-on-persisted",
+      "remediation": "Fallback via Theme Contract, avoid log spam in production.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_INVALID_PREFERENCE",
+      "category": "invalid-mode-density",
+      "detectionLayer": "build-type-validation-and-runtime-persisted-fallback",
+      "disposition": "dev-warning",
+      "remediation": "Use Theme Contract legal values, do not invent third effective mode.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_UNRESOLVED_TOKEN",
+      "category": "unresolved-token",
+      "detectionLayer": "generator-build",
+      "disposition": "build-error",
+      "remediation": "Never package incomplete 30-mode token values.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_DUPLICATE_REACT",
+      "category": "duplicate-react",
+      "detectionLayer": "packed-consumer-build",
+      "disposition": "blocking-future-build",
+      "remediation": "React peer/external, require exactly one runtime in fixture.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_UNSUPPORTED_EXPORT",
+      "category": "bad-import",
+      "detectionLayer": "node-and-ts-resolution",
+      "disposition": "build-error",
+      "remediation": "Private deep paths must not become wildcard exports.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_OPTIONAL_PEER_MISSING",
+      "category": "optional-peer",
+      "detectionLayer": "optional-adapter-import-only",
+      "disposition": "targeted-install-guidance",
+      "remediation": "Do not auto-install chart/editor/auth in base UI.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_TAILWIND_SCAN",
+      "category": "tailwind-scan",
+      "detectionLayer": "tailwind-v4-consumer",
+      "disposition": "compiled-css-error",
+      "remediation": "Static classes, verify @source if package scanning needs it.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_STALE_GENERATION",
+      "category": "generated-css-drift",
+      "detectionLayer": "token-generator-ci",
+      "disposition": "build-error",
+      "remediation": "Byte-identical generated CSS vs canonical approved values.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_REGISTRY_CONFLICT",
+      "category": "registry-conflict",
+      "detectionLayer": "disposable-registry-installer",
+      "disposition": "manual-merge-stop",
+      "remediation": "Never silently overwrite user-edited source.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_HYDRATION",
+      "category": "ssr-hydration",
+      "detectionLayer": "consumer-browser-ssr",
+      "disposition": "release-blocker",
+      "remediation": "Align initial effective skin/mode/server/client and focus.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_LICENSE_BLOCK",
+      "category": "license-missing",
+      "detectionLayer": "release",
+      "disposition": "publish-blocker",
+      "remediation": "No package/no art without explicit owner licenses.",
+      "status": "proposal-not-implemented"
+    },
+    {
+      "code": "MF_DX_VERSION_MISMATCH",
+      "category": "upgrade-breaking",
+      "detectionLayer": "consumer-smoke",
+      "disposition": "migration-blocker",
+      "remediation": "Token/skin/props/peer/version compatibility note required.",
+      "status": "proposal-not-implemented"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "time-to-first-render",
+      "unit": "seconds",
+      "baseline": null,
+      "status": "not-measured"
+    },
+    {
+      "id": "clean-tarball-install-rate",
+      "unit": "percent",
+      "baseline": null,
+      "status": "not-measured"
+    },
+    {
+      "id": "setup-step-count",
+      "unit": "count",
+      "baseline": null,
+      "status": "not-measured"
+    },
+    {
+      "id": "support-diagnostic-time",
+      "unit": "minutes",
+      "baseline": null,
+      "status": "not-measured"
+    },
+    {
+      "id": "peer-duplicate-errors",
+      "unit": "count",
+      "baseline": null,
+      "status": "not-measured"
+    },
+    {
+      "id": "registry-merge-conflicts",
+      "unit": "count",
+      "baseline": null,
+      "status": "not-measured"
+    }
+  ],
+  "plannedGuides": [
+    "quick-start",
+    "vite-install",
+    "supported-ssr-install",
+    "tailwind-v4-css",
+    "theme-skin-mode",
+    "token-overrides",
+    "public-api-imports",
+    "blocks-and-registry-if-approved",
+    "optional-integrations",
+    "troubleshooting",
+    "migration-upgrade",
+    "contributing",
+    "accessibility-and-skin-qa",
+    "support-release-policy"
+  ],
+  "actualExecutableQuickstart": false,
+  "actualDocumentedPackageVersion": null
+}

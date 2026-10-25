@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-PKG-ARCH-001",
+  "status": "specified-candidates-not-implemented",
+  "auditedRepository": "bjo163/moonframe",
+  "ownerDecisionIssue": "https://github.com/bjo163/moonframe/issues/4",
+  "languagePolicy": {
+    "publicApiAndDeveloperDocs": "english-proposal",
+    "userFacingProgressReports": "indonesian",
+    "existingIds": "preserve-as-written"
+  },
+  "sources": {
+    "componentAuthority": "moonframe-component-api-contract-v0.1.json",
+    "tokenAuthority": "moonframe-token-source-plan-v0.1.json",
+    "themeAuthority": "moonframe-theme-contract-v1.3.json",
+    "skinAuthority": "moonframe-skin-grammar-contract-v1.0.json",
+    "blocksAuthority": "moonframe-block-manifest-v0.1.json",
+    "templatesAuthority": "moonframe-page-template-manifest-v0.1.json",
+    "qaAuthority": "docs/qa/accessibility-visual-qa-bible.md"
+  },
+  "skinAppearance": {
+    "expectedSkinCount": 15,
+    "expectedResolvedAppearances": 30,
+    "modeOptions": [
+      "light",
+      "dark"
+    ],
+    "systemIsPreferenceNotThirdMode": true,
+    "copyCanonicalIdsInsteadOfDuplicating": false
+  },
+  "topology": {
+    "decisionStatus": "proposed-open",
+    "preferred": "one-runtime-package-first",
+    "alternatives": [
+      "small-npm-workspace",
+      "hybrid-runtime-plus-source-registry",
+      "monorepo-multiple-apps-and-packages"
+    ],
+    "triggerForSplit": "independent consumers/cadence, measured bundle/tarball/release overhead or app need, owner approval",
+    "docsSiteDependency": "dev-only-not-core-runtime",
+    "workspaceManager": "unselected",
+    "buildTool": "unselected",
+    "packageManager": "unselected",
+    "packageManagerVersion": null,
+    "nodeVersionRange": null
+  },
+  "distribution": {
+    "npmRuntime": "candidate-after-proof",
+    "registry": "deferred",
+    "customCLI": "not-authorized",
+    "assetPacks": "deferred-no-licensed-files",
+    "publicationStatus": "never-published",
+    "publishedVersions": [],
+    "registryItems": [],
+    "audioPacks": 0
+  },
+  "packages": [
+    {
+      "id": "ui-core",
+      "nameCandidate": "@moonframe/ui",
+      "nameStatus": "proposed-unverified",
+      "packageMetadataStatus": "no-package-json-no-package-published",
+      "tier": "core-v1-candidate",
+      "dependencyBoundary": "react-rendered-generic-UI-only",
+      "packageJsonPath": null,
+      "version": null,
+      "license": null,
+      "engines": null,
+      "reactPeerVersion": null,
+      "reactDomPeerVersion": null,
+      "typescriptSupportRange": null,
+      "nodeSupportRange": null,
+      "browserSupportRange": null,
+      "publishConfig": null,
+      "filesWhitelist": null,
+      "sideEffectsPolicy": "preserve explicit CSS imports; cannot use blanket sideEffects false without verified CSS protection",
+      "typeFieldCandidate": "module",
+      "cjsDecision": "deferred-needs-consumer-proof",
+      "sourceMapsDecision": "open-privacy-and-devtools-test",
+      "exports": [
+        {
+          "id": ".",
+          "role": "core-react-runtime",
+          "candidateConsumerImport": "@moonframe/ui",
+          "format": "esm-first-proposal",
+          "conditions": [
+            "types",
+            "import",
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": false,
+          "optional": false
+        },
+        {
+          "id": "./theme",
+          "role": "theme-public-hooks-types",
+          "candidateConsumerImport": "@moonframe/ui/theme",
+          "format": "esm-first-proposal",
+          "conditions": [
+            "types",
+            "import",
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": false,
+          "optional": false
+        },
+        {
+          "id": "./styles.css",
+          "role": "semantic-styles-and-component-base",
+          "candidateConsumerImport": "@moonframe/ui/styles.css",
+          "format": "css-proposal",
+          "conditions": [
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": true,
+          "optional": false
+        },
+        {
+          "id": "./tokens.css",
+          "role": "generated-semantic-token-roles",
+          "candidateConsumerImport": "@moonframe/ui/tokens.css",
+          "format": "css-proposal",
+          "conditions": [
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": true,
+          "optional": false
+        },
+        {
+          "id": "./tailwind.css",
+          "role": "optional-tailwind-v4-bridge",
+          "candidateConsumerImport": "@moonframe/ui/tailwind.css",
+          "format": "tailwind-v4-source-proposal",
+          "conditions": [
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": true,
+          "optional": true
+        },
+        {
+          "id": "./components/button",
+          "role": "illustrative-fine-grained-component-export",
+          "candidateConsumerImport": "@moonframe/ui/components/button",
+          "format": "esm-first-proposal",
+          "conditions": [
+            "types",
+            "import",
+            "default"
+          ],
+          "outputPath": null,
+          "declarationPath": null,
+          "publicStability": "proposed-unverified",
+          "cssSideEffect": false,
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "privatePaths": [
+    "src/internal/*",
+    "src/private/*",
+    "scripts/*",
+    "docs/*",
+    "contracts/*",
+    "schemas/*",
+    "fixtures/*"
+  ],
+  "generatedCss": {
+    "status": "not-generated",
+    "canonicalInputs": "moonframe-token-source-plan-v0.1.json",
+    "proposedBaselineCssImport": "./styles.css",
+    "proposedTokensCssImport": "./tokens.css",
+    "optionalTailwindBridge": "./tailwind.css",
+    "preflightOwner": "consumer-controlled-not-implicitly-imported",
+    "outputGeneration": "deterministic-alias-and-30-appearance-validated-before-pack",
+    "cssCustomPropertyNamespace": "--mf-* (proposed role prefix from token plan)",
+    "firstPaint": "Theme Contract SSR precedence; test supported consumer",
+    "noJsFallback": "readable Classic candidate; not verified",
+    "classDetection": "static; document @source when applicable, never dynamic string construction"
+  },
+  "consumerProof": {
+    "status": "not-run",
+    "freshViteTarballInstall": false,
+    "ssrConsumerInstall": false,
+    "typescriptTypesResolution": false,
+    "reactSingleton": false,
+    "cssSideEffectsRetention": false,
+    "tailwindV4Scan": false,
+    "treeShaking": false,
+    "privateExportRejection": false,
+    "distFileListInspection": false,
+    "tokenAliasCoverage": false,
+    "accessibilityManual": false,
+    "skin105PairwiseReviews": 0
+  },
+  "release": {
+    "status": "not-configured",
+    "npmScopeApproved": false,
+    "codeLicenseApproved": false,
+    "artRightsApproved": false,
+    "version": null,
+    "tagsVerified": null,
+    "githubReleasesObserved": 0,
+    "trustedPublisherEnabled": false,
+    "provenanceAttested": false,
+    "oidcWorkflowConfigured": false,
+    "distTagsGranted": false,
+    "packageTarball": null,
+    "registryInstall": null,
+    "ciTrustedPublishMinimums": {
+      "node": "22.14.0",
+      "npm": "11.5.1",
+      "distTags": "npm >=11.21.0 or >=12.2.0",
+      "note": "npm docs current at 2026-10-25; contract runner Node22 does not verify this"
+    }
+  },
+  "readinessVocabulary": [
+    "proposed",
+    "specified",
+    "implemented",
+    "tested",
+    "reviewed",
+    "released"
+  ],
+  "nonGoals": [
+    "implement-package-json",
+    "install-dependencies",
+    "build-react",
+    "create-publishable-package",
+    "create-cli-or-registry",
+    "publish-npm",
+    "enable-github-oidc",
+    "generate-css-or-assets",
+    "new-github-issues"
+  ]
+}
