@@ -1075,6 +1075,185 @@ if(process.argv.includes('--self-test')){
   ' invalid recipes, refs, fake skin/visual approvals, autoplay sound); 180 pending cases');
 }
 
+
+// Accessibility/Visual QA SPECIFICATION integrity (no DOM/axe/Playwright/AT actually run).
+const a11yReq=read('contracts/moonframe-accessibility-requirements-v0.1.json');
+const a11yProfiles=read('contracts/moonframe-component-qa-profiles-v0.1.json');
+const a11yVisual=read('contracts/moonframe-visual-baseline-matrix-v0.1.json');
+const a11yLedger=read('contracts/moonframe-accessibility-qa-evidence-v0.1.json');
+const a11ySchema=read('schemas/moonframe-accessibility-qa-record.schema.json');
+const a11yFixtures=read('contracts/fixtures/accessibility-visual-qa-v0.1.json');
+const a11yCmpSet=new Set(components.components.map(x=>x.id));
+const a11yReqSet=new Set(a11yReq.requirements.map(x=>x.id));
+const a11yStates=read('contracts/moonframe-component-state-matrix-v0.1.json');
+const a11yKeyboards=read('contracts/moonframe-keyboard-interaction-matrix-v0.1.json');
+const a11yPages=read('contracts/moonframe-page-template-manifest-v0.1.json');
+const a11yCmpState=new Map(a11yStates.components.map(x=>[x.componentId,x]));
+const a11yCmpKey=new Map(a11yKeyboards.componentMappings.map(x=>[x.componentId,x]));
+const a11yBlockSet=new Set(blocks.blocks.map(x=>x.id));
+const a11yPageSet=new Set(a11yPages.templates.map(x=>x.id));
+const a11yVisualCases=new Set(a11yVisual.specimens.map(x=>x.id));
+const a11yValidStatus=new Set(a11yLedger.statuses);
+function a11yEvidenceProblems(r) {
+ const e=[];
+ if(!r||typeof r!=='object')return ['missing a11y record'];
+ if(!/^avqa\.[a-z][a-z0-9-]+$/.test(r.recordId||''))e.push('invalid QA ID');
+ if(!['observation','exception','defect'].includes(r.kind))e.push('invalid QA record kind');
+ if(!a11yValidStatus.has(r.status))e.push('invalid QA evidence status');
+ if(!a11yReqSet.has(r.criterionRef))e.push('unknown WCAG criterion');
+ if(r.scope?.componentId!==null&&!a11yCmpSet.has(r.scope?.componentId))
+   e.push('unknown component');
+ if(r.scope?.skinId!==null&&!ids.includes(r.scope?.skinId))e.push('unknown skin');
+ if(r.scope?.mode!==null&&!['light','dark'].includes(r.scope?.mode))
+   e.push('invalid effective appearance');
+ if(r.scope?.specimenId!==null&&!a11yVisualCases.has(r.scope?.specimenId))
+   e.push('unknown visual specimen');
+ const evidence=r.evidence,review=r.review,ex=r.exception;
+ if(!evidence||!review||!ex)return [...e,'required evidence/review/exception missing'];
+ const planned=['specified','not-assessed'].includes(r.status);
+ if(planned&&(evidence.commitSHA!==null||evidence.testRunUrl!==null||
+   evidence.capturePath!==null||evidence.baselineHash!==null||
+   evidence.manualNotes!==null||evidence.atLog!==null||
+   evidence.environment!==null||review.reviewer!==null||
+   review.reviewedAt!==null||review.verdict!==null))
+   e.push('fabricated evidence in unassessed specification');
+ if(r.status==='automated-check-passed'&&
+   (!/^[a-f0-9]{40}$/.test(evidence.commitSHA||'')||
+    !isString(evidence.testRunUrl)||!evidence.environment))
+   e.push('automated pass lacks concrete commit/run/environment');
+ if(['manual-review-passed','assistive-tech-reviewed','verified-for-release-scope'].includes(r.status)&&
+   (!isString(review.reviewer)||!isString(review.reviewedAt)||
+    review.verdict!=='pass'||!isString(evidence.manualNotes)||
+    !/^[a-f0-9]{40}$/.test(evidence.commitSHA||'')||!evidence.environment))
+   e.push('manual pass lacks verified reviewer/date/context');
+ if(r.status==='assistive-tech-reviewed'&&!isString(evidence.atLog))
+   e.push('missing real AT report');
+ if(r.status==='verified-for-release-scope'&&
+   (!isString(evidence.testRunUrl)||!isString(evidence.atLog)||!isString(evidence.capturePath)))
+   e.push('release claim lacks combined AT/browser/visual evidence');
+ if(r.status==='waived-with-rationale'&&
+   (r.kind!=='exception'||!isString(ex.issueUrl)||!isString(ex.owner)||
+    !isString(ex.rationale)||!isString(ex.userImpact)||!isString(ex.mitigation)||
+    !isString(ex.expiry)||!isString(ex.approvedBy)||!isString(ex.scopeBoundary)))
+   e.push('waiver has no owner/impact/expiry/approval');
+ return e;
+}
+function a11ySystemProblems(req,profiles,visual,ledger) {
+ const e=[];
+ const criteria=req.requirements||[];
+ if(req.standard?.levelTarget!=='AA-proposed-not-conformant'||
+   req.actFormat?.status!=='W3C-Recommendation-2026-02-05'||
+   req.status!=='requirements-specified-not-tested'||req.expectedRequirementCount!==51||
+   !uniq(criteria.map(x=>x.id))||criteria.length!==51)
+   e.push('WCAG 2.2 target/criteria count/ACT metadata drift');
+ const levels={A:0,AA:0,AAA:0};
+ for(const x of criteria){
+   if(!/^wcag-[0-9]\.[0-9]\.[0-9]+$/.test(x.id||'')||
+      x.criterion!=='wcag-'&&x.id!=='wcag-'+x.criterion||
+      !['A','AA','AAA'].includes(x.level)||
+      x.status!=='specified-not-tested'||!isString(x.procedure)||
+      !Array.isArray(x.methods)||!x.methods.length||
+      x.review?.testRun!==null||x.review?.reviewer!==null||
+      x.review?.manualEvidence!==null||x.review?.atEvidence!==null)
+      e.push('malformed or falsely-reviewed WCAG criterion '+x.id);
+   if(levels[x.level]!==undefined)levels[x.level]++;
+ }
+ if(levels.A!==27||levels.AA!==22||levels.AAA!==2||
+    req.requirements.find(x=>x.criterion==='2.4.13')?.level!=='AAA'||
+    req.requirements.find(x=>x.criterion==='2.4.11')?.level!=='AA'||
+    req.requirements.find(x=>x.criterion==='2.5.8')?.level!=='AA'||
+    req.requirements.find(x=>x.criterion==='2.5.7')?.level!=='AA'||
+    req.requirements.find(x=>x.criterion==='3.3.8')?.level!=='AA')
+   e.push('WCAG priority Level A/AA/AAA inaccurate');
+ if(profiles.status!=='profiles-specified-no-component-tests'||
+    !sameSet(profiles.profiles.map(x=>x.componentId),[...a11yCmpSet])||
+    profiles.counts.profiles!==151||profiles.counts.withEvidence!==0)
+   e.push('151 component QA profile missing/duplicated/false tested');
+ for(const p of profiles.profiles){
+   const s=a11yCmpState.get(p.componentId),kb=a11yCmpKey.get(p.componentId);
+   if(!s||!kb||p.keyboardPatternId!==kb.patternId||
+      !sameSet(p.applicableStateIds,s.applicable)||!p.criteriaRefs.length||
+      p.criteriaRefs.some(x=>!a11yReqSet.has(x))||
+      p.status!=='specified-not-tested'||
+      Object.values(p.evidence||{}).some(x=>x!==null))
+      e.push('QA component join/evidence drift '+p.componentId);
+ }
+ const caseIds=visual.specimens.map(x=>x.id);
+ if(!uniq(caseIds)||caseIds.length!==9||
+   !sameSet(visual.appearanceModes,['light','dark'])||
+   visual.systemIsAdditionalAppearance!==false||
+   visual.status!=='planned-no-screenshots-or-approvals')
+   e.push('visual suite/mode/status drift');
+ const exp=ids.flatMap(id=>['light','dark'].flatMap(mode=>
+   caseIds.map(caseId=>id+'::'+mode+'::'+caseId)));
+ const actual=visual.cells.map(c=>c.skinId+'::'+c.mode+'::'+c.specimenId);
+ if(!sameSet(exp,actual)||visual.count.plannedCells!==270||
+   visual.count.baselineCaptured!==0||visual.count.rendered!==0||
+   visual.count.manualApproved!==0||visual.count.automatedPass!==0)
+   e.push('visual missing/duplicate cells or invented captures');
+ for(const x of visual.specimens){
+   if(!a11yPageSet.has(x.canonicalTemplateId)||
+      (x.canonicalBlockId!==null&&!a11yBlockSet.has(x.canonicalBlockId))||
+      x.componentIds.some(id=>!a11yCmpSet.has(id))||
+      x.requiredStates.some(id=>!a11yStates.stateDimensions.some(s=>s.id===id))||
+      x.status!=='specified-not-rendered')
+      e.push('visual specimen missing canonical ref/state '+x.id);
+ }
+ for(const c of visual.cells){
+  if(c.status!=='not-rendered'||c.screenshotPath!==null||
+     c.baselineHash!==null||c.diffPath!==null||c.axeEvidence!==null||
+     c.keyboardEvidence!==null||c.manualATEvidence!==null||
+     c.forcedColorsEvidence!==null||c.reviewedAt!==null||
+     c.reviewer!==null||c.approval!==null||c.releaseRef!==null||
+     c.captureEnv.os!==null||c.captureEnv.browser!==null||
+     c.captureEnv.containerDigest!==null)
+     e.push('fabricated visual/AT/screenshot baseline '+c.skinId+'/'+c.mode+'/'+c.specimenId);
+ }
+ if(ledger.status!=='no-rendered-ui-no-test-results'||
+    ledger.records.length!==0||ledger.exceptions.length!==0||ledger.defects.length!==0||
+    Object.values(ledger.counts).some(v=>v!==0))
+    e.push('evidence ledger falsely claims QA/release or waiver');
+ if(!a11ySchema.properties?.review||!a11ySchema.properties?.exception) // scope/JSON-schema structure read globally
+   e.push('missing QA conditional schema');
+ return e;
+}
+for(const e of a11ySystemProblems(a11yReq,a11yProfiles,a11yVisual,a11yLedger))
+ errors.push('Accessibility/Visual QA: '+e);
+fail(a11ySchema.$schema==='https://json-schema.org/draft/2020-12/schema'&&
+    Array.isArray(a11ySchema.allOf)&&a11ySchema.allOf.length>=5&&
+    a11ySchema.properties?.evidence&&a11ySchema.properties?.scope,
+    'Proposed Draft 2020-12 QA evidence schema incomplete');
+fail(a11yFixtures.valid.length>=1&&a11yFixtures.invalid.length>=14,
+    'Accessibility negative evidence fixtures missing');
+for(const f of a11yFixtures.valid)
+ for(const problem of a11yEvidenceProblems(f.record))
+   errors.push('Valid a11y fixture '+f.id+': '+problem);
+if(process.argv.includes('--self-test')){
+ for(const f of a11yFixtures.invalid)
+   assert(a11yEvidenceProblems(f.record).length>0,
+    'Invalid a11y evidence fixture unexpectedly accepted '+f.id);
+ const bad=structuredClone(a11yVisual);bad.cells[0].status='manual-approved';
+ assert(a11ySystemProblems(a11yReq,a11yProfiles,bad,a11yLedger)
+   .some(x=>x.includes('fabricated visual')));
+ const incomplete=structuredClone(a11yVisual);incomplete.cells.pop();
+ assert(a11ySystemProblems(a11yReq,a11yProfiles,incomplete,a11yLedger)
+   .some(x=>x.includes('visual missing/duplicate')));
+ const fakeReq=structuredClone(a11yReq);
+ fakeReq.requirements.find(x=>x.criterion==='2.4.13').level='AA';
+ assert(a11ySystemProblems(fakeReq,a11yProfiles,a11yVisual,a11yLedger)
+   .some(x=>x.includes('priority Level')));
+ const corrupt=structuredClone(a11yProfiles);
+ corrupt.profiles[0].keyboardPatternId='nonexistent';
+ assert(a11ySystemProblems(a11yReq,corrupt,a11yVisual,a11yLedger)
+   .some(x=>x.includes('QA component join')));
+ const fabricated=structuredClone(a11yLedger);fabricated.counts.manualATReviews=1;
+ assert(a11ySystemProblems(a11yReq,a11yProfiles,a11yVisual,fabricated)
+   .some(x=>x.includes('falsely claims')));
+ console.log('PASS: accessibility/visual QA negative fixtures ('+
+   a11yFixtures.invalid.length+
+   ' invalid evidence+waivers; 51 WCAG, 151 component profiles, 270 unrendered slots)');
+}
+
 // Local Markdown link existence check. Remote URLs and anchors are intentionally excluded.
 const walk=dir=>fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?walk(p):[p];
