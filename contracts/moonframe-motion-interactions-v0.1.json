@@ -1,0 +1,580 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-MOTION-INTERACTIONS-001",
+  "status": "specified-not-implemented",
+  "behaviorAuthority": "moonframe-component-api-contract-v0.1.json",
+  "stateAuthority": "moonframe-component-state-matrix-v0.1.json",
+  "keyboardAuthority": "moonframe-keyboard-interaction-matrix-v0.1.json",
+  "recipeAuthority": "moonframe-motion-recipes-v0.1.json",
+  "patterns": [
+    {
+      "id": "mi.pointer",
+      "category": "basic",
+      "componentIds": [
+        "button",
+        "icon-button",
+        "toggle",
+        "switch",
+        "link"
+      ],
+      "recipeRefs": [
+        "mot.press",
+        "mot.hover",
+        "mot.focus"
+      ],
+      "semanticsAndKeyboard": "native click/Space/Enter, cancel prevents action",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.selection",
+      "category": "basic",
+      "componentIds": [
+        "checkbox",
+        "radio-group",
+        "toggle-group",
+        "tabs"
+      ],
+      "recipeRefs": [
+        "mot.select",
+        "mot.tabs"
+      ],
+      "semanticsAndKeyboard": "selection/checked and focus without animation dependency",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.navigation",
+      "category": "nav",
+      "componentIds": [
+        "navigation-menu",
+        "breadcrumbs",
+        "mobile-navigation",
+        "sidebar"
+      ],
+      "recipeRefs": [
+        "mot.nav",
+        "mot.sidebar"
+      ],
+      "semanticsAndKeyboard": "route/focus remains stable; history handles state",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.route",
+      "category": "nav",
+      "componentIds": [
+        "app-shell",
+        "topbar"
+      ],
+      "recipeRefs": [
+        "mot.route"
+      ],
+      "semanticsAndKeyboard": "back/forward and interruption instant fallback",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.menus",
+      "category": "overlay",
+      "componentIds": [
+        "dropdown-menu",
+        "context-menu",
+        "menubar"
+      ],
+      "recipeRefs": [
+        "mot.menu"
+      ],
+      "semanticsAndKeyboard": "Escape and roving focus from Component API",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.dialog",
+      "category": "overlay",
+      "componentIds": [
+        "dialog",
+        "alert-dialog"
+      ],
+      "recipeRefs": [
+        "mot.dialog",
+        "mot.confirm"
+      ],
+      "semanticsAndKeyboard": "focus/inert/restore from primitive, no ghost",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.drawer",
+      "category": "overlay",
+      "componentIds": [
+        "drawer",
+        "split-detail-pane"
+      ],
+      "recipeRefs": [
+        "mot.drawer"
+      ],
+      "semanticsAndKeyboard": "Escape and close cleanup independent of exit",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.popover",
+      "category": "overlay",
+      "componentIds": [
+        "popover",
+        "hover-card"
+      ],
+      "recipeRefs": [
+        "mot.popover"
+      ],
+      "semanticsAndKeyboard": "no focusable closed overlay",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.tooltip",
+      "category": "overlay",
+      "componentIds": [
+        "tooltip"
+      ],
+      "recipeRefs": [
+        "mot.tooltip"
+      ],
+      "semanticsAndKeyboard": "keyboard and hover parity, no essential hover-only info",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.toasts",
+      "category": "feedback",
+      "componentIds": [
+        "toast",
+        "alert",
+        "callout"
+      ],
+      "recipeRefs": [
+        "mot.toast"
+      ],
+      "semanticsAndKeyboard": "persistent announcement not timed to opacity",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.form",
+      "category": "form",
+      "componentIds": [
+        "field",
+        "input",
+        "form-message",
+        "validation-summary"
+      ],
+      "recipeRefs": [
+        "mot.pending",
+        "mot.invalid"
+      ],
+      "semanticsAndKeyboard": "error text/focus remains, no shake",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.async",
+      "category": "async",
+      "componentIds": [
+        "spinner",
+        "skeleton",
+        "progress",
+        "error-state"
+      ],
+      "recipeRefs": [
+        "mot.skeleton",
+        "mot.pending"
+      ],
+      "semanticsAndKeyboard": "pending truth and cancellation independently owned",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.file",
+      "category": "async",
+      "componentIds": [
+        "file-upload",
+        "file-dropzone",
+        "progress"
+      ],
+      "recipeRefs": [
+        "mot.dropzone",
+        "mot.upload"
+      ],
+      "semanticsAndKeyboard": "drag cancel and keyboard alternative",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.data",
+      "category": "data",
+      "componentIds": [
+        "data-table",
+        "filter-bar",
+        "query-state-banner",
+        "expandable-row"
+      ],
+      "recipeRefs": [
+        "mot.data-query",
+        "mot.row-details"
+      ],
+      "semanticsAndKeyboard": "stable row selection and keyboard position",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.chart",
+      "category": "data",
+      "componentIds": [
+        "chart-container",
+        "chart-legend"
+      ],
+      "recipeRefs": [
+        "mot.chart"
+      ],
+      "semanticsAndKeyboard": "static data equivalent regardless of tween",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.stream",
+      "category": "stream",
+      "componentIds": [
+        "event-stream",
+        "log-viewer",
+        "markdown-content"
+      ],
+      "recipeRefs": [
+        "mot.ai-stream"
+      ],
+      "semanticsAndKeyboard": "stop/regenerate cancels cosmetic stream",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.quest",
+      "category": "optional",
+      "componentIds": [
+        "quest-card",
+        "rarity-badge",
+        "progress-indicator"
+      ],
+      "recipeRefs": [
+        "mot.quest-reward"
+      ],
+      "semanticsAndKeyboard": "reward rules app-owned, no sound-only outcome",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "optional-explicit-consent-only",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    },
+    {
+      "id": "mi.sensitive",
+      "category": "safety",
+      "componentIds": [
+        "confirm-action",
+        "alert-dialog",
+        "session-expired-notice"
+      ],
+      "recipeRefs": [
+        "mot.confirm",
+        "mot.invalid"
+      ],
+      "semanticsAndKeyboard": "no default sound or alarming motion",
+      "modalities": [
+        "keyboard",
+        "pointer",
+        "touch",
+        "assistive-technology"
+      ],
+      "cancelAndInterruption": "cancel obsolete visuals; semantic state and focus remain authoritative",
+      "reducedMotion": "recipe static/instant alternative required",
+      "soundPolicy": "default-none",
+      "testsRequired": [
+        "no-motion/no-audio parity",
+        "keyboard focus",
+        "pointer cancellation",
+        "skin and Light/Dark invariance",
+        "reduced and forced colors"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": null
+    }
+  ]
+}

@@ -1,0 +1,1727 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-MOTION-RECIPES-001",
+  "status": "specified-not-implemented",
+  "tokenAuthority": "moonframe-token-dictionary-v0.1.json",
+  "themeAuthority": "moonframe-theme-contract-v1.3.json",
+  "behaviorAuthority": "moonframe-component-api-contract-v0.1.json",
+  "skinAuthority": "moonframe-skin-grammar-contract-v1.0.json",
+  "sfxAuthority": "moonframe-sfx-contract-v0.1.json",
+  "purposes": [
+    "feedback",
+    "orientation",
+    "continuity",
+    "hierarchy",
+    "progress",
+    "expression"
+  ],
+  "reducedStrategyVocabulary": [
+    "none",
+    "static-equivalent",
+    "shortened",
+    "opacity-only",
+    "essential"
+  ],
+  "readinessVocabulary": [
+    "proposed",
+    "specified-not-implemented",
+    "implemented",
+    "tested",
+    "reviewed",
+    "released"
+  ],
+  "existingTokenRefs": [
+    "motion.duration.fast",
+    "motion.duration.normal",
+    "motion.duration.slow",
+    "motion.easing.standard",
+    "motion.distance.small"
+  ],
+  "globalInvariants": [
+    "semantics/focus independent of animation/audio",
+    "cannot defer DOM accessibility state until animation finishes",
+    "all recipes settle instantly if interrupted/unsupported",
+    "OS reduced and user override never permit harmful flashing",
+    "no continuous decorative autoplay in core"
+  ],
+  "recipes": [
+    {
+      "id": "mot.press",
+      "displayName": "press",
+      "purpose": "feedback",
+      "componentIds": [
+        "button",
+        "icon-button",
+        "toggle",
+        "switch"
+      ],
+      "trigger": {
+        "semanticFrom": "resting",
+        "semanticTo": "pressed",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "brief press outline/surface accent",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [
+        "motion.easing.enter"
+      ],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.hover",
+      "displayName": "hover",
+      "purpose": "hierarchy",
+      "componentIds": [
+        "button",
+        "link",
+        "chip",
+        "card"
+      ],
+      "trigger": {
+        "semanticFrom": "resting",
+        "semanticTo": "hover",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional quiet hover contrast; no hover-only information",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.focus",
+      "displayName": "focus",
+      "purpose": "hierarchy",
+      "componentIds": [
+        "button",
+        "input",
+        "dialog",
+        "icon-button"
+      ],
+      "trigger": {
+        "semanticFrom": "unfocused",
+        "semanticTo": "focus-visible",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "immediate visible focus outline, no fade-in delay",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.select",
+      "displayName": "select",
+      "purpose": "feedback",
+      "componentIds": [
+        "checkbox",
+        "radio-group",
+        "toggle-group",
+        "row-selection"
+      ],
+      "trigger": {
+        "semanticFrom": "unselected",
+        "semanticTo": "selected",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "selected label and optional border transition",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.tabs",
+      "displayName": "tabs",
+      "purpose": "orientation",
+      "componentIds": [
+        "tabs",
+        "segmented-control"
+      ],
+      "trigger": {
+        "semanticFrom": "inactive",
+        "semanticTo": "active",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional indicator move, semantics immediate",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.sidebar",
+      "displayName": "sidebar",
+      "purpose": "continuity",
+      "componentIds": [
+        "sidebar",
+        "navigation-rail"
+      ],
+      "trigger": {
+        "semanticFrom": "expanded",
+        "semanticTo": "collapsed",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "compact optional surface resize",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [
+        "motion.easing.enter"
+      ],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.nav",
+      "displayName": "nav",
+      "purpose": "orientation",
+      "componentIds": [
+        "navigation-menu",
+        "breadcrumbs",
+        "mobile-navigation"
+      ],
+      "trigger": {
+        "semanticFrom": "inactive",
+        "semanticTo": "active",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "active route signifier without focus hijack",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.route",
+      "displayName": "route",
+      "purpose": "continuity",
+      "componentIds": [
+        "app-shell",
+        "topbar"
+      ],
+      "trigger": {
+        "semanticFrom": "previous",
+        "semanticTo": "current",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional small crossfade of noninteractive shell",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.menu",
+      "displayName": "menu",
+      "purpose": "orientation",
+      "componentIds": [
+        "dropdown-menu",
+        "context-menu",
+        "menubar"
+      ],
+      "trigger": {
+        "semanticFrom": "closed",
+        "semanticTo": "open",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "subtle entry with hidden-exit focus safeguards",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.dialog",
+      "displayName": "dialog",
+      "purpose": "orientation",
+      "componentIds": [
+        "dialog",
+        "alert-dialog"
+      ],
+      "trigger": {
+        "semanticFrom": "closed",
+        "semanticTo": "open",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "subtle reveal, semantic overlay focus owned by primitive",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.drawer",
+      "displayName": "drawer",
+      "purpose": "orientation",
+      "componentIds": [
+        "drawer",
+        "split-detail-pane"
+      ],
+      "trigger": {
+        "semanticFrom": "closed",
+        "semanticTo": "open",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional restrained side reveal",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [
+        "motion.easing.enter"
+      ],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.popover",
+      "displayName": "popover",
+      "purpose": "orientation",
+      "componentIds": [
+        "popover",
+        "hover-card"
+      ],
+      "trigger": {
+        "semanticFrom": "closed",
+        "semanticTo": "open",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional static/opacity change, no focusable exit ghost",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.tooltip",
+      "displayName": "tooltip",
+      "purpose": "hierarchy",
+      "componentIds": [
+        "tooltip"
+      ],
+      "trigger": {
+        "semanticFrom": "closed",
+        "semanticTo": "open",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "legible tooltip immediately on provider trigger",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.toast",
+      "displayName": "toast",
+      "purpose": "feedback",
+      "componentIds": [
+        "toast",
+        "alert"
+      ],
+      "trigger": {
+        "semanticFrom": "hidden",
+        "semanticTo": "visible",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "status remains readable even if enter animation skipped",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": "notification",
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.pending",
+      "displayName": "pending",
+      "purpose": "progress",
+      "componentIds": [
+        "button",
+        "field",
+        "validation-summary"
+      ],
+      "trigger": {
+        "semanticFrom": "idle",
+        "semanticTo": "pending",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "truthful persistent pending status",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.invalid",
+      "displayName": "invalid",
+      "purpose": "feedback",
+      "componentIds": [
+        "field",
+        "input",
+        "form-message",
+        "inline-error"
+      ],
+      "trigger": {
+        "semanticFrom": "valid",
+        "semanticTo": "invalid",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "persistent message and outline, never mandatory shake",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [
+        "motion.easing.enter"
+      ],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": "error",
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.data-query",
+      "displayName": "data query",
+      "purpose": "continuity",
+      "componentIds": [
+        "data-table",
+        "filter-bar",
+        "query-state-banner"
+      ],
+      "trigger": {
+        "semanticFrom": "stale",
+        "semanticTo": "current",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "no mass-row choreography; real query controls timing",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.row-details",
+      "displayName": "row details",
+      "purpose": "orientation",
+      "componentIds": [
+        "expandable-row",
+        "table"
+      ],
+      "trigger": {
+        "semanticFrom": "collapsed",
+        "semanticTo": "expanded",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "expanded content available without animation",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.skeleton",
+      "displayName": "skeleton",
+      "purpose": "progress",
+      "componentIds": [
+        "skeleton",
+        "spinner",
+        "progress"
+      ],
+      "trigger": {
+        "semanticFrom": "idle",
+        "semanticTo": "pending",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "static progress text in reduced/no motion",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.dropzone",
+      "displayName": "dropzone",
+      "purpose": "feedback",
+      "componentIds": [
+        "file-upload",
+        "file-dropzone"
+      ],
+      "trigger": {
+        "semanticFrom": "resting",
+        "semanticTo": "drag-over",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "static visual drop region",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.upload",
+      "displayName": "upload",
+      "purpose": "progress",
+      "componentIds": [
+        "file-upload",
+        "progress",
+        "error-state"
+      ],
+      "trigger": {
+        "semanticFrom": "queued",
+        "semanticTo": "complete",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "real operation/progress never animated as substitute for data",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [
+        "motion.easing.enter"
+      ],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": "success",
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.ai-stream",
+      "displayName": "ai stream",
+      "purpose": "progress",
+      "componentIds": [
+        "event-stream",
+        "log-viewer",
+        "markdown-content"
+      ],
+      "trigger": {
+        "semanticFrom": "idle",
+        "semanticTo": "streaming",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "optional cursor no per-chunk animation/audio",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.chart",
+      "displayName": "chart",
+      "purpose": "continuity",
+      "componentIds": [
+        "chart-container",
+        "chart-legend"
+      ],
+      "trigger": {
+        "semanticFrom": "old",
+        "semanticTo": "new",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "static chart values readable without interpolation",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.confirm",
+      "displayName": "confirm",
+      "purpose": "feedback",
+      "componentIds": [
+        "confirm-action",
+        "alert-dialog"
+      ],
+      "trigger": {
+        "semanticFrom": "pending",
+        "semanticTo": "confirmed",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "persistent result+undo, no celebration for destructive action",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "static-equivalent",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": null,
+        "eligibility": "none-by-default",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    },
+    {
+      "id": "mot.quest-reward",
+      "displayName": "quest reward",
+      "purpose": "expression",
+      "componentIds": [
+        "quest-card",
+        "progress-indicator",
+        "rarity-badge"
+      ],
+      "trigger": {
+        "semanticFrom": "pending",
+        "semanticTo": "confirmed",
+        "authority": "component/consumer state, not animation event"
+      },
+      "visual": {
+        "proposal": "tiny opt-in local reward accent; no game logic",
+        "exit": "semantic cleanup independent of cosmetic animation finish",
+        "intensity": "to-be-reviewed-no-final-number"
+      },
+      "tokenRefs": [
+        "motion.duration.normal",
+        "motion.easing.standard"
+      ],
+      "candidateTokenRefs": [],
+      "reducedMotion": {
+        "strategy": "none",
+        "equivalent": "instant stable semantic target, text/status/focus remains accessible",
+        "requiresHumanExceptionApproval": false
+      },
+      "interruption": {
+        "onCancel": "cancel animation and settle target immediately",
+        "onPreferenceChange": "cancel effect; do not reset state/focus",
+        "onUnmount": "dispose handles, remove ghost and timers",
+        "onHiddenTab": "pause decorative, never defer essential state",
+        "mustNotWaitForAnimation": true
+      },
+      "continuous": false,
+      "autoStarts": false,
+      "pausePolicy": "not-applicable-short-discrete; future loops require pause/stop/hide review",
+      "noMotionNoAudio": "same semantic state accessible immediately",
+      "focusAndAria": "existing component keyboard/ARIA contract unchanged across all skins",
+      "audio": {
+        "candidateEventId": "quest-reward",
+        "eligibility": "optional-with-explicit-consumer-opt-in",
+        "neverOnlyFeedback": true
+      },
+      "performance": {
+        "benchmark": "not-run",
+        "risk": "avoid layout thrash/continuous paints"
+      },
+      "skinRef": "moonframe-motion-skin-matrix-v0.1.json",
+      "testsRequired": [
+        "immediate state with animations disabled",
+        "reduced motion live/first paint",
+        "interruption and unmount",
+        "keyboard/touch/AT invariance",
+        "forced-colors and zoom",
+        "15 skins Light/Dark"
+      ],
+      "readiness": "specified-not-implemented",
+      "evidence": {
+        "browser": null,
+        "manualAT": null,
+        "reviewer": null,
+        "screenshot": null
+      }
+    }
+  ]
+}
