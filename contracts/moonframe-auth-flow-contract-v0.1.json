@@ -1,0 +1,5180 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-AUTH-FLOWS-002",
+  "authority": "New flow-to-existing block/page mapping; canonical block/page IDs remain in existing manifests; no UI source.",
+  "canonicalCatalog": "moonframe-auth-ui-catalog-v0.1.json",
+  "canonicalTheme": "moonframe-theme-contract-v1.3.json",
+  "status": "specified-provisional-not-implemented",
+  "states": [
+    {
+      "id": "idle",
+      "meaning": "initial with no operation pending",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "editing",
+      "meaning": "fields edited; display validation hints only",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "invalid",
+      "meaning": "client/app supplied invalid data and field links",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "submitting",
+      "meaning": "user intent emitted exactly once",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "provider-pending",
+      "meaning": "external ceremony/challenge/redirect ongoing",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "verification-pending",
+      "meaning": "waiting for safe confirmed verification result",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "success-confirmed",
+      "meaning": "trusted integration returned success AND authoritative session or operation result confirmed",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "failure-generic",
+      "meaning": "safe generic failure from trusted adapter",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "failure-retryable",
+      "meaning": "retry available after app/provider permits",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "failure-terminal",
+      "meaning": "no retry; safe support/return path",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "cancelled",
+      "meaning": "explicit user cancellation or user gesture denied",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "expired",
+      "meaning": "trusted challenge/link/session expired",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "rate-limited",
+      "meaning": "provider/server timeout metadata; no client fake limiter",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "offline",
+      "meaning": "consumer supplied offline/network state",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "provider-unavailable",
+      "meaning": "capability or service unavailable",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "unsupported",
+      "meaning": "unsupported browser/factor/integration",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "permission-denied",
+      "meaning": "server-derived authorization result",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "stale-result-ignored",
+      "meaning": "old callback/request ID discarded without changing current flow",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "locked",
+      "meaning": "backend-safe lockout message without enumeration",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    },
+    {
+      "id": "session-revoked",
+      "meaning": "server-reported session ended",
+      "source": "provider-safe normalized when authoritative, or UI-only where idle/editing/invalid/cancelled/stale-result-ignored",
+      "display": "persistent text for security-critical failure; visual tone cannot alter meaning",
+      "announcement": "polite status when pending, assertive error only where appropriate, avoid duplicate announcements",
+      "status": "specified-not-tested"
+    }
+  ],
+  "events": [
+    {
+      "id": "submit",
+      "classification": "safe-request",
+      "notes": "Button/form submit intent; credential values remain ephemeral and inaccessible to generic event/telemetry",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "choose-provider",
+      "classification": "safe-request",
+      "notes": "Provider ID must be allowlisted by trusted config; no arbitrary URL",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "begin-passkey",
+      "classification": "safe-request",
+      "notes": "Browser ceremony only after app/provider invocation",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "submit-factor",
+      "classification": "safe-request",
+      "notes": "OTP/recovery secret never serialized in global event payload",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "resend",
+      "classification": "safe-request",
+      "notes": "Provider/server decides rate limit and whether identity exists",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "cancel",
+      "classification": "ui-only",
+      "notes": "Cancels presentation, not necessarily server challenge or session",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "retry",
+      "classification": "safe-request",
+      "notes": "Allowed only when trusted safe retry metadata says retryable",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "request-recovery",
+      "classification": "safe-request",
+      "notes": "Generic privacy response; anti-enumeration",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "reauthenticate",
+      "classification": "safe-request",
+      "notes": "App/provider enforces sensitive action authentication",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "session-revoke-intent",
+      "classification": "safe-request",
+      "notes": "Never claim session revoked until server acknowledgement",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "org-switch-intent",
+      "classification": "safe-request",
+      "notes": "Tenant context never changed solely by skin/UI state",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "member-change-intent",
+      "classification": "safe-request",
+      "notes": "All role/invite changes checked server-side",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "signout-intent",
+      "classification": "safe-request",
+      "notes": "Must be confirmed by server before success label",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    },
+    {
+      "id": "return",
+      "classification": "navigation-intent",
+      "notes": "Opaque trusted destination ID; app validates allowlist",
+      "publicEnvelope": {
+        "flowId": "canonical flow ID",
+        "interactionId": "non-secret opaque correlation id",
+        "reason": "enum from normalized callback",
+        "safeReferenceId": "optional; never an auth code/secret"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "from": "idle",
+      "event": "edit",
+      "to": "editing",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "idle",
+      "event": "submit",
+      "to": "submitting",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "editing",
+      "event": "submit",
+      "to": "submitting",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "editing",
+      "event": "invalid-input",
+      "to": "invalid",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "invalid",
+      "event": "edit",
+      "to": "editing",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "submitting",
+      "event": "provider-started",
+      "to": "provider-pending",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "submitting",
+      "event": "server-confirmed-success",
+      "to": "success-confirmed",
+      "guard": "requires trusted integration/server result; UI click cannot cause success",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "submitting",
+      "event": "safe-error",
+      "to": "failure-generic",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "server-confirmed-success",
+      "to": "success-confirmed",
+      "guard": "requires trusted integration/server result; UI click cannot cause success",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "needs-verification",
+      "to": "verification-pending",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "safe-error",
+      "to": "failure-generic",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "verification-pending",
+      "event": "server-confirmed-success",
+      "to": "success-confirmed",
+      "guard": "requires trusted integration/server result; UI click cannot cause success",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "verification-pending",
+      "event": "safe-error",
+      "to": "failure-generic",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "submitting",
+      "event": "rate-limit",
+      "to": "rate-limited",
+      "guard": "server/provider retryAfter and cooldown, not local security decision",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "expired",
+      "to": "expired",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "verification-pending",
+      "event": "expired",
+      "to": "expired",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "submitting",
+      "event": "offline",
+      "to": "offline",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "cancel",
+      "to": "cancelled",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "idle",
+      "event": "unsupported",
+      "to": "unsupported",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "unavailable",
+      "to": "provider-unavailable",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "failure-retryable",
+      "event": "retry",
+      "to": "submitting",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "rate-limited",
+      "event": "retry-when-permitted",
+      "to": "submitting",
+      "guard": "server/provider retryAfter and cooldown, not local security decision",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "expired",
+      "event": "request-new",
+      "to": "submitting",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "stale-result",
+      "to": "stale-result-ignored",
+      "guard": "match challenge/session/tenant correlation before applying result",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "stale-result-ignored",
+      "event": "resume-current",
+      "to": "provider-pending",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    },
+    {
+      "from": "provider-pending",
+      "event": "terminal",
+      "to": "failure-terminal",
+      "guard": "semantic intent must match pending operation",
+      "sideEffects": "UI presentation only. Network, session, protocol and storage owned by consumer/provider."
+    }
+  ],
+  "flowGroups": [
+    {
+      "id": "entry",
+      "requiredCapabilityCandidates": [
+        "password",
+        "oauth",
+        "magic-link",
+        "email-otp",
+        "passkey",
+        "sso"
+      ]
+    },
+    {
+      "id": "registration",
+      "requiredCapabilityCandidates": [
+        "registration",
+        "verify-email",
+        "invitations",
+        "organizations"
+      ]
+    },
+    {
+      "id": "recovery",
+      "requiredCapabilityCandidates": [
+        "password-reset",
+        "recovery-codes",
+        "step-up",
+        "sessions"
+      ]
+    },
+    {
+      "id": "mfa-passkey",
+      "requiredCapabilityCandidates": [
+        "totp",
+        "mfa",
+        "recovery-codes",
+        "passkey"
+      ]
+    },
+    {
+      "id": "account",
+      "requiredCapabilityCandidates": [
+        "sessions",
+        "account-linking",
+        "verify-email",
+        "security-activity"
+      ]
+    },
+    {
+      "id": "organization",
+      "requiredCapabilityCandidates": [
+        "organizations",
+        "invitations",
+        "sso",
+        "scim",
+        "authorization"
+      ]
+    },
+    {
+      "id": "onboarding",
+      "requiredCapabilityCandidates": [
+        "onboarding",
+        "organizations",
+        "verify-email",
+        "mfa"
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "auth-email-password-signin",
+      "group": "entry",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-form",
+      "primaryPageRef": "template-sign-in-minimal",
+      "requiredCapability": "password",
+      "permittedIntents": [
+        "submit",
+        "forgot",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-username-password-signin",
+      "group": "entry",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-form",
+      "primaryPageRef": "template-sign-in-minimal",
+      "requiredCapability": "password",
+      "permittedIntents": [
+        "submit",
+        "forgot",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-social-provider",
+      "group": "entry",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-social",
+      "primaryPageRef": "template-sign-in-split",
+      "requiredCapability": "oauth-oidc",
+      "permittedIntents": [
+        "choose-provider",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-passwordless-email",
+      "group": "entry",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-magic-link-request",
+      "primaryPageRef": "template-magic-link",
+      "requiredCapability": "magic-link",
+      "permittedIntents": [
+        "submit",
+        "resend",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-email-otp",
+      "group": "entry",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-otp-challenge",
+      "primaryPageRef": "template-magic-link",
+      "requiredCapability": "email-otp",
+      "permittedIntents": [
+        "submit",
+        "resend",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-phone-sms-otp",
+      "group": "entry",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-otp-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "sms",
+      "permittedIntents": [
+        "submit",
+        "resend",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-passkey-signin",
+      "group": "entry",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-passkey",
+      "primaryPageRef": "template-passkey-signin",
+      "requiredCapability": "passkey",
+      "permittedIntents": [
+        "begin",
+        "cancel",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-enterprise-domain-discovery",
+      "group": "entry",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sso-discovery",
+      "primaryPageRef": "template-sign-in-enterprise",
+      "requiredCapability": "sso",
+      "permittedIntents": [
+        "submit",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-enterprise-provider-return",
+      "group": "entry",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-idp-redirect-status",
+      "primaryPageRef": "template-sso-callback",
+      "requiredCapability": "sso",
+      "permittedIntents": [
+        "return",
+        "cancel",
+        "retry"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-remember-me-policy",
+      "group": "entry",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-form",
+      "primaryPageRef": "template-sign-in-minimal",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "submit",
+        "disable"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-create-account",
+      "group": "registration",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-up-form",
+      "primaryPageRef": "template-sign-up",
+      "requiredCapability": "registration",
+      "permittedIntents": [
+        "submit",
+        "sign-in"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-email-verify",
+      "group": "registration",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-email-verification",
+      "primaryPageRef": "template-verify-email",
+      "requiredCapability": "verify-email",
+      "permittedIntents": [
+        "resend",
+        "continue"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-invite-accept",
+      "group": "registration",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-invitation-accept",
+      "primaryPageRef": "template-invite-accept",
+      "requiredCapability": "invitations",
+      "permittedIntents": [
+        "accept",
+        "decline"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-invite-expired",
+      "group": "registration",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-invitation-accept",
+      "primaryPageRef": "template-invite-accept",
+      "requiredCapability": "invitations",
+      "permittedIntents": [
+        "request-new",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-workspace-create",
+      "group": "registration",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-workspace-setup",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "submit",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-identity-link-confirm",
+      "group": "registration",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-connected-accounts",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "account-linking",
+      "permittedIntents": [
+        "confirm",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-verification-pending",
+      "group": "registration",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-email-verification",
+      "primaryPageRef": "template-verify-email",
+      "requiredCapability": "verify-email",
+      "permittedIntents": [
+        "resend",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-forgot-password-request",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-password-recovery",
+      "primaryPageRef": "template-forgot-password",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "submit",
+        "return"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-generic-reset-confirmation",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-forgot-password",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "return",
+        "contact-support"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-reset-password",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-password-reset-form",
+      "primaryPageRef": "template-reset-password",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "submit",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-expired-or-used-reset",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-reset-password",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "request-new",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-lost-factor",
+      "group": "recovery",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-recovery-codes",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "recovery-codes",
+      "permittedIntents": [
+        "choose-recovery",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-session-expired",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-session-expired",
+      "primaryPageRef": "template-sign-in-minimal",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "reauthenticate",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-session-revoked",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-session-expired",
+      "primaryPageRef": "template-sign-in-minimal",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "reauthenticate",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-step-up-reauth",
+      "group": "recovery",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-mfa-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "step-up",
+      "permittedIntents": [
+        "begin",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-account-locked",
+      "group": "recovery",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-account-locked",
+      "primaryPageRef": "template-account-locked",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "return",
+        "request-help"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-factor-choice",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-mfa-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "mfa",
+      "permittedIntents": [
+        "select-factor",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-totp-challenge",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-otp-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "totp",
+      "permittedIntents": [
+        "submit",
+        "retry",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-mfa-enrollment",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-mfa-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "mfa",
+      "permittedIntents": [
+        "begin",
+        "verify",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-recovery-code-disclosure",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-recovery-codes",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "recovery-codes",
+      "permittedIntents": [
+        "acknowledge",
+        "copy-on-intent"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-recovery-code-verify",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-otp-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "recovery-codes",
+      "permittedIntents": [
+        "submit",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-passkey-register",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sign-in-passkey",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "passkey",
+      "permittedIntents": [
+        "begin",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-passkey-rename-remove",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-connected-accounts",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "passkey",
+      "permittedIntents": [
+        "rename-intent",
+        "remove-intent"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-passkey-unsupported",
+      "group": "mfa-passkey",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-passkey-signin",
+      "requiredCapability": "passkey",
+      "permittedIntents": [
+        "alternate",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-push-approval",
+      "group": "mfa-passkey",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-mfa-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "push-mfa",
+      "permittedIntents": [
+        "approve-external",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-sms-factor",
+      "group": "mfa-passkey",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-otp-challenge",
+      "primaryPageRef": "template-mfa-verify",
+      "requiredCapability": "sms",
+      "permittedIntents": [
+        "submit",
+        "alternate"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-security-overview",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-active-sessions",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "open-detail"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-active-sessions",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-active-sessions",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "revoke-intent",
+        "refresh"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-signout-others",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-active-sessions",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "sessions",
+      "permittedIntents": [
+        "confirm-revoke",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-connected-providers",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-connected-accounts",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "account-linking",
+      "permittedIntents": [
+        "unlink-intent",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-change-password",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-password-reset-form",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "password-reset",
+      "permittedIntents": [
+        "reauth",
+        "submit"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-change-email-phone",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-email-verification",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "verify-email",
+      "permittedIntents": [
+        "submit",
+        "verify"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-security-activity",
+      "group": "account",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-active-sessions",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "security-activity",
+      "permittedIntents": [
+        "refresh",
+        "detail"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-account-deletion",
+      "group": "account",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "account-deletion",
+      "permittedIntents": [
+        "confirm",
+        "reauth",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-api-key-reveal-once",
+      "group": "account",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-security-center",
+      "requiredCapability": "api-keys",
+      "permittedIntents": [
+        "reveal-once",
+        "copy-on-intent"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-org-switch",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-organization-switcher",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "select",
+        "confirm"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-member-list",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-team-invitation-list",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "filter",
+        "inspect"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-invite-resend-revoke",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-team-invitation-list",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "invitations",
+      "permittedIntents": [
+        "send",
+        "resend",
+        "revoke"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-role-change-intent",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-team-invitation-list",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "propose-role",
+        "confirm"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-sso-required",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-sso-discovery",
+      "primaryPageRef": "template-sign-in-enterprise",
+      "requiredCapability": "sso",
+      "permittedIntents": [
+        "continue",
+        "cancel"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "verification-pending",
+        "session-revoked",
+        "stale-result-ignored",
+        "permission-denied"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-tenant-mismatch",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-organization-switcher",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "switch",
+        "return"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-membership-removed",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-permission-request",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "return",
+        "request-access"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-scim-sync-status",
+      "group": "organization",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-team-invitation-list",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "scim",
+      "permittedIntents": [
+        "refresh",
+        "contact-admin"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-access-denied",
+      "group": "organization",
+      "priority": "P1",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-permission-request",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "authorization",
+      "permittedIntents": [
+        "request-access",
+        "return"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-entitlement-stale",
+      "group": "organization",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-auth-error-panel",
+      "primaryPageRef": "template-team-membership",
+      "requiredCapability": "authorization",
+      "permittedIntents": [
+        "retry",
+        "return"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-welcome-checklist",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-welcome-checklist",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "onboarding",
+      "permittedIntents": [
+        "continue",
+        "skip-optional"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-complete-profile",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-onboarding-stepper",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "onboarding",
+      "permittedIntents": [
+        "save",
+        "continue"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-verify-before-continue",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-email-verification",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "verify-email",
+      "permittedIntents": [
+        "resend",
+        "continue"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-invite-teammates",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-team-invitation-list",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "invitations",
+      "permittedIntents": [
+        "invite",
+        "skip-optional"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-choose-workspace",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-organization-switcher",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "organizations",
+      "permittedIntents": [
+        "select",
+        "continue"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-setup-security-factor",
+      "group": "onboarding",
+      "priority": "P2",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-mfa-challenge",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "mfa",
+      "permittedIntents": [
+        "begin",
+        "skip-if-allowed"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    },
+    {
+      "id": "auth-connect-integration",
+      "group": "onboarding",
+      "priority": "P3",
+      "readiness": "specified-provisional-not-implemented",
+      "primaryBlockRef": "block-onboarding-stepper",
+      "primaryPageRef": "template-auth-onboarding",
+      "requiredCapability": "onboarding",
+      "permittedIntents": [
+        "connect-intent",
+        "skip-if-allowed"
+      ],
+      "initialState": "idle",
+      "stateMachine": "default-auth-state-machine",
+      "applicableStates": [
+        "idle",
+        "editing",
+        "invalid",
+        "submitting",
+        "provider-pending",
+        "success-confirmed",
+        "failure-generic",
+        "failure-retryable",
+        "cancelled",
+        "expired",
+        "rate-limited",
+        "offline",
+        "provider-unavailable",
+        "unsupported"
+      ],
+      "exceptionStates": [
+        "stale-result-ignored"
+      ],
+      "providerTrust": "No success unless trusted provider/server result corroborates action; no implicit session establishment",
+      "inputOwnership": "App/form locally owns transient input; generic analytics/event payload holds no raw secrets",
+      "privacyRequirements": [
+        "no credential/OTP/session ID in generic intent, analytics, URL, logs",
+        "generic responses when identity could be enumerated",
+        "provider/server determines challenge, rate limit, permission and success"
+      ],
+      "accessibility": [
+        "native labels/autocomplete where supported",
+        "focus first invalid field or summary",
+        "keyboard equivalent and readable persistently displayed failure",
+        "RTL/reflow/forced-colors/reduced-motion parity"
+      ],
+      "responsive": "four existing layouts if applicable; same meaning on narrow viewport",
+      "skinParity": "15 canonical IDs × Light/Dark; zero approved appearances",
+      "edgeStates": [
+        "duplicate-submit",
+        "stale-callback",
+        "cancelled",
+        "rate-limited",
+        "expired",
+        "offline",
+        "provider-unavailable"
+      ],
+      "acceptance": [
+        "no premature success",
+        "safe error and trusted origin",
+        "single intent for keyboard/touch",
+        "focus and reading order preserved"
+      ],
+      "statusEvidence": {
+        "componentCode": null,
+        "providerIntegration": null,
+        "browserTest": null,
+        "manualATReview": null
+      },
+      "openDecisions": [
+        "capability-specific exact payload and fallback policy after consumer/provider ADR"
+      ]
+    }
+  ]
+}

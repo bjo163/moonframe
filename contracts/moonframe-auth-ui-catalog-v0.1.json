@@ -143,5 +143,16 @@
     "moonledger"
   ],
   "providerIntegrationStatus": "none-installed",
-  "implementationStatus": "not-implemented"
+  "implementationStatus": "not-implemented",
+  "flowModelRef": "moonframe-auth-flow-contract-v0.1.json",
+  "providerCapabilityRef": "moonframe-auth-provider-capability-matrix-v0.1.json",
+  "threatModelRef": "moonframe-auth-threat-model-v0.1.json",
+  "validatedFixtureRef": "fixtures/auth-security-v0.1.json",
+  "statusClarification": "Existing authBlocks/flowGroups/layoutVariants remain canonical catalog IDs; detailed flow states/events/capability preconditions belong in linked focused contract; no implemented auth engine.",
+  "protocolBoundary": {
+    "securityAuthority": "app/backend/IdP owns OAuth/OIDC state nonce PKCE issuer signature redirect validation and session",
+    "dataMinimization": "public semantic intent envelope forbids raw passwords/OTP/recovery codes/tokens/session identifiers",
+    "uiSuccessCondition": "only trusted completed result, NEVER on button activation"
+  },
+  "releaseReadiness": "specified-provisional-not-implemented"
 }
