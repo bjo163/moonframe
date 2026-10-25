@@ -416,6 +416,9 @@ fail(plannedTypes.size>=6 && plannedTypes.has('shadow') &&
      'Shadow must remain proposed-but-schema-unsupported pending fixture proof');
 fail([...schemaSupportedTypes].every(x=>plannedTypes.has(x)),
      'Schema type includes a type not proposed in source plan');
+fail(sameSet(source.subset.fixtureProvenTypes, ['color','dimension','duration','number']) &&
+     [...source.subset.fixtureProvenTypes].every(x=>schemaSupportedTypes.has(x)),
+     'Fixture-proven token types must match the bounded resolver proof');
 fail(source.sourceLayout?.overlayOrder?.length===5 &&
      source.sourceLayout.overlayOrder[0]==='reference-only-definition' &&
      source.sourceLayout.overlayOrder[4]==='skins/<skin-id>/<effective-mode>' &&

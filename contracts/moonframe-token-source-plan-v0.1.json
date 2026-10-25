@@ -5,7 +5,7 @@
   "status": "source-values-not-created",
   "dictionary": "moonframe-token-dictionary-v0.1.json",
   "proposedCanonicalValueSource": "tokens/source/**/*.tokens.json (future; not present)",
-  "formatDecision": "PROPOSED bounded DTCG 2025.10 source (full conformance not claimed); ADR-0002 pending MF-013 fixture.",
+  "formatDecision": "PROPOSED Moonframe-specific DTCG 2025.10-inspired subset; JSON Pointer support is excluded, so DTCG conformance is explicitly not claimed; ADR-0002 fixture proof passes, maintainer approval pending.",
   "subset": {
     "proposedProperties": [
       "$type",
@@ -14,7 +14,7 @@
       "$deprecated",
       "$extensions"
     ],
-    "aliasSyntax": "{path.to.token} whole-token references only; no $ref/property refs until compatibility spike",
+    "aliasSyntax": "{path.to.token} whole-token references only in the Moonframe subset; DTCG 2025.10 JSON Pointer $ref is excluded, so this subset is not a conforming DTCG implementation",
     "allowedTypes": [
       "color",
       "dimension",
@@ -24,6 +24,12 @@
       "fontWeight",
       "cubicBezier",
       "shadow"
+    ],
+    "fixtureProvenTypes": [
+      "color",
+      "dimension",
+      "duration",
+      "number"
     ],
     "unsupportedFeatures": "Resolver module modifiers, $extends, arbitrary CSS strings/URL references, property-level $ref, complex gradients, unverified wide-gamut transforms. Reject or defer at boundary.",
     "validation": [
@@ -36,7 +42,7 @@
       "contrast role/surface pairs",
       "deterministic generation"
     ],
-    "typeDecisionStatus": "proposed; shadow transforms especially unverified; no processor selected"
+    "typeDecisionStatus": "fixture-proven only for color, dimension, duration and number; no production processor selected; broader types require fixtures"
   },
   "outputTargets": [
     "CSS custom properties",

@@ -18,3 +18,5 @@ jobs:
         run: node scripts/validate-contracts.mjs
       - name: Run validator negative self-tests
         run: node scripts/validate-contracts.mjs --self-test
+      - name: Prove bounded token fixture
+        run: node scripts/token-subset-proof.mjs

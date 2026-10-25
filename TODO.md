@@ -112,9 +112,9 @@
 
 **Milestone artifact:** deterministic fixture CSS/types. **Gate:** blocked: #5 and generator proof. Entry: #5 bounded DTCG ADR; may research independently of M1. See [release matrix](docs/architecture/release-train-and-adoption.md).
 
-- [ ] **MF-013 — Decide bounded DTCG subset and resolver compatibility** · **P1 / M** · **status:** `ready` · **lane:** C · **deps:** — · **issue:** [#5](https://github.com/bjo163/moonframe/issues/5)
+- [ ] **MF-013 — Decide bounded DTCG subset and resolver compatibility** · **P1 / M** · **status:** `in-progress` · **lane:** C · **deps:** — · **issue:** [#5](https://github.com/bjo163/moonframe/issues/5)
   - **Expected file owner/scope:** `docs/adr/0002-token-format-and-generator.md; token fixtures`. **AC:** Type/value/alias cases, edge-cycles, tool versions and source citations approved.
-  - **Validation/evidence:** Node fixture proof; node scripts/validate-contracts.mjs. **Risk/rollback:** Unknown generator support; don't claim full DTCG conformity. **Adoption/output:** deterministic fixture CSS/types. **DoD:** evidence-linked scoped diff + valid checks + current GitHub status sync; no release claim without milestone gate.
+  - **Validation/evidence:** [DTCG-inspired subset fixture proof](scripts/token-subset-proof.mjs); Node 22 CI configuration; [ADR-0002](docs/adr/0002-token-format-and-generator.md); [source plan](contracts/moonframe-token-source-plan-v0.1.json). Fixture command passes locally on Node v24.22.1; CI Node 22 confirmation pending. Tailwind output is illustrated but not compiled. **Risk/rollback:** Unknown production-generator support; subset explicitly excludes DTCG-required JSON Pointer so it is not conformant. **Adoption/output:** deterministic fixture CSS, no production maps or TS types. **DoD:** owner accepts boundary/runtime, CI proof passes, and production migration remains gated.
 
 - [ ] **MFI-005 — Reconcile token layers, mode resolution, runtime bridge** · **P1 / S** · **status:** `blocked` · **lane:** C · **deps:** MF-013,MFI-002 · **issue:** not-created
   - **Expected file owner/scope:** `docs/architecture/token-pipeline.md; token plan`. **AC:** One owner for semantic names and value source; 30 production slots pending.
