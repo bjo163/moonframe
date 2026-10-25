@@ -1,0 +1,455 @@
+# Moonframe UI — Design System Bible
+
+**Document ID:** MF-BIBLE-001  
+**Version:** 1.3.0 — repository edition  
+**Status:** Specification; production implementation and asset creation have not started  
+**Last reviewed:** 2026-10-25  
+**Working package:** `@moonframe/ui` (verify scope/package availability before publishing)  
+**Target stack:** React + TypeScript + Tailwind CSS v4, pending repository audit
+
+> **North star:** One behavioral system. Fifteen distinct visual grammars. Thirty baseline appearances. Skin switching must change the design—not merely the colors.
+
+This Bible is the primary design and engineering contract. It supersedes earlier concept notes wherever they conflict. It is a specification, not evidence that components, tokens, artwork, audio, or tests already exist.
+
+## 1. Product definition
+
+Moonframe is a first-party UI design system for Moon ecosystem apps. It comprises:
+
+1. **Design language** — semantic tokens, type, rhythm, geometry, density, component recipes, layout grammar, motion, and decorative language.
+2. **Theme engine** — runtime resolution of skin, Light/Dark/System, density, motion, and contrast preferences.
+3. **Component library** — shared React components with consistent API, behavior, accessibility, and state semantics.
+4. **Premium blocks and templates** — reusable page patterns and starter layouts; these are not product business logic.
+5. **Skin Lab** — internal page to compare all baseline appearances, common components, states, breakpoints, and accessibility results.
+6. **Original asset packs** — first-party vectors, marks, logos, textures, raster exports, icon families, illustrations and optional sound feedback, governed by provenance and licensing metadata.
+
+### It is not
+
+- Fifteen separate component libraries or fifteen forks of the same component.
+- A color-theme selector that leaves every layout and component treatment unchanged.
+- The Moonships infrastructure engine, Moonradio messaging engine, an RPG engine, or an ERP/accounting domain engine.
+- Official shadcn/ui or a guarantee of parity before an upstream baseline has been audited and pinned.
+- A promise that visual style may override usability, semantics, keyboard behavior, accessibility or performance.
+
+## 2. Locked decisions
+
+- The first catalog contains **exactly 15 stable skin IDs**.
+- Each skin defines **Light** and **Dark**: 15 × 2 = **30 baseline appearances**.
+- `system` resolves to Light or Dark according to the OS/browser preference. It is a mode preference, not another skin.
+- Skin, appearance mode, density, motion preference and contrast preference are independent axes.
+- Components share behavioral semantics and public APIs. Skins may supply visual recipes, asset mappings, and layout composition strategies.
+- Classic is a shadcn-style compatibility baseline, not a product affiliation claim.
+- Moonquest contains optional game-oriented presentation patterns only; game rules and state belong to the consuming app.
+- Moonledger contains a professional, compact ERP visual language only; accounting and business rules belong to the consuming app.
+- Heavy decorative assets, audio and advanced effects must be optional and lazily loaded where practical.
+- Never mark a component/skin as production-ready based on a mockup or compilation alone.
+
+## 3. The design laws
+
+### Law 1 — Skin means a complete visual grammar
+A skin must specify page composition, shell/navigation, geometry, typography, surface construction, component recipes, data presentation, media treatment, motion signature and decoration policy. Color is only one dimension.
+
+### Law 2 — Behavior is invariant
+A button stays a button. Dialog focus handling, keyboard semantics, form validation, labels, disabled/loading semantics and screen-reader announcements must not change between skins.
+
+### Law 3 — Shared primitive, approved visual recipe
+Prefer one semantic component API with controlled recipe differences. If a skin requires a different DOM or interaction model, document it as an architecture decision and prove why a recipe cannot satisfy the requirement.
+
+### Law 4 — Semantic tokens first
+Product code should use semantic tokens such as `surface.canvas`, `text.primary`, `border.subtle`, `action.primary` and `status.danger`. Do not scatter raw hex values across components. Skin-specific raw values belong in the token source.
+
+### Law 5 — Density is not a skin
+Compact/comfortable/spacious is a separate preference. Moonledger may default to compact density; it must not silently force all consumers to compact. Respect target size and accessibility constraints.
+
+### Law 6 — Decoration has a budget
+Texture, grain, halftone, glitch, glow, blur, metallic gradients and brush marks must never obscure text, control boundaries, data, focus indicators or error states. Offer a reduced-effects path.
+
+### Law 7 — Original assets need provenance
+Each first-party asset must have an owner/creator, source/provenance, license/status, format, intended context, accessibility description where relevant, generation/editing notes when applicable, and approval status.
+
+### Law 8 — Audio is opt-in
+No audio on page load. Respect mute and reduced-motion/user preferences; audio feedback is supplementary, volume-limited, short, and never the only communication channel. Provide a global off switch and sensible event throttling.
+
+### Law 9 — Fail safely
+Unknown skin → Classic. Unknown mode → System. Invalid token reference → build/validation failure in CI, not a silent production surprise. A failed asset load must leave the interface usable.
+
+### Law 10 — A green build is not a release
+Release needs typecheck, lint, unit/integration tests, accessibility checks, token coverage checks, visual review, keyboard checks, consumer build and documented limitations.
+
+## 4. The 15 skin catalog and unique visual territories
+
+These territories are exclusive art-direction briefs. Each pairwise comparison must evaluate the actual rendered result; names and color alone do not prove uniqueness.
+
+| ID | Skin | Composition & geometry | Signature language | Must not become |
+|---|---|---|---|---|
+| `moonpunk` | Moonpunk | Strong blocks, offset frames, asymmetric dashboard zones | Acid-lime punk, manga ink, thick outlines, hard offset shadows, ripped-edge accents | Generic neon dashboard |
+| `moonriot` | Moonriot | Angular split panels, sharp diagonals, deliberate disruption | Riot/editorial cyberpunk, red signal marks, cut-up typography | Moonpunk recolored red |
+| `moonzine` | Moonzine | Magazine spreads, collage grids, uneven editorial rhythm | Paper artifacts, pasted labels, photocopy grain, editorial image crops | A normal card grid with stickers |
+| `moonhalftone` | Moonhalftone | Manga panel pacing, ink-heavy framing, raster fields | Monochrome ink, screentone, dot fields, bold negative space | Moonzine without color |
+| `moonglitch` | Moonglitch | Telemetry rails, terminal bands, data-first zones | Signal interruption, scanlines, diagnostic glyphs, controlled digital distortion | Decorative cyberpunk without utility |
+| `moonsmash` | Moonsmash | Impact zones, radial composition, oversized focal points | Kinetic bursts, explosive transitions, onomatopoeia-inspired display typography | Moonpunk with orange accents |
+| `moonink` | Moonink | Organic composition with hand-drawn directional flow | Brush ink, expressive strokes, illustration-led storytelling | Generic blue SaaS UI with a brush image |
+| `mooncrash` | Mooncrash | Mechanical plates, stacked utility sections, hazard zones | Industrial marking, numbered plates, caution stripes, rugged controls | A hazardous theme that sacrifices clarity |
+| `moonpanel` | Moonpanel | Strict modular grid, visible frames and panel sequencing | Comic-panel hierarchy, clear gutters, bounded content modules | Moonhalftone with rectangular cards |
+| `moonscrawl` | Moonscrawl | Sketchbook canvas, notes in margins, loose annotations | Draft marks, hand-drawn arrows, imperfect lines, exploratory composition | Randomly messy or unreadable UI |
+| `moonraw` | Moonraw | Exposed structure, rigid geometry, minimal decoration | Raw brutalism, plain surfaces, visible divisions, restrained type | A generic stripped-down theme |
+| `moonchrome` | Moonchrome | Layered reflective surfaces and precise contours | Metallic edges, controlled spectral highlights, futuristic material response | Glossy glassmorphism everywhere |
+| `classic` | Classic | Familiar application shell, restrained surfaces, conventional hierarchy | Shadcn-style baseline, predictable controls, limited decoration | Claiming to be the official shadcn product |
+| `moonquest` | Moonquest | Adventure HUD, quest journal, inventory and progression panels | RPG framing, rarity tiers, progress/XP visualization, map/log motifs | Game mechanics embedded in UI primitives |
+| `moonledger` | Moonledger | Dense workbench, persistent filters, tables, split panes | Professional ERP, compact hierarchy, precise alignment, restrained accents | Tiny controls, illegible tables, or playful game styling |
+
+### Pairwise uniqueness gate
+
+There are 15 × 14 / 2 = **105 unique skin pairs**. Record an evaluation for every pair. At least four of these eight non-color dimensions must differ materially (target five or more for neighboring concepts):
+
+1. Page/shell composition.
+2. Geometry and shape language.
+3. Typography hierarchy and display treatment.
+4. Surface construction, borders, elevation and framing.
+5. Data presentation and navigation.
+6. Image/texture/illustration treatment.
+7. Component visual recipes.
+8. Motion and transition signature.
+
+This numeric threshold is a review heuristic, not a proof of originality. Reviewers must additionally confirm that each skin remains recognizable in grayscale and with artwork/effects removed. Unreviewed pair status is `not-reviewed`, never `pass`.
+
+## 5. The appearance model
+
+The resolved UI state is a tuple:
+
+`skin × appearance × density × motion × contrast × viewport`
+
+- **Skin:** one of the 15 stable IDs.
+- **Appearance:** `light`, `dark`, or `system`; system resolves to light/dark.
+- **Density:** `compact`, `comfortable`, or `spacious`.
+- **Motion:** `full` or `reduced`, with operating-system preference honored by default.
+- **Contrast:** `normal` or `high`; OS forced-colors behavior must be respected.
+- **Viewport:** responsive layout state, not a theme.
+
+Persist user preferences safely. Handle invalid stored values, server rendering, hydration, no-JavaScript fallback and flash-of-wrong-theme. Use explicit root attributes (for example `data-skin`, `data-mode`, `data-density`, `data-motion`, `data-contrast`) and a single resolution function. Never construct unbounded Tailwind class names dynamically.
+
+## 6. Token architecture
+
+Use one source-of-truth token dictionary with typed tokens and references/aliases. Generate runtime CSS custom properties and framework integration from that source. Follow a DTCG-compatible model where practical, after validating toolchain support.
+
+### Token layers
+
+1. **Primitive/reference:** raw palette, base typography scales, base dimensions, radii, timings and shadows.
+2. **Semantic/global:** canvas, surface levels, foregrounds, primary/secondary actions, subtle borders, focus, selection, status colors, overlays, data visualization colors.
+3. **Skin visual grammar:** skin-only display type, geometry, border recipe, texture, artwork, shadow/material and layout recipes.
+4. **Mode mapping:** explicit semantic values for each skin's Light and Dark mode.
+5. **Component tokens:** only for meaningful, approved exceptions. Do not mint a token for every CSS declaration.
+6. **Runtime preferences:** density, reduced motion and high contrast.
+
+### Required token families
+
+- Color: canvas/surface/elevated/inverse, text, muted text, action, border, focus, selection, overlay, status, charts, code.
+- Typography: family, size, weight, line-height, letter-spacing, paragraph width, display scale and numeric/data styles.
+- Spacing and layout: spacing scale, page gutters, section rhythm, container widths, grid gaps, breakpoints.
+- Sizing: control heights, icon sizes, avatar sizes, touch targets, form row heights.
+- Geometry: radius, border width/style, outline width/offset, divider behavior.
+- Elevation/material: shadows, surface layers, glow, grain intensity and blur budgets.
+- Motion: duration, easing, distance, stagger, enter/exit recipe and reduced-motion alternative.
+- Layering: documented z-index scale for sticky UI, dropdowns, popovers, modals, toasts and tooltips.
+- Density: spacing and sizing aliases that preserve readability and target requirements.
+- Component semantics: deliberate tokens for high-value components only.
+- Asset references: logo, icon, texture and illustration IDs—never embed binary data in CSS tokens.
+
+### Token rules
+
+- Tokens need stable names, types, descriptions, owners and validation rules.
+- Avoid cyclic aliases, undefined references and mode holes.
+- Every required semantic token must resolve for all 30 baseline appearances.
+- A skin may deliberately share a token value with another skin, but its full visual grammar cannot collapse to palette-only differences.
+- High-contrast/forced-colors and reduced-motion modes may override visual recipes.
+- Final numeric values and font licenses require an approval pass; concept colors are not production-approved values.
+
+## 7. Component system and premium catalog
+
+Organize by user task and interaction type. Keep components tree-shakeable and importable without the entire library.
+
+### Foundations
+- ThemeProvider, SkinProvider/ThemeController, SkinSwitcher and AppearanceSwitcher.
+- Design token utilities, responsive container, Stack, Inline, Grid, Divider and VisuallyHidden.
+- Icon interface, Logo/BrandMark interface, Motion primitives, TooltipProvider.
+- Error boundary and optional feedback preference context.
+
+### Actions and navigation
+- Button, IconButton, ButtonGroup, Link, MenuBar, Breadcrumbs, Tabs, Pagination.
+- Sidebar, AppShell, Topbar, CommandPalette, NavigationRail, ContextMenu.
+- DropdownMenu, Menubar, NavigationMenu and keyboard-friendly mobile navigation.
+
+### Forms and input
+- Input, Textarea, Label, Field, Fieldset, FormMessage, Checkbox, RadioGroup, Switch.
+- Select, Combobox, Autocomplete, SearchInput, MultiSelect, DatePicker, DateRangePicker.
+- NumberInput, CurrencyInput, Slider, SegmentedControl, FileUpload, OTP input.
+- Form-level validation summaries and pending/submitting states.
+
+### Feedback and overlays
+- Alert, AlertDialog, Dialog, Drawer, Popover, Tooltip, Toast/Toaster, Sonner-like notifications.
+- Progress, Spinner, Skeleton, EmptyState, ErrorState, OfflineState, Confirmation flow.
+- StatusBadge, Tag, Kbd, Callout and non-color-only validation indicators.
+
+### Data and information
+- Card, StatCard, Avatar, AvatarGroup, Badge, Chip, Accordion, Collapsible.
+- Table, DataTable, sortable headers, column visibility, row selection, pagination.
+- FilterBar, FilterBuilder, saved views, bulk action toolbar, density switcher.
+- Timeline, ActivityFeed, TreeView, CommandList, Calendar, Kanban primitives.
+- Chart containers and accessible chart legends/summary alternatives; chart engine stays replaceable.
+
+### Specialized optional modules
+- **Moonquest:** quest card, reward/rarity badge, inventory slot, XP/progression bar, journal/map frame. Presentation only; consumer owns rules and save state.
+- **Moonledger:** dense data table presets, filter workbench, split detail pane, batch action toolbar, audit-log presentation. Consumer owns ERP data and accounting.
+- **Operations:** service health, resource metric, event stream and log viewer presentation. Consumer owns monitoring data and permissions.
+
+### Component contract (required for every exported component)
+
+- Public name, purpose, export path and owner.
+- Typed props; variants/sizes; controlled/uncontrolled rules where relevant.
+- Default, hover, active, focus-visible, disabled, loading, invalid, selected, empty, error and pending states as applicable.
+- Keyboard interactions and screen-reader labels/announcements.
+- Token/recipe mapping across all 15 skins and both modes.
+- Responsive behavior and overflow strategy.
+- Test IDs/interaction test plan without coupling the API to test implementation.
+- Documentation example, design specimen, known limitations and semver impact.
+- Explicit decision whether it belongs in core, optional module, template/block, or app code.
+
+## 8. Premium blocks and templates
+
+Blocks are copy/composition-level patterns built on components; templates combine blocks into page shells. They must not hide business logic.
+
+### Core templates
+- Application shell: sidebar/topbar/content, compact navigation rail and mobile navigation.
+- Dashboard: KPI row, trend area, activity feed, status panel and filters.
+- CRUD list/detail: search, filter, saved views, table, bulk actions, pagination and detail drawer.
+- Resource detail: tabs, metadata, activity, health/history and safe destructive actions.
+- Settings workspace: grouped settings, form validation, unsaved-change confirmation.
+- Analytics/reporting: filters, charts, data table, date ranges and export affordances.
+- Auth/layout examples only if required by consumer; no hardcoded auth provider.
+- Empty/error/loading/offline variants for every primary template.
+
+### Specialist templates
+- Operations command center (Moonships-inspired).
+- Communication workspace (Moonradio-inspired).
+- ERP workbench (Moonledger).
+- RPG dashboard / quest journal / inventory (Moonquest).
+- Editorial board, manga library or content workspace (Moonzine/Moonpanel).
+
+Template acceptance requires narrow-screen behavior, realistic content, long text, loading/empty/error data, keyboard operation, and verification in selected skins. Templates may opt into a skin's composition grammar; they must not force every app to use the same page layout.
+
+## 9. Original asset system
+
+All 15 skins must receive independent identity work. Do not recolor one generic logo 15 times and call them original.
+
+### Per-skin asset categories (planned)
+- Primary symbol/brand mark as editable SVG.
+- Wordmark and compact mark where relevant.
+- App icon and favicon source/exports.
+- Transparent raster exports (PNG at declared sizes); optimized WebP/AVIF only for appropriate imagery.
+- Unique decorative pattern/texture language (SVG or raster as suited).
+- Skin-specific illustrations or ornamental motifs where useful.
+- Component-level icon mapping only where the generic functional icon is insufficient.
+- Preview specimen and asset manifest.
+
+### Asset rules
+- SVG is the preferred source for scalable vector symbols; validate it and prohibit untrusted inline SVG/script payloads.
+- PNG is an export format, not the canonical source when the asset is vector.
+- Functional icons use a consistent icon API and accessible labels; decorative icons are hidden from assistive technology.
+- Avoid using a branded manga illustration as the only way to convey state.
+- Every file records stable asset ID, path, skin, format, dimensions/viewBox, light/dark usage, intended background, creator/provenance, license, optimization, accessibility treatment, status and checksum.
+- No copyrighted characters, copied brand marks, unlicensed fonts, or internet-scraped art without explicit rights.
+- Generated work still requires originality review and documented tool/prompt/editing provenance where applicable.
+- Keep asset packs optional and lazy-load large files; provide fallback if assets fail.
+
+### Sound and SFX contract (planned, off by default)
+- Small, original, cohesive feedback pack per chosen skin or pack-level sound profile.
+- Event taxonomy: success, warning, error, notification, interaction/confirm, optional game reward. Never sonify every click by default.
+- Sound must be user-enabled by a deliberate gesture; no playback on initial render.
+- Global mute, volume control, per-category preference, event cooldown, dedupe and safe fallback when audio is unavailable.
+- Never encode essential status solely with sound; pair with visual text/icon and accessible announcement.
+- Respect user expectations for reduced stimulation, accessibility settings and browser autoplay rules.
+- Optimize duration/encoding/size and lazy-load only after consent. Maintain a source file, web export, metadata and license/provenance for each sound.
+- Do not build/ship sound files until the product team approves the interaction sound policy.
+
+## 10. Technical architecture
+
+Suggested logical separation (adapt after repository audit):
+
+```text
+packages/
+  ui/                    # shared components and public API
+  tokens/                # canonical source + generated CSS/token exports
+  themes/                # 15 skin recipes and 30 semantic mode maps
+  assets/                # manifests and optional per-skin assets
+  icons/                 # functional icon facade and custom icons
+  motion/                # optional motion primitives
+  sound/                 # optional, opt-in sound controller and packs
+  blocks/                # reusable premium compositions
+  templates/             # page-level shells and examples
+apps/
+  skin-lab/               # appearance switcher and verification gallery
+docs/
+  ...                    # Bible, contracts, guides, ADRs, migration notes
+contracts/
+  ...                    # machine-readable token/theme/skin contracts
+```
+
+This is a target map, not a command to create every package immediately. Begin with the smallest package boundary that fits the repository. Split packages only when ownership, dependency, release or bundle-size reasons justify it.
+
+### Runtime resolution order
+1. Validate stored preferences.
+2. Resolve requested skin, falling back to Classic if unknown.
+3. Resolve `system` to the active Light/Dark preference without overwriting the user's selected mode.
+4. Apply density/motion/contrast and OS forced-colors handling.
+5. Apply semantic token map and approved skin recipes.
+6. Load optional visual/audio asset packs only if required and allowed.
+7. Render stable default styles before hydration; prevent avoidable theme flash.
+8. Report invalid preference/asset fallback in development diagnostics.
+
+### Dependency principles
+- Audit actual repo versions before choosing primitives or migrating.
+- Run a spike on Dialog, Select/Combobox and Dropdown/Menu before choosing or replacing Radix, Base UI or React Aria.
+- Keep interactive primitives replaceable behind Moonframe's public API.
+- Prefer explicit exports, tree-shakeable modules and no global side effects.
+- Avoid dynamic class generation that cannot be statically detected by Tailwind.
+- Support CSS variables and consumer override slots without requiring access to private internals.
+- Do not ship optional art, charts, game widgets or audio in the core entry point.
+
+## 11. Accessibility, safety and performance
+
+- Target WCAG 2.2 AA as the baseline; evaluate relevant criteria for every component and appearance.
+- Full keyboard navigation, visible focus, logical tab sequence, focus restoration and escape behavior for overlays.
+- Label association, error summary, status announcements and useful accessible names.
+- Contrast measured for text, controls, borders and focus—not judged by eye.
+- Never rely on color, texture, sound or animation alone to convey meaning.
+- Respect `prefers-reduced-motion`, forced-colors/high-contrast and zoom/reflow behavior.
+- Support screen readers on core templates and data tables.
+- Avoid excessive shadow, blur, large texture and animation costs; maintain useful behavior without decorative assets.
+- Make touch target decisions based on WCAG criteria and context; compact ERP mode cannot shrink targets blindly.
+- Sanitize externally supplied SVG/assets and avoid unsafe HTML injection.
+- Honor user preference and browser policy for audio; no autoplay.
+- Document data/telemetry behavior; library components must not silently phone home.
+
+## 12. Test and review strategy
+
+### Automated
+- Type checking and lint.
+- Token contract validation: completeness, token types, alias resolution, no cycles, mode coverage.
+- Theme manifest validation: exact 15 skin IDs, two baseline modes per skin, valid fallbacks.
+- Component unit and interaction tests.
+- Keyboard and accessibility automation plus manual assistive-technology checks for critical patterns.
+- Visual regression with stable fonts/viewports and reviewed baselines.
+- Consumer build/tree-shaking/package export checks.
+- Bundle-size budgets and optional asset/audio lazy-load checks.
+- License/provenance manifest validation.
+- Link/docs examples and schema validation.
+
+### Visual matrix
+- Every skin × Light/Dark: 30 baseline appearance checks.
+- Every component family: default plus relevant focus, hover, active, disabled, loading, invalid, empty and error states.
+- At minimum, representative desktop, tablet and mobile widths.
+- Risk-based cross-products for density, reduced motion, high contrast/forced-colors, and representative long/localized text.
+- Grayscale and decoration-off reviews for every skin and pairwise overlap scoring for all 105 pairs.
+- Classic/Moonpunk/Moonzine/Moonledger first as the four divergent prototype grammars; do not extrapolate completion to remaining skins.
+
+### Human review
+- Design review for distinctive grammar and visual hierarchy.
+- Keyboard review and manual screen-reader smoke test.
+- Product consumer review and migration check.
+- Asset originality/license review.
+- Release checklist with known issues, browser support and rollback notes.
+
+## 13. Skin Lab
+
+The internal Skin Lab must provide:
+
+- Selector for 15 skins and Light/Dark/System.
+- Density, reduced-motion and high-contrast/forced-colors controls.
+- Same reference screen and same realistic data across skins.
+- Gallery of component states, forms, data tables, overlays, navigation and empty/error/loading states.
+- Viewport controls, long text, localization/RTL specimens and overflow cases.
+- Grayscale and decoration-off switch for uniqueness review.
+- Pairwise review matrix for 105 skin pairs with notes, reviewer, evidence and status.
+- Visual baseline approval and links to tests/issues.
+- Clear distinction between generated preview, automated pass and human-approved release.
+
+## 14. Release gates
+
+A release cannot claim a higher status until all gates for that status are complete.
+
+### Gate A — Contract ready
+- Skin names and IDs frozen.
+- Token dictionary, theme contract and component contract schema validated.
+- Four prototype skins have approved non-color grammars.
+- Primitive-provider decision recorded with evidence.
+- Package boundaries and support policy recorded.
+
+### Gate B — Foundation
+- Token generator/validation works.
+- Theme switching and persistence pass in SSR/client scenarios.
+- Classic and Moonpunk render in Light/Dark from the same component API.
+- First component families pass interaction and accessibility checks.
+
+### Gate C — Skin system
+- All 15 skin grammars implemented and reviewed.
+- All 30 baseline appearances render.
+- All 105 pairwise checks have recorded outcomes; unresolved failures block certification.
+- Token coverage, asset fallback and reduced-motion behavior pass.
+
+### Gate D — Premium package
+- Component and block catalog meets the agreed MVP manifest.
+- Templates have realistic loading/empty/error and responsive states.
+- Docs, examples and consumer integration test pass.
+- Optional modules are tree-shakeable/lazy-loaded.
+
+### Gate E — Release candidate
+- CI green, no unresolved critical/high accessibility or functional defects.
+- License/provenance checks pass.
+- Bundle budgets and target browser matrix pass.
+- Migration/versioning/changelog documented.
+- Release owner signs off; repository records tag and release notes.
+
+## 15. Governance, versioning and documentation
+
+- Skin IDs are stable API. Renaming/removing a skin is a breaking change.
+- Public component props/exports, token names and theme contract schema are versioned.
+- Every material decision gets an ADR: context, options, decision, consequences and revisit trigger.
+- Each skin has a single visual owner and an asset provenance record.
+- Each component has an owner, docs, tests, API notes and adoption status.
+- Changelog distinguishes added, changed, deprecated, removed and migration required.
+- Mark statuses truthfully: `proposed`, `specified`, `implemented`, `tested`, `reviewed`, `released`.
+- AI agents must read this Bible, the contracts and the exact assigned issue before implementation; they must not invent new skin IDs or token namespaces.
+- Do not have multiple agents editing the same contract or component file concurrently without an explicit integration plan.
+
+## 16. Open decisions requiring repository audit
+
+1. Actual runtime/framework/package-manager versions and workspace structure.
+2. Exact shadcn generation/style/commit for Classic.
+3. Current primitive provider(s) and whether migration is justified.
+4. Minimum supported browsers/React version.
+5. Font selection and license approval.
+6. Whether public registry/CLI is part of v1 or deferred.
+7. Whether Sound Pack ships in v1, later, or remains a documented extension.
+8. Target package scope/name availability before publishing.
+9. Final numeric token values after visual/accessibility evaluation.
+10. Package release strategy: single package first vs split packages.
+
+## 17. Execution order
+
+1. Audit repository, dependencies, app consumers and current UI package.
+2. Approve IDs, token namespaces, schema, and definition of each visual grammar.
+3. Implement token generation and schema validation.
+4. Prototype Classic, Moonpunk, Moonzine and Moonledger on identical reference screens.
+5. Build Skin Lab and core component contracts/specimens.
+6. Validate theme engine and representative accessibility/visual states.
+7. Extend to the remaining skins with pairwise review.
+8. Finish premium component/blocks/template manifest.
+9. Produce original assets and optional SFX from approved art/audio briefs.
+10. Run release gates, document migration, then tag a release.
+
+## Definition of done for a skin
+
+A skin is not done merely because it has colors assigned. It must have approved Light and Dark semantic mappings; a unique and documented composition/geometry/typography/surface/component/navigation/media/motion recipe; working previews for key components/templates; asset fallbacks; accessibility and responsive checks; pairwise distinctness evidence; and a human-approved Skin Lab record.
+
+---
+
+**Status reminder:** This document defines the target system. It does not assert that any component, final token set, asset pack, sound pack, generated package, or release gate has been implemented or passed.
