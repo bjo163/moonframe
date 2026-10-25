@@ -45,6 +45,8 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ### Premium package specifications (2026-10-25)
 
+- [Premium scope delivery report — verified commits, tests, issues](docs/audit/premium-scope-delivery-2026-10-25.md)
+
 - [Premium Scope Bible — six levels A–F](docs/premium/premium-scope-bible.md)
 - [Premium scope audit with P0–P3 findings](docs/audit/premium-scope-audit-2026-10-25.md)
 - [Research and competitive analysis](docs/research/premium-competitive-analysis.md)
