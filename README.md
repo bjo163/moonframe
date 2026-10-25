@@ -43,6 +43,19 @@ Classic is a compatibility target inspired by the selected shadcn-style baseline
 
 ## Documentation
 
+### Component API & Behavior (2026-10-25)
+
+- [Live component behavior audit](docs/audit/component-api-behavior-audit.md)
+- [Current primary-source research log](docs/research/component-api-research-log.md)
+- [Component API & Behavior Bible — canonical API convention](docs/component-api-behavior-bible.md)
+- [151 component-level API proposals](contracts/moonframe-component-api-contract-v0.1.json)
+- [151 × 24 state applicability matrix](contracts/moonframe-component-state-matrix-v0.1.json)
+- [37 keyboard patterns + 151 mappings](contracts/moonframe-keyboard-interaction-matrix-v0.1.json)
+- [Component behavior/schema draft](schemas/moonframe-component-behavior.schema.json) and [state schema](schemas/moonframe-component-matrix.schema.json)
+- [Component testing and release evidence plan](docs/qa/component-testing-strategy.md)
+- [12 small issue-ready tasks](docs/backlog/component-api-atomic-issues.md)
+
+
 ### Token Architecture & Theme Engine (2026-10-25)
 
 - [Live token/theme audit](docs/audit/token-theme-engine-audit.md)

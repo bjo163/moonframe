@@ -12,7 +12,7 @@
       "specialized-optional": 12
     }
   },
-  "apiWarning": "Names and prop stubs are intentions, NOT approved TypeScript signatures or exported code.",
+  "apiWarning": "Historical generic proposedAPI placeholders are NOT canonical exported props. Per-component provisional signatures, ownership, keyboard and state references live in moonframe-component-api-contract-v0.1.json; no UI code/export exists.",
   "components": [
     {
       "id": "theme-provider",
@@ -8750,5 +8750,13 @@
       "owner": "unassigned"
     }
   ],
-  "catalogEdition": "premium-scope-2026-10-25"
+  "catalogEdition": "premium-scope-2026-10-25",
+  "behaviorAuthority": {
+    "apiBible": "docs/component-api-behavior-bible.md",
+    "componentApiContract": "contracts/moonframe-component-api-contract-v0.1.json",
+    "stateMatrix": "contracts/moonframe-component-state-matrix-v0.1.json",
+    "keyboardMatrix": "contracts/moonframe-keyboard-interaction-matrix-v0.1.json",
+    "readiness": "specified-provisional-not-implemented",
+    "legacyTierInterpretation": "premium-block tier on component entries represents catalog release/planning only, not a Level C block implementation"
+  }
 }

@@ -33,3 +33,11 @@ Prefer one primary provider when evidence is sufficient; component-level excepti
 - Four component fixtures run for all shortlisted options, with screen-reader and keyboard notes.
 - Coverage matrix with missing features and workarounds, bundle measurements and integration risks.
 - Actual evidence URLs/commits and reviewer signoff; compatibility, licensing, provenance and rollback plan.
+
+## 2026-10-25 Component API research and expanded equal-fixture spike
+
+[Research log](../research/component-api-research-log.md) confirms React documentation now shows **v19.3**, and the [React ref API](https://react.dev/reference/react/forwardRef) states `forwardRef` is no longer required for React19. React18 compatibility **cannot** be decided before consumer inventory (#1). No incumbent primitive exists in this repo.
+
+Current official provider composition: [Base UI `render`/merging](https://base-ui.com/react/handbook/composition), [Radix `asChild`/Slot](https://www.radix-ui.com/primitives/docs/guides/composition), [React Aria `render` and contexts](https://react-aria.adobe.com/customization). These event/prop/ref merge rules **differ**, so copying one as the public Moonframe composition API before testing risks lock-in and regressions. The July 2026 [shadcn default change](https://ui.shadcn.com/docs/changelog/2026-07-base-ui-default) remains a benchmark, not selection evidence.
+
+**Updated spike fixtures:** identical Dialog, Select, **editable Combobox**, nested action Menu, Tabs, and Tooltip in all three candidates where supported, with controlled/uncontrolled, event callback count/order, cancellation/escape/outside, refs to DOM controls, nested trigger/button, portal z-index, keyboard/AT, RTL, form reset/serialization and SSR/hydration. Check provider source versions, license, browser targets and bundle sizes in a pinned sample consumer. Score on real fixture outcomes (APG/WCAG failures disqualify); no presumptive provider “winner”. Deliver an ADR signoff or documented ongoing blocker. **Status remains proposed/not approved**.

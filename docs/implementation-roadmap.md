@@ -156,3 +156,11 @@ No production code/assets/SFX nor additional GitHub issues were authorized by th
 The [token theme audit](audit/token-theme-engine-audit.md), [research](research/token-theme-engine-research.md), [authoritative token pipeline](architecture/token-pipeline.md), [ADR-0002](adr/0002-token-format-and-generator.md), [ADR-0003](adr/0003-theme-runtime-and-css-output.md), [QA](qa/token-theme-validation-plan.md), and [10 issue-ready tasks](backlog/token-theme-atomic-issues.md) refine early MF-010 through MF-026 planning without marking implementation work complete.
 
 Proposed phase gate: **S0** names/types/spec validation → **S1** bounded DTCG proof and current consumer matrix (#1/#5) → **S2** token overlay/contrast/runtime contract signoff → **S3** four divergent skin specimens and SSR first-paint proof (#6) → **S4** future production resolver/theme runtime/generator and 30-complete-map enforcement → **S5** 105 visual pair/consumer QA. Do not create a parallel task truth; existing #5 remains the token format issue.
+
+---
+
+## Component API & Behavior contract track (2026-10-25)
+
+[Live component audit](audit/component-api-behavior-audit.md) and [primary research](research/component-api-research-log.md) precede the new [canonical API Bible](component-api-behavior-bible.md). [Machine-readable API](../contracts/moonframe-component-api-contract-v0.1.json), [24-state applicability matrix](../contracts/moonframe-component-state-matrix-v0.1.json), [37-pattern keyboard matrix](../contracts/moonframe-keyboard-interaction-matrix-v0.1.json) and [QA strategy](qa/component-testing-strategy.md) provide the **specified-provisional** handoff for later engineering. [12 task-ready issues](backlog/component-api-atomic-issues.md) are *backlog only*, not GitHub issues.
+
+Phases: provider/consumer/distribution evidence (#1/#3/#4) → naming/form/ref/event signatures → prioritize P1 Button/Input/Field/Tabs/Dialog/Combobox/Table/DataTable → identical high-risk keyboard fixtures in 4 skins × 2 modes → 30 appearance/a11y samples and separate 105 visual skin reviews → consumer build and versioned release. Do not mark any original implementation checkbox complete from a static validator result.

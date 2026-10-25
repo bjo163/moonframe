@@ -51,3 +51,7 @@ Minimum future test scenarios: auth idle/pending/failure/offline/expired/locked/
 ## Token/theme-specific checks (2026-10-25)
 
 See the dedicated [token/theme validation plan](token-theme-validation-plan.md) for proposed DTCG subset structure, whole-token alias invalid fixtures, coverage report shapes, 30 unresolved appearances and runtime/SSR/manual gates. Present static contract CI checks do not prove typed production values or browser rendering. Keep all 105 skin reviews unreviewed until actual evidence exists.
+
+## Component API & Behavior QA extension (2026-10-25)
+
+The [component testing strategy](component-testing-strategy.md) and [API/state/keyboard contracts](../../contracts/moonframe-component-api-contract-v0.1.json) define 151 provisional component contracts, 24 state dimensions and 37 keyboard patterns. New Node checks are structural and negative-fixture based; no browser, TypeScript package, screen reader, accessibility conformance or visual QA exists yet. The theme's 30 appearances and Skin Grammar's 105 separate human pair reviews remain distinct release gates.
