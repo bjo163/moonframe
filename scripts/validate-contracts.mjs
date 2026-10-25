@@ -263,6 +263,20 @@ fail(sameSet(dict.namingPolicy?.legacyGrandfathered||[],legacyFromInventory) &&
      dict.catalogClarification.includes('Mixed required'),
      'Legacy names require explicit documented grandfathering');
 fail(uniq(tokenNames)&&tokenNames.length===78,'Original vocabulary changed without reviewed migration');
+
+const newTokenPattern=new RegExp(dict.namingPolicy.regexForNewIds);
+const grandfatheredNames=new Set([
+ ...dict.namingPolicy.legacyGrandfathered,
+ ...dict.namingPolicy.legacyNumericSegments
+]);
+for(const name of tokenNames) {
+ fail(grandfatheredNames.has(name)||newTokenPattern.test(name),
+      'Token ID violates naming policy without migration/grandfathering: '+name);
+}
+fail(dict.namingPolicy.legacyGrandfathered.every(x=>tokenNames.includes(x)) &&
+     dict.namingPolicy.legacyNumericSegments.every(x=>tokenNames.includes(x)),
+     'Grandfathered token references do not exist');
+
 fail(dict.canonicalValueSource===null && theme.tokens.canonicalSource===null &&
      source.status==='source-values-not-created',
      'Production token source improperly claimed');
