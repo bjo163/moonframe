@@ -82,7 +82,7 @@
 
 ## M1 — Package foundation + consumer prerequisites
 
-**Milestone artifact:** local package tarball + synthetic importer. **Gate:** blocked: #1/#3/#4 and consumer smoke. Entry: #1 consumers; #3 provider; #4 distribution; no assumed package manager. See [release matrix](docs/architecture/release-train-and-adoption.md).
+**Milestone artifact:** local package tarball + synthetic importer. **Gate:** blocked: #1/#3/#4 and consumer smoke. Entry: #1 consumers; #3 provider; #4 distribution; no assumed package manager. See [release matrix](docs/architecture/release-train-and-adoption.md) and the [open-gate research brief](docs/research/open-gate-decision-brief.md).
 
 - [x] **MF-003 — Inventory real Moon consumer toolchains/SSR/browser target** · **P1 / S** · **status:** `done` · **lane:** B · **deps:** — · **issue:** [#1](https://github.com/bjo163/moonframe/issues/1)
   - **Expected file owner/scope:** `docs/research/consumer-matrix.md (proposed); ADR-0001`. **AC:** Cite actual commit/version per app or mark unknown; pick synthetic test consumer.
@@ -112,7 +112,7 @@
 
 ## M2 — Token source and generator slice
 
-**Milestone artifact:** deterministic fixture CSS/types. **Gate:** blocked: #5 and generator proof. Entry: #5 bounded DTCG ADR; may research independently of M1. See [release matrix](docs/architecture/release-train-and-adoption.md).
+**Milestone artifact:** deterministic fixture CSS/types. **Gate:** blocked: #5 and generator proof. Entry: #5 bounded DTCG ADR; may research independently of M1. See [release matrix](docs/architecture/release-train-and-adoption.md) and the [open-gate research brief](docs/research/open-gate-decision-brief.md).
 
 - [ ] **MF-013 — Decide bounded DTCG subset and resolver compatibility** · **P1 / M** · **status:** `blocked` · **lane:** C · **deps:** — · **issue:** [#5](https://github.com/bjo163/moonframe/issues/5)
   - **Expected file owner/scope:** `docs/adr/0002-token-format-and-generator.md; token fixtures`. **AC:** Type/value/alias cases, edge-cycles, tool versions and source citations approved.
