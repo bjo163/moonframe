@@ -6,6 +6,14 @@ Moonframe UI provides **70+ reusable React components & Level C composite blocks
 
 > **M13 readiness (2026-10-26):** [Final cross-domain audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable gates](contracts/moonframe-m13-readiness-gates-v0.1.json) distinguish current library functionality from historical planning. [AI-local handoff](docs/handoff/moonframe-visual-reference-microagent-prompt.md) covers 460 small visual tasks; their human artwork/release approvals are NOT complete. The current CI validates contract/unit/typecheck/build/browser/capture inventory, but automated pairs are not manually signed visual reviews.
 
+
+## M13 Plan Freeze & unattended local Codex
+
+- [Frozen master vision & change control](docs/governance/M13_PLAN_FREEZE_2026-10-26.md) (baseline [`723964322f91`](https://github.com/bjo163/moonframe/tree/723964322f9176bebf117b588e7976aff4030650), not a Git tag).
+- [Canonical 488-task master TODO](TODO.md), [cross-domain handoff gates](contracts/moonframe-m13-readiness-gates-v0.1.json), [autonomous Codex megaprompt](docs/handoff/CODEX_M13_AUTONOMOUS_MASTER_PROMPT.md) and [AGENTS.md](AGENTS.md).
+- Unattended local runner: `node scripts/run-m13-autopilot.mjs --dry-run`, followed by `node scripts/run-m13-autopilot.mjs --until-done --push` on a **clean** local `main` with Codex CLI and GitHub credentials. The runner uses `codex exec --sandbox workspace-write --ask-for-approval never`, checks each bounded patch, then commits and optionally fast-forward pushes from the trusted host process. Review blocked/external-release decisions separately.
+- **No blanket release authorization:** scripted completion does not grant copyright/trademark acceptance, public npm publish, production deploy, credential changes, payment, human 105-pair art review or full WCAG certification. If credentials/network or physical computer/session unavailable, the runner cannot continue in the background.
+
 ## Start using it
 
 Use **Node.js 24.22.1 LTS**, pinned in [.nvmrc](.nvmrc), and **pnpm** (`corepack enable`).
