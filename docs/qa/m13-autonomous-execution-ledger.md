@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-422 — Check all four reference metadata records use correct hashes
+
+- Compared the four `photos` records in `contracts/moonframe-creative-reference-contract-v0.1.json` with `docs/visual/references/reference-index.md`. IDs MWX-REF-001…004 all have matching SHA-256 values and dimensions; every index row says source media is not committed and remains unversioned.
+- PowerShell metadata consistency check exited 0. Original bytes are absent, so the hashes were not independently recomputed. This satisfies the task's explicit unversioned-media branch; no image import or rights approval is implied.
+- Status: `captured`; human review and acceptance remain pending. No package-manager commands, suites, typecheck, build, browser capture or commit run/created per runner override. Host runner owns verification/checkpoint. Rollback: restore the task row to planned and remove this entry and matching TODO update.
+
 ## MF-VF-086 — Draw minimal Moonriot decorative pattern SVG
 
 - Added `assets/source/skins/moonriot/pattern.svg`, an original static five-stripe directional pattern for optional noninteractive margins. SHA-256: `F5337BB7A5042B9FE07DE093C060720089469A94B85CBAA40F159A90FFD3A168`.
