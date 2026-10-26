@@ -995,3 +995,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no SVG validation, rendering, tests, package-manager commands, typecheck, build, browser capture, human review, or acceptance claimed. No rights or production approval is implied.
 - Counts: 152/488 implemented-or-captured, 336/488 planned, 0 explicitly blocked according to live checkbox totals; this does not imply human review or acceptance.
 - No commit created; host runner handles verification and checkpoint. Rollback: remove the SVG and restore its backlog, TODO, and ledger evidence.
+
+## MF-VF-059 — Draw semantic trash icon
+
+- Added ssets/source/icons/trash.svg, a self-authored static 24×24 currentColor trash glyph with accessible label Delete.
+- SHA-256: $h.
+- Dependency MF-VF-033 is implemented. Status: implemented; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser rendering, capture, or human review run/claimed. Human optical review and acceptance remain pending.
+- No commit created; host runner performs checks and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
