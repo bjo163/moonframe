@@ -917,9 +917,10 @@
   - **File scope:** `docs/qa/reviews/punk-riot-smash.md (proposed)`. **Acceptance:** Screenshot-backed structural distinctions documented; human approval remains pending.
   - **Evidence:** [Structural comparison](../qa/reviews/punk-riot-smash.md) links six local light/dark captures and records their matching SHA-256 sidecars, shared source provenance, and observed composition differences. The human approval part remains pending; it is not inferred.
   - **Verify:** Full `pnpm run test:browser` suite was 61/61 at the capture source commit `a2baccb89d904d628187899396b74c26fa8e2c3b`; 6/6 comparison PNG hashes and loaded-font provenance verified. This is structural/capture evidence, not visual approval. Rollback: revert the evidence/count documentation commit.
-- [ ] **MF-VF-280 — Compare Moonzine vs Moonhalftone vs Moonpanel** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-280 — Compare Moonzine vs Moonhalftone vs Moonpanel** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reviews/zine-halftone-panel.md (proposed)`. **Acceptance:** Collage, raster ink, rigid comic panels remain different.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence:** [Structural comparison](../qa/reviews/zine-halftone-panel.md) records the six light/dark captures, SHA-256s, shared source provenance, and observed magazine, screened-ink, and rectangular-grid structures. Human visual approval remains pending.
+  - **Verify:** `pnpm run test:browser` was 61/61 at capture source `a2baccb89d904d628187899396b74c26fa8e2c3b`; hash/provenance audit 6/6. Browser results are functional/capture evidence, not visual approval. Rollback: revert this evidence/count commit.
 - [ ] **MF-VF-281 — Compare Moonink vs Moonscrawl** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reviews/ink-scrawl.md (proposed)`. **Acceptance:** Brush work vs notebook mark.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
