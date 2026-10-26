@@ -504,8 +504,9 @@
 - [ ] **MF-VF-434 — Add screen-reader-friendly text fallback for graffiti title** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Heading and landmarks readable without image/font.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-435 — Add performance budget recording template** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+- [x] **MF-VF-435 — Add performance measurement recording template** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/original-asset-validation-plan.md`. **AC:** Measure actual bytes/LCP/layout shift; no invented hard numbers.
+  - **Evidence (2026-10-26):** Added a per-page/viewport record for asset hashes, transfer bytes, LCP, CLS, browser/device, cache/network conditions, repetitions, variance, and raw evidence. Unobserved fields remain blank; the template defines no pass/fail budget. Dependency MF-VF-010 is implemented. Documentation source inspection only; no package-manager commands, validators, tests, typecheck, build, or browser performance measurements run per runner override. Human review and acceptance remain pending. Rollback: remove the “Performance measurement record (MF-VF-435)” subsection and restore this row to planned.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-436 — Add visual review sheet with four reference zones** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Human reviewer grades composition/type/assets/semantics with attached captures.

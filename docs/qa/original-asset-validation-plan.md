@@ -28,6 +28,24 @@ The scoped validator must parse strict JSON, verify 15 unique briefs match Theme
 
 Current verified commands in workflow: node scripts/validate-contracts.mjs and node scripts/validate-contracts.mjs --self-test. No image rendering, font/audio test or screen reader test at this time.
 
+### Performance measurement record (MF-VF-435)
+
+Record measurements per captured page and viewport; do not fill estimates in place of observations.
+
+| Field | Observation |
+|---|---|
+| Page / appearance / viewport | |
+| Commit SHA and capture date | |
+| Browser and device class | |
+| Asset path(s) and SHA-256 | |
+| Encoded transfer bytes (method/source) | |
+| LCP (value, unit, measurement tool) | |
+| CLS (value, measurement tool) | |
+| Cache/network conditions and repetitions | |
+| Variance / notes / known limits | |
+
+Leave unavailable fields blank and state why. This template defines no pass/fail budget; establish budgets separately from measured baseline data and product requirements. Preserve raw tool output or link its artifact so the record can be reproduced.
+
 ### Machine-readable visual review ledger (2026-10-25)
 
 [Asset QA coverage](../../contracts/moonframe-asset-qa-coverage-v0.1.json) references **15 skin IDs × Light/Dark × four context cases = 120 proposed cells**, all `not-rendered`. The four cases are umbrella master brand, edition signature motif, functional icon and decoration-off fallback. None demands fifteen independent logos or production binary files. It intentionally has zero rendered/reviewed/passed screenshots and 0 human reviewer attestations, checked by the existing validator. Global 105 grammar pair comparisons stay in the original [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) and are not a second set of 105 approval records.

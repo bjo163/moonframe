@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-435 — Add performance measurement recording template
+
+- Added a reproducible per-page/viewport measurement record to `docs/qa/original-asset-validation-plan.md`: asset hashes, transfer bytes, LCP, CLS, browser/device, cache/network conditions, repetitions, variance, and raw evidence reference.
+- Blank fields represent unobserved data; no numerical budget or pass/fail threshold is invented. Dependency MF-VF-010 is implemented. Status `implemented`; documentation source inspection only. No validators, package-manager commands, tests, typecheck, build, or browser measurement run under runner override; host runner owns verification/checkpoint. Review and acceptance remain pending.
+- No commit created. Rollback: remove the subsection and restore the task row to planned, then remove this entry.
+
 ## MF-VF-369 — Define split-screen auth layout and DOM order
 
 - Added `apps/moonframe/templates/visual-reference/r04-layout.tsx` with the sign-in form first in DOM/reading order and optional artwork second; the content is supplied by the consumer.
