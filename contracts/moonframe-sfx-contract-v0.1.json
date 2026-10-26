@@ -231,7 +231,7 @@
   },
   "assetSchemaOwnership": "schemas/moonframe-asset-record.schema.json and contracts/moonframe-asset-manifest-v0.1.json (no duplicate binary record)",
   "eventAliases": {
-    "status": "runtime-supported-public-semver-approval-pending",
+    "status": "runtime-supported-compatibility-aliases-v0.1; no removal or remapping within this contract version",
     "candidates": {
       "confirm.success": "success",
       "confirm.warning": "warning",
@@ -240,7 +240,7 @@
       "operation.progress-complete": "success",
       "game.reward": "quest-reward"
     },
-    "rule": "Do not expose until future semver/migration decision; no new actual SFX IDs now"
+    "rule": "Six aliases remain accepted at runtime and in the TypeScript input union for compatibility in contract v0.1. Do not add aliases or rename/remap existing aliases within v0.1. Future removal or semantic changes require a major-version and migration decision; this record does not claim owner approval or a broader release."
   },
   "skinSoundProfiles": {
     "policy": "common opt-in events first, no 15 independent packs",

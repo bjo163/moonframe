@@ -172,3 +172,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Browser regression exercises authentication, finance and destructive categories and confirms consent status remains available while sound is suppressed.
 - `pnpm install --frozen-lockfile --offline` — exit 0; 31 packages restored. Syntax checks, `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs` — exit 0 (generic playback-truth and missing-LICENSE warnings remain). `pnpm test` — 12/12; typecheck — exit 0; build — 88 routes; browser — 51/51; `git diff --check` — exit 0.
 - Status: implemented and locally verified; no consumer review or release approval claimed.
+## MF-PF-015 — Freeze alias compatibility semantics
+
+- Preserved six current runtime aliases and their TypeScript input types as compatibility inputs for contract v0.1; no new aliases or remappings in this contract version. Removal or semantic changes need a future major-version migration decision. No owner approval inferred.
+- Evidence is contract/source comparison only. `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` passed with the existing generic playback-truth and missing-LICENSE warnings; `git diff --check` passed. No browser QA is claimed for this documentation/contract decision.
+- Status: captured; runtime behavior unchanged.
