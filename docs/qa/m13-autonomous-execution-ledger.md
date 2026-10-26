@@ -1586,3 +1586,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-132 is implemented. Backlog status: `implemented`; documentation inspection only. No screenshots, visual verdict, rights clearance, or acceptance claimed. No validators, package-manager commands, suites, typecheck, build, or browser capture run per runner override.
 - Counts from task rows: 121/292 foundation + 91/168 reference + 28/28 preflight = 240/488 checked; 248 unchecked. No commit created; host runner owns verification/checkpoint.
 - Rollback: remove the review protocol and restore MF-VF-412 to planned in the reference backlog and TODO; remove this ledger entry.
+
+## MF-VF-376 — Define actual disabled/loading/invalid submit states
+
+- Added `apps/moonframe/templates/visual-reference/r04-form.tsx` and `.module.css`. `R04Form` accepts a consumer-owned async submit callback, uses browser constraint validation to block invalid fields, disables while loading or explicitly disabled, and exposes generic completion/error status without asserting authentication success. Includes live status semantics, visible keyboard focus, and forced-colors button styling.
+- Dependency MF-VF-025 is implemented. Backlog status `implemented`; static source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser capture, or human review run. The host runner owns checks and checkpoint; responsive rendering/integration and acceptance remain pending.
+- Live checked counts advance to 241/488 (foundation 121, reference 92, preflight 28); checked does not imply human review, rights clearance, or acceptance. No commit created.
+- Rollback: remove the R04 form files, restore MF-VF-376 to planned, and remove this ledger/TODO evidence.

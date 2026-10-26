@@ -1,3 +1,5 @@
+**Live execution update (2026-10-27, MF-VF-376):** Added `R04Form` and its style module with consumer-owned submit callback, native invalid-form blocking, disabled/loading states, and generic result messaging that makes no authentication claim. Status implemented; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser captures, or human review run; host runner owns verification/checkpoint. Checked counts increase by one to 241/488; checked does not imply review or acceptance.
+
 **Live execution update (2026-10-26, MF-VF-435):** Added a performance measurement record template to `docs/qa/original-asset-validation-plan.md` for observed asset bytes, LCP, CLS, environment, repetitions, variance, and raw evidence. No pass/fail budget or measurements were invented. Status implemented; source inspection only; runner override honored (no package commands/tests/build/validators/browser performance capture). Human review and acceptance remain pending; host runner owns checks/checkpoint.
 
 # Moonframe UI — Master TODO (live execution index)
