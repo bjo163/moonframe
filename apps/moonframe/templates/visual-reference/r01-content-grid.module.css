@@ -1,0 +1,36 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.9fr) minmax(18rem, 1.45fr) minmax(12rem, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.zone,
+.streams {
+  min-inline-size: 0;
+}
+
+.streams {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 58rem) {
+  .dashboard {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  }
+
+  .zone:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 40rem) {
+  .dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .zone:nth-child(3),
+  .streams {
+    grid-column: auto;
+  }
+}
