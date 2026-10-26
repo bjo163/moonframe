@@ -1,6 +1,6 @@
 # Moonframe M13 — Nonvisual Preflight: SFX / Tokens / Motion / Package / Security Microtasks
 
-**2026-10-26 · Live status: 9 captured, 11 implemented, 8 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
+**2026-10-26 · Live status: 9 captured, 12 implemented, 7 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
 
 **Rule:** A green build approves source integrity, not sound playback safety, npm license rights, original artwork or full WCAG status. Work one ID per local agent session. Each task must provide before/after SHA, scoped file diff, tests actually run, fail/pass, source/rights as applicable, status and rollback.
 
@@ -91,9 +91,9 @@
 - [x] **MF-PF-023 — Review 25 motion recipes against CSS implemented and 180 QA slots** · **P1** · `captured` · **deps:** `none` · **GitHub issue:** not-created
   - **Scope:** `docs/qa/motion-runtime-reconciliation.md`. Reconciles all 25 canonical recipes with source-level CSS evidence and distinguishes specified, implemented, rendered, and reviewed states; records all 180 planned QA slots as unrendered/unreviewed pending per-slot evidence.
   - **Evidence:** `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 (existing SFX playback-truth and missing-LICENSE warnings). Source inspection of `src/styles.css` found shared transitions and reduced-motion rules but no per-recipe browser evidence; inventory therefore makes no implementation/render/review claims. No browser/UI changes made. No human review or acceptance claimed. Rollback: remove the reconciliation and matching status/TODO/ledger evidence.
-- [ ] **MF-PF-024 — Run actual motion/forced-colors/RTL accessibility regression** · **P1** · `planned` · **deps:** `MF-PF-023` · **GitHub issue:** not-created
+- [x] **MF-PF-024 — Run actual motion/forced-colors/RTL accessibility regression** · **P1** · `implemented` · **deps:** `MF-PF-023` · **GitHub issue:** not-created
   - **Scope:** `tests/browser/skins.spec.js`. **Acceptance:** No overlay or motion hides focus, status, keyboard or long text
-  - **Evidence:** MF-PF-024 remains planned; no implementation or verification is claimed.
+  - **Evidence (source HEAD `629c043`):** Added an actual combined browser regression under OS reduced-motion and forced-colors emulation at 360px, then switched to RTL. It verifies resolved reduced motion, heading and long description visibility, keyboard focus with a visible 3px outline, zero transition duration, and no horizontal overflow. Existing 30 skin/mode tests independently exercise responsive contrast and RTL. Full run passed unit 12/12, typecheck, build 88 routes, and browser 54/54; contract/handoff validators passed. This does not claim completion of all 180 motion QA slots or human accessibility sign-off.
 
 ## P1/P2 — consumer security and closeout
 

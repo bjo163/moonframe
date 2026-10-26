@@ -91,3 +91,28 @@ test('forced colors retains controls and theme contrast is independently selecta
   await page.getByLabel('Density', { exact: true }).selectOption('compact');
   await expect(page.locator('.mf-root')).toHaveAttribute('data-density', 'compact');
 });
+
+test('reduced motion, forced colors, keyboard focus, RTL and long text stay usable together', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce', forcedColors: 'active' });
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('/lab');
+  await page.getByLabel('Direction', { exact: true }).selectOption('rtl');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.locator('.mf-root')).toHaveAttribute('data-motion', 'reduced');
+  const heading = page.getByRole('heading', { level: 1 });
+  await expect(heading).toBeVisible();
+  const button = page.locator('.mf-button').first();
+  await button.focus();
+  await expect(button).toBeFocused();
+  const focusAndMotion = await button.evaluate((node) => ({
+    outlineWidth: getComputedStyle(node).outlineWidth,
+    transitionDuration: getComputedStyle(node).transitionDuration,
+  }));
+  expect(parseFloat(focusAndMotion.outlineWidth)).toBeGreaterThanOrEqual(2);
+  expect(focusAndMotion.transitionDuration.split(',').every((duration) => parseFloat(duration) === 0)).toBe(true);
+  const description = page.locator('.mf-card-description').first();
+  await expect(description).toBeVisible();
+  const textFits = await description.evaluate((node) => node.scrollWidth <= node.clientWidth);
+  expect(textFits, 'long card description remains readable without horizontal clipping').toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+});
