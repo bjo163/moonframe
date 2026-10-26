@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-353 — Define original performance title typography hierarchy
+
+- Added `apps/moonframe/templates/visual-reference/r03-title.tsx` and `.module.css`. `R03Title` renders caller-provided title and optional eyebrow as live DOM text, uses a responsive display hierarchy with long-title wrapping, and switches foreground to the system canvas text color in forced-colors mode.
+- Dependency `MF-VF-024` is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, render, browser capture, or human review run/claimed. No artwork, lyrics, performer likeness, rights clearance, or acceptance is implied; host runner owns verification/checkpoint.
+- No aggregate recount is asserted because live summary snapshots conflict. Rollback: remove the component and stylesheet and restore this task row, TODO update, and ledger entry.
+
 ## MF-VF-062 — Draw semantic sort icon
 
 - Added `assets/source/icons/sort.svg`, an original 24×24 `currentColor` glyph with opposing vertical arrows and accessible label `Sort`. SHA-256: `71bf6e991ece6ce0a035cd0b8d1b3f2845c75cd8cdbb4866d27b23d60e22fe52`.
