@@ -1275,3 +1275,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: TSX `147B97E8629D2679A441D227487B226437A86151A42269B64B385B77CF12BCCF`; CSS `FF1E621867D9A8124678466B0D4EB691213497F942F51FFAB1C35980F93EAB8A`.
 - Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection and `git diff --check` only. No package-manager commands, validators, test suites, typecheck, build, rendering, browser capture, rights review, or human review run/claimed under runner override. No performer imagery or rights are supplied or inferred.
 - Backlog checkbox recount: 192/488 checked (implemented/captured), 296 unchecked. Counts do not indicate acceptance. No commit created; host runner owns verification and checkpoint. Rollback: remove the component and CSS module and restore the MF-VF-356 backlog row, TODO entry, and this ledger entry to planned.
+
+## MF-VF-080 — Verify Moonpunk art-off and reduced-motion fallback
+
+- Audited `apps/moonframe/app/(lab)/lab/lab.css` and the dashboard fixture structure. Decoration-off selectors target decorative glyphs, swatches, and marginalia; visible text labels, navigation controls, dashboard content, form fields, and actions remain. The shared `data-motion="reduced"` rule disables animation/transitions and smooth scrolling without suppressing state or focus styling.
+- Dependencies MF-VF-074, MF-VF-075, and MF-VF-079 are implemented. Status: `implemented`; source review only. No package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or human review run under runner override. Visual/accessibility verification and acceptance remain pending host runner.
+- No commit created; host runner owns verification and checkpoint. Rollback: restore the MF-VF-080 backlog row and TODO/ledger evidence to planned.
