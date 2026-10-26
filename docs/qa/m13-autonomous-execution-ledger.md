@@ -1995,3 +1995,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a 360×800 Playwright case to `tests/browser/site.spec.js` for the R03 fixture. It asserts the live title, description, date/venue details, and CTA remain visible and geometrically within the poster figure; the test requests `artifacts/site/r03-poster-phone.png` on execution.
 - Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Per runner override, no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshot capture were run. Host runner owns verification/checkpoint. No parity, human review, rights clearance, or acceptance claimed.
 - Rollback: remove the R03 test, restore its backlog row to planned, and remove the matching TODO and ledger evidence. No commit created.
+
+## MF-VF-434 — Add screen-reader-friendly text fallback for graffiti title
+
+- Added a Playwright regression in 	ests/browser/components.spec.js that hides optional artwork on /lab/reference-art-off, then checks the editorial and poster titles remain visible as accessible headings and artwork placeholders are gone.
+- Dependency MF-VF-010 is implemented. Backlog status implemented; source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No screen-reader device test or WCAG claim. No commit created.
+- Rollback: remove the regression, restore the task row to planned, and remove the matching TODO and ledger entries.

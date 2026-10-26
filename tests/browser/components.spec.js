@@ -821,3 +821,16 @@ test('SFX enforces global 1000ms rate limit and per-event 2000ms deduplication',
   await page.getByRole('button', { name: '🔔 success' }).click();
   await expect(page.getByText(/Played event: "success"/).first()).toBeVisible();
 });
+
+test('reference titles remain readable headings when optional artwork is hidden', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  const fixture = page.locator('.reference-art-off-fixture');
+  await fixture.getByLabel('Hide reference artwork').check();
+
+  await expect(fixture.getByRole('heading', { level: 1, name: 'Reference screens: artwork on and off' })).toBeVisible();
+  await expect(fixture.getByRole('heading', { level: 2, name: 'Editorial landing' })).toBeVisible();
+  await expect(fixture.getByRole('heading', { name: 'A city after the rain', exact: true })).toBeVisible();
+  await expect(fixture.getByRole('heading', { name: 'Campaign poster' })).toBeVisible();
+  await expect(fixture.getByRole('heading', { name: 'Signals After Sundown', exact: true })).toBeVisible();
+  await expect(fixture.locator('[data-reference-art]')).toHaveCount(0);
+});
