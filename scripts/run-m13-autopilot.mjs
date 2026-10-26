@@ -11,6 +11,7 @@ const args = process.argv.slice(2);
 const untilDone = args.includes('--until-done');
 const push = args.includes('--push');
 const dryRun = args.includes('--dry-run');
+const resumeCheckpoint = args.includes('--resume-checkpoint');
 const cyclesFlag = args.find(x => x.startsWith('--max-cycles='));
 const cyclesMax = untilDone ? Infinity : cyclesFlag ? Number(cyclesFlag.split('=')[1]) : 25;
 if (Number.isNaN(cyclesMax) || cyclesMax < 1) throw Error('Invalid --max-cycles');
@@ -58,7 +59,7 @@ const forbidden = name => /(^|\/)(\.env(?:\.|$)|\.git\/|\.aws|\.ssh|\.codex\/|\.
  ['LICENSE','AGENTS.md','docs/governance/M13_PLAN_FREEZE_2026-10-26.md','contracts/moonframe-m13-plan-freeze-v0.1.json'].includes(name);
 const original = git('rev-parse','HEAD');
 if (!dryRun && git('branch','--show-current') !== 'main') throw Error('This runner only works on existing main. Detached read-only dry-run is permitted for CI.');
-if (changes().length) throw Error('Non-clean worktree. Preserve/checkpoint your current changes first.');
+if (!resumeCheckpoint && changes().length) throw Error('Non-clean worktree. Preserve/checkpoint your current changes first.');
 if (push) {
   const remote=git('remote','get-url','origin');
   if (!/^(https:\/\/github\.com\/bjo163\/moonframe(?:\.git)?|git@github\.com:bjo163\/moonframe\.git)$/i.test(remote)) throw Error('Refusing push to unexpected origin: '+remote);
@@ -76,8 +77,15 @@ while (iteration < cyclesMax) {
   say('Cycle '+iteration+' '+JSON.stringify(before));
   if (before.pending<=0) break;
   const output=path.join(logDir,'last-'+iteration+'.txt');
+  let exit=0;
+  if (resumeCheckpoint && iteration === 1) {
+    const checkpoint=path.join(logDir,'last-1.txt');
+    if (!fs.existsSync(checkpoint)) throw Error('No saved task result to resume');
+    const saved=fs.readFileSync(checkpoint,'utf8');
+    fs.writeFileSync(output,saved);
+  } else {
   const prompt=master+'\n\nRUNNER-OVERRIDE: Complete exactly ONE dependency-ready task this invocation, or record an objective blocker. Update its correct status/evidence. Do not run package-manager commands (pnpm/npm/yarn), test suites, typecheck, or builds; the host runner performs all applicable verification after this invocation and preserves changes if a check fails. Do not commit or push: the host runner handles that after testing. End with M13_RESULT_JSON and return for next cycle. Never ask user a routine question.';
-  const exit=await new Promise(resolve=>{
+  exit=await new Promise(resolve=>{
     const p=spawn('codex',['exec','-c','approval_policy="never"','--sandbox','workspace-write','--ephemeral','--output-last-message',output,'-'],{cwd:root,env:{...process.env,CI:'1'},stdio:['pipe','pipe','pipe']});
     p.stdin.end(prompt);
     p.stdout.on('data',data=>{process.stdout.write(data);stream.write(data);});
@@ -85,6 +93,7 @@ while (iteration < cyclesMax) {
     p.on('error',e=>{say('Codex error: '+e.message);resolve(127);});
     p.on('close',code=>resolve(code??127));
   });
+  }
   const last=fs.existsSync(output)?fs.readFileSync(output,'utf8'):'';
   const json=last.match(/M13_RESULT_JSON:\s*(\{[^\n]+\})/);
   let result={status:'unknown',taskId:'none'};

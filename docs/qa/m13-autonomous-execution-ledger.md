@@ -806,3 +806,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/icons/menu.svg`, a self-contained 24×24 original three-bar glyph using rounded `currentColor` strokes and `aria-label="Menu"`. It contains no external resources, script, or event attributes; no third-party artwork or reference was used.
 - Dependency `MF-VF-033` is implemented. SHA-256: `2aeba6c5ddc1354877c8c87359a4cf4005f97c378512d039c5928b3ffde8916a`. Status: `implemented`; static inspection confirms the 24×24 viewBox, exactly three rounded `currentColor` strokes, accessible label, and no script, event attributes, or external resource. No validators, package-manager commands, tests, typecheck, build, browser rendering, or human review run/claimed under the runner override. 16/20/24px legibility and light/dark/forced-colors review remain pending.
 - Rollback: remove `assets/source/icons/menu.svg` and restore the matching backlog/TODO/ledger evidence.
+
+## MF-VF-334 — Define R02 decorative accent slot
+
+- Added `R02Annotations` and its CSS module at `apps/moonframe/templates/visual-reference/r02-annotations.tsx` and `.module.css`. Caller supplies any decorative marks; default output is empty, with no bundled consumer marks. Content is pointer-transparent and hidden from assistive technology as decoration.
+- Dependency `MF-VF-023` is implemented. `git diff --check` passed. Per runner override, no package-manager commands, validators, test suites, typecheck, build, browser captures, or reference comparison were run. Human review, rights clearance, and acceptance remain pending.
+- Rollback: remove the component and stylesheet and restore the matching backlog/TODO/ledger entry.
+- Counts: prior live summary 123/488 implemented-or-captured, 365 planned, 0 explicitly blocked; now 124/488, 364 planned, 0 explicitly blocked.
