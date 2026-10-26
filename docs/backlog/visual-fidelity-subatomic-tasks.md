@@ -885,9 +885,10 @@
   - **File scope:** `docs/qa/reference-screens/table.md`. **Acceptance:** Same search and table rows across skins.
   - **Evidence:** See the [frozen sortable table specimen](../qa/reference-screens/table.md) with fixed headers/five rows, default and name-sort order, search probe, and 30 real desktop skin/mode captures with provenance hashes. Human visual review remains pending.
   - **Verify:** `pnpm run test:browser` 56/56; each skin/mode case asserts table headings, values, sorting and search. All 30 capture sidecars share the fixed fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No visual approval claimed; rollback: remove specimen doc and restore task/count state.
-- [ ] **MF-VF-272 — Freeze long form/error specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/reference-screens/form.md (proposed)`. **Acceptance:** Same labels/helper/errors across skins.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-272 — Freeze long form/error specimen** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/form.md`. **Acceptance:** Same labels/helper/errors across skins.
+  - **Evidence:** See the [frozen form/error specimen](../qa/reference-screens/form.md): fixed field values, URL validation/error association, pending/success messages and reset behavior, plus 30 default-state desktop captures. Transient states are browser-tested but not separately screenshot-captured; visual review remains pending.
+  - **Verify:** `pnpm run test:browser` 56/56; every skin/mode case asserts labels, helpers, error text/ARIA, Saving…, success and reset. All 30 screenshot sidecars share the fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No visual approval claimed; rollback: remove specimen doc and restore task/count state.
 - [ ] **MF-VF-273 — Freeze dialog/popover specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reference-screens/dialog.md (proposed)`. **Acceptance:** Same focus and overlay interaction across skins.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
