@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-112 — Draw Moonhalftone edition badge
+
+- Added `assets/source/skins/moonhalftone/edition.svg`, a compact monochrome badge labeling Moonhalftone as a Moonframe visual edition. SHA-256: `1158DAA144A8D5A151B75AF46A399772E3574DB82A03BD54F288128C17D12518`.
+- Dependencies MF-VF-108 and MF-VF-039 are implemented. XML parse and static safety scans passed. No external media, independent company mark, rendering, optical/rights review, or human acceptance claimed.
+- Status: `implemented`; no commit created. Host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-112 backlog row, TODO update, and this entry to planned.
+
 ## MF-VF-111 — Draw original Moonhalftone panel-paced hero
 
 - Added `assets/source/skins/moonhalftone/hero.svg`, an original 640×360 monochrome night-crossing scene paced across three panels, with no required copy baked in. SHA-256: `295E77CDD53ABD5CFDB390EACBAB08873F816A9F3A745B29280D81B0EA1B2B6B`.

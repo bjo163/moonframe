@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-112):** Added original monochrome Moonhalftone edition badge `assets/source/skins/moonhalftone/edition.svg` (SHA-256 `1158DAA144A8D5A151B75AF46A399772E3574DB82A03BD54F288128C17D12518`). XML parse and static safety scans passed. Optical/rights review and acceptance remain pending; host runner owns full verification and checkpoint.
+
 **Live execution update (2026-10-26, MF-VF-111):** Added original panel-paced Moonhalftone scene `assets/source/skins/moonhalftone/hero.svg` (SHA-256 `295E77CDD53ABD5CFDB390EACBAB08873F816A9F3A745B29280D81B0EA1B2B6B`). XML parse and static SVG safety scans passed. Rendering, optical/rights review, and acceptance remain pending; host runner owns full verification and checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-110):** Added original optional margin screentone `assets/source/skins/moonhalftone/pattern.svg` (SHA-256 `BE45E07E3BF9FCBDDFE8A8BC59BA580EC657A68921404CCD5212A5E855E3514E`). XML parse and static SVG safety scans passed. Rendered review, rights review, and acceptance remain pending; host runner owns full verification and checkpoint.
