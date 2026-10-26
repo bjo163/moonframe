@@ -287,9 +287,10 @@
 
 ## E — 15 skins x 12 subatomic design, illustration and review actions
 
-- [ ] **MF-VF-072 — [moonpunk] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+- [x] **MF-VF-072 — [moonpunk] Write derived visual direction and anti-overlap brief** · **P1** · `implemented` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
   - **File scope:** `docs/visual/skins/moonpunk.md (proposed)`. **Acceptance:** One approved visual recipe for manga punk / neo-brutalist offset slab; distinguish from moonriot, moonsmash in geometry/type/nav/data, using existing canonical contracts.
-  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (2026-10-26):** Added `docs/visual/skins/moonpunk.md` with composition, geometry, typography, surface, navigation/component, neighboring-skin distinction, and accessibility/review constraints grounded in the canonical Skin Grammar and Visual Reference Bible. SHA-256 `C05270D06E71F1FC040C8A0E17AABFA4DD344EE81E23C400AE81BAEB32442956`. Prerequisite MF-VF-015 is implemented. Status is `implemented`; no validators, package-manager commands, tests, typecheck, build, screenshots, or human visual review run per runner override. No approval, rights, or acceptance claimed. Rollback: remove the brief and restore this task row to planned.
+  - **Verify:** Host runner performs applicable checks; human review remains separate.
 - [ ] **MF-VF-073 — [moonpunk] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
   - **File scope:** `assets/source/skins/moonpunk/motif.svg (proposed)`. **Acceptance:** Static safe vector ink burst corner; mono recognizable, distinct from moonriot, moonsmash.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

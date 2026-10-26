@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-072 — Write Moonpunk visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonpunk.md`, a direction brief covering block/offset composition, geometry, type and surface roles, navigation/component principles, and distinctions from Moonriot, Moonsmash, and Moonzine. It preserves live DOM/behavior semantics, acid-lime skin identity, decoration-off/reduced-motion constraints, and excludes Moonwitness consumer branding and reference-derived artwork.
+- SHA-256: `C05270D06E71F1FC040C8A0E17AABFA4DD344EE81E23C400AE81BAEB32442956`. Dependency MF-VF-015 is implemented. Status: `implemented` only; no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run per runner override. Host runner owns verification. No rights or visual approval claimed.
+- Aggregate counts are not restated because live summary snapshots conflict; this task row is the authoritative status change. Rollback: remove the brief and restore the backlog row.
+
 ## MF-VF-047 — Create safe SVG favicon candidate
 
 - Added `assets/exports/brand/favicon.svg`, a static 32×32 candidate using only the existing generic geometric-frame draft direction. SHA-256: `8ade2ea8431f62d34fec3b2fd9c2f0ce79757a1994c9d0b1b4273f31f25e0c4f`.
