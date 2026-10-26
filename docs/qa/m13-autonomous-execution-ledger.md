@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 47 implemented-or-captured (14 baseline implemented + 11 captured + 22 implemented), 5 blocked, 436 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 47/488 (9.6%) done/captured; 436/488 (89.3%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 441/488 (90.4%) are not yet complete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 47 implemented-or-captured (14 baseline implemented + 11 captured + 23 implemented), 5 blocked, 435 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 48/488 (9.8%) done/captured; 435/488 (89.1%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 440/488 (90.2%) remain incomplete.
 
 ## MF-PF-012 — Stop sound on backgrounding; do not catch up
 
@@ -262,3 +262,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added fixed `Overview`, `Projects`, `Tasks`, `Reports`, `Settings` navigation to the shared dashboard fixture. Overview is current by default; selecting another item changes only the local current-state marker. Browser assertions verify information order, selection change to Reports, and restoration to Overview across all skins/modes.
 - `pnpm test` — 13/13 passed; `pnpm run typecheck` — passed; `pnpm run build` — passed, 88 routes; `pnpm run test:browser` — 55/55 passed; `pnpm run audit:pairs` — 30/30 current-source desktop, tablet and phone captures. Contract/handoff validators passed; human visual review remains pending.
 - Rollback: revert commit `f0cd752f1bd13c61708173c06aa0a8acd2d61115`.
+
+## MF-VF-025 — Decoration-off fixture toggle
+
+- Implementation commit: `dfd923e675c5b7f4013e678c4b2a977919e01213`.
+- Added the “Hide decorative elements” switch. It suppresses decorative skin marks while preserving text, semantic labels, focus, controls, navigation selection, and form validation state. Browser coverage captures each skin in light and dark decoration-off mode; capture ledger lists all 30 files and digests.
+- `pnpm test` — 13/13 passed; typecheck passed; production build passed (88 routes); `pnpm run test:browser` — 55/55 passed; `pnpm run audit:pairs` — 105 pair records plus current-source provenance for 30 desktop, 30 tablet, and 30 phone captures; decoration-off sidecar and PNG hash audit — 30/30 passed; contract and M13 handoff validators passed with existing SFX playback-truth and missing-LICENSE warnings. Human visual review remains pending.
+- Evidence commit records the current 90 baseline capture hashes and 30 decoration-off capture hashes. Rollback: revert `dfd923e675c5b7f4013e678c4b2a977919e01213`.
