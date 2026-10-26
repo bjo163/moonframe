@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 60 implemented-or-captured (14 baseline implemented + 11 captured + 35 implemented), 6 blocked, 422 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 60/488 (12.3%) done/captured; 422/488 (86.5%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 428/488 (87.7%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 61 implemented-or-captured (14 baseline implemented + 11 captured + 36 implemented), 6 blocked, 421 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 61/488 (12.5%) done/captured; 421/488 (86.3%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 427/488 (87.5%) remain incomplete.
 
 
 
@@ -16,6 +16,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
 - The umbrella-brand recommendation is explicitly not owner-approved; owner approval and trademark decisions are listed as blockers. The task requires accepting that brand hierarchy before production marks or edition devices are created.
 - Status: `blocked-external-approval`. No owner decision was available in this repo/task context. No approval or logo direction was invented; no production mark is authorized. Resume after the owner records the umbrella/edition naming decision.
+## MF-VF-275 — Freeze auth flow specimen
+
+- Scope: `apps/moonframe/app/(lab)/lab/behavior/page.tsx`; `tests/browser/components.spec.js`; `docs/qa/reference-screens/auth.md`; 30 ignored local captures in `artifacts/skins/*-1440x960-auth.png` and provenance sidecars.
+- Added an explicit `/lab/behavior?fixture=auth` sign-in simulation with required email/password inputs, a remember-device control and a clear local-only privacy statement. Submit is intercepted locally: it sends or stores no credential and creates no account/session. Browser assertions check required and invalid-email validity plus the deterministic result and unchanged route across all 15 skins × two modes.
+- `pnpm check` — passed (13 runtime tests, typecheck, validation and production build). `pnpm run test:browser` — 58/58 passed at implementation commit `1ac3ab57ec6ec4dee47919335545f64814e6ffa8`. Capture audit — 30/30 hashes match sidecars; one fingerprint/source commit; explicit auth fixture and `auth-preview-ready` state; loaded fonts; 1440×960.
+- `node scripts/verify-m13-handoff.mjs` and `git diff --check` — passed; handoff retains existing SFX playback-truth and standalone LICENSE warnings. No production authentication or human visual review is claimed.
+- Status: implemented as a frozen simulated-flow contract; reviewer and production-auth status remain unclaimed. Rollback: revert implementation commits and the matching evidence/count commit.
 ## MF-VF-274 — Freeze sidebar/header specimen
 
 - Scope: `tests/browser/skins.spec.js`; `docs/qa/reference-screens/navigation.md`; 30 ignored local `/lab` captures in `artifacts/skins/*-1440x960-default.png` and provenance sidecars.
