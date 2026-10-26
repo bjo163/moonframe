@@ -38,7 +38,7 @@
 
 **Updated visual queue:** **460 total task IDs: 48 verified implemented, 412 pending, 0 owner-approval blockers**. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No app/widget/artwork generated or asset binaries committed by this planning work.
 
-**M13 overall progress:** **73/488 (15.0%) done/captured**, **412/488 (84.4%) pending**, **3/488 (0.6%) blocked**. Counting blocked tasks as unfinished, **415/488 (85.0%) remains**.
+**M13 overall progress:** **76/488 (15.6%) done/captured**, **412/488 (84.4%) pending**, **0/488 blocked**. **412/488 (84.4%) remains.**
 
 - **[Detailed 168 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks, 25 release/evidence tasks and **14 optional consumer-brand palette tasks**.
 - **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
@@ -77,7 +77,7 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 **Operational truth:** [M13 Final Reconciliation Audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable 18 domain gates](contracts/moonframe-m13-readiness-gates-v0.1.json). New [offline M13 integrity validator](scripts/verify-m13-handoff.mjs) checks 15 skins, 78 intended tokens, 105 pairs, SFX IDs/aliases, backlog DAG and truthful status vocabulary. The 14 closed visual P0 tasks have evidence recorded in [MF-VF backlog](docs/backlog/visual-fidelity-subatomic-tasks.md), and must not be redone by AI lokal.
 
-**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **11 captured, 14 implemented, 3 blocked, 0 pending**. Current combined count is 488 task records: 14 freeze-baseline implemented, 11 additional captured, 48 additional implemented, 3 blocked, and 412 pending. The historical 57/57 tasks are not counted again.
+**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **12 captured, 16 implemented, 0 blocked, 0 pending**. Current combined count is 488 task records: 76 done/captured in the live task ledger, 0 blocked, and 412 pending. The historical 57/57 tasks are not counted again.
 
 **Feature gates:** 
 - **CONDITIONAL GO:** one bounded local AI task at a time, after live main/CI/dependency verification. Preserve shared component API and current working theme engine.

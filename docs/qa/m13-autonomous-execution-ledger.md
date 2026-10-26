@@ -5,9 +5,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` remain blocked on the overlay contract, regression coverage, and clean-clone handoff. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 73 implemented-or-captured (14 baseline implemented + 11 captured + 48 implemented), 3 blocked, 412 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- Overall progress: 73/488 (15.0%) done/captured; 412/488 (84.4%) still actionable; 3/488 (0.6%) blocked. Including blockers, 415/488 (85.0%) remain incomplete.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 76 implemented-or-captured, 0 blocked, 412 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 76/488 (15.6%) done/captured; 412/488 (84.4%) pending; 0 blocked. 412/488 (84.4%) remain incomplete.
 
 
 
