@@ -33,6 +33,21 @@
 ---
 
 
+
+## Four user-supplied mockups · deep visual task addendum (2026-10-26)
+
+**Updated combined visual queue:** **446 tasks planned, 0 completed**. The preceding `292` tasks remain intact; the new **154** tasks use `MF-VF-293…446` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No app/widget/artwork generated or asset binaries committed by this planning work.
+
+- **[Detailed 154 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks and 25 release/evidence tasks.
+- **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
+- **[Cinematic Manga-Punk Visual Reference Bible](docs/visual/cinematic-mangapunk-reference-bible.md)** — design anatomy/typography/layer rules and decomposition for the reference screens.
+- Primary screen relationships: `MWX-REF-001` Dashboard = **Moonpunk** + Moonpanel/Moonglitch, `MWX-REF-002` Landing = **Moonpunk** + Moonzine/Moonhalftone, `MWX-REF-003` Portrait Poster = **Moonsmash** + Moonpunk/Moonzine (campaign-only), `MWX-REF-004` Sign In = **Moonpunk** cinematic split but semantically clean form. Never turn Moonwitness brand marks, crown, characters or artistic copies into framework-core requirements or 15 new skin IDs.
+- Relevant existing contracts received **additive, non-approved creative overlays**: [Skin Grammar](contracts/moonframe-skin-grammar-contract-v1.0.json), [Skin Specifications](contracts/moonframe-skin-specifications-v1.0.json), [Skin Asset Briefs](contracts/moonframe-skin-asset-briefs-v0.1.json), [Asset Manifest](contracts/moonframe-asset-manifest-v0.1.json), [Visual Baseline Matrix](contracts/moonframe-visual-baseline-matrix-v0.1.json), and [Asset QA Coverage](contracts/moonframe-asset-qa-coverage-v0.1.json). No originally pending approval/cell was marked complete.
+
+**Execution:** Repair the red CI first; then ingest/verify the four original references with appropriate permissions, freeze semantic fixtures and render a four-skin pilot, produce original/licensed small SVG/icon/scene layers per task, perform screenshot/human reviews, and only then permit a visual acceptance statement. Give small AI agents one scoped task ID at a time. Existing branch: `main` (no branch proliferation). **Combined 446 remains a planning count, not shipped code.**
+
+---
+
 ## Historical M0–M12 implementation snapshot · earlier 2026-10-26 claims (not the live visual QA gate)
 
 The user's request to finish a usable 15-skin product and Next.js showcase marketplace authorizes local runtime implementation and ordinary implementation choices. The repository is configured as a **pnpm workspace** (`pnpm-workspace.yaml`) containing the **`@moonframe/ui`** package (70+ reusable components & Level C composite blocks, M10 15-skin geometric vector brand marks, opt-in WebAudio synthesizer runtime, scoped themes, 15 CSS recipes with Light/Dark appearances, deterministic token/CSS bridge, and typed subpath exports), the **Moonframe CLI Scaffolder** (`scripts/moonframe-cli.mjs`, `pnpm run cli`), and the **`moonframe` Next.js 16 Showcase & Template Marketplace** ([apps/moonframe](apps/moonframe/README.md)) featuring **43 production page templates (Wave-A & Wave-B)** and **8 Level E Multi-Route Starter Applications**. See [runtime usage](docs/runtime-usage.md) and [implementation status & evidence](docs/implementation-status.md).
