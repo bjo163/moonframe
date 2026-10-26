@@ -1,22 +1,23 @@
-# Reference and original-work risk matrix
+# Reference rights and output-tree checklist
 
-**Status:** working production checklist; not legal advice or a rights determination. The four Moonwitness images are user-supplied visual references whose original bytes are not in this repository. Their hashes and dimensions are recorded in the [creative-reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json). A reference image grants no implied reproduction, derivative-work, or distribution license. The [visual reference bible](../visual/cinematic-mangapunk-reference-bible.md) owns design interpretation; the [asset brand bible](../brand/original-asset-brand-bible.md) owns asset provenance and release controls.
+Use this checklist when a documentation-only M13 task records reference or asset status. It distinguishes repository evidence from source-image rights and visual review.
 
-## Per-reference risk matrix
+## Documentation-only change
 
-| Reference | Intended use | Source/provenance unknowns | View-only assumption | Derivative clearance | Do not copy into Moonframe | Safe original-work path |
-|---|---|---|---|---|---|---|
-| MWX-REF-001 — Mission Control dashboard | Analyze shell, panel hierarchy, density, and scene placement | Creator, underlying art/font sources, and rights holder are not independently verified; source bytes are absent locally | Treat as private visual direction only; no public hosting or redistribution | No permission to trace, recreate distinctive scene/marks, or publish derivative material is established | Moonwitness wordmark/crown, named characters, distinctive interface copy, skyline/observer artwork, identifiable project covers | Build semantic dashboard HTML and independently designed panel geometry; use neutral sample data and original generic abstract decoration or separately cleared art |
-| MWX-REF-002 — Story landing | Analyze editorial cadence, collage balance, and responsive story layout | Creator, embedded media, fonts, and rights holder are not independently verified; source bytes are absent locally | Treat as private visual direction only; no public hosting or redistribution | No permission to reproduce collage elements, illustration, or distinctive copy is established | Product/campaign identity, character or crew imagery, slogans, captions, logos, and recognizable collage fragments | Use original neutral editorial copy, independently composed CSS/layout, and original or separately licensed media with provenance |
-| MWX-REF-003 — Campaign poster | Analyze poster proportions, headline hierarchy, and separation of poster from controls | Artist, performers/likenesses, lettering, and embedded source material are not verified; source bytes are absent locally | Treat as private visual direction only; no public hosting or redistribution | No permission to reproduce artwork, lettering, likenesses, or embedded third-party material is established | Lyrics, title treatment, artist/celebrity likenesses, logos, performance art, or traced silhouettes | Keep the template as accessible live text and controls; use neutral copy and independently created abstract art or separately cleared assets |
-| MWX-REF-004 — Sign-in scene | Analyze split composition and form-first responsive behavior | Creator, character/scene sources, embedded marks, and rights holder are not independently verified; source bytes are absent locally | Treat as private visual direction only; no public hosting or redistribution | No permission to recreate the scene, brand marks, or distinctive interface artwork is established | Moonwitness identity/crown, recognizable observer/costume, scene illustration, exact copy, or copied marks | Implement a semantic form with original generic atmosphere artwork; never imply successful authentication without an actual integration |
+- [ ] Record the exact documentation files changed.
+- [ ] Inspect `git status --short` and `git ls-files --others --exclude-standard` before and after the documentation edit.
+- [ ] Confirm no screenshot, build, test, or generated asset output was created by the docs-only work.
+- [ ] If an output exists, identify its producing command and task before retaining it; do not describe it as a capture unless the command actually ran.
+- [ ] Record verification commands that actually ran and their exit results. Do not infer host-runner checks.
 
-## Required provenance and release checks
+## Reference and asset boundaries
 
-1. Record creator/source, acquisition path, exact asset hash, license or written permission, allowed modifications, attribution, and redistribution scope for every non-original input. Unknown fields stay explicitly unknown.
-2. For original work, record creator, creation date, source/edit lineage, and asset hash. Avoid tracing or close recreation of source-specific expressive details; use references only for high-level composition and independently choose geometry, text, motifs, and imagery.
-3. Before integration, check that consumer-only names, marks, characters, lyrics, and story copy have a separate documented rights basis. If absent, replace them with neutral original material or keep them out of the generic library.
-4. Keep review-only reference media out of distributable packages. Check public artifacts and source maps for accidental inclusion; a local file or hash is not proof of rights.
-5. Record technical, accessibility, and human visual review separately from rights clearance. Checklist completion alone grants no license or legal clearance.
+- [ ] Use the creative-reference contract as the authority for expected source hashes and dimensions.
+- [ ] Recompute a source hash only when the source bytes are present; otherwise label contract values as transcribed metadata.
+- [ ] Keep comparison references separate from distributable package assets.
+- [ ] Record license/rights status as unresolved until supported by actual authorization or a qualified review.
+- [ ] Keep screenshot capture, visual comparison, human review, and acceptance as distinct evidence states.
 
-**Current disposition:** all four references remain unversioned in the repository and rights/derivative permissions remain unverified. This matrix is precautionary production guidance, not a claim that any source is licensed or infringing.
+## Evidence note for MF-VF-444 (2026-10-27)
+
+At starting HEAD `1d7243f91269971b6d2d1c85d3494a0a43d98d25`, `git status --porcelain=v1` and `git ls-files --others --exclude-standard` returned no paths. This documentation-only update adds this checklist; it did not invoke a build, test, screenshot, or asset generator. No generated output was observed from this task. No validators, package-manager commands, test suites, typecheck, build, or browser capture were run under the runner override; host runner owns verification and checkpoint. This is a source-tree inspection, not proof about prior runs or external reference rights.
