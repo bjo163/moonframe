@@ -1809,3 +1809,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/moonglitch-reference-parity.md` with fixed-fixture same-data comparison criteria for Moonglitch, Moonchrome, and Moonpunk at desktop/mobile grayscale, decoration-on/off. Includes data/form legibility, responsive reflow, metadata, and human observation requirements.
 - Dependency MF-VF-120 is implemented. Backlog status: `implemented`; documentation/source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review run. Captures, visual disposition, rights review, and acceptance remain pending. No commit created; host runner owns checks/checkpoint.
 - Rollback: remove the protocol and restore the task row to planned.
+# MF-VF-240 — Write Moonledger visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonledger.md` from the canonical Moonledger grammar and skin specification. It defines persistent filtering, table/detail split panes, aligned dense data, accessible compact controls, and distinctions from Mooncrash, Moonquest, and Classic.
+- Dependency MF-VF-015 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, screenshots, or human review were run. Production token values, font/asset rights, visual review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the brief and restore MF-VF-240 to planned in the backlog; remove matching TODO and ledger evidence.
