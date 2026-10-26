@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-393 — Specify neon/pink light/dark semantic accent policy
+
+- Added a subsection to `docs/visual/cinematic-mangapunk-reference-bible.md` defining neon accents as optional visual cues, keeping success/warning/error/information meanings on canonical semantic tokens with noncolor labels, requiring distinct light/dark overlay contrast checks, and preserving focus and forced-colors behavior.
+- Dependency MF-VF-013 is implemented. Status `implemented`; documentation/source review only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshot, or human review run/claimed. Rights and acceptance remain pending; host runner owns verification/checkpoint.
+- Rollback: remove the subsection, restore MF-VF-393 to planned, and remove matching TODO and ledger entries. No commit created.
+
 ## MF-VF-372 — Create semantic username/email field
 
 - Added `apps/moonframe/templates/visual-reference/r04-email-field.tsx` and its CSS module: a native email field with an associated visible label, `autocomplete=email`, optional help/error descriptions, and an invalid state. Focus and forced-colors styling are included.

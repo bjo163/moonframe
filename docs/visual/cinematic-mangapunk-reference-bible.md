@@ -152,3 +152,10 @@ Apply expressive display treatment to a real heading or label in selectable HTML
 ## 8. Default Moonpunk acid-lime vs Moonwitness magenta: avoid a palette-only patch
 
 The *existing* Moonpunk runtime uses acid-lime as its signature default accent. The pictured Moonwitness application uses magenta/cyan/yellow accents. To preserve one reusable Moonpunk grammar, a separately controlled and contrast-tested [consumer brand palette overlay](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json) is proposed. This is **not** a new skin, an implemented React prop, a demand to set pink globally, or a way to bypass status/focus/contrast semantics. Structural Moonpunk (ink framing, offset print, expressionistic display and layout) must be retained even when the consumer uses a different approved brand accent. Release only after light/dark/forced-colors/SSR proof.
+
+### Semantic accent policy for light and dark appearances
+
+- Treat neon pink/fuchsia, cyan/electric blue, and yellow as optional artwork or consumer-brand accents. They may identify selected/attention emphasis, technical/world decoration, and editorial annotation respectively; their hue alone never communicates a control state or data meaning.
+- Keep success, warning, error, and informational statuses on their canonical semantic tokens and pair each status with a text/icon/accessible label. A brand accent must not replace these tokens or make status distinctions depend on color.
+- Light and dark appearances may use different accent values or contrast-safe treatments. Any consumer overlay must define and contrast-check its values separately in both modes; this reference brief does not prescribe token values or claim the overlay is implemented.
+- Preserve visible focus and forced-colors system behavior independently of accent styling. If an accent fails contrast, change its surface/outline/treatment or omit it; do not weaken status or focus semantics to match artwork.
