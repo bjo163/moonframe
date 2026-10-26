@@ -6,6 +6,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; `MF-VF-038` is captured with a hash-verified monochrome size contact sheet. Mark selection, suitability, rights, and human review remain separate.
+
+## MF-VF-285 — Shared functional warning semantics across skins
+
+- Added a browser regression in `tests/browser/components.spec.js` that selects each of the 15 skins and confirms the request-state warning remains an alert with the same message and named retry action. Existing state-matrix coverage also exercises all 15 skins × light/dark modes.
+- `node --check tests/browser/components.spec.js` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 with the existing SFX playback-truth release warning. Browser suite, screenshots, typecheck, and build were not run under the invocation’s runner override. No human review or visual approval claimed.
+- Rollback: revert the regression test and the `MF-VF-285` status/evidence row.
 - Freeze baseline: 14 implemented / 474 pending. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
 - MF-VF-039 records a delegated maintainer selection of Candidate A as the preferred draft direction for refinement. Live count after MF-VF-293 and MF-VF-039: 85 implemented/captured, 403 planned, 0 blocked. No direct owner inspection, human visual approval, rights, or release authorization is implied.
 - Overall progress: 85/488 (17.4%) implemented-or-captured; 403/488 (82.6%) planned; 0 blocked. These task states do not imply owner, rights, or human visual approval.

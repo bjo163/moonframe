@@ -11,6 +11,22 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/lab/behavior');
 });
 
+test('functional search and warning semantics remain stable across all skins', async ({ page }) => {
+  for (const skin of skins) {
+    await page.goto('/lab');
+    await page.getByRole('button', { name: skin.name, exact: false }).filter({ has: page.locator('.demo-swatch') }).click();
+    await expect(page.locator('.mf-root')).toHaveAttribute('data-skin', skin.id);
+    await page.goto('/lab/behavior?fixture=states');
+
+    const warningState = page.getByRole('button', { name: 'Error', exact: true });
+    await warningState.click();
+    const warning = page.locator('[data-fixture="states-preview"] [role="alert"]');
+    await expect(warning).toBeVisible();
+    await expect(warning).toContainText('Projects could not load');
+    await expect(warning.getByRole('button', { name: 'Try again', exact: true })).toBeVisible();
+  }
+});
+
 test('native modal traps focus, closes on Escape, and restores opener focus', async ({ page }) => {
   const opener = page.getByRole('button', { name: 'Open dialog', exact: true });
   await opener.click();
