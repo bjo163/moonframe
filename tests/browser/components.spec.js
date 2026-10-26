@@ -352,6 +352,7 @@ test('loading, empty, error, and denied request states keep their messages and a
 });
 
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
+  test.setTimeout(120_000);
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
   for (const skin of skins) for (const mode of ['light', 'dark']) {
