@@ -135,3 +135,13 @@ CSS example placeholder comments are intentionally **not usable CSS declarations
 ## 9. Proof/exit criteria
 
 [Audit](../audit/token-theme-engine-audit.md) → [research](../research/token-theme-engine-research.md) → [ADR format](../adr/0002-token-format-and-generator.md) / [ADR runtime](../adr/0003-theme-runtime-and-css-output.md) → [schema + lightweight contract checks](../../schemas/moonframe-token-subset.schema.json) → [QA plan](../qa/token-theme-validation-plan.md) → [atomic backlog](../backlog/token-theme-atomic-issues.md). Critical requirement: a separate future *production* gate must reject all 30 current pending maps until values and screenshots exist.
+
+---
+
+## 2026-10-26 opt-in consumer brand accents vs skin grammar
+
+**Problem:** Moonpunk's current *default* accent in the runtime and source recipe is acid-lime, whereas four Moonwitness references use a consumer palette of hot-pink, cyan, yellow and ink-black. These can coexist only if **visual grammar** and **consumer brand color** are separated. Do not silently mutate Moonpunk's tokens to match the screenshots or introduce a 16th skin.
+
+[Consumer Brand Overlay Contract](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json) is a *proposal*, not a shipped runtime API: first resolve canonical skin/mode tokens; then optional consumer brand accent slots for nonstatus emphasis (contrast-tested against actual surfaces); then density/motion independently; accessibility/forced-colors guarantees take precedence. Without consumer override, the original skin recipes must render exactly as before. If an overlay fails validation, fall back safely. Do not override error/warning/success semantics, keyboard, focus-ring visibility, protected user preferences or skin layout/geometry. Backend and consumer own logos, art and rights.
+
+Execution requires typed contract, runtime SSR/persistence tests, actual light/dark/forced-colors snapshots and explicit approval before any public API change. No arbitrary `--mf-accent` changes without checking dependent foreground/hover/outline contrast and hydration.
