@@ -1101,3 +1101,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. No package-manager commands, validators, tests, typecheck, build, browser capture, or human review run/claimed per runner override. No reference-image, performer, lyric, or distribution rights are implied; visual review and acceptance remain pending.
 - Task-row counts: 163/488 previously checked, now 164/488 implemented-or-captured-or-implemented and 324 planned; 0 explicitly blocked. This count does not imply capture, review, or acceptance.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the component and CSS module, restore the task row, and revert this ledger/TODO update.
+
+## MF-VF-363 — Define visual reading flow top–center–bottom
+
+- Added `apps/moonframe/templates/visual-reference/r03-layout.tsx` and `.module.css`. The composition keeps title, artwork figure, details, tags, and CTA in meaningful DOM order with optional regions, responsive spacing, and a forced-colors boundary.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. No package-manager commands, tests, validators, typecheck, build, browser capture, or human review run/claimed per runner override. No artwork, performer/lyric rights, source-image rights, or acceptance is implied; host runner owns verification/checkpoint.
+- Checkbox counts: 79/292 foundation visual + 59/168 reference visual + 28/28 preflight = 166/488 checked; 322 unchecked. Counts do not imply human review or acceptance.
+- No commit created. Rollback: remove the component and stylesheet and restore the MF-VF-363 backlog row, TODO count, and this entry.
