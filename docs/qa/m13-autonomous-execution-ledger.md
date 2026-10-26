@@ -1965,3 +1965,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-010 is implemented. Backlog status: `implemented` (fixture code added; execution pending).
 - Verification: source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, or build run. Host runner owns verification and checkpoint. No screenshot artifact exists from this invocation; no reference parity, rights clearance, human review, or acceptance claimed.
 - Rollback: remove the added test in `tests/browser/site.spec.js`, restore MF-VF-427 to planned in the reference backlog, and remove matching TODO/ledger evidence. No commit created.
+
+## MF-VF-420 — Define Moonquest screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonquest-reference-parity.md` with fixed-content desktop/mobile, light/dark, grayscale, and decoration-on/off comparison protocol against Moonzine and Moonledger. It checks journal composition, entry hierarchy, accessible navigation, art-off structure, responsive reflow, and shared behavior.
+- Dependency MF-VF-228 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, visual verdict, rights review, human review, or acceptance claimed.
+- Runner override honored: no package-manager commands, validators, test suites, typecheck, build, or browser captures run. Host runner owns verification and checkpoint. Checked counts: 146/292 foundation + 133/168 reference + 28/28 preflight = 307/488; checked does not imply human review or acceptance.
+- Rollback: remove the protocol and restore MF-VF-420 to planned in the reference backlog and TODO; remove this ledger entry. No commit created.

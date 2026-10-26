@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-27 · Status: 8 captured, 36 implemented, 124 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-27 · Status: 8 captured, 37 implemented, 123 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -19,10 +19,10 @@
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
 | M — reusable visual composition primitives and token control | `MF-VF-389…MF-VF-406` | 18 | 0 done |
-| N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
+| N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 1 implemented, 14 planned |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 1 captured, 24 planned |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 36 implemented, 124 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 37 implemented, 123 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -479,7 +479,8 @@
   - **File scope/output:** `docs/qa/reviews/classic-reference-parity.md (proposed)`. **AC:** Keep clean practical neutral baseline, no forced brand colors/scene. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
   - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
   - **Evidence (2026-10-27):** Added `docs/qa/reviews/classic-reference-parity.md` with same-fixture 1440×960 and 360×800 capture conditions, light/dark color and grayscale states, decoration-on/off, comparator criteria for Moonraw and Moonquest, and explicit human verdict fields. `MF-VF-216` is implemented. Documentation/source inspection only; no captures, validators, package-manager commands, test suites, typecheck, build, rights review, or human visual review run under the runner override. Status is `implemented`; no fidelity or acceptance claim. Rollback: remove the protocol and restore this row to planned.
-- [ ] **MF-VF-420 — [moonquest] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-228` · **issue:** not-created
+- [x] **MF-VF-420 — [moonquest] Define screenshot-based anti-clone test** · **P2** · `implemented` · **dep:** `MF-VF-228` · **issue:** not-created
+  - **Evidence (2026-10-27):** Added `docs/qa/reviews/moonquest-reference-parity.md` with fixed-content desktop/mobile comparisons against Moonzine and Moonledger across light/dark, grayscale, and decoration-on/off states. It records journal-specific composition, entry hierarchy, navigation, art-off, responsive, and shared-behavior checks with pending human-observation fields. Dependency MF-VF-228 is implemented. Documentation/source inspection only; no captures, visual verdict, rights review, or human review run. Runner override honored; host runner owns verification/checkpoint. No parity, approval, or acceptance claimed. Rollback: remove the protocol and restore MF-VF-420 to planned in the reference backlog and TODO; remove matching ledger entry.
   - **File scope/output:** `docs/qa/reviews/moonquest-reference-parity.md (proposed)`. **AC:** Keep game journal skin scoped to quest presentation, no game engine. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
   - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-421 — [moonledger] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-240` · **issue:** not-created
