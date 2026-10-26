@@ -17,6 +17,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-389 — Specify ArtLayer manifest schema, no runtime assumptions
+
+- Added `contracts/moonframe-creative-asset-slot-contract-v0.1.json` as a proposed metadata contract. It defines role, logical source, canonical rights evidence reference, ordering hint, intrinsic dimensions/viewBox, informative/decorative alt treatment, and safe fallback fields.
+- Explicitly marks runtime implementation, schema enforcement, renderer behavior, automatic asset loading, and public component/prop support as absent. Existing `moonframe-asset-manifest-v0.1.json` remains authoritative for asset provenance and approval; no rights are granted.
+- Static JSON parse and source inspection only. No validators, package-manager commands, suites, typecheck, build, screenshots, or human review run under runner override. Status: `implemented`; rights, visual review, and acceptance remain pending.
+- Rollback: remove the proposed contract, restore MF-VF-389 to planned, and remove this entry and matching TODO update. No commit created; host runner owns checks and checkpoint.
+
 ## MF-VF-422 — Check all four reference metadata records use correct hashes
 
 - Compared the four `photos` records in `contracts/moonframe-creative-reference-contract-v0.1.json` with `docs/visual/references/reference-index.md`. IDs MWX-REF-001…004 all have matching SHA-256 values and dimensions; every index row says source media is not committed and remains unversioned.

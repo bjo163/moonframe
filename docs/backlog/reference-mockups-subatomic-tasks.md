@@ -360,9 +360,9 @@
 
 ## M — reusable visual composition primitives and token control
 
-- [ ] **MF-VF-389 — Specify ArtLayer manifest schema, no runtime assumptions** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
-  - **File scope/output:** `contracts/moonframe-creative-asset-slot-contract-v0.1.json (proposed)`. **AC:** Role, source, rights, layer order, intrinsic dimensions, alt and fallback fields.
-  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-389 — Specify ArtLayer manifest schema, no runtime assumptions** · **P1** · `implemented` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-creative-asset-slot-contract-v0.1.json`. **AC:** Role, source, rights, layer order, intrinsic dimensions, alt and fallback fields.
+  - **Evidence (2026-10-26):** Added a proposed JSON contract defining these fields and explicit non-runtime boundaries. It references the existing asset manifest and brand policy as authorities; the example is neutral metadata and grants no rights. Static JSON parse and source inspection only; no validators, package-manager commands, tests, typecheck, build, screenshot, or human review run per runner override. Status `implemented`; no runtime behavior, rights clearance, or acceptance claimed. Rollback: remove the proposed contract and restore this row to planned.
 - [ ] **MF-VF-390 — Specify InkFrame visual role and safe CSS fallback** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
   - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Border remains accessible when texture off.
   - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.

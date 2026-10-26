@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-CREATIVE-SLOT-001",
+  "status": "proposed-specification-only-no-runtime-implementation",
+  "purpose": "Describe optional, host-supplied visual layers for creative page compositions without defining a renderer or changing component behavior.",
+  "authority": {
+    "assetRecordContract": "moonframe-asset-manifest-v0.1.json",
+    "brandAndRightsPolicy": "docs/brand/original-asset-brand-bible.md",
+    "referenceDirection": "moonframe-creative-reference-contract-v0.1.json",
+    "relationship": "Supplementary composition metadata only; the asset manifest remains the canonical source for asset provenance, approval, and distribution status."
+  },
+  "runtimeBoundary": {
+    "runtimeImplemented": false,
+    "schemaEnforced": false,
+    "rendererImplied": false,
+    "automaticAssetLoading": false,
+    "publicComponentOrPropImplied": false,
+    "unknownFields": "Consumers may preserve or ignore them; no runtime interpretation is promised.",
+    "layerOrderMeaning": "A proposed ordering hint for future composition tooling only; it does not prescribe DOM order, CSS stacking, or paint behavior."
+  },
+  "fieldDefinitions": {
+    "id": "Stable logical identifier, not a file path.",
+    "role": "Intended visual purpose, such as background, frame, illustration, or foreground accent.",
+    "source": "Asset manifest logical ID or a repository-relative source reference; never an arbitrary remote URL.",
+    "rights": "Reference to the canonical asset record's provenance, license, and approval evidence; this field cannot grant rights.",
+    "layerOrder": "Non-negative integer ordering hint; ties have no defined resolution in this proposal.",
+    "intrinsicDimensions": "Positive pixel width and height, or an SVG viewBox expressed as four finite numbers with positive width and height.",
+    "alt": "Either meaningful text for informative imagery or an explicit decorative treatment; decorative layers must not carry essential content.",
+    "fallback": "Optional safe presentation when the layer is unavailable or disabled, including a neutral color or omission."
+  },
+  "recordShape": {
+    "required": [
+      "id",
+      "role",
+      "source",
+      "rights",
+      "layerOrder",
+      "intrinsicDimensions",
+      "alt",
+      "fallback"
+    ],
+    "types": {
+      "id": "non-empty string",
+      "role": "non-empty string",
+      "source": "non-empty logical asset ID or repository-relative path",
+      "rights": "non-empty reference to canonical asset record evidence",
+      "layerOrder": "integer >= 0",
+      "intrinsicDimensions": "{ width: positive number, height: positive number } or { viewBox: [finite, finite, positive, positive] }",
+      "alt": "{ treatment: 'informative', text: non-empty string } or { treatment: 'decorative', text: '' }",
+      "fallback": "{ behavior: 'omit' } or { behavior: 'solid-color', color: non-empty string } or { behavior: 'substitute', source: non-empty logical asset ID or repository-relative path }"
+    }
+  },
+  "safetyAndAccessibility": [
+    "Resolve rights and approval from the canonical asset record; missing or pending evidence is not permission to distribute.",
+    "Do not embed executable markup, event handlers, external resource references, or baked interface copy in layer assets.",
+    "Informative image meaning must also be available as live accessible text; decorative layers must be hidden from assistive technology.",
+    "Fallbacks must retain readable content and must not encode semantic status using color alone.",
+    "This proposal does not authorize use of Moonwitness marks, characters, source references, or other consumer-owned material."
+  ],
+  "example": {
+    "id": "sample.neutral-background",
+    "role": "background",
+    "source": "mf.illustration.sample-neutral-scene",
+    "rights": "See the matching record in moonframe-asset-manifest-v0.1.json; approval must be checked independently.",
+    "layerOrder": 0,
+    "intrinsicDimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "alt": {
+      "treatment": "decorative",
+      "text": ""
+    },
+    "fallback": {
+      "behavior": "solid-color",
+      "color": "Canvas"
+    }
+  }
+}
