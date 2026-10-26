@@ -41,3 +41,21 @@ jobs:
         run: pnpm run typecheck && pnpm --filter moonframe typecheck
       - name: Build Next.js moonframe showcase app
         run: pnpm run build
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Run browser behavior, accessibility and skin capture tests
+        run: pnpm run test:browser
+      - name: Verify screenshot inventory and structural skin pair matrix
+        run: pnpm run audit:pairs
+      - name: Upload browser screenshots and diagnostic traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moonframe-visual-qa-${{ github.sha }}
+          path: |
+            artifacts/skins/
+            artifacts/site/
+            test-results/
+            playwright-report/
+          retention-days: 7
+          if-no-files-found: warn
