@@ -15,7 +15,7 @@
 | A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `16 implemented · 0 pending` | Honest green clean-CI gate + runtime release claims |
 | B · deterministic screenshot Skin Lab | `MF-VF-017…032` | 16 | `16 implemented · 0 pending` | Desktop/tablet/phone profiles, dashboard/table/form/nav fixtures and reproducible archive dialog are captured |
 | C · one master logo production | `MF-VF-033…049` | 17 | `4 implemented · 13 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
-| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `1 implemented / 21 planned` | Search/delete/warning/navigation/etc; ARIA meanings unchanged |
+| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `2 implemented / 20 planned` | Search/close/delete/warning/navigation/etc; ARIA meanings unchanged |
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
@@ -38,7 +38,7 @@
 
 **Updated visual queue:** **460 total task IDs: 53 implemented/captured, 406 planned, 1 blocked pending external owner decision** (`MF-VF-039`). The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
 
-**M13 overall progress:** **81/488 (16.6%) implemented/captured**, **406/488 (83.2%) planned**, **1/488 (0.2%) blocked pending external owner decision**. `MF-VF-039` awaits a named, dated choice among the three draft master marks and a rejected-option rationale; see the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--get-actual-owner-candidate-choice). No owner choice or visual approval is inferred.
+**M13 overall progress:** **82/488 (16.8%) implemented/captured**, **405/488 (83.0%) planned**, **1/488 (0.2%) blocked pending external owner decision**. `MF-VF-039` awaits a named, dated choice among the three draft master marks and a rejected-option rationale; see the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--get-actual-owner-candidate-choice). No owner choice or visual approval is inferred.
 
 - **[Detailed 168 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks, 25 release/evidence tasks and **14 optional consumer-brand palette tasks**.
 - **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
