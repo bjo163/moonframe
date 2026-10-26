@@ -2,6 +2,29 @@
 
 Updated 2026-10-26. This is an intake inventory, not visual approval, an import record, or a license grant.
 
+## Per-skin source asset inventory (MF-VF-289)
+
+Inventory scope: standalone files under `assets/source/skins/<skin-id>/` at source HEAD `528a127c58e7b13c9c3bf88e29f0fdd9e89e1e96`. “Present” means a checked-in source file exists in that directory; it does not mean integrated, optically reviewed, licensed, or approved. “No standalone source files” is an explicit empty inventory, not a claim that the skin has no runtime styling or inline assets. Hashes below are SHA-256 values computed from the listed repository files during this inventory. Rights/creator records and further asset plans remain governed by the asset manifest and asset briefs; no rights are inferred here.
+
+| Canonical skin ID | Standalone source assets present | SHA-256 | Inventory state |
+|---|---|---|---|
+| classic | none | — | no standalone source files recorded |
+| moonchrome | none | — | no standalone source files recorded |
+| mooncrash | none | — | no standalone source files recorded |
+| moonglitch | `motif.svg`, `pattern.svg` | `motif.svg` `5D7CF0CC15FE00DDB914F3188F50912C47383FA7C8E846D8435E32B91908017E`; `pattern.svg` `B2B8C726C4D6516A55974F3459150EA509DAE373FE6ECF09E9D07D0CD589735C` | files present; rights/review pending |
+| moonhalftone | `edition.svg`, `hero.svg`, `motif.svg`, `pattern.svg` | `edition.svg` `1158DAA144A8D5A151B75AF46A399772E3574DB82A03BD54F288128C17D12518`; `hero.svg` `295E77CDD53ABD5CFDB390EACBAB08873F816A9F3A745B29280D81B0EA1B2B6B`; `motif.svg` `094ED437C2ECCAD1C5BCA16A62CE9CC670EDAC48DF0EC01BADA0E35E677E3781`; `pattern.svg` `BE45E07E3BF9FCBDDFE8A8BC59BA580EC657A68921404CCD5212A5E855E3514E` | files present; rights/review pending |
+| moonink | none | — | no standalone source files recorded |
+| moonledger | none | — | no standalone source files recorded |
+| moonpanel | none | — | no standalone source files recorded |
+| moonpunk | `edition.svg`, `hero.svg`, `pattern.svg` | `edition.svg` `CB686696F24B5EC02F456AF0A467AEAD2EA14FE1648B9EAE876AAF24F0A9C9AA`; `hero.svg` `25CE3FE8CC0F852EA35671CA3DF015CDBABE7A9BEE7C9BFCEF01BFCCC436D106`; `pattern.svg` `F9C698844A2E9D6D7BAB8EF108208B8B0539660C0E58E6CA26679EA39DCB7242` | files present; rights/review pending |
+| moonquest | none | — | no standalone source files recorded |
+| moonraw | none | — | no standalone source files recorded |
+| moonriot | `edition.svg`, `hero.svg`, `motif.svg`, `pattern.svg` | `edition.svg` `57D4B99C0E48C9CD672D9B1A2AC309B1A3075EC4451DC14C5038D6135CBFB635`; `hero.svg` `3C144367A1ECC95320745F0268F08A1196846C952E24EAD373C424B44879AAD4`; `motif.svg` `F76DAD45E7A6EAF2E6C82582F9D1E1A2B96A5226471926DD6476A30D2A4EF560`; `pattern.svg` `F5337BB7A5042B9FE07DE093C060720089469A94B85CBAA40F159A90FFD3A168` | files present; rights/review pending |
+| moonscrawl | none | — | no standalone source files recorded |
+| moonsmash | none | — | no standalone source files recorded |
+| moonzine | `edition.svg`, `hero.svg`, `motif.svg`, `pattern.svg` | `edition.svg` `BEE1A2D3485FEE115669C7776909AC3CD26F21557ED8886281837396E5DCC663`; `hero.svg` `24324426AA4751A94501781FEF08628F7CB162B9071F1E71CBCCDE95D75FAD60`; `motif.svg` `7C620FF39F56A19BA44503B08A8616D4D0F7D6A6623DAD1B9B8DDE5A5DE44918`; `pattern.svg` `5CCBEC714D66920B6D7859F71B967840AAE85EEFF2E09E43461166B42B36D51B` | files present; rights/review pending |
+This is a point-in-time source inventory; rerun/reconcile it when files change. It complements the captured-appearance tables below and does not replace normative asset provenance or rights evidence.
+
 ## Four user-provided creative references
 
 Canonical metadata lives in `contracts/moonframe-creative-reference-contract-v0.1.json`. It records SHA-256 values and dimensions as received in the original chat upload inventory:

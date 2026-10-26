@@ -1653,3 +1653,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a documentation-only SVG import sequence to `docs/qa/original-asset-validation-plan.md`: preserve provenance; parse hardened XML; reject the established hostile fixture classes; sanitize to bounded static SVG; optimize only sanitized content; then re-parse and revalidate before hashing. Optional decoration and accessibility constraints are explicit.
 - Dependency MF-VF-013 is implemented. Source inspection only. No package-manager commands, suites, validators, typecheck, build, rendering, or human review run under runner override. This is proposed guidance, not an importer/security implementation or acceptance claim.
 - Rollback: remove the MF-VF-401 subsection and restore its backlog status to planned. No commit created; host runner owns verification/checkpoint.
+# MF-VF-289 — Track asset rights and hashes in one evidence ledger
+
+- Added a per-skin source inventory in `docs/qa/visual-fidelity-evidence-ledger.md` for all 15 canonical skins. It records standalone source assets and SHA-256 values where present, and explicit empty inventories otherwise. The evidence separates source-file presence from rights clearance, runtime/inline styling, integration, and human visual review.
+- Hashes computed using PowerShell `Get-FileHash -Algorithm SHA256` at source HEAD `528a127c58e7b13c9c3bf88e29f0fdd9e89e1e96`. Backlog status `implemented`; no validators, package-manager commands, tests, typecheck, build, or review run under runner override. Host runner owns verification/checkpoint; rights, human review, and acceptance remain pending.
+- Rollback: remove the MF-VF-289 inventory section and restore the task row to planned. No commit created.
