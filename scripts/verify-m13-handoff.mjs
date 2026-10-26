@@ -79,7 +79,7 @@ const backlogs = [
   readText('docs/backlog/visual-fidelity-subatomic-tasks.md'),
   readText('docs/backlog/reference-mockups-subatomic-tasks.md'),
 ];
-const taskPattern = /^- \[ \] \*\*(MF-VF-\d{3}) — [^\n]*\*\* · \*\*P[0-3]\*\* · \`planned\` · \*\*(?:dependency|dep):\*\* \`([^\`]+)\`/gm;
+const taskPattern = /^- \[[ x]\] \*\*(MF-VF-\d{3}) — [^\n]*\*\* · \*\*P[0-3]\*\* · \x60(?:planned|implemented|captured|human-reviewed|accepted)\x60 · \*\*(?:dependency|dep):\*\* \x60([^\x60]+)\x60/gm;
 const taskRows = backlogs.flatMap((body) => [...body.matchAll(taskPattern)]);
 const taskIds = taskRows.map((row) => row[1]);
 check(taskRows.length === 460 && unique(taskIds), 'Expected 460 unique planned MF-VF tasks from both backlogs');
@@ -97,6 +97,22 @@ function visit(id) {
 }
 for (const id of Object.keys(deps)) visit(id);
 
+const preflightSource = readText('docs/backlog/m13-preflight-remediation-tasks.md');
+const preflightPattern = /^- \[[ x]\] \*\*(MF-PF-\d{3}) — [^\n]*\*\* · \*\*P[012]\*\* · \x60(?:planned|implemented|captured|human-reviewed|accepted)\x60 · \*\*deps:\*\* \x60([^\x60]+)\x60/gm;
+const preflightRows = [...preflightSource.matchAll(preflightPattern)];
+const pfIds = preflightRows.map((x) => x[1]);
+check(preflightRows.length === 28 && unique(pfIds), 'Expected 28 unique MF-PF preflight tasks');
+const pfEdges = Object.fromEntries(preflightRows.map((r) => [r[1], [...r[2].matchAll(/MF-PF-\d{3}/g)].map((x) => x[0])]));
+for (const [id, d] of Object.entries(pfEdges)) for (const x of d) check(Object.hasOwn(pfEdges, x) && x !== id, 'Preflight task dependency missing/self-loop: ' + id + ' -> ' + x);
+const pfColors = new Map();
+function visitPreflight(id) {
+  if (pfColors.get(id) === 1) { failures.push('Preflight DAG cycle at ' + id); return; }
+  if (pfColors.get(id) === 2) return;
+  pfColors.set(id, 1);
+  for (const child of pfEdges[id] || []) if (Object.hasOwn(pfEdges, child)) visitPreflight(child);
+  pfColors.set(id, 2);
+}
+for (const id of pfIds) visitPreflight(id);
 const auditSource = readText('scripts/audit-skin-pairs.mjs');
 check(!auditSource.includes('OWNER-APPROVED'), 'Automated pair reporter must never manufacture owner approval');
 check(auditSource.includes('humanReviewStatus:'), 'Structural audit must distinguish human review');
@@ -106,5 +122,5 @@ check(!unitSource.includes('assert.equal(audit.missingScreenshots.length, 0)'), 
 for (const issue of failures) console.error('FAIL: ' + issue);
 for (const warning of warnings) console.warn('RELEASE WARNING: ' + warning);
 if (failures.length) process.exit(1);
-console.log('PASS: M13 handoff structural integrity: 15 skins, 30 modes, 105 pairs, 78 token names, 6 SFX events, 460 unique acyclic tasks.');
+console.log('PASS: M13 handoff structural integrity: 15 skins, 30 modes, 105 pairs, 78 token names, 6 SFX events, 460 visual tasks plus 28 nonvisual preflight tasks; acyclic.');
 console.log('CONDITIONAL-GO: local microtasks may proceed; human visual, artwork, SFX hardening, token values and public release remain gated.');
