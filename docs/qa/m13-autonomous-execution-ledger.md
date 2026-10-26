@@ -1631,3 +1631,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonglitch/pattern.svg`, an original static 160×160 intermittent scanline pattern using `currentColor`, intended only for optional noninteractive margins. SHA-256: `B2B8C726C4D6516A55974F3459150EA509DAE373FE6ECF09E9D07D0CD589735C`.
 - Static source scan found no script, event-handler, external-reference, `foreignObject`, or `url()` patterns; `git diff --check` exited 0. Dependency MF-VF-120 is implemented. Status `implemented`; no rendering, package-manager commands, validators, suites, typecheck, build, or human visual review run under runner override. Optionality/integration and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-122 to planned, and remove matching TODO/ledger evidence. No commit created; host runner owns verification/checkpoint.
+# MF-VF-144 — Write Moonink visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonink.md`, defining a spacious brush-ink composition, calm control surfaces, and structural distinction from Moonscrawl while preserving shared component semantics and decoration-off/reduced-motion fallbacks.
+- Dependency MF-VF-015 is implemented. Task status `implemented`; documentation/source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, human review, rights clearance, or acceptance run/claimed under runner override.
+- Updated the matching visual backlog row and root TODO. No aggregate recount asserted because live snapshots conflict. No commit created; host runner owns checks and checkpoint. Rollback: remove the brief and restore MF-VF-144 to planned in both indexes; remove this ledger entry.

@@ -5,6 +5,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-144):** Added `docs/visual/skins/moonink.md` with a contract-grounded brush-ink direction, calm margins, Moonscrawl distinction, and shared semantic/art-off constraints. Status `implemented`; source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, or human review run per runner override. Rights, visual review, and acceptance remain pending; no aggregate recount asserted because task summaries conflict.
+
 **Live execution update (2026-10-27, MF-VF-385):** Added a Playwright check using a neon gradient behind the R04 sign-in region and grayscale treatment at 360×800. It checks opaque field surfaces, explicit field/button colors, visibility, and focus. The first full run exposed an incorrect password-background expectation, now corrected to the actual white control surface; focused and full browser reruns are pending. No contrast ratio or visual approval is claimed.
 
 **Live execution update (2026-10-27, MF-VF-384):** Focused Playwright test passed 1/1 and the full browser suite passed 68/68. The R04 fixture test verifies keyboard order, visible field focus, Escape preserving valid input without submission, and native invalid email feedback. No dialog dismissal or independent screen-reader announcement is claimed; human review remains pending.
