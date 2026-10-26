@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="observer-cloak" x1=".18" y1=".08" x2=".82" y2=".98">
+      <stop offset="0" stop-color="#59667d" />
+      <stop offset=".52" stop-color="#252d3d" />
+      <stop offset="1" stop-color="#111722" />
+    </linearGradient>
+    <radialGradient id="observer-halo">
+      <stop offset="0" stop-color="#9fc8ef" stop-opacity=".3" />
+      <stop offset="1" stop-color="#9fc8ef" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <circle cx="245" cy="248" r="218" fill="url(#observer-halo)" />
+  <path d="M96 510c10-106 34-177 91-224-32-32-43-74-32-119 10-42 42-75 87-91 52 18 82 56 83 104 1 39-15 73-42 102 58 43 94 113 102 228H96Z" fill="url(#observer-cloak)" />
+  <path d="M155 183c8-56 40-94 87-111 46 17 74 55 79 109-35-20-61-28-83-28-26 0-51 10-83 30Z" fill="#18202e" />
+  <path d="M181 191c26-18 46-26 65-26 21 0 42 9 68 27-3 43-28 73-67 91-39-18-63-48-66-92Z" fill="#0d131d" />
+  <path d="M198 198c17-8 32-12 48-12 17 0 34 4 52 13" fill="none" stroke="#9fc8ef" stroke-opacity=".36" stroke-width="3" stroke-linecap="round" />
+  <path d="M150 299c36 25 66 37 96 37 31 0 64-13 101-39" fill="none" stroke="#9fc8ef" stroke-opacity=".2" stroke-width="2" />
+  <path d="M117 487c42-51 84-75 129-75 47 0 89 25 128 77" fill="none" stroke="#d3e3f4" stroke-opacity=".18" stroke-width="2" />
+</svg>

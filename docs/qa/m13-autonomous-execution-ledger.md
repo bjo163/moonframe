@@ -665,3 +665,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-022` is implemented. No artwork is bundled or derived from the missing reference. No package-manager commands, suites, typecheck, build, validators, browser checks, or captures run per runner override; host runner will verify. No rights or human review claimed.
 - Status: `implemented`; no commit created. Rollback: remove the component/CSS module and restore the task row/count evidence.
 - Counts: prior ledger count 104 implemented-or-captured, 384 planned, 0 blocked; now 105/383/0 of 488. Counts do not imply capture, human review, rights, or acceptance.
+## MF-VF-315 — Draw original hooded anonymous observer concept
+
+- Added `assets/source/creative-reference/r01/observer-scene.svg`, a self-contained decorative illustration built from generic geometric shapes. The faceless hooded silhouette is an optional consumer-scene concept; it introduces no consumer mark, embedded text, external reference, or bundled runtime use.
+- SHA-256: `67cdaf4c710fedf9a09d15817f33fbfe6fafd1c3d57e0574844d4ea510f83e8f`.
+- Dependency MF-VF-022 is implemented. Status: `implemented`; no rights clearance, human optical review, or acceptance claimed. Runner override honored: no package-manager commands, tests, typecheck, build, validator, or browser capture run. Host runner owns verification/checkpoint.
+- Rollback: remove the SVG and revert this ledger entry and the matching backlog/TODO evidence.
+- Counts: 109/488 implemented-or-captured, 379/488 planned, 0 explicitly blocked. Counts do not imply capture, review, or acceptance.

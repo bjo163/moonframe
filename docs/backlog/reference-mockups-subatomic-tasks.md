@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-26 · Status: 8 captured, 7 implemented, 153 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-26 · Status: 8 captured, 13 implemented, 147 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -14,7 +14,7 @@
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
 | H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 8 captured, 4 planned |
-| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 7 implemented, 17 planned |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 13 implemented, 11 planned |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 7 implemented, 153 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 13 implemented, 147 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -95,9 +95,9 @@
 - [x] **MF-VF-314 — Draw original luminous moon backdrop asset concept** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/moon-orbit-scene.svg (proposed)`. **AC:** Vector draft or opt into raster if complex; not copyrighted screenshot derivative.
   - **Evidence (2026-10-26):** Added `assets/source/creative-reference/r01/moon-orbit-scene.svg`, an original, self-contained decorative vector with a soft luminous crescent, orbit arcs, and sparse stars. The asset has a transparent background, a viewBox, and `aria-hidden`/`focusable` settings that keep it decorative when embedded; no screenshot or consumer-brand marks are used. Dependency `MF-VF-022` is implemented. Static inspection only; no SVG/security validator, browser capture, 360/768/1440 check, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No rights clearance or human optical review claimed. Rollback: remove this SVG and restore this task row.
-- [ ] **MF-VF-315 — Draw original hooded anonymous observer concept** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-315 — Draw original hooded anonymous observer concept** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/observer-scene.svg (proposed)`. **AC:** Story-specific figure supplied by consumer, not universal app icon.
-  - **Evidence (2026-10-26):** Dependency `MF-VF-022` is implemented. The component provides only an optional scene seam; no image is bundled or sourced. No browser capture, 360/768/1440 check, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No image rights, visual review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row.
+  - **Evidence (2026-10-26):** Added `assets/source/creative-reference/r01/observer-scene.svg`, a self-contained anonymous hooded silhouette concept drawn from generic geometric forms. It has no facial identity, embedded text, external resources, or reference-image tracing; it remains decorative and optional. SHA-256: `67cdaf4c710fedf9a09d15817f33fbfe6fafd1c3d57e0574844d4ea510f83e8f`. Dependency `MF-VF-022` is implemented. Static source inspection only; no package-manager commands, suites, typecheck, build, SVG validator, capture, or 360/768/1440 rendering checks run per runner override. Rights and human visual review remain unclaimed. Rollback: remove the SVG and restore this task row/status.
 - [x] **MF-VF-316 — Define city skyline backplate artwork concept** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/city-silhouette.svg (proposed)`. **AC:** Layered optional environment that works without effects and on phone.
   - **Evidence (2026-10-26):** Added `assets/source/creative-reference/r01/city-silhouette.svg`, an original layered geometric skyline backplate with a transparent canvas and no embedded text or story-specific figures. SHA-256: `54ed556523a0ed23001f70a275d6303a24073752a6a95166788e1cd48b94fcf1`. Its vector layers remain optional, so consumers can omit visual effects and use the same scene slot on narrow screens. Dependency `MF-VF-022` is implemented. Static source inspection only; `git diff --check` passed. No SVG/security validator, browser capture, 360/768/1440 check, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No rights clearance or human optical review claimed. Rollback: remove this SVG and restore this task evidence/status.
