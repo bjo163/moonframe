@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-382 — Set screen-reader meaning of decorative artwork
+
+- Updated `apps/moonframe/templates/visual-reference/r04-layout.tsx`: optional `artworkLabel` marks meaningful artwork with an accessible name; absent a label, the artwork aside is `aria-hidden`.
+- Dependency `MF-VF-025` is implemented. Status `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, browser capture, or human review run. No acceptance claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the prop and conditional ARIA attributes, restore this row to planned, and remove the TODO/ledger entries.
+
 ## MF-VF-300 — Record the R04 import blocker accurately
 
 - Checked `/mnt/data/moonframe_m13_reference_originals.zip`; it is absent. No R04 source PNG is present in the checkout. The creative-reference contract identifies R04 as `MWX-REF-004`, SHA-256 `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90`, 1024 × 576.

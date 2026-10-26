@@ -336,7 +336,8 @@
 - [ ] **MF-VF-381 — Separate social sign-in from illustrative demo copy** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-auth-seam.tsx (proposed)`. **AC:** OAuth action only real if consumer supplies handler/URL; demo truthfully simulated.
   - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-382 — Set screen-reader meaning of decorative artwork** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+- [x] **MF-VF-382 — Set screen-reader meaning of decorative artwork** · **P1** · `implemented` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **Evidence (2026-10-27):** Updated `R04Layout` with an optional `artworkLabel`. With no label, its artwork aside is `aria-hidden`; supplying a concise label exposes it as informative content. Existing form semantics and caller-provided artwork remain unchanged. Source inspection only; no validators, package-manager commands, tests, typecheck, build, browser capture, or human review run per runner override. No approval or acceptance claimed. Rollback: remove the prop and conditional ARIA attributes and restore this row to planned.
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-scene-slot.tsx (proposed)`. **AC:** aria-hidden where decorative; informative alt if story image meaningful.
   - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [x] **MF-VF-383 — Set mobile form-first collapse order** · **P1** · `implemented` · **dep:** `MF-VF-025` · **issue:** not-created

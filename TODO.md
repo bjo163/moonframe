@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-382):** `R04Layout` now hides unlabeled decorative artwork from assistive technology and accepts an optional accessible label for informative artwork. Source inspection only; no validators, package-manager commands, tests, typecheck, build, browser capture, or human review run per runner override. Status `implemented`; no acceptance claimed. See `docs/qa/m13-autonomous-execution-ledger.md`; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-375):** Added an optional original abstract R04 CTA brush backing SVG at `assets/source/creative-reference/r04/cta-brush.svg`; it remains decorative and separate from live button semantics. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendered capture, rights review, or human visual review run. No review or acceptance claimed; host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-27, MF-VF-383):** Made R04 mobile form-first collapse explicit in `r04-layout.tsx` and `.module.css`: form remains first in DOM/visual order and fills the viewport, while optional artwork is compact below 48rem. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser capture, or human review run. No authentication or acceptance claim; host runner owns verification/checkpoint.
