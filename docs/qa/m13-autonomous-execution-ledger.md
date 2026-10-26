@@ -853,3 +853,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Static source review only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, render, browser capture, or reference comparison. Host runner owns verification/checkpoint.
 - Live task row counts after this change: VF foundation 64/292 implemented-or-captured; reference addendum 40/168 implemented-or-captured; preflight 28/28 implemented-or-captured; total 132/488 implemented-or-captured, 356 planned.
 - Rollback: remove the component and stylesheet, restore task row to planned and revert matching root summary and ledger entry.
+
+## MF-VF-338 — Build media tile with caption overlay
+
+- Added `R02StoryCard` and `r02-story-card.module.css`. The title, caption and CTA are live DOM content and remain visible without hover; the link has a title-specific accessible name and visible keyboard focus. The media slot is decorative and caller supplied. Forced-colors mode uses system canvas colors.
+- Dependency `MF-VF-023` is implemented. Source review only; runner override honored: no package-manager commands, tests, validators, typecheck, build, browser render or captures. No reference comparison, human visual review, rights clearance or acceptance claimed. No commit created; host runner handles checks and checkpoint.
+- Counts advance from the latest ledger-recorded 132/488 implemented-or-captured, 356 planned, 0 blocked to 133/488, 355 planned, 0 explicitly blocked. These counts do not imply capture, review or acceptance.
+- Rollback: remove the component and CSS module and restore this ledger entry, backlog row and TODO count.

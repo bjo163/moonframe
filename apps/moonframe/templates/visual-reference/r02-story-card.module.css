@@ -1,0 +1,71 @@
+.card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 20rem;
+  overflow: hidden;
+  color: #fff;
+  background: #17151b;
+}
+
+.media,
+.caption {
+  grid-area: 1 / 1;
+}
+
+.media {
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.media > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  align-self: end;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: linear-gradient(transparent, rgb(0 0 0 / 88%) 32%);
+}
+
+.title {
+  max-width: 18ch;
+  margin: 2.5rem 0 0;
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.summary {
+  max-width: 58ch;
+  margin: 0.75rem 0 1rem;
+  line-height: 1.5;
+}
+
+.action {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.action:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (forced-colors: active) {
+  .caption {
+    color: CanvasText;
+    background: Canvas;
+  }
+
+  .action:focus-visible {
+    outline-color: Highlight;
+  }
+}
