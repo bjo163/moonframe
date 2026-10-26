@@ -1529,3 +1529,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `apps/moonframe/templates/visual-reference/r04-form-options.tsx` and `.module.css`. The optional native checkbox is label-associated; recovery href and link label are consumer-owned. Both controls have 44px minimum hit height, visible keyboard focus, wrapping layout, and forced-colors styling.
 - Dependency MF-VF-025 is implemented. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, browser captures, or human review were run. No authentication/recovery behavior or approval is claimed.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the component/CSS module, restore MF-VF-374 to planned, and remove this TODO/ledger evidence.
+# MF-VF-397 — Specify PosterRenderer separate from component theme core
+
+- Added a specification-only PosterRenderer boundary to `docs/premium/premium-scope-bible.md`. It places poster composition at the template/presentation layer, keeps essential copy live in DOM, allows optional caller media with a neutral fallback, and prevents poster styling from changing shared component semantics or data-form behavior.
+- Dependency MF-VF-013 is implemented. Backlog status: `implemented`; documentation/source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, screenshot, or human review run. No renderer API, runtime behavior, asset rights, or shipped template is claimed.
+- Rollback: remove the subsection and restore MF-VF-397 to planned in the reference backlog; remove this ledger entry. No commit created; host runner owns verification and checkpoint.
