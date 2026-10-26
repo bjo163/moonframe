@@ -78,6 +78,16 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
     .sort((a, b) => taskSort === 'task' ? a.task.localeCompare(b.task, 'en-US') : a.date.localeCompare(b.date)), [taskSearch, taskSort]);
 
   return <section className="fixture-dashboard" data-fixture="dashboard-overview" aria-labelledby="fixture-dashboard-title">
+    <div className="fixture-dashboard-utility">
+      <nav aria-label="Breadcrumb">
+        <ol><li><a href="#fixture-dashboard-title">Northstar Studio</a></li><li aria-current="page">Overview</li></ol>
+      </nav>
+      <div className="fixture-dashboard-utility-actions">
+        <Input aria-label="Search project tasks" placeholder="Search project tasks" value={taskSearch} onChange={event => setTaskSearch(event.target.value)} />
+        <span className="fixture-dashboard-status" role="status"><span aria-hidden="true" />3 updates</span>
+        <Avatar fallback="NS" alt="Northstar Studio profile" />
+      </div>
+    </div>
     <div className="fixture-dashboard-heading">
       <div>
         <div className="demo-eyebrow">SHARED QA FIXTURE</div>
@@ -116,7 +126,6 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
     <section className="fixture-dashboard-table-section" aria-labelledby="fixture-tasks-title">
       <div className="fixture-dashboard-table-heading"><h3 id="fixture-tasks-title">Project tasks</h3><span>{visibleFixtureTasks.length} of {dashboardFixtureTasks.length} tasks</span></div>
       <div className="fixture-dashboard-table-toolbar">
-        <Input aria-label="Search project tasks" placeholder="Search project tasks" value={taskSearch} onChange={event => setTaskSearch(event.target.value)} />
         <Select aria-label="Sort project tasks" value={taskSort} onChange={event => setTaskSort(event.target.value as 'due-date' | 'task')}>
           <option value="due-date">Due date</option><option value="task">Task name</option>
         </Select>

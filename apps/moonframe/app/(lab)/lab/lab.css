@@ -120,6 +120,14 @@ button svg, a svg { flex-shrink: 0; }
 @media (max-width: 480px) { .demo-skin-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; } .demo-skin-option { font-size: 10px; padding-inline: 5px; gap: 5px; } .demo-skin-index { display: none; } .demo-skin-heading { font-size: 8px; } .demo-header-actions { gap: 7px; } .demo-version { display: none; } .demo-breadcrumb { font-size: 10px; } .demo-header-actions .mf-avatar { display: none; } .demo-desktop { display: none; } .demo-hero-copy h1 { font-size: 40px; } .demo-table-toolbar { flex-wrap: wrap; } .demo-search { flex-basis: 100%; } .demo-table-toolbar > .mf-select { flex: 1; max-inline-size: none; } .demo-footer { flex-direction: column; gap: 10px; } .demo-hero-foot { font-size: 7px; letter-spacing: .5px; } .demo-section-heading { align-items: start; } .demo-stat-value { font-size: 29px; } .demo-stat-top { font-size: 10px; gap: 5px; } .demo-stat-detail { font-size: 9px; } }
 .fixture-dashboard { margin-block-start: 38px; padding: clamp(16px, 2.5vw, 28px); border: 1px solid var(--mf-border); border-radius: var(--mf-radius); background: var(--mf-surface); color: var(--mf-text); }
 .fixture-dashboard-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; padding-block-end: 20px; border-block-end: 1px solid var(--mf-border); }
+.fixture-dashboard-utility { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; border-block-end: 1px solid var(--mf-border); }
+.fixture-dashboard-utility nav ol { display: flex; align-items: center; gap: 9px; margin: 0; padding: 0; list-style: none; color: var(--mf-muted); font-size: 11px; }
+.fixture-dashboard-utility nav li + li::before { content: "/"; margin-inline-end: 9px; color: var(--mf-muted); }
+.fixture-dashboard-utility nav a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.fixture-dashboard-utility-actions { display: flex; align-items: center; gap: 12px; }
+.fixture-dashboard-utility-actions .mf-input { inline-size: min(240px, 32vw); min-inline-size: 0; }
+.fixture-dashboard-status { display: inline-flex; align-items: center; gap: 6px; color: var(--mf-muted); font-size: 11px; white-space: nowrap; }
+.fixture-dashboard-status span { inline-size: 7px; block-size: 7px; border-radius: 50%; background: var(--mf-accent); }
 .fixture-dashboard-heading h2 { margin: 8px 0 3px; font-family: var(--mf-display); font-size: clamp(24px, 3vw, 34px); letter-spacing: -.04em; }
 .fixture-dashboard-heading p { margin: 0; color: var(--mf-muted); font-size: 12px; }
 .fixture-dashboard-heading-actions { display: grid; justify-items: end; gap: 10px; }
@@ -189,3 +197,4 @@ button svg, a svg { flex-shrink: 0; }
 @media (max-width: 480px) { .fixture-dashboard-heading { align-items: start; flex-direction: column; } .fixture-dashboard-metrics { gap: 7px; } .fixture-dashboard-metric { padding: 10px 8px; } .fixture-dashboard-metric dt { font-size: 9px; } .fixture-dashboard-metric dd { margin-block-start: 7px; font-size: 23px; } .fixture-dashboard-activity li { align-items: start; gap: 8px; } .fixture-dashboard-activity li > div:last-child { max-inline-size: 100px; } .fixture-dashboard-activity strong { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (forced-colors: active) { .demo-orbit, .demo-swatch { display: none; } .demo-skin-option[data-active] { border: 2px solid Highlight; } .demo-toast { border: 2px solid CanvasText; } }
+@media (max-width: 560px) { .fixture-dashboard-utility { align-items: stretch; flex-direction: column; } .fixture-dashboard-utility-actions { flex-wrap: wrap; } .fixture-dashboard-utility-actions .mf-input { flex: 1 1 100%; inline-size: 100%; } }

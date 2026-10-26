@@ -564,3 +564,14 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Cross-checked ID, digest, dimensions, and unversioned source status against contracts/moonframe-creative-reference-contract-v0.1.json. Original bytes remain absent, so the digest is transcribed, not recomputed. No import, license, or visual approval is claimed.
 - No package-manager commands, suites, typecheck, or build run per runner override. No commit created; host runner will verify and checkpoint.
 - Status: captured. Rollback: revert the MF-VF-296 status/evidence and its one R04 index row.
+
+## MF-VF-305 — Extract top navigation landmark hierarchy
+
+- Added responsive breadcrumb navigation, task search, labeled update status, and named profile avatar to the live R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx` and `apps/moonframe/app/(lab)/lab/lab.css`. Search is connected to the existing task filter; duplicate table search was removed. The interface is live DOM content, not screenshot imagery.
+- Dependency `MF-VF-022` is implemented. `node --check tests/browser/skins.spec.js`, contracts, handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Targeted browser checks passed 2/2. The full browser suite passed the 30 skin × mode matrix plus the no-art fallback scenario, 63/64 total; one unrelated existing dashboard-filter test exceeded its 30-second timeout. Status remains `implemented`, not captured. No image rights or human review claimed.
+- Rollback: revert the fixture/CSS changes and restore the task row to planned. No commit created; host runner handles verification and checkpoint.
+
+## Current counts after MF-VF-305
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous live count: 96 implemented-or-captured, 392 planned, 0 explicitly blocked. This task adds one implemented record: 97 implemented-or-captured, 391 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.

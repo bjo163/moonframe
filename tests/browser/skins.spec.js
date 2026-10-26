@@ -110,7 +110,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(breadcrumb).toContainText('Overview');
     const dashboardFixture = page.locator('[data-fixture="dashboard-overview"]');
     await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
-    await expect(dashboardFixture.getByText('Northstar Studio', { exact: true })).toBeVisible();
+    await expect(dashboardFixture.getByRole('link', { name: 'Northstar Studio', exact: true })).toBeVisible();
     await expect(dashboardFixture.getByText('Sunday, October 25, 2026', { exact: true })).toBeVisible();
     const fixtureNavigation = dashboardFixture.getByRole('navigation', { name: 'Workspace sections' });
     const fixtureNavItems = fixtureNavigation.getByRole('button');
@@ -278,8 +278,8 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     }
     const renderedSurfaceStyles = await dashboardFixture.evaluate(node => {
       const card = node.querySelector('.fixture-dashboard-note');
-      const cardText = card.querySelector('.mf-card-content p');
-      const input = node.querySelector('.fixture-dashboard-table-toolbar .mf-input');
+      const cardText = card.querySelector('.mf-card-title');
+      const input = node.querySelector('.fixture-dashboard-utility-actions .mf-input');
       const read = element => {
         const style = getComputedStyle(element);
         return { color: style.color, backgroundColor: style.backgroundColor };
@@ -290,7 +290,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       expect(styles.color, `${skin.id}/${mode} ${surface} rendered foreground`).not.toBe('rgba(0, 0, 0, 0)');
       if (surface !== 'nestedCardText') expect(styles.backgroundColor, `${skin.id}/${mode} ${surface} rendered background`).not.toBe('rgba(0, 0, 0, 0)');
     }
-    const toolbarInput = dashboardFixture.locator('.fixture-dashboard-table-toolbar .mf-input');
+    const toolbarInput = dashboardFixture.locator('.fixture-dashboard-utility-actions .mf-input');
     await toolbarInput.focus();
     const focusStyle = await toolbarInput.evaluate(element => {
       const style = getComputedStyle(element);
@@ -564,7 +564,7 @@ test('critical lab actions and readable content work without artwork or custom f
   });
   await page.goto('/lab');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-  await expect(page.getByText('Northstar Studio', { exact: true })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Breadcrumb' }).getByRole('link', { name: 'Northstar Studio', exact: true })).toBeVisible();
   const fixtureNavigation = page.getByRole('navigation', { name: 'Workspace sections' });
   await expect(fixtureNavigation.getByRole('button', { name: 'Overview', exact: true })).toBeVisible();
 

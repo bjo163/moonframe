@@ -65,9 +65,9 @@
 
 ## I — R01 mission control dashboard: tiny structure and asset slots
 
-- [ ] **MF-VF-305 — Extract top navigation landmark hierarchy** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-305 — Extract top navigation landmark hierarchy** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-topbar.tsx (proposed)`. **AC:** Logical breadcrumbs, search, status, profile; no screenshot-as-header.
-  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Evidence (2026-10-26):** Added a semantic breadcrumb navigation landmark, task search, labeled update status and named profile avatar to the live R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx`; search remains connected to the table filter and the redundant table search was removed. Responsive styling stacks the utility bar on narrow screens. `node --check tests/browser/skins.spec.js`, contracts, handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Targeted browser checks passed 2/2; full browser suite passed all 30 skin × mode cases and the no-art fallback test (63/64 total); one unrelated existing dashboard-filter test timed out at 30 seconds. Status remains `implemented`, not captured. No human visual review, source image or rights claim. Rollback: revert the fixture, CSS and test changes and restore this task to planned.
 - [ ] **MF-VF-306 — Extract ink-black left sidebar shell** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-sidebar.tsx (proposed)`. **AC:** Persistent desktop rail with keyboard nav and constrained scrawl decoration.
   - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
