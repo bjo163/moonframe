@@ -1,5 +1,17 @@
 # M13 autonomous execution ledger
 
+## Current live counts after MF-VF-358
+
+- Checked task rows: 139/488 implemented or captured (65/292 foundation visual, 46/168 reference visual, and 28/28 preflight); 349/488 remain planned; 0 explicitly blocked. Checked rows do not imply human review, rights clearance, or acceptance.
+- This count was recomputed from checkbox states across the three live backlogs before and after the task. The root TODO summary is synchronized to that count.
+
+## MF-VF-358 — Create energetic ink/collage title frame
+
+- Added `assets/source/creative-reference/r03/header-frame.svg`, an original static frame of angular paper fragments and loose ink strokes with a clear center for selectable/live headline text. No consumer mark, embedded heading, performer imagery, external resource, script, or event attribute is present.
+- SHA-256: `20de87341f4e87d371886a34f63e44f0e499c0ac02d83eba1072f1b60e326be8`.
+- Dependency `MF-VF-024` is implemented. Status: `implemented`; static source inspection and `git diff --check` passed. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, capture, or reference comparison were run. Host runner owns verification/checkpoint. Rights clearance, human optical review, and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching task row and root TODO count/summary.
+
 ## MF-VF-341 — Draw neutral constellation pin graphics
 
 - Added `assets/source/creative-reference/r02/constellation-pins.svg`, a self-contained original static vector of neutral circular pins joined by fine constellation lines. It has no labels, character imagery, scripts, event handlers, external resources, or reference-derived assets.
