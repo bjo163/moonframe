@@ -15,7 +15,7 @@
 | A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `16 implemented · 0 pending` | Honest green clean-CI gate + runtime release claims |
 | B · deterministic screenshot Skin Lab | `MF-VF-017…032` | 16 | `16 implemented · 0 pending` | Desktop/tablet/phone profiles, dashboard/table/form/nav fixtures and reproducible archive dialog are captured |
 | C · one master logo production | `MF-VF-033…049` | 17 | `5 implemented · 1 captured · 1 blocked · 10 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
-| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `2 implemented / 20 planned` | Search/close/delete/warning/navigation/etc; ARIA meanings unchanged |
+| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `3 implemented / 19 planned` | Search/close/menu; ARIA meanings unchanged |
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |

@@ -801,3 +801,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-023` is implemented. Status: `implemented`; no validators, package-manager commands, suites, typecheck, build, rendering, source comparison, or browser capture run per runner override. Human optical review, source comparison, rights approval, and acceptance are not claimed; host runner owns verification/checkpoint.
 - Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
 - Counts: prior recorded ledger count 115 implemented-or-captured, 373 planned, 0 explicitly blocked; now 116/488 implemented-or-captured, 372/488 planned, 0 blocked. This task is implemented only and does not imply capture, review, or acceptance.
+## MF-VF-052 — Draw semantic menu icon
+
+- Added `assets/source/icons/menu.svg`, a self-contained 24×24 original three-bar glyph using rounded `currentColor` strokes and `aria-label="Menu"`. It contains no external resources, script, or event attributes; no third-party artwork or reference was used.
+- Dependency `MF-VF-033` is implemented. SHA-256: `2aeba6c5ddc1354877c8c87359a4cf4005f97c378512d039c5928b3ffde8916a`. Status: `implemented`; static inspection confirms the 24×24 viewBox, exactly three rounded `currentColor` strokes, accessible label, and no script, event attributes, or external resource. No validators, package-manager commands, tests, typecheck, build, browser rendering, or human review run/claimed under the runner override. 16/20/24px legibility and light/dark/forced-colors review remain pending.
+- Rollback: remove `assets/source/icons/menu.svg` and restore the matching backlog/TODO/ledger evidence.
