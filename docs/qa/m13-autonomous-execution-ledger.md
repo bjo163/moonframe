@@ -2014,3 +2014,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/skin-boundaries.md` covering 15 canonical skin IDs × Light/Dark, same-fixture capture provenance, optional artwork and accessible-content behavior, and the limit that one Moonpunk screenshot cannot represent every skin.
 - Dependency MF-VF-010 is implemented. Backlog status: `implemented` (documentation deliverable); source/document inspection only. No package-manager commands, validators, suites, typecheck, build, browser capture, or human review run under runner override. No visual parity, rights clearance, WCAG conformance, or acceptance claimed.
 - Rollback: remove the protocol, restore MF-VF-437 to planned, and remove this TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.
+
+## MF-VF-421 — Define Moonledger screenshot-based anti-clone test
+
+- Starting HEAD: `474aec64909519852e972976af1fc004c31a5772`.
+- Added `docs/qa/reviews/moonledger-reference-parity.md`: fixed same-data desktop/mobile and light/dark/grayscale/art-on/off comparisons against Mooncrash and Moonquest, with enterprise-specific review dimensions and human evidence fields.
+- Dependency MF-VF-240 is implemented. Status: `implemented`; documentation/source inspection only. No screenshots, visual verdict, rights review, human review, validators, package-manager commands, test suites, typecheck, build, or browser capture run under the runner override. Host runner owns checks and checkpoint. No parity, approval, or acceptance claimed.
+- Rollback: remove the protocol, restore MF-VF-421 to planned in the reference backlog and TODO, and remove this ledger entry. No commit created.
