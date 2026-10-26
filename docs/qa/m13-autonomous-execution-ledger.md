@@ -6,10 +6,18 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 53 implemented-or-captured (14 baseline implemented + 11 captured + 28 implemented), 5 blocked, 430 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 53/488 (10.9%) done/captured; 430/488 (88.1%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 435/488 (89.1%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 54 implemented-or-captured (14 baseline implemented + 11 captured + 29 implemented), 5 blocked, 429 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 54/488 (11.1%) done/captured; 429/488 (87.9%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 434/488 (88.9%) remain incomplete.
 
 
+
+## MF-VF-031 — Build contact sheet with A/B rendered images
+
+- Inspected implementation baseline after MF-VF-030; pilot captures have current-source SHA-256 provenance.
+- Scope: `scripts/audit-skin-pairs.mjs`; generated local artifact `artifacts/skins/pilot-pair-contact-sheet.html` and refreshed structural report.
+- The existing six-pair pilot set is rendered as direct A/B comparisons for both light and dark modes at matching 1440×960 capture viewports. The HTML has jump links, responsive two-column presentation, descriptive image text and lazy image loading. It explicitly labels the result machine-assembled; no scores are presented as human visual verdicts.
+- `node --check scripts/audit-skin-pairs.mjs` — passed. `pnpm run audit:pairs` — passed: 105 structural pair records, 30 desktop + 30 tablet + 30 phone current-source captures. Browser inspection loaded all 24 images across six pair sections. Contract and handoff validators and `git diff --check` passed. The local screenshot suite was run in this checkout: unit 13/13, typecheck, production build 88 routes and browser 56/56.
+- Status: implemented; reviewer remains pending. Implementation commit: `6bf517524b78a0017a69ef3ab1bee3e9389918eb`. Rollback: `git revert 6bf517524b78a0017a69ef3ab1bee3e9389918eb`; revert matching evidence-only commit if needed.
 ## MF-VF-030 — Capture forced-colors specimen
 
 - Inspected implementation commit `9cb668c55cc6c5512417cd2147c6f4ed86d14fbe`.
@@ -174,7 +182,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Scope: `src/components.js`, `tests/browser/components.spec.js`, task evidence, TODO and this ledger. A live OS motion-preference listener and root `data-motion` observer stop active oscillators when reduced motion becomes active; future cues remain suppressed while the status interface stays usable.
 - `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 locked packages from local cache. Syntax checks and both structural validators — exit 0; handoff retains its generic playback-truth and missing-LICENSE warnings.
 - `pnpm test` — exit 0; 12/12. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes. `pnpm run test:browser` — exit 0; 50/50, including reduced-motion stop/suppression regression. `git diff --check` — exit 0.
-- Status: implemented, local verification complete. No human review or acceptance claimed. Rollback: revert the motion listeners, browser test and matching ledger/task evidence.
+- Status: implemented, local verification complete. No human review or acceptance claimed. After restoring dependencies with `pnpm install --frozen-lockfile --offline`, the current checkout was revalidated: unit 13/13, typecheck, build 88 routes, browser 56/56 (including this regression), both contract/handoff validators, and `git diff --check` passed. The implementation commit remains `e8c05e3` (`fix(sfx): honor reduced motion preference`); no duplicate implementation commit was needed. Rollback: revert the motion listeners, browser test and matching ledger/task evidence.
 ## MF-PF-014 — Sensitive consumer-context SFX suppression
 
 - Source baseline: commit `e8c05e3` (MF-PF-013 verified). Added explicit provider `context` and root `data-sfx-context` fallback. Auth/authentication, finance/financial, destructive, and security contexts suppress playback even after user consent.

@@ -143,9 +143,10 @@
   - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Visible focus and controls under system forced colors.
   - **Evidence:** 30 forced-colors captures (15 skins × 2 modes), Workspace name focus, fixture content/control assertions, per-image SHA-256 and current-source sidecars; see [forced-colors capture ledger](../qa/visual-fidelity-evidence-ledger.md#forced-colors-captures-mf-vf-030).
   - **Verify:** `pnpm test` 13/13, typecheck, browser suite 56/56 (production build 88 routes), pair audit 105 records, 30/30 forced-colors sidecar/hash checks, contract/handoff validators and `git diff --check` passed. Human visual review pending; rollback: `git revert 9cb668c55cc6c5512417cd2147c6f4ed86d14fbe`.
-- [ ] **MF-VF-031 — Build contact sheet with A/B rendered images** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
-  - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Images directly comparable, no auto reviewer approval.
-  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-031 — Build contact sheet with A/B rendered images** · **P2** · `implemented` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `scripts/audit-skin-pairs.mjs`; generated artifact `artifacts/skins/pilot-pair-contact-sheet.html`. **Acceptance:** Images directly comparable, no auto reviewer approval.
+  - **Evidence:** Six pilot pairs show actual light and dark 1440×960 captures side-by-side for both skins; jump links and responsive layout included. The sheet labels its evidence as machine-assembled and leaves human visual review pending.
+  - **Verify:** `pnpm run audit:pairs` passed: 105 pair records, 90 current-source default captures; browser inspection loaded all 24 images across six pair sections. Human visual review pending; rollback: `git revert 6bf517524b78a0017a69ef3ab1bee3e9389918eb`.
 - [ ] **MF-VF-032 — Record pilot manual review fields** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger same contents and typed reviewer status.
   - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
