@@ -707,3 +707,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-022 is implemented. Status: `implemented`; no validators, package-manager commands, suites, typecheck, build, browser capture, or human review run/claimed per runner override. No reference media or rights/acceptance claim.
 - Rollback: remove the component and restore the matching backlog/TODO evidence.
 - Counts: prior 110/488 implemented-or-captured, 378/488 planned, 0 blocked; now 111/488, 377/488, 0 blocked.
+
+## MF-VF-320 — Draw geometric radial network background only
+
+- Added `assets/source/creative-reference/r01/radial-network.svg`, a self-contained decorative concentric-ring and radial-axis field with no labels, nodes, relationships, external resources or scripts. The accessible signal-hub content remains the source of data meaning. SHA-256: `7e6f8deae6622c2d8e4eefaecb8db83c31cf3d0c3663c461d6443313d95c21937`.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; static source inspection and `git diff --check` (exit 0). Package-manager commands, validators, suites, typecheck, build and browser capture were not run per runner override; host runner owns verification/checkpoint. Rights clearance and human optical review are not claimed.
+- Counts: prior live ledger count 114/488 implemented-or-captured, 374/488 planned, 0 blocked; now 115/488, 373/488, 0 blocked.
+- Rollback: remove the SVG and restore the matching task/TODO/ledger evidence.
