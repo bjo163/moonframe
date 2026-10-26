@@ -118,5 +118,28 @@ button svg, a svg { flex-shrink: 0; }
 @media (max-width: 1100px) { .demo-orbit { inline-size: 230px; block-size: 230px; inset-inline-end: 1%; inset-block-start: 17%; opacity: .65; } .demo-orbit-core { font-size: 85px; } .demo-orbit-core span { font-size: 40px; } .demo-hero-copy { max-inline-size: 80%; } .demo-copy { margin-inline-start: 0; } }
 @media (max-width: 800px) { .demo-skin-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } .demo-workspace-label, .demo-sidebar-footer { display: none; } .demo-brand { margin-block-end: 18px; } .demo-skin-heading { margin-block-start: 20px; } .demo-nav-count { display: none; } .demo-controls { gap: 9px; } .demo-control { flex: 1 1 90px; } .demo-gallery-grid { grid-template-columns: 1fr; } .demo-orbit { opacity: .3; } .demo-hero-copy { max-inline-size: 100%; } .demo-bottom-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .demo-skin-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; } .demo-skin-option { font-size: 10px; padding-inline: 5px; gap: 5px; } .demo-skin-index { display: none; } .demo-skin-heading { font-size: 8px; } .demo-header-actions { gap: 7px; } .demo-version { display: none; } .demo-breadcrumb { font-size: 10px; } .demo-header-actions .mf-avatar { display: none; } .demo-desktop { display: none; } .demo-hero-copy h1 { font-size: 40px; } .demo-table-toolbar { flex-wrap: wrap; } .demo-search { flex-basis: 100%; } .demo-table-toolbar > .mf-select { flex: 1; max-inline-size: none; } .demo-footer { flex-direction: column; gap: 10px; } .demo-hero-foot { font-size: 7px; letter-spacing: .5px; } .demo-section-heading { align-items: start; } .demo-stat-value { font-size: 29px; } .demo-stat-top { font-size: 10px; gap: 5px; } .demo-stat-detail { font-size: 9px; } }
+.fixture-dashboard { margin-block-start: 38px; padding: clamp(16px, 2.5vw, 28px); border: 1px solid var(--mf-border); border-radius: var(--mf-radius); background: var(--mf-surface); color: var(--mf-text); }
+.fixture-dashboard-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; padding-block-end: 20px; border-block-end: 1px solid var(--mf-border); }
+.fixture-dashboard-heading h2 { margin: 8px 0 3px; font-family: var(--mf-display); font-size: clamp(24px, 3vw, 34px); letter-spacing: -.04em; }
+.fixture-dashboard-heading p { margin: 0; color: var(--mf-muted); font-size: 12px; }
+.fixture-dashboard-heading time { color: var(--mf-muted); font-size: 11px; }
+.fixture-dashboard-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }
+.fixture-dashboard-metric { min-inline-size: 0; padding: 14px; border: 1px solid var(--mf-border); border-radius: var(--mf-radius); background: var(--mf-surface-raised); }
+.fixture-dashboard-metric dt { color: var(--mf-muted); font-size: 11px; }
+.fixture-dashboard-metric dd { margin: 10px 0 0; font-family: var(--mf-display); font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.fixture-dashboard-content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: start; gap: 22px; }
+.fixture-dashboard-content h3 { margin: 0 0 12px; font-family: var(--mf-display); font-size: 17px; }
+.fixture-dashboard-activity { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.fixture-dashboard-activity li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-block-start: 1px solid var(--mf-border); }
+.fixture-dashboard-activity li > div { display: grid; gap: 5px; min-inline-size: 0; }
+.fixture-dashboard-activity li > div:last-child { justify-items: end; text-align: end; }
+.fixture-dashboard-activity strong { font-size: 11px; font-weight: 600; }
+.fixture-dashboard-activity span, .fixture-dashboard-activity time { color: var(--mf-muted); font-size: 10px; }
+.fixture-dashboard-activity .mf-badge { white-space: nowrap; }
+.fixture-dashboard-note { min-inline-size: 0; }
+.fixture-dashboard-note .mf-card-title { font-size: 17px; }
+.fixture-dashboard-note .mf-card-content p { margin: 0; color: var(--mf-muted); font-size: 12px; line-height: 1.7; }
+@media (max-width: 800px) { .fixture-dashboard-content { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .fixture-dashboard-heading { align-items: start; flex-direction: column; } .fixture-dashboard-metrics { gap: 7px; } .fixture-dashboard-metric { padding: 10px 8px; } .fixture-dashboard-metric dt { font-size: 9px; } .fixture-dashboard-metric dd { margin-block-start: 7px; font-size: 23px; } .fixture-dashboard-activity li { align-items: start; gap: 8px; } .fixture-dashboard-activity li > div:last-child { max-inline-size: 100px; } .fixture-dashboard-activity strong { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (forced-colors: active) { .demo-orbit, .demo-swatch { display: none; } .demo-skin-option[data-active] { border: 2px solid Highlight; } .demo-toast { border: 2px solid CanvasText; } }

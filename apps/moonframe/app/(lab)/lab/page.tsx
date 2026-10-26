@@ -29,6 +29,19 @@ const seedProjects: ProjectItem[] = [
   { id: 'mf-04', name: 'After hours studio', category: 'Brand identity', status: 'Completed', progress: 100, owner: 'AL', date: '2026-10-22' },
   { id: 'mf-05', name: 'Zero gravity', category: 'Exploration', status: 'Planned', progress: 12, owner: 'MN', date: '2026-12-02' },
 ];
+const dashboardFixtureTasks = [
+  { id: 'T-1042', task: 'Confirm migration checklist', owner: 'Amina Yusuf', status: 'In progress', date: '2026-10-27' },
+  { id: 'T-1043', task: 'Review workspace permissions', owner: 'Leo Martin', status: 'Needs review', date: '2026-10-28' },
+  { id: 'T-1044', task: 'Publish release notes draft', owner: 'Nia Patel', status: 'Not started', date: '2026-10-30' },
+  { id: 'T-1045', task: 'Verify scheduled export', owner: 'Mateo Silva', status: 'Complete', date: '2026-10-24' },
+  { id: 'T-1046', task: 'Test recovery procedure', owner: 'Hana Kim', status: 'Blocked', date: '2026-10-31' },
+];
+const dashboardFixtureMetrics = [
+  { label: 'Open tasks', value: '12' },
+  { label: 'In progress', value: '4' },
+  { label: 'Completed this week', value: '18' },
+];
+const dashboardFixtureDescription = 'Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.';
 const statusValues = ['Planned', 'In progress', 'In review', 'Completed'];
 const palette = ['#c1e65b','#ff635d','#ce976b','#8d8d8d','#48c9a0','#ffaa40','#b6a084','#e5b751','#d8b5ed','#9ab578','#a7a7aa','#a0b5dc','#afa2ff','#c9aa6e','#72b0df'];
 const icons: Record<string, string> = {
@@ -53,6 +66,40 @@ function loadProjects(): ProjectItem[] {
     if (Array.isArray(stored) && stored.length <= 500 && stored.every(p => p && typeof p.id === 'string' && typeof p.name === 'string' && typeof p.category === 'string' && typeof p.owner === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(Date.parse(p.date)) && statusValues.includes(p.status) && Number.isFinite(p.progress) && p.progress >= 0 && p.progress <= 100)) return stored;
   } catch { /* In-memory workspace still works when storage is unavailable. */ }
   return seedProjects;
+}
+
+function DashboardFixture() {
+  return <section className="fixture-dashboard" data-fixture="dashboard-overview" aria-labelledby="fixture-dashboard-title">
+    <div className="fixture-dashboard-heading">
+      <div>
+        <div className="demo-eyebrow">SHARED QA FIXTURE</div>
+        <h2 id="fixture-dashboard-title">Overview</h2>
+        <p>Northstar Studio</p>
+      </div>
+      <time dateTime="2026-10-25">Sunday, October 25, 2026</time>
+    </div>
+    <dl className="fixture-dashboard-metrics" aria-label="Dashboard metrics">
+      {dashboardFixtureMetrics.map(metric => <div className="fixture-dashboard-metric" key={metric.label}>
+        <dt>{metric.label}</dt>
+        <dd>{metric.value}</dd>
+      </div>)}
+    </dl>
+    <div className="fixture-dashboard-content">
+      <section aria-labelledby="fixture-activity-title">
+        <h3 id="fixture-activity-title">Recent project activity</h3>
+        <ul className="fixture-dashboard-activity">
+          {dashboardFixtureTasks.map(item => <li key={item.id}>
+            <div><strong>{item.task}</strong><span>{item.owner} · {item.id}</span></div>
+            <div><Badge>{item.status}</Badge><time dateTime={item.date}>{item.date}</time></div>
+          </li>)}
+        </ul>
+      </section>
+      <Card className="fixture-dashboard-note">
+        <CardHeader><CardTitle>Quarterly migration readiness</CardTitle><CardDescription>Shared long-copy probe</CardDescription></CardHeader>
+        <CardContent><p>{dashboardFixtureDescription}</p></CardContent>
+      </Card>
+    </div>
+  </section>;
 }
 
 function LabWorkspace() {
@@ -178,6 +225,7 @@ function LabWorkspace() {
           </Card>
         </section>
         <section className="demo-bottom-grid"><Card className="demo-note"><CardHeader><div className="demo-eyebrow">A DIFFERENT POINT OF VIEW</div><CardTitle>One workspace. Fifteen worlds.</CardTitle><CardDescription>Change the skin in the sidebar. Your work stays right where you left it; the entire visual language changes around it.</CardDescription></CardHeader><CardContent><Button variant="ghost" onClick={() => setPage('components')}>Explore the components <Icon name="arrow" size={16} /></Button></CardContent></Card><Card className="demo-note"><CardHeader><div className="demo-eyebrow">CURRENT EDITION</div><CardTitle>{currentSkin.name}</CardTitle><CardDescription>{currentSkin.description}</CardDescription></CardHeader><CardContent><div className="demo-inline"><Badge>{theme.resolvedMode === 'dark' ? 'Dark' : 'Light'} appearance</Badge><Badge>React + CSS</Badge></div></CardContent></Card></section>
+        <DashboardFixture />
       </> : <Gallery announce={announce} theme={theme} onDialog={() => setDialog(true)} />}
 
       <footer className="demo-footer"><span><strong>moonframe</strong> · Built to feel like you.</span><span>15 skins / 30 appearances / One system</span></footer>
