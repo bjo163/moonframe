@@ -286,5 +286,19 @@
     "enable-github-oidc",
     "generate-css-or-assets",
     "new-github-issues"
-  ]
+  ],
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "legacyProposalScope": "Historical private @moonframe/ui skeleton preserved as governance fixture; it does not describe current runtime package.",
+    "currentManifest": {
+      "name": "@moonwitness/moonframe",
+      "version": "0.1.1",
+      "private": false,
+      "license": "MIT",
+      "publishingIntent": "public configured, external registry publication not verified"
+    },
+    "licenseFilePresent": false,
+    "notice": "Missing standalone LICENSE and public release rights decision require maintainer review. README and historical release ledger should not claim current package private.",
+    "status": "current-manifest-real-release-approval-not-proven"
+  }
 }
