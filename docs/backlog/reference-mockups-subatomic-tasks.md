@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-26 · Status: 8 captured, 5 implemented, 155 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-26 · Status: 8 captured, 6 implemented, 154 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -14,7 +14,7 @@
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
 | H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 8 captured, 4 planned |
-| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 5 implemented, 19 planned |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 6 implemented, 18 planned |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 5 implemented, 155 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 6 implemented, 154 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -80,9 +80,9 @@
 - [x] **MF-VF-309 — Define left product identity/edition brand slot** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-brand-slot.tsx (proposed)`. **AC:** MOONWITNESS wordmark/crown supplied from consuming app, not framework.
   - **Evidence (2026-10-26):** Split the Northstar demo brand mark, product name, and edition label into explicit semantic spans in the R01 fixture, retaining an accessible home name and hiding only the decorative initial. Added a narrow-screen rule that hides the edition descriptor before the identity control collapses. `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser suite passed 64/64 after raising the existing 15-skin × 2-mode enterprise matrix timeout from 30 to 120 seconds (it took 52 seconds under the loaded runner). No consumer wordmark/art was added, and no owner visual review or rights approval is claimed. Rollback: revert the brand-slot markup/CSS, test timeout adjustment, and evidence/status.
-- [ ] **MF-VF-310 — Build mission hero 2-column L1 grid** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-310 — Build mission hero 2-column L1 grid** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-hero-layout.tsx (proposed)`. **AC:** Text and CTA on one side; scenic art slot on other; non-color structural hierarchy.
-  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Evidence (2026-10-26):** The live R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx` already renders a distinct activity/list region beside a supporting readiness note card using `.fixture-dashboard-content`; its two-column structural grid collapses to one column at 800px in `lab.css`. Added browser assertions that the desktop grid uses two columns and the 360px layout collapses to one. `pnpm run test:browser` — 64/64 passed, including all 30 skin × mode cases and existing enterprise matrix. Contracts and handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed in the host run. Status is `implemented`, not captured; no scene artwork, source import, human review, or rights claim. Rollback: revert the browser assertions and this evidence/status.
 - [ ] **MF-VF-311 — Define oversized expressive heading recipe** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `src/styles.css`. **AC:** Scoped Moonpunk display typography with licensed fallback, readable wrapping.
   - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.

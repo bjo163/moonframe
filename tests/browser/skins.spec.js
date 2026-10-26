@@ -109,6 +109,9 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(mainNavigationItems.nth(0)).toHaveAttribute('aria-current', 'page');
     await expect(breadcrumb).toContainText('Overview');
     const dashboardFixture = page.locator('[data-fixture="dashboard-overview"]');
+    const missionHeroGrid = dashboardFixture.locator('.fixture-dashboard-content');
+    await expect(missionHeroGrid).toHaveCSS('display', 'grid');
+    await expect(missionHeroGrid).toHaveCSS('grid-template-columns', /[\d.]+px [\d.]+px/);
     await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
     await expect(dashboardFixture.getByRole('link', { name: 'Northstar Studio', exact: true })).toBeVisible();
     await expect(dashboardFixture.getByText('Sunday, October 25, 2026', { exact: true })).toBeVisible();
@@ -463,6 +466,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       browserVersion: browser.version(),
     });
     await page.setViewportSize({ width: 360, height: 800 });
+    await expect(missionHeroGrid).toHaveCSS('grid-template-columns', /^[\d.]+px$/);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('360x800');

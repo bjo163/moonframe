@@ -614,3 +614,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts after MF-VF-309
 
 - Total task IDs: 488. 101 implemented-or-captured (20.7%), 387 planned (79.3%), 0 explicitly blocked. These counts do not imply human visual review or acceptance.
+# MF-VF-310 — Build mission hero 2-column L1 grid
+
+- Dependency `MF-VF-022` is implemented. The existing R01 dashboard content has a two-column activity/supporting-note grid that collapses to one column at the 800px breakpoint. Added browser assertions for the desktop grid and the 360px single-column layout in `tests/browser/skins.spec.js`.
+- Status: `implemented`; no screenshot capture, source art, human review, or asset-rights approval claimed. Contracts and handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser suite passed 64/64, including the 30 skin × mode grid checks.
+- Counts: 102 implemented-or-captured, 386 planned, 0 explicitly blocked of 488 total. Counts do not imply human review, rights, or acceptance.
+- Rollback: revert the two browser assertions and matching task/TODO/ledger evidence.
