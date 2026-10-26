@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "contractVersion": "0.1.0",
   "contractId": "MF-CONSUMER-BRAND-001",
-  "status": "proposed-not-implemented",
+  "status": "contract-approved-no-runtime-api",
   "createdOn": "2026-10-26",
   "authority": {
     "theme": "moonframe-theme-contract-v1.3.json",
@@ -14,7 +14,17 @@
   "principle": "Skin is structural design grammar; consumerBrand is an optional separate branding overlay, not a 16th skin and not a third appearance.",
   "notNewSkin": true,
   "notNewAppearance": true,
-  "requiresOwnerDecisionBeforeApiFreeze": true,
+  "requiresOwnerDecisionBeforeApiFreeze": false,
+  "maintainerDecision": "Owner-delegated maintainer decision recorded 2026-10-26; behavior contract only. Public props, token values, and runtime implementation are not approved.",
+  "apiStatus": "not-designed-not-exported",
+  "overlayInputValidation": {
+    "noBrand": "Omit overlay and use the exact canonical skin plus light/dark baseline.",
+    "malformedOrIncomplete": "Reject the entire overlay atomically and use canonical skin tokens; never apply a partial subset.",
+    "unknownBrandOrSlot": "Reject the entire overlay atomically and use canonical skin tokens.",
+    "invalidColorOrContrast": "Reject the entire overlay atomically and use canonical skin tokens.",
+    "serverRendering": "Resolve only from explicit request-scoped input. The same validated input must produce identical server and hydrated output before first paint; no client-only brand discovery or flash.",
+    "tenantAndCache": "No module-global brand state or persistence. Consumers must scope SSR/render caches by tenant and validated overlay identity; library never reads or writes brand state to browser storage."
+  },
   "resolutionOrderProposed": [
     "baseline semantic fallback",
     "canonical skin + light/dark appearance tokens",
@@ -63,7 +73,7 @@
     "table content hierarchy",
     "high-contrast/forced-colors fallback"
   ],
-  "fallback": "If no consumer brand, the skin uses its canonical default (Moonpunk acid lime remains possible); invalid/incomplete brand inputs revert to skin tokens without breaking UI.",
+  "fallback": "If no consumer brand, the skin uses its exact canonical baseline. Any malformed, incomplete, unknown, unsupported, or contrast-failing overlay is rejected as a whole and resolves to canonical skin tokens without partial leakage.",
   "consumerExample": {
     "id": "moonwitness-neon",
     "name": "Moonwitness",

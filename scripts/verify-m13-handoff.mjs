@@ -69,7 +69,7 @@ for (const x of reference.photos) {
   check(/^[0-9a-f]{64}$/.test(x.sha256), 'Missing real SHA-256 for reference ' + x.id);
   check(x.referenceStatus === 'source-uploaded-in-chat-not-versioned-in-repository', 'Reference must remain unversioned until original bytes imported: ' + x.id);
 }
-check(consumer.notNewSkin && consumer.notNewAppearance && consumer.status === 'proposed-not-implemented', 'Brand overlay cannot masquerade as shipped 16th skin');
+check(consumer.notNewSkin && consumer.notNewAppearance && consumer.status === 'contract-approved-no-runtime-api' && consumer.apiStatus === 'not-designed-not-exported', 'Brand overlay contract must remain distinct from shipped runtime API');
 check(gate.gates.length >= 18 && unique(gate.gates.map((x) => x.id)), 'M13 evidence gates missing/duplicated');
 check(gate.decision.localAgent === 'CONDITIONAL-GO' && gate.decision.publicNpmPublish === 'NO-GO', 'Handoff versus public release gates must remain distinct');
 
