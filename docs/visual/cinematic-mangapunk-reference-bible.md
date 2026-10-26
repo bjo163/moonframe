@@ -34,6 +34,10 @@ The reference images are Moonwitness consumer material. The following content mu
 
 This is a scope and provenance boundary, not a finding about ownership or a license. A user-provided reference image does not grant permission to reproduce, distribute, or derive these elements. Use consumer-supplied content only in an explicitly consumer-owned integration with its own rights basis; otherwise use independently created generic material and record its source. The generic Moonframe mark and stable semantic icons remain separate from Moonwitness identity.
 
+### CrownMark — consumer-supplied identity only
+
+A graphic CrownMark that identifies Moonwitness belongs to the consumer brand. Do not place it in Moonframe navigation, shared component defaults, generic starter content, or the framework's semantic icon set. A consumer-owned integration may provide its own mark through an explicit content slot after establishing its own rights basis; the framework must keep the accessible product name as live text and provide a neutral fallback when no mark is supplied. Generic lunar or geometric decorations must use independently created shapes that do not reproduce or imply the Moonwitness crown. This boundary does not establish ownership or grant a license.
+
 ## 3. Reference-by-reference visual anatomy
 
 ### MWX-REF-001 — Mission Control dashboard, 1672×941

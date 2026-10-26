@@ -1460,3 +1460,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `apps/moonframe/templates/visual-reference/r04-brand.tsx` and `r04-brand.module.css`. Consumers can supply their own logo content; without it, a required consumer-provided name remains selectable live text. Optional description is also live text. No Moonwitness mark or framework-owned identity is assumed.
 - Dependency MF-VF-025 is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, responsive screenshots, rights review, or human review run. Host runner owns verification/checkpoint; accessibility/rendering, rights, and acceptance remain pending.
 - Rollback: remove the component and CSS module, restore MF-VF-370 to planned, and remove the matching TODO and ledger entries. No commit created.
+# MF-VF-394 — Specify graphic CrownMark as consumer asset, not standard icon
+
+- Added a CrownMark rule to `docs/visual/cinematic-mangapunk-reference-bible.md`: the Moonwitness-identifying crown stays consumer-supplied and outside generic navigation/defaults/icons; consumer integrations retain live product-name text and a neutral fallback.
+- Dependency MF-VF-013 is implemented. Status `implemented`; documentation-only source review. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run. No ownership, license, runtime behavior, human review, or acceptance is claimed.
+- No commit created; host runner owns checks and checkpoint. Rollback: remove the CrownMark subsection, restore MF-VF-394 to planned in the backlog/TODO, and remove this ledger entry.
