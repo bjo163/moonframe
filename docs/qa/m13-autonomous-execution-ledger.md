@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-053 — Draw semantic chevron-down icon
+
+- Added `assets/source/icons/chevron-down.svg`, an original self-contained 24×24 `currentColor` disclosure chevron labeled `Expand`.
+- SHA-256: `666cd1e34d82eb52f9b6642b26ab5e53f38a91648ae551c63b2a2c6899207286`.
+- Dependency `MF-VF-033` is implemented. Status: `implemented`; static source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser captures were run; host runner owns verification. Human visual review and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching task row and ledger entry.
+- Counts: prior recorded total 123 implemented/captured, 365 planned, 0 blocked; now 124 implemented/captured, 364 planned, 0 blocked of 488.
+
 ## MF-VF-357 — Draw a decorative geometric spotlight burst
 
 - Added `assets/source/creative-reference/r03/spotlight-burst.svg`, an original self-contained decorative burst of tapered beams. It contains only vector geometry and accessible title/description text, with no source tracing, external references, scripts, event handlers, or performer imagery.
