@@ -2102,3 +2102,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a fixed 16:9 placeholder with minimum height to every template marketplace card; theme tokens provide border, radius, and raised surface. The text placeholder is `aria-hidden` because the card title/summary already provide the content and it is not an image; its reserved box avoids layout shift when a preview is added later.
 - Status: `implemented`. Source inspection only; no rendered CLS measurement, screenshot, or human review claimed. Runner override honored: no validators, package-manager commands, tests, typecheck, build, or commit. Host runner owns verification/checkpoint.
 - Rollback: remove the placeholder frame, restore MF-VF-253 to planned, and remove matching TODO/ledger updates.
+# MF-VF-368 — Record R03 manual parity review blocker
+
+- Selected after dependency MF-VF-024 was confirmed implemented. The task's acceptance is inherently manual and requires comparison against the original R03 image.
+- The source image is absent from this checkout; without the digest-verified source bytes and an actual human reviewer, no parity judgment can be made. Updated the backlog status to `blocked-external-approval`, leaving it unchecked.
+- Verification: documentation/source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No parity, rights clearance, human review, or acceptance claimed.
+- Resume when owner-supplied R03 bytes are available and verified against the canonical digest, then a human records findings and disposition. Rollback: restore MF-VF-368 to planned and remove this entry.
