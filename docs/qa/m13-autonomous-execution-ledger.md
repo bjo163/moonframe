@@ -5,29 +5,17 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 24 implemented-or-captured (14 baseline implemented + 6 captured + 4 implemented), 0 blocked, 464 pending/planned. Browser execution for `MF-PF-009` remains unverified after the environment prevented dependency restoration. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 25 implemented-or-captured (14 baseline implemented + 6 captured + 5 implemented), 0 blocked, 463 pending/planned. The license/trademark decision remains pending without inferred owner approval.
 
-## MF-PF-009 — Truthful SFX playback result
+## MF-PF-010 — Deterministic Web Audio resource cleanup
 
-- Inspected source HEAD before edits: `0ebeb9de87aa66810e6035b9dc22699bc229efce`.
-- Scope: `src/components.js`, `tests/browser/components.spec.js`, SFX contract, matching task status, root TODO counts, and this ledger.
-- Unsupported Web Audio returns `played:false` with reason `unsupported`; suspended/closed contexts and scheduling errors return `played:false` with reason `blocked`. Cooldown and last-event state advance only after the oscillators are scheduled.
-- `node scripts/validate-contracts.mjs` — exit 0. `node scripts/verify-m13-handoff.mjs` — exit 0; reported existing playback-truth warning because its static rule has not been updated to recognize this implementation, plus missing LICENSE warning.
-- `pnpm test`, `pnpm run typecheck`, `pnpm run build`, and `pnpm run test:browser` were not completed: pnpm's dependency repair hit Windows `EPERM` unlinking the Rolldown native binding, then registry requests failed with `EACCES`. Browser regression is added but execution remains pending.
-- Status: implemented, runtime/browser verification pending. No human review/acceptance claimed. Rollback: revert playback result logic, unsupported-API browser regression, contract note, and matching task/TODO/ledger entries.
-
-## MF-PF-008 — Trusted SFX consent activation API
-
-- Inspected source at live HEAD `d5d8ef9c29b466fc53ddd9896cb89c61bc47763b`.
-- Scope: `src/components.js`, `src/components.d.ts`, `apps/moonframe/components/site/InteractivePlayground.tsx`, `tests/browser/components.spec.js`, `docs/motion/motion-interaction-sfx-bible.md`, matching preflight row, root TODO live counts, and this ledger.
-- `grantConsent(event)` now accepts only trusted native `click`, `pointerup`, `keydown`, or `touchend` activation and returns a boolean. React synthetic events are unwrapped; missing, untrusted, or unrelated events do not enable audio. The UI forwards its click event. The Bible records app-level semantics and says no browser permission prompt, persistence, or playback occurs during consent.
-- `node scripts/validate-contracts.mjs` — exit 0.
-- `node scripts/verify-m13-handoff.mjs` — exit 0; existing SFX playback-truth and missing-LICENSE warnings remain.
-- `pnpm test` — blocked before execution: managed wrapper attempted to recreate `node_modules` and hit Windows `EPERM` unlinking `rolldown-binding.win32-x64-msvc.node`.
-- `pnpm install --frozen-lockfile --offline` — exit 1; lockfile check passed, but offline package metadata for `@emnapi/runtime` is missing.
-- `node --test tests/runtime.test.mjs` — exit 1 because React was unavailable after the partial workspace refresh. Typecheck/build/browser checks were not run. A browser assertion was added to prove an untrusted synthetic click leaves consent off before the existing real click assertion, but it still needs execution after dependency recovery.
-- Status: implemented; execution verification remains pending due to environment dependency refresh failure. No reviewer/acceptance claimed. Rollback: revert this task's API, call-site, test, documentation, and evidence edits only.
+- Inspected source at HEAD `44fd9b2b0fe30df17edfef9af058717429a43f56`.
+- Scope: `src/components.js`, `tests/browser/components.spec.js`, matching preflight task status/evidence. Reuse one provider-owned AudioContext, disconnect ended oscillators, and stop/disconnect active oscillators plus close the context on unmount. Added browser coverage for context reuse and unmount closure.
+- `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 locked packages from the local pnpm cache.
+- `pnpm test` — exit 0; 12/12 passed. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated.
+- `pnpm run test:browser` — exit 0; 48/48 passed, including AudioContext reuse and closure after client-side provider unmount. `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0; the handoff verifier still reports its generic playback-truth warning and the separate missing-LICENSE warning.
+- Status: implemented with local verification complete. No human review or acceptance claimed. Rollback: revert the provider resource change, browser test, and this matching task/ledger evidence.
 
 ## MF-PF-001 — Freeze current package/release inventory
 

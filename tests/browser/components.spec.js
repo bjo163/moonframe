@@ -154,3 +154,25 @@ test('SFX reports unsupported Web Audio without claiming playback', async ({ pag
   await page.getByRole('button', { name: '🔔 success' }).click();
   await expect(page.getByText(/Silenced event: "success" \(reason: unsupported\)/)).toBeVisible();
 });
+
+test('SFX reuses its AudioContext and closes it on provider unmount', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__audioContexts = [];
+    class FakeAudioContext {
+      constructor() { this.state = 'running'; this.currentTime = 0; this.destination = {}; window.__audioContexts.push(this); }
+      createGain() { return { gain: { setValueAtTime() {}, exponentialRampToValueAtTime() {} }, connect() {} }; }
+      createOscillator() { return { frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() {}, addEventListener() {}, disconnect() {} }; }
+      close() { this.state = 'closed'; return Promise.resolve(); }
+    }
+    window.AudioContext = FakeAudioContext;
+  });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await page.waitForTimeout(1050);
+  await page.getByRole('button', { name: '⚠️ warning' }).click();
+  expect(await page.evaluate(() => window.__audioContexts.length)).toBe(1);
+  await page.locator('a[href="/"]').first().click();
+  await expect.poll(() => page.evaluate(() => window.__audioContexts[0]?.state)).toBe('closed');
+});

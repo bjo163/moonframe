@@ -1957,6 +1957,21 @@ export function SFXProvider({
   const [volume, setVolumeState] = useState(() => Math.max(0, Math.min(1, Number(defaultVolume) || 0.35)));
   const [lastEvent, setLastEvent] = useState(null);
   const timingRef = useRef({ lastPlayedAt: 0, byEvent: {} });
+  const audioRef = useRef({ context: null, activeOscillators: new Set() });
+
+  useEffect(() => () => {
+    const audio = audioRef.current;
+    audio.activeOscillators.forEach((oscillator) => {
+      try { oscillator.stop(); } catch { /* already stopped */ }
+      try { oscillator.disconnect(); } catch { /* already disconnected */ }
+    });
+    audio.activeOscillators.clear();
+    const context = audio.context;
+    audio.context = null;
+    if (context && context.state !== 'closed') {
+      try { void context.close(); } catch { /* best-effort teardown */ }
+    }
+  }, []);
 
   function setVolume(next) {
     const clamped = Math.max(0, Math.min(1, Number(next)));
@@ -2001,7 +2016,11 @@ export function SFXProvider({
     try {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
       if (!AudioCtx) return { played: false, reason: 'unsupported' };
-      const ctx = new AudioCtx();
+      let ctx = audioRef.current.context;
+      if (!ctx || ctx.state === 'closed') {
+        ctx = new AudioCtx();
+        audioRef.current.context = ctx;
+      }
       if (ctx.state === 'suspended' || ctx.state === 'closed') {
         return { played: false, reason: 'blocked' };
       }
@@ -2012,11 +2031,16 @@ export function SFXProvider({
 
       profile.freq.forEach((f, idx) => {
         const osc = ctx.createOscillator();
+        audioRef.current.activeOscillators.add(osc);
         osc.type = profile.type;
         osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.045);
         osc.connect(gain);
         osc.start(ctx.currentTime + idx * 0.045);
         osc.stop(ctx.currentTime + (profile.durationMs / 1000) + idx * 0.045);
+        osc.addEventListener('ended', () => {
+          audioRef.current.activeOscillators.delete(osc);
+          try { osc.disconnect(); } catch { /* already disconnected */ }
+        }, { once: true });
       });
       timingRef.current.lastPlayedAt = now;
       timingRef.current.byEvent[canonicalId] = now;
