@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-26 · Status: MF-VF-293 and MF-VF-294 captured; remaining tasks retain their recorded states · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-26 · Status: MF-VF-293 through MF-VF-295 captured; remaining tasks retain their recorded states · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -13,7 +13,7 @@
 
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
-| H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 1 captured, 11 planned |
+| H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 3 captured, 9 planned |
 | I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 0 done |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **1 captured, 167 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **3 captured, 165 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -32,9 +32,9 @@
 - [x] **MF-VF-294 — Register image R02 original digest and dimensions** · **P1** · `captured` · **dep:** `MF-VF-014` · **issue:** not-created
   - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167, 1024×576.
   - **Evidence (2026-10-26):** `docs/visual/references/reference-index.md` transcribes ID `MWX-REF-002`, SHA-256 `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167`, and 1024 × 576 dimensions from the canonical creative-reference contract. Contract cross-check agrees. Original bytes are absent, so no local digest verification, import, reuse rights, or visual approval is claimed. Runner override: no package-manager commands, suites, typecheck, or build run. Rollback: revert this task row and the single R02 index entry.
-- [ ] **MF-VF-295 — Register image R03 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+- [x] **MF-VF-295 — Register image R03 original digest and dimensions** · **P1** · `captured` · **dep:** `MF-VF-014` · **issue:** not-created
   - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff, 682×1024.
-  - **Evidence (2026-10-26):** `docs/visual/references/reference-index.md` transcribes ID `MWX-REF-001`, the contract SHA-256 and 1672 × 941 dimensions. Contract cross-check agrees; original bytes are not in this repository, so this is metadata capture only and does not verify local bytes or rights. Runner override: no package-manager commands, suites, typecheck, or build run. Rollback: revert this row and the single R01 index entry. No human review or rights approval claimed.
+  - **Evidence (2026-10-26):** `docs/visual/references/reference-index.md` records ID `MWX-REF-003`, SHA-256 `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff`, and dimensions 682 × 1024, cross-checked against the canonical creative-reference contract. Original bytes are absent, so the digest is transcribed rather than recomputed; no import, reuse rights, or visual approval is claimed. Runner override: no package-manager commands, suites, typecheck, or build run. Rollback: revert this row and the single R03 index entry.
 - [ ] **MF-VF-296 — Register image R04 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
   - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90, 1024×576.
   - **Evidence (2026-10-26):** `docs/visual/references/reference-index.md` transcribes ID `MWX-REF-001`, the contract SHA-256 and 1672 × 941 dimensions. Contract cross-check agrees; original bytes are not in this repository, so this is metadata capture only and does not verify local bytes or rights. Runner override: no package-manager commands, suites, typecheck, or build run. Rollback: revert this row and the single R01 index entry. No human review or rights approval claimed.

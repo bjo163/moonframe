@@ -2,6 +2,12 @@
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
 
+## MF-VF-295 — Register R03 original digest and dimensions
+
+- Added the R03 reference row to `docs/visual/references/reference-index.md` from `contracts/moonframe-creative-reference-contract-v0.1.json`: ID `MWX-REF-003`, SHA-256 `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff`, dimensions 682 × 1024.
+- Cross-checked metadata against the canonical contract. Original bytes are absent; this records contract metadata only and does not verify a local digest, grant import/reuse rights, or claim visual review.
+- Status: `captured`. Runner override honored: no package-manager commands, test suites, typecheck, or build run. No commit created; host runner will verify and checkpoint. Rollback: revert the task status/evidence and remove the single R03 index row.
+
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
