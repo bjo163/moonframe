@@ -640,3 +640,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - Previous ledger counts: 102 implemented-or-captured, 386 planned, 0 explicitly blocked. This task adds one implemented record: 103 implemented-or-captured, 385 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
+
+## MF-VF-313 — Define panoramic fictional cyber-city scene art slot
+
+- Added `apps/moonframe/templates/visual-reference/r01-scene-slot.tsx` and its CSS module. The optional semantic figure accepts consumer-supplied artwork, descriptive or empty decorative alt text, and a focal point; it reserves a 16:7 wide frame and changes to 4:3 on phones with lazy image loading.
+- Dependency `MF-VF-022` is implemented. No artwork is bundled or derived from the missing reference. No package-manager commands, suites, typecheck, build, validators, browser checks, or captures run per runner override; host runner will verify. No rights or human review claimed.
+- Status: `implemented`; no commit created. Rollback: remove the component/CSS module and restore the task row/count evidence.
+- Counts: prior ledger count 104 implemented-or-captured, 384 planned, 0 blocked; now 105/383/0 of 488. Counts do not imply capture, human review, rights, or acceptance.
