@@ -257,3 +257,15 @@ test('SFX stops when reduced motion becomes active while visual status remains a
   expect(stopsAfterPreference).toBeGreaterThan(stopsBeforePreference);
   await expect(page.getByText('Consent: Granted')).toBeVisible();
 });
+
+test('SFX stays silent in sensitive authentication, finance, and destructive contexts', async ({ page }) => {
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  for (const context of ['authentication', 'finance', 'destructive']) {
+    await page.evaluate((value) => document.documentElement.setAttribute('data-sfx-context', value), context);
+    await page.getByRole('button', { name: '🔔 success' }).click();
+    await expect(page.getByText(/Silenced event: "success" \(reason: sensitive-context\)/).first()).toBeVisible();
+  }
+  await expect(page.getByText('Consent: Granted')).toBeVisible();
+});

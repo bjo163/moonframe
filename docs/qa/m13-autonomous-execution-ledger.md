@@ -5,8 +5,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, and `MF-PF-023` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 29 implemented-or-captured (14 baseline implemented + 7 captured + 8 implemented), 0 blocked, 459 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, and `MF-PF-023` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 30 implemented-or-captured (14 baseline implemented + 7 captured + 9 implemented), 0 blocked, 458 pending/planned. The license/trademark decision remains pending without inferred owner approval.
 
 ## MF-PF-012 — Stop sound on backgrounding; do not catch up
 
@@ -166,3 +166,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 locked packages from local cache. Syntax checks and both structural validators — exit 0; handoff retains its generic playback-truth and missing-LICENSE warnings.
 - `pnpm test` — exit 0; 12/12. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes. `pnpm run test:browser` — exit 0; 50/50, including reduced-motion stop/suppression regression. `git diff --check` — exit 0.
 - Status: implemented, local verification complete. No human review or acceptance claimed. Rollback: revert the motion listeners, browser test and matching ledger/task evidence.
+## MF-PF-014 — Sensitive consumer-context SFX suppression
+
+- Source baseline: commit `e8c05e3` (MF-PF-013 verified). Added explicit provider `context` and root `data-sfx-context` fallback. Auth/authentication, finance/financial, destructive, and security contexts suppress playback even after user consent.
+- Browser regression exercises authentication, finance and destructive categories and confirms consent status remains available while sound is suppressed.
+- `pnpm install --frozen-lockfile --offline` — exit 0; 31 packages restored. Syntax checks, `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs` — exit 0 (generic playback-truth and missing-LICENSE warnings remain). `pnpm test` — 12/12; typecheck — exit 0; build — 88 routes; browser — 51/51; `git diff --check` — exit 0.
+- Status: implemented and locally verified; no consumer review or release approval claimed.

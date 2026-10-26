@@ -1948,6 +1948,7 @@ export function SFXProvider({
   defaultEnabled = false,
   defaultMuted = true,
   defaultVolume = 0.35,
+  context,
   children,
 }) {
   // Configuration can choose the initial mute preference, but only an explicit
@@ -2047,6 +2048,9 @@ export function SFXProvider({
     if (!profile) return { played: false, reason: 'unknown-event' };
     if (!consentGranted || muted || volume <= 0) return { played: false, reason: 'muted-or-no-consent' };
     if (typeof window === 'undefined' || typeof document === 'undefined') return { played: false, reason: 'ssr' };
+    const sensitiveContexts = new Set(['auth', 'authentication', 'finance', 'financial', 'destructive', 'security']);
+    const appContext = context || document.documentElement?.getAttribute('data-sfx-context') || 'general';
+    if (sensitiveContexts.has(String(appContext).toLowerCase())) return { played: false, reason: 'sensitive-context' };
     if (document.visibilityState === 'hidden') return { played: false, reason: 'background-tab' };
 
     const rootMotion = document.documentElement?.getAttribute('data-motion');
@@ -2111,7 +2115,7 @@ export function SFXProvider({
     setMuted,
     setVolume,
     play,
-  }), [consentGranted, muted, volume, lastEvent]);
+  }), [consentGranted, muted, volume, lastEvent, context]);
 
   return h(SFXContext.Provider, { value }, children);
 }

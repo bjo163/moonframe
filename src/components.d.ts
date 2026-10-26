@@ -581,6 +581,8 @@ export interface SFXProviderProps {
   defaultEnabled?: boolean;
   defaultMuted?: boolean;
   defaultVolume?: number;
+  /** Sensitive application contexts stay silent even after consent. */
+  context?: 'general' | 'auth' | 'authentication' | 'finance' | 'financial' | 'destructive' | 'security';
   children?: React.ReactNode;
 }
 export function SFXProvider(props: SFXProviderProps): React.ReactElement;
