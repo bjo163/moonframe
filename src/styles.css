@@ -188,6 +188,32 @@
 .mf-table-sort { border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; padding: 0; text-align: start; }
 .mf-data-table-footer { display: flex; justify-content: flex-end; padding-block-start: .5rem; }
 
+/* Optional Moonzine editorial treatment. Opt in per region; shared cards stay unchanged. */
+[data-skin="moonzine"] .mf-editorial-paper {
+  --mf-editorial-paper-edge: color-mix(in srgb, var(--mf-text) 28%, var(--mf-surface));
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border-block: 1px solid var(--mf-editorial-paper-edge);
+  background: var(--mf-surface);
+  box-shadow: 0 0.45rem 0 color-mix(in srgb, var(--mf-editorial-paper-edge) 22%, transparent);
+}
+[data-skin="moonzine"] .mf-editorial-paper::before {
+  position: absolute;
+  z-index: -1;
+  inset: .35rem 0 auto;
+  block-size: .35rem;
+  background: repeating-linear-gradient(135deg, transparent 0 5px, var(--mf-editorial-paper-edge) 5px 6px);
+  content: "";
+  opacity: .55;
+  pointer-events: none;
+}
+[data-skin="moonzine"] .mf-editorial-paper > :where(h1, h2, h3, p) + :where(h1, h2, h3, p) { margin-block-start: 1.15em; }
+@media (forced-colors: active) {
+  [data-skin="moonzine"] .mf-editorial-paper { border: 1px solid CanvasText; box-shadow: none; }
+  [data-skin="moonzine"] .mf-editorial-paper::before { display: none; }
+}
+
 /* Extended Inputs, Charts, Navigation & Level C Reusable Blocks */
 .mf-otp-group { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .mf-otp-slot { inline-size: 2.85rem; min-block-size: 3rem; padding: .4rem; text-align: center; font: 700 1.15rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; }

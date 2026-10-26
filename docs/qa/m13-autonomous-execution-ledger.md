@@ -1,5 +1,15 @@
 # M13 autonomous execution ledger
 
+## Current live counts after MF-VF-343
+
+- Checked task rows: 141/488 implemented or captured (65/292 foundation visual, 48/168 reference visual, and 28/28 preflight); 347/488 remain planned; 0 explicitly blocked. Counts continue the preceding task ledger; checked rows do not imply human review, rights clearance, or acceptance.
+
+## MF-VF-343 — Style editorial torn border and paper pacing
+
+- Added an opt-in `.mf-editorial-paper` CSS treatment scoped to `[data-skin="moonzine"]` in `src/styles.css`; it adds restrained edge linework and content pacing, with a forced-colors fallback. Shared card defaults and other skin rules are unchanged.
+- Dependency `MF-VF-023` is implemented. Task status: `implemented`. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser rendering/capture, or reference comparison were run; host runner owns verification/checkpoint. Human review, rights clearance, and acceptance remain pending.
+- Rollback: remove the scoped CSS block and restore this entry, task row, and root TODO summary.
+
 ## MF-VF-042 — Create horizontal mark+wordmark lockup
 
 - Added `assets/source/brand/moonframe-lockup.svg`, an original static horizontal lockup combining the refined geometric-frame draft and editable live-text wordmark. SHA-256: `d84ee6c2ff3d7000fa2071bb600231a60da33edebc912dfbf1fd36271f9f68cd`.
