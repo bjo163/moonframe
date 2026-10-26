@@ -110,6 +110,12 @@ Apply expressive display treatment to a real heading or label in selectable HTML
 
 ## 4. Breakpoint contracts (proposed reference fixture targets, not new token defaults)
 
+### Material recipes: ComicPanel, ZineCollage, and Halftone
+
+These are separate structural recipes, not interchangeable filters. `ComicPanel` organizes content into deliberate rectangular frames with consistent gutters, clear panel spans, and inked boundaries; its identity comes from grid and pacing. `ZineCollage` layers independently positioned paper-like pieces with irregular overlaps, torn edges, and editorial scale changes; its identity comes from composition and paper relationships. `Halftone` uses monochrome dot or screentone fields, high-contrast ink, and deliberate density changes to establish manga print texture; it should not become a strict panel grid or a paper collage. These distinctions follow the canonical skin grammar's anti-overlap rules.
+
+In grayscale, ComicPanel must still read through aligned geometry and gutters, ZineCollage through overlapping silhouettes and irregular edges, and Halftone through visible tonal dot fields and ink contrast. Accent color may be removed without collapsing the three treatments into the same composition. Keep texture behind or outside live text, controls, focus indicators, and dense data; provide a plain surface fallback when decorative materials are unavailable. This is visual direction only and does not claim runtime implementation, screenshot proof, or human approval.
+
 | Context | Wide desktop (1440) | Tablet (768) | Phone (360) |
 |---|---|---|---|
 | Mission control | rail + hero + multi-column operation grid | collapsible rail + 2-column workcards + simplified central visual | single content-first column, text cards then optional scene; no embedded fixed screenshot |

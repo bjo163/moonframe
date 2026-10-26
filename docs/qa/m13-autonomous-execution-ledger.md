@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-396 — Specify ComicPanel vs ZineCollage vs Halftone material distinction
+
+- Added a section in `docs/visual/cinematic-mangapunk-reference-bible.md` defining ComicPanel through grid/gutters, ZineCollage through layered paper overlap/irregular edges, and Halftone through monochrome dot fields/ink contrast. Stated grayscale distinctions, legibility constraints, and plain-surface fallback; aligned terminology with the canonical skin grammar.
+- Dependency MF-VF-013 is implemented. Status `implemented`; documentation/source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, screenshots, or human review run. No runtime implementation, rights, visual approval, or acceptance claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the material recipes subsection and restore the MF-VF-396 row to planned.
+
 ## MF-VF-393 — Specify neon/pink light/dark semantic accent policy
 
 - Added a subsection to `docs/visual/cinematic-mangapunk-reference-bible.md` defining neon accents as optional visual cues, keeping success/warning/error/information meanings on canonical semantic tokens with noncolor labels, requiring distinct light/dark overlay contrast checks, and preserving focus and forced-colors behavior.

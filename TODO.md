@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-396):** Added grayscale-distinct material recipes for ComicPanel (grid/gutters), ZineCollage (overlap/irregular paper edges), and Halftone (monochrome dot fields/ink) to the cinematic reference bible. Status `implemented`; documentation/source inspection only. No checks, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. No runtime behavior, rights, visual approval, or acceptance claimed; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-26, MF-VF-393):** Specified in the cinematic reference bible that neon accents are optional artwork/consumer-brand cues, status meanings remain canonical and noncolor-labeled, light/dark overlay values require separate contrast checks, and focus/forced-colors behavior stays independent. Status `implemented`; documentation only. Host runner owns validators and checkpoint; no tests/build/screenshots or human review run/claimed. Rights and acceptance remain pending.
 
 **Live execution update (2026-10-26, MF-VF-370):** Added the R04 auth introduction slot at `apps/moonframe/templates/visual-reference/r04-brand.tsx` with consumer-supplied logo content and a selectable generic name fallback. No Moonwitness branding is assumed. Status `implemented`; host runner owns validators, tests, typecheck, build, and responsive screenshots. Human/rights review and acceptance remain pending.
