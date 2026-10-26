@@ -202,7 +202,7 @@
   "legacyTimingApproval": "Historical minimumGapMs=1000 and deduplicateWithinMs=2000 values are untested provisional design candidates; preserve existing values until consumer/UX review and explicit semver decision",
   "playbackDecision": {
     "status": "proposed-not-implemented",
-    "default": "no audio engine in core",
+    "default": "built-in-WebAudio-synth-present-off-by-default; no licensed media pack",
     "candidateOptions": [
       "no-engine-in-core",
       "lazy-native-html-media",
@@ -231,7 +231,7 @@
   },
   "assetSchemaOwnership": "schemas/moonframe-asset-record.schema.json and contracts/moonframe-asset-manifest-v0.1.json (no duplicate binary record)",
   "eventAliases": {
-    "status": "proposal-only-not-public",
+    "status": "runtime-supported-public-semver-approval-pending",
     "candidates": {
       "confirm.success": "success",
       "confirm.warning": "warning",
@@ -249,5 +249,22 @@
     ],
     "approvedProfiles": [],
     "licenseAndMediaApprovals": 0
+  },
+  "statusClarification": "Legacy status means no approved external/binary audio asset pack; in src/components.js a WebAudio synth runtime already exists. No visual/UX/product approval inferred.",
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "source": "src/components.js",
+    "runtime": "SFXProvider and useSFX implemented, six synthesized cue event profiles",
+    "eventIdsParity": "6/6 exact",
+    "aliasesParity": "6/6 exact but originally spec-only",
+    "defaultMuted": true,
+    "defaultEnabled": false,
+    "consentGap": "defaultEnabled=true can initialize consentGranted without direct trusted user action",
+    "playbackTruthGap": "play may return played:true if AudioContext missing or throws",
+    "lifecycleGap": "new AudioContext per play, no deterministic close/suspend or stop-on-mute/revoke",
+    "categoryAndSecurityContextGap": "contract excludes sensitive auth/finance/destructive sound, runtime play does not distinguish consumer context",
+    "requiredAction": "P1 SFX hardening with browser gesture/denial/mute lifecycle tests before opt-in audio is claimed production-safe",
+    "producedAudioFiles": 0,
+    "releaseStatus": "BLOCKED_FOR_SFX_FEATURE_RELEASE"
   }
 }
