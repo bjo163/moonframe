@@ -1,6 +1,6 @@
 # Moonframe M13 — Nonvisual Preflight: SFX / Tokens / Motion / Package / Security Microtasks
 
-**2026-10-26 · Live status: 4 captured, 1 implemented, 23 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
+**2026-10-26 · Live status: 6 captured, 1 implemented, 21 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
 
 **Rule:** A green build approves source integrity, not sound playback safety, npm license rights, original artwork or full WCAG status. Work one ID per local agent session. Each task must provide before/after SHA, scoped file diff, tests actually run, fail/pass, source/rights as applicable, status and rollback.
 
@@ -75,9 +75,8 @@
 
 ## P1 — tokens, theme, brand and motion
 
-- [ ] **MF-PF-019 — Generate 78-name to 17-runtime-var mapping/owner matrix** · **P1** · `planned` · **deps:** `none` · **GitHub issue:** not-created
-  - **Scope:** `docs/audit/token-source-runtime-crosswalk.md (proposed)`. **Acceptance:** Separate normative token dictionary, bounded generator, and static runtime values, with none invented
-  - **Proof:** exact code/contract diff; relevant `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, unit/type/build/Playwright/browser test as applicable, signed reviewer only if required. Track actual command result and rollback; never invent pass.
+- [x] **MF-PF-019 — Generate 78-name to 17-runtime-var mapping/owner matrix** · **P1** · `captured` · **deps:** `none` · **GitHub issue:** not-created
+  - **Scope:** `docs/audit/token-runtime-coverage.md`. **Evidence:** Inventory maps all 78 dictionary IDs by family to candidate roles in the 17 observed `--mf-*` declarations. It marks partial/no coverage explicitly and states that inferred roles are not aliases, approved values, 30-appearance coverage, or DTCG conformance. Required verification results are recorded in `docs/qa/m13-autonomous-execution-ledger.md`. Status `captured`; no review/acceptance claimed. Rollback: remove the inventory and matching task/TODO/ledger evidence only.
 - [ ] **MF-PF-020 — Approve or defer canonical 78×30 source-value production ADR** · **P1** · `planned` · **deps:** `MF-PF-019` · **GitHub issue:** not-created
   - **Scope:** `docs/architecture/token-pipeline.md + contracts/moonframe-token-source-plan-v0.1.json`. **Acceptance:** Named owner decision with migration/versioning; no override of sentinel states to fake implementation
   - **Proof:** exact code/contract diff; relevant `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, unit/type/build/Playwright/browser test as applicable, signed reviewer only if required. Track actual command result and rollback; never invent pass.
