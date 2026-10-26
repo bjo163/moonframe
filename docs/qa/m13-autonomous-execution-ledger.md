@@ -2149,3 +2149,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-144 is implemented. Backlog status: implemented; source inspection only.
 - Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, screenshots, or human review run. Host runner owns verification and checkpoint. Optical review, rights review, integration, and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-147 to planned, and remove this ledger/TODO evidence. No commit created.
+## MF-VF-148 — Draw small Moonink edition badge
+
+- Added `assets/source/skins/moonink/edition.svg`: original static monochrome badge with an abstract brush glyph and explicit “A MOONFRAME EDITION” label; it presents Moonink as a skin edition, not an independent company identity.
+- Source SHA-256: `969FE05EA5B3CFC2ED3CAFC8E5A9CF9C3535EA99145AC0A2D8EEFDFE66F5259A`.
+- Dependencies MF-VF-144 and MF-VF-039 are implemented. Backlog status: `implemented`.
+- Source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size capture, or human review ran; the host runner owns verification and checkpoint.
+- Originality provenance: authored in this repository for this task; no external assets or reference imagery used. Optical review, rights review, and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-148 to planned in the backlog, and remove this ledger/TODO evidence. No commit created.
