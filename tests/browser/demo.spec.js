@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('workspace creates projects, updates progress, searches, filters, sorts, and persists', async ({ page }) => {
   await page.goto('/lab');
+  const projectRows = page.locator('.demo-table-scroll tbody tr');
   await page.getByRole('button', { name: 'Create project', exact: true }).click();
   const dialog = page.getByRole('dialog', { name: 'Give your idea a home.' });
   await dialog.getByLabel('Project name').fill('Astra launch');
@@ -13,14 +14,14 @@ test('workspace creates projects, updates progress, searches, filters, sorts, an
   await page.getByLabel('Status for Astra launch', { exact: true }).selectOption('Completed');
   await expect(page.getByRole('progressbar', { name: 'Astra launch progress', exact: true })).toHaveAttribute('aria-valuenow', '100');
   await page.getByLabel('Sort projects', { exact: true }).selectOption('name');
-  await expect(page.locator('tbody tr').first()).toContainText('After hours studio');
+  await expect(projectRows.first()).toContainText('After hours studio');
   await page.getByLabel('Search projects', { exact: true }).fill('astra');
-  await expect(page.locator('tbody tr')).toHaveCount(1);
-  await expect(page.locator('tbody tr')).toContainText('Astra launch');
+  await expect(projectRows).toHaveCount(1);
+  await expect(projectRows).toContainText('Astra launch');
   await page.getByLabel('Filter projects by status', { exact: true }).selectOption('Planned');
   await expect(page.getByText('No projects found', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Clear filters' }).click();
-  await expect(page.locator('tbody tr')).toHaveCount(6);
+  await expect(projectRows).toHaveCount(6);
   await page.reload();
   await expect(page.getByText('Astra launch', { exact: true })).toBeVisible();
   await expect(page.getByLabel('Status for Astra launch', { exact: true })).toHaveValue('Completed');

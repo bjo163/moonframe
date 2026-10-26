@@ -24,8 +24,9 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       await expect(dashboardFixture.locator('.fixture-dashboard-metric').filter({ hasText: label })).toContainText(value);
     }
     await expect(dashboardFixture.getByRole('heading', { level: 3, name: 'Recent project activity' })).toBeVisible();
+    const activityList = dashboardFixture.locator('.fixture-dashboard-activity');
     for (const task of ['Confirm migration checklist', 'Review workspace permissions', 'Publish release notes draft', 'Verify scheduled export', 'Test recovery procedure']) {
-      await expect(dashboardFixture.getByText(task, { exact: true })).toBeVisible();
+      await expect(activityList.getByText(task, { exact: true })).toBeVisible();
     }
     await expect(dashboardFixture.getByText('Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.', { exact: true })).toBeVisible();
     const fixtureTaskTable = dashboardFixture.getByRole('table', { name: 'Project tasks' });
