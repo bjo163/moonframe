@@ -555,3 +555,36 @@ test('reduced motion, forced colors, keyboard focus, RTL and long text stay usab
   expect(textFits, 'long card description remains readable without horizontal clipping').toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
+
+test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {
+  const blockedRequests = [];
+  await page.route(/\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i, async route => {
+    blockedRequests.push(route.request().url());
+    await route.abort();
+  });
+  await page.goto('/lab');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByText('Northstar Studio', { exact: true })).toBeVisible();
+  const fixtureNavigation = page.getByRole('navigation', { name: 'Workspace sections' });
+  await expect(fixtureNavigation.getByRole('button', { name: 'Overview', exact: true })).toBeVisible();
+
+  const search = page.getByRole('textbox', { name: 'Search project tasks' });
+  await search.fill('T-1045');
+  await expect(page.getByText('1 of 5 tasks')).toBeVisible();
+  await expect(page.getByRole('list').getByText('Verify scheduled export', { exact: true })).toBeVisible();
+  await page.getByLabel('Sort project tasks').selectOption('task');
+  await page.getByRole('button', { name: 'Reports', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Reports', exact: true })).toHaveAttribute('aria-current', 'page');
+  await page.getByRole('button', { name: 'Save changes', exact: true }).click();
+  await expect(page.locator('.fixture-profile-status')).toHaveText('Workspace profile saved.');
+
+  const typography = await page.locator('[data-fixture="dashboard-overview"]').evaluate(node => ({
+    fontFamily: getComputedStyle(node).fontFamily,
+    text: node.innerText,
+    fontStatus: document.fonts.status,
+  }));
+  expect(typography.fontFamily).toMatch(/sans-serif|serif|monospace/i);
+  expect(typography.text).toContain('Project tasks');
+  expect(typography.fontStatus).toBe('loaded');
+  expect(blockedRequests.every(url => /\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i.test(url))).toBe(true);
+});

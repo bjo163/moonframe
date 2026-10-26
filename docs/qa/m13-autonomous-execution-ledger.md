@@ -491,3 +491,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node --check tests/browser/skins.spec.js` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 with existing SFX playback-truth and missing-LICENSE warnings. The browser suite, screenshots, typecheck, and build were not run per runner override, so browser outcomes remain unverified. No human visual or accessibility review claimed.
 - Status: `implemented`; host runner must execute applicable browser verification before capture status. Rollback: revert the browser regression and the MF-VF-286 task/TODO/ledger evidence.
 - Overall progress after this task: 86/488 (17.6%) implemented-or-captured, 402/488 (82.4%) planned, 0 blocked. This count does not imply human review or acceptance.
+
+## MF-VF-287 — No-art/no-custom-font browser fallback
+
+- Added a browser regression in `tests/browser/skins.spec.js` that aborts image and custom-font file requests, then checks fallback typography and readable dashboard content while using task search/sort, workspace navigation, and profile save feedback.
+- `pnpm run test:browser -- --grep "critical lab actions and readable content"` — 1/1 passed after scoping the repeated task-name assertion to its summary list. The host runner's first full browser attempt caught that ambiguous locator; it retained the patch without committing. Full browser suite, unit tests, typecheck, build, contracts, and handoff validation are running again before checkpoint. No human visual review claimed.
+- Status: `implemented`; targeted browser behavior verified. Rollback: revert the regression and matching task/TODO/ledger evidence.
+- Overall progress after this task: 87/488 (17.8%) implemented-or-captured, 401/488 (82.2%) planned, 0 blocked. This arithmetic follows the immediately preceding live ledger count and does not imply human review or acceptance.
