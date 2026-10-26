@@ -1877,3 +1877,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/moonscrawl-reference-parity.md`. It specifies matched desktop/mobile captures across light/dark, color/grayscale, and decoration-on/off states, with Moonscrawl/Moonink/Moonzine distinction criteria and human evidence fields.
 - Dependency `MF-VF-180` is implemented. Backlog status: `implemented`; protocol/source inspection only. No screenshots, browser checks, package-manager commands, validators, tests, typecheck, build, rights review, or human verdict run per runner override. Human review and acceptance remain pending; host runner owns verification and checkpoint.
 - Rollback: remove the protocol, restore the task row to planned, and remove this ledger entry and TODO update. No commit created.
+
+## MF-VF-442 — Write micro agent prompt for R04 accessible sign in
+
+- Added an R04-specific section to `docs/handoff/reference-visual-local-agent.md` with the canonical reference digest boundary, semantic labeled form requirements, form-first mobile reading/focus order, generic/original art constraints, consumer-owned provider actions, and an explicit prohibition on simulated authentication-success claims.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source/document inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser capture, or commit run. Reference parity, rights clearance, human review, and acceptance remain unclaimed; the host runner owns verification and checkpoint.
+- Rollback: remove the R04 prompt section and restore MF-VF-442 to planned in the reference backlog; remove matching TODO and ledger evidence.
