@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-423):** Added creative-reference import integrity validation and a negative self-test fixture in `scripts/validate-contracts.mjs`. Current backlog checkbox recount after this update: 117/292 foundation + 82/168 reference + 28/28 preflight = 227/488 checked; 261 unchecked. Checked includes implemented/captured statuses and does not imply human review, rights clearance, or acceptance. Runner override honored; host runner owns validation and commit.
+
 **Live execution update (2026-10-26, MF-VF-120):** Added `docs/visual/skins/moonglitch.md`, a canonical-contract-derived telemetry/diagnostics direction with structural distinctions from Moonchrome, Moonpunk, and Moonhalftone. Dependency MF-VF-015 is implemented. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or human review were run. Live task rows: 116/292 foundation + 81/168 reference + 28/28 preflight = 225/488 checked; 263 unchecked. Checked does not imply human review, rights clearance, or acceptance; host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-396):** Added grayscale-distinct material recipes for ComicPanel (grid/gutters), ZineCollage (overlap/irregular paper edges), and Halftone (monochrome dot fields/ink) to the cinematic reference bible. Status `implemented`; documentation/source inspection only. No checks, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. No runtime behavior, rights, visual approval, or acceptance claimed; host runner owns verification/checkpoint.

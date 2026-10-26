@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
@@ -38,8 +39,42 @@ const source = read('contracts/moonframe-token-source-plan-v0.1.json');
 const components = read('contracts/moonframe-component-manifest-v0.1.json');
 const blocks = read('contracts/moonframe-block-manifest-v0.1.json');
 const assets = read('contracts/moonframe-asset-manifest-v0.1.json');
+const creativeReferences = read('contracts/moonframe-creative-reference-contract-v0.1.json');
 const sfx = read('contracts/moonframe-sfx-contract-v0.1.json');
 const ids = theme.skins.map(s=>s.id);
+function creativeReferenceImportProblems(contract, repoRoot = root) {
+  const storage = contract.referenceStorage || {};
+  if (storage.committedToRepository !== true) return [];
+  const problems = [];
+  if (typeof storage.repositoryMediaPath !== 'string' || !storage.repositoryMediaPath.trim())
+    return ['committed references require repositoryMediaPath'];
+  if (!Array.isArray(contract.photos) || contract.photos.length === 0)
+    return ['committed references require photo records'];
+  for (const photo of contract.photos) {
+    if (typeof photo.repositoryPath !== 'string' || !photo.repositoryPath.trim()) {
+      problems.push(`${photo.id || 'unknown'}: committed reference lacks repositoryPath`);
+      continue;
+    }
+    const absolute = path.resolve(repoRoot, photo.repositoryPath);
+    if (absolute !== repoRoot && !absolute.startsWith(repoRoot + path.sep)) {
+      problems.push(`${photo.id}: repositoryPath escapes checkout`);
+      continue;
+    }
+    if (!/^[a-f0-9]{64}$/.test(photo.sha256 || '')) {
+      problems.push(`${photo.id}: committed reference lacks valid SHA-256`);
+      continue;
+    }
+    if (!fs.existsSync(absolute) || !fs.statSync(absolute).isFile()) {
+      problems.push(`${photo.id}: committed reference file is missing`);
+      continue;
+    }
+    const digest = createHash('sha256').update(fs.readFileSync(absolute)).digest('hex');
+    if (digest !== photo.sha256) problems.push(`${photo.id}: repository file SHA-256 does not match contract`);
+  }
+  return problems;
+}
+for (const problem of creativeReferenceImportProblems(creativeReferences))
+  errors.push(`Creative reference import: ${problem}`);
 function validatePairMatrix(pairs, skinIds) {
   const failures = [];
   const keys = pairs.map(p => pairKey(p.a,p.b));
@@ -188,6 +223,14 @@ const localReferenceExists=ref=>{
 };
 const ownershipAuditProblems=ownershipRegistryProblems(ownershipRows,new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,readmeHasOwnershipLink);
 for(const problem of ownershipAuditProblems) errors.push('Ownership registry: '+problem);
+if (process.argv.includes('--self-test')) {
+  const unversionedReferences = structuredClone(creativeReferences);
+  assert.deepEqual(creativeReferenceImportProblems(unversionedReferences), []);
+  const falselyImported = structuredClone(creativeReferences);
+  falselyImported.referenceStorage.committedToRepository = true;
+  assert(creativeReferenceImportProblems(falselyImported).some(x => x.includes('repositoryMediaPath')));
+  console.log('PASS: creative-reference import negative fixture (claimed import without repository path/hash is rejected)');
+}
 if (process.argv.includes('--self-test')) {
   assert.equal(identityAudit.problems.length, 0, 'Canonical task identity sources must agree: '+identityAudit.problems.join('; '));
   assert(identityAudit.registry.some(x=>x.id==='MF-003'&&x.issue===1));
