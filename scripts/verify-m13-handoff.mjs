@@ -16,6 +16,19 @@ const check = (test, why) => { if (!test) failures.push(why); };
 const unique = (a) => new Set(a).size === a.length;
 const equalIds = (a, b) => unique(a) && unique(b) && a.length === b.length && a.every((id) => b.includes(id));
 
+const freeze = read('contracts/moonframe-m13-plan-freeze-v0.1.json');
+check(freeze.contractId === 'MF-M13-PLAN-FREEZE-001' &&
+  /^[0-9a-f]{40}$/.test(freeze.baselineCommit) &&
+  freeze.taskBaseline.total === 488 &&
+  freeze.taskBaseline.visual === 460 &&
+  freeze.taskBaseline.preflight === 28, 'Missing or inconsistent M13 freeze snapshot');
+for (const item of freeze.files || []) {
+  check(fs.existsSync(path.join(root, item.path)), 'Freeze anchor file no longer exists: ' + item.path);
+  check(/^[0-9a-f]{40}$/.test(item.gitBlobSha1), 'Invalid frozen Git blob ID for '+item.path);
+}
+check(fs.existsSync(path.join(root, 'docs/governance/M13_PLAN_FREEZE_2026-10-26.md')) &&
+  fs.existsSync(path.join(root, 'docs/handoff/CODEX_M13_AUTONOMOUS_MASTER_PROMPT.md')) &&
+  fs.existsSync(path.join(root, 'AGENTS.md')), 'Missing frozen handoff/agent instruction file');
 const gate = read('contracts/moonframe-m13-readiness-gates-v0.1.json');
 const theme = read('contracts/moonframe-theme-contract-v1.3.json');
 const grammar = read('contracts/moonframe-skin-grammar-contract-v1.0.json');
