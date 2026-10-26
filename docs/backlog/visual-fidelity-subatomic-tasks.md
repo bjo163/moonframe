@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 20 implementation/CI tasks evidenced, 272 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 36 implementation/evidence tasks completed in this wave, 255 remaining planned and one owner-blocked · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 20 implemented, 440 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockup Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 36 implemented, 423 pending, 1 owner-approval blocker**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -20,13 +20,13 @@
 | Workstream | Tasks | Done |
 |---|---:|---:|
 | A — P0 repair release evidence and CI | 16 | 16 |
-| B — deterministic lab and snapshot fixture microtasks | 16 | 4 |
+| B — deterministic lab and snapshot fixture microtasks | 16 | 16 |
 | C — master logo and its smallest production assets | 17 | 0 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
-| G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
-| **TOTAL** | **292** | **20** |
+| G — final 9 specimens, cross-family QA and release gate | 23 | 4 |
+| **TOTAL** | **292** | **36** |
 
 ## A — P0 repair release evidence and CI
 
@@ -889,9 +889,10 @@
   - **File scope:** `docs/qa/reference-screens/form.md`. **Acceptance:** Same labels/helper/errors across skins.
   - **Evidence:** See the [frozen form/error specimen](../qa/reference-screens/form.md): fixed field values, URL validation/error association, pending/success messages and reset behavior, plus 30 default-state desktop captures. Transient states are browser-tested but not separately screenshot-captured; visual review remains pending.
   - **Verify:** `pnpm run test:browser` 56/56; every skin/mode case asserts labels, helpers, error text/ARIA, Saving…, success and reset. All 30 screenshot sidecars share the fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No visual approval claimed; rollback: remove specimen doc and restore task/count state.
-- [ ] **MF-VF-273 — Freeze dialog/popover specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/reference-screens/dialog.md (proposed)`. **Acceptance:** Same focus and overlay interaction across skins.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-273 — Freeze dialog/popover specimen** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/components.spec.js`, `docs/qa/reference-screens/dialog.md`. **Acceptance:** Same focus and overlay interaction across skins.
+  - **Evidence:** See the [frozen dialog/popover specimen](../qa/reference-screens/dialog.md): deterministic T-1045 dialog, popover behavior and 30 provenance-bound open-dialog screenshots (15 skins × light/dark), including per-image SHA-256 and source commit. Automated assertions verify dialog Escape/focus restoration, Keep task close and popover Escape/focus restoration in every matrix entry. Human visual review remains pending.
+  - **Verify:** `pnpm run test:browser` 57/57 at `c9e221838c7212ec5c269dc31b012938e4ce525b`; capture audit verified 30/30 PNG hashes, one source fingerprint/commit, 1440×960 viewport and loaded fonts. `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` passed. No visual approval claimed; rollback: revert implementation commit and matching evidence/count commit.
 - [ ] **MF-VF-274 — Freeze sidebar/header specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reference-screens/navigation.md (proposed)`. **Acceptance:** Same IA and active route across skins.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

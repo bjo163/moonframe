@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 58 implemented-or-captured (14 baseline implemented + 11 captured + 33 implemented), 6 blocked, 424 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 58/488 (11.9%) done/captured; 424/488 (86.9%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 430/488 (88.1%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 59 implemented-or-captured (14 baseline implemented + 11 captured + 34 implemented), 6 blocked, 423 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 59/488 (12.1%) done/captured; 423/488 (86.7%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 429/488 (87.9%) remain incomplete.
 
 
 
@@ -16,6 +16,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
 - The umbrella-brand recommendation is explicitly not owner-approved; owner approval and trademark decisions are listed as blockers. The task requires accepting that brand hierarchy before production marks or edition devices are created.
 - Status: `blocked-external-approval`. No owner decision was available in this repo/task context. No approval or logo direction was invented; no production mark is authorized. Resume after the owner records the umbrella/edition naming decision.
+## MF-VF-273 — Freeze dialog/popover specimen
+
+- Scope: `tests/browser/components.spec.js`; `docs/qa/reference-screens/dialog.md`; 30 ignored local captures in `artifacts/skins/*-1440x960-archive-dialog.png` and provenance sidecars.
+- The browser matrix freezes the completed T-1045 archive dialog, accessible name/description and actions, Escape/focus return from its actual trigger, and non-destructive Keep task close. It also verifies Quick help popover content, Escape dismissal and focus return for every one of 15 skins × two modes.
+- `pnpm run test:browser` — 57/57 passed at implementation commit `c9e221838c7212ec5c269dc31b012938e4ce525b`. Capture audit — 30/30 image SHA-256 values match sidecars; one source fingerprint and commit; open-dialog state; loaded fonts; 1440×960.
+- `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` — passed; handoff retains existing SFX playback-truth and standalone LICENSE warnings. `git diff --check` — passed. No human visual review is claimed.
+- Status: implemented as a frozen content/interaction contract; visual review remains pending. Rollback: revert implementation commit and its matching evidence/count commit.
 ## MF-VF-272 — Freeze long form/error specimen
 
 - Scope: `docs/qa/reference-screens/form.md`; fixed Workspace profile form values, helper/error copy, feedback and reset behavior.
