@@ -338,11 +338,16 @@ test('M10 SkinBrandMark, SkinArtwork, and SFXProvider server-render cleanly and 
   assert.ok(artworkHtml.includes('Cybernetic neon geometry'));
 
   const sfxHtml = renderToString(createElement(SFXProvider, {
-    defaultEnabled: false,
+    defaultEnabled: true,
     defaultMuted: true,
-  }, createElement('div', null, 'Audio Context Ready')));
-  assert.ok(sfxHtml.includes('Audio Context Ready'));
+  }, createElement(SFXConsentProbe)));
+  assert.ok(sfxHtml.includes('data-consent="false"'), 'defaultEnabled does not grant consent');
 });
+
+function SFXConsentProbe() {
+  const sfx = useSFX();
+  return createElement('div', { 'data-consent': String(sfx.consentGranted) }, 'SFX ready');
+}
 
 test('Moonframe CLI lists catalog and scaffolds templates and multi-route starters', () => {
   const cliScript = path.resolve('scripts/moonframe-cli.mjs');

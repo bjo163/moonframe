@@ -36,9 +36,9 @@
 
 ## P1 — SFX consent, playback truth and lifecycle
 
-- [ ] **MF-PF-007 — Separate SFX default enable intent from trusted consent** · **P1** · `planned` · **deps:** `none` · **GitHub issue:** not-created
-  - **Scope:** `src/components.js: SFXProvider`. **Acceptance:** No prop initializes consentGranted as true without an explicit authorized user path
-  - **Proof:** exact code/contract diff; relevant `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, unit/type/build/Playwright/browser test as applicable, signed reviewer only if required. Track actual command result and rollback; never invent pass.
+- [x] **MF-PF-007 — Separate SFX default enable intent from trusted consent** · **P1** · `implemented` · **deps:** `none` · **GitHub issue:** not-created
+  - **Scope:** `src/components.js: SFXProvider; tests/runtime.test.mjs`. `defaultEnabled` no longer initializes `consentGranted`; only `grantConsent()` does. Runtime assertion renders the provider with `defaultEnabled: true` and checks consent remains false.
+  - **Evidence (source HEAD `625cf4b22ff427f7d30e9e38031f4f5ca6e7c81e`):** `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0, with existing SFX play-result and missing-LICENSE release warnings. After restoring the locked 31 packages from the local pnpm cache using `pnpm install --frozen-lockfile --offline` (exit 0), `pnpm test` passed 12/12, `pnpm run typecheck` passed, `pnpm run build` generated all 88 routes, and `pnpm run test:browser` passed 46/46. `git diff --check` exited 0. The earlier runner attempt hit a transient Windows `EPERM`/network restriction before cache recovery. No human review or acceptance claimed. Rollback: revert the provider initialization, its assertion, and matching status/ledger evidence.
 - [ ] **MF-PF-008 — Define explicit consent/gesture event API without forced media permission** · **P1** · `planned` · **deps:** `MF-PF-007` · **GitHub issue:** not-created
   - **Scope:** `src/components.d.ts + docs/motion/motion-interaction-sfx-bible.md`. **Acceptance:** Typed grant/revoke semantics unambiguous; no automatic sound on page load or hydration
   - **Proof:** exact code/contract diff; relevant `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, unit/type/build/Playwright/browser test as applicable, signed reviewer only if required. Track actual command result and rollback; never invent pass.

@@ -5,8 +5,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-025` is implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 21 implemented-or-captured (14 baseline implemented + 6 captured + 1 implemented), 0 blocked, 467 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007` and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 22 implemented-or-captured (14 baseline implemented + 6 captured + 2 implemented), 0 blocked, 466 pending/planned. The license/trademark decision remains pending without inferred owner approval.
 
 ## MF-PF-001 — Freeze current package/release inventory
 
@@ -87,3 +87,15 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `pnpm run build` — exit 0; all 88 static/SSG routes generated.
 - `pnpm run test:browser` — exit 0; 46/46 Playwright tests passed.
 - Status: implemented with local verification complete. No authentication integration or real account action is claimed. Rollback: revert only the template wording/action edits and this evidence.
+
+## MF-PF-007 — Separate SFX default enable intent from trusted consent
+
+- Inspected source HEAD before edits: `625cf4b22ff427f7d30e9e38031f4f5ca6e7c81e`.
+- Scope: `src/components.js`, `tests/runtime.test.mjs`, matching preflight task row and this ledger. `defaultEnabled` can no longer grant consent; the SSR fixture requests `defaultEnabled: true` and asserts `consentGranted` remains false.
+- `node scripts/validate-contracts.mjs` — exit 0.
+- `node scripts/verify-m13-handoff.mjs` — exit 0; existing SFX playback-truth and missing-LICENSE warnings remain.
+- The first unattended attempt hit Windows `EPERM` during pnpm dependency refresh; its bundled cache path also lacked `@emnapi/runtime` metadata. Restored the locked 31 packages through the user's pnpm cache with `pnpm install --frozen-lockfile --offline` (exit 0; no lockfile changes).
+- `pnpm test` — exit 0; 12/12 tests passed, including the new default-enabled consent assertion.
+- `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `pnpm run test:browser` — exit 0; 46/46 passed.
+- `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0; existing release warnings remain.
+- Status: implemented with local verification complete. No human review or acceptance claimed. Rollback: revert the initialization change, its runtime assertion, and matching task status/evidence.

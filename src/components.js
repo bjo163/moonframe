@@ -1950,7 +1950,9 @@ export function SFXProvider({
   defaultVolume = 0.35,
   children,
 }) {
-  const [consentGranted, setConsentGranted] = useState(Boolean(defaultEnabled));
+  // Configuration can choose the initial mute preference, but only an explicit
+  // user action may grant consent to play audio.
+  const [consentGranted, setConsentGranted] = useState(false);
   const [muted, setMutedState] = useState(defaultEnabled ? Boolean(defaultMuted) : true);
   const [volume, setVolumeState] = useState(() => Math.max(0, Math.min(1, Number(defaultVolume) || 0.35)));
   const [lastEvent, setLastEvent] = useState(null);
