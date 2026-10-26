@@ -6,6 +6,27 @@ import { writeSkinCaptureProvenance } from '../../scripts/skin-capture-provenanc
 
 const captureDir = path.resolve('artifacts/skins');
 fs.mkdirSync(captureDir, { recursive: true });
+const captureVariants = [
+  { viewport: '1440x960', state: 'default' },
+  { viewport: '1440x960', state: 'decoration-off' },
+  { viewport: '1440x960', state: 'grayscale' },
+  { viewport: '768x1024', state: 'default' },
+  { viewport: '360x800', state: 'default' },
+];
+
+function skinCaptureFilename(skin, mode, viewport, state) {
+  return `${skin.id}-${mode}-${viewport}-${state}.png`;
+}
+
+test('skin capture filenames uniquely encode skin, mode, viewport, and state', () => {
+  const filenames = skins.flatMap(skin => ['light', 'dark'].flatMap(mode => captureVariants.map(({ viewport, state }) => (
+    skinCaptureFilename(skin, mode, viewport, state)
+  ))));
+  expect(new Set(filenames).size).toBe(filenames.length);
+  for (const skin of skins) for (const mode of ['light', 'dark']) for (const { viewport, state } of captureVariants) {
+    expect(skinCaptureFilename(skin, mode, viewport, state)).toBe(`${skin.id}-${mode}-${viewport}-${state}.png`);
+  }
+});
 
 async function waitForFontsReady(page) {
   const status = await page.evaluate(async () => {
@@ -139,7 +160,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await profileUrl.fill('https://northstar.example/workspace');
     await expect(profileFixture.getByText('Use the address your team recognizes.', { exact: true })).toBeVisible();
     await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
-    const decorationOffScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-decoration-off.png`);
+    const decorationOffScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'decoration-off'));
     await waitForFontsReady(page);
     await page.screenshot({ path: decorationOffScreenshotPath, fullPage: true, animations: 'disabled' });
     const decorationOffCapture = await page.evaluate(() => ({
@@ -192,7 +213,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     for (const [role, ratio] of Object.entries(contrast)) {
       expect(ratio, `${skin.id}/${mode} ${role} contrast`).toBeGreaterThanOrEqual(4.5);
     }
-    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}.png`);
+    const screenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'default'));
     await waitForFontsReady(page);
     await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
     const capture = await page.evaluate(() => ({
@@ -217,7 +238,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(fixtureTaskNames).toHaveCount(5);
     await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
     expect(await page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('1440x960');
-    const grayscaleScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-grayscale.png`);
+    const grayscaleScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'grayscale'));
     await waitForFontsReady(page);
     await page.screenshot({ path: grayscaleScreenshotPath, fullPage: true, animations: 'disabled' });
     const grayscaleCapture = await page.evaluate(() => ({
@@ -241,7 +262,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await page.setViewportSize({ width: 768, height: 1024 });
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('768x1024');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 768px').toBe(true);
-    const tabletScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-tablet.png`);
+    const tabletScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '768x1024', 'default'));
     await waitForFontsReady(page);
     await page.screenshot({ path: tabletScreenshotPath, fullPage: true, animations: 'disabled' });
     const tabletCapture = await page.evaluate(() => ({
@@ -264,7 +285,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('360x800');
-    const phoneScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-phone.png`);
+    const phoneScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '360x800', 'default'));
     await waitForFontsReady(page);
     await page.screenshot({ path: phoneScreenshotPath, fullPage: true, animations: 'disabled' });
     const phoneCapture = await page.evaluate(() => ({

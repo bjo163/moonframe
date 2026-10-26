@@ -35,7 +35,7 @@ export function auditAllSkinPairs() {
   const stalePhoneScreenshots = [];
   for (const skin of grammar.skins) {
     for (const mode of ['light', 'dark']) {
-      const rel = `artifacts/skins/${skin.id}-${mode}.png`;
+      const rel = `artifacts/skins/${skin.id}-${mode}-1440x960-default.png`;
       const imagePath = path.join(root, rel);
       const provenancePath = `${imagePath}.provenance.json`;
       if (!fs.existsSync(imagePath)) {
@@ -51,7 +51,7 @@ export function auditAllSkinPairs() {
           staleScreenshots.push(rel);
         }
       }
-      const tabletRel = `artifacts/skins/${skin.id}-${mode}-tablet.png`;
+      const tabletRel = `artifacts/skins/${skin.id}-${mode}-768x1024-default.png`;
       const tabletPath = path.join(root, tabletRel);
       const tabletProvenancePath = `${tabletPath}.provenance.json`;
       if (!fs.existsSync(tabletPath) || !fs.existsSync(tabletProvenancePath)) {
@@ -65,7 +65,7 @@ export function auditAllSkinPairs() {
           staleTabletScreenshots.push(tabletRel);
         }
       }
-      const phoneRel = `artifacts/skins/${skin.id}-${mode}-phone.png`;
+      const phoneRel = `artifacts/skins/${skin.id}-${mode}-360x800-default.png`;
       const phonePath = path.join(root, phoneRel);
       const phoneProvenancePath = `${phonePath}.provenance.json`;
       if (!fs.existsSync(phonePath) || !fs.existsSync(phoneProvenancePath)) {
@@ -125,8 +125,8 @@ export function auditAllSkinPairs() {
       distinctDimensions,
       totalScore,
       hasCss: hasCssSelectorA && hasCssSelectorB,
-      lightScreenshots: [`artifacts/skins/${pair.a}-light.png`, `artifacts/skins/${pair.b}-light.png`],
-      darkScreenshots: [`artifacts/skins/${pair.a}-dark.png`, `artifacts/skins/${pair.b}-dark.png`],
+      lightScreenshots: [`artifacts/skins/${pair.a}-light-1440x960-default.png`, `artifacts/skins/${pair.b}-light-1440x960-default.png`],
+      darkScreenshots: [`artifacts/skins/${pair.a}-dark-1440x960-default.png`, `artifacts/skins/${pair.b}-dark-1440x960-default.png`],
       summaryA: `${a.geometry}; ${a.surface}`,
       summaryB: `${b.geometry}; ${b.surface}`,
       verdict: distinctDimensions >= 5 && hasCssSelectorA && hasCssSelectorB ? 'STRUCTURAL-PASS' : 'STRUCTURAL-FAIL',
