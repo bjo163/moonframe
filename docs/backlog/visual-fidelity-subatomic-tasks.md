@@ -88,9 +88,10 @@
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Path/hash/rights only when actual reference retrievable; no fabricated pixel parity.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
   - **Evidence / completion (2026-10-26):** Four actual user-uploaded PNGs SHA-256/dimensions catalogued; original binaries in repo still missing and flagged. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
-- [ ] **MF-VF-016 — Prove clean checkout CI all jobs green** · **P0** · `planned` · **dependency:** `MF-VF-002, MF-VF-003, MF-VF-004, MF-VF-005` · **GitHub issue:** not-created
+- [x] **MF-VF-016 — Prove clean checkout CI all jobs green** · **P0** · `implemented` · **dependency:** `MF-VF-002, MF-VF-003, MF-VF-004, MF-VF-005` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Real link to same-SHA contract/unit/typecheck/build/browser run.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / completion (2026-10-26):** All GitHub Actions jobs succeeded on clean checkout at https://github.com/bjo163/moonframe/actions/runs/40253520325. Latest later commits still require their own CI verification; this does not approve visual artwork.
 
 ## B — deterministic lab and snapshot fixture microtasks
 
