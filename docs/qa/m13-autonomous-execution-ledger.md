@@ -1040,3 +1040,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonriot.md`, based on the canonical skin specification and existing captured structural comparison. The brief specifies Moonriot's open full-width editorial shell, directional cuts and top-band navigation, with explicit distinctions from Moonpunk and Moonsmash. Shared behavior, decoration-off, reduced-motion, accessibility, and rights boundaries are recorded.
 - Dependency MF-VF-015 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, screenshots, human review, or acceptance were performed per runner override. Host runner owns verification/checkpoint. No asset or font rights are claimed.
 - Rollback: remove the brief and restore the MF-VF-084 backlog row and this entry.
+
+## MF-VF-351 — Write visual distinction for portrait poster archetype
+
+- Added `docs/visual/skins/moonsmash.md`, a generic campaign-poster direction brief covering focal hierarchy, portrait composition, distinction from application shells and neighboring skins, accessible live content, consumer asset rights, and responsive/reduced-motion constraints.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source review only. No validators, package-manager commands, suites, typecheck, build, screenshots, or human review run under runner override. Rights, visual parity, and acceptance remain pending; host runner owns verification/checkpoint.
+- Live TODO recount at the time of this task: 154/488 checked implemented-or-captured, 334 unchecked, 0 explicitly blocked. Checked task states do not imply human review, rights approval, or acceptance.
+- No commit created. Rollback: remove the brief and restore the matching backlog, TODO, and ledger evidence.

@@ -223,9 +223,10 @@
 
 ## K — R03 creative poster: editorial template, not library controls
 
-- [ ] **MF-VF-351 — Write visual distinction for portrait poster archetype** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
-  - **File scope/output:** `docs/visual/skins/moonsmash.md (proposed)`. **AC:** Art direction not treated as all-purpose login/dashboard styling.
-  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-351 — Write visual distinction for portrait poster archetype** · **P1** · `implemented` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `docs/visual/skins/moonsmash.md`. **AC:** Art direction is scoped to a campaign-poster composition, not an all-purpose login/dashboard styling.
+  - **Evidence (2026-10-26):** Added a visual direction brief defining portrait focal hierarchy, separation from application shells, generic-content and rights boundaries, accessible live content, and distinctions from Moonpunk, Moonzine, and Moonriot. Dependency MF-VF-024 is implemented. Source review only; no rendering, screenshots, package-manager commands, validators, tests, typecheck, build, or human review run under runner override. Rights and visual approval remain pending; host runner owns verification/checkpoint.
+  - **Rollback:** Remove `docs/visual/skins/moonsmash.md` and restore this task row to planned.
 - [ ] **MF-VF-352 — Establish 2:3-ish portrait artboard semantics** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-artboard.tsx (proposed)`. **AC:** Aspect ratio configurable; responsive preview with separate controls.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
