@@ -84,6 +84,14 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-150 — Style Moonink navigation/layout/typography
+
+- Starting HEAD: `b1296db2b4bc887b5188c59d8f42a12e6151386a` (clean worktree).
+- Extended the Moonink CSS with spacious responsive margins, a non-color brush-edged hero rule, editorial heading/card rhythm, and visible navigation hover/current-page framing. Existing semantic styles/palette remain the value source; no shared component markup, keyboard/form behavior, or ARIA changed.
+- Dependency MF-VF-144 is implemented. Backlog status: `implemented`.
+- Verification: source/class inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, browser render/capture, or commit run; host runner owns verification/checkpoint.
+- Visual responsiveness, contrast, rights review, human review, and acceptance are not claimed. Rollback: remove the MF-VF-150 style block, restore its task row to planned, and remove this ledger/TODO entry. No commit created.
+
 ## MF-VF-440 — Review release claims against actual CI
 
 - Reviewed `.github/workflows/contract-validation.yml`, `docs/architecture/release-train-and-adoption.md`, and the RC evidence ledger at starting HEAD `1a0bd8347dd2a92de1a19b1750e285db7850725e`.

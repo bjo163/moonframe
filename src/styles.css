@@ -736,6 +736,38 @@
 [data-skin="moonink"] .mf-callout-icon > svg { color: var(--mf-accent); }
 [data-skin="moonink"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 
+/* Moonink's structure comes from open margins, brush-edged rules, and an
+   editorial type rhythm; the existing palette remains an independent layer. */
+[data-skin="moonink"] .mf-shell { gap: clamp(1.5rem, 4vw, 4rem); padding-inline: clamp(1rem, 4vw, 3.5rem); }
+[data-skin="moonink"] .mf-main { min-inline-size: 0; padding-block: clamp(1.5rem, 4vw, 3.5rem); }
+[data-skin="moonink"] .mf-sidebar { padding-inline: .75rem; }
+[data-skin="moonink"] .mf-nav { gap: .45rem; }
+[data-skin="moonink"] .mf-nav-item { min-block-size: 2.75rem; padding: .65rem .8rem; border-inline-start-width: 2px; border-radius: 0 42% 0 0; font-size: .95rem; transition: background-color .18s ease, border-color .18s ease; }
+[data-skin="moonink"] .mf-nav-item:hover,
+[data-skin="moonink"] .mf-nav-item[aria-current="page"] { background: var(--mf-surface-raised); border-inline-start-width: 4px; }
+[data-skin="moonink"] .mf-hero { position: relative; margin-block-end: clamp(1.5rem, 4vw, 3rem); padding-block-end: 1.5rem; }
+[data-skin="moonink"] .mf-hero::after { position: absolute; inset-inline: 0; inset-block-end: -2px; block-size: 3px; background: currentColor; clip-path: polygon(0 45%, 9% 30%, 18% 50%, 31% 25%, 44% 48%, 59% 28%, 72% 53%, 87% 31%, 100% 44%, 100% 100%, 0 100%); content: ""; opacity: .62; pointer-events: none; }
+[data-skin="moonink"] .mf-hero h1 { max-inline-size: 16ch; font-size: clamp(2.25rem, 4.4vw, 4.5rem); line-height: 1.08; letter-spacing: -.035em; }
+[data-skin="moonink"] .mf-hero p { max-inline-size: 62ch; line-height: 1.7; }
+[data-skin="moonink"] .mf-card-grid { column-gap: clamp(1rem, 2.5vw, 2.25rem); row-gap: clamp(1.25rem, 3vw, 2.5rem); }
+[data-skin="moonink"] .mf-card { position: relative; padding-block-start: 1.1rem; }
+[data-skin="moonink"] .mf-card:nth-child(even) { margin-block-start: .8rem; }
+[data-skin="moonink"] .mf-card-title { font-family: var(--mf-display); letter-spacing: -.015em; }
+@media (max-width: 48rem) {
+  [data-skin="moonink"] .mf-shell { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-inline: 1rem; }
+  [data-skin="moonink"] .mf-sidebar { padding: .75rem 0; }
+  [data-skin="moonink"] .mf-main { padding-block: .75rem 2rem; }
+  [data-skin="moonink"] .mf-nav { flex-direction: row; flex-wrap: wrap; }
+  [data-skin="moonink"] .mf-nav-item { min-block-size: 2.75rem; }
+  [data-skin="moonink"] .mf-card:nth-child(even) { margin-block-start: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-skin="moonink"] .mf-nav-item { transition: none; }
+}
+@media (forced-colors: active) {
+  [data-skin="moonink"] .mf-hero::after { display: none; }
+}
+
 /* 08 / Mooncrash — equipment rack, plate borders and mechanical fasteners. */
 [data-skin="mooncrash"] { --mf-bg: #dfe2df; --mf-surface: #f3f4ec; --mf-surface-raised: #d5d9cf; --mf-text: #293027; --mf-muted: #535d4c; --mf-border: #7c8770; --mf-accent: #79530b; --mf-accent-text: #ffffff; --mf-radius: 4px; --mf-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border); --mf-display: "Arial Narrow", Impact, sans-serif; }
 [data-skin="mooncrash"][data-mode="dark"] { --mf-bg: #1b211b; --mf-surface: #2a3328; --mf-surface-raised: #3c4735; --mf-text: #f0f3e3; --mf-muted: #c0cbb0; --mf-border: #899778; --mf-accent: #f1c96a; --mf-accent-text: #322400; }
