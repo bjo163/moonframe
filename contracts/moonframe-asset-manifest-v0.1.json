@@ -391,5 +391,21 @@
     "soundRights": "not-selected",
     "publicRedistribution": "blocked-pending-owner-rights-decision",
     "spdxCurrentVersionSeen": "3.29.0 2026-09-16"
+  },
+  "creativeReferenceProvenance": {
+    "source": "User-supplied visual examples in conversation, not repository binary files",
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "artDirection": "Cinematic Manga-Punk Neo-Brutalism for Moonpunk plus influences; not 15 per-skin legal logos",
+    "referenceBinaryCommitted": false,
+    "derivativeLicenseGranted": false,
+    "approvedReusableSourceAssetsFromReferences": 0,
+    "consumerBrandExcluded": [
+      "MOONWITNESS wordmark",
+      "MOONWITNESS symbolic crown",
+      "named characters/campaign project covers",
+      "song lyrics and performer likenesses",
+      "story-specific typography or slogans"
+    ],
+    "status": "reference-only-no-source-production"
   }
 }
