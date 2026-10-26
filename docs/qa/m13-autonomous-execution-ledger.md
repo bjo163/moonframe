@@ -1,4 +1,11 @@
 # M13 autonomous execution ledger
+## MF-VF-323 — Build command/status feed region
+
+- Added `apps/moonframe/templates/visual-reference/r01-command-feed.tsx` and `r01-command-feed.module.css`: consumer-provided command log entries with semantic timestamps, visible status labels, and single-line command truncation that adapts to narrow viewports.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no validators, package-manager commands, suites, typecheck, build, browser capture, reference comparison, or human review run/claimed per runner override. Host runner owns verification and checkpoint. No rights or acceptance claim.
+- Rollback: remove the component and CSS module and restore matching backlog/TODO evidence.
+- Counts: prior ledger count 112/488 implemented-or-captured, 376/488 planned, 0 explicitly blocked; now 113/488, 375/488, 0/488 blocked.
+
 ## MF-VF-322 — Build active workflow feed section
 
 - Added `apps/moonframe/templates/visual-reference/r01-workflow-feed.tsx` and `r01-workflow-feed.module.css`: an ordered activity list with status text independent of its decorative dot, optional detail/time, and a mobile stacked layout.
