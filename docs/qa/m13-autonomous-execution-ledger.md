@@ -582,3 +582,14 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser matrix passed 30/30 skin × mode cases, including responsive breakpoints, keyboard focus, and accessible navigation names. Status is `implemented`, not captured. No human review or asset-rights claim.
 - Live task rows: 98 implemented-or-captured (20.1%), 390 planned (79.9%), 0 explicitly blocked of 488. Browser verification is complete for this task; commit/push follows scoped checkpoint.
 - Rollback: revert the fixture/CSS and task/TODO/ledger evidence for MF-VF-306.
+
+## MF-VF-307 — Draw independent rough white sidebar border source
+
+- Added `assets/source/creative-reference/r01/rough-rail-frame.svg`, an original decorative-only outline with transparent center and slightly irregular white strokes. It contains no scripting, event attributes, external resources, filters, or embedded fonts. It does not replace the sidebar's accessible CSS border or focus treatment.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no browser capture or human visual review claimed. Runner override honored: no package-manager commands, suites, typecheck, or build run. No commit created; host runner handles validation and checkpoint.
+- Rollback: remove the SVG and restore the task row and counts.
+
+## Current counts after MF-VF-307
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous live count: 98 implemented-or-captured, 390 planned, 0 explicitly blocked. This task adds one implemented record: 99 implemented-or-captured, 389 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.

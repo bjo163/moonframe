@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" role="img" aria-labelledby="title description">
+  <title id="title">Rough rail frame</title>
+  <desc id="description">An original, irregular white frame accent for an optional dashboard sidebar layer.</desc>
+  <path d="M9 8 L311 11 L308 706 L12 711 Z" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M15 14 L304 16 M16 704 L303 700" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".68" />
+</svg>

@@ -14,7 +14,7 @@
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
 | H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 6 captured, 6 planned |
-| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 2 implemented, 22 planned |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 3 implemented, 21 planned |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
@@ -71,9 +71,9 @@
 - [x] **MF-VF-306 — Extract ink-black left sidebar shell** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-sidebar.tsx (proposed)`. **AC:** Persistent desktop rail with keyboard nav and constrained scrawl decoration.
   - **Evidence (2026-10-26):** Added a live DOM sidebar to the R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx` and `lab.css`: fixed-width ink-black desktop rail, semantic labeled navigation with focusable buttons and `aria-current`, high-contrast focus outline, and one small aria-hidden decorative scratch clipped inside the rail. At widths up to 800px it becomes a horizontal rail; at 480px the generic brand text yields space to the navigation. Uses neutral Northstar demo identity and no reference imagery or Moonwitness IP. Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser matrix passed 30/30 skin × mode cases including navigation accessible names, focus, responsive layouts, and task interaction. No capture or human visual approval claimed. Rollback: revert the fixture markup/CSS, relevant test adjustment and this task status/evidence.
-- [ ] **MF-VF-307 — Draw independent rough white sidebar border source** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-307 — Draw independent rough white sidebar border source** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/rough-rail-frame.svg (proposed)`. **AC:** Layer art only; CSS keeps accessible border and focus separate.
-  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Evidence (2026-10-26):** Added a self-authored, minimal SVG frame with a transparent interior and irregular inset white strokes for optional decorative use. No scripts, events, external resources, filters, or embedded fonts. Dependency `MF-VF-022` is implemented. Host runner owns validation and checks; none were run in this invocation. Status is `implemented`; no browser capture or human visual review claimed. Rollback: remove this SVG and restore this row to planned.
 - [ ] **MF-VF-308 — Draw brush-ink pink selected nav plate** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/active-nav-stroke.svg (proposed)`. **AC:** Active background never sole state; aria-current required.
   - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
