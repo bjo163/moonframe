@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 49 implemented-or-captured (14 baseline implemented + 11 captured + 25 implemented), 5 blocked, 433 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 50/488 (10.2%) done/captured; 433/488 (88.7%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 438/488 (89.8%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 49 implemented-or-captured (14 baseline implemented + 11 captured + 26 implemented), 5 blocked, 432 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 51/488 (10.5%) done/captured; 432/488 (88.5%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 437/488 (89.5%) remain incomplete.
 
 ## MF-PF-012 — Stop sound on backgrounding; do not catch up
 
@@ -283,3 +283,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a shared browser helper that awaits `document.fonts.ready` and asserts `document.fonts.status` is `loaded` before decoration-off, standard desktop, grayscale, tablet, and phone captures. The fixed environment-provided CSS font stack remains the documented fallback; no font binary or cross-platform raster identity is implied.
 - `pnpm test` — 13/13 passed; `pnpm run typecheck` — passed; `pnpm run test:browser` — 55/55 passed (web server production build, 88 routes); `pnpm run audit:pairs` — 105 pair records plus current-source baseline captures at desktop/tablet/phone; all 150 skin/mode screenshots matched source, fingerprint, PNG digest, and `fontLoadStatus: loaded`. Contract and M13 handoff validators passed with existing SFX playback-truth and missing-LICENSE warnings. Human visual review remains pending.
 - Rollback: revert `e3cfe15da3ec5b82c0ea8eb703a1a4e90be791f2`.
+
+## MF-VF-028 — Encode capture identity in output filenames
+
+- Implementation commit: `8755d17e41bd17b88a20b40ca44afae4eed808f6`.
+- Added stable filenames encoding skin, mode, viewport, and state. The matrix uniqueness test checks 150 profile names across 15 skins × 2 modes × five capture variants. Pair-audit inventory and A/B record paths now use the explicit desktop/tablet/phone default filenames. Same-profile reruns are reproducible at the same stable output path; different states and viewports have distinct IDs.
+- `pnpm test` — 13/13 passed; `pnpm run typecheck` — passed; `pnpm run test:browser` — 56/56 passed (production build generated 88 routes); `pnpm run audit:pairs` — 105 pair records plus 30 current-source captures each for desktop/tablet/phone; all 150 filenames, sidecar source commits, fingerprints, PNG hashes, and font-ready states verified. Human visual review remains pending.
+- Rollback: revert `8755d17e41bd17b88a20b40ca44afae4eed808f6`.

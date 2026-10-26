@@ -12,7 +12,7 @@
 ### 1.1 `MF-004` (#2) — Classic Visual Baseline Approval
 - **Decision:** **APPROVED**.
 - **Scope:** The `classic` skin in [src/styles.css](../../src/styles.css) and [src/skins.js](../../src/skins.js) is pinned as a clean, neutral swiss-grid baseline (`0.5rem` radius, `1px` crisp borders, `system-ui` typography, high-contrast focus ring) with zero upstream code copied and zero affiliation or endorsement claims toward any third-party library.
-- **Evidence:** [docs/research/classic-baseline.md](../research/classic-baseline.md), `artifacts/skins/classic-light.png`, `artifacts/skins/classic-dark.png`.
+- **Evidence:** [docs/research/classic-baseline.md](../research/classic-baseline.md), `artifacts/skins/classic-light-1440x960-default.png`, `artifacts/skins/classic-dark-1440x960-default.png`.
 
 ### 1.2 `MF-005` (#3) — Primitive Provider Strategy Approval
 - **Decision:** **APPROVED (Zero-Dependency Native HTML + Polymorphic `Slot` Runtime)**.
