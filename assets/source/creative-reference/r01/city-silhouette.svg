@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 520" role="img" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="skyline-haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#52617c" stop-opacity=".08" />
+      <stop offset="1" stop-color="#111827" stop-opacity=".52" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#skyline-haze)" d="M0 354h82v-74h54v42h38V210h35v-50h18v50h27v112h43V246h32v-68h20v68h34v-94h21v-42h19v42h25v126h45v-88h35v-72h20v72h30v116h47V194h38v-48h20v48h32v160h45v-112h31v-84h21v84h37v112h48V220h40v-67h18v67h32v134h49V182h37v-44h19v44h34v172h52V240h38v-64h19v64h38v114h52V206h31v-41h21v41h34v148h67v166H0z" />
+  <path fill="#101521" fill-opacity=".76" d="M0 414h48v-46h28v-22h18v22h27v46h34v-84h34v-31h18v31h26v84h37v-54h34v-34h18v34h31v54h42v-98h27v-27h18v27h31v98h38v-63h30v-41h19v41h27v63h42v-89h36v-26h18v26h26v89h43v-51h28v-39h18v39h29v51h36v-101h35v-29h19v29h27v101h44v-70h29v-32h18v32h31v70h46v-91h34v-27h18v27h28v91h46v-52h33v-35h18v35h31v52h68v106H0z" />
+  <g fill="#d8e2f2" fill-opacity=".54">
+    <circle cx="113" cy="327" r="2" /><circle cx="247" cy="299" r="2" /><circle cx="351" cy="344" r="2" />
+    <circle cx="486" cy="305" r="2" /><circle cx="624" cy="328" r="2" /><circle cx="761" cy="282" r="2" />
+    <circle cx="889" cy="329" r="2" /><circle cx="1012" cy="293" r="2" /><circle cx="1153" cy="337" r="2" />
+    <circle cx="1293" cy="306" r="2" /><circle cx="1371" cy="349" r="2" />
+  </g>
+</svg>

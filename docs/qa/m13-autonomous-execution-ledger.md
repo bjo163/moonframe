@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-316 — Define city skyline backplate artwork concept
+
+- Added `assets/source/creative-reference/r01/city-silhouette.svg`: original layered geometric skyline backplate on a transparent canvas, with no embedded text or story-specific figures. SHA-256: `54ed556523a0ed23001f70a275d6303a24073752a6a95166788e1cd48b94fcf1`. It is an optional visual layer and does not bundle reference imagery.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; static source inspection and `git diff --check` passed. No SVG/security validator, package-manager commands, tests, typecheck, build, or browser capture run per runner override. Host runner will verify and checkpoint. Rights clearance and human optical review are not claimed.
+- Current counts: 107 implemented-or-captured, 381 planned, 0 blocked of 488. This task does not imply capture, review, or acceptance. No commit created. Rollback: remove the SVG and revert the matching backlog, TODO, and ledger update.
+
 ## MF-VF-314 — Draw original luminous moon backdrop asset concept
 
 - Added `assets/source/creative-reference/r01/moon-orbit-scene.svg`: original decorative crescent, halo, orbit arcs, and sparse stars in a transparent, self-contained vector source. It carries a viewBox and is hidden from assistive technology when embedded as decorative art. No screenshot-derived elements or consumer marks were used.
