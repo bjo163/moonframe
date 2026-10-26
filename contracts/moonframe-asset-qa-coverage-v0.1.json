@@ -2462,5 +2462,13 @@
   "pairwiseGrammarReviewRef": "moonframe-skin-grammar-contract-v1.0.json",
   "pairwiseReviewsApproved": 0,
   "pairwiseReviewsExpected": 105,
-  "note": "All 120 case cells are planned review slots, NOT actual logos/images/approved asset files. Functional icon and master mark cases are semantic cross-skin tests, not per-skin separate logo requirements."
+  "note": "All 120 case cells are planned review slots, NOT actual logos/images/approved asset files. Functional icon and master mark cases are semantic cross-skin tests, not per-skin separate logo requirements.",
+  "creativeReferenceCoverage": {
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "sourceReferenceCount": 4,
+    "sourceFileAvailableInGit": false,
+    "plannedHumanReferenceComparisons": 4,
+    "completedHumanReferenceComparisons": 0,
+    "scope": "Separate visual reference review from existing 120 appearance asset coverage and 105 unordered pairs; no count changes."
+  }
 }
