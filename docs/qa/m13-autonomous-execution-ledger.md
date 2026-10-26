@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-068 — Draw semantic settings icon
+
+- Added original static 24×24 `currentColor` gear source `assets/source/icons/settings.svg` with accessible label `Settings`; no external asset or consumer branding used.
+- SHA-256: `6796d3ac6210ddebfddf5617a514494baf6f1d743c5b66b1b6dc7b24ff973058`. Dependency `MF-VF-033` is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size checks, or browser captures were run. Light/dark/forced-colors review, 16/20/24px legibility review, human review, and acceptance remain pending.
+- Rollback: remove the SVG and restore the MF-VF-068 backlog row and this section.
+
 ## MF-VF-348 — Prepare R02 responsive screenshot fixture
 
 - Added a deterministic Playwright fixture in `tests/browser/site.spec.js` that renders the R02 masthead, three editorial story tiles, and a three-entry timeline at 1440, 768, and 360 CSS pixels, writing named full-page screenshots under `artifacts/site/` when the host runs the browser suite.
