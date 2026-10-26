@@ -65,3 +65,11 @@
 - **Decision:** **GO for `v0.1.0` Workspace, CLI Scaffolder & Local Tarball Release (`moonframe-ui-0.1.0.tgz`)**.
 - **Public npm Registry Guard:** `"private": true` remains set in root [package.json](../../package.json) by design so local workspace builds, tarball distribution, and offline contract validation operate with zero accidental registry push.
 - **Rollback Plan:** Any consumer can pin or roll back to the verified `moonframe-ui-0.1.0.tgz` tarball or scaffold self-contained routes via `pnpm run cli add <id>`.
+
+---
+
+## 2026-10-26 current HEAD and new visual reference QA gate (not a retroactive approval)
+
+This earlier ledger describes historical `v0.1.0` decisions. It **must not be used as proof** that the 2026-10-26 current code, public `@moonwitness/moonframe@0.1.1`, 30 repo screenshots, 105 *human* skin pair reviews, full WCAG AA product status or four Moonwitness screenshots are all approved. The inspected CI [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` failed: clean runner lacked 30 generated screenshot PNGs in the unit test; subsequent typecheck/build were skipped. The contract job itself succeeded. Later docs commits do not fix that pre-existing runtime failure; recheck the live Actions run at actual execution.
+
+**New M13 visual/reference scope:** [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json), [Consumer Brand Overlay Contract](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json), [Cinematic Reference Bible](../visual/cinematic-mangapunk-reference-bible.md), and [two subatomic backlogs](../backlog/visual-fidelity-subatomic-tasks.md). Combined `MF-VF-001…460`: **460 planned, 0 complete** (first 292 + new 168). R01–R04 original PNG sources were provided in chat and have recorded digests but are not in GitHub; their pixel-fidelity and distribution rights remain **pending**. No automatic reviewer signature or changes to historical release tags/approval claims made by this supplement. Treat all M13 visual proof as `not-reviewed` until real same-SHA screenshots and named human inspection exist.
