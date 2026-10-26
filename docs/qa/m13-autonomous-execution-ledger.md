@@ -913,3 +913,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, browser rendering, or captures run per runner override. Human review and acceptance are not claimed; host runner owns verification/checkpoint.
 - Counts: root TODO foundation wave advances from 55/292 implemented-or-captured, 236 planned, 1 blocked to 56/292, 235 planned, 1 blocked. Counts do not imply rendered review or acceptance.
 - Rollback: remove the SVG and restore the corresponding backlog, TODO, and ledger evidence.
+## MF-VF-056 — Draw semantic check icon
+
+- Added `assets/source/icons/check.svg`, an original 24×24 `currentColor` check glyph with accessible `Complete` label. SHA-256: `3cece525cb1c28a81e3f23cb633ffb8980c988b0c9532b94454b3ce26b8b6071`.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, browser rendering, or capture were run. 16/20/24px rendering, light/dark/forced-colors review, human review, and acceptance remain pending.
+- Checkbox counts after update: 67/292 foundation tasks, 47/168 reference tasks, and 28/28 preflight tasks = 142/488 implemented-or-captured; 346 remain unchecked. This does not imply human review, rights clearance, or acceptance.
+- No commit created; host runner handles verification and checkpoint. Rollback: remove the SVG and restore its backlog/TODO/ledger evidence.
