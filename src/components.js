@@ -1990,6 +1990,28 @@ export function SFXProvider({
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return undefined;
+    const query = typeof window.matchMedia === 'function'
+      ? window.matchMedia('(prefers-reduced-motion: reduce)')
+      : null;
+    const stopForReducedMotion = () => {
+      if (query?.matches || document.documentElement?.getAttribute('data-motion') === 'reduced') {
+        stopActiveSound();
+      }
+    };
+    const rootObserver = typeof MutationObserver === 'function' && document.documentElement
+      ? new MutationObserver(stopForReducedMotion)
+      : null;
+    rootObserver?.observe(document.documentElement, { attributes: true, attributeFilter: ['data-motion'] });
+    query?.addEventListener?.('change', stopForReducedMotion);
+    stopForReducedMotion();
+    return () => {
+      query?.removeEventListener?.('change', stopForReducedMotion);
+      rootObserver?.disconnect();
+    };
+  }, []);
+
   function grantConsent(event) {
     const nativeEvent = event?.nativeEvent || event;
     const activationEvents = new Set(['click', 'pointerup', 'keydown', 'touchend']);

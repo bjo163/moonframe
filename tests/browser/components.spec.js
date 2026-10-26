@@ -226,3 +226,34 @@ test('SFX stops on backgrounding and does not catch up when visibility returns',
   await page.waitForTimeout(100);
   expect(await page.evaluate(() => window.__oscillators.length)).toBe(countWhileHidden);
 });
+
+test('SFX stops when reduced motion becomes active while visual status remains available', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__oscillators = [];
+    class FakeAudioContext {
+      constructor() { this.state = 'running'; this.currentTime = 0; this.destination = {}; }
+      createGain() { return { gain: { setValueAtTime() {}, exponentialRampToValueAtTime() {} }, connect() {} }; }
+      createOscillator() {
+        const oscillator = { stopCalls: 0, frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() { this.stopCalls += 1; }, addEventListener() {}, disconnect() {} };
+        window.__oscillators.push(oscillator);
+        return oscillator;
+      }
+    }
+    window.AudioContext = FakeAudioContext;
+  });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  const stopsBeforePreference = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  await page.evaluate(() => {
+    document.documentElement.setAttribute('data-motion', 'reduced');
+  });
+  // A subsequent semantic event is silent, while the studio's visible status remains usable.
+  await page.waitForTimeout(1050);
+  await page.getByRole('button', { name: '✅ confirmation' }).click();
+  await expect(page.getByText(/Silenced event: "confirmation" \(reason: reduced-motion\)/)).toBeVisible();
+  const stopsAfterPreference = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  expect(stopsAfterPreference).toBeGreaterThan(stopsBeforePreference);
+  await expect(page.getByText('Consent: Granted')).toBeVisible();
+});
