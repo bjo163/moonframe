@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-362 — Draw energetic yellow label/tag motif
+
+- Added `assets/source/creative-reference/r03/label-sticker.svg`, an original blank yellow sticker backing with irregular geometry and no fixed copy, consumer mark, script, or external resource.
+- SHA-256: `895ED690BEEF5342AAA344A124FE91B8552801C87FF10C03127205624772CE90`.
+- Dependency `MF-VF-024` is implemented. Status is `implemented`; static source inspection and `git diff --check` passed. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. No human optical review, rights approval, or acceptance is claimed.
+- Counts are not restated because the root/backlog aggregate snapshots conflict. Rollback: remove the SVG and restore the backlog row and this entry.
+
 ## MF-VF-328 — Review R01 screenshot against original source (blocked)
 
 - At live HEAD `89d85c7a3ced2c3c2706041d263bed774fdf61c1`, the task dependency `MF-VF-022` is implemented, but required source media is missing: no original R01 PNG exists in the checkout and `/mnt/data/moonframe_m13_reference_originals.zip` is absent.
