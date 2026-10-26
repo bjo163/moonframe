@@ -111,6 +111,13 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       browserName: browser.browserType().name(),
       browserVersion: browser.version(),
     });
+    const appearanceControl = page.getByLabel('Appearance', { exact: true });
+    await appearanceControl.focus();
+    await expect(appearanceControl).toBeFocused();
+    const focusBounds = await appearanceControl.boundingBox();
+    expect(focusBounds, 'Appearance control remains within the phone viewport').not.toBeNull();
+    expect(focusBounds.x).toBeGreaterThanOrEqual(0);
+    expect(focusBounds.x + focusBounds.width).toBeLessThanOrEqual(361);
     await page.getByLabel('Direction', { exact: true }).selectOption('rtl');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No RTL page overflow').toBe(true);
