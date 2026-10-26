@@ -116,3 +116,9 @@ Four original user-provided *reference images* (Mission Control, storytelling la
 **Original asset work classification:** neutral scratch/ink border, torn paper mask, radial pattern or safe generic geometric motifs can be future optional skin-pack sources after provenance and small-size review; detailed character, city and concert/storyline illustrations are typically consumer-supplied media slots unless separately authored and rights-cleared as sample assets. A 22-icon semantic family retains one function per icon across skins; optional decorative frames must not change meaning. The 15 skin category lists are a candidate pool, **not 15 mandatory logos or 15 images per category**.
 
 **Gate order:** (1) approved brief and explicit original/source rights; (2) binary ingestion with checksum; (3) safe SVG inspection and source/export separation; (4) alt and non-decorative text fallback; (5) desktop/tablet/mobile, dark/light/mono and art-off proof; (6) human art, trademark and release review. A captured PNG cannot fill those gates. Follow [existing asset QA](../qa/original-asset-validation-plan.md) and new [microtask addendum](../backlog/reference-mockups-subatomic-tasks.md).
+
+---
+
+## 2026-10-26 consumer palette / mark separation
+
+Optional consumer-level visual brand accents may be proposed separately from 15 skin defaults under [Consumer Brand Overlay Contract](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). Such an overlay does not license or bundle a product's artwork, crown, wordmark or character; it only proposes constrained cosmetic accent slots. Library semantic status, focus and accessible interaction cannot be overridden. Its runtime/API is not approved or implemented.
