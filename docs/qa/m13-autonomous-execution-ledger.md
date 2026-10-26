@@ -1865,3 +1865,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/moonpanel-reference-parity.md` with fixed-fixture comparisons against Moonhalftone and Moonzine, capture provenance fields, desktop/mobile light/dark grayscale and decoration-on/off states, and Moonpanel grid distinction criteria.
 - Dependency MF-VF-168 is implemented. Backlog status `implemented`; documentation/source inspection only. No screenshots, visual verdict, rights review, or acceptance claimed. Per runner override, no package-manager commands, validators, tests, typecheck, build, or browser capture run; host runner owns verification and checkpoint.
 - Rollback: remove the protocol and restore MF-VF-415 to planned in the reference backlog; remove matching TODO and ledger entries. No commit created.
+
+## MF-VF-414 — Define Mooncrash screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/mooncrash-reference-parity.md` with fixed-fixture comparisons against Moonledger at 1440×960 and 360×800, color/grayscale, and decoration-on/off. Criteria cover equipment-zone versus ledger composition, responsive behavior, decoration removal, and shared component behavior; the evidence table remains pending for future captures and human review.
+- Dependency MF-VF-156 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, human verdict, rights review, accessibility conformance, or acceptance claimed.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run. No commit created; host runner owns verification/checkpoint. Rollback: remove the protocol and restore the backlog row to planned, then remove this ledger entry and TODO update.
