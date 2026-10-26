@@ -1108,3 +1108,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. No package-manager commands, tests, validators, typecheck, build, browser capture, or human review run/claimed per runner override. No artwork, performer/lyric rights, source-image rights, or acceptance is implied; host runner owns verification/checkpoint.
 - Checkbox counts: 79/292 foundation visual + 59/168 reference visual + 28/28 preflight = 166/488 checked; 322 unchecked. Counts do not imply human review or acceptance.
 - No commit created. Rollback: remove the component and stylesheet and restore the MF-VF-363 backlog row, TODO count, and this entry.
+
+## MF-VF-064 — Draw semantic upload icon
+
+- Added `assets/source/icons/upload.svg`, an original static 24×24 `currentColor` upward-arrow-and-tray glyph with accessible label `Upload`.
+- SHA-256: `7bf095e5684cb2791b090e7987fa4c0c8c008a10d06b4e0e399ff273c736f603`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, browser rendering, captures, human review, or acceptance claimed under the runner override. Light/dark/forced-colors display and 16/20/24px legibility remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
