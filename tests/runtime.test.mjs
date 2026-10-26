@@ -373,12 +373,13 @@ test('Moonframe CLI lists catalog and scaffolds templates and multi-route starte
   }
 });
 
-test('105 pairwise skin grammar audit and 6-pair pilot verify non-color differentiation and 30 rendered PNGs', () => {
+test('105 skin pair records and 6-pair pilot pass structural contract checks (no browser screenshots required)', () => {
   const audit = auditAllSkinPairs();
   assert.equal(audit.skinCount, 15);
   assert.equal(audit.pairCount, 105);
   assert.equal(audit.pilotSixCount, 6);
-  assert.equal(audit.missingScreenshots.length, 0);
-  assert.equal(audit.allPassed, true);
-  assert.ok(audit.minDistinctDimensions >= 5, 'all 105 pairs differ across at least 5 non-color dimensions');
+  assert.equal(audit.structuralPassed, true);
+  assert.equal(audit.humanReviewStatus, 'pending-human-visual-review');
+  assert.ok(audit.minDistinctDimensions >= 5, 'at least 5 of 8 contract-string dimensions must differ');
+  // PNG evidence is checked after Playwright. Unit tests must pass in a fresh source checkout.
 });
