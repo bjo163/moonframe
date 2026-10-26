@@ -153,9 +153,10 @@
   - **Verify:** Twelve cells and all 24 linked captures/sidecars checked against the same fixture, viewport and current source; contract/handoff validators and `git diff --check` passed. Human visual review remains pending; rollback: remove the worksheet and restore the previous task status/count entries.
 ## C — master logo and its smallest production assets
 
-- [ ] **MF-VF-033 — Approve one-umbrella logo vs edition devices** · **P1** · `planned` · **dependency:** `MF-VF-014` · **GitHub issue:** not-created
+- [ ] **MF-VF-033 — Approve one-umbrella logo vs edition devices** · **P1** · `blocked-external-approval` · **dependency:** `MF-VF-014` · **GitHub issue:** not-created
   - **File scope:** `docs/brand/original-asset-brand-bible.md`. **Acceptance:** One Moonframe brand; no 15 separate legal-brand logo requirement.
-  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / blocker:** The asset Brand Bible and original-asset research log both label the umbrella/edition structure as recommended/proposed and explicitly require owner approval. No approval was present in the repository/task context. Do not treat the proposal as a legal/trademark decision; no production logo or edition devices are authorized. See [Brand Bible owner decisions](../brand/original-asset-brand-bible.md#10-qa-sign-off-risks-and-next-tasks).
+  - **Status:** Blocked pending explicit owner sign-off on one Moonframe umbrella design-system brand with edition devices (or a revised direction). Resume this task only after that decision is recorded. No human approval inferred.
 - [ ] **MF-VF-034 — Specify legible 16px master silhouette** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
   - **File scope:** `docs/brand/master-mark-review.md (proposed)`. **Acceptance:** Monochrome silhouette and optical margin pass criteria.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
