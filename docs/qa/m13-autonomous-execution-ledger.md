@@ -11,6 +11,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-078 — Moonpunk structural navigation, layout, and typography
+
+- Added a scoped Moonpunk composition in `src/styles.css`: offset sidebar slabs and nav rails, an angular split hero, condensed uppercase display headings, and a heavy header rule. Shared component markup, keyboard behavior, and accessible semantics are unchanged.
+- SHA-256 of the resulting stylesheet: `87FC658D887E86229CE3D0483F928258B9D146FAAEAE1126AC66D510308B2EAD`.
+- Dependency MF-VF-072 is implemented. Status: `implemented`; `git diff --check` passed. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. Human visual review and acceptance remain pending. No aggregate recount is asserted because existing snapshots conflict.
+- No commit created. Rollback: remove the MF-VF-078 CSS block and restore its backlog row and this ledger entry.
+
 ## MF-VF-077 — Style stable semantic Moonpunk icon frames
 
 - Updated `src/styles.css` with Moonpunk-scoped SVG icon frame sizing/alignment across navigation, buttons, search, callouts, empty states, and stat headers. Navigation/button glyphs receive a small offset ink shadow; empty-state glyphs are larger; callout glyphs use the existing accent. No shared component markup, glyph meaning, or ARIA behavior changed.

@@ -369,6 +369,53 @@
 [data-skin="moonpunk"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 [data-skin="moonpunk"] .mf-callout-icon > svg { color: var(--mf-accent); }
 
+/* Moonpunk uses offset slabs and compressed display type as structural cues. */
+[data-skin="moonpunk"] .mf-shell {
+  align-items: start;
+  max-inline-size: 96rem;
+  margin-inline: auto;
+}
+[data-skin="moonpunk"] .mf-sidebar {
+  position: relative;
+  border-inline-start: 5px solid var(--mf-text);
+  border-block-end: 5px solid var(--mf-text);
+  background: repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb, var(--mf-border) 12%, transparent) 12px 14px), var(--mf-surface);
+}
+[data-skin="moonpunk"] .mf-nav-item {
+  border-inline-start: 3px solid var(--mf-border);
+  border-radius: 0;
+  font-family: var(--mf-display);
+  font-size: .92rem;
+  letter-spacing: .035em;
+}
+[data-skin="moonpunk"] .mf-nav-item[aria-current="page"] {
+  border-inline-start-width: 5px;
+  margin-inline-start: .25rem;
+  box-shadow: 3px 3px 0 var(--mf-text);
+  transform: none;
+}
+[data-skin="moonpunk"] .mf-hero {
+  border-inline-start: 7px solid var(--mf-accent);
+  background: linear-gradient(115deg, var(--mf-surface) 0 76%, var(--mf-surface-raised) 76%);
+}
+[data-skin="moonpunk"] .mf-hero h1 {
+  max-inline-size: 16ch;
+  font-family: var(--mf-display);
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+[data-skin="moonpunk"] .mf-card-title {
+  font-family: var(--mf-display);
+  text-transform: uppercase;
+  letter-spacing: .015em;
+}
+[data-skin="moonpunk"] .mf-header {
+  border-block-end: 3px solid var(--mf-text);
+  padding-block-end: .75rem;
+}
+
 /* 02 / Moonriot — editorial cuts, asymmetric rules, horizontal section index. */
 [data-skin="moonriot"] { --mf-bg: #f4e9e7; --mf-surface: #fff8f6; --mf-surface-raised: #f0d7d3; --mf-text: #301c1b; --mf-muted: #6e4743; --mf-border: #b67b73; --mf-accent: #b51d32; --mf-accent-text: #ffffff; --mf-radius: 0 1.3rem 0 0; --mf-shadow: none; --mf-display: "Arial Narrow", Impact, sans-serif; }
 [data-skin="moonriot"][data-mode="dark"] { --mf-bg: #211315; --mf-surface: #301d20; --mf-surface-raised: #48252b; --mf-text: #ffedef; --mf-muted: #e0b6bd; --mf-border: #b47580; --mf-accent: #ff899b; --mf-accent-text: #3b0b15; }

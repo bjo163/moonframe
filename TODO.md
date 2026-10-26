@@ -1,5 +1,7 @@
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-078):** Implemented the Moonpunk structural navigation/layout/typography recipe in `src/styles.css`; `git diff --check` passed. No validators, package-manager commands, tests, typecheck, build, rendering, or browser captures were run under runner override. Human visual review remains pending. See the autonomous execution ledger for source hash and rollback.
+
 **Live execution update (2026-10-26, MF-VF-354):** Added an original abstract stage floodlight backdrop at `assets/source/creative-reference/r03/stage-light.svg` (SHA-256 `EC890965FCA7D99E9DC223BDFD41BEB9743195376E8469486B4268AA6D30CBB6`). Status implemented; static source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review were run. Rights clearance, optical review, and acceptance remain pending; host runner owns checks and checkpoint.
 
 ## Live visual-fidelity execution wave · 2026-10-26
