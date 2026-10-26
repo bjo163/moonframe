@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-335 — Draw pink graffiti slash decor
+
+- Added `assets/source/creative-reference/r02/diagonal-spray.svg`, an original slash-and-speckle motif with no embedded text, consumer marks, scripts, event handlers, or external resources. It remains an optional static asset and is not wired into a page.
+- SHA-256: `2bb684a231973d51c102bd58b61f34a25c59b2138819827aaa51b4e206ebd808`.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, browser capture, or reference comparison were run; host runner owns verification/checkpoint. Human optical review, source rights, and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+- Counts: prior live summary 124/488 implemented-or-captured, 364 planned, 0 explicitly blocked; now 125/488 implemented-or-captured, 363 planned, 0 blocked.
+
 ## MF-VF-054 — Draw semantic arrow-right icon
 
 - Added `assets/source/icons/arrow-right.svg`, a self-contained 24×24 `currentColor` right arrow with accessible label `Continue`.
