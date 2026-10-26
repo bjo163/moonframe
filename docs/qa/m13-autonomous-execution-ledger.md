@@ -1336,3 +1336,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonzine/motif.svg`, an original monochrome torn-paper scrap with a folded corner, a live `currentColor` silhouette, Canvas contrast details, and accessible title/description. No external resources or baked-in text.
 - SHA-256: `7C620FF39F56A19BA44503B08A8616D4D0F7D6A6623DAD1B9B8DDE5A5DE44918`. Dependency MF-VF-096 is implemented. Status: `implemented`; source inspection and `git diff --check` only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, rendering, or human review. Rights, optical review, and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-097 backlog row to planned, then remove this ledger/TODO evidence.
+
+## MF-VF-099 — Draw original Moonzine hero illustration SVG
+
+- Added `assets/source/skins/moonzine/hero.svg`, an original abstract editorial masthead and paper-stack illustration. Geometry is self-contained and includes no essential wording, scripts, event handlers, external references, or `foreignObject`.
+- SHA-256: `24324426AA4751A94501781FEF08628F7CB162B9071F1E71CBCCDE95D75FAD60`. Dependency MF-VF-096 is implemented. `git diff --check` passed; static unsafe-content scan returned no matches. Status: `implemented`.
+- Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review were run. Rights, optical review, and acceptance remain pending. No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the MF-VF-099 backlog row to planned, then remove this TODO/ledger evidence.
