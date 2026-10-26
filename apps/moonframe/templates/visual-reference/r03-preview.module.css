@@ -1,0 +1,58 @@
+.root {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.viewport {
+  display: grid;
+  place-items: start center;
+  width: 100%;
+  max-height: min(80vh, 60rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 1rem;
+  background: var(--mf-surface-muted, #eee);
+  border: 1px solid var(--mf-border, #777);
+}
+
+.poster {
+  width: min(100%, 32rem);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  transform-origin: top center;
+  background: var(--mf-surface, #fff);
+  color: var(--mf-text, #171717);
+  border: 1px solid currentColor;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.controls button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  color: inherit;
+  background: var(--mf-surface, #fff);
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+}
+
+.controls button:focus-visible {
+  outline: 3px solid Highlight;
+  outline-offset: 2px;
+}
+
+.controls button:disabled {
+  opacity: 0.55;
+}
+
+@media (forced-colors: active) {
+  .viewport, .poster, .controls button { border-color: CanvasText; }
+}

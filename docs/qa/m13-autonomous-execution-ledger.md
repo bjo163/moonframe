@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-364 — Implement poster editor-safe crop/zoom preview
+
+- Added `apps/moonframe/templates/visual-reference/r03-preview.tsx` and `.module.css`. The client component keeps controls outside a fixed 2:3 poster viewport, constrains zoom to configurable bounds, and provides scrollable framing for cropped/zoomed content. Native button states and an announced percentage support keyboard and assistive technology use.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser rendering, screenshots, source-reference comparison, or human review. Rights clearance and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the two component files and restore the matching backlog, TODO, and ledger evidence.
+
 ## MF-VF-063 — Draw semantic download icon
 
 - Added `assets/source/icons/download.svg`, an original static 24×24 `currentColor` arrow-and-tray glyph with accessible label `Download`.

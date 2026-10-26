@@ -73,6 +73,8 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 ## M13 final cross-domain readiness reconciliation (2026-10-26)
 
+**Live execution update (2026-10-26, MF-VF-364):** Added `R03Preview` with a bounded portrait canvas, scrollable crop viewport, external accessible zoom controls, and a live zoom readout. Dependency MF-VF-024 is implemented. Status is implemented; source inspection only. No package-manager commands, validators, suites, typecheck, build, browser capture, or human review run per runner override. Backlog checkbox recount advances by one; no human review, reference parity, rights clearance, or acceptance is implied.
+
 **Live execution update (2026-10-26, MF-VF-063):** Added original static `assets/source/icons/download.svg` with a `currentColor` arrow/tray and accessible label. SHA-256 `e750be7cc80e09ba904941f7f103c12960a7d9fab2ac503019b5b84f4adeabe7`. Status is implemented; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size checks, or browser captures run per runner override; host runner owns verification/checkpoint. Human review and acceptance remain pending. Live checkbox recount: 81/292 foundation, 57/168 reference, and 28/28 preflight = 166/488 checked; 322 unchecked. Checked status does not imply review or acceptance.
 
 **Latest evidenced technical baseline:** [GitHub Actions green #40253520325](https://github.com/bjo163/moonframe/actions/runs/40253520325) after unit/SSR, TypeScript, Next.js build, Playwright, 30-skin screenshot inventory and contract checks. Each subsequent commit (including this index) must get independent CI before claiming a green latest HEAD. **Do not mistake this for owner-approved visuals or cleared production art.**
