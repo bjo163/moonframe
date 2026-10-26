@@ -122,7 +122,26 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "primary-dash-landing-auth",
+        "refs": [
+          "MWX-REF-001",
+          "MWX-REF-002",
+          "MWX-REF-004"
+        ],
+        "guard": "Cinematic manga-punk structured UI uses ink-offset frames, irregular border devices and strong hero/scene split; keep labeled controls on clean semantic surfaces.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonriot",
@@ -216,7 +235,24 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-contrast",
+        "refs": [
+          "MWX-REF-001"
+        ],
+        "guard": "Angles and signal disruption define Moonriot, not copied Moonpunk pink slabs or universal night city.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonzine",
@@ -310,7 +346,25 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-landing-poster",
+        "refs": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "guard": "Layered paper editorial/collage, torn heading labels and whitespace; do not default to cyber command dashboard.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonhalftone",
@@ -404,7 +458,25 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-manga-print",
+        "refs": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "guard": "Screentone/raster ink rendering and page pacing; separate from zine paper scrap and strict panel-only grammar.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonglitch",
@@ -498,7 +570,24 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-operational-detail",
+        "refs": [
+          "MWX-REF-001"
+        ],
+        "guard": "Telemetry grid and technical signal rhythm, never mandatory flashing glitch or Moonpunk all-over neon art.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonsmash",
@@ -592,7 +681,24 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "primary-poster",
+        "refs": [
+          "MWX-REF-003"
+        ],
+        "guard": "Campaign/poster impact grammar for expressive content. Basic data/forms retain semantics; portrait poster not universal shell.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonink",
@@ -686,7 +792,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Use painterly brush expression and negative space, not punk sticker saturation or notebook annotations.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "mooncrash",
@@ -780,7 +901,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Utility hazard mechanical plates, not Moonwitness city artwork or ledger corporate quiet.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonpanel",
@@ -874,7 +1010,25 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-panel-layout",
+        "refs": [
+          "MWX-REF-001",
+          "MWX-REF-002"
+        ],
+        "guard": "Rigid modular information panels and deliberate gutters; style-derived from structure only, not copyrighted consumer covers.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonscrawl",
@@ -968,7 +1122,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Notebook annotation grammar with ruled construction; not Moonink calligraphic landscape.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonraw",
@@ -1062,7 +1231,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Expose pure brutalist unornamented geometry. No neon, anime or collage as default.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonchrome",
@@ -1156,7 +1340,24 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "secondary-auth-scenery-only",
+        "refs": [
+          "MWX-REF-004"
+        ],
+        "guard": "Metal/spectral rim optional around cinema slot; preserve polished futuristic skin vs ink punk.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "classic",
@@ -1250,7 +1451,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "neutral-control",
+        "refs": [],
+        "guard": "Keep standard familiar UI as control group; do not leak Moonpunk promo branding.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonquest",
@@ -1344,7 +1560,22 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Use quest journal/relic frame from canonical spec, not Moonwitness fiction or any hidden game backend.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     },
     {
       "id": "moonledger",
@@ -1438,7 +1669,28 @@
       },
       "specStatus": "specified",
       "implementationStatus": "not-implemented",
-      "approvalStatus": "pending-visual-review"
+      "approvalStatus": "pending-visual-review",
+      "userVisualReference": {
+        "role": "enterprise-control",
+        "refs": [],
+        "guard": "Dense enterprise/ERP layout and quiet data clarity; no punk/moon city artwork default.",
+        "layers": [
+          "L0 semantic content",
+          "L1 skin geometry",
+          "L2 optional texture",
+          "L3 optional original scenery",
+          "L4 live actions"
+        ],
+        "approval": "pending-human-reference-review",
+        "mobileRule": "No fixed screenshot: semantic content and CTA first; optional artwork moves below/collapses.",
+        "typeRule": "Brush display can be decorative, but headings, labels, values and links remain selectably rendered accessible text."
+      }
     }
-  ]
+  ],
+  "creativeReferenceOverlay": {
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "role": "Page-level art direction interpretation, does not replace existing typed behavioral API, token dictionary or mandatory accessibility.",
+    "status": "proposed-no-runtime-approval",
+    "notBakedIntoComponents": true
+  }
 }
