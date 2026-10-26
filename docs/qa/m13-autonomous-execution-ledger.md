@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-340 — Prepare crew constellation graph placeholder
+
+- Added `apps/moonframe/templates/visual-reference/r02-crew-map.tsx` and `.module.css`. Consumer-provided members and optional connections render as a deterministic constellation-style graph; all member names/roles also appear in a semantic list. Responsive stacking and forced-colors styles are included.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; static source review only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, browser capture, or source-reference comparison were run. Host runner owns verification/checkpoint. Human visual review, rights, and acceptance remain pending.
+- Rollback: remove the component/CSS module and restore the matching backlog/TODO/ledger evidence.
+- Counts: prior live count 133/488 implemented-or-captured, 355 planned, 0 blocked; now 134/488 implemented-or-captured, 354 planned, 0 blocked.
+
 ## MF-VF-335 — Draw pink graffiti slash decor
 
 - Added `assets/source/creative-reference/r02/diagonal-spray.svg`, an original slash-and-speckle motif with no embedded text, consumer marks, scripts, event handlers, or external resources. It remains an optional static asset and is not wired into a page.
