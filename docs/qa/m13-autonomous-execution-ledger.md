@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-424 — Add creative-reference schema validation
+
+- Added `schemas/moonframe-creative-reference.schema.json` for required reference identity, digest, dimensions, skin metadata, and status fields. Extended `scripts/validate-contracts.mjs` with checks for duplicate IDs, unknown canonical skins, missing statuses, and claimed review without reviewer/date evidence; added negative self-test fixtures.
+- Dependency `MF-VF-010` is implemented. Status `implemented`; static source inspection only. Per runner override, validators/self-test, package-manager commands, suites, typecheck, build, and browser checks were not run. Host runner owns verification/checkpoint. This does not claim reference media availability, reuse rights, visual review, or acceptance.
+- No commit created. Rollback: remove the schema and validator function/fixtures, restore the backlog row to planned, and remove this entry and matching TODO update.
+
 ## MF-VF-121 — Draw original Moonglitch motif SVG
 
 - Added `assets/source/skins/moonglitch/motif.svg`, an original static monochrome diagnostic glyph combining a broken signal ring and stepped pulse. SHA-256: `5D7CF0CC15FE00DDB914F3188F50912C47383FA7C8E846D8435E32B91908017E`.

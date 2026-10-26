@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://moonframe.dev/schemas/moonframe-creative-reference.schema.json",
+  "title": "Moonframe creative reference contract",
+  "description": "Structural validation for review references; this schema does not grant reuse rights or visual approval.",
+  "type": "object",
+  "required": ["schemaVersion", "contractVersion", "contractId", "referenceStorage", "photos"],
+  "properties": {
+    "schemaVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "contractVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "contractId": { "type": "string", "minLength": 1 },
+    "referenceStorage": { "type": "object" },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sha256", "width", "height", "primarySkin", "secondarySkinInfluences", "referenceStatus", "visualApprovalStatus", "rightsForReuse"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^MWX-REF-[0-9]{3}$" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "primarySkin": { "type": "string", "minLength": 1 },
+          "secondarySkinInfluences": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "referenceStatus": { "type": "string", "minLength": 1 },
+          "visualApprovalStatus": { "type": "string", "minLength": 1 },
+          "rightsForReuse": { "type": "string", "minLength": 1 },
+          "reviewer": { "type": "string", "minLength": 1 },
+          "reviewedAt": { "type": "string", "format": "date" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "visualApprovalStatus": { "not": { "const": "not-reviewed" } } }, "required": ["visualApprovalStatus"] },
+            "then": { "required": ["reviewer", "reviewedAt"] }
+          }
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

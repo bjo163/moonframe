@@ -73,6 +73,30 @@ function creativeReferenceImportProblems(contract, repoRoot = root) {
   }
   return problems;
 }
+function creativeReferenceSchemaProblems(contract, skinIds) {
+  const problems = [];
+  if (!Array.isArray(contract.photos)) return ['photos must be an array'];
+  const seen = new Set();
+  for (const [index, photo] of contract.photos.entries()) {
+    const label = isString(photo?.id) ? photo.id : `photos[${index}]`;
+    if (!isString(photo?.id)) problems.push(`${label}: id is required`);
+    else if (seen.has(photo.id)) problems.push(`${label}: duplicate reference id`);
+    else seen.add(photo.id);
+    if (!isString(photo?.sha256) || !/^[a-f0-9]{64}$/.test(photo.sha256)) problems.push(`${label}: valid SHA-256 is required`);
+    if (!Number.isInteger(photo?.width) || photo.width < 1 || !Number.isInteger(photo?.height) || photo.height < 1)
+      problems.push(`${label}: positive integer dimensions are required`);
+    if (!skinIds.includes(photo?.primarySkin)) problems.push(`${label}: unknown primary skin`);
+    if (!Array.isArray(photo?.secondarySkinInfluences) || photo.secondarySkinInfluences.some(id => !skinIds.includes(id)))
+      problems.push(`${label}: secondary skin influences must use canonical skin ids`);
+    if (!isString(photo?.referenceStatus) || !isString(photo?.visualApprovalStatus) || !isString(photo?.rightsForReuse))
+      problems.push(`${label}: reference, visual approval, and rights statuses are required`);
+    if (photo?.visualApprovalStatus !== 'not-reviewed' && !(isString(photo?.reviewer) && isString(photo?.reviewedAt)))
+      problems.push(`${label}: review status requires reviewer and reviewedAt evidence`);
+  }
+  return problems;
+}
+for (const problem of creativeReferenceSchemaProblems(creativeReferences, ids))
+  errors.push(`Creative reference schema: ${problem}`);
 for (const problem of creativeReferenceImportProblems(creativeReferences))
   errors.push(`Creative reference import: ${problem}`);
 function validatePairMatrix(pairs, skinIds) {
@@ -224,6 +248,17 @@ const localReferenceExists=ref=>{
 const ownershipAuditProblems=ownershipRegistryProblems(ownershipRows,new Set(identityAudit.registry.map(x=>x.issue)),localReferenceExists,readmeHasOwnershipLink);
 for(const problem of ownershipAuditProblems) errors.push('Ownership registry: '+problem);
 if (process.argv.includes('--self-test')) {
+  assert.deepEqual(creativeReferenceSchemaProblems(creativeReferences, ids), []);
+  const duplicateReference = structuredClone(creativeReferences);
+  duplicateReference.photos[1].id = duplicateReference.photos[0].id;
+  assert(creativeReferenceSchemaProblems(duplicateReference, ids).some(x => x.includes('duplicate reference id')));
+  const unknownSkinReference = structuredClone(creativeReferences);
+  unknownSkinReference.photos[0].primarySkin = 'system';
+  assert(creativeReferenceSchemaProblems(unknownSkinReference, ids).some(x => x.includes('unknown primary skin')));
+  const fabricatedReview = structuredClone(creativeReferences);
+  fabricatedReview.photos[0].visualApprovalStatus = 'approved';
+  assert(creativeReferenceSchemaProblems(fabricatedReview, ids).some(x => x.includes('reviewer and reviewedAt')));
+  console.log('PASS: creative-reference schema fixtures (duplicate ids, unknown skin, and unsupported review rejected)');
   const unversionedReferences = structuredClone(creativeReferences);
   assert.deepEqual(creativeReferenceImportProblems(unversionedReferences), []);
   const falselyImported = structuredClone(creativeReferences);
