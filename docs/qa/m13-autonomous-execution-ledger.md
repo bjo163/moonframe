@@ -41,6 +41,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-409 — Define Moonzine screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonzine-reference-parity.md` with fixed-content 1440×960 and 360×800 capture protocol, light/dark grayscale and decoration-on/off states, Moonpanel/Moonriot distinction criteria, semantic-surface checks, and pending human-observation fields.
+- Dependency MF-VF-096 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, visual verdict, rights clearance, or human review claimed.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run. No commit created; host runner owns verification/checkpoint.
+- Rollback: remove the protocol and restore MF-VF-409 to planned in the reference backlog, TODO, and ledger.
+
 ## MF-VF-136 — Draw Moonsmash edition badge
 
 - Added `assets/source/skins/moonsmash/edition.svg`, an original static Moonframe visual-edition label with accessible title/description, live text and angular impact geometry; no consumer brand or external resource.
