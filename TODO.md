@@ -15,6 +15,10 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Current M13 backlog count (2026-10-27, MF-VF-446):** 319/488 task rows are checked (148/292 foundation, 143/168 reference, 28/28 preflight); 169 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+
+**Live execution update (2026-10-27, MF-VF-446):** Added an owner decision record to [the visual-fidelity evidence ledger](docs/qa/visual-fidelity-evidence-ledger.md), requiring exact capture inputs, review identity/date, findings, waiver rationale and dated disposition. The disposition stays pending until an actual owner decision. Status `implemented`; documentation inspection only. Runner override honored: host runner owns validators and verification; no screenshots, owner review, package-manager commands, tests, typecheck, build, or captures run. No approval or acceptance claimed.
+
 **Current M13 backlog count (2026-10-27, MF-VF-445):** 318/488 task rows are checked (148/292 foundation, 142/168 reference, 28/28 preflight); 170 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files. Historical live-execution notes below retain the counts observed when written.
 
 **Live execution update (2026-10-27, MF-VF-445):** Recounted current rows in all three M13 backlogs and synchronized this live-index aggregate. Dependency MF-VF-010 is implemented. Static row recount and documentation inspection only; no package-manager commands, validators, tests, typecheck, build, or captures run under runner override. No review or acceptance implied; host runner owns verification/checkpoint. No commit created.

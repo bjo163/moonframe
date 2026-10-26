@@ -2,6 +2,16 @@
 
 Updated 2026-10-26. This is an intake inventory, not visual approval, an import record, or a license grant.
 
+## Mockup parity owner decision record (MF-VF-446)
+
+Create one record for each parity claim submitted for an owner decision. Keep disposition `pending` until the named owner actually reviews the linked evidence; an implementer or automated check cannot fill the decision fields on the owner's behalf. A waiver documents an accepted deviation only after the owner records it; missing evidence is not a waiver.
+
+| Claim / reference or skin pair | Candidate screenshot paths and SHA-256s | Source commit; fixture/content; viewport, mode and render environment | Reviewer name and review date | Concrete matches and material differences | Issues resolved / open | Waiver rationale (or `none`) | Owner disposition and decision date |
+|---|---|---|---|---|---|---|---|
+| pending | pending | pending | pending | pending | pending | pending | pending |
+
+Allowed dispositions: `pending`, `approved`, `approved-with-waiver`, or `rejected`. Use `approved-with-waiver` only with a specific deviation, rationale, and owner decision date. Link immutable screenshot artifacts and record their digests; do not infer parity from task status, automated scores, a capture path alone, or a review protocol. A rejected or waived claim must retain the unresolved findings and scope of the decision.
+
 ## Four-reference-zone human review sheet (MF-VF-436)
 
 Use one record per zone and candidate capture. Keep every field pending until an actual candidate capture and human comparison exist. Reference digests below come from the canonical creative-reference contract; the source bytes are absent from this checkout, so the digest cannot be recomputed here. A recorded digest is not a reuse license. Do not record a review disposition or approval by inference.

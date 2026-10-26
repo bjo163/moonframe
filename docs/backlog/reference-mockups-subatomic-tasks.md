@@ -20,7 +20,7 @@
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
 | M — reusable visual composition primitives and token control | `MF-VF-389…MF-VF-406` | 18 | 0 done |
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 1 implemented, 14 planned |
-| O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 1 captured, 24 planned |
+| O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 1 captured, 1 implemented, 23 planned |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
 | **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 37 implemented, 123 planned** |
 
@@ -584,8 +584,9 @@
   - **Verification:** Static row recount and documentation inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, or captures were run; host runner owns verification/checkpoint. No commit created.
   - **File scope/output:** `TODO.md`. **AC:** Historical 57/57, first-wave 292 and new wave counts separated.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-446 — Require real owner signoff to call mockup parity accepted** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+- [x] **MF-VF-446 — Require real owner signoff to call mockup parity accepted** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Named date, screenshot inputs, reviewed issues, waiver reasons.
+  - **Evidence (2026-10-27, starting HEAD `2bd3b76e10f44c66935958c4e7d40ebb6755c281`):** Added a per-claim owner decision record requiring immutable screenshot paths/digests, commit and render context, reviewer identity/date, concrete findings, unresolved issues, waiver rationale, and dated disposition. Dispositions remain `pending` until an actual owner decision; automated or implementer status cannot substitute. Dependency MF-VF-010 is implemented. Documentation inspection only; no screenshot, owner review, approval, validators, package-manager commands, tests, typecheck, build, or capture run. Host runner owns verification/checkpoint. No parity or acceptance claimed. Rollback: remove the new section and restore this row to planned.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 
 ## P — Optional consumer-brand accent overlay
