@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-111 — Draw original Moonhalftone panel-paced hero
+
+- Added `assets/source/skins/moonhalftone/hero.svg`, an original 640×360 monochrome night-crossing scene paced across three panels, with no required copy baked in. SHA-256: `295E77CDD53ABD5CFDB390EACBAB08873F816A9F3A745B29280D81B0EA1B2B6B`.
+- Dependency MF-VF-108 is implemented. XML parse and static safety scans passed. Rendering, optical review, rights review, and human acceptance remain pending; no package-manager commands or full suites run during authoring.
+- Status: `implemented`; no commit created. Host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-111 backlog row, TODO update, and this entry to planned.
+
 ## MF-VF-110 — Draw original Moonhalftone margin screentone
 
 - Added `assets/source/skins/moonhalftone/pattern.svg`, a bounded 192×96 monochrome dot field with an open center. SHA-256: `BE45E07E3BF9FCBDDFE8A8BC59BA580EC657A68921404CCD5212A5E855E3514E`.
