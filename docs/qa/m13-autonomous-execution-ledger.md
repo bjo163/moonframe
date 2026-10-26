@@ -1,3 +1,11 @@
+# MF-VF-139 — Style Moonsmash data-table, form, and dialog recipes
+
+- Starting HEAD: `f4d0d0b73c4ff66d982e1e774c5a046f7409295f` (worktree clean).
+- Added Moonsmash-scoped table wrapper/header/row/cell framing, hard-edged field controls, and an offset dialog impact frame in `src/styles.css`. Existing component class names were confirmed in `src/components.js`; no component markup or behavior changed.
+- Dependencies MF-VF-132 and MF-VF-138 are implemented. Backlog status: `implemented`.
+- Static source/class inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, screenshot/render capture, or commit run; host runner owns verification and checkpoint.
+- No rendered contrast, visual/rights review, human approval, or acceptance claimed. Rollback: remove the MF-VF-139 style block, restore its backlog row to planned, and remove matching TODO/ledger notes.
+
 # MF-VF-449 — Write typed consumerBrand palette input fixture
 
 - Selected as dependency-ready after MF-VF-448 and MF-VF-450. The canonical `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json` records `apiStatus: deferred-pending-owner-public-api-review`, no approved public props, and no approved runtime token values. Creating a fixture for the proposed input would imply an unapproved public API.

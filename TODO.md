@@ -251,6 +251,8 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 ---
 
+**Live execution update (2026-10-27, MF-VF-139):** Added Moonsmash-scoped data-table, field, and dialog styling in `src/styles.css`, preserving existing component classes and behavior. Dependencies MF-VF-132 and MF-VF-138 are implemented. Source/class inspection only; runner override honored, so no validators, package-manager commands, suites, typecheck, build, rendering, or browser capture ran. Host runner owns verification and checkpoint; rendered contrast, visual review, rights review, and acceptance remain pending. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
+
 ## M13 final cross-domain readiness reconciliation (2026-10-26)
 
 **Live execution update (2026-10-26, MF-VF-395):** Added optional generic moon/city scene-slot guidance to the cinematic reference bible, covering source boundaries, decorative/informative alternatives, DOM separation, no-art fallback, responsive crop, and accessible contexts. Dependency MF-VF-013 is implemented. Documentation-only source review; no runtime change, rights grant, screenshot, or human approval claimed. Per runner override, host runner owns all tests/validators/build and checkpoint. Rollback: remove the corresponding bible section and restore the task row to planned.

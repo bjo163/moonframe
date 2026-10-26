@@ -685,6 +685,23 @@
 [data-skin="moonsmash"] .mf-callout-icon > svg { color: var(--mf-accent); }
 [data-skin="moonsmash"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 
+/* Data and interaction recipes inherit the poster's radial geometry while
+   retaining native control sizing, component semantics, and focus behavior. */
+[data-skin="moonsmash"] .mf-table-wrapper { border: 2px solid var(--mf-text); padding: .35rem; background: var(--mf-surface-raised); }
+[data-skin="moonsmash"] .mf-table { border-collapse: separate; border-spacing: 0 .35rem; }
+[data-skin="moonsmash"] .mf-table thead th { background: var(--mf-text); color: var(--mf-bg); border: 0; font-family: var(--mf-display); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
+[data-skin="moonsmash"] .mf-table tbody tr { background: var(--mf-surface); box-shadow: inset .3rem 0 var(--mf-accent); }
+[data-skin="moonsmash"] .mf-table tbody td { border-block: 1px solid var(--mf-border); }
+[data-skin="moonsmash"] .mf-table tbody td:first-child { border-inline-start: 1px solid var(--mf-border); font-weight: 750; }
+[data-skin="moonsmash"] .mf-table tbody td:last-child { border-inline-end: 1px solid var(--mf-border); }
+[data-skin="moonsmash"] .mf-field input,
+[data-skin="moonsmash"] .mf-field select,
+[data-skin="moonsmash"] .mf-field textarea,
+[data-skin="moonsmash"] .mf-field .mf-input { border: 2px solid var(--mf-text); border-radius: 0; box-shadow: 3px 3px 0 var(--mf-border); }
+[data-skin="moonsmash"] .mf-field label { font-family: var(--mf-display); letter-spacing: .025em; }
+[data-skin="moonsmash"] .mf-dialog,
+[data-skin="moonsmash"] [role="dialog"] { border: 3px solid var(--mf-text); border-radius: 0; box-shadow: .5rem .5rem 0 var(--mf-accent), 1rem 1rem 0 var(--mf-border); }
+
 /* 07 / Moonink — organic margins and a restrained reading column. */
 [data-skin="moonink"] { --mf-bg: #eae7e1; --mf-surface: #fffdf7; --mf-surface-raised: #e1e5dd; --mf-text: #27332e; --mf-muted: #58665c; --mf-border: #7c8d80; --mf-accent: #355c4b; --mf-accent-text: #ffffff; --mf-radius: 2px; --mf-shadow: none; --mf-display: Georgia, "Palatino Linotype", serif; }
 [data-skin="moonink"][data-mode="dark"] { --mf-bg: #18211e; --mf-surface: #24312b; --mf-surface-raised: #35473e; --mf-text: #f1f5e9; --mf-muted: #becdbd; --mf-border: #829b88; --mf-accent: #b0d5bd; --mf-accent-text: #153222; }
