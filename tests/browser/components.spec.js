@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { skins } from '../../src/skins.js';
 import { writeSkinCaptureProvenance } from '../../scripts/skin-capture-provenance.mjs';
 
 const captureDir = path.resolve('artifacts/skins');
@@ -86,6 +87,79 @@ test('fixed T-1045 archive dialog fixture opens deterministically and captures s
   await dialog.getByRole('button', { name: 'Keep task', exact: true }).click();
   await expect(dialog).not.toBeVisible();
   await expect(trigger).toBeFocused();
+});
+
+test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    await page.goto('/lab/behavior?fixture=archive-task');
+    const fixture = page.locator('[data-fixture="archive-task-dialog"]');
+    const main = page.locator('main').first();
+    await main.evaluate((node, selection) => {
+      node.dataset.skin = selection.skin;
+      node.dataset.mode = selection.mode;
+    }, { skin: skin.id, mode });
+    await expect(main).toHaveAttribute('data-skin', skin.id);
+    await expect(main).toHaveAttribute('data-mode', mode);
+    const surfaceToken = await main.evaluate(node => getComputedStyle(node).getPropertyValue('--mf-surface').trim());
+    expect(surfaceToken).not.toBe('');
+
+    const trigger = fixture.getByRole('button', { name: 'Archive task T-1045', exact: true });
+    const dialog = page.getByRole('dialog', { name: 'Archive completed task?' });
+    await expect(fixture).toContainText('T-1045 · Verify scheduled export · Mateo Silva · Complete');
+    await expect(dialog).toBeVisible();
+    await expect(dialog).toHaveAttribute('aria-describedby');
+    await expect(dialog).toContainText('“Verify scheduled export” is complete. You can find archived tasks in the project history.');
+    await expect(dialog.getByRole('button', { name: 'Keep task', exact: true })).toBeVisible();
+    await expect(dialog.getByRole('button', { name: 'Archive task', exact: true })).toBeVisible();
+    await expect(dialog).toContainText('Archive completed task?');
+
+    // The query fixture starts open. Close it once, then exercise the user-triggered
+    // open path so the native dialog records the correct opener for focus restoration.
+    await page.keyboard.press('Escape');
+    await expect(dialog).not.toBeVisible();
+    await trigger.click();
+    await expect(dialog).toBeVisible();
+
+    const fontStatus = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return document.fonts.status;
+    });
+    expect(fontStatus).toBe('loaded');
+    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}-1440x960-archive-dialog.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+    const capture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: `/lab/behavior?fixture=archive-task (${document.querySelector('[data-fixture="archive-task-dialog"]')?.textContent?.trim()}; ${document.querySelector('main')?.getAttribute('data-skin')} ${document.querySelector('main')?.getAttribute('data-mode')}; open archive dialog)`,
+      state: 'archive-dialog-open',
+      fontStack: getComputedStyle(document.querySelector('main')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(screenshotPath, { ...capture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+
+    await page.keyboard.press('Escape');
+    await expect(dialog).not.toBeVisible();
+    await expect(trigger).toBeFocused();
+    await trigger.click();
+    await expect(dialog).toBeVisible();
+    await dialog.getByRole('button', { name: 'Keep task', exact: true }).click();
+    await expect(dialog).not.toBeVisible();
+    await expect(trigger).toBeFocused();
+
+    const popoverTrigger = page.getByRole('button', { name: 'Open popover', exact: true });
+    const popoverCopy = page.getByText('Popover body copy', { exact: true });
+    await popoverTrigger.click();
+    await expect(popoverCopy).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(popoverCopy).not.toBeVisible();
+    await expect(popoverTrigger).toBeFocused();
+  }
 });
 
 test('tabs use roving focus, skip disabled items, and honor RTL arrows', async ({ page }) => {
