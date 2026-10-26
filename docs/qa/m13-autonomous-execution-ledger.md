@@ -29,6 +29,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-299 — Record the R03 import blocker accurately
+
+- Checked `/mnt/data/moonframe_m13_reference_originals.zip`; it is absent. No R03 source PNG is present in the checkout. The creative-reference contract identifies R03 as `MWX-REF-003`, SHA-256 `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff`, 682 × 1024.
+- Updated the matching backlog row from `planned` to `blocked-external-approval` with the precise missing-byte and rights-approval requirements. Existing reference-index metadata is only a transcription and cannot satisfy source import acceptance.
+- Dependency MF-VF-014 is implemented. No package-manager commands, validators, tests, typecheck, build, or commit run/created per runner override; host runner owns verification/checkpoint. No human review or rights approval claimed.
+- Resume when the owner supplies digest-matching bytes and explicitly approves review-only use. Rollback: restore MF-VF-299 to planned and remove this entry.
+
 ## MF-VF-371 — Add decorative rough-ink form frame
 
 - Added original `assets/source/creative-reference/r04/form-frame.svg`, an optional static abstract outline with open center. SHA-256: `12673cbec99f9a6ffffc5b5ab384a56ab2ca7c512cf063b8b813f84e74728a4e`.
