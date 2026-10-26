@@ -905,9 +905,9 @@
 - [ ] **MF-VF-257 — Add grayscale/decor-off toggle on diff view** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Review non-color properties by disabling color/decorations.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-258 — Show actual human-reviewed/pending state on skin detail** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-258 — Show actual human-reviewed/pending state on skin detail** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/skins/[id]/page.tsx`. **Acceptance:** Do not show approved badge based on CSS score.
-  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (2026-10-27):** Added a persistent, accessible “pending human review” status to each skin detail page. It explicitly says automated structure checks and screenshots are not approval. Source inspection only; no package-manager commands, tests, validators, typecheck, build, or browser capture run under runner override. Human review and acceptance remain pending; host runner owns verification/checkpoint. Rollback: remove the status paragraph and restore this row to planned.
 - [ ] **MF-VF-259 — Add optional art slot to showcase landing hero** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** CTA/title remain visible when illustration fails/hidden.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

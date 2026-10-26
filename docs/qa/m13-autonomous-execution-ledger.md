@@ -1750,3 +1750,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `contracts/moonframe-creative-asset-slot-contract-v0.1.json`, defining L0–L4 roles, source expectations, required per-asset provenance/review fields, and explicit unverified license states. Role assignment and reference mapping grant no copyright, trademark, redistribution, reference-use, or derivative-work rights.
 - Updated the matching reference backlog row and root TODO. Status `implemented`; source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, or human review run. No rights clearance or approval claimed; host runner owns verification and checkpoint.
 - Rollback: remove the contract and restore the task row to planned in the backlog; remove this TODO update and ledger entry. No commit created.
+## MF-VF-258 — Show actual human-reviewed/pending state on skin detail
+
+- Added a visible, accessible pending-human-review status to every skin detail page, explicitly distinguishing automated evidence from approval.
+- Backlog status: `implemented`. Source inspection only; no verification commands or browser capture run per runner override. Human review and acceptance remain pending.
+- Rollback: remove the status paragraph in `apps/moonframe/app/(site)/skins/[id]/page.tsx` and restore the backlog row to planned. No commit created.

@@ -57,6 +57,11 @@ export default async function SkinDetailPage({ params }: { params: Promise<{ id:
         <SkinCard skin={skin} mode="dark" />
       </Grid>
 
+      <p role="status" aria-label="Visual review status" style={{ marginTop: '1rem' }}>
+        Visual review: pending human review. Automated structure checks and screenshots do not
+        constitute approval.
+      </p>
+
       <Grid columns={2} style={{ marginTop: '1.5rem' }}>
         <Card>
           <CardHeader>
