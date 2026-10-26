@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-328 — Review R01 screenshot against original source (blocked)
+
+- At live HEAD `89d85c7a3ced2c3c2706041d263bed774fdf61c1`, the task dependency `MF-VF-022` is implemented, but required source media is missing: no original R01 PNG exists in the checkout and `/mnt/data/moonframe_m13_reference_originals.zip` is absent.
+- The creative reference contract labels the source media unversioned and requires hash verification. Without the original bytes, a four-zone source comparison and delta report would be fabricated; task remains unchecked and `blocked` pending verified owner-supplied media.
+- No tests, validators, package-manager commands, captures, comparisons, or reviews run under the runner override. No rights, human review, or acceptance claimed. Unblock after source media is provided and verified against the contract SHA-256. Rollback: return the task row to `planned` and remove this entry if source media becomes available.
+
 ## MF-VF-046 — Render actual 32px favicon PNG
 
 - Added `assets/exports/brand/favicon-32.png`, rasterized from `assets/exports/brand/favicon.svg` using a temporary Node script with 8× coverage sampling. The 32×32 RGBA result preserves transparent pixels (736 fully transparent pixels).
