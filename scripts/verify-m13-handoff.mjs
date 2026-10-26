@@ -92,7 +92,7 @@ const backlogs = [
   readText('docs/backlog/visual-fidelity-subatomic-tasks.md'),
   readText('docs/backlog/reference-mockups-subatomic-tasks.md'),
 ];
-const taskPattern = /^- \[[ x]\] \*\*(MF-VF-\d{3}) — [^\n]*\*\* · \*\*P[0-3]\*\* · \x60(?:planned|implemented|captured|human-reviewed|accepted)\x60 · \*\*(?:dependency|dep):\*\* \x60([^\x60]+)\x60/gm;
+const taskPattern = /^- \[[ x]\] \*\*(MF-VF-\d{3}) — [^\n]*\*\* · \*\*P[0-3]\*\* · \x60(?:planned|in-progress|implemented|captured|human-reviewed|accepted|blocked|blocked-external-approval|rejected)\x60 · \*\*(?:dependency|dep):\*\* \x60([^\x60]+)\x60/gm;
 const taskRows = backlogs.flatMap((body) => [...body.matchAll(taskPattern)]);
 const taskIds = taskRows.map((row) => row[1]);
 check(taskRows.length === 460 && unique(taskIds), 'Expected 460 unique planned MF-VF tasks from both backlogs');
@@ -111,7 +111,7 @@ function visit(id) {
 for (const id of Object.keys(deps)) visit(id);
 
 const preflightSource = readText('docs/backlog/m13-preflight-remediation-tasks.md');
-const preflightPattern = /^- \[[ x]\] \*\*(MF-PF-\d{3}) — [^\n]*\*\* · \*\*P[012]\*\* · \x60(?:planned|implemented|captured|human-reviewed|accepted)\x60 · \*\*deps:\*\* \x60([^\x60]+)\x60/gm;
+const preflightPattern = /^- \[[ x]\] \*\*(MF-PF-\d{3}) — [^\n]*\*\* · \*\*P[012]\*\* · \x60(?:planned|in-progress|implemented|captured|human-reviewed|accepted|blocked|blocked-external-approval|rejected)\x60 · \*\*deps:\*\* \x60([^\x60]+)\x60/gm;
 const preflightRows = [...preflightSource.matchAll(preflightPattern)];
 const pfIds = preflightRows.map((x) => x[1]);
 check(preflightRows.length === 28 && unique(pfIds), 'Expected 28 unique MF-PF preflight tasks');
