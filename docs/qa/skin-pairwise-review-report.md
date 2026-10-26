@@ -14,6 +14,7 @@
 - **Tablet captures:** 30/30 real 768×1024 captures have current-source SHA-256 sidecars; human visual review is pending
 - **Phone captures:** 30/30 real 360×800 captures have current-source SHA-256 sidecars; human visual review is pending
 - **Pilot pair metadata:** 6/6 checked structurally; human visual review pending
+- **Pilot rendered-image contact sheet:** [A/B light and dark captures](../../artifacts/skins/pilot-pair-contact-sheet.html); machine-assembled only, human visual review pending
 - **Pair metadata:** 105/105 checked structurally; human visual review pending
 - **Minimum Materially Distinct Non-Color Dimensions Across All 105 Pairs:** **8 / 8** (contract minimum: 4/8; neighboring-concept target: 5/8)
 - **Grayscale and decoration-off visual comparisons:** NOT verified by this structural script; require browser screenshots and a reviewer.

@@ -173,6 +173,7 @@ export function generatePairwiseReportMarkdown(audit) {
     `- **Tablet captures:** ${30 - audit.missingTabletScreenshots.length - audit.staleTabletScreenshots.length}/30 real 768×1024 captures have current-source SHA-256 sidecars; human visual review is pending`,
     `- **Phone captures:** ${30 - audit.missingPhoneScreenshots.length - audit.stalePhoneScreenshots.length}/30 real 360×800 captures have current-source SHA-256 sidecars; human visual review is pending`,
     `- **Pilot pair metadata:** ${audit.pilotSixCount}/6 checked structurally; human visual review pending`,
+    '- **Pilot rendered-image contact sheet:** [A/B light and dark captures](../../artifacts/skins/pilot-pair-contact-sheet.html); machine-assembled only, human visual review pending',
     `- **Pair metadata:** ${audit.pairCount}/105 checked structurally; human visual review pending`,
     `- **Minimum Materially Distinct Non-Color Dimensions Across All 105 Pairs:** **${audit.minDistinctDimensions} / 8** (contract minimum: 4/8; neighboring-concept target: 5/8)`,
     '- **Grayscale and decoration-off visual comparisons:** NOT verified by this structural script; require browser screenshots and a reviewer.',
@@ -205,6 +206,69 @@ export function generatePairwiseReportMarkdown(audit) {
   return lines.join('\n');
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  })[character]);
+}
+
+export function generatePilotPairContactSheetHtml(audit) {
+  const pilotRows = audit.results.filter(result => result.isPilotSix);
+  const links = pilotRows.map(result => `<a href="#pair-${escapeHtml(result.key.replaceAll('::', '-vs-'))}">${escapeHtml(result.a)} × ${escapeHtml(result.b)}</a>`).join('\n');
+  const sections = pilotRows.map(result => {
+    const pairId = result.key.replaceAll('::', '-vs-');
+    const modes = ['light', 'dark'].map(mode => {
+      const images = [result.a, result.b].map((skin, index) => {
+        const filename = `${skin}-${mode}-1440x960-default.png`;
+        return `<figure><figcaption>Skin ${index === 0 ? 'A' : 'B'} · ${escapeHtml(skin)}</figcaption><img src="./${escapeHtml(filename)}" alt="${escapeHtml(skin)} ${mode} appearance, 1440 by 960 viewport" loading="lazy"></figure>`;
+      }).join('\n');
+      return `<section class="mode mode-${mode}"><h3>${mode === 'light' ? 'Light appearance' : 'Dark appearance'}</h3><div class="images">${images}</div></section>`;
+    }).join('\n');
+    return `<article id="pair-${escapeHtml(pairId)}"><h2>${escapeHtml(result.a)} <span>vs</span> ${escapeHtml(result.b)}</h2>${modes}</article>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moonframe pilot skin pair contact sheet</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.45 system-ui, sans-serif; background: #f3f4f6; color: #171717; }
+    body { margin: 0 auto; max-width: 1600px; padding: 28px; }
+    header { background: white; border: 1px solid #bbb; padding: 24px; }
+    h1 { margin: 0 0 8px; }
+    .notice { font-weight: 650; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; }
+    article { background: white; border: 1px solid #aaa; margin: 24px 0; padding: 20px; scroll-margin-top: 12px; }
+    h2 { margin: 0 0 14px; text-transform: capitalize; }
+    h2 span { color: #666; font-size: .8em; }
+    .mode { margin-top: 14px; }
+    .mode h3 { border-bottom: 1px solid #bbb; margin: 0 0 10px; padding-bottom: 6px; }
+    .images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    figure { margin: 0; min-width: 0; }
+    figcaption { font-weight: 650; margin-bottom: 6px; }
+    img { display: block; width: 100%; height: min(68vh, 700px); object-fit: contain; object-position: top center; background: #e5e7eb; border: 1px solid #888; }
+    @media (max-width: 720px) { body { padding: 12px; } article { padding: 12px; } .images { grid-template-columns: 1fr; } img { height: 70vh; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moonframe pilot skin pair contact sheet</h1>
+    <p>Six foundational pairs; each light and dark capture is shown A/B at the same 1440×960 viewport. Use the navigation to jump between pairs.</p>
+    <p class="notice">Machine-assembled comparison only. Human visual review is pending; no visual verdict is assigned here.</p>
+    <nav aria-label="Pilot skin pair comparisons">${links}</nav>
+  </header>
+  ${sections}
+</body>
+</html>
+`;
+}
+
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
 if (isMain) {
   const audit = auditAllSkinPairs();
@@ -214,5 +278,8 @@ if (isMain) {
   }
   const reportPath = path.join(root, 'docs/qa/skin-pairwise-review-report.md');
   fs.writeFileSync(reportPath, generatePairwiseReportMarkdown(audit), 'utf8');
+  const contactSheetPath = path.join(root, 'artifacts/skins/pilot-pair-contact-sheet.html');
+  fs.writeFileSync(contactSheetPath, generatePilotPairContactSheetHtml(audit), 'utf8');
   console.log(`STRUCTURAL + INVENTORY PASS: ${audit.pairCount} pair metadata records, ${audit.minDistinctDimensions}/8 distinct contract-string dimensions minimum, 30 desktop + 30 tablet + 30 phone current-source screenshot captures. Human visual review pending.`);
+  console.log(`CONTACT SHEET: ${audit.pilotSixCount} pilot pairs with light/dark A/B captures at matching 1440x960 viewports; human visual review pending (${path.relative(root, contactSheetPath)}).`);
 }
