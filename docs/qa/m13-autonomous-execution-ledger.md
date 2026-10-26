@@ -4,6 +4,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-049 — Register real accepted art source rights/hash
+
+- Inspected existing draft brand sources and their MF-VF-039–042 evidence alongside `docs/brand/original-asset-brand-bible.md`. Rights, trademark, human visual review, and production approval remain pending; no verified creator/license evidence is available to register.
+- Changed MF-VF-049 from `planned` to `blocked`; left its checkbox unchecked. Exact unmet dependency: actual creator/source ownership and applicable redistribution license evidence, plus any required reviewer evidence.
+- No implementation or asset manifest claim was added. No package-manager commands, tests, typecheck, build, validators, or browser checks were run per runner override; no commit/push performed. Host runner handles any applicable verification/checkpoint.
+- Rollback: restore MF-VF-049 to `planned` and remove the corresponding blocker notes from the backlog, TODO, and this ledger after source/rights evidence is supplied.
+
 ## MF-VF-365 — Provide transcript/alt for flattened export
 
 - Added `apps/moonframe/templates/visual-reference/r03-transcript.tsx`, a semantic reusable transcript surface with live title, descriptive artwork text, and optional event details for poster exports.

@@ -210,9 +210,10 @@
 - [ ] **MF-VF-048 — Integrate approved logo only in Moonframe showcase** · **P1** · `planned` · **dependency:** `MF-VF-039, MF-VF-040, MF-VF-049` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/components/site/SiteShell.tsx`. **Acceptance:** Consumer brands unaffected.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-049 — Register real accepted art source rights/hash** · **P1** · `planned` · **dependency:** `MF-VF-040, MF-VF-041, MF-VF-042` · **GitHub issue:** not-created
+- [ ] **MF-VF-049 — Register real accepted art source rights/hash** · **P1** · `blocked` · **dependency:** `MF-VF-040, MF-VF-041, MF-VF-042` · **GitHub issue:** not-created
   - **File scope:** `contracts/moonframe-asset-manifest-v0.1.json`. **Acceptance:** License/creator/SHA256/reviewer evidence filled only after valid asset exists.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Blocker evidence (2026-10-26, HEAD `0cd34eeb1086d72385c2c6f70bc2b1bb1f262bf3`):** Draft mark/wordmark/lockup sources exist, but no verified creator/source ownership or applicable license evidence is available in this checkout. Existing task evidence explicitly leaves rights, trademark, human visual review, and production approval pending. Recording a fictional source-rights entry would violate the asset policy. Status remains unchecked and blocked until actual source/ownership/license evidence and any required reviewer evidence are supplied. Per runner override, no package-manager commands, suites, typecheck, build, or validators were run. Rollback: restore this row to `planned` and remove blocker evidence when missing materials are supplied.
 
 ## D — individual functional SVG glyphs (one icon = one task)
 
