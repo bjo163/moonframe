@@ -218,6 +218,8 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 - **P0 licensing:** `package.json` currently says `@moonwitness/moonframe@0.1.1`, `private:false`, MIT; audited repo lacks a standalone `LICENSE`, and no external npm publication has been verified. Follow `MF-PF-001…003`.
 - **M13 task authority:** work from the microtask file and do not auto-generate completed tasks, duplicate GitHub Issues or new branches. Human approval stays separate.
 
+**Live execution update (2026-10-27, MF-VF-156):** Added `docs/visual/skins/mooncrash.md`, a contract-derived equipment-console direction distinguishing Mooncrash's rack navigation and inspection zones from Moonledger's aligned accounting records. Dependency MF-VF-015 is implemented. Source review only; no validators, package-manager commands, tests, typecheck, build, screenshots, or human review run under runner override. No production tokens, asset rights, visual approval, or acceptance claimed. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
+
 ---
 
 ## Historical M0–M12 implementation snapshot · earlier 2026-10-26 claims (not the live visual QA gate)

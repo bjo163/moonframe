@@ -1760,3 +1760,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Compared the ordered 15 brief IDs with the canonical theme contract; all IDs match. All briefs state `not-produced`; optional assets do not require consumer logos or imply delivery.
 - Added `m13StatusReview` metadata to the asset brief contract. JSON parse and ID/status inspection succeeded via Node. Backlog status: `implemented`; no artwork, rights review, human review, or acceptance claimed.
 - Runner override honored: no package-manager commands, validators, suites, typecheck, build, or browser checks run. No commit created; host runner owns verification/checkpoint. Rollback: remove the metadata, restore the backlog row and group count, and remove this TODO/ledger entry.
+
+## MF-VF-156 — Write Mooncrash visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/mooncrash.md` from the canonical skin specification and grammar. The brief defines equipment-rack navigation, stacked work zones, restrained hazard emphasis, component recipes, and the structural distinction from Moonledger while preserving common component behavior and accessible fallback requirements.
+- Dependency MF-VF-015 is implemented. Backlog status: `implemented`; source review only. Under the runner override, no validators, package-manager commands, tests, typecheck, build, screenshots, or human review were run. No production values, font/assets, rights clearance, or acceptance claimed.
+- Rollback: remove the brief and restore MF-VF-156 to planned in the backlog; remove the matching TODO and ledger entries. No commit created; host runner owns verification and checkpoint.
