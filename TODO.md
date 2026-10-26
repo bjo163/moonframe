@@ -1,5 +1,7 @@
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-098):** Added original optional photocopy-margin pattern `assets/source/skins/moonzine/pattern.svg` (SHA-256 `5ccbec714d66920b6d7859f71b967840aae85eeff2e09e43461166b42b36d51b`). Dependency MF-VF-096 is implemented. Source inspection only; per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or human review were run. Host runner owns verification/checkpoint; rights, optical review, and acceptance remain pending.
+
 **Live execution update (2026-10-26, MF-VF-097):** Added original monochrome Moonzine torn-paper motif `assets/source/skins/moonzine/motif.svg` (SHA-256 `7C620FF39F56A19BA44503B08A8616D4D0F7D6A6623DAD1B9B8DDE5A5DE44918`). Dependency MF-VF-096 is implemented. `git diff --check` passed; per runner override no validators, package-manager commands, tests, typecheck, build, rendering, or human review were run. Rights, optical review, and acceptance remain pending. Host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-390):** Documented InkFrame's live CSS border and no-texture fallback in the cinematic manga-punk reference bible. Status `implemented`; no code/runtime behavior introduced. Per runner override, validators, package-manager commands, tests, typecheck, build, screenshots, and human review were not run; host runner owns verification and checkpoint. Rollback: remove that recipe and restore the task to planned.

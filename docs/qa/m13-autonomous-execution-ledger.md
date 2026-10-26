@@ -17,6 +17,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-098 — Draw minimal Moonzine decorative pattern
+
+- Added `assets/source/skins/moonzine/pattern.svg`, an original sparse photocopy-registration texture using embedded SVG geometry only. It declares itself hidden from assistive technology; no text, scripts, or external resources are included.
+- SHA-256: `5ccbec714d66920b6d7859f71b967840aae85eeff2e09e43461166b42b36d51b`. Dependency MF-VF-096 is implemented. Status: `implemented`; source inspection only.
+- Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, screenshot, or human review run. Host runner owns applicable verification/checkpoint; optional-margin integration, rights/optical review, and acceptance remain pending.
+- Rollback: remove the SVG, restore the matching backlog row to planned, and remove this TODO/ledger evidence. No commit created.
+
 ## MF-VF-298 — R02 reference import blocker
 
 - R02 source bytes are absent from the checkout, and `Test-Path /mnt/data/moonframe_m13_reference_originals.zip` returned `False`. The canonical record is `MWX-REF-002`, SHA-256 `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167`, 1024 × 576; bytes cannot be verified locally.

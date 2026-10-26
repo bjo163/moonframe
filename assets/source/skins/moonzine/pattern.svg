@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 112" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="currentColor" stroke-linecap="round">
+    <path stroke-width="1.2" stroke-dasharray="1 5" d="M4 10h42m18 0h24m20 0h44M8 104h30m16 0h48m16 0h34"/>
+    <path stroke-width=".8" opacity=".55" d="m9 28 13-3 8 2m93-7 15 3 8-2M35 79l12 2m51 12 15-3 9 2"/>
+    <path stroke-width="1" stroke-dasharray="2 7" d="M4 45h12m127 18h13M72 4v9m-30 86v12m80-14v11"/>
+  </g>
+</svg>
