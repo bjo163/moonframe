@@ -4991,5 +4991,15 @@
       "status": "specified-not-implemented",
       "owner": "unassigned"
     }
-  ]
+  ],
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "specPageCount": 72,
+    "implementedShowcaseCount": 43,
+    "starterCount": 8,
+    "source": "apps/moonframe/templates/index.tsx",
+    "gap": 29,
+    "meaning": "Planned D-level template records are not synonymous with implemented marketplace pages or permission to claim full 72 shipped.",
+    "releaseGate": "Track actual 43 template visual review plus planned 29 separate without conflating statuses"
+  }
 }
