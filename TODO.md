@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-412):** Added a Moonsmash anti-clone screenshot review protocol at `docs/qa/reviews/moonsmash-reference-parity.md`, covering same-data desktop/mobile grayscale comparisons with decoration on/off and normal form semantics. Protocol status is `implemented`; no screenshots or human verdict are claimed. Per runner override, no package-manager commands, validators, tests, typecheck, build, or captures were run; host runner owns checks and checkpoint. Current checked counts: 121/292 foundation + 91/168 reference + 28/28 preflight = 240/488; 248 unchecked. Checked does not imply human review, rights clearance, or acceptance.
+
 **Live execution update (2026-10-27, MF-VF-121):** Added an original Moonglitch monochrome signal-break motif SVG at `assets/source/skins/moonglitch/motif.svg` (SHA-256 `5D7CF0CC15FE00DDB914F3188F50912C47383FA7C8E846D8435E32B91908017E`). Dependency MF-VF-120 is implemented. Status `implemented`; source inspection only. Per runner override, validators, package-manager commands, tests, typecheck, build, rendering, and human review were not run. Rights, optical review, and acceptance remain pending; host runner owns verification and checkpoint.
 
 **Live execution update (2026-10-27, MF-VF-102):** Added Moonzine-scoped editorial navigation hierarchy, staggered open-grid rhythm, section spacing, and responsive single-column shell styling in `src/styles.css`. Status `implemented`; source inspection only. Per runner override, validators, package-manager commands, test suites, typecheck, build, browser capture, and human review were not run; host runner owns verification/checkpoint. Acceptance remains pending.

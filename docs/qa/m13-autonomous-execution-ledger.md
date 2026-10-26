@@ -1574,3 +1574,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `apps/moonframe/templates/visual-reference/r04-notes.tsx`, an optional consumer-authored side note component. Informative copy is a labeled complementary landmark; callers can explicitly mark ornamental copy as decorative so it is hidden from assistive technology. The component stays independent of the sign-in form.
 - Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser screenshots, or human review run. No authentication behavior, asset rights approval, or acceptance is claimed.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the component, restore MF-VF-380 to planned in the reference backlog, and remove matching TODO/ledger evidence.
+# MF-VF-412 — Define Moonsmash screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/moonsmash-reference-parity.md` with same-data comparison guidance for Moonsmash against Moonpunk and Moonzine at desktop/mobile grayscale, art-on/off, including a normal form-state semantic check and human review fields.
+- Dependency MF-VF-132 is implemented. Backlog status: `implemented`; documentation inspection only. No screenshots, visual verdict, rights clearance, or acceptance claimed. No validators, package-manager commands, suites, typecheck, build, or browser capture run per runner override.
+- Counts from task rows: 121/292 foundation + 91/168 reference + 28/28 preflight = 240/488 checked; 248 unchecked. No commit created; host runner owns verification/checkpoint.
+- Rollback: remove the review protocol and restore MF-VF-412 to planned in the reference backlog and TODO; remove this ledger entry.
