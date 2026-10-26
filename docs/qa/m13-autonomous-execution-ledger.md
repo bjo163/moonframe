@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-365 — Provide transcript/alt for flattened export
+
+- Added `apps/moonframe/templates/visual-reference/r03-transcript.tsx`, a semantic reusable transcript surface with live title, descriptive artwork text, and optional event details for poster exports.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, render, browser capture, or human review run. Host runner owns verification and checkpoint; rights and acceptance remain pending.
+- Rollback: remove the transcript component and restore the matching backlog row and ledger entry.
+
 ## MF-VF-364 — Implement poster editor-safe crop/zoom preview
 
 - Added `apps/moonframe/templates/visual-reference/r03-preview.tsx` and `.module.css`. The client component keeps controls outside a fixed 2:3 poster viewport, constrains zoom to configurable bounds, and provides scrollable framing for cropped/zoomed content. Native button states and an announced percentage support keyboard and assistive technology use.
