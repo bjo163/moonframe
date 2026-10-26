@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "MF-M13-READINESS-001",
+  "status": "conditional-go-for-scoped-local-agent-work-not-release",
+  "date": "2026-10-26",
+  "auditBaseline": {
+    "repo": "bjo163/moonframe",
+    "branch": "main",
+    "lastGreenCommit": "5d18bbc9a3d7f385a79cd039ba047c4104a83f50",
+    "lastGreenRun": "https://github.com/bjo163/moonframe/actions/runs/40252233550",
+    "interpretation": "Last green checked for cited SHA only. Subsequent documentation commits must be separately tested. Do not call public release approved."
+  },
+  "authority": "Read-only observed operational gate overlay; existing domain contracts remain normative and historical status fields retain original scope.",
+  "decision": {
+    "localAgent": "CONDITIONAL-GO",
+    "firstTasks": [
+      "MF-VF-001",
+      "MF-VF-002",
+      "MF-VF-003",
+      "MF-VF-004",
+      "MF-VF-005",
+      "MF-VF-006",
+      "MF-VF-007",
+      "MF-VF-008",
+      "MF-VF-009",
+      "MF-VF-010"
+    ],
+    "rule": "Recheck latest main HEAD, CI, and individual dependencies; skip previously fixed work and mark only with evidence.",
+    "visualApproval": "NO-GO",
+    "assetRelease": "NO-GO",
+    "publicNpmPublish": "NO-GO",
+    "meaning": "Technical CI and handoff may be ready while art/rights/UX release remains blocked."
+  },
+  "canonicalQuantities": {
+    "skins": 15,
+    "appearances": 30,
+    "skinPairs": 105,
+    "tokenNamesProposed": 78,
+    "runtimeCssBridgeVariables": 17,
+    "visualBaselineCells": 270,
+    "assetQaCells": 120,
+    "motionQaCells": 180,
+    "sfxEventIds": 6,
+    "sfxAliasMappings": 6,
+    "componentManifestPlanned": 151,
+    "pageManifestPlanned": 72,
+    "pageTemplatesImplemented": 43,
+    "startersManifestAndShowcase": 8,
+    "plannedNewMicroTasks": 460
+  },
+  "gates": [
+    {
+      "id": "MF-M13-G00",
+      "domain": "canonical-skin-ids",
+      "state": "verified-structural",
+      "owner": "contracts/moonframe-theme-contract-v1.3.json",
+      "evidence": "15 exact IDs aligned across theme/grammar/specification/asset briefs/asset manifest",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": false
+    },
+    {
+      "id": "MF-M13-G01",
+      "domain": "clean-ci",
+      "state": "verified-on-audited-sha",
+      "owner": ".github/workflows/contract-validation.yml",
+      "evidence": "GitHub Actions 40252233550 success at 5d18bbc9a3d7f385a79cd039ba047c4104a83f50; contract/negative fixture/token/unit/typecheck/build/Playwright/skin screenshots all succeeded",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": false
+    },
+    {
+      "id": "MF-M13-G02",
+      "domain": "token-production-values",
+      "state": "not-approved",
+      "owner": "contracts/moonframe-token-source-plan-v0.1.json",
+      "evidence": "78 token names×30 intended slots remain pending canonical values; separate implemented interim CSS runtime bridge defines 17 variables; passing bridge tests != approved full token production",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G03",
+      "domain": "consumer-brand-overlay",
+      "state": "specified-unimplemented",
+      "owner": "contracts/moonframe-consumer-brand-overlay-contract-v0.1.json",
+      "evidence": "Moonpunk default acid-lime, Moonwitness magenta/cyan/yellow consumer theme proposed only; no public API or field migration approved",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G04",
+      "domain": "skin-visual-human-review",
+      "state": "unreviewed",
+      "owner": "contracts/moonframe-skin-grammar-contract-v1.0.json",
+      "evidence": "105 pair metadata structurally compared; no independent named reviewer approval for image fidelity/grayscale/decorations-off comparisons",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G05",
+      "domain": "visual-baselines",
+      "state": "only-automated-browser-captures",
+      "owner": "contracts/moonframe-visual-baseline-matrix-v0.1.json",
+      "evidence": "270 specified baseline cells not manually accepted; browser 30 skin captures in CI run artifacts are inventory, not visual design verdict",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G06",
+      "domain": "original-four-mockup-source",
+      "state": "hash-verified-chat-only",
+      "owner": "contracts/moonframe-creative-reference-contract-v0.1.json",
+      "evidence": "4 actual user PNG hashes/sizes verified in current session; bytes have not been ingested into GitHub and reuse/derivative rights not assumed",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G07",
+      "domain": "asset-originality-license",
+      "state": "not-cleared",
+      "owner": "contracts/moonframe-asset-manifest-v0.1.json",
+      "evidence": "Product marks/vector/ink/media production and 120 asset QA appearance cells not independently source/provenance/rights accepted",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G08",
+      "domain": "sfx-event-id-taxonomy",
+      "state": "verified-structural",
+      "owner": "contracts/moonframe-sfx-contract-v0.1.json",
+      "evidence": "Six contracted event IDs match runtime SFX_EVENT_PROFILES; six aliases also match source implementation",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": false
+    },
+    {
+      "id": "MF-M13-G09",
+      "domain": "sfx-playback-security-and-lifecycle",
+      "state": "implementation-needs-hardening",
+      "owner": "src/components.js",
+      "evidence": "defaultEnabled prop grants consent programmatically; play can report true when AudioContext unavailable/throws; new AudioContext not disposed on each cue; mute/revoke does not stop in-progress audio; alias contract says proposal-only despite implemented support",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G10",
+      "domain": "motion",
+      "state": "partially-implemented-unapproved-matrix",
+      "owner": "contracts/moonframe-motion-qa-coverage-v0.1.json",
+      "evidence": "25 candidate recipes, 18 interaction patterns, 180 motion coverage cells planned; CSS/browser reduced-motion smoke not full named visual review",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G11",
+      "domain": "component-and-template-realization",
+      "state": "partial-versus-planned",
+      "owner": "contracts/moonframe-component-manifest-v0.1.json",
+      "evidence": "151 proposed component IDs not all production exports; 72 specified page templates vs 43 showcase templates; 8 starter spec/current showcase; do not advertise all 151/72 as implemented",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G12",
+      "domain": "package-publication",
+      "state": "manifest-reconciled-not-release-verified",
+      "owner": "package.json",
+      "evidence": "Current @moonwitness/moonframe 0.1.1 declares private=false, publishConfig public, license MIT; repo tree lacks standalone LICENSE and registry publish proof; legacy package contract still describes private bootstrap",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G13",
+      "domain": "visual-reference-brand-separation",
+      "state": "specified-not-rendered",
+      "owner": "docs/visual/cinematic-mangapunk-reference-bible.md",
+      "evidence": "R01/R02/R04 Moonpunk, R03 Moonsmash, secondary grammar influences; Moonwitness logo/crown/characters not shipped Moonframe core",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G14",
+      "domain": "backlog-readiness",
+      "state": "verified-graph-structural",
+      "owner": "TODO.md",
+      "evidence": "460 unique task IDs, no missing dependency, no cycle; one forward dependency MF-VF-048 -> 049 is intentional or should be clarified in task sequencing",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": false
+    },
+    {
+      "id": "MF-M13-G15",
+      "domain": "documentation-truth-and-release-adoption",
+      "state": "current-overlay-authoritative",
+      "owner": "docs/audit/m13-final-reconciliation-2026-10-26.md",
+      "evidence": "Historical M0-M12 owner GO and obsolete private tarball statements are archive, not current public registry or M13 human visual approval",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G16",
+      "domain": "accessibility",
+      "state": "automated-partial",
+      "owner": "docs/qa/accessibility-visual-qa-bible.md",
+      "evidence": "Browser focus/contrast/responsive tests in CI; no complete screen-reader manual audit or unqualified WCAG AA product certificate",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    },
+    {
+      "id": "MF-M13-G17",
+      "domain": "security-auth-workspace",
+      "state": "consumer-seams-only",
+      "owner": "contracts/moonframe-auth-flow-contract-v0.1.json",
+      "evidence": "Reusable auth UI must not pretend backend login; server data/ontology/permission integration belongs to consumer application",
+      "blocksLocalCoding": false,
+      "blocksPublicRelease": true
+    }
+  ],
+  "successPolicy": {
+    "noHiddenApproval": true,
+    "manualVisualReviewerRequired": true,
+    "noTokenApprovalFromCssBridge": true,
+    "noAudioMediaApprovalFromSyntheticWebAudio": true,
+    "rightsReviewBeforePackaging": true,
+    "testLogsSameCommit": true,
+    "mayImplementOneBoundedMicrotaskPerAgent": true
+  },
+  "documentation": [
+    "docs/audit/m13-final-reconciliation-2026-10-26.md",
+    "docs/backlog/visual-fidelity-subatomic-tasks.md",
+    "docs/backlog/reference-mockups-subatomic-tasks.md",
+    "docs/handoff/moonframe-visual-reference-microagent-prompt.md"
+  ]
+}
