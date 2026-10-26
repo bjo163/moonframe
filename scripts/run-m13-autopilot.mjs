@@ -70,7 +70,7 @@ while (iteration < cyclesMax) {
   const output=path.join(logDir,'last-'+iteration+'.txt');
   const prompt=master+'\n\nRUNNER-OVERRIDE: Complete exactly ONE dependency-ready task this invocation, or record an objective blocker. Update its correct status/evidence. Do not commit or push: the host runner handles that after testing. End with M13_RESULT_JSON and return for next cycle. Never ask user a routine question.';
   const exit=await new Promise(resolve=>{
-    const p=spawn('codex',['exec','--sandbox','workspace-write','--ask-for-approval','never','--ephemeral','--output-last-message',output,'-'],{cwd:root,env:{...process.env,CI:'1'},stdio:['pipe','pipe','pipe']});
+    const p=spawn('codex',['exec','-c','approval_policy="never"','--sandbox','workspace-write','--ephemeral','--output-last-message',output,'-'],{cwd:root,env:{...process.env,CI:'1'},stdio:['pipe','pipe','pipe']});
     p.stdin.end(prompt);
     p.stdout.on('data',data=>{process.stdout.write(data);stream.write(data);});
     p.stderr.on('data',data=>{process.stderr.write(data);stream.write(data);});
