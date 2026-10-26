@@ -28,6 +28,9 @@ export default function BehaviorFixturePage() {
   const [erpStatusFilter, setErpStatusFilter] = useState('all');
   const [erpRegionFilter, setErpRegionFilter] = useState('all');
   const [erpSearch, setErpSearch] = useState('');
+  const [statesFixture, setStatesFixture] = useState(false);
+  const [previewState, setPreviewState] = useState<'loading' | 'empty' | 'error' | 'denied'>('loading');
+  const [previewNotice, setPreviewNotice] = useState('');
   const [checked, setChecked] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [menuChoice, setMenuChoice] = useState('none');
@@ -43,6 +46,7 @@ export default function BehaviorFixturePage() {
     setAuthFixture(query.get('fixture') === 'auth');
     setArticleFixture(query.get('fixture') === 'article');
     setErpFixture(query.get('fixture') === 'enterprise');
+    setStatesFixture(query.get('fixture') === 'states');
     const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
     setArchiveFixture(shouldOpenArchiveFixture);
     setArchiveOpen(shouldOpenArchiveFixture);
@@ -64,7 +68,7 @@ export default function BehaviorFixturePage() {
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
-      {!authFixture && !articleFixture && !erpFixture && <h1>Components</h1>}
+      {!authFixture && !articleFixture && !erpFixture && !statesFixture && <h1>Components</h1>}
       {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
         <header style={{ marginBlockEnd: '1.5rem' }}>
           <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
@@ -127,6 +131,19 @@ export default function BehaviorFixturePage() {
             <tbody>{filteredErpServices.map(row => <tr key={row.service}>{[row.service, row.environment, row.status, row.region, row.requests, row.latency, row.cost].map((value, index) => <td key={index} style={{ padding: '.55rem .7rem', whiteSpace: 'nowrap', borderBlockEnd: '1px solid var(--mf-border)' }}>{value}</td>)}</tr>)}</tbody>
           </table>
         </div>
+      </section>}
+      {statesFixture && <section data-fixture="states-preview" aria-labelledby="states-preview-title" style={{ maxWidth: 760, margin: '2rem auto', color: 'var(--mf-text)' }}>
+        <header style={{ marginBlockEnd: '1.5rem' }}><p style={{ color: 'var(--mf-muted)', fontSize: '.8rem' }}>WORKSPACE · LOCAL PREVIEW</p><h1 id="states-preview-title">Request state previews</h1><p>Choose a fixed state to inspect the message and its available action.</p></header>
+        <div role="group" aria-label="Choose request state" style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginBlockEnd: '1rem' }}>
+          {(['loading', 'empty', 'error', 'denied'] as const).map(state => <Button key={state} variant={previewState === state ? 'primary' : 'secondary'} aria-pressed={previewState === state} onClick={() => { setPreviewState(state); setPreviewNotice(''); }}>{state[0].toUpperCase() + state.slice(1)}</Button>)}
+        </div>
+        <section data-state={previewState} aria-live="polite" aria-busy={previewState === 'loading'} style={{ minHeight: 220, padding: '1.5rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
+          {previewState === 'loading' && <div><h2>Loading projects</h2><p role="status">Fetching the latest workspace projects…</p><div aria-hidden="true" style={{ height: 12, marginBlock: '.75rem', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface-raised)' }} /><div aria-hidden="true" style={{ height: 12, width: '72%', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface-raised)' }} /><Button variant="secondary" onClick={() => { setPreviewNotice(''); setPreviewState('empty'); }}>Cancel request</Button></div>}
+          {previewState === 'empty' && <div><h2>No projects yet</h2><p>Create a project to give your next idea a home.</p><Button onClick={() => setPreviewNotice('Create project preview opened; no project was created.')}>Create project</Button></div>}
+          {previewState === 'error' && <div role="alert"><h2>Projects could not load</h2><p>The workspace service did not respond. Your work has not changed.</p><Button onClick={() => { setPreviewNotice(''); setPreviewState('loading'); }}>Try again</Button></div>}
+          {previewState === 'denied' && <div role="alert"><h2>You do not have access to these projects</h2><p>Ask a workspace administrator to review your permissions.</p><Button onClick={() => setPreviewNotice('Access request prepared locally; nothing was sent.')}>Request access</Button></div>}
+          {previewNotice && <p role="status" aria-live="polite">{previewNotice}</p>}
+        </section>
       </section>}
       {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">
         <h2 id="archive-task-fixture-title">Project tasks</h2>

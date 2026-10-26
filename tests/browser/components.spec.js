@@ -275,6 +275,82 @@ test('compact enterprise rows, summary, and filters remain consistent across eve
   }
 });
 
+test('loading, empty, error, and denied request states keep their messages and actions consistent across every skin and mode', async ({ page, browser }) => {
+  test.setTimeout(120_000);
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    await page.goto('/lab/behavior?fixture=states');
+    const main = page.locator('main').first();
+    await main.evaluate((node, selection) => {
+      node.dataset.skin = selection.skin;
+      node.dataset.mode = selection.mode;
+    }, { skin: skin.id, mode });
+    const fixture = page.locator('[data-fixture="states-preview"]');
+    await expect(fixture).toBeVisible();
+    await expect(fixture.getByRole('heading', { level: 1, name: 'Request state previews' })).toBeVisible();
+    const panel = fixture.locator('[data-state]');
+    const stateChoice = fixture.getByRole('group', { name: 'Choose request state' });
+
+    const fontStatus = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return document.fonts.status;
+    });
+    expect(fontStatus).toBe('loaded');
+
+    async function capture(state) {
+      const screenshotPath = path.join(captureDir, `${skin.id}-${mode}-1440x960-state-${state}.png`);
+      await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+      const captureDetails = await page.evaluate(currentState => ({
+        viewport: `${window.innerWidth}x${window.innerHeight}`,
+        locale: navigator.language,
+        direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+        timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        frozenTime: new Date().toISOString(),
+        fixture: `/lab/behavior?fixture=states (${document.querySelector('[data-fixture="states-preview"]')?.textContent?.trim()}; ${document.querySelector('main')?.getAttribute('data-skin')} ${document.querySelector('main')?.getAttribute('data-mode')}; ${currentState} state)`,
+        state: `request-${currentState}`,
+        fontStack: getComputedStyle(document.querySelector('[data-fixture="states-preview"]')).fontFamily,
+        fontLoadStatus: document.fonts.status,
+        userAgent: navigator.userAgent,
+      }), state);
+      writeSkinCaptureProvenance(screenshotPath, { ...captureDetails, browserName: browser.browserType().name(), browserVersion: browser.version() });
+    }
+
+    await stateChoice.getByRole('button', { name: 'Loading', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'loading');
+    await expect(panel).toHaveAttribute('aria-busy', 'true');
+    await expect(panel.getByRole('status')).toContainText('Fetching the latest workspace projects…');
+    await expect(panel.getByRole('button', { name: 'Cancel request', exact: true })).toBeVisible();
+    await capture('loading');
+    await panel.getByRole('button', { name: 'Cancel request', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'empty');
+
+    await stateChoice.getByRole('button', { name: 'Empty', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'empty');
+    await expect(panel.getByRole('heading', { name: 'No projects yet' })).toBeVisible();
+    await expect(panel.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
+    await capture('empty');
+    await panel.getByRole('button', { name: 'Create project', exact: true }).click();
+    await expect(panel.getByRole('status')).toHaveText('Create project preview opened; no project was created.');
+
+    await stateChoice.getByRole('button', { name: 'Error', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'error');
+    await expect(panel.getByRole('alert')).toContainText('Projects could not load');
+    await expect(panel.getByRole('button', { name: 'Try again', exact: true })).toBeVisible();
+    await capture('error');
+    await panel.getByRole('button', { name: 'Try again', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'loading');
+
+    await stateChoice.getByRole('button', { name: 'Denied', exact: true }).click();
+    await expect(panel).toHaveAttribute('data-state', 'denied');
+    await expect(panel.getByRole('alert')).toContainText('You do not have access to these projects');
+    await expect(panel.getByRole('button', { name: 'Request access', exact: true })).toBeVisible();
+    await capture('denied');
+    await panel.getByRole('button', { name: 'Request access', exact: true }).click();
+    await expect(panel.getByRole('status')).toHaveText('Access request prepared locally; nothing was sent.');
+  }
+});
+
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
