@@ -1727,3 +1727,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added Moonglitch-scoped compact dashed diagnostic frames and consistent sizing for shared navigation, button, search, callout, empty-state, and stat SVG icons in `src/styles.css`. Existing glyphs and semantic/accessibility ownership are unchanged.
 - Dependencies MF-VF-120, MF-VF-050, and MF-VF-057 are implemented. Backlog status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint; visual review and acceptance remain pending.
 - No commit created. Rollback: remove the Moonglitch icon selector block, restore MF-VF-125 to planned, and remove the corresponding TODO and ledger notes.
+
+# MF-VF-410 — Define Moonhalftone screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonhalftone-reference-parity.md` with a repeatable same-data comparison against Moonzine and Moonpanel at desktop/mobile sizes, grayscale, and decoration-on/off. The record includes composition, gray identity, decoration-off structure, semantic surfaces, and responsive review criteria.
+- Dependency MF-VF-108 is implemented. Backlog status `implemented`; documentation/source inspection only. No screenshots, human observations, or verdict were recorded. Runner override honored: no package-manager commands, tests, validators, typecheck, build, or browser capture run. No acceptance claimed.
+- Rollback: remove the protocol, restore MF-VF-410 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.
