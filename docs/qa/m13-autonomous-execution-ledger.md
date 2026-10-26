@@ -1432,3 +1432,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonhalftone.md`, a contract-derived monochrome manga-print recipe and anti-overlap direction. SHA-256: `880C06AE626BC3E181513BF1BCC9325F1C9256F461E49C477586996F2776F90F`.
 - Dependency `MF-VF-015` is implemented. Backlog status: `implemented`. `git diff --check` passed. Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot/rendering, or human review run. Rights and acceptance remain pending.
 - Rollback: remove the brief and restore MF-VF-108 to planned in the backlog; remove matching TODO and ledger entries. No commit created; host runner owns verification and checkpoint.
+
+## MF-VF-100 — Draw Moonzine edition badge
+
+- Added `assets/source/skins/moonzine/edition.svg`, an original layered-paper edition badge with live Moonframe/Moonzine wording, an accessible title/description, and monochrome `currentColor` geometry.
+- SHA-256: `bee1a2d3485fee115669c7776909ac3cd26f21557ed8886281837396e5dcc663`. Dependencies MF-VF-096 and MF-VF-039 are implemented. Status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human visual review run. Rights review, small-size optical review, and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG, restore MF-VF-100 to planned, and remove this ledger entry.

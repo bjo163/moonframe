@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe Moonzine edition</title>
+  <desc id="desc">A layered paper label identifying Moonzine as a Moonframe visual edition.</desc>
+  <path d="M9 8h222v48H9l7-7-7-7 7-8-7-8 7-8z" fill="Canvas" stroke="currentColor" stroke-width="2" />
+  <path d="M18 13h3v38h-3zM25 13h2v38h-2z" fill="currentColor" opacity=".45" />
+  <path d="M34 15h190v34H34z" fill="none" stroke="currentColor" stroke-width="1" />
+  <text x="40" y="28" fill="currentColor" font-family="ui-serif, Georgia, serif" font-size="9" font-style="italic" letter-spacing="1">MOONFRAME / EDITION</text>
+  <text x="40" y="43" fill="currentColor" font-family="ui-serif, Georgia, serif" font-size="15" font-weight="700" letter-spacing="1.2">MOONZINE</text>
+  <path d="m210 19 9 12-9 14-9-14z" fill="currentColor" />
+</svg>
