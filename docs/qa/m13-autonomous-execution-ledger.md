@@ -1604,3 +1604,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/creative-reference/r04/moon-skyline.svg`, an original, self-contained abstract city silhouette and crescent moon scene, intended only as optional decoration separate from the sign-in form. SHA-256: `3340A8B359A52FD1068251218F35BBA5C3943980D0CB31BCFDFD7D7845683366`.
 - Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, viewport captures, rights review, or human visual review run. Host runner owns verification and checkpoint; no acceptance claimed.
 - Checkbox counts advance to 121/292 foundation + 93/168 reference + 28/28 preflight = 242/488 checked. No commit created. Rollback: remove the SVG, restore MF-VF-377 to planned, and remove matching TODO/ledger evidence.
+## MF-VF-378 — Draw abstract lunar-halo backplate
+
+- Added original `assets/source/creative-reference/r04/lunar-halo.svg`, a self-contained optional crescent and low-opacity orbital decoration without embedded UI copy, external references, scripts, or event handlers. SHA-256: `7fe4ce36ea247e57f63be0dd07b94cc62d761959cf3f7804ce481ea6f4b5aceb`.
+- Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; static source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendered-size/viewport captures, rights review, or human review run; host runner owns verification/checkpoint. Rights, optical review, and acceptance remain pending.
+- No commit created. Rollback: remove the SVG, restore MF-VF-378 to planned, and remove this ledger entry and matching TODO update.

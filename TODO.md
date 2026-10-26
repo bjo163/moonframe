@@ -4,6 +4,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-378):** Added original optional lunar-halo vector `assets/source/creative-reference/r04/lunar-halo.svg` (SHA-256 `7fe4ce36ea247e57f63be0dd07b94cc62d761959cf3f7804ce481ea6f4b5aceb`). Dependency MF-VF-025 is implemented. Status `implemented`; static source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendered-size/viewport captures, rights review, or human review run; host runner owns checks/checkpoint. No acceptance claimed. Counts incremented from prior summary: 122/292 foundation + 94/168 reference + 28/28 preflight = 244/488 checked; 244 unchecked. Checked does not imply human review, rights clearance, or acceptance.
+
 **Live execution update (2026-10-27, MF-VF-081):** Captured Moonpunk Light at 1440×960 and 360×800; `pnpm run test:browser` passed 67/67. PNG hashes and source provenance are recorded in `docs/qa/visual-fidelity-evidence-ledger.md`; task status is `captured`. Human visual review and acceptance remain pending.
 
 **Live execution update (2026-10-27, MF-VF-412):** Added a Moonsmash anti-clone screenshot review protocol at `docs/qa/reviews/moonsmash-reference-parity.md`, covering same-data desktop/mobile grayscale comparisons with decoration on/off and normal form semantics. Protocol status is `implemented`; no screenshots or human verdict are claimed. Per runner override, no package-manager commands, validators, tests, typecheck, build, or captures were run; host runner owns checks and checkpoint. Current checked counts: 121/292 foundation + 91/168 reference + 28/28 preflight = 240/488; 248 unchecked. Checked does not imply human review, rights clearance, or acceptance.
