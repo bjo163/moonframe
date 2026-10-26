@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-26 · Status: MF-VF-293 through MF-VF-296 captured; remaining tasks retain their recorded states · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-26 · Status: 6 captured, 2 implemented, 160 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -13,8 +13,8 @@
 
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
-| H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 3 captured, 9 planned |
-| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 0 done |
+| H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 6 captured, 6 planned |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 2 implemented, 22 planned |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **3 captured, 165 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **6 captured, 2 implemented, 160 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -68,9 +68,9 @@
 - [x] **MF-VF-305 — Extract top navigation landmark hierarchy** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-topbar.tsx (proposed)`. **AC:** Logical breadcrumbs, search, status, profile; no screenshot-as-header.
   - **Evidence (2026-10-26):** Added a semantic breadcrumb navigation landmark, task search, labeled update status and named profile avatar to the live R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx`; search remains connected to the table filter and the redundant table search was removed. Responsive styling stacks the utility bar on narrow screens. `node --check tests/browser/skins.spec.js`, contracts, handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Targeted browser checks passed 2/2; full browser suite passed all 30 skin × mode cases and the no-art fallback test (63/64 total); one unrelated existing dashboard-filter test timed out at 30 seconds. Status remains `implemented`, not captured. No human visual review, source image or rights claim. Rollback: revert the fixture, CSS and test changes and restore this task to planned.
-- [ ] **MF-VF-306 — Extract ink-black left sidebar shell** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-306 — Extract ink-black left sidebar shell** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-sidebar.tsx (proposed)`. **AC:** Persistent desktop rail with keyboard nav and constrained scrawl decoration.
-  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Evidence (2026-10-26):** Added a live DOM sidebar to the R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx` and `lab.css`: fixed-width ink-black desktop rail, semantic labeled navigation with focusable buttons and `aria-current`, high-contrast focus outline, and one small aria-hidden decorative scratch clipped inside the rail. At widths up to 800px it becomes a horizontal rail; at 480px the generic brand text yields space to the navigation. Uses neutral Northstar demo identity and no reference imagery or Moonwitness IP. Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser matrix passed 30/30 skin × mode cases including navigation accessible names, focus, responsive layouts, and task interaction. No capture or human visual approval claimed. Rollback: revert the fixture markup/CSS, relevant test adjustment and this task status/evidence.
 - [ ] **MF-VF-307 — Draw independent rough white sidebar border source** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r01/rough-rail-frame.svg (proposed)`. **AC:** Layer art only; CSS keeps accessible border and focus separate.
   - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.

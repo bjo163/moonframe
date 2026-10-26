@@ -575,3 +575,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - Previous live count: 96 implemented-or-captured, 392 planned, 0 explicitly blocked. This task adds one implemented record: 97 implemented-or-captured, 391 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
+
+## MF-VF-306 — Extract ink-black left sidebar shell
+
+- Implemented semantic sidebar navigation and responsive ink-black rail in `apps/moonframe/app/(lab)/lab/page.tsx` and `lab.css`; marks are constrained decorative CSS and hidden from assistive technology. Dependency MF-VF-022 is implemented.
+- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser matrix passed 30/30 skin × mode cases, including responsive breakpoints, keyboard focus, and accessible navigation names. Status is `implemented`, not captured. No human review or asset-rights claim.
+- Live task rows: 98 implemented-or-captured (20.1%), 390 planned (79.9%), 0 explicitly blocked of 488. Browser verification is complete for this task; commit/push follows scoped checkpoint.
+- Rollback: revert the fixture/CSS and task/TODO/ledger evidence for MF-VF-306.

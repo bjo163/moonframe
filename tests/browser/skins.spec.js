@@ -114,7 +114,9 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(dashboardFixture.getByText('Sunday, October 25, 2026', { exact: true })).toBeVisible();
     const fixtureNavigation = dashboardFixture.getByRole('navigation', { name: 'Workspace sections' });
     const fixtureNavItems = fixtureNavigation.getByRole('button');
-    await expect(fixtureNavItems).toHaveText(['Overview', 'Projects', 'Tasks', 'Reports', 'Settings']);
+    for (const [index, label] of ['Overview', 'Projects', 'Tasks', 'Reports', 'Settings'].entries()) {
+      await expect(fixtureNavItems.nth(index)).toHaveAccessibleName(label);
+    }
     await expect(fixtureNavItems.nth(0)).toHaveAttribute('aria-current', 'page');
     await fixtureNavigation.getByRole('button', { name: 'Reports', exact: true }).click();
     await expect(fixtureNavigation.getByRole('button', { name: 'Reports', exact: true })).toHaveAttribute('aria-current', 'page');

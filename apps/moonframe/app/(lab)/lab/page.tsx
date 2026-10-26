@@ -88,6 +88,15 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
         <Avatar fallback="NS" alt="Northstar Studio profile" />
       </div>
     </div>
+    <div className="fixture-dashboard-body">
+      <aside className="fixture-dashboard-rail" aria-label="Northstar workspace sidebar">
+        <a className="fixture-dashboard-rail-brand" href="#fixture-dashboard-title"><span aria-hidden="true">N</span><span>Northstar<small>MISSION CONTROL</small></span></a>
+        <nav aria-label="Workspace sections">
+          {navItems.map((item, index) => <button key={item} type="button" aria-current={activeNav === item ? 'page' : undefined} onClick={() => setActiveNav(item)}><span className="fixture-dashboard-rail-glyph" aria-hidden="true">{['⌂', '◇', '≡', '↗', '⚙'][index]}</span>{item}</button>)}
+        </nav>
+        <span className="fixture-dashboard-rail-scratch" aria-hidden="true" />
+      </aside>
+      <div className="fixture-dashboard-main">
     <div className="fixture-dashboard-heading">
       <div>
         <div className="demo-eyebrow">SHARED QA FIXTURE</div>
@@ -99,9 +108,6 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
         <Switch label="Hide decorative elements" checked={decorationsOff} onChange={event => onDecorationsOffChange(event.currentTarget.checked)} />
       </div>
     </div>
-    <nav className="fixture-dashboard-nav" aria-label="Workspace sections">
-      {navItems.map(item => <button key={item} type="button" aria-current={activeNav === item ? 'page' : undefined} onClick={() => setActiveNav(item)}>{item}</button>)}
-    </nav>
     <dl className="fixture-dashboard-metrics" aria-label="Dashboard metrics">
       {dashboardFixtureMetrics.map(metric => <div className="fixture-dashboard-metric" key={metric.label}>
         <dt>{metric.label}</dt>
@@ -143,6 +149,8 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
       </div>
     </section>
     <DashboardProfileForm />
+      </div>
+    </div>
   </section>;
 }
 
