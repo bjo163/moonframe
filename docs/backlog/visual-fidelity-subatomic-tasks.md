@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 38 implementation/evidence tasks completed in this wave, 253 remaining planned and one owner-blocked · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 39 implementation/evidence tasks completed in this wave, 252 remaining planned and one owner-blocked · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockup Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 38 implemented, 421 pending, 1 owner-approval blocker**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockup Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 39 implemented, 420 pending, 1 owner-approval blocker**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -25,8 +25,8 @@
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
-| G — final 9 specimens, cross-family QA and release gate | 23 | 6 |
-| **TOTAL** | **292** | **38** |
+| G — final 9 specimens, cross-family QA and release gate | 23 | 7 |
+| **TOTAL** | **292** | **39** |
 
 ## A — P0 repair release evidence and CI
 
@@ -901,9 +901,10 @@
   - **File scope:** `apps/moonframe/app/(lab)/lab/behavior/page.tsx`, `tests/browser/components.spec.js`, `docs/qa/reference-screens/auth.md`. **Acceptance:** Explicit simulated authentication fixture.
   - **Evidence:** See the [frozen authentication preview](../qa/reference-screens/auth.md): explicit query fixture with a required email/password form and a local-only submit result; it sends or persists no credentials and creates no account/session. The document indexes 30 provenance-bound ready-state captures for all skins and modes.
   - **Verify:** `pnpm check` passed; `pnpm run test:browser` 58/58 at `1ac3ab57ec6ec4dee47919335545f64814e6ffa8`; capture audit verified 30/30 hashes, one source fingerprint/commit, exact auth fixture/state, loaded fonts and 1440×960 viewport. Handoff validator and `git diff --check` passed. No real auth or human visual approval claimed; rollback: revert implementation commits and matching evidence/count commit.
-- [ ] **MF-VF-276 — Freeze editorial long article specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/reference-screens/article.md (proposed)`. **Acceptance:** Same typography content and image context.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-276 — Freeze editorial long article specimen** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/behavior/page.tsx`, `tests/browser/components.spec.js`, `docs/qa/reference-screens/article.md`. **Acceptance:** Same typography content and image context.
+  - **Evidence:** See the [frozen editorial article](../qa/reference-screens/article.md): fixed headline, deck, byline, date, reading time, section order, quote, caption and accessible description for one CSS-drawn abstract image context; 30 provenance-bound captures cover every skin/mode. Human visual review remains pending.
+  - **Verify:** `pnpm check` passed; `pnpm run test:browser` 59/59 at `b71b11376c42a734444b5927a3cb945bd3cfa315`; capture audit verified 30/30 hashes, shared article fixture/fingerprint/commit, loaded fonts and 1440×960 viewport. Contract/handoff validators and `git diff --check` passed. No parity or human approval claimed; rollback: revert implementation commit and matching evidence/count commit.
 - [ ] **MF-VF-277 — Freeze compact ERP specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reference-screens/enterprise.md (proposed)`. **Acceptance:** Same dense rows, summary and filters.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
