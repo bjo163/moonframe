@@ -1384,3 +1384,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Compared `contracts/moonframe-skin-specifications-v1.0.json` against canonical theme IDs: all 15 IDs match in count and order. The spec remains `specified-not-implemented`; no implementation or visual approval is implied.
 - JSON parsing and ordered-list comparison via Node succeeded. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshots, or human review run. No commit created; host runner owns checks and checkpoint.
 - Rollback: remove the added `m13StatusReview` metadata and restore the MF-VF-438 row to planned; remove this ledger entry.
+# MF-VF-108 — Write Moonhalftone visual direction
+
+- Added `docs/visual/skins/moonhalftone.md`, a contract-derived monochrome manga-print recipe and anti-overlap direction. SHA-256: `880C06AE626BC3E181513BF1BCC9325F1C9256F461E49C477586996F2776F90F`.
+- Dependency `MF-VF-015` is implemented. Backlog status: `implemented`. `git diff --check` passed. Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot/rendering, or human review run. Rights and acceptance remain pending.
+- Rollback: remove the brief and restore MF-VF-108 to planned in the backlog; remove matching TODO and ledger entries. No commit created; host runner owns verification and checkpoint.

@@ -1,4 +1,5 @@
 # Moonframe UI — Master TODO (live execution index)
+**Live execution update (2026-10-26, MF-VF-108):** Added the Moonhalftone monochrome manga-print direction brief at `docs/visual/skins/moonhalftone.md` (SHA-256 `880C06AE626BC3E181513BF1BCC9325F1C9256F461E49C477586996F2776F90F`). Dependency MF-VF-015 is implemented. Source review and `git diff --check` passed; runner override honored, so validators, package-manager commands, suites, typecheck, build, rendering, and human review were not run. Written direction only; rights, visual review, and acceptance remain pending. Host runner owns applicable checks and checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-288):** Added an SVG import negative-fixture matrix to `docs/qa/original-asset-validation-plan.md` covering scripts, event handlers, `foreignObject`, external references, data/CSS URLs, DTD/entities, javascript URLs, and a valid static control. It documents expected rejection and clarifies that the existing brand-mark checker is not a general importer sanitizer. Status `implemented`; no validators or test/build commands run per runner override. Host runner owns verification and checkpoint.
 
