@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-372 — Create semantic username/email field
+
+- Added `apps/moonframe/templates/visual-reference/r04-email-field.tsx` and its CSS module: a native email field with an associated visible label, `autocomplete=email`, optional help/error descriptions, and an invalid state. Focus and forced-colors styling are included.
+- Dependency `MF-VF-025` is implemented. Static source inspection only; no validators, package-manager commands, test suites, typecheck, build, browser capture, or human review run under the runner override. Host runner owns verification and checkpoint. No authentication behavior or human acceptance is claimed.
+- Status `implemented`; no commit created. Rollback: remove the component and CSS module, restore the task row to planned, and remove this entry and matching TODO update.
+
 ## MF-VF-113 — Style Moonhalftone semantic icon frames
 
 - Added skin-scoped screentone-backed frames and consistent dimensions for navigation, button, search, callout, empty-state, and stat icons in `src/styles.css`.

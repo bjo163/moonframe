@@ -1,0 +1,58 @@
+.field {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.label {
+  color: var(--mf-text, #171717);
+  font: inherit;
+  font-weight: 650;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--mf-border, #777);
+  border-radius: var(--mf-radius-sm, 0.25rem);
+  color: var(--mf-text, #171717);
+  background: var(--mf-surface, #fff);
+  font: inherit;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--mf-danger, #b42318);
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--mf-focus, #2457d6);
+  outline-offset: 2px;
+}
+
+.help,
+.error {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.help {
+  color: var(--mf-text-muted, #555);
+}
+
+.error {
+  color: var(--mf-danger, #b42318);
+}
+
+@media (forced-colors: active) {
+  .input {
+    border-color: FieldText;
+    color: FieldText;
+    background: Field;
+  }
+
+  .input:focus-visible {
+    outline-color: Highlight;
+  }
+}

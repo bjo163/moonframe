@@ -517,6 +517,8 @@ Every task: exact HEAD, current issue/ADR, no overwritten user work, scoped diff
 
 **Live execution update (2026-10-26, MF-VF-369):** Added an R04 split-screen authentication layout with form-first DOM/read order, optional artwork second, and responsive single-column to equal-flex-column behavior. `MF-VF-025` is implemented. The live checkbox recount is 211/488 checked and 277/488 unchecked across all three M13 backlogs; checked tasks can still be pending human review or external approval. Static source review only; no package-manager commands, validators, suites, typecheck, build, screenshots, or human review run per runner override. Host runner owns verification and checkpoint; no real authentication or reference parity is claimed.
 
+**Live execution update (2026-10-26, MF-VF-372):** Added a reusable R04 email field with visible label, email autocomplete, associated optional help/error text, and focus/forced-colors styling. Dependency `MF-VF-025` is implemented. Status is `implemented`; source inspection only. No package-manager commands, validators, tests, typecheck, build, browser capture, or human review run under the runner override; host runner owns verification/checkpoint. No authentication behavior or acceptance is claimed.
+
 
 **Live execution update (2026-10-26, MF-VF-317):** Added a data-driven R01 content grid with creation, signal, operations and activity-stream regions plus responsive desktop/tablet/phone layouts. The count advances to 108/488 implemented-or-captured / 380/488 planned. `git diff --check` passed; host runner owns remaining verification. No capture, reference comparison, human review, rights approval or acceptance is claimed.
 
