@@ -1281,3 +1281,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Audited `apps/moonframe/app/(lab)/lab/lab.css` and the dashboard fixture structure. Decoration-off selectors target decorative glyphs, swatches, and marginalia; visible text labels, navigation controls, dashboard content, form fields, and actions remain. The shared `data-motion="reduced"` rule disables animation/transitions and smooth scrolling without suppressing state or focus styling.
 - Dependencies MF-VF-074, MF-VF-075, and MF-VF-079 are implemented. Status: `implemented`; source review only. No package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or human review run under runner override. Visual/accessibility verification and acceptance remain pending host runner.
 - No commit created; host runner owns verification and checkpoint. Rollback: restore the MF-VF-080 backlog row and TODO/ledger evidence to planned.
+
+## MF-VF-297 — R01 source import blocker
+
+- The approved local archive /mnt/data/moonframe_m13_reference_originals.zip is absent (Test-Path returned False); the source PNG is not present in the checkout. Its expected SHA-256 is 31829877f5499480ef8ebbfd2e0b103016917216c3ac70a69d0595b2bf2efa04.
+- Status changed to locked-external-approval. Resume requires owner-supplied original bytes matching the digest plus explicit review-use rights approval. No reuse or distribution rights are inferred.
+- Dependency MF-VF-014 is implemented. No package-manager commands, tests, typecheck, build, or commit run/created per runner override. Rollback: restore the backlog row to planned and remove this ledger entry.
