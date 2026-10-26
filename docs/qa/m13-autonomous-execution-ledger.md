@@ -678,3 +678,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-022 is implemented. Status: `implemented`; no rights clearance, human optical review, or acceptance claimed. Runner override honored: no package-manager commands, tests, typecheck, build, validator, or browser capture run. Host runner owns verification/checkpoint.
 - Rollback: remove the SVG and revert this ledger entry and the matching backlog/TODO evidence.
 - Counts: 110/488 implemented-or-captured, 378/488 planned, 0 explicitly blocked. Counts do not imply capture, review, or acceptance.
+
+## MF-VF-319 — Build radial network hub as data visualization seam
+
+- Added `apps/moonframe/templates/visual-reference/r01-signal-hub.tsx`, a reusable consumer-data-driven SVG relationship view with a visible relationship list and node-value table as accessible alternatives. Dangling relationship IDs are omitted.
+- Dependency MF-VF-022 is implemented. Status: `implemented`; no validators, package-manager commands, suites, typecheck, build, browser capture, or human review run/claimed per runner override. No reference media or rights/acceptance claim.
+- Rollback: remove the component and restore the matching backlog/TODO evidence.
+- Counts: prior 110/488 implemented-or-captured, 378/488 planned, 0 blocked; now 111/488, 377/488, 0 blocked.
