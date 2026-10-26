@@ -1,6 +1,6 @@
 # Moonframe M13 — Nonvisual Preflight: SFX / Tokens / Motion / Package / Security Microtasks
 
-**2026-10-26 · Live status: 8 captured, 11 implemented, 9 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
+**2026-10-26 · Live status: 9 captured, 11 implemented, 8 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
 
 **Rule:** A green build approves source integrity, not sound playback safety, npm license rights, original artwork or full WCAG status. Work one ID per local agent session. Each task must provide before/after SHA, scoped file diff, tests actually run, fail/pass, source/rights as applicable, status and rollback.
 
@@ -71,9 +71,9 @@
 - [x] **MF-PF-017 — Test 1000ms global rate and 2000ms event deduplication** · **P1** · `implemented` · **deps:** `MF-PF-016` · **GitHub issue:** not-created
   - **Scope:** `tests/browser/components.spec.js`. **Acceptance:** Real clock-controlled browser tests; do not claim human approval from timing alone
   - **Evidence (source HEAD `a9d1386`):** Added Playwright-clock regression for global 1000 ms throttling and per-event 2000 ms deduplication. The test proves a different event is rate-limited immediately, the same event remains deduplicated after 1001 ms, and it plays again after 2000 ms. Targeted component browser suite passed 15/15; full browser suite 53/53, unit 12/12, typecheck, build 88 routes, and contract/handoff validators passed. No human timing approval claimed.
-- [ ] **MF-PF-018 — Verify SFX bundled asset status stays zero and no accidental media shipped** · **P1** · `planned` · **deps:** `MF-PF-016` · **GitHub issue:** not-created
+- [x] **MF-PF-018 — Verify SFX bundled asset status stays zero and no accidental media shipped** · **P1** · `captured` · **deps:** `MF-PF-016` · **GitHub issue:** not-created
   - **Scope:** `scripts/verify-m13-handoff.mjs + contracts/moonframe-asset-manifest-v0.1.json`. **Acceptance:** No unlicensed sound binaries included in npm pack; opt-in synthesized-only clearly stated
-  - **Evidence:** MF-PF-018 remains planned; no implementation or verification is claimed.
+  - **Evidence (source HEAD `12555d2`):** `src/` contains no `.wav`, `.mp3`, `.ogg`, `.m4a`, `.aac`, `.flac`, or audio `.webm` assets. `producedAssets` is empty and `producedAudioFiles` is 0; package metadata and runtime text identify the in-memory WebAudio synth as opt-in and no licensed media pack. `pnpm pack --dry-run --json` exited 0 and listed the exact package files; no media binaries were included. No tarball was published. This is package inventory evidence, not license approval for future assets.
 
 ## P1 — tokens, theme, brand and motion
 
