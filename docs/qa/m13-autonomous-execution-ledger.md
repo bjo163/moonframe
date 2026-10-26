@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 69 implemented-or-captured (14 baseline implemented + 11 captured + 44 implemented), 6 blocked, 413 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 69/488 (14.1%) done/captured; 413/488 (84.6%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 419/488 (85.9%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 70 implemented-or-captured (14 baseline implemented + 11 captured + 45 implemented), 6 blocked, 412 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 70/488 (14.3%) done/captured; 412/488 (84.4%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 418/488 (85.7%) remain incomplete.
 
 
 
@@ -50,6 +50,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Direct inspection contrasts Mooncrash's thick top rail, double sidebar and numbered mechanical panels with Moonledger's compact table spacing, aligned columns, restrained header bands and alternating record rows. Human visual approval remains pending.
 - Provenance/hash audit: 4/4 hashes match sidecars; shared source `a2baccb89d904d628187899396b74c26fa8e2c3b`, fingerprint `016c6522a24cab82e969046bf71969897b4086c83362b162fc87dd89b7a4a27c`, 1440×960 fixed fixture/time, Chromium 156, fonts loaded.
 - Browser suite at source was 61/61 (MF-VF-278), functional/capture evidence only. Rollback: revert this evidence/count commit.
+
+## MF-VF-284 — Compare Moonraw vs Classic
+
+- Scope: `docs/qa/reviews/raw-classic.md`; four existing ignored default captures (two skins × light/dark).
+- Direct inspection contrasts Moonraw's full-width horizontal nav, monospace labels, flat surfaces and thin rules with Classic's left rail, rounded cards/controls and softly elevated gradient hero. The captured composition distinction holds in both modes; human approval remains pending.
+- Provenance/hash audit: 4/4 hashes match; shared source `a2baccb89d904d628187899396b74c26fa8e2c3b`, fingerprint `016c6522a24cab82e969046bf71969897b4086c83362b162fc87dd89b7a4a27c`, fixed fixture/time/viewport/browser, fonts loaded.
+- Browser suite at source was 61/61 (MF-VF-278), not a human visual verdict. Rollback: revert this evidence/count commit.
 ## MF-VF-278 — Freeze loading/empty/error/denied specimen
 
 - Scope: `apps/moonframe/app/(lab)/lab/behavior/page.tsx`; `tests/browser/components.spec.js`; `docs/qa/reference-screens/states.md`; 120 ignored captures in `artifacts/skins/*-1440x960-state-{loading,empty,error,denied}.png` and provenance sidecars.
