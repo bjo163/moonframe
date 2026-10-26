@@ -71,6 +71,8 @@ function loadProjects(): ProjectItem[] {
 function DashboardFixture() {
   const [taskSearch, setTaskSearch] = useState('');
   const [taskSort, setTaskSort] = useState<'due-date' | 'task'>('due-date');
+  const [activeNav, setActiveNav] = useState('Overview');
+  const navItems = ['Overview', 'Projects', 'Tasks', 'Reports', 'Settings'];
   const visibleFixtureTasks = useMemo(() => dashboardFixtureTasks
     .filter(item => `${item.id} ${item.task} ${item.owner} ${item.status}`.toLowerCase().includes(taskSearch.trim().toLowerCase()))
     .sort((a, b) => taskSort === 'task' ? a.task.localeCompare(b.task, 'en-US') : a.date.localeCompare(b.date)), [taskSearch, taskSort]);
@@ -84,6 +86,9 @@ function DashboardFixture() {
       </div>
       <time dateTime="2026-10-25">Sunday, October 25, 2026</time>
     </div>
+    <nav className="fixture-dashboard-nav" aria-label="Workspace sections">
+      {navItems.map(item => <button key={item} type="button" aria-current={activeNav === item ? 'page' : undefined} onClick={() => setActiveNav(item)}>{item}</button>)}
+    </nav>
     <dl className="fixture-dashboard-metrics" aria-label="Dashboard metrics">
       {dashboardFixtureMetrics.map(metric => <div className="fixture-dashboard-metric" key={metric.label}>
         <dt>{metric.label}</dt>

@@ -20,6 +20,15 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
     await expect(dashboardFixture.getByText('Northstar Studio', { exact: true })).toBeVisible();
     await expect(dashboardFixture.getByText('Sunday, October 25, 2026', { exact: true })).toBeVisible();
+    const fixtureNavigation = dashboardFixture.getByRole('navigation', { name: 'Workspace sections' });
+    const fixtureNavItems = fixtureNavigation.getByRole('button');
+    await expect(fixtureNavItems).toHaveText(['Overview', 'Projects', 'Tasks', 'Reports', 'Settings']);
+    await expect(fixtureNavItems.nth(0)).toHaveAttribute('aria-current', 'page');
+    await fixtureNavigation.getByRole('button', { name: 'Reports', exact: true }).click();
+    await expect(fixtureNavigation.getByRole('button', { name: 'Reports', exact: true })).toHaveAttribute('aria-current', 'page');
+    await expect(fixtureNavItems.nth(0)).not.toHaveAttribute('aria-current', 'page');
+    await fixtureNavigation.getByRole('button', { name: 'Overview', exact: true }).click();
+    await expect(fixtureNavItems.nth(0)).toHaveAttribute('aria-current', 'page');
     for (const [label, value] of [['Open tasks', '12'], ['In progress', '4'], ['Completed this week', '18']]) {
       await expect(dashboardFixture.locator('.fixture-dashboard-metric').filter({ hasText: label })).toContainText(value);
     }
