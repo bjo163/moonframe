@@ -1,5 +1,14 @@
 # M13 autonomous execution ledger
 
+## MF-VF-312 — Place painted micro-caption / marginalia region
+
+- Added fixture-local marginalia as a separate DOM paragraph in `apps/moonframe/app/(lab)/lab/page.tsx`, styled in `apps/moonframe/app/(lab)/lab/lab.css`. The content is optional decoration, hidden by the existing decorations-off setting, and remains outside navigation/action controls.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no capture, human review, or acceptance claimed. No source image or external asset used.
+- Runner override honored: no package-manager commands, test suites, typecheck, build, browser capture, or validators run. Host runner will verify and checkpoint; no commit created. Rollback: revert scoped markup/CSS and matching backlog/TODO/ledger evidence.
+- Counts based on preceding live ledger: 103 implemented-or-captured, 385 planned, 0 explicitly blocked. This task moves one to implemented: 104/384/0 of 488. Human review and acceptance remain unclaimed.
+
+## Recent prior entries
+
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
 ## MF-VF-304 — Nonbinding reference mood palette
 

@@ -144,6 +144,8 @@ button svg, a svg { flex-shrink: 0; }
 .fixture-dashboard-status span { inline-size: 7px; block-size: 7px; border-radius: 50%; background: var(--mf-accent); }
 .fixture-dashboard-heading h2 { max-inline-size: 14ch; margin: 8px 0 3px; font-family: var(--mf-display); font-size: clamp(32px, 5.2vw, 64px); line-height: .98; letter-spacing: -.055em; text-wrap: balance; }
 .fixture-dashboard-heading p { margin: 0; color: var(--mf-muted); font-size: 12px; }
+.fixture-dashboard-heading .fixture-dashboard-marginalia { margin-block-start: 10px; color: var(--mf-accent); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 9px; font-style: italic; letter-spacing: .04em; }
+.mf-shell[data-decoration-off="true"] .fixture-dashboard-marginalia { display: none; }
 .fixture-dashboard-heading-actions { display: grid; justify-items: end; gap: 10px; }
 .fixture-dashboard-heading-actions time { color: var(--mf-muted); font-size: 11px; }
 .fixture-dashboard-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }

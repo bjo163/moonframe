@@ -102,6 +102,7 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
         <div className="demo-eyebrow">SHARED QA FIXTURE</div>
         <h2 id="fixture-dashboard-title">Overview</h2>
         <p>Northstar Studio</p>
+        <p className="fixture-dashboard-marginalia" data-decorative="true">Field note 07 · readiness before launch</p>
       </div>
       <div className="fixture-dashboard-heading-actions">
         <time dateTime="2026-10-25">Sunday, October 25, 2026</time>
