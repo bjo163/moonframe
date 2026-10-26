@@ -9789,5 +9789,23 @@
     "neverAutoAcceptSnapshots": true,
     "noEvidenceNoPass": true,
     "pairwiseReviewsElsewhere": true
+  },
+  "creativeReferenceReview": {
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "referenceIds": [
+      "MWX-REF-001",
+      "MWX-REF-002",
+      "MWX-REF-003",
+      "MWX-REF-004"
+    ],
+    "templateKinds": [
+      "admin-mission-control",
+      "public-story-landing",
+      "campaign-poster",
+      "cinematic-auth"
+    ],
+    "status": "reference-only-no-capture-approved",
+    "referenceBinaryCommitted": false,
+    "gate": "Run same-content skin-pair fixtures separately from image-vs-page fidelity; compare screenshot only after source PNG digest import; do not change baseline cell statuses or counts."
   }
 }
