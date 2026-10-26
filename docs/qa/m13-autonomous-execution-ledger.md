@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-081 — Record missing host-runner screenshot capture
+
+- Confirmed `MF-VF-081` prerequisites `MF-VF-017, 019, 027, 028, 078, 079, 080` are checked as implemented. Required outputs are absent: `artifacts/skins/moonpunk-light-1440x960-default.png` and `artifacts/skins/moonpunk-light-360x800-default.png` (and their provenance sidecars).
+- Runner override prohibits package-manager commands and test suites, including Playwright browser capture. Marked the task `blocked` until the host runner captures both fixed-fixture screenshots and records their hashes/provenance; no evidence or approval was fabricated. Task remains unchecked; aggregate counts are unchanged.
+- Inspection only; no validator, package-manager command, test, typecheck, build, or screenshot run. No commit created. Rollback: restore the task row to `planned` and remove this entry plus the matching TODO update.
+
 ## MF-VF-424 — Add creative-reference schema validation
 
 - Added `schemas/moonframe-creative-reference.schema.json` for required reference identity, digest, dimensions, skin metadata, and status fields. Extended `scripts/validate-contracts.mjs` with checks for duplicate IDs, unknown canonical skins, missing statuses, and claimed review without reviewer/date evidence; added negative self-test fixtures.
