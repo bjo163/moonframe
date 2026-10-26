@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+# MF-VF-359 — Create torn-caption generic vector band
+
+- Added `assets/source/creative-reference/r03/caption-band.svg`, an original static torn-edge paper backing with a clear center reserved for separately supplied live text. It includes an SVG title and description and contains no embedded copy, lyrics, consumer marks, performer imagery, scripts, event handlers, or external resources.
+- SHA-256: `7a3297b50def651464516ca40c31145fc2a6684414c0d4568ec21f7f28a4e091`.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Host runner owns verification/checkpoint. Rights clearance, optical review, and acceptance remain pending.
+- Live checkbox count across the three M13 backlogs: 158/488 implemented-or-captured-or-implemented, 330 pending, 0 explicitly blocked. This is a task-status count, not a review or acceptance claim.
+- Rollback: remove the SVG and restore the MF-VF-359 backlog row and this ledger entry.
+
 ## MF-VF-061 — Draw semantic filter icon
 
 - Added `assets/source/icons/filter.svg`, an original self-contained 24×24 funnel glyph using `currentColor` with accessible label `Filter`. The source contains a single outlined funnel path and no scripts or external resources.
