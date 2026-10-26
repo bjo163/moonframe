@@ -1,6 +1,39 @@
 # Moonframe UI — Master TODO (live execution index)
 
-## Current implementation · 2026-10-26
+## Live visual-fidelity execution wave · 2026-10-26
+
+> **Current execution truth supersedes the historical implementation-snapshot claims below.** The previous `57/57` checkboxes refer only to the prior M0–M12 implementation/RC accounting. They do **not** mean visual mockup parity, human 105-pair review, source artwork rights, package release gates or current clean-CI verification have passed. Do not reopen/relabel all 57 historical tasks or count them as these new tasks.
+
+**Current audited repository:** [`bjo163/moonframe`](https://github.com/bjo163/moonframe), **existing branch `main` only**. Last actual audited pre-planning runtime HEAD `00c9bd65f4068e0e858f36ba637151815c350983`; current documentation commits may advance it. Root `package.json` currently uses `@moonwitness/moonframe` `0.1.1` with `private:false`; older references to `@moonframe/ui`, private-only packaging, 22 templates or 66 components are historic/stale until reconciled, not canonical current instructions.
+
+**Current CI blocker:** [GitHub Actions run #154 / 40245436959](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` **failed**: runtime unit/SSR 11/12 passed; the twelfth required 30 PNG screenshots absent from clean checkout, so typecheck and production build jobs did not execute. The spec-contract job passed. Existing 30/30 screenshot or 105/105 visual PASS reports must be interpreted as historical/local or automated structural evidence until capture artifacts and independent manual review can be reproduced at the same SHA.
+
+**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **New wave: `0/292` complete, all `planned`, zero new GitHub Issues created by this planning step, zero art/media assets generated.** Proposed asset paths are not actual file deliveries.
+
+| Lane | New task IDs | Microtasks | Current status | Execution outcome |
+|---|---|---:|---|---|
+| A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `planned` | Honest green clean-CI gate + runtime release claims |
+| B · deterministic screenshot Skin Lab | `MF-VF-017…032` | 16 | `planned` | Pinned 360/768/1440, same data, grayscale, decoration-off |
+| C · one master logo production | `MF-VF-033…049` | 17 | `planned` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
+| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `planned` | Search/delete/warning/navigation/etc; ARIA meanings unchanged |
+| E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
+| F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
+| G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `planned` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
+| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **0 done / 292 open** | **No implied final acceptance** |
+
+### Current priority / tiny-agent first tickets
+
+1. **P0 correctness first:** `MF-VF-001…016`; particularly `002` decouple unit screenshot dependency, `003…005` install browser/run/retain artifacts, `006…009` prevent algorithmic scores from masquerading as human visual review. Fix old readme and footer release/count drift before adding further marketing claims.
+2. **Pilot fidelity:** `MF-VF-017…032` same-content reproducible Skin Lab, then the per-skin tasks for **Classic, Moonpunk, Moonzine and Moonledger** in the detailed backlog. Do not start full 105-pair approval based only on metadata.
+3. **Micro asset production:** `MF-VF-033…049` one brand mark and variant/review gates, `MF-VF-050…071` one functional original icon SVG per task, followed by the per-skin motif/pattern/hero/edition label tasks. All visual/source files require rights, safe-SVG and mono/light/dark checks; no automatic approval or external font delivery.
+4. **Showcase acceptance:** only after actual previews exist, `MF-VF-252…292` makes gallery/template previews visually useful, checks same-content pair differences, and documents remaining blocked design references.
+
+**AI execution rule:** pick exactly *one* `MF-VF-###` microtask, inspect current `main`, follow its scope/dependencies/acceptance/checks, make one bounded change, run relevant tests, attach actual SHA/evidence and update status without overwriting older history. No new branches by habit; no bulk fake GitHub issues, auto-approval, npm publication or rights assumption. The skin, token, component, asset and QA canonical references remain in their existing contracts/Bibles.
+
+---
+
+
+## Historical M0–M12 implementation snapshot · earlier 2026-10-26 claims (not the live visual QA gate)
 
 The user's request to finish a usable 15-skin product and Next.js showcase marketplace authorizes local runtime implementation and ordinary implementation choices. The repository is configured as a **pnpm workspace** (`pnpm-workspace.yaml`) containing the **`@moonframe/ui`** package (70+ reusable components & Level C composite blocks, M10 15-skin geometric vector brand marks, opt-in WebAudio synthesizer runtime, scoped themes, 15 CSS recipes with Light/Dark appearances, deterministic token/CSS bridge, and typed subpath exports), the **Moonframe CLI Scaffolder** (`scripts/moonframe-cli.mjs`, `pnpm run cli`), and the **`moonframe` Next.js 16 Showcase & Template Marketplace** ([apps/moonframe](apps/moonframe/README.md)) featuring **43 production page templates (Wave-A & Wave-B)** and **8 Level E Multi-Route Starter Applications**. See [runtime usage](docs/runtime-usage.md) and [implementation status & evidence](docs/implementation-status.md).
 
