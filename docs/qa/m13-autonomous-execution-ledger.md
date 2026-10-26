@@ -6,7 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 42 implemented-or-captured (14 baseline implemented + 11 captured + 17 implemented), 5 blocked, 441 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 43 implemented-or-captured (14 baseline implemented + 11 captured + 18 implemented), 5 blocked, 440 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 43/488 (8.8%) done/captured; 440/488 (90.2%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 445/488 (91.2%) are not yet complete.
 
 ## MF-PF-012 — Stop sound on backgrounding; do not catch up
 
@@ -216,13 +217,19 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-018 — Pin tablet screenshot layout 768x1024
 
-- Tablet-profile implementation is in `b86c39a23559d58bfdc53a64f4854442d823f647`; screenshot sidecars were refreshed at `49cfac474c4de0bbb6bf75bc9472ae4a98235788` after phone-profile changes.
+- Tablet-profile implementation is in `b86c39a23559d58bfdc53a64f4854442d823f647`; capture sidecars were subsequently refreshed at `49cfac474c4de0bbb6bf75bc9472ae4a98235788` and most recently at `70d1598eb5c0e8db2b8c6bef636c6efe01405dff` after dashboard-fixture changes.
 - Added actual 768×1024 browser rendering for all 15 skins in light and dark mode, with viewport assertion and no-horizontal-overflow check; each tablet PNG has a source fingerprint and image SHA-256 provenance sidecar. The 30 tablet rows are indexed in the [visual evidence ledger](visual-fidelity-evidence-ledger.md#tablet-screenshot-captures-mf-vf-018).
 - `pnpm run test:browser` — 54/54 passed. `pnpm run audit:pairs` — 30/30 desktop and 30/30 tablet captures match their source fingerprint and PNG digest. Contract and M13 handoff validators passed; existing SFX playback-truth and missing-LICENSE warnings remain. Human visual review remains pending.
 - Rollback: revert commit `b86c39a23559d58bfdc53a64f4854442d823f647`.
 ## MF-VF-019 — Pin phone screenshot layout 360x800
 
-- Phone-profile implementation is in `7f78909625c7f8a227338a8e96f987e5f4e9f600`; capture refresh and keyboard focus-bound check are in `49cfac474c4de0bbb6bf75bc9472ae4a98235788`.
+- Phone-profile implementation is in `7f78909625c7f8a227338a8e96f987e5f4e9f600`; keyboard focus-bound verification is in `49cfac474c4de0bbb6bf75bc9472ae4a98235788`; latest capture refresh including the dashboard fixture is `70d1598eb5c0e8db2b8c6bef636c6efe01405dff`.
 - Added actual 360×800 browser screenshots for all 15 skins in light and dark mode, with viewport assertion and no-horizontal-overflow check; each PNG has a source fingerprint and image SHA-256 sidecar. The 30 phone rows are indexed in the [visual evidence ledger](visual-fidelity-evidence-ledger.md#phone-screenshot-captures-mf-vf-019).
 - `pnpm run test:browser` — 54/54 passed. `pnpm run audit:pairs` — 30/30 each for desktop, tablet and phone captures match their source fingerprint and PNG digest. Contract and M13 handoff validators passed; existing SFX playback-truth and missing-LICENSE warnings remain. Human visual review remains pending.
 - Rollback: revert the phone-profile implementation and focus-bound verification commits `7f78909625c7f8a227338a8e96f987e5f4e9f600` and `49cfac474c4de0bbb6bf75bc9472ae4a98235788`.
+## MF-VF-020 — Add same-data dashboard specimen
+
+- Implementation commit: `70d1598eb5c0e8db2b8c6bef636c6efe01405dff`.
+- Added a fixed Northstar Studio dashboard specimen to the `/lab` workspace with exact fixture heading/date, three KPI labels and values, five activity records, visible textual statuses, and the canonical long-copy probe. Browser assertions verify the invariant content for every one of the 15 skins in both light and dark modes.
+- `pnpm test` — 13/13 passed. `pnpm run typecheck` — passed. `pnpm run build` — passed; 88 routes generated. `pnpm run test:browser` — 54/54 passed. `pnpm run audit:pairs` — 105 pair records plus 30/30 each desktop, tablet, and phone captures with source/image provenance. Contract and M13 handoff validators passed; generic SFX playback-truth and missing-LICENSE warnings remain. Human visual review remains pending.
+- Rollback: revert commit `70d1598eb5c0e8db2b8c6bef636c6efe01405dff`.
