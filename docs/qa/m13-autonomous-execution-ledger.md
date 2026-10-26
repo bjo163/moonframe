@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-331 — Draw optional torn masthead background
+
+- Added `assets/source/creative-reference/r02-torn-masthead.svg`, a standalone decorative paper-tone backing with an irregular edge and restrained ink marks. It has no embedded copy, external resources, scripts, or event handlers. The R02 title remains live DOM text; the asset is not enabled by default.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; no package-manager commands, validators, suites, typecheck, build, rendering, reference comparison, or human review run/claimed per runner override. Host runner owns verification/checkpoint; no rights clearance or acceptance claimed.
+- Rollback: remove the SVG and restore the MF-VF-331 row, TODO update, and ledger entry.
+- Counts: prior live count 120/488 implemented-or-captured, 368/488 planned, 0 explicitly blocked; now 121/488, 367/488, 0 blocked.
+
 ## MF-VF-327 — Capture R01 wide, tablet and mobile baseline
 
 - Added a Playwright case in `tests/browser/site.spec.js` for the same `/lab` dashboard fixture at 1440×960, 768×1024 and 360×800. It saves wide, tablet and mobile screenshots under `artifacts/site/`.
