@@ -225,9 +225,9 @@ Existing MF-020, MF-084 (SFX policy), MF-085 (future audio production), MF-092 (
 
 ---
 
-## M13 — Four-Reference Visual Fidelity & Asset/Brand Integration (2026-10-26; PLANNED)
+## M13 — Four-Reference Visual Fidelity & Asset/Brand Integration (2026-10-26; ACTIVE technical gate, human visual pending)
 
-**Scope:** reconcile four supplied Moonwitness visuals with reusable Moonframe skins, original media slots and page archetypes. This **does not reopen historical M0–M12 implementation checklists**. It defines a new visual-quality gate with **460 planned `MF-VF` microtasks**: [292 foundational](backlog/visual-fidelity-subatomic-tasks.md) plus [168 reference/consumer-brand tasks](backlog/reference-mockups-subatomic-tasks.md). **Completed in this phase: 0/460.** These are task records in docs, not verified created GitHub Issues and not delivered art.
+**Scope:** reconcile four supplied Moonwitness visuals with reusable Moonframe skins, original media slots and page archetypes. This **does not reopen historical M0–M12 implementation checklists**. It defines a new visual-quality gate with **460 `MF-VF` visual microtask IDs**: [292 foundational](backlog/visual-fidelity-subatomic-tasks.md) plus [168 reference/consumer-brand tasks](backlog/reference-mockups-subatomic-tasks.md). **Visual task state: 14 implemented with CI/source evidence, 446 pending.** Separate [28 preflight domain microtasks](backlog/m13-preflight-remediation-tasks.md) cover tokens, SFX, motion, licensing and security (0 done); **total M13: 488 IDs, 14 implemented, 474 pending**. These are task records in docs, not verified created GitHub Issues and not delivered art.
 
 **M13.0 audit/reliability:** repair missing screenshot artifacts in current CI and separate real human approval from automated JSON-string comparison; no screenshot `PASS` on a missing blob.
 
@@ -239,6 +239,6 @@ Existing MF-020, MF-084 (SFX policy), MF-085 (future audio production), MF-092 (
 
 **M13.4 imagery micro pipeline:** one safe original master/graphic element per task; mark source rights/checksum/creator, alternative text and derivative exports; leave Moonwitness crowns/wordmarks/stories in consumer-owned identity. A poster uses artwork-first composition but must not turn forms/tables into static bitmaps.
 
-**M13.5 proof/release:** same-content 4-skin pilot, 30 appearance baseline proof, 105 unordered human anti-overlap comparisons, 4 uploaded-reference page comparisons (only after binary import), responsive/zoom/grayscale/decorations-off/keyboard, and named owner signoff. Current M13 status is **PLANNED**, not production-approved.
+**M13.5 proof/release:** same-content 4-skin pilot, 30 appearance baseline proof, 105 unordered human anti-overlap comparisons, 4 uploaded-reference page comparisons (only after binary import), responsive/zoom/grayscale/decorations-off/keyboard, and named owner signoff. Current M13 status is **technical CI baseline restored / visual-and-art release NOT APPROVED**. Latest HEAD needs its own CI check; see [M13 final reconciliation](audit/m13-final-reconciliation-2026-10-26.md).
 
 **Branch discipline:** retain `main`, avoid duplicate branch/issue creation, record exact CI SHA in every completion task.
