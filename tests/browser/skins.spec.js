@@ -7,6 +7,14 @@ import { writeSkinCaptureProvenance } from '../../scripts/skin-capture-provenanc
 const captureDir = path.resolve('artifacts/skins');
 fs.mkdirSync(captureDir, { recursive: true });
 
+async function waitForFontsReady(page) {
+  const status = await page.evaluate(async () => {
+    await document.fonts.ready;
+    return document.fonts.status;
+  });
+  expect(status, 'document fonts should finish loading before capture').toBe('loaded');
+}
+
 for (const skin of skins) for (const mode of ['light', 'dark']) {
   test(`${skin.id} ${mode}: rendered, contrast, responsive and RTL`, async ({ page, browser }) => {
     const errors = [];
@@ -15,7 +23,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await page.goto('/lab');
     await page.getByRole('button', { name: skin.name, exact: false }).filter({ has: page.locator('.demo-swatch') }).click();
     await page.getByLabel('Appearance', { exact: true }).selectOption(mode);
-    await page.evaluate(() => document.fonts.ready.then(() => true));
+    await waitForFontsReady(page);
     const dashboardFixture = page.locator('[data-fixture="dashboard-overview"]');
     await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
     await expect(dashboardFixture.getByText('Northstar Studio', { exact: true })).toBeVisible();
@@ -132,6 +140,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(profileFixture.getByText('Use the address your team recognizes.', { exact: true })).toBeVisible();
     await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
     const decorationOffScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-decoration-off.png`);
+    await waitForFontsReady(page);
     await page.screenshot({ path: decorationOffScreenshotPath, fullPage: true, animations: 'disabled' });
     const decorationOffCapture = await page.evaluate(() => ({
       viewport: `${window.innerWidth}x${window.innerHeight}`,
@@ -184,6 +193,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       expect(ratio, `${skin.id}/${mode} ${role} contrast`).toBeGreaterThanOrEqual(4.5);
     }
     const screenshotPath = path.join(captureDir, `${skin.id}-${mode}.png`);
+    await waitForFontsReady(page);
     await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
     const capture = await page.evaluate(() => ({
       viewport: `${window.innerWidth}x${window.innerHeight}`,
@@ -208,6 +218,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
     expect(await page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('1440x960');
     const grayscaleScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-grayscale.png`);
+    await waitForFontsReady(page);
     await page.screenshot({ path: grayscaleScreenshotPath, fullPage: true, animations: 'disabled' });
     const grayscaleCapture = await page.evaluate(() => ({
       viewport: `${window.innerWidth}x${window.innerHeight}`,
@@ -231,6 +242,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('768x1024');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 768px').toBe(true);
     const tabletScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-tablet.png`);
+    await waitForFontsReady(page);
     await page.screenshot({ path: tabletScreenshotPath, fullPage: true, animations: 'disabled' });
     const tabletCapture = await page.evaluate(() => ({
       viewport: `${window.innerWidth}x${window.innerHeight}`,
@@ -253,6 +265,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('360x800');
     const phoneScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-phone.png`);
+    await waitForFontsReady(page);
     await page.screenshot({ path: phoneScreenshotPath, fullPage: true, animations: 'disabled' });
     const phoneCapture = await page.evaluate(() => ({
       viewport: `${window.innerWidth}x${window.innerHeight}`,
