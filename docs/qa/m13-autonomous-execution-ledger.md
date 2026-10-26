@@ -773,6 +773,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
 - Counts: prior recorded ledger count 115 implemented-or-captured, 373 planned, 0 explicitly blocked; now 116/488 implemented-or-captured, 372/488 planned, 0 blocked. This task is implemented only and does not imply capture, review, or acceptance.
 
+## MF-VF-333 — Define city+moon secondary scenery slot
+
+- Added `apps/moonframe/templates/visual-reference/r02-world-scene.tsx` and `r02-world-scene.module.css`. The optional consumer image has independent responsive framing and focal positioning; foreground children remain live DOM content with separate layout. Decorative empty-alt images are hidden from assistive technology, and no artwork is bundled.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; no tests, validators, typecheck, build, browser capture, source comparison, rights review or human review run/claimed per runner override. Host runner owns verification/checkpoint.
+- Counts advance from the latest prior ledger-recorded 121/488 implemented-or-captured, 367 planned, 0 blocked to 122/488, 366 planned, 0 blocked. This records implementation only, not capture, review or acceptance.
+- Rollback: remove the component and CSS module, then restore this task row and matching TODO/ledger entry.
+
 ## MF-VF-320 — Draw geometric radial network background only
 
 - Added `assets/source/creative-reference/r01/radial-network.svg`, a self-contained decorative concentric-ring and radial-axis field with no labels, nodes, relationships, external resources or scripts. The accessible signal-hub content remains the source of data meaning. SHA-256: `7e6f8deae6622c2d8e4eefaecb8db83c31cf3d0c3663c461d6443313d95c21937`.
