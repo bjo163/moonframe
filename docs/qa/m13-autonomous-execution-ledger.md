@@ -1,4 +1,10 @@
-# MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast
+# MF-VF-449 — Write typed consumerBrand palette input fixture
+
+- Selected as dependency-ready after MF-VF-448 and MF-VF-450. The canonical `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json` records `apiStatus: deferred-pending-owner-public-api-review`, no approved public props, and no approved runtime token values. Creating a fixture for the proposed input would imply an unapproved public API.
+- Recorded `blocked-external-approval` rationale in `docs/backlog/reference-mockups-subatomic-tasks.md`; checkbox remains unchecked. Resume only after owner review and a versioned API decision. Counts remain 326/488 checked and 162 unchecked; blocked is not treated as completed.
+- Source/contract inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, or build run. No implementation, approval, or acceptance claimed. No commit created; host runner owns verification/checkpoint.
+
+## MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast
 
 - Starting HEAD: `158cad02b7319bfbce105481dc29d96b7bbc31bc`.
 - Updated `docs/architecture/token-pipeline.md` with proposal-only precedence and protected-role rules for a future consumer brand overlay: resolved skin/mode first; allowlisted nonstatus brand emphasis second; independent preferences separate; accessibility/forced-colors/high-contrast/focus/status protections remain authoritative. Invalid or absent overlays preserve current skin/mode values.

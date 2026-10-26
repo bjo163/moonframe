@@ -17,7 +17,9 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
-**Current M13 backlog count (2026-10-27, MF-VF-386):** 326/488 task rows are checked (151/292 foundation, 147/168 reference, 28/28 preflight); 162 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+**Current M13 backlog count (2026-10-27, MF-VF-449):** 326/488 task rows are checked (151/292 foundation, 147/168 reference, 28/28 preflight); 162 remain unchecked, including MF-VF-449 blocked pending owner review of the consumer-brand API. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+
+**Live execution update (2026-10-27, MF-VF-449):** Recorded MF-VF-449 as externally blocked in the reference backlog. Its API fixture cannot be authored without implying a public prop or token input that the canonical overlay contract explicitly defers pending owner review. The row remains unchecked; no API or approval is claimed. Runner override honored: no validators, package-manager commands, tests, typecheck, or build run; host runner owns checks/checkpoint. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
 
 **Live execution update (2026-10-27, MF-VF-386):** Added an R04 sign-in Playwright capture matrix for 1440/768/360 widths, light/dark, and artwork on/off, with visible heading and labeled control assertions. Twelve screenshot paths are defined under `artifacts/site/`; capture execution remains pending. Status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshots run. Human visual/rights review and acceptance are not claimed. See the M13 execution ledger.
 
