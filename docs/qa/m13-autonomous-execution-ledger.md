@@ -5,8 +5,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-003` moved from planned to captured in this invocation. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count after this task: 16 completed-or-captured, 0 blocked, 472 pending (not counting unrecorded external-only blocker state for MF-PF-002).
+- `MF-PF-001` and `MF-PF-003` are captured; this invocation captured `MF-PF-004`. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count after this task: 17 completed-or-captured (14 baseline implemented + 3 captured), 0 blocked, 471 pending. The license/trademark decision remains pending without inferred owner approval.
 
 ## MF-PF-001 — Freeze current package/release inventory
 
@@ -31,3 +31,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node scripts/validate-contracts.mjs` — exit 0; structural contract checks passed.
 - `node scripts/verify-m13-handoff.mjs` — exit 0; handoff integrity passed with existing SFX-consent/playback and missing-LICENSE warnings.
 - Status: captured; no human review or acceptance claimed. Rollback: revert the current-release section and the corresponding task/ledger evidence edits only.
+
+## MF-PF-004 — Public component export coverage
+
+- Inspected source HEAD before documentation edits: `c7ee51e672b993c176719ca2e088ef302a86b38c`.
+- Scope: `docs/audit/component-public-export-coverage.md`, matching preflight row, root TODO live counts, and this ledger.
+- Compared every one of 151 manifest records against package root/runtime/type entry points. Result: 47 same-name runtime and type exports (including ThemeProvider), 104 records without a same-name runtime component export.
+- `node scripts/validate-contracts.mjs` — exit 0; structural contract checks passed.
+- `node scripts/verify-m13-handoff.mjs` — exit 0; handoff integrity passed with existing SFX consent/playback and missing LICENSE warnings.
+- Status: captured. This static catalog does not establish behavior or human acceptance. Rollback: revert only the catalog, corresponding task/TODO count updates, and this ledger entry.
