@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Moonriot cut-paper editorial landscape</title>
+  <desc id="desc">An open editorial scene split by a sharp diagonal, with layered paper forms and directional marks.</desc>
+  <path fill="#f4eee2" d="M0 0h640v420H0z"/>
+  <path fill="#252522" d="M0 0h304L58 420H0z"/>
+  <path fill="#d9493f" d="m304 0 142 0L200 420H58z"/>
+  <path fill="#f2bd54" d="m446 0 194 0v132L342 420H200z"/>
+  <path fill="#d9d0bf" d="M342 420 640 132v288z"/>
+  <path fill="none" stroke="#f4eee2" stroke-width="8" d="M32 342 242 36"/>
+  <path fill="none" stroke="#252522" stroke-width="6" d="m390 374 206-198M412 396l206-198"/>
+  <path fill="#f4eee2" d="m78 286 74-108 43 30-74 108z"/>
+  <path fill="#252522" d="m474 88 112 0-52 54h-112z"/>
+</svg>

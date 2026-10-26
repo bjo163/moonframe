@@ -1263,3 +1263,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `src/styles.css` with skin-scoped structural treatments for data tables, fields and controls, and dialogs. Shared component APIs/semantics and density remain unchanged.
 - Dependency rows `MF-VF-072` and `MF-VF-078` are implemented. Status: `implemented`; source review only. No package-manager commands, suites, typecheck, build, validators, render, or browser capture run under runner override. Human visual review and acceptance remain pending.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the MF-VF-079 CSS rules and restore this backlog/TODO/ledger evidence.
+
+## MF-VF-087 — Draw original Moonriot hero illustration SVG
+
+- Added `assets/source/skins/moonriot/hero.svg`, an original self-contained cut-paper split editorial landscape with embedded geometry and accessible title/description. No essential text or external assets are embedded.
+- SHA-256: `3C144367A1ECC95320745F0268F08A1196846C952E24EAD373C424B44879AAD4`. Dependency MF-VF-084 is implemented. Status: `implemented`; source inspection only. No package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or human review were run per runner override. Optical review and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-087 backlog row, TODO update, and this ledger entry.
