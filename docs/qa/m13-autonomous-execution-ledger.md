@@ -1777,3 +1777,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `apps/moonframe/components/site/SiteShell.tsx` to use the existing neutral “M” text mark instead of the skin-varying `SkinBrandMark`. Existing styles already provide a bounded, decorative mark; the adjacent linked product name remains live text. This avoids forcing Moonwitness identity on a generic consumer while preserving the same layout.
 - `MF-VF-025` dependency is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser capture run. Human review, rights clearance, and acceptance are not claimed; host runner owns verification/checkpoint.
 - Rollback: restore `SkinBrandMark` and remove the evidence/status update in the backlog and TODO. No commit created.
+
+## MF-VF-408 — Define Moonriot screenshot-based anti-clone test
+
+- Added docs/qa/reviews/moonriot-reference-parity.md with repeatable same-content desktop/mobile comparisons against Moonpunk and Moonsmash, grayscale and decoration-on/off review states, structural criteria, and pending evidence fields. SHA-256 `63C93702E7CA3AC79BD2C52032CFB5C8E08439B04B3907CE961ADC53F06A476F`.
+- Dependency MF-VF-084 is implemented. Backlog status implemented; documentation/source inspection only. No captures, visual verdict, rights review, human approval, or acceptance claimed.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run. Rollback: remove the protocol and restore the backlog status; remove matching TODO and ledger evidence. No commit created; host runner owns verification and checkpoint.
