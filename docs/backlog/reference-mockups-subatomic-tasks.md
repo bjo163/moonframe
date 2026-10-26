@@ -15,14 +15,14 @@
 |---|---|---:|---|
 | H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 8 captured, 4 planned |
 | I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 14 implemented, 10 planned |
-| J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 1 implemented, 21 planned |
+| J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 2 implemented, 20 planned |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
 | M — reusable visual composition primitives and token control | `MF-VF-389…MF-VF-406` | 18 | 0 done |
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 33 implemented, 127 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 34 implemented, 126 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -183,8 +183,9 @@
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-crew-map.tsx (proposed)`. **AC:** Generic graph view, data controlled by consumer with list alternative.
   - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
   - **Evidence (2026-10-26):** Added `r02-crew-map.tsx` and its CSS module. Consumer data controls nodes and optional edges; missing endpoints are ignored, and each member remains available in a semantic list alongside the decorative graph. The graph has a deterministic default layout, responsive stacking, and forced-colors boundaries. Dependency `MF-VF-023` is implemented. Static source review only; per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or reference comparison were run. Human visual review, rights and acceptance remain pending. Rollback: remove the component/CSS module and restore this row and matching TODO/ledger evidence.
-- [ ] **MF-VF-341 — Draw neutral constellation pin graphics** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+- [x] **MF-VF-341 — Draw neutral constellation pin graphics** · **P1** · `implemented` · **dep:** `MF-VF-023` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r02/constellation-pins.svg (proposed)`. **AC:** Original static vectors, not characters/assets from screenshot.
+  - **Evidence (2026-10-26):** Added a self-contained original SVG of neutral circular pins joined by fine constellation lines; it contains no labels, character imagery, scripts, event handlers, external resources, or reference-derived assets. SHA-256: `697704e03eed62be35ee8adc8c849c57fe6a22e7c769ec0c8580b774f682a099`. Dependency `MF-VF-023` is implemented. Static source inspection only; runner override honored, so no package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or source comparison run. Host runner owns verification/checkpoint. Human optical review, rights clearance, reference comparison, and acceptance remain pending. Rollback: remove the SVG and restore this task row plus matching TODO/ledger evidence.
   - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-342 — Build bottom recruitment/action banner** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-bottom-cta.tsx (proposed)`. **AC:** Bold CTA as accessible link/action separate from pink paint stroke.

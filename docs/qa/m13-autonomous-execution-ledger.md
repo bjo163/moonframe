@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-341 — Draw neutral constellation pin graphics
+
+- Added `assets/source/creative-reference/r02/constellation-pins.svg`, a self-contained original static vector of neutral circular pins joined by fine constellation lines. It has no labels, character imagery, scripts, event handlers, external resources, or reference-derived assets.
+- SHA-256: `697704e03eed62be35ee8adc8c849c57fe6a22e7c769ec0c8580b774f682a099`.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; static source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or reference comparison run; host runner owns verification/checkpoint. Human optical review, rights clearance, and acceptance remain pending.
+- Counts advance from the previous live summary 134/488 implemented-or-captured-or-implemented, 354 planned, 0 explicitly blocked to 135/488, 353 planned, 0 explicitly blocked.
+- Rollback: remove the SVG and restore the matching task/backlog/TODO/ledger evidence.
+
 ## MF-VF-340 — Prepare crew constellation graph placeholder
 
 - Added `apps/moonframe/templates/visual-reference/r02-crew-map.tsx` and `.module.css`. Consumer-provided members and optional connections render as a deterministic constellation-style graph; all member names/roles also appear in a semantic list. Responsive stacking and forced-colors styles are included.

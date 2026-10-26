@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Neutral constellation pins</title>
+  <desc id="desc">Abstract circular pins connected by fine lines, with no labels or character imagery.</desc>
+  <g stroke="#d8d2c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 111 220 173 352 91 500 147M220 173l69 111 135-49 76-88M352 91l72 144" opacity=".62"/>
+    <circle cx="100" cy="111" r="7" fill="#f2eee7"/>
+    <circle cx="220" cy="173" r="9" fill="#f2eee7"/>
+    <circle cx="352" cy="91" r="7" fill="#f2eee7"/>
+    <circle cx="500" cy="147" r="8" fill="#f2eee7"/>
+    <circle cx="289" cy="284" r="7" fill="#f2eee7"/>
+    <circle cx="424" cy="235" r="9" fill="#f2eee7"/>
+    <circle cx="500" cy="147" r="3" fill="#716b63" stroke="none"/>
+    <circle cx="220" cy="173" r="3" fill="#716b63" stroke="none"/>
+    <circle cx="424" cy="235" r="3" fill="#716b63" stroke="none"/>
+  </g>
+</svg>
