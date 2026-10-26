@@ -1827,3 +1827,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright scenario in 	ests/browser/site.spec.js that checks all four screens and key live content remain visible after artwork removal; the poster keeps its decorative frame.
 - Dependency MF-VF-010 is implemented. Backlog status implemented; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, or build run. Host runner owns verification and checkpoint. No screenshot capture, source parity, rights clearance, human review, or acceptance claimed.
 - Rollback: remove the fixture route and browser scenario, restore MF-VF-426 to planned, and remove matching TODO/ledger entries. No commit created.
+
+## MF-VF-350 — Human inspect R02 against its image reference
+
+- **Status:** blocked; required human source comparison is not possible with current local evidence.
+- **Dependency:** MF-VF-023 is implemented; the task also requires the original R02 image and human visual inspection.
+- **Evidence:** `contracts/moonframe-creative-reference-contract-v0.1.json` records R02 source media as uploaded in chat but not committed, with visual approval `not-reviewed` and rights limited to owner-supplied reference use. `docs/qa/visual-fidelity-evidence-ledger.md` says missing originals are `reference-missing` and cannot be replaced with fabricated screenshots.
+- **Next condition:** Obtain the original R02 PNG in the checkout, verify its SHA-256 against the canonical contract, then perform and record the human comparison. No review, rights clearance, or acceptance is claimed.
+- **Runner override:** No validators, package-manager commands, test suites, typecheck, build, browser capture, or commit run; the host runner owns verification and checkpoint.

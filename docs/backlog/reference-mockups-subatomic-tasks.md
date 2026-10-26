@@ -219,7 +219,7 @@
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Computed text on actual backdrop meets accessible contrast incl hover/focus.
   - **Evidence (2026-10-26):** Added the grouped R02 navigation to the deterministic editorial fixture and a browser assertion that calculates WCAG contrast from computed text/background colors for the masthead title and navigation link, including hover and keyboard focus, plus a visible outline check. `git diff --check` exited 0. Browser execution and screenshot verification were not run per runner override; host runner owns them. This fixture has no R02 source-image backdrop, so no image-parity or scene-overlay claim is made. Human review and acceptance remain pending. Rollback: remove the fixture navigation and test, then restore this row to planned.
   - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-350 — Human inspect R02 against its image reference** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+- [ ] **MF-VF-350 — Human inspect R02 against its image reference** · **P1** · `blocked` · **dep:** `MF-VF-023` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r02.md (proposed)`. **AC:** Artwork and non-color scene composition reviewed separately from functionality.
   - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 
