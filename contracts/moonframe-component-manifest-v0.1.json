@@ -8758,5 +8758,13 @@
     "keyboardMatrix": "contracts/moonframe-keyboard-interaction-matrix-v0.1.json",
     "readiness": "specified-provisional-not-implemented",
     "legacyTierInterpretation": "premium-block tier on component entries represents catalog release/planning only, not a Level C block implementation"
+  },
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "plannedCatalogCount": 151,
+    "currentImplementation": "src/components.js exports a subset of documented primitives/blocks with 70+ showcase exports; do not equate all 151 formal catalog IDs to shipped components.",
+    "apiAuthority": "contracts/moonframe-component-api-contract-v0.1.json",
+    "compatibility": "Shared behavioral API, accessibility and keyboard semantics independent of skin; no markup-only pixel equivalence assumed",
+    "releaseGate": "ID-to-public-export coverage ledger and consumer proof required before claiming full planned catalog implementation"
   }
 }
