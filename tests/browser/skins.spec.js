@@ -201,6 +201,32 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       browserName: browser.browserType().name(),
       browserVersion: browser.version(),
     });
+    const grayscaleStyle = await page.addStyleTag({ content: 'html { filter: grayscale(1) !important; }' });
+    await expect(page.locator('html')).toHaveCSS('filter', 'grayscale(1)');
+    await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
+    await expect(fixtureTaskNames).toHaveCount(5);
+    await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
+    expect(await page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('1440x960');
+    const grayscaleScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-grayscale.png`);
+    await page.screenshot({ path: grayscaleScreenshotPath, fullPage: true, animations: 'disabled' });
+    const grayscaleCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; grayscale filter applied to full page',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(grayscaleScreenshotPath, {
+      ...grayscaleCapture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
+    await grayscaleStyle.evaluate(style => style.remove());
+    await expect(page.locator('html')).not.toHaveCSS('filter', 'grayscale(1)');
     await page.setViewportSize({ width: 768, height: 1024 });
     await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('768x1024');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 768px').toBe(true);
