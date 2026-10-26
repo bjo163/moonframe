@@ -20,7 +20,15 @@ const logfile = path.join(logDir, 'run-' + Date.now() + '.log');
 const stream = fs.createWriteStream(logfile, { flags: 'a', mode: 0o600 });
 const say = msg => { process.stdout.write('[M13] ' + msg + '\n'); stream.write('[M13] ' + msg + '\n'); };
 const cmd = (executable, argv = [], check = true) => {
-  const r = spawnSync(executable, argv, { cwd: root, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
+  // Windows installs pnpm as a .CMD shim, which Node cannot spawn without a shell.
+  // The runner's pnpm arguments below are fixed literals, so shell mode is bounded here.
+  const windowsPnpm = process.platform === 'win32' && executable === 'pnpm';
+  const r = spawnSync(windowsPnpm ? 'pnpm.cmd' : executable, argv, {
+    cwd: root,
+    encoding: 'utf8',
+    maxBuffer: 32 * 1024 * 1024,
+    shell: windowsPnpm,
+  });
   if (r.error) throw r.error;
   if (check && r.status !== 0) throw Error(executable + ' ' + argv.join(' ') + ' failed: ' + (r.stderr || r.stdout).slice(-2000));
   return r;
@@ -40,7 +48,7 @@ function countTasks() {
     total+=matches.length;
     for (const line of matches) {
       if (line.startsWith('- [x]')) done++;
-      else if (line.includes('blocked')) blocked++;
+      else if (/·\s*`blocked`(?:\s|·)/.test(line)) blocked++;
     }
   }
   return {total,done,blocked,pending:total-done-blocked};

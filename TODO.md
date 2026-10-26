@@ -65,6 +65,8 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 **Freeze count:** 488 total M13 task IDs = **460 visual** (14 implemented, 446 pending) + **28 preflight** (0 implemented, 28 pending) at freeze; ***14 implemented / 474 pending***. These counts may change through genuine evidence-backed task completion; do not rewrite the frozen baseline.
 
+**Live execution update (2026-10-26):** `MF-PF-001` is captured with package metadata and registry status explicitly unverified. Current task state: 14 freeze-baseline implemented, 1 additional captured, 0 blocked, and 473 pending/planned. See [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md); this does not imply review, acceptance, or registry publication.
+
 ---
 
 ## M13 final cross-domain readiness reconciliation (2026-10-26)
@@ -73,7 +75,7 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 **Operational truth:** [M13 Final Reconciliation Audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable 18 domain gates](contracts/moonframe-m13-readiness-gates-v0.1.json). New [offline M13 integrity validator](scripts/verify-m13-handoff.mjs) checks 15 skins, 78 intended tokens, 105 pairs, SFX IDs/aliases, backlog DAG and truthful status vocabulary. The 14 closed visual P0 tasks have evidence recorded in [MF-VF backlog](docs/backlog/visual-fidelity-subatomic-tasks.md), and must not be redone by AI lokal.
 
-**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. These are **0/28 done**, not additional skin IDs. **Total new current-phase task records: 488 (460 visual + 28 preflight): 14 implemented, 474 pending.** The historical 57/57 tasks are not counted again.
+**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **1 captured, 27 pending**. Current combined count is 488 task records: 14 freeze-baseline implemented, 1 additional captured, 0 blocked, and 473 pending. The historical 57/57 tasks are not counted again.
 
 **Feature gates:** 
 - **CONDITIONAL GO:** one bounded local AI task at a time, after live main/CI/dependency verification. Preserve shared component API and current working theme engine.

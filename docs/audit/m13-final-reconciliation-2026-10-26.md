@@ -7,6 +7,10 @@
 
 ## 1. Final scope and source-of-truth policy
 
+### Live package/release inventory (MF-PF-001)
+
+At live HEAD `affdfe6a56362878b8ca19faab61c922a0264c4b` (2026-10-26), `package.json` declares `@moonwitness/moonframe@0.1.1`, `private:false`, `license: MIT`, `publishConfig.access: public`, and exports `.`, `./styles.css`, `./tailwind.css`, `./skins`, and `./theme`. The manifest points to `https://github.com/bjo163/moonframe`; the repository has no standalone `LICENSE` file. **npm registry publication is not verified** by this local inventory, and no publication was attempted. This records package configuration, not license ownership or permission to distribute.
+
 This document **reconciles existing authorities**, does not replace their normative content or claim finished visuals. The earlier M0–M12 **57/57** items are historical delivery accounting. The new M13 [292 visual foundation tasks](../backlog/visual-fidelity-subatomic-tasks.md) plus [168 image-reference and optional brand tasks](../backlog/reference-mockups-subatomic-tasks.md) form **460 distinct `MF-VF-001…460` IDs** with **no missing dependencies and no graph cycles**. A forward dependency `MF-VF-048 → MF-VF-049` exists and is allowed by DAG, so numeric ascending order is NOT guaranteed executable order; use dependencies and live status instead. The 460 counts are task records, not automatically 460 GitHub Issues. Code fixes performed in this audit require status reconciliation; do not continue to label all previously planned items done or not-done without evidence.
 
 | Domain | Normative authority | Implementation authority | Evidence / QA owner | Real observed boundary |
