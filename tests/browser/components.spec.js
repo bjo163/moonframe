@@ -269,3 +269,26 @@ test('SFX stays silent in sensitive authentication, finance, and destructive con
   }
   await expect(page.getByText('Consent: Granted')).toBeVisible();
 });
+
+test('SFX reports browser playback denial and focus alone never starts audio', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__audioContextCount = 0;
+    class SuspendedAudioContext {
+      constructor() { window.__audioContextCount += 1; this.state = 'suspended'; }
+    }
+    window.AudioContext = SuspendedAudioContext;
+  });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  const cue = page.getByRole('button', { name: '🔔 success' });
+  await cue.focus();
+  expect(await page.evaluate(() => window.__audioContextCount)).toBe(0);
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await cue.click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: blocked\)/)).toBeVisible();
+  expect(await page.evaluate(() => window.__audioContextCount)).toBe(1);
+  await page.getByRole('button', { name: /Mute \/ Revoke Consent/i }).click();
+  await cue.click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: muted-or-no-consent\)/)).toBeVisible();
+  expect(await page.evaluate(() => window.__audioContextCount)).toBe(1);
+});
