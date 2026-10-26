@@ -2,7 +2,9 @@
 
 ## Live visual-fidelity execution wave · 2026-10-26
 
-> **Current execution truth supersedes the historical implementation-snapshot claims below.** The previous `57/57` checkboxes refer only to the prior M0–M12 implementation/RC accounting. They do **not** mean visual mockup parity, human 105-pair review, source artwork rights, package release gates or current clean-CI verification have passed. Do not reopen/relabel all 57 historical tasks or count them as these new tasks.
+> **Live execution update (2026-10-26, MF-VF-069):** Added the original static 24×24 semantic user glyph assets/source/icons/user.svg (SHA-256 a54935e5f3b404b54d704ff16eb460fc3d9b717d1a0cfc46b7da38ba61a1b274); dependency MF-VF-033 is implemented. git diff --check passed. Host runner owns validators, package/test/build/browser checks and checkpoint; rendered-size and human review remain pending.
+
+**Current execution truth supersedes the historical implementation-snapshot claims below.** The previous `57/57` checkboxes refer only to the prior M0–M12 implementation/RC accounting. They do **not** mean visual mockup parity, human 105-pair review, source artwork rights, package release gates or current clean-CI verification have passed. Do not reopen/relabel all 57 historical tasks or count them as these new tasks.
 
 **Current audited repository:** [`bjo163/moonframe`](https://github.com/bjo163/moonframe), **existing branch `main` only**. Last actual audited pre-planning runtime HEAD `00c9bd65f4068e0e858f36ba637151815c350983`; current documentation commits may advance it. Root `package.json` currently uses `@moonwitness/moonframe` `0.1.1` with `private:false`; older references to `@moonframe/ui`, private-only packaging, 22 templates or 66 components are historic/stale until reconciled, not canonical current instructions.
 
