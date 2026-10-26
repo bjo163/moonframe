@@ -48,6 +48,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-417 — Define Moonraw screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/moonraw-reference-parity.md` with matched-content comparison criteria for Moonraw, Classic, and Moonledger at desktop/mobile, grayscale, decoration-on/off, and light/dark states. It records provenance and human verdict fields and keeps disposition pending until actual review.
+- Dependency MF-VF-192 is implemented. Backlog status: `implemented`; documentation/source inspection only. No screenshots, capture hashes, human review, rights review, or acceptance claimed.
+- Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser capture, or commit run. Host runner owns verification and checkpoint. Rollback: remove the protocol, restore MF-VF-417 to planned, and remove the matching TODO and ledger entries.
+
 ## MF-VF-180 — Write Moonscrawl visual direction
 
 - Added `docs/visual/skins/moonscrawl.md` with the contract-grounded sketchbook canvas, exploratory clusters, notebook navigation, controlled annotations, neighboring-skin distinctions, and accessible responsive/art-off/reduced-motion constraints.
