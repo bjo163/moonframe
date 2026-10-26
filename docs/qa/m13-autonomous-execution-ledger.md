@@ -1192,3 +1192,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/icons/calendar.svg`, an original static 24×24 currentColor calendar glyph with a date grid and accessible label. SHA-256: `cf8835939ae09be6e63b481ac7f652a2087c1648624304cfd6e72b1cf816e20a`.
 - Dependency `MF-VF-033` is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size checks, or browser captures were run; host runner owns verification/checkpoint. Light/dark/forced-colors appearance, 16/20/24px legibility, human review, and acceptance remain pending.
 - Rollback: remove the SVG and restore the matching backlog row and this ledger entry.
+
+## MF-VF-071 — Draw semantic lock icon
+
+- Added `assets/source/icons/lock.svg`, an original static 24×24 `currentColor` lock glyph with accessible `Lock` title. SHA-256: `45e2afd5d29d91053cdfa6c64a81c38dc6e2d8d42e8b36ba935e20f154ff8688`.
+- Dependency `MF-VF-033` is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser capture were run; host runner owns applicable checks. Light/dark/forced-colors appearance, 16/20/24px legibility, human review, and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching backlog row, TODO update, and this ledger entry.
