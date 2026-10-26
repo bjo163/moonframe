@@ -6,13 +6,12 @@
 - Source inspection confirms the file uses only an SVG title, path and circle with no executable or external content. Task status is `implemented`; per runner override, no validators, package-manager commands, suites, typecheck, build, render or capture were run. Host runner owns verification/checkpoint. No candidate approval, human review, trademark clearance or distribution rights are claimed.
 - The 488-task total moves one task from planned to implemented: this task is an update only, not an independently recounted aggregate because prior ledger counts conflict. Rollback: delete the SVG and restore the task row and this entry.
 
-## MF-VF-045 — Render actual 16px favicon PNG — blocked
+## MF-VF-045 — Render actual 16px favicon PNG
 
-- Dependency MF-VF-040 is implemented, but the required raster renderer is unavailable in this environment: Python/Pillow, ImageMagick, and Inkscape are not installed; `convert.exe` is the Windows filesystem utility. No placeholder or synthetic PNG was created.
-- Task remains unchecked with explicit `blocked` status. Root progress counts remain 147/488 implemented-or-captured, 341/488 planned, and 0 explicitly blocked in historical aggregate fields; this task's blocker is now separately recorded and those aggregate counts need runner reconciliation.
-- No package-manager commands, validators, suites, typecheck, build, or browser checks were run per runner override. Resume when the host supplies an image rasterizer; then inspect at actual 16px and record the PNG digest.
-- Rollback: remove this blocker note and restore the task row's status to `planned` if the renderer becomes available and no artifact is produced.
-
+- Rendered the source favicon through Chromium using Playwright CLI, then Playwright API with `omitBackground:true` to preserve transparency. Output `assets/exports/brand/favicon-16.png` is PNG RGBA, 16×16 px, 187 bytes; SHA-256 `bd3429adc681be73f6591ecfa0055c40ff32e4e8aa1e178ab50968610c62e3f6`.
+- The earlier renderer blocker is resolved. Status is `implemented`; human optical review, trademark approval, and distribution rights remain pending.
+- Host runner performs contracts, handoff validation, unit tests, typecheck, build, and applicable browser checks before commit.
+- Rollback: remove `favicon-16.png` and restore the task row and prior blocker entry.
 ## MF-VF-345 — Prevent decorative layers over article text
 
 - Made R02 masthead layer order explicit in `r02-masthead.module.css`: backdrop is z-index 0, semantic content is positioned at z-index 1, and the parent isolated stacking context contains both. Backdrop JSX is marked `aria-hidden` and `inert`; CSS disables pointer input.
