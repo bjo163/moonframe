@@ -1723,5 +1723,14 @@
         "screenshot": null
       }
     }
-  ]
+  ],
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "currentCss": "src/styles.css includes actual transitions/reduced-motion and forced-colors guards",
+    "contractRecipes": 25,
+    "skinMatrixCells": 180,
+    "qaStatus": "CSS/browser smoke implemented, complete 180-cell motion visual review unapproved",
+    "sfxRelation": "Audio is opt-in and independent. No 15-skin audio pack or universal animation permission.",
+    "releaseGate": "M13 motion QA review still required"
+  }
 }
