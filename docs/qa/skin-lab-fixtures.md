@@ -149,3 +149,12 @@ These files are first-party, hand-authored geometry used only as identical inert
 | [`avatar-mateo.svg`](fixtures/skin-lab/avatar-mateo.svg) | 64×64 | Mateo row marker; decorative | `ea0df031594eba9c2d29f229615c2963a2ec310fea2c3a83619d831f20fc973f` |
 | [`avatar-hana.svg`](fixtures/skin-lab/avatar-hana.svg) | 64×64 | Hana row marker; decorative | `91d7fdcddc1baba2f964d757ce5585f965b3b7b95f72e5d9620985ea815d596a` |
 
+---
+
+## 2026-10-26 supplemental four-image visual reference fixture plan
+
+Use the [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) to identify four uploaded Moonwitness images by checksum. These are **different page archetypes** and should not be used as interchangeable pixel-level fixtures: R01 admin command dashboard; R02 public editorial landing; R03 portrait campaign poster; R04 split-screen auth.
+
+For *skin-uniqueness* compare **the same frozen dashboard, table, form and navigation DOM/data** with matching asset slots across skins. For *reference fidelity*, compare each implementation with the corresponding R01–R04 original **only after the original binary is imported and verified**; do not compare a Moonzine story page with a Moonledger table screenshot as proof of unique skin grammar.
+
+Proposed verification cases (not produced in this document): 1440×960 desktop, 768×1024 tablet, 360×800 mobile; light/dark per meaningful screen; grayscale and decorations-off; reduced-motion; 200% text and 400% reflow; keyboard/focus and forced-colors; screenshot manifest with commit SHA/content fixture ID/reference SHA. Keep typography, language and data deterministic, and store a named human review independent of `audit:pairs`.
