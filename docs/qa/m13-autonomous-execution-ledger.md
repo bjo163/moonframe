@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-321 — Define project mini-cover card ratios
+
+- Added `apps/moonframe/templates/visual-reference/r01-project-covers.tsx` and `.module.css`, with a 4:3 landscape default and 2:3 poster variant. The image slot requires descriptive alt text and uses lazy loading; consumer art is supplied separately.
+- Dependency `MF-VF-022` is implemented. `git diff --check` — exit 0. Status: `implemented`; no browser capture, 360/768/1440 rendering, validators, package-manager commands, test suites, typecheck or build run per runner override. Host runner owns verification/checkpoint. No rights, human visual review or acceptance claimed.
+- Rollback: remove the component/CSS module and restore the task row, TODO update and ledger entry.
+- Counts: prior live ledger count 115/488 implemented-or-captured, 373/488 planned, 0 blocked; now 116/488, 372/488, 0 blocked.
+
 ## MF-VF-324 — Add scratch frame treatment to panel recipes
 
 - Added a decorative dashed inset frame to `apps/moonframe/templates/visual-reference/r01-command-feed.module.css`. It uses a pointer-transparent pseudo-element and preserves the existing solid panel edge and content.

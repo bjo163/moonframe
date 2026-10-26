@@ -1,0 +1,19 @@
+.cover {
+  aspect-ratio: 4 / 3;
+  inline-size: 100%;
+  min-inline-size: 0;
+  overflow: hidden;
+  margin: 0;
+  background: #17171b;
+}
+
+.cover[data-ratio='poster'] {
+  aspect-ratio: 2 / 3;
+}
+
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
