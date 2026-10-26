@@ -1062,3 +1062,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-024` is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, browser capture, human review, or rights approval run/claimed under runner override. No official band mark or performer association is implied; optical review, rights, and acceptance remain pending.
 - Live task checkbox count advances from 158/488 to 159/488 implemented-or-captured-or-implemented; 329 remain unchecked/planned and 0 explicitly blocked. Status counts do not imply review or acceptance. Host runner owns verification and checkpoint.
 - Rollback: remove the SVG and restore the matching backlog/TODO status and this ledger entry.
+
+## MF-VF-352 — Establish 2:3-ish portrait artboard semantics
+
+- Added `apps/moonframe/templates/visual-reference/r03-artboard.tsx` and `.module.css`. The reusable `R03Artboard` defaults to a 2:3 portrait frame, accepts a configurable CSS aspect ratio, scales responsively, and places optional editor controls outside the artwork frame.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. No package-manager commands, validators, tests, typecheck, build, browser capture, or human review run/claimed per runner override. No reference-image, performer, lyric, or distribution rights are implied; visual review and acceptance remain pending.
+- Task-row counts: 163/488 previously checked, now 164/488 implemented-or-captured-or-implemented and 324 planned; 0 explicitly blocked. This count does not imply capture, review, or acceptance.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the component and CSS module, restore the task row, and revert this ledger/TODO update.
