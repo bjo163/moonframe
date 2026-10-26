@@ -1318,3 +1318,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `docs/visual/cinematic-mangapunk-reference-bible.md` with an InkFrame design recipe. The structural border remains live CSS when texture is off/unavailable; texture cannot replace focus or semantic state.
 - Status: `implemented`; documentation/source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, or human review run under runner override. No runtime component or contrast certification claimed. Host runner owns verification/checkpoint.
 - Rollback: remove the InkFrame subsection, restore the MF-VF-390 row to planned, and remove the matching TODO/ledger evidence.
+
+# MF-VF-096 — Write Moonzine visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonzine.md`, grounded in the existing skin grammar/specification. It defines editorial collage composition and distinguishes Moonzine from Moonpanel, Moonhalftone, and Moonpunk while preserving semantic, focus, fallback, and responsive constraints.
+- Dependency MF-VF-015 is implemented. Status: `implemented`; source review only. Per runner override, no package-manager commands, tests, validators, typecheck, build, screenshots, or human review were run. Human visual review and acceptance remain pending. No aggregate recount asserted because live snapshots conflict.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the brief, restore the backlog row to planned, and remove this ledger/TODO evidence.
