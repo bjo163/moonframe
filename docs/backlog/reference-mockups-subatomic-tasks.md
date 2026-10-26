@@ -230,9 +230,9 @@
 - [ ] **MF-VF-356 — Define central performer slot separate from background** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-performer-slot.tsx (proposed)`. **AC:** The consumer chooses image rights and alt, framework does not ship characters.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-357 — Draw a decorative geometric spotlight burst** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
-  - **File scope/output:** `assets/source/creative-reference/r03/spotlight-burst.svg (proposed)`. **AC:** A Moonsmash style cue, with clean reduction when decor disabled.
-  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-357 — Draw a decorative geometric spotlight burst** · **P1** · `implemented` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/spotlight-burst.svg`. Original, self-contained decorative beam geometry with a standalone title/description; no screenshot tracing, external resources, or copied performer imagery. SHA-256: `0c09e9d7d65105ced7d5958cd41e25f2e5c67d26cd2d5495337309785574390c`.
+  - **Evidence:** Dependency `MF-VF-024` is implemented. Static source inspection confirms vector-only geometry and no scripts, event attributes, or external references. No SVG validator, package-manager commands, tests, typecheck, build, rendering, or browser capture run per runner override; host runner owns verification. Human optical review and rights approval remain pending. Rollback: remove the SVG and restore this task row.
 - [ ] **MF-VF-358 — Create energetic ink/collage title frame** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `assets/source/creative-reference/r03/header-frame.svg (proposed)`. **AC:** Optional graphic around headline; never text-only image.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.

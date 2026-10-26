@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-357 — Draw a decorative geometric spotlight burst
+
+- Added `assets/source/creative-reference/r03/spotlight-burst.svg`, an original self-contained decorative burst of tapered beams. It contains only vector geometry and accessible title/description text, with no source tracing, external references, scripts, event handlers, or performer imagery.
+- SHA-256: `0c09e9d7d65105ced7d5958cd41e25f2e5c67d26cd2d5495337309785574390c`.
+- Dependency `MF-VF-024` is implemented. Status: `implemented`; static source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or browser capture run. Host runner owns verification/checkpoint. Human optical review and rights approval are not claimed.
+- Counts: prior live count 124 implemented-or-captured, 364 planned, 0 blocked; now 125/488 implemented-or-captured, 363/488 planned, 0 blocked.
+- Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+
 ## MF-VF-336 — Draw light-yellow paper speech label
 
 - Added `assets/source/creative-reference/r02/yellow-label.svg`, a self-authored blank paper-label backing with irregular edges and subtle dashed rules. SHA-256: `f30cc15a40553e311abb49426bc9b36af854fb228cd989740f74b57b67040ef`. Text remains live HTML; no consumer-specific mark or external resource is included.

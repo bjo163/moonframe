@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Geometric stage spotlight burst</title>
+  <desc id="desc">A decorative burst of broad tapered beams radiating from a central stage point.</desc>
+  <path d="M320 320 40 64l235 288ZM320 320 162 20l194 323ZM320 320 312 0l45 336ZM320 320 485 28l-122 314ZM320 320 620 95 352 350ZM320 320 640 300l-296 63ZM320 320 576 576l-249-220ZM320 320 365 640l-57-300ZM320 320 92 560l209-218ZM320 320 0 430l305-75Z" fill="#F6C945" fill-opacity=".48" stroke="#17151C" stroke-linejoin="round" stroke-width="5"/>
+  <circle cx="320" cy="356" r="24" fill="#17151C"/>
+  <circle cx="320" cy="356" r="8" fill="#F6C945"/>
+</svg>
