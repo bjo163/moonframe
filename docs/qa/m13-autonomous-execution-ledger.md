@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-336 — Draw light-yellow paper speech label
+
+- Added `assets/source/creative-reference/r02/yellow-label.svg`, a self-authored blank paper-label backing with irregular edges and subtle dashed rules. SHA-256: `f30cc15a40553e311abb49426bc9b36af854fb228cd989740f74b57b67040ef`. Text remains live HTML; no consumer-specific mark or external resource is included.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`. No validators, package-manager commands, test suites, typecheck, build, rendering, source comparison, or human review run/claimed per runner override; host runner owns verification/checkpoint. Rights and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+- Counts: prior live count 122/488 implemented-or-captured, 366 planned, 0 explicitly blocked; now 123/488, 365 planned, 0 blocked.
+
 ## MF-VF-331 — Draw optional torn masthead background
 
 - Added `assets/source/creative-reference/r02-torn-masthead.svg`, a standalone decorative paper-tone backing with an irregular edge and restrained ink marks. It has no embedded copy, external resources, scripts, or event handlers. The R02 title remains live DOM text; the asset is not enabled by default.
