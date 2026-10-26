@@ -1799,3 +1799,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run. Rollback: remove the protocol and restore the backlog status; remove matching TODO and ledger evidence. No commit created; host runner owns verification and checkpoint.
 
 **MF-VF-168 — implemented (2026-10-27).** Added docs/visual/skins/moonpanel.md with canonical strict-grid direction, behavior/accessibility constraints, and explicit evidence boundaries. Dependency MF-VF-015 is implemented. Status implemented; source/document inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, or screenshots run; host runner owns checks and checkpoint. Visual review and acceptance remain pending. No commit created.
+# MF-VF-169 — Draw original Moonpanel motif SVG
+
+- Added `assets/source/skins/moonpanel/motif.svg`, an original monochrome rectangular corner-register motif with accessible title/description and no external references, scripts, event handlers, or embedded text. SHA-256: `9AA787AF0EA317E35A53A3E593B6FEC9A110136CB1B5A365DC10C1F444A22571`.
+- Dependency MF-VF-168 is implemented. Backlog status `implemented`; source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, or human review run. Visual review, rights review, and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-169 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.

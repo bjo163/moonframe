@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpanel corner register</title>
+  <desc id="desc">A monochrome modular panel corner with aligned rectangular grid marks.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M18 54V18h36M74 18h36v36M110 74v36H74M54 110H18V74"/>
+    <path d="M18 64h28m36 0h28M64 18v28m0 36v28" stroke-width="2"/>
+    <path d="M46 46h36v36H46z"/>
+  </g>
+</svg>
