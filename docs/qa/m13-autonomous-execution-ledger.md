@@ -1504,3 +1504,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `apps/moonframe/templates/visual-reference/r04-password-field.tsx` and `.module.css`: labeled native password input, current-password autocomplete, optional associated help/error copy, and a keyboard-operable reveal toggle with visible focus and forced-colors treatment.
 - Dependency `MF-VF-025` is implemented. Status `implemented`; source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser capture, or human review run. Host runner owns verification/checkpoint; no authentication, rights approval, or acceptance is claimed.
 - Rollback: remove the component and CSS module, restore MF-VF-373 to planned in the backlog, and remove this TODO/ledger evidence. No commit created.
+# MF-VF-374 — Create remember-me and recovery row
+
+- Added `apps/moonframe/templates/visual-reference/r04-form-options.tsx` and `.module.css`. The optional native checkbox is label-associated; recovery href and link label are consumer-owned. Both controls have 44px minimum hit height, visible keyboard focus, wrapping layout, and forced-colors styling.
+- Dependency MF-VF-025 is implemented. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, browser captures, or human review were run. No authentication/recovery behavior or approval is claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the component/CSS module, restore MF-VF-374 to planned, and remove this TODO/ledger evidence.
