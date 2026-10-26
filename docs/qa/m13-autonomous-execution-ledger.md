@@ -5,8 +5,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, and this invocation's `MF-PF-005` are captured. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count after this task: 18 completed-or-captured (14 baseline implemented + 4 captured), 0 blocked, 470 pending. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, and `MF-PF-005` are captured. `MF-PF-025` is implemented with package verification pending. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 19 implemented-or-captured (14 baseline implemented + 4 captured + 1 implemented), 0 blocked, 469 pending. The license/trademark decision remains pending without inferred owner approval.
 
 ## MF-PF-001 — Freeze current package/release inventory
 
@@ -50,3 +50,17 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node scripts/validate-contracts.mjs` — exit 0; structural contract checks passed.
 - `node scripts/verify-m13-handoff.mjs` — exit 0; handoff integrity passed with existing SFX consent/playback and missing LICENSE release warnings.
 - Status: captured; no human review or acceptance claimed. Rollback: revert only the catalog, matching task/TODO count updates, and this ledger entry.
+
+## MF-PF-025 — Explicit simulated auth demo states
+
+- Inspected source HEAD: `e1a17d5`.
+- Scope: `apps/moonframe/templates/index.tsx`, matching preflight task evidence, root TODO live count, and this ledger.
+- Updated demo sign-in, OAuth/SSO, verification, recovery, MFA, and onboarding wording/actions to state that each is simulated. Removed claims of actual authentication, redirects, messages, token timing, verified factors, sessions, or provisioned workspaces.
+- `node scripts/validate-contracts.mjs` — exit 0.
+- `node scripts/verify-m13-handoff.mjs` — exit 0; existing SFX consent/playback and missing LICENSE warnings remain.
+- The runner's first package check hit `EPERM` while recreating `node_modules` and could not restore packages online (`EACCES`); dependencies were restored with `pnpm install --frozen-lockfile --offline` (exit 0, 31 packages reused from cache).
+- `pnpm test` — exit 0; 12/12 unit and SSR tests passed.
+- `pnpm run typecheck` — exit 0.
+- `pnpm run build` — exit 0; all 88 static/SSG routes generated.
+- `pnpm run test:browser` — exit 0; 46/46 Playwright tests passed.
+- Status: implemented with local verification complete. No authentication integration or real account action is claimed. Rollback: revert only the template wording/action edits and this evidence.

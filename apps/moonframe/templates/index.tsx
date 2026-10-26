@@ -372,18 +372,18 @@ export function TemplateRenderer({ id }: { id: string }) {
               Same semantics. Unmistakable identity.
             </h1>
             <p style={{ color: 'var(--mf-muted)' }}>
-              Sign in to manage your Moonframe design tokens, preview templates across 30 appearances, and ship to Next.js.
+              Sign in to manage your Moonframe design tokens, preview templates across 30 appearances, and ship to Next.js. This is a simulated authentication flow; no identity provider is connected.
             </p>
           </Hero>
           <AuthCard
             eyebrow="Workspace Access"
             title="Sign in to Moonframe"
-            description="Enter your credentials or continue with your enterprise identity provider."
+            description="Demo only. Enter sample credentials or preview simulated provider actions; no identity provider is connected."
             status={notice}
             socialActions={
               <>
-                <Button variant="secondary" onClick={() => setNotice('Redirecting to GitHub OAuth…')}>Continue with GitHub</Button>
-                <Button variant="secondary" onClick={() => setNotice('Redirecting to Google Workspace SSO…')}>Continue with SSO</Button>
+                <Button variant="secondary" onClick={() => setNotice('Demo only: GitHub OAuth is not connected; no redirect occurred.')}>Continue with GitHub (demo)</Button>
+                <Button variant="secondary" onClick={() => setNotice('Demo only: SSO is not connected; no redirect occurred.')}>Continue with SSO (demo)</Button>
               </>
             }
             footer={<span>New to Moonframe? Create a workspace account.</span>}
@@ -395,7 +395,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               <PasswordField defaultValue="Moonframe#2026" />
             </Field>
             <Checkbox label="Keep this session active for 30 days" defaultChecked />
-            <Button onClick={() => setNotice('Authenticated successfully.')}>Sign In to Workspace</Button>
+            <Button onClick={() => setNotice('Demo only: sign-in was simulated. No authentication or session was created.')}>Simulate Sign In</Button>
           </AuthCard>
         </div>
       );
@@ -434,7 +434,7 @@ export function TemplateRenderer({ id }: { id: string }) {
                 { value: 'react', label: 'Custom React 19 SPA / SSR', description: 'Standard ESM & CSS bundle' },
               ]}
             />
-            <Button onClick={() => setNotice('Workspace provisioned! Welcome to Moonframe.')}>Provision Workspace</Button>
+            <Button onClick={() => setNotice('Demo only: workspace provisioning was simulated; no account or workspace was created.')}>Simulate Workspace Setup</Button>
           </AuthCard>
         </div>
       );
@@ -445,18 +445,18 @@ export function TemplateRenderer({ id }: { id: string }) {
           <AuthCard
             eyebrow="Account Recovery"
             title="Reset your password"
-            description="Enter the email associated with your Moonframe organization and we will dispatch a signed recovery link."
+            description="Demo only. Enter a sample email to preview account recovery; no message or recovery link will be sent."
             status={notice}
             footer={<span>Remembered your password? Return to Sign In.</span>}
           >
-            <Callout title="Cryptographic expiration">
-              Recovery links are valid for 15 minutes and invalidate previous tokens immediately.
+            <Callout title="Demo recovery flow">
+              This example does not create tokens or send email. A real provider must define expiration and token invalidation.
             </Callout>
             <Field label="Verified work email" required>
               <Input type="email" defaultValue="alex@moonframe.dev" />
             </Field>
-            <Button onClick={() => setNotice('Recovery link dispatched to alex@moonframe.dev.')}>
-              Send Recovery Link
+            <Button onClick={() => setNotice('Demo only: recovery was simulated; no link was created or sent.')}>
+              Simulate Recovery Request
             </Button>
           </AuthCard>
         </div>
@@ -476,11 +476,11 @@ export function TemplateRenderer({ id }: { id: string }) {
               <OTPInput
                 length={6}
                 defaultValue="482910"
-                onComplete={code => setNotice(`Code ${code} verified.`)}
+                onComplete={() => setNotice('Demo only: code entry was simulated; no factor was verified.')}
               />
             </div>
             <Checkbox label="Trust this browser for 14 days" defaultChecked />
-            <Button onClick={() => setNotice('MFA challenge passed.')}>Verify & Enter Studio</Button>
+            <Button onClick={() => setNotice('Demo only: MFA was simulated; no factor or session was verified.')}>Simulate MFA Check</Button>
           </AuthCard>
         </div>
       );
@@ -1162,7 +1162,7 @@ export function TemplateRenderer({ id }: { id: string }) {
           <AuthCard
             eyebrow="Direct Authentication"
             title="Sign In to Studio"
-            description="Enter your authorized workspace credentials."
+            description="Demo only. Sample credentials illustrate the sign-in layout; no authentication provider is connected."
           >
             <Field label="Work Email" required>
               <Input type="email" defaultValue="alex@moonframe.dev" />
@@ -1171,7 +1171,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               <PasswordField defaultValue="OrbitPass#2026" />
             </Field>
             <Checkbox label="Keep this session active for 30 days" defaultChecked />
-            <Button onClick={() => setNotice('Authenticated successfully.')}>Sign In</Button>
+            <Button onClick={() => setNotice('Demo only: sign-in was simulated. No authentication or session was created.')}>Simulate Sign In</Button>
           </AuthCard>
         </div>
       );
@@ -1182,14 +1182,14 @@ export function TemplateRenderer({ id }: { id: string }) {
           <AuthCard
             eyebrow="Two-Step Verification"
             title="Check your email"
-            description="We sent a 6-digit confirmation code to alex@moonframe.dev."
+            description="Demo only. A sample six-digit code illustrates this verification screen; no email was sent."
           >
             <OTPInput length={6} defaultValue="739104" />
             <Callout title="Code expires in 10 minutes" variant="primary">
               Didn't receive it? Check spam folder or request a new code below.
             </Callout>
-            <Button onClick={() => setNotice('Email verified.')}>Confirm Code</Button>
-            <Button variant="ghost" size="sm">Resend verification code</Button>
+            <Button onClick={() => setNotice('Demo only: code confirmation was simulated; email ownership was not verified.')}>Simulate Code Confirmation</Button>
+            <Button variant="ghost" size="sm" onClick={() => setNotice('Demo only: no verification email was sent.')}>Resend verification code (demo)</Button>
           </AuthCard>
         </div>
       );
@@ -1208,7 +1208,7 @@ export function TemplateRenderer({ id }: { id: string }) {
           <AuthCard
             eyebrow="Step 2 of 3"
             title="Setup Your Team Workspace"
-            description="Configure initial parameters for your engineering organization."
+            description="Demo only. Configure sample workspace settings; no account or workspace will be created."
           >
             <Field label="Workspace Name" required>
               <Input defaultValue="Aether Systems Lab" />
@@ -1226,7 +1226,7 @@ export function TemplateRenderer({ id }: { id: string }) {
             <Field label="Initial Active Skin">
               <SkinSelector />
             </Field>
-            <Button onClick={() => setNotice('Workspace created.')}>Continue to Next Step</Button>
+            <Button onClick={() => setNotice('Demo only: workspace setup was simulated; nothing was created.')}>Simulate Continue</Button>
           </AuthCard>
         </div>
       );

@@ -1,6 +1,6 @@
 # Moonframe M13 — Nonvisual Preflight: SFX / Tokens / Motion / Package / Security Microtasks
 
-**2026-10-26 · Live status: 3 captured, 25 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
+**2026-10-26 · Live status: 4 captured, 1 implemented, 23 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
 
 **Rule:** A green build approves source integrity, not sound playback safety, npm license rights, original artwork or full WCAG status. Work one ID per local agent session. Each task must provide before/after SHA, scoped file diff, tests actually run, fail/pass, source/rights as applicable, status and rollback.
 
@@ -96,7 +96,7 @@
 
 ## P1/P2 — consumer security and closeout
 
-- [ ] **MF-PF-025 — Make all auth demo states explicit and never claim authentication** · **P1** · `planned` · **deps:** `none` · **GitHub issue:** not-created
+- [x] **MF-PF-025 — Make all auth demo states explicit and never claim authentication** · **P1** · `implemented` · **deps:** `none` · **GitHub issue:** not-created
   - **Scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** Buttons are labeled simulated unless real provider integration; no fake SSO success
   - **Proof:** exact code/contract diff; relevant `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, unit/type/build/Playwright/browser test as applicable, signed reviewer only if required. Track actual command result and rollback; never invent pass.
 - [ ] **MF-PF-026 — Review DataTable capability claims vs actual runtime behavior** · **P2** · `planned` · **deps:** `MF-PF-004` · **GitHub issue:** not-created
