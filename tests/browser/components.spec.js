@@ -161,7 +161,11 @@ test('SFX reuses its AudioContext and closes it on provider unmount', async ({ p
     class FakeAudioContext {
       constructor() { this.state = 'running'; this.currentTime = 0; this.destination = {}; window.__audioContexts.push(this); }
       createGain() { return { gain: { setValueAtTime() {}, exponentialRampToValueAtTime() {} }, connect() {} }; }
-      createOscillator() { return { frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() {}, addEventListener() {}, disconnect() {} }; }
+      createOscillator() {
+        const oscillator = { stopCalls: 0, frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() { this.stopCalls += 1; }, addEventListener() {}, disconnect() {} };
+        (window.__oscillators ||= []).push(oscillator);
+        return oscillator;
+      }
       close() { this.state = 'closed'; return Promise.resolve(); }
     }
     window.AudioContext = FakeAudioContext;
@@ -170,6 +174,15 @@ test('SFX reuses its AudioContext and closes it on provider unmount', async ({ p
   await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
   await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
   await page.getByRole('button', { name: '🔔 success' }).click();
+  const scheduledStops = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  expect(scheduledStops).toBeGreaterThan(0);
+  await page.getByRole('button', { name: /Mute \/ Revoke Consent/i }).click();
+  await expect(page.getByText('Consent: Not Granted')).toBeVisible();
+  const stoppedOnRevoke = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  expect(stoppedOnRevoke).toBeGreaterThan(scheduledStops);
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: muted-or-no-consent\)/)).toBeVisible();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
   await page.waitForTimeout(1050);
   await page.getByRole('button', { name: '⚠️ warning' }).click();
   expect(await page.evaluate(() => window.__audioContexts.length)).toBe(1);

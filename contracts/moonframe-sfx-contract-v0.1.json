@@ -261,7 +261,7 @@
     "defaultEnabled": false,
     "consentGap": "defaultEnabled=true can initialize consentGranted without direct trusted user action",
     "playbackTruthGap": "MF-PF-009 implemented and verified locally: unsupported AudioContext returns played:false/unsupported; suspended or closed contexts and scheduling errors return played:false/blocked. Unit and browser regressions pass; broader runtime/release approval remains separate.",
-    "lifecycleGap": "new AudioContext per play, no deterministic close/suspend or stop-on-mute/revoke",
+    "lifecycleGap": "MF-PF-010 and MF-PF-011 implemented and verified locally: one provider-owned AudioContext is reused and closed on unmount; active oscillators are stopped and disconnected synchronously on mute, consent revocation, or volume zero. Unit, type, build, and browser regressions pass; broader release approval remains separate.",
     "categoryAndSecurityContextGap": "contract excludes sensitive auth/finance/destructive sound, runtime play does not distinguish consumer context",
     "requiredAction": "P1 SFX hardening with browser gesture/denial/mute lifecycle tests before opt-in audio is claimed production-safe",
     "producedAudioFiles": 0,

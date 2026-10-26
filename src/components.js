@@ -1959,6 +1959,14 @@ export function SFXProvider({
   const timingRef = useRef({ lastPlayedAt: 0, byEvent: {} });
   const audioRef = useRef({ context: null, activeOscillators: new Set() });
 
+  function stopActiveSound() {
+    audioRef.current.activeOscillators.forEach((oscillator) => {
+      try { oscillator.stop(); } catch { /* already stopped */ }
+      try { oscillator.disconnect(); } catch { /* already disconnected */ }
+      audioRef.current.activeOscillators.delete(oscillator);
+    });
+  }
+
   useEffect(() => () => {
     const audio = audioRef.current;
     audio.activeOscillators.forEach((oscillator) => {
@@ -1973,11 +1981,6 @@ export function SFXProvider({
     }
   }, []);
 
-  function setVolume(next) {
-    const clamped = Math.max(0, Math.min(1, Number(next)));
-    if (Number.isFinite(clamped)) setVolumeState(clamped);
-  }
-
   function grantConsent(event) {
     const nativeEvent = event?.nativeEvent || event;
     const activationEvents = new Set(['click', 'pointerup', 'keydown', 'touchend']);
@@ -1988,8 +1991,23 @@ export function SFXProvider({
   }
 
   function revokeConsent() {
+    stopActiveSound();
     setConsentGranted(false);
     setMutedState(true);
+  }
+
+  function setMuted(nextMuted) {
+    const next = Boolean(nextMuted);
+    if (next) stopActiveSound();
+    setMutedState(next);
+  }
+
+  function setVolume(next) {
+    const clamped = Math.max(0, Math.min(1, Number(next)));
+    if (Number.isFinite(clamped)) {
+      if (clamped <= 0) stopActiveSound();
+      setVolumeState(clamped);
+    }
   }
 
   function play(rawEventId) {
@@ -2059,7 +2077,7 @@ export function SFXProvider({
     lastEvent,
     grantConsent,
     revokeConsent,
-    setMuted: setMutedState,
+    setMuted,
     setVolume,
     play,
   }), [consentGranted, muted, volume, lastEvent]);
