@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-054 — Draw semantic arrow-right icon
+
+- Added `assets/source/icons/arrow-right.svg`, a self-contained 24×24 `currentColor` right arrow with accessible label `Continue`.
+- SHA-256: `ad70013622db3cc4e196a7174431cfcf32f56b7aed2cdaee4bbcd4e8a33c34a2`.
+- Dependency `MF-VF-033` is implemented. Status: `implemented`; static source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser captures were run; host runner owns verification. Human review and acceptance remain pending.
+- Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+- Counts: prior live count 123 implemented/captured, 365 planned, 0 blocked; now 124/488 implemented/captured, 364/488 planned, 0/488 blocked.
+
 ## MF-VF-053 — Draw semantic chevron-down icon
 
 - Added `assets/source/icons/chevron-down.svg`, an original self-contained 24×24 `currentColor` disclosure chevron labeled `Expand`.
