@@ -98,3 +98,7 @@ The [local agent handoff](../handoff/moonframe-visual-reference-microagent-promp
 Every completed micro-task must report: task ID; upstream dependency evidence; `git rev-parse HEAD` before/after; exact files edited; unit/type/build/browser commands actually run (including exit code); screenshot or source asset path + SHA-256 when applicable; accessibility/rights effect; rollback; and current `planned/implemented/captured/human-reviewed/accepted` classification.
 
 **Final gate wording for this audit:** **M13 specification and repository cross-contract consistency: CONDITIONALLY READY FOR IMPLEMENTATION. Visual and asset acceptance: NOT READY. Public package/SFX feature release: BLOCKED pending gates.** No tool or generated report can grant an owner signoff.
+
+## 8. Final task reconciliation addendum (2026-10-26)
+
+The **460 MF-VF visual task IDs** now have **14 implementation and CI evidence completions** and **446 pending**. There is also a separate [28-task preflight backlog](../backlog/m13-preflight-remediation-tasks.md) for sound consent/lifecycle, token-source decisions, package licensing, motion, and truthfulness of demos. Together M13 has **488 unique task IDs, 14 implemented, 474 pending**. This is a task-count update, not a human visual/asset approval. The live [master TODO](../../TODO.md) and [readiness gates](../../contracts/moonframe-m13-readiness-gates-v0.1.json) provide current operational interpretation.
