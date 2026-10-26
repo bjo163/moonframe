@@ -1240,3 +1240,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/creative-reference/r03/stage-light.svg`, an original geometric stage backdrop with abstract intersecting light beams. SHA-256: `EC890965FCA7D99E9DC223BDFD41BEB9743195376E8469486B4268AA6D30CBB6`.
 - Dependency MF-VF-024 is implemented. Status: `implemented`; static source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review run per runner override. No consumer marks, performer imagery, lyrics, external resources, or third-party rights are included or claimed. Optical review, rights review, and acceptance remain pending.
 - No commit created; host runner owns checks and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+
+## MF-VF-355 — Draw generic anonymous stage/crowd silhouettes
+
+- Added `assets/source/creative-reference/r03/crowd.svg`, original abstract audience head-and-shoulder silhouettes with no identifiable people, external resources, scripts, or consumer marks. SHA-256: `EEC321E1E00A59199041A21B9B30A3BDCFCEBFBB481EBDA3B7574F6C03E6293C`.
+- Dependency MF-VF-024 is implemented. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run/claimed under runner override. Rights/optical review and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-355 backlog row and this ledger entry to planned.

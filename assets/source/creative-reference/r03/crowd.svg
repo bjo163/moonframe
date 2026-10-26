@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Anonymous audience silhouettes</title>
+  <desc id="desc">A low-contrast row of varied abstract audience heads and shoulders, with no identifiable people.</desc>
+  <g fill="#09090d" fill-opacity=".88">
+    <path d="M0 710q35-72 82-72t82 72v190H0zm123-26q28-60 68-60t68 60v216H123zm115 18q38-82 92-82t92 82v198H238zm170-32q30-66 73-66t73 66v230H408zm135 26q42-91 102-91t102 91v204H543zm190-17q34-74 83-74t83 74v221H733zm145 25q38-84 92-84t92 84v196H878zm170-29q31-68 75-68t77 68v225h-152z"/>
+    <circle cx="82" cy="622" r="42"/><circle cx="191" cy="601" r="36"/><circle cx="330" cy="600" r="49"/><circle cx="481" cy="598" r="39"/><circle cx="645" cy="581" r="55"/><circle cx="816" cy="602" r="44"/><circle cx="970" cy="598" r="50"/><circle cx="1125" cy="613" r="41"/>
+  </g>
+  <g fill="#27232c" fill-opacity=".8">
+    <circle cx="33" cy="713" r="31"/><circle cx="279" cy="700" r="37"/><circle cx="414" cy="710" r="32"/><circle cx="770" cy="698" r="35"/><circle cx="1060" cy="704" r="34"/><circle cx="1170" cy="720" r="29"/>
+  </g>
+</svg>
