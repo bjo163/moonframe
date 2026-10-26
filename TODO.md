@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-447):** Captured a source audit at `docs/qa/moonpunk-acid-lime-audit.md`: Moonpunk is canonically acid-lime, while runtime CSS has only global light/dark bridge accents and no Moonpunk override; the theme contract remains specified-not-implemented. No colors or public overlay API changed. No rendered contrast, screenshots, human review, rights review, or acceptance claimed; runner override honored and host runner owns checks/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-170):** Added original optional `assets/source/skins/moonpanel/pattern.svg` with an open center and rectangular gutter marks. SHA-256 `8d9c46e98467192680bbdb975c4b889efb0bc65634934ff863bb9c26e82c78f7`. Dependency MF-VF-168 is implemented. Status `implemented`; source inspection and hash only. No package-manager commands, validators, suites, typecheck, build, rendering, rights review, or human review run per runner override. Asset remains unintegrated; host runner owns verification/checkpoint. No approval or acceptance claimed.
 
 **Live execution update (2026-10-27, MF-VF-418):** Added `docs/qa/reviews/moonchrome-reference-parity.md` with matched-content desktop/mobile comparison conditions against Moonpunk and Moonhalftone, grayscale and decoration-on/off states, mode coverage, structural distinction criteria, and human evidence fields. Status `implemented`; no captures, verdict, rights review, or acceptance claimed. Per runner override, no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns verification/checkpoint. Task dependency MF-VF-204 is implemented.

@@ -1932,3 +1932,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonpanel/pattern.svg`, an original static rectangular gutter grid with an open center and accessible title/description. SHA-256: `8d9c46e98467192680bbdb975c4b889efb0bc65634934ff863bb9c26e82c78f7`.
 - Dependency MF-VF-168 is implemented. Backlog status `implemented`; source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, or human review run. Asset remains optional and unintegrated; rights review and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-170 to planned, and remove this ledger entry. No commit created; host runner owns checks and checkpoint.
+## MF-VF-447 — Audit Moonpunk acid-lime runtime and modes
+
+- Added `docs/qa/moonpunk-acid-lime-audit.md`. Source inspection confirms the shared CSS currently has global light/dark accent bridge values and no Moonpunk-specific accent override, while the canonical theme contract describes Moonpunk as specified but not implemented.
+- Dependency MF-VF-293 is captured. Backlog status: `captured`; no colors changed or proposed. No contrast calculations, browser captures, package-manager commands, validators, suites, typecheck, build, human review, or acceptance claimed; the host runner owns verification/checkpoint.
+- Rollback: remove the audit, restore MF-VF-447 to planned, and remove this ledger/TODO evidence. No commit created.

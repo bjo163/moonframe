@@ -576,7 +576,8 @@
 
 The existing acid-lime Moonpunk default and hot-magenta Moonwitness reference must coexist through a [proposed Consumer Brand Overlay Contract](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). No extra skin or production brand API is approved. This batch implements the optional contract only after owner review and tests.
 
-- [ ] **MF-VF-447 — Audit actual Moonpunk acid-lime CSS and Light/Dark tokens** · **P1** · `planned` · **dep:** `MF-VF-293` · **issue:** not-created
+- [x] **MF-VF-447 — Audit actual Moonpunk acid-lime CSS and Light/Dark tokens** · **P1** · `captured` · **dep:** `MF-VF-293` · **issue:** not-created
+  - **Evidence:** `docs/qa/moonpunk-acid-lime-audit.md` records the canonical Moonpunk territory, observed global light/dark bridge accents, and contract status. Source inspection only; no rendered contrast, proposed token values, consumer overlay API, human review, or acceptance claimed. Host runner owns verification/checkpoint.
   - **File scope/output:** `src/styles.css`. **AC:** Record default accent source in both modes without changing values.
   - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
 - [ ] **MF-VF-448 — Define opt-in brand accent public API decision** · **P1** · `planned` · **dep:** `MF-VF-447` · **issue:** not-created
