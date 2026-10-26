@@ -479,5 +479,12 @@
     "resolvedMotion": "Theme preference system/full/reduced; generated CSS root data-motion reduced overlay and OS media before JS",
     "fallback": "when invalid/missing/unsupported token or CSS animation, apply immediate semantic target and reject invalid production build",
     "numericApproval": "pending measurements and accessibility review; do not infer 100–180ms historic Moonpunk prose as canonical token value"
+  },
+  "consumerBrandOverlayProposal": {
+    "contract": "moonframe-consumer-brand-overlay-contract-v0.1.json",
+    "status": "optional-future-overlay-no-canonical-value-update",
+    "preserveOriginalSkinAccent": true,
+    "semanticStatusTokensNotOverridable": true,
+    "note": "Moonpunk default acid-lime and consumer Moonwitness fuchsia are compatible through a future opt-in brand layer; not by globally replacing all skin token values."
   }
 }
