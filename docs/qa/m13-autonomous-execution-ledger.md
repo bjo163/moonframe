@@ -604,3 +604,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - Previous live count: 99 implemented-or-captured, 389 planned, 0 explicitly blocked. This task adds one implemented record: 100 implemented-or-captured, 388 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
+
+## MF-VF-309 — Separate product identity and edition slots
+
+- Split the generic Northstar demo initial, product name, and edition descriptor into explicit markup in `apps/moonframe/app/(lab)/lab/page.tsx`, with responsive CSS in `lab.css`. This makes the consumer-provided identity slot clear without adding Moonwitness names, marks, or art to the framework fixture.
+- Increased the existing enterprise browser matrix timeout to 120 seconds; its 30 skin × mode cases took 52 seconds under the loaded runner. Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and the full browser suite (64/64) passed. No human review or rights assertion.
+- Status: `implemented`. Rollback: revert the markup/CSS, test-timeout adjustment, and this task evidence.
+
+## Current counts after MF-VF-309
+
+- Total task IDs: 488. 101 implemented-or-captured (20.7%), 387 planned (79.3%), 0 explicitly blocked. These counts do not imply human visual review or acceptance.

@@ -217,6 +217,7 @@ test('editorial article copy, typography hooks, and image context stay fixed acr
 });
 
 test('compact enterprise rows, summary, and filters remain consistent across every skin and mode', async ({ page, browser }) => {
+  test.setTimeout(120_000);
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
   for (const skin of skins) for (const mode of ['light', 'dark']) {

@@ -90,7 +90,7 @@ function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorati
     </div>
     <div className="fixture-dashboard-body">
       <aside className="fixture-dashboard-rail" aria-label="Northstar workspace sidebar">
-        <a className="fixture-dashboard-rail-brand" href="#fixture-dashboard-title"><span aria-hidden="true">N</span><span>Northstar<small>MISSION CONTROL</small></span></a>
+        <a className="fixture-dashboard-rail-brand" href="#fixture-dashboard-title" aria-label="Northstar Studio home"><span className="fixture-dashboard-rail-brand-mark" aria-hidden="true">N</span><span><span className="fixture-dashboard-rail-brand-name">Northstar</span><small className="fixture-dashboard-rail-brand-edition">MISSION CONTROL</small></span></a>
         <nav aria-label="Workspace sections">
           {navItems.map((item, index) => <button key={item} type="button" aria-current={activeNav === item ? 'page' : undefined} onClick={() => setActiveNav(item)}><span className="fixture-dashboard-rail-glyph" aria-hidden="true">{['⌂', '◇', '≡', '↗', '⚙'][index]}</span>{item}</button>)}
         </nav>
