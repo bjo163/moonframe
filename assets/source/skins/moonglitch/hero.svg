@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Moonglitch telemetry console</title>
+  <desc id="desc">An original monochrome diagnostic console illustration with a signal trace, compact meter bars, and a segmented data panel. No labels or essential information are embedded.</desc>
+  <g fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter">
+    <path stroke-width="4" d="M35 30h570v300H35zM35 72h570M76 30v42M118 30v42M160 30v42" />
+    <path stroke-width="3" d="M65 96h172v202H65zM256 96h319v82H256zM256 194h152v104H256zM426 194h149v104H426z" />
+    <path stroke-width="2" d="M82 121h45m16 0h77M82 143h32m15 0h91M82 165h104m16 0h18M82 187h57m16 0h60M82 209h25m15 0h112M82 231h82m15 0h55M82 253h45m16 0h77M82 275h105m16 0h17" opacity=".72" />
+    <path stroke-width="3" d="M278 151h40l15-28 24 45 21-37 19 20h38l14-30 24 45 20-27h54" />
+    <path stroke-width="2" d="M278 116h52m16 0h34m16 0h61m16 0h74M278 137h18m16 0h29m16 0h37m16 0h70m16 0h59M278 161h34m16 0h18m16 0h62m16 0h28m16 0h63" opacity=".58" />
+    <path stroke-width="3" d="M278 222h106M278 241h82M278 260h111M278 279h65M448 222h102M448 241h74M448 260h109M448 279h83" opacity=".72" />
+  </g>
+  <g fill="currentColor" opacity=".72">
+    <path d="M51 47h12v8H51zM75 47h12v8H75zM99 47h12v8H99z" />
+    <path d="M216 109h8v8h-8zM216 131h8v8h-8zM216 153h8v8h-8zM216 175h8v8h-8zM216 197h8v8h-8zM216 219h8v8h-8zM216 241h8v8h-8zM216 263h8v8h-8z" />
+  </g>
+</svg>

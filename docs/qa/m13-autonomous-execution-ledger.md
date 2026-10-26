@@ -1710,3 +1710,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a consumer identity boundary to `docs/moonframe-ui-design-system-bible-v1.3.md`. Generic Moonframe defaults remain separate from Moonwitness product copy, characters, logos, story, and private data; consumers own identity integration and rights review. Skin and appearance remain orthogonal.
 - Dependency MF-VF-013 is implemented. Backlog status: `implemented`; documentation/source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshots, or human review run. No rights clearance, review, or acceptance claimed.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the added subsection and restore the backlog status and matching TODO/ledger evidence.
+# MF-VF-123 — Draw original Moonglitch hero illustration
+
+- Added original static `assets/source/skins/moonglitch/hero.svg`: a monochrome telemetry console with signal trace, compact meter bars, and segmented panels; essential text is not embedded. SHA-256: `203340EA4FF9DC49D553E30536A86FC99466A5CAB3460780CF3D09D51B2822CA`.
+- Dependency MF-VF-120 is implemented. Backlog status `implemented`; source inspected and `git diff --check` exited 0. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size/viewport inspection, or human review run. Rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore MF-VF-123 to planned in backlog/TODO/ledger.

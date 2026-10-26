@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-123):** Added original static `assets/source/skins/moonglitch/hero.svg`, a monochrome telemetry console illustration with no essential text (SHA-256 `203340EA4FF9DC49D553E30536A86FC99466A5CAB3460780CF3D09D51B2822CA`). Dependency MF-VF-120 is implemented. Source inspection and `git diff --check` passed; no package-manager commands, validators, tests, typecheck, build, render, or human review run per runner override. Rights, optical review, and acceptance remain pending; host runner owns verification/checkpoint. No aggregate recount asserted.
+
 **Live execution update (2026-10-27, MF-VF-405):** Clarified that reference palette names are art-direction proposals, not approved token values, in `docs/visual/cinematic-mangapunk-reference-bible.md`. No colors were sampled or promoted. Documentation/source inspection only; runner override honored, host runner owns verification/checkpoint. No token approval, human review, or acceptance claimed.
 
 **Live execution update (2026-10-27, MF-VF-228):** Added `docs/visual/skins/moonquest.md` with a quest-book journal composition and anti-overlap rules distinguishing Moonquest from Moonzine and Moonledger. Dependency MF-VF-015 is implemented. Documentation/source inspection only; no validators, package-manager commands, suites, typecheck, build, captures, or human review run under runner override. No asset, rights, or acceptance claim; host runner owns verification/checkpoint.
