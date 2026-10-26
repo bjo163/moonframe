@@ -30,11 +30,11 @@ const seedProjects: ProjectItem[] = [
   { id: 'mf-05', name: 'Zero gravity', category: 'Exploration', status: 'Planned', progress: 12, owner: 'MN', date: '2026-12-02' },
 ];
 const dashboardFixtureTasks = [
-  { id: 'T-1042', task: 'Confirm migration checklist', owner: 'Amina Yusuf', status: 'In progress', date: '2026-10-27' },
-  { id: 'T-1043', task: 'Review workspace permissions', owner: 'Leo Martin', status: 'Needs review', date: '2026-10-28' },
-  { id: 'T-1044', task: 'Publish release notes draft', owner: 'Nia Patel', status: 'Not started', date: '2026-10-30' },
-  { id: 'T-1045', task: 'Verify scheduled export', owner: 'Mateo Silva', status: 'Complete', date: '2026-10-24' },
-  { id: 'T-1046', task: 'Test recovery procedure', owner: 'Hana Kim', status: 'Blocked', date: '2026-10-31' },
+  { id: 'T-1042', task: 'Confirm migration checklist', owner: 'Amina Yusuf', status: 'In progress', date: '2026-10-27', estimate: '3 h' },
+  { id: 'T-1043', task: 'Review workspace permissions', owner: 'Leo Martin', status: 'Needs review', date: '2026-10-28', estimate: '2 h' },
+  { id: 'T-1044', task: 'Publish release notes draft', owner: 'Nia Patel', status: 'Not started', date: '2026-10-30', estimate: '4 h' },
+  { id: 'T-1045', task: 'Verify scheduled export', owner: 'Mateo Silva', status: 'Complete', date: '2026-10-24', estimate: '1 h' },
+  { id: 'T-1046', task: 'Test recovery procedure', owner: 'Hana Kim', status: 'Blocked', date: '2026-10-31', estimate: '5 h' },
 ];
 const dashboardFixtureMetrics = [
   { label: 'Open tasks', value: '12' },
@@ -69,6 +69,12 @@ function loadProjects(): ProjectItem[] {
 }
 
 function DashboardFixture() {
+  const [taskSearch, setTaskSearch] = useState('');
+  const [taskSort, setTaskSort] = useState<'due-date' | 'task'>('due-date');
+  const visibleFixtureTasks = useMemo(() => dashboardFixtureTasks
+    .filter(item => `${item.id} ${item.task} ${item.owner} ${item.status}`.toLowerCase().includes(taskSearch.trim().toLowerCase()))
+    .sort((a, b) => taskSort === 'task' ? a.task.localeCompare(b.task, 'en-US') : a.date.localeCompare(b.date)), [taskSearch, taskSort]);
+
   return <section className="fixture-dashboard" data-fixture="dashboard-overview" aria-labelledby="fixture-dashboard-title">
     <div className="fixture-dashboard-heading">
       <div>
@@ -99,6 +105,26 @@ function DashboardFixture() {
         <CardContent><p>{dashboardFixtureDescription}</p></CardContent>
       </Card>
     </div>
+    <section className="fixture-dashboard-table-section" aria-labelledby="fixture-tasks-title">
+      <div className="fixture-dashboard-table-heading"><h3 id="fixture-tasks-title">Project tasks</h3><span>{visibleFixtureTasks.length} of {dashboardFixtureTasks.length} tasks</span></div>
+      <div className="fixture-dashboard-table-toolbar">
+        <Input aria-label="Search project tasks" placeholder="Search project tasks" value={taskSearch} onChange={event => setTaskSearch(event.target.value)} />
+        <Select aria-label="Sort project tasks" value={taskSort} onChange={event => setTaskSort(event.target.value as 'due-date' | 'task')}>
+          <option value="due-date">Due date</option><option value="task">Task name</option>
+        </Select>
+      </div>
+      <div className="fixture-dashboard-table-scroll">
+        <Table>
+          <TableCaption>Project tasks</TableCaption>
+          <TableHeader><TableRow><TableHead>Task</TableHead><TableHead>Owner</TableHead><TableHead>Status</TableHead><TableHead>Due date</TableHead><TableHead>Estimate</TableHead></TableRow></TableHeader>
+          <TableBody>{visibleFixtureTasks.map(item => <TableRow key={item.id}>
+            <TableCell><span className="fixture-task-name">{item.task}</span><span className="fixture-task-id">{item.id}</span></TableCell>
+            <TableCell>{item.owner}</TableCell><TableCell><Badge>{item.status}</Badge></TableCell>
+            <TableCell><time dateTime={item.date}>{item.date}</time></TableCell><TableCell>{item.estimate}</TableCell>
+          </TableRow>)}{visibleFixtureTasks.length === 0 && <TableRow><TableCell colSpan={5}>No matching tasks.</TableCell></TableRow>}</TableBody>
+        </Table>
+      </div>
+    </section>
   </section>;
 }
 

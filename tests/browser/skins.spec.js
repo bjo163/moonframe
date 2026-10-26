@@ -28,6 +28,46 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       await expect(dashboardFixture.getByText(task, { exact: true })).toBeVisible();
     }
     await expect(dashboardFixture.getByText('Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.', { exact: true })).toBeVisible();
+    const fixtureTaskTable = dashboardFixture.getByRole('table', { name: 'Project tasks' });
+    const fixtureTaskNames = fixtureTaskTable.locator('.fixture-task-name');
+    await expect(fixtureTaskTable.getByRole('columnheader')).toHaveText(['Task', 'Owner', 'Status', 'Due date', 'Estimate']);
+    await expect(fixtureTaskNames).toHaveText([
+      'Verify scheduled export',
+      'Confirm migration checklist',
+      'Review workspace permissions',
+      'Publish release notes draft',
+      'Test recovery procedure',
+    ]);
+    for (const [id, owner, status, date, estimate] of [
+      ['T-1042', 'Amina Yusuf', 'In progress', '2026-10-27', '3 h'],
+      ['T-1043', 'Leo Martin', 'Needs review', '2026-10-28', '2 h'],
+      ['T-1044', 'Nia Patel', 'Not started', '2026-10-30', '4 h'],
+      ['T-1045', 'Mateo Silva', 'Complete', '2026-10-24', '1 h'],
+      ['T-1046', 'Hana Kim', 'Blocked', '2026-10-31', '5 h'],
+    ]) {
+      const rowText = await fixtureTaskTable.getByRole('row').filter({ hasText: id }).innerText();
+      for (const value of [id, owner, status, date, estimate]) expect(rowText).toContain(value);
+    }
+    await dashboardFixture.getByLabel('Sort project tasks', { exact: true }).selectOption('task');
+    await expect(fixtureTaskNames).toHaveText([
+      'Confirm migration checklist',
+      'Publish release notes draft',
+      'Review workspace permissions',
+      'Test recovery procedure',
+      'Verify scheduled export',
+    ]);
+    await dashboardFixture.getByLabel('Search project tasks', { exact: true }).fill('Hana Kim');
+    await expect(fixtureTaskNames).toHaveText(['Test recovery procedure']);
+    await expect(dashboardFixture.getByText('1 of 5 tasks', { exact: true })).toBeVisible();
+    await dashboardFixture.getByLabel('Search project tasks', { exact: true }).fill('');
+    await dashboardFixture.getByLabel('Sort project tasks', { exact: true }).selectOption('due-date');
+    await expect(fixtureTaskNames).toHaveText([
+      'Verify scheduled export',
+      'Confirm migration checklist',
+      'Review workspace permissions',
+      'Publish release notes draft',
+      'Test recovery procedure',
+    ]);
     const root = page.locator('.mf-root');
     await expect(root).toHaveAttribute('data-skin', skin.id);
     await expect(root).toHaveAttribute('data-mode', mode);
@@ -70,7 +110,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -91,7 +131,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -113,7 +153,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,

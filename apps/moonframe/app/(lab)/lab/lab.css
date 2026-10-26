@@ -139,6 +139,18 @@ button svg, a svg { flex-shrink: 0; }
 .fixture-dashboard-note { min-inline-size: 0; }
 .fixture-dashboard-note .mf-card-title { font-size: 17px; }
 .fixture-dashboard-note .mf-card-content p { margin: 0; color: var(--mf-muted); font-size: 12px; line-height: 1.7; }
+.fixture-dashboard-table-section { margin-block-start: 26px; }
+.fixture-dashboard-table-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-block-end: 12px; }
+.fixture-dashboard-table-heading h3 { margin: 0; }
+.fixture-dashboard-table-heading span { color: var(--mf-muted); font-size: 10px; }
+.fixture-dashboard-table-toolbar { display: flex; gap: 10px; margin-block-end: 10px; }
+.fixture-dashboard-table-toolbar .mf-input { flex: 1; min-inline-size: 0; }
+.fixture-dashboard-table-toolbar .mf-select { inline-size: auto; min-inline-size: 130px; }
+.fixture-dashboard-table-scroll { overflow-x: auto; border: 1px solid var(--mf-border); border-radius: var(--mf-radius); }
+.fixture-dashboard-table-scroll .mf-table { min-inline-size: 700px; }
+.fixture-task-name, .fixture-task-id { display: block; }
+.fixture-task-name { font-weight: 550; }
+.fixture-task-id { margin-block-start: 4px; color: var(--mf-muted); font-size: 10px; }
 @media (max-width: 800px) { .fixture-dashboard-content { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .fixture-dashboard-heading { align-items: start; flex-direction: column; } .fixture-dashboard-metrics { gap: 7px; } .fixture-dashboard-metric { padding: 10px 8px; } .fixture-dashboard-metric dt { font-size: 9px; } .fixture-dashboard-metric dd { margin-block-start: 7px; font-size: 23px; } .fixture-dashboard-activity li { align-items: start; gap: 8px; } .fixture-dashboard-activity li > div:last-child { max-inline-size: 100px; } .fixture-dashboard-activity strong { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
