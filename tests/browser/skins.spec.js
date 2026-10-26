@@ -28,7 +28,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     for (const task of ['Confirm migration checklist', 'Review workspace permissions', 'Publish release notes draft', 'Verify scheduled export', 'Test recovery procedure']) {
       await expect(activityList.getByText(task, { exact: true })).toBeVisible();
     }
-    await expect(dashboardFixture.getByText('Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.', { exact: true })).toBeVisible();
+    await expect(dashboardFixture.locator('.fixture-dashboard-note').getByText('Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.', { exact: true })).toBeVisible();
     const fixtureTaskTable = dashboardFixture.getByRole('table', { name: 'Project tasks' });
     const fixtureTaskNames = fixtureTaskTable.locator('.fixture-task-name');
     await expect(fixtureTaskTable.getByRole('columnheader')).toHaveText(['Task', 'Owner', 'Status', 'Due date', 'Estimate']);
@@ -69,6 +69,30 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       'Publish release notes draft',
       'Test recovery procedure',
     ]);
+    const profileFixture = dashboardFixture.getByRole('region', { name: 'Workspace profile' });
+    await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
+    const profileUrl = profileFixture.getByLabel('Workspace URL', { exact: true });
+    await expect(profileUrl).toHaveValue('https://northstar.example/workspace');
+    await expect(profileUrl).toHaveAttribute('required', '');
+    await expect(profileFixture.getByText('Use the address your team recognizes.', { exact: true })).toBeVisible();
+    await expect(profileFixture.getByLabel('Description', { exact: true })).toHaveValue('Quarterly migration readiness — confirm access, review the rollback checklist, and notify the operations group before the maintenance window.');
+    await expect(profileFixture.getByLabel('Default report time', { exact: true })).toHaveValue('09:30');
+    await expect(profileFixture.getByText('UTC', { exact: true }).last()).toBeVisible();
+    await expect(profileFixture.getByRole('checkbox', { name: 'Email me about task changes' })).toBeChecked();
+    await expect(profileFixture.getByRole('button', { name: 'Cancel', exact: true })).toBeVisible();
+    const saveProfileButton = profileFixture.getByRole('button', { name: 'Save changes', exact: true });
+    await expect(saveProfileButton).toBeVisible();
+    await profileUrl.fill('not a valid workspace URL');
+    await saveProfileButton.click();
+    await expect(profileUrl).toHaveAttribute('aria-invalid', 'true');
+    await expect(profileUrl).toHaveAttribute('aria-describedby', 'fixture-workspace-url-error');
+    await expect(profileFixture.getByText('Enter a valid workspace URL.', { exact: true })).toBeVisible();
+    await profileUrl.fill('https://northstar.example/workspace');
+    await saveProfileButton.click();
+    await expect(profileFixture.locator('.fixture-profile-status')).toHaveText('Saving…');
+    await expect(profileFixture.locator('.fixture-profile-status')).toHaveText('Workspace profile saved.');
+    await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
+    await expect(profileUrl).toHaveValue('https://northstar.example/workspace');
     const root = page.locator('.mf-root');
     await expect(root).toHaveAttribute('data-skin', skin.id);
     await expect(root).toHaveAttribute('data-mode', mode);
@@ -111,7 +135,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -132,7 +156,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -154,7 +178,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard and task table',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,

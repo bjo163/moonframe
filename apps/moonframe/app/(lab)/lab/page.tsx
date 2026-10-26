@@ -125,6 +125,79 @@ function DashboardFixture() {
         </Table>
       </div>
     </section>
+    <DashboardProfileForm />
+  </section>;
+}
+
+function DashboardProfileForm() {
+  const [workspaceName, setWorkspaceName] = useState('Northstar Studio');
+  const [workspaceUrl, setWorkspaceUrl] = useState('https://northstar.example/workspace');
+  const [description, setDescription] = useState(dashboardFixtureDescription);
+  const [reportTime, setReportTime] = useState('09:30');
+  const [notifications, setNotifications] = useState(true);
+  const [urlError, setUrlError] = useState(false);
+  const [saveState, setSaveState] = useState<'idle' | 'pending' | 'success'>('idle');
+
+  function saveProfile(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    let valid = false;
+    try {
+      const parsed = new URL(workspaceUrl);
+      valid = parsed.protocol === 'https:' && Boolean(parsed.hostname.includes('.'));
+    } catch { /* Invalid URL is announced beside the field. */ }
+    if (!valid) {
+      setUrlError(true);
+      setSaveState('idle');
+      return;
+    }
+    setUrlError(false);
+    setSaveState('pending');
+    window.setTimeout(() => setSaveState('success'), 180);
+  }
+
+  function cancelChanges() {
+    setWorkspaceName('Northstar Studio');
+    setWorkspaceUrl('https://northstar.example/workspace');
+    setDescription(dashboardFixtureDescription);
+    setReportTime('09:30');
+    setNotifications(true);
+    setUrlError(false);
+    setSaveState('idle');
+  }
+
+  return <section className="fixture-profile" aria-labelledby="fixture-profile-title">
+    <div className="fixture-profile-heading">
+      <div><div className="demo-eyebrow">SHARED FORM FIXTURE</div><h3 id="fixture-profile-title">Workspace profile</h3></div>
+      <span>Default report timezone: UTC</span>
+    </div>
+    <form className="fixture-profile-form" noValidate onSubmit={saveProfile}>
+      <div className="fixture-profile-grid">
+        <div className="fixture-profile-field">
+          <Label htmlFor="fixture-workspace-name">Workspace name</Label>
+          <Input id="fixture-workspace-name" name="workspaceName" required value={workspaceName} onChange={event => { setWorkspaceName(event.target.value); setSaveState('idle'); }} />
+        </div>
+        <div className="fixture-profile-field">
+          <Label htmlFor="fixture-workspace-url">Workspace URL</Label>
+          <Input id="fixture-workspace-url" name="workspaceUrl" type="url" inputMode="url" required value={workspaceUrl} aria-invalid={urlError || undefined} aria-describedby={urlError ? 'fixture-workspace-url-error' : 'fixture-workspace-url-help'} onChange={event => { setWorkspaceUrl(event.target.value); setUrlError(false); setSaveState('idle'); }} />
+          {urlError ? <p className="fixture-profile-error" id="fixture-workspace-url-error">Enter a valid workspace URL.</p> : <p className="fixture-profile-help" id="fixture-workspace-url-help">Use the address your team recognizes.</p>}
+        </div>
+        <div className="fixture-profile-field fixture-profile-description">
+          <Label htmlFor="fixture-workspace-description">Description</Label>
+          <Textarea id="fixture-workspace-description" name="description" value={description} onChange={event => setDescription(event.target.value)} />
+        </div>
+        <div className="fixture-profile-field">
+          <Label htmlFor="fixture-report-time">Default report time</Label>
+          <div className="fixture-profile-time"><Input id="fixture-report-time" name="reportTime" type="time" value={reportTime} onChange={event => setReportTime(event.target.value)} /><span>UTC</span></div>
+        </div>
+        <div className="fixture-profile-field fixture-profile-notifications">
+          <Checkbox label="Email me about task changes" checked={notifications} onChange={event => setNotifications(event.target.checked)} />
+        </div>
+      </div>
+      <div className="fixture-profile-actions">
+        <div aria-live="polite" className="fixture-profile-status">{saveState === 'pending' ? 'Saving…' : saveState === 'success' ? 'Workspace profile saved.' : ''}</div>
+        <div><Button type="button" variant="secondary" onClick={cancelChanges}>Cancel</Button><Button type="submit" disabled={saveState === 'pending'}>{saveState === 'pending' ? 'Saving…' : 'Save changes'}</Button></div>
+      </div>
+    </form>
   </section>;
 }
 
