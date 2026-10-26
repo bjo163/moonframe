@@ -70,6 +70,7 @@ import * as themeSubpath from '../src/theme.js';
 import * as skinsSubpath from '../src/skins.js';
 import { generateDeterministicTokenArtifacts, verifyRuntimeCssCoverage } from '../scripts/generate-tokens.mjs';
 import { auditAllSkinPairs } from '../scripts/audit-skin-pairs.mjs';
+import { validateSkinCaptureProvenance } from '../scripts/skin-capture-provenance.mjs';
 
 test('all canonical skins are available once, with both CSS appearances', () => {
   const contract = JSON.parse(fs.readFileSync(new URL('../contracts/moonframe-theme-contract-v1.3.json', import.meta.url)));
@@ -387,4 +388,16 @@ test('105 skin pair records and 6-pair pilot pass structural contract checks (no
   assert.equal(audit.humanReviewStatus, 'pending-human-visual-review');
   assert.ok(audit.minDistinctDimensions >= 5, 'at least 5 of 8 contract-string dimensions must differ');
   // PNG evidence is checked after Playwright. Unit tests must pass in a fresh source checkout.
+});
+
+test('skin screenshot provenance rejects mismatched source or PNG digests', () => {
+  const valid = {
+    sourceCommit: 'a'.repeat(40),
+    sourceFingerprint: 'b'.repeat(64),
+    imageSha256: 'c'.repeat(64),
+  };
+  assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'c'.repeat(64)), true);
+  assert.equal(validateSkinCaptureProvenance(valid, 'd'.repeat(64), 'c'.repeat(64)), false);
+  assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'e'.repeat(64)), false);
+  assert.equal(validateSkinCaptureProvenance({ ...valid, sourceCommit: 'invalid' }, 'b'.repeat(64), 'c'.repeat(64)), false);
 });

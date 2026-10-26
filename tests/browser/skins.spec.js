@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { skins } from '../../src/skins.js';
 import fs from 'node:fs';
 import path from 'node:path';
+import { writeSkinCaptureProvenance } from '../../scripts/skin-capture-provenance.mjs';
 
 const captureDir = path.resolve('artifacts/skins');
 fs.mkdirSync(captureDir, { recursive: true });
@@ -47,7 +48,9 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     for (const [role, ratio] of Object.entries(contrast)) {
       expect(ratio, `${skin.id}/${mode} ${role} contrast`).toBeGreaterThanOrEqual(4.5);
     }
-    await page.screenshot({ path: path.join(captureDir, `${skin.id}-${mode}.png`), fullPage: true, animations: 'disabled' });
+    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+    writeSkinCaptureProvenance(screenshotPath);
     await page.setViewportSize({ width: 360, height: 800 });
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);

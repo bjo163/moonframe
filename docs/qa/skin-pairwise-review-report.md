@@ -9,7 +9,8 @@
 ## 1. Executive Summary
 
 - **Canonical Skins Evaluated:** 15 (`moonpunk`, `moonriot`, `moonzine`, `moonhalftone`, `moonglitch`, `moonsmash`, `moonink`, `mooncrash`, `moonpanel`, `moonscrawl`, `moonraw`, `moonchrome`, `classic`, `moonquest`, `moonledger`)
-- **Screenshot inventory:** 30/30 paths present; image content and provenance not verified
+- **Screenshot inventory:** 30/30 paths present; PNG pixels are not visually reviewed by this script
+- **Current-source captures:** 30/30 screenshots have SHA-256 sidecars matching source fingerprint 6eee4f1801c78bda6513ef5b19faab403a7d6766b14bc59976f34da8825b05ed; stale/missing provenance is not accepted
 - **Pilot pair metadata:** 6/6 checked structurally; human visual review pending
 - **Pair metadata:** 105/105 checked structurally; human visual review pending
 - **Minimum Materially Distinct Non-Color Dimensions Across All 105 Pairs:** **8 / 8** (contract minimum: 4/8; neighboring-concept target: 5/8)

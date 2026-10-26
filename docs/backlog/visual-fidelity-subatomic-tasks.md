@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 14 implementation/CI tasks evidenced, 278 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 15 implementation/CI tasks evidenced, 277 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 14 implemented, 446 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 15 implemented, 445 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -19,14 +19,14 @@
 
 | Workstream | Tasks | Done |
 |---|---:|---:|
-| A — P0 repair release evidence and CI | 16 | 14 |
+| A — P0 repair release evidence and CI | 16 | 15 |
 | B — deterministic lab and snapshot fixture microtasks | 16 | 0 |
 | C — master logo and its smallest production assets | 17 | 0 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
 | G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
-| **TOTAL** | **292** | **14** |
+| **TOTAL** | **292** | **15** |
 
 ## A — P0 repair release evidence and CI
 
@@ -50,9 +50,10 @@
   - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Artifact archive named by run SHA; inspectable.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
   - **Evidence / completion (2026-10-26):** actions/upload-artifact@v4 succeeded at run 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
-- [ ] **MF-VF-006 — Enforce same-commit capture input for pair auditing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+- [x] **MF-VF-006 — Enforce same-commit capture input for pair auditing** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Do not inspect stale local PNG from unrelated HEAD.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (source HEAD `935169e`):** Each skin/mode screenshot written by Playwright now gets a sidecar containing capture commit, SHA-256 of the PNG, and a fingerprint over tracked render inputs (library/app source, skin/theme contracts, browser capture spec/config and package inputs). `audit:pairs` rejects missing/malformed sidecars, PNG hash mismatches, and source-fingerprint mismatches, so stale captures from changed render inputs cannot pass. A regression verifies mismatched source/image digests are rejected. Full check passed: unit 13/13, typecheck, build 88 routes, browser 54/54, `audit:pairs` 105 pair records + 30 current-source captures, contract/handoff validators, and diff check. Audit remains structural; screenshot pixels and human review remain pending.
 - [x] **MF-VF-007 — Demote auto-generated 105 pair verdicts to structural-only** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Source-text inequality never yields human visual PASS.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
