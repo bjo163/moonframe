@@ -968,3 +968,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `apps/moonframe/templates/visual-reference/r02-masthead.module.css` with a 48–70rem tablet layout: bounded right-side content column, vertical centering, and tablet-scaled title sizing. Decorative backdrop remains behind semantic text.
 - Updated task status to `implemented` in the reference backlog and synchronized current TODO counts (148/488 implemented-or-captured-or-implemented; 340 planned). Evidence is source-level only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser capture, or visual comparison were run; host runner owns verification/checkpoint.
 - Human visual review and source-image rights remain pending. Rollback: remove the tablet media query and restore the task/TODO/ledger evidence.
+
+## MF-VF-347 — Adapt R02 collage and filmstrip to 360 phone
+
+- Updated `r02-story-grid.module.css` to force content-first single-column cards, normal DOM flow, compact mobile spacing, and a bounded 16:9 media frame.
+- Updated `r02-filmstrip.module.css` and `r02-filmstrip.tsx` to provide a labeled horizontal scroll track with snap-aligned entries, a keyboard-focusable list, visible focus, and forced-colors support.
+- Dependency MF-VF-023 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, or capture run. Human visual review, source comparison, rights, and acceptance remain pending; host runner owns verification/checkpoint.
+- Checked task counts: 69/292 foundation visual + 52/168 reference visual + 28/28 preflight = 149/488 implemented-or-captured; 339 remain unchecked/planned. No human approval is implied.
+- Rollback: revert the two CSS module changes, `tabIndex` addition, backlog row, TODO update, and this entry.

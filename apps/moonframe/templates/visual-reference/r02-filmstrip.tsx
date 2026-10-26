@@ -20,7 +20,7 @@ export function R02Filmstrip({ entries, label = 'Article timeline' }: R02Filmstr
 
   return (
     <section className={styles.section} aria-label={label}>
-      <ol className={styles.timeline}>
+      <ol className={styles.timeline} tabIndex={0}>
         {entries.map(({ id, title, time, dateTime, description, href }) => (
           <li className={styles.entry} key={id}>
             <time className={styles.time} dateTime={dateTime}>{time}</time>

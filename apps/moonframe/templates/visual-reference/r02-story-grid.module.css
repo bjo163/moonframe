@@ -70,8 +70,14 @@
 }
 
 @media (max-width: 40rem) {
+  .section {
+    padding-block: 1rem;
+  }
+
   .grid {
     grid-template-columns: minmax(0, 1fr);
+    grid-auto-flow: row;
+    gap: 1rem;
   }
 
   .tile,
@@ -79,6 +85,15 @@
   .tile:nth-child(4n + 3),
   .featured {
     grid-column: 1;
+  }
+
+  .media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .copy {
+    padding: 1rem;
   }
 }
 
