@@ -1,7 +1,10 @@
 # Moonframe UI — 6-Pair Pilot & 105-Pair Skin Grammar Review Report
 
-**Status:** `OWNER-APPROVED` · **Date:** 2026-10-26 · **Reviewer:** `bjo163 (Repository Owner)`  
-**Tasks Completed:** `MF-SKINLAB-003` (First 6 Pair Reviews) & `MF-SKIN-004` (All 105 Distinct Pair Reviews)  
+> **M13 AUDIT OVERRIDE · 2026-10-26:** The tables below were generated from contract-string differences and screenshot-path inventory during a historical local review. They do **not** establish visually inspected 105-pair approval, pixel parity with the four newly supplied Moonwitness images, or a current independent owner signoff. See [M13 readiness gates](../../contracts/moonframe-m13-readiness-gates-v0.1.json), [reconciliation report](../audit/m13-final-reconciliation-2026-10-26.md), and corrected [audit generator](../../scripts/audit-skin-pairs.mjs). **Current human-review status: PENDING**. Do not display the historical automatic score as product certification or a final visual PASS.
+
+
+**Historical status asserted:** `OWNER-APPROVED` (not independently reproduced as human visual review) · **Date:** 2026-10-26 · **Reviewer:** `bjo163 (Repository Owner)`  
+**Historical scope claimed complete (new M13 proof pending):** `MF-SKINLAB-003` (First 6 Pair Reviews) & `MF-SKIN-004` (All 105 Distinct Pair Reviews)  
 **Automated Verifier:** `pnpm run audit:pairs` (`scripts/audit-skin-pairs.mjs`)
 
 > **Governance Note:** Machine specification contracts in `contracts/moonframe-skin-grammar-contract-v1.0.json` intentionally keep their baseline schema state (`specified-not-implemented` / `not-reviewed`) so offline negative-fixture self-tests in `scripts/validate-contracts.mjs` remain deterministic. This document is the canonical completed QA review ledger for M4 (`MF-SKINLAB-003`) and M9 (`MF-SKIN-004`).
