@@ -988,3 +988,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-033 is implemented. Source inspection confirms the file contains only SVG paths/circle, no scripts, event handlers, or external resource references. Status: `implemented`. Under the runner override, no package-manager commands, tests, validators, build, browser rendering, or captures were run. 16/20/24px rendering, light/dark/forced-colors display, human review, and acceptance remain pending; no consumer/third-party artwork or rights claim.
 - Foundation wave count updated from 67 to 68 implemented/captured (224 planned); total task counts are maintained in the backlog/root TODO and remain subject to inconsistent historical ledger snapshots. No commit created; host runner handles verification/checkpoint.
 - Rollback: remove the SVG and restore the MF-VF-057 task row, root TODO totals, and this ledger entry.
+
+## MF-VF-058 — Draw semantic info icon
+
+- Added `assets/source/icons/info.svg`, an original static 24×24 information glyph using `currentColor`. SHA-256: `a3d3d0dc66edf965e51bbd26113106317b9b3027702803c761c03015f753fcb9`.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no SVG validation, rendering, tests, package-manager commands, typecheck, build, browser capture, human review, or acceptance claimed. No rights or production approval is implied.
+- Counts: 152/488 implemented-or-captured, 336/488 planned, 0 explicitly blocked according to live checkbox totals; this does not imply human review or acceptance.
+- No commit created; host runner handles verification and checkpoint. Rollback: remove the SVG and restore its backlog, TODO, and ledger evidence.
