@@ -11,3 +11,7 @@ This index records source metadata from the canonical [creative reference contra
 | R04 sign-in scene | `MWX-REF-004` | `image(3).png` | 1024 × 576 | `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90` | Not committed; source status remains unversioned | Source metadata only; import permission and visual review pending |
 
 The contract's `referenceStorage` section is authoritative for the hash method and import gate. These rows are transcriptions for intake tracking, not independent checksums of bytes available in this checkout.
+
+## Nonbinding mood palette
+
+The supplied references suggest black, white, pink, electric blue, yellow, and violet as visual mood cues. This list describes reference atmosphere only; it does not prescribe Moonframe token values, semantic/status colors, a consumer brand overlay, or a new skin. Existing theme and token contracts remain authoritative for implementation.

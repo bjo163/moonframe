@@ -1,6 +1,17 @@
 # M13 autonomous execution ledger
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
+## MF-VF-304 — Nonbinding reference mood palette
+
+- Added a note in `docs/visual/references/reference-index.md` describing black, white, pink, electric blue, yellow and violet as mood cues from the reference set only. It expressly makes no token-value, semantic-color, consumer-overlay, or skin decision.
+- Dependency `MF-VF-014` is implemented. Status: `captured` (documentation deliverable); no image bytes, rights, or human review required or claimed.
+- Runner override honored: no package-manager commands, test suites, typecheck, build, or browser checks run. No commit created; host runner handles verification/checkpoint. Rollback: revert the note and task evidence.
+
+## Current counts after MF-VF-304
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous ledger counts: 94 implemented-or-captured, 394 planned, 0 explicitly blocked. This task adds one captured record: 95 implemented-or-captured, 393 planned, 0 explicitly blocked. Counts do not imply rights, human visual review, or acceptance.
+
 ## MF-VF-303 — Original-work vs source-reference risk matrix
 
 - Added `docs/qa/reference-rights-checklist.md` with per-reference use, provenance unknowns, view-only treatment, derivative clearance, consumer-specific exclusions, and safe original-work directions for MWX-REF-001 through MWX-REF-004.
