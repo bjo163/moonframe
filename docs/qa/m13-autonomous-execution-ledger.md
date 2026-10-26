@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-075 — Draw original Moonpunk hero illustration SVG
+
+- Added `assets/source/skins/moonpunk/hero.svg`, an original static abstract block-built lunar/urban illustration with title and description. It uses embedded geometry only and contains no consumer branding, external resource, script, or event handler.
+- SHA-256: `25ce3fe8cc0f852ea35671ca3df015cdbabe7a9bee7c9bfcef01bfccc436d106`. Dependency MF-VF-072 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, render, browser capture, or optical/human review run under runner override. Acceptance remains pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-075 row to planned, then remove this ledger section and its TODO update.
+
 ## MF-VF-068 — Draw semantic settings icon
 
 - Added original static 24×24 `currentColor` gear source `assets/source/icons/settings.svg` with accessible label `Settings`; no external asset or consumer branding used.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpunk block-built city</title>
+  <desc id="desc">An abstract lunar skyline formed from offset geometric slabs beneath a crescent moon.</desc>
+  <path fill="#252c1d" d="M0 0h640v420H0z"/>
+  <path fill="#cef443" d="M480 54a58 58 0 1 0 58 58 48 48 0 0 1-58-58z"/>
+  <path fill="#171c12" stroke="#f3f7df" stroke-width="8" d="M42 336h106V207H42zm96 0h131V147H138zm121 0h110V237H259zm100 0h111V178H359zm101 0h96V116h-96z"/>
+  <path fill="#cef443" d="M56 221h78v16H56zm97-60h99v16h-99zm219 27h77v16h-77zm101-59h66v16h-66z"/>
+  <path fill="none" stroke="#f3f7df" stroke-width="8" d="M20 344h600M82 260v52m94-102v142m123-88v88m112-126v126m89-169v169"/>
+  <path fill="#cef443" d="m34 369 22 0-11 25zm558-2 24 0-12 26z"/>
+</svg>
