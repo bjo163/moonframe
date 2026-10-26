@@ -168,6 +168,40 @@ test('simulated sign-in fixture keeps its form contract consistent across every 
   }
 });
 
+test('R04 sign-in form keeps keyboard focus, Escape behavior, and native validation feedback', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('/lab/behavior?fixture=auth');
+  const region = page.getByRole('region', { name: 'Sign in to your workspace' });
+  const form = region.getByRole('form', { name: 'Sign in to Northstar Studio' });
+  const email = form.getByLabel('Email address');
+  const password = form.getByLabel('Password');
+  const remember = form.getByRole('checkbox', { name: 'Remember this device' });
+  const submit = form.getByRole('button', { name: 'Sign in', exact: true });
+  const status = region.getByRole('status');
+
+  await page.keyboard.press('Tab');
+  await expect(email).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(password).toBeFocused();
+  await expect(password).toHaveCSS('outline-style', 'solid');
+  await email.fill('preview@example.test');
+  await password.fill('preview-secret');
+  await page.keyboard.press('Escape');
+  await expect(password).toBeFocused();
+  await expect(password).toHaveValue('preview-secret');
+  await expect(status).toHaveText('');
+  await page.keyboard.press('Tab');
+  await expect(remember).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(submit).toBeFocused();
+
+  await email.fill('');
+  await submit.click();
+  await expect(email).toBeFocused();
+  expect(await email.evaluate(node => node.checkValidity())).toBe(false);
+  expect(await email.evaluate(node => node.validationMessage)).not.toBe('');
+});
+
 test('editorial article copy, typography hooks, and image context stay fixed across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 

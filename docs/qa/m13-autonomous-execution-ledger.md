@@ -1615,3 +1615,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `apps/moonframe/templates/visual-reference/r04-auth-seam.tsx`. The provider button requires a consumer-supplied action; labels and marks are consumer-owned. Without a handler, no button appears; optional caller-supplied demo copy is rendered as ordinary text and the component claims no authentication behavior.
 - Source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser capture, human review, or commit. Host runner owns verification/checkpoint. No provider integration or acceptance claimed.
 - Rollback: remove the component, restore MF-VF-381 to planned, and remove matching TODO/ledger evidence.
+# MF-VF-384 — Test keyboard focus, Escape, and form error announcement
+
+- Added a Playwright interaction test in `tests/browser/components.spec.js` for the R04 sign-in fixture at 360×800. It checks sequential keyboard focus, visible password-field focus, Escape preserving input focus/value without submission, and native required-field feedback with focus returning to the invalid email field.
+- `pnpm exec playwright test tests/browser/components.spec.js -g "R04 sign-in form keeps keyboard focus"` passed (1/1). `pnpm run test:browser` passed (68/68) after correcting an initial selector mismatch with the actual fixture. The form is not a dialog, so no Escape dismissal is expected; native validation feedback is asserted without claiming an independent screen-reader announcement. No human review or acceptance is claimed.
+- Rollback: remove the test and restore MF-VF-384 to planned in the reference backlog; remove the corresponding TODO and ledger entries.

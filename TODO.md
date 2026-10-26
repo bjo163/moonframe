@@ -5,6 +5,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-384):** Focused Playwright test passed 1/1 and the full browser suite passed 68/68. The R04 fixture test verifies keyboard order, visible field focus, Escape preserving valid input without submission, and native invalid email feedback. No dialog dismissal or independent screen-reader announcement is claimed; human review remains pending.
+
 **Live execution update (2026-10-27, MF-VF-378):** Added original optional lunar-halo vector `assets/source/creative-reference/r04/lunar-halo.svg` (SHA-256 `7fe4ce36ea247e57f63be0dd07b94cc62d761959cf3f7804ce481ea6f4b5aceb`). Dependency MF-VF-025 is implemented. Status `implemented`; static source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendered-size/viewport captures, rights review, or human review run; host runner owns checks/checkpoint. No acceptance claimed. Counts incremented from prior summary: 122/292 foundation + 94/168 reference + 28/28 preflight = 244/488 checked; 244 unchecked. Checked does not imply human review, rights clearance, or acceptance.
 
 **Live execution update (2026-10-27, MF-VF-081):** Captured Moonpunk Light at 1440×960 and 360×800; `pnpm run test:browser` passed 67/67. PNG hashes and source provenance are recorded in `docs/qa/visual-fidelity-evidence-ledger.md`; task status is `captured`. Human visual review and acceptance remain pending.
