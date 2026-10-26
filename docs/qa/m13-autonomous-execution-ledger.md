@@ -1,5 +1,11 @@
 # MF-VF-073 — Draw original Moonpunk motif SVG
 
+## MF-VF-088 — Draw Moonriot edition badge
+
+- Added `assets/source/skins/moonriot/edition.svg`, an original static Moonframe/Moonriot edition label with accessible title/description and directional angular geometry. It identifies a visual edition under Moonframe and does not present Moonriot as an independent company logo.
+- SHA-256: `57D4B99C0E48C9CD672D9B1A2AC309B1A3075EC4451DC14C5038D6135CBFB635`. Dependencies MF-VF-084 and MF-VF-039 are implemented. Status: `implemented`; source inspection only. `git diff --check` exited 0 before the documentation updates. No package-manager commands, validators, tests, typecheck, build, rendering, small-size optical review, or human review run under runner override. Rights review and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the backlog row to planned, then remove this section and its TODO update.
+
 ## MF-VF-067 — Draw semantic sun icon
 
 - Added `assets/source/icons/sun.svg`, an original static 24×24 `currentColor` sun glyph with accessible label `Sun`.

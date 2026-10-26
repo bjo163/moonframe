@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe Moonriot edition</title>
+  <desc id="desc">A compact directional label identifying the Moonriot visual edition.</desc>
+  <path fill="#252522" d="M0 0h240v56H8L0 64z"/>
+  <path fill="#f4eee2" d="M8 8h224v40H16z"/>
+  <path fill="#d9493f" d="M8 8h10v40H8zM202 8h30v40h-8l8-20-8-20h-10l-8 20 8 20h-10l-8-20z"/>
+  <path fill="#252522" d="m194 8-12 20 12 20h-9l-12-20 12-20zm-25 0-12 20 12 20h-9l-12-20 12-20z"/>
+  <text x="30" y="27" fill="#252522" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2">MOONFRAME</text>
+  <text x="30" y="42" fill="#252522" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="2">MOONRIOT EDITION</text>
+</svg>
