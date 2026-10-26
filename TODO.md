@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-192):** Added `docs/visual/skins/moonraw.md` with a source-grounded raw minimalist brutalist direction, Classic distinction, and shared behavior/art-off constraints. Dependency MF-VF-015 is implemented. Status `implemented`; documentation inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. No visual review, rights clearance, or acceptance claimed; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-137):** Added Moonsmash-scoped circular double-outline frames and offset shadows for shared semantic SVG icon slots in `src/styles.css`. Shared glyph and ARIA meaning remain unchanged. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review run; host runner owns verification/checkpoint. Review and acceptance remain pending. No aggregate recount asserted because live task summaries conflict.
 
 **Live execution update (2026-10-27, MF-VF-410):** Added a Moonhalftone screenshot review protocol for same-data comparisons against Moonzine and Moonpanel at desktop/mobile in grayscale and art-on/off states. Status `implemented`; captures and human observations remain pending. Source/document inspection only; runner override honored, so no package-manager commands, suites, typecheck, build, validators, or browser capture were run. No visual verdict or acceptance claimed; host runner owns checks and checkpoint.

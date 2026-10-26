@@ -1738,3 +1738,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added Moonsmash-scoped circular double-outline frames and offset hard shadows for shared semantic SVG icon slots in `src/styles.css`. Scope targets navigation, buttons, search, callout, empty-state, and stat icons; shared glyphs and semantic/ARIA ownership remain unchanged.
 - Dependencies MF-VF-132, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Rights/visual review and acceptance remain pending.
 - Rollback: remove the Moonsmash icon selector block, restore MF-VF-137 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.
+
+
+## MF-VF-192 — Write Moonraw visual direction and anti-overlap brief
+
+- Added docs/visual/skins/moonraw.md, defining a sparse exposed-grid composition, assertive live typography, compact text-forward navigation, and minimal surface treatment. The brief distinguishes Moonraw from Classic by geometry, type hierarchy, navigation, and spacing; it preserves shared behavior and requires art-off, grayscale, responsive, reduced-motion, and forced-colors review.
+- Dependency MF-VF-015 is implemented. Backlog status: implemented; documentation source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. Visual review, rights review, and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the brief and restore MF-VF-192 to planned in the backlog; remove this TODO update and ledger entry.
