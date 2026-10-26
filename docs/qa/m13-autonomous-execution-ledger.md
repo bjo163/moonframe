@@ -1,5 +1,11 @@
 # MF-VF-073 — Draw original Moonpunk motif SVG
 
+## MF-VF-090 — Style Moonriot navigation, layout, and typography
+
+- Added Moonriot-scoped editorial layout styling in `src/styles.css`: asymmetric spacing, monochrome directional rules, oversized condensed heading treatment, offset hard-shadow cards, and small-screen overrides. Shared component markup, keyboard behavior, and ARIA semantics are unchanged.
+- Dependency MF-VF-084 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review run. Human review and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the MF-VF-090 selector block, restore the backlog row to planned, and remove this TODO/ledger evidence.
+
 ## MF-VF-088 — Draw Moonriot edition badge
 
 - Added `assets/source/skins/moonriot/edition.svg`, an original static Moonframe/Moonriot edition label with accessible title/description and directional angular geometry. It identifies a visual edition under Moonframe and does not present Moonriot as an independent company logo.

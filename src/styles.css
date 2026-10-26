@@ -478,6 +478,24 @@
 [data-skin="moonriot"] .mf-button > svg { filter: drop-shadow(1px 1px 0 var(--mf-border)); }
 [data-skin="moonriot"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 [data-skin="moonriot"] .mf-callout-icon > svg { color: var(--mf-accent); }
+/* Editorial riot framing: offset blocks and hard rules carry the identity without relying on color. */
+[data-skin="moonriot"] .mf-shell { gap: clamp(1rem, 2.5vw, 2.25rem); }
+[data-skin="moonriot"] .mf-main { min-inline-size: 0; }
+[data-skin="moonriot"] .mf-sidebar { position: relative; }
+[data-skin="moonriot"] .mf-sidebar::after { content: ""; display: block; inline-size: min(8rem, 30%); block-size: .45rem; margin-block-start: 1rem; background: repeating-linear-gradient(135deg, var(--mf-text) 0 2px, transparent 2px 6px); }
+[data-skin="moonriot"] .mf-nav-item { padding-inline: .85rem; border-block-end: 2px solid var(--mf-text); }
+[data-skin="moonriot"] .mf-hero { position: relative; padding-block: clamp(1.5rem, 4vw, 3.5rem); }
+[data-skin="moonriot"] .mf-hero h1 { font-family: var(--mf-display); font-size: clamp(2.6rem, 7vw, 5.5rem); line-height: .92; letter-spacing: -.035em; }
+[data-skin="moonriot"] .mf-section-title { border-inline-start: .45rem solid var(--mf-text); padding-inline-start: .75rem; text-transform: uppercase; letter-spacing: .06em; }
+[data-skin="moonriot"] .mf-card { border-radius: 0; box-shadow: 4px 4px 0 var(--mf-border); }
+[data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: 0 .25rem; }
+@media (max-width: 40rem) {
+  [data-skin="moonriot"] .mf-shell { gap: 1rem; }
+  [data-skin="moonriot"] .mf-sidebar::after { display: none; }
+  [data-skin="moonriot"] .mf-nav { gap: .35rem; }
+  [data-skin="moonriot"] .mf-nav-item { padding: .5rem .65rem; }
+  [data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: none; }
+}
 
 /* 03 / Moonzine — magazine spread and stacked print materials. */
 [data-skin="moonzine"] { --mf-bg: #e9dfce; --mf-surface: #fff9ed; --mf-surface-raised: #eee1c8; --mf-text: #332923; --mf-muted: #6c5749; --mf-border: #968267; --mf-accent: #753d5d; --mf-accent-text: #fff9ed; --mf-radius: 0px; --mf-shadow: 4px 5px 0 var(--mf-surface-raised), 5px 6px 0 var(--mf-border); --mf-display: Georgia, "Times New Roman", serif; }
