@@ -62,6 +62,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-445 — Sync root TODO master counts and dependencies
+
+- Recounted canonical backlog task rows: 148/292 foundation + 142/168 reference + 28/28 preflight = 318/488 checked and 170 unchecked. A checked box represents recorded work/evidence status, not necessarily captured evidence, human review, or acceptance.
+- Synchronized the current aggregate in `TODO.md`; older dated execution notes remain historical. Dependency/status authority remains with the task rows in the three backlogs. MF-VF-010 dependency is implemented.
+- Verification: static task-row recount and documentation inspection only. Runner override honored; no package-manager commands, validators, suites, typecheck, build, screenshots, or commit run. Host runner owns verification/checkpoint.
+
 ## MF-VF-082 — Capture Moonpunk dark desktop and phone evidence
 
 - Recorded existing deterministic captures for the fixed `/lab` Northstar Studio fixture: desktop 1440×960 PNG SHA-256 `7d9cc389463df3ec224d1bbdcd8e39cba4eb99a7e8733d5242150fea54b8b9dd`; phone 360×800 PNG SHA-256 `050fcdd4fe774b513702eca77ad0e43baf3eabaf8a2f94438d8a97ac63dccd66`.

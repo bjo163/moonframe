@@ -13,6 +13,10 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Current M13 backlog count (2026-10-27, MF-VF-445):** 318/488 task rows are checked (148/292 foundation, 142/168 reference, 28/28 preflight); 170 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files. Historical live-execution notes below retain the counts observed when written.
+
+**Live execution update (2026-10-27, MF-VF-445):** Recounted current rows in all three M13 backlogs and synchronized this live-index aggregate. Dependency MF-VF-010 is implemented. Static row recount and documentation inspection only; no package-manager commands, validators, tests, typecheck, build, or captures run under runner override. No review or acceptance implied; host runner owns verification/checkpoint. No commit created.
+
 **Live execution update (2026-10-27, MF-VF-444):** Added `docs/qa/reference-rights-checklist.md` with a docs-only output-tree verification procedure and evidence boundaries for reference hashes, rights, captures, and human review. Starting HEAD `1d7243f91269971b6d2d1c85d3494a0a43d98d25` had a clean worktree and no untracked files; this task ran no output-generating command. Status `implemented`; runner override honored, so validators, tests, typecheck, build, and captures remain for the host runner. No rights or acceptance claim; no aggregate recount asserted.
 
 **Live execution update (2026-10-27, MF-VF-437):** Added `docs/qa/reviews/skin-boundaries.md` defining the 15-skin × Light/Dark artwork exclusion review, fixed-fixture provenance, and shared accessible-content checks. A Moonpunk screenshot is explicitly not a universal skin default. Status `implemented`; documentation/source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, browser capture, or human review run. No visual parity, rights clearance, WCAG conformance, or acceptance claimed; host runner owns verification and checkpoint. No aggregate recount asserted.
