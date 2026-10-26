@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "MF-M13-PLAN-FREEZE-001",
+  "date": "2026-10-26",
+  "status": "frozen-execution-baseline-open-to-versioned-amendments",
+  "repository": "bjo163/moonframe",
+  "branch": "main",
+  "baselineCommit": "723964322f9176bebf117b588e7976aff4030650",
+  "baselineSnapshotMeaning": "Git commit is the immutable reference for plan and handoff docs at freeze construction; later commits contain governance freeze and local runner without rewriting original commit",
+  "freezeMethod": "Git commit SHA + Git blob IDs for baseline immutable content; NOT a Git tag or GitHub branch-protection rule",
+  "freezeAuthority": "docs/governance/M13_PLAN_FREEZE_2026-10-26.md",
+  "categories": {
+    "normative": "Change by versioned amendment/compatibility proof, never silent in-place redefinition",
+    "ledger": "Task status/evidence/counts SHOULD change as execution progresses; immutable initial blob exists only for audit",
+    "implementation": "Code, tests, new original assets and runtime CSS may evolve to fulfill tasks; preserve public semantics and contracts"
+  },
+  "taskBaseline": {
+    "visual": 460,
+    "preflight": 28,
+    "total": 488,
+    "implemented": 14,
+    "pending": 474,
+    "manualApprovalsImplied": 0
+  },
+  "invariants": {
+    "canonicalSkins": 15,
+    "effectiveAppearances": 30,
+    "pairSlots": 105,
+    "sfxEvents": 6,
+    "componentSpecEntries": 151,
+    "pageSpecEntries": 72,
+    "showcaseImplementedTemplatesAtFreeze": 43,
+    "tokenIdentifiersPlanned": 78,
+    "cssRuntimeBridgeVariablesAtFreeze": 17
+  },
+  "files": [
+    {
+      "path": "contracts/moonframe-theme-contract-v1.3.json",
+      "gitBlobSha1": "09850da13591b30c63c2bced7e18ddba125d7c27",
+      "classification": "frozen-normative"
+    },
+    {
+      "path": "contracts/moonframe-sfx-contract-v0.1.json",
+      "gitBlobSha1": "2708ee869b400af7bd77db6eac40fd5e393bee95",
+      "classification": "frozen-normative"
+    },
+    {
+      "path": "contracts/moonframe-token-source-plan-v0.1.json",
+      "gitBlobSha1": "4163e8166309c92db009c42539a34690b0d0a542",
+      "classification": "frozen-normative"
+    },
+    {
+      "path": "docs/visual/cinematic-mangapunk-reference-bible.md",
+      "gitBlobSha1": "2f3d12c51248bc6e92018c7dc67e7169e49ebe55",
+      "classification": "frozen-visual-direction"
+    },
+    {
+      "path": "docs/audit/m13-final-reconciliation-2026-10-26.md",
+      "gitBlobSha1": "7b8ff430acd543b738e25ab779d16ea91ff69d9d",
+      "classification": "frozen-audit-snapshot"
+    },
+    {
+      "path": "contracts/moonframe-m13-readiness-gates-v0.1.json",
+      "gitBlobSha1": "d350f0921789f9d797931dca759464963d1b6cca",
+      "classification": "frozen-gate-definition"
+    },
+    {
+      "path": "AGENTS.md",
+      "gitBlobSha1": "ab7e5750e98fe4a9c45e930d42daaa395de475b0",
+      "classification": "frozen-agent-policy"
+    },
+    {
+      "path": "docs/handoff/CODEX_M13_AUTONOMOUS_MASTER_PROMPT.md",
+      "gitBlobSha1": "7e265b68fde7b099fb1c429a66e3e913f33d7d35",
+      "classification": "frozen-execution-goal"
+    },
+    {
+      "path": "TODO.md",
+      "gitBlobSha1": "2e334370ccf66e8f89f96f82c8d02e2fa2d1a204",
+      "classification": "mutable-ledger-baseline-only"
+    },
+    {
+      "path": "docs/backlog/visual-fidelity-subatomic-tasks.md",
+      "gitBlobSha1": "eb45417dcc2d6e15e23d37175236b067d8186435",
+      "classification": "mutable-ledger-baseline-only"
+    },
+    {
+      "path": "docs/backlog/reference-mockups-subatomic-tasks.md",
+      "gitBlobSha1": "264dfb5e2fd7638731b87b36e626a517874b877e",
+      "classification": "mutable-ledger-baseline-only"
+    },
+    {
+      "path": "docs/backlog/m13-preflight-remediation-tasks.md",
+      "gitBlobSha1": "38d44ca84450fed97304ed9da72f318835866578",
+      "classification": "mutable-ledger-baseline-only"
+    }
+  ],
+  "releaseBoundaries": {
+    "routineAutonomousWork": true,
+    "localTestedCommits": true,
+    "conditionalFastForwardPush": true,
+    "automaticPublish": false,
+    "automaticProductionDeploy": false,
+    "automaticLegalLicenseOrHumanVisualSignoff": false,
+    "forcedPush": false
+  },
+  "originalImages": {
+    "source": "conversation-provided 4 PNG images; SHA-256 in creative-reference contract",
+    "sourceBinaryInRepository": false,
+    "reviewOnly": true,
+    "notApprovedForRedistribution": true
+  },
+  "changeControl": {
+    "amendmentLocation": "docs/governance/m13-amendments/",
+    "mandatoryFields": [
+      "reason",
+      "affectedContracts",
+      "compatibility",
+      "actualTests",
+      "commitSha",
+      "releaseRisk"
+    ],
+    "requireNewContractVersionWhenPublicApiOrCanonicalSkinMeaningChanges": true,
+    "rewriteBaseline": false
+  },
+  "checkStatus": "Freeze metadata validation is separate from full CI and human review"
+}
