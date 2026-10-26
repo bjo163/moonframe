@@ -1,12 +1,12 @@
 # ADR-0002 — Bounded DTCG token source; generator candidate decision
 
-**Date:** 2026-10-26. **Status:** `proposed` / **fixture proof passes; repository runtime is pinned to Node 24.22.1 LTS; maintainer acceptance pending**. This is an architectural recommendation, **not** a production generator selection or a claim of DTCG-2025.10 conformance.
+**Date:** 2026-10-26. **Status:** `maintainer-decision-recorded-for-bounded-format-and-source-layout` / **fixture proof passes; repository runtime is pinned to Node 24.22.1 LTS**. This is not a production generator selection or a claim of DTCG-2025.10 conformance.
 
 ## Context and evidence
 
 The repository has 78 example semantic IDs but no approved token values. DTCG 2025.10 is a Final **Community Group** report (not a W3C Recommendation): [Format](https://www.designtokens.org/tr/2025.10/format/), [Color](https://www.designtokens.org/tr/2025.10/color/), [Resolver](https://www.designtokens.org/tr/2025.10/resolver/). The format requires JSON Pointer reference support from conforming tools; this proposal intentionally excludes that feature, so it is a **Moonframe-specific DTCG-inspired subset** and must not be called DTCG-conformant. [Style Dictionary's current DTCG page](https://styledictionary.com/info/dtcg/) still says 2025.10 is not fully supported in v5; a targeted fixture with v5.7.1 is recorded below and does not imply full conformance.
 
-## Proposed decision and bounded subset
+## Recorded decision and bounded subset
 
 1. Adopt a **DTCG-2025.10-inspired bounded source JSON** for *future* authored primitives and roles with `$type`, `$value`, `$description`, optional `$deprecated`, optional `$extensions.moonframe`, and whole-token `{path.to.token}` aliases. The fixture proof currently supports `color` (sRGB object with 3 components and optional alpha), `dimension` (`px|rem`), `duration` (non-negative `ms`), and finite `number`. `fontFamily`, `fontWeight`, `cubicBezier`, and `shadow` remain unsupported pending fixtures. Tokens require an explicit `$type`; group-level type inheritance is not implemented. Reject unsupported constructs rather than silently transform them.
 2. Reject group-level `$type` inheritance, `$extends`, `$root` group tokens, JSON Pointer `$ref`, resolver module modifiers, arbitrary gradients, custom CSS code strings, OKLCH source values, unsupported token/group properties, unknown color/dimension/duration value fields, and extension keys other than `$extensions.moonframe`. The proof fails on these constructs instead of silently skipping them. Several are part of upstream 2025.10; excluding them makes this a Moonframe-specific subset, not a conforming implementation. Do not invent extra `$*` keys; Moonframe metadata belongs inside `$extensions.moonframe`.
@@ -32,6 +32,6 @@ The current proof is a standalone validation/generation script with fixture-only
 
 If a production generator is later approved, treat a source schema/alias semantic change as an explicit token-format compatibility change. Generate CSS and TypeScript outputs atomically from canonical sources, keep the negative fixtures as regression cases, and roll back the source, generator and generated outputs as one commit. Never mark any of the 30 production maps complete as part of a generator rollback or proof-only change.
 
-This rollback plan is proposed for review; no production generator or migration has been exercised.
+This rollback plan applies to the recorded format decision; no production generator or consumer migration has been exercised.
 
-**Approval gate:** owner/reviewer accepts the nonconformant DTCG-inspired boundary and runtime pin; extend fixture for the exact production token dictionary and overlay coverage; demonstrate CSS + TS producer, source lineage, non-duplicate references, all 30 role coverage checks, Tailwind compilation and consumer smoke. Preserve negative fixtures and keep 30 production maps pending until values and contrast are reviewed. Leave status `proposed` until reviewed.
+**Decision boundary:** The maintainer records the bounded Moonframe-specific DTCG-inspired format and selects `tokens/source/**/*.tokens.json` as the future canonical source layout. The repository dictionary remains the authority for token IDs and semantics; current CSS stays the interim runtime implementation. Format/dictionary semantic changes require an explicit format-version change; additive compatible token values may be minor, while ID, type, alias, or semantic changes are breaking. Generator version and package semver must be recorded independently. This does not create token values, select a production generator, authorize generation, or approve any of the 30 skin/mode maps. Extend fixtures and review actual values/contrast before production adoption.

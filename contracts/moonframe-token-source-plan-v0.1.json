@@ -5,7 +5,7 @@
   "status": "source-values-not-created",
   "dictionary": "moonframe-token-dictionary-v0.1.json",
   "proposedCanonicalValueSource": "tokens/source/**/*.tokens.json (future; not present)",
-  "formatDecision": "PROPOSED Moonframe-specific DTCG 2025.10-inspired subset; JSON Pointer support is excluded, so DTCG conformance is explicitly not claimed; ADR-0002 fixture proof passes, maintainer approval pending.",
+  "formatDecision": "Maintainer decision recorded: Moonframe-specific DTCG 2025.10-inspired subset; JSON Pointer support is excluded, so DTCG conformance is explicitly not claimed. ADR-0002 fixture proof passes; no production generator is selected.",
   "subset": {
     "proposedProperties": [
       "$type",
@@ -505,7 +505,7 @@
     "proposedAppearanceSlots": 30,
     "bridgeTest": "pnpm run tokens verified on CI green run 40252233550",
     "scope": "Runtime static CSS recipes and deterministic bounded generator fixture exist, but canonical full value source tokens/source/**/*.tokens.json does not exist and token source contract approval remains pending.",
-    "ownerDecision": "Explicit full canonical value source & DTCG subset decision required before public design-token API freeze.",
+    "ownerDecision": "Maintainer decision recorded for future canonical source layout, bounded subset and migration/versioning. All 30 production value/contrast slots remain pending; public design-token API freeze is not approved.",
     "notApproveValues": true
   }
 }
