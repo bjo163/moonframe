@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-042 — Create horizontal mark+wordmark lockup
+
+- Added `assets/source/brand/moonframe-lockup.svg`, an original static horizontal lockup combining the refined geometric-frame draft and editable live-text wordmark. SHA-256: `d84ee6c2ff3d7000fa2071bb600231a60da33edebc912dfbf1fd36271f9f68cd`.
+- Dependencies `MF-VF-040` and `MF-VF-041` are implemented. Task status: `implemented`. Runner override honored: no package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or reference comparison run. Host runner owns verification/checkpoint. Rights clearance, trademark review, rendered mobile-size inspection, human visual review and production approval remain pending.
+- Foundation backlog advances from 56 to 57 checked/implemented-or-captured-or-implemented rows; root TODO updated. Full recount deferred to host verification.
+- Rollback: remove the SVG and restore this entry, the task row and root summary.
+
 ## Current live counts after MF-VF-342
 
 - Checked task rows: 140/488 implemented or captured (65/292 foundation visual, 47/168 reference visual, and 28/28 preflight); 348/488 remain planned; 0 explicitly blocked. Checked rows do not imply human review, rights clearance, or acceptance.
