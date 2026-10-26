@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 15 implementation/CI tasks evidenced, 277 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 16 implementation/CI tasks evidenced, 276 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 15 implemented, 445 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 16 implemented, 444 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -19,14 +19,14 @@
 
 | Workstream | Tasks | Done |
 |---|---:|---:|
-| A — P0 repair release evidence and CI | 16 | 15 |
+| A — P0 repair release evidence and CI | 16 | 16 |
 | B — deterministic lab and snapshot fixture microtasks | 16 | 0 |
 | C — master logo and its smallest production assets | 17 | 0 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
 | G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
-| **TOTAL** | **292** | **15** |
+| **TOTAL** | **292** | **16** |
 
 ## A — P0 repair release evidence and CI
 
@@ -66,9 +66,10 @@
   - **File scope:** `docs/qa/skin-pairwise-review-report.md`. **Acceptance:** Previous scores attributed as structure-derived, capture/human review tracked separately.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
   - **Evidence / completion (2026-10-26):** Historic pair QA report receives M13 audit override; visual human review explicitly pending. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
-- [ ] **MF-VF-010 — Create new evidence ledger for screenshot IDs** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+- [x] **MF-VF-010 — Create new evidence ledger for screenshot IDs** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** One row schema for SHA, fixture, screen, path, reviewer, status, exception.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (source/capture commit `2034b75`):** `docs/qa/visual-fidelity-evidence-ledger.md` now includes one row for each of the 30 skin/mode screenshots with path, PNG SHA-256, render fixture/viewport, source commit, reviewer state, status and exception. Entries use Playwright sidecars validated by `audit:pairs`; capture provenance is verified, visual pixels are not human-reviewed. Full run at source commit `2034b75`: unit 13/13, typecheck, build 88 routes, browser 54/54, audit 105 pair records + 30/30 current-source captures; validators passed. No human visual approval claimed.
 - [x] **MF-VF-011 — Reconcile npm/public/private/package naming** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `README.md`. **Acceptance:** Current root package.json and documented claims agree; registry evidence only if checked.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
@@ -88,8 +89,11 @@
 - [x] **MF-VF-015 — Inventory earlier mockup images or mark references missing** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Path/hash/rights only when actual reference retrievable; no fabricated pixel parity.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-  - **Evidence / completion (2026-10-26):** Four actual user-uploaded PNGs SHA-256/dimensions catalogued; original binaries in repo still missing and flagged. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+  - **Evidence / completion (2026-10-26):** Four user-uploaded references have recorded SHA-256/dimensions in canonical metadata; original binaries are absent from the repo, hashes were not recomputed against source bytes, and reuse rights/visual approval remain unclaimed. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325.
 - [x] **MF-VF-016 — Prove clean checkout CI all jobs green** · **P0** · `implemented` · **dependency:** `MF-VF-002, MF-VF-003, MF-VF-004, MF-VF-005` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Real link to same-SHA contract/unit/typecheck/build/browser run.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / completion (2026-10-26):** GitHub Actions run [40253520325](https://github.com/bjo163/moonframe/actions/runs/40253520325) completed successfully on clean checkout at commit `78db1d84c51494045d65d786daa878c5e55422eb`; contract, unit/SSR, typecheck, production build, Playwright and screenshot inventory jobs all passed. This verifies only that commit; later local commits still need independent remote CI. Visual artwork approval is not implied.
   - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Real link to same-SHA contract/unit/typecheck/build/browser run.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
   - **Evidence / completion (2026-10-26):** All GitHub Actions jobs succeeded on clean checkout at https://github.com/bjo163/moonframe/actions/runs/40253520325. Latest later commits still require their own CI verification; this does not approve visual artwork.
