@@ -292,3 +292,31 @@ test('SFX reports browser playback denial and focus alone never starts audio', a
   await expect(page.getByText(/Silenced event: "success" \(reason: muted-or-no-consent\)/)).toBeVisible();
   expect(await page.evaluate(() => window.__audioContextCount)).toBe(1);
 });
+
+test('SFX enforces global 1000ms rate limit and per-event 2000ms deduplication', async ({ page }) => {
+  await page.clock.install({ time: new Date('2026-10-26T00:00:00.000Z') });
+  await page.addInitScript(() => {
+    class FakeAudioContext {
+      constructor() { this.state = 'running'; this.currentTime = 0; this.destination = {}; }
+      createGain() { return { gain: { setValueAtTime() {}, exponentialRampToValueAtTime() {} }, connect() {} }; }
+      createOscillator() { return { frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() {}, addEventListener() {}, disconnect() {} }; }
+    }
+    window.AudioContext = FakeAudioContext;
+  });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Played event: "success"/)).toBeVisible();
+
+  await page.getByRole('button', { name: '⚠️ warning' }).click();
+  await expect(page.getByText(/Silenced event: "warning" \(reason: rate-limited\)/)).toBeVisible();
+
+  await page.clock.fastForward(1001);
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: deduplicated\)/)).toBeVisible();
+
+  await page.clock.fastForward(1000);
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Played event: "success"/).first()).toBeVisible();
+});
