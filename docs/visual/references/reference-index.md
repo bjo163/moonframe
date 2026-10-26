@@ -8,4 +8,6 @@ This index records source metadata from the canonical [creative reference contra
 | R02 editorial-story landing | `MWX-REF-002` | `image(1).png` | 1024 × 576 | `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167` | Not committed; source status remains unversioned | Source metadata only; import permission and visual review pending |
 | R03 performance poster | `MWX-REF-003` | `image(2).png` | 682 × 1024 | `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff` | Not committed; source status remains unversioned | Source metadata only; import permission and visual review pending |
 
+| R04 sign-in scene | `MWX-REF-004` | `image(3).png` | 1024 × 576 | `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90` | Not committed; source status remains unversioned | Source metadata only; import permission and visual review pending |
+
 The contract's `referenceStorage` section is authoritative for the hash method and import gate. These rows are transcriptions for intake tracking, not independent checksums of bytes available in this checkout.

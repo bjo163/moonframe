@@ -511,3 +511,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Cross-checked ID, digest, dimensions, and source status against `contracts/moonframe-creative-reference-contract-v0.1.json`. Original bytes are absent from this checkout; the hash is transcribed, not recomputed. No import, license, or visual approval is claimed.
 - Runner override honored: no package-manager commands, test suites, typecheck, or build run. No commit created; host runner will verify and checkpoint.
 - Rollback: revert the MF-VF-294 status/evidence and its one R02 index row.
+
+## MF-VF-296 — Register R04 original digest and dimensions
+
+- Dependency MF-VF-014 is implemented. Added the R04 (MWX-REF-004) contract metadata to docs/visual/references/reference-index.md: SHA-256 9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90, 1024 × 576.
+- Cross-checked ID, digest, dimensions, and unversioned source status against contracts/moonframe-creative-reference-contract-v0.1.json. Original bytes remain absent, so the digest is transcribed, not recomputed. No import, license, or visual approval is claimed.
+- No package-manager commands, suites, typecheck, or build run per runner override. No commit created; host runner will verify and checkpoint.
+- Status: captured. Rollback: revert the MF-VF-296 status/evidence and its one R04 index row.

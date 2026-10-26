@@ -36,7 +36,7 @@
 
 ## Four user-supplied mockups · deep visual task addendum (2026-10-26)
 
-**Updated visual queue:** **460 total task IDs: 60 implemented/captured, 400 planned, 0 blocked**. `MF-VF-039` records a delegated maintainer choice of Candidate A as a draft direction for refinement; no human visual review, trademark clearance, or production approval is implied. `MF-VF-286` adds rendered nested-surface, focus-outline, and dialog/backdrop browser assertions; `MF-VF-287` adds no-art/no-custom-font fallback interaction coverage and its targeted browser case passes 1/1. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated.
+**Updated visual queue:** **460 total task IDs: 61 implemented/captured, 399 planned, 0 blocked**. `MF-VF-039` records a delegated maintainer choice of Candidate A as a draft direction for refinement; no human visual review, trademark clearance, or production approval is implied. `MF-VF-286` adds rendered nested-surface, focus-outline, and dialog/backdrop browser assertions; `MF-VF-287` adds no-art/no-custom-font fallback interaction coverage and its targeted browser case passes 1/1. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated.
 
 **M13 overall progress:** **89/488 (18.2%) implemented/captured**, **399/488 (81.8%) planned**, **0/488 blocked**. This task-state count does not imply human review, rights, or acceptance. See the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--delegated-candidate-direction) for the delegated draft-direction choice and its review boundaries.
 
