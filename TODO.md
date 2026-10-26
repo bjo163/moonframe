@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-405):** Clarified that reference palette names are art-direction proposals, not approved token values, in `docs/visual/cinematic-mangapunk-reference-bible.md`. No colors were sampled or promoted. Documentation/source inspection only; runner override honored, host runner owns verification/checkpoint. No token approval, human review, or acceptance claimed.
+
 **Live execution update (2026-10-27, MF-VF-228):** Added `docs/visual/skins/moonquest.md` with a quest-book journal composition and anti-overlap rules distinguishing Moonquest from Moonzine and Moonledger. Dependency MF-VF-015 is implemented. Documentation/source inspection only; no validators, package-manager commands, suites, typecheck, build, captures, or human review run under runner override. No asset, rights, or acceptance claim; host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-27, MF-VF-400):** Added a rendered-background text contrast sampling protocol to `docs/qa/accessibility-visual-qa-bible.md`, including variable image/crop sampling, minimum contrast evidence, responsive and theme-mode repetition, and safe fallback guidance. Status `implemented`; documentation/source inspection only. No validators, package-manager commands, test suites, typecheck, build, browser sampling, or human review run per runner override. No current page/media pass or WCAG conformance claimed; host runner owns checks/checkpoint.

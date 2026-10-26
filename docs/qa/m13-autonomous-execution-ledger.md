@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-405 — Distinguish proposed palette language from approved tokens
+
+- Added “Palette language and canonical token status” to `docs/visual/cinematic-mangapunk-reference-bible.md`. Palette terms are explicitly illustrative proposals; sampled Moonwitness image colors must not become global token values. Production values and contrast evidence remain governed by `contracts/moonframe-token-source-plan-v0.1.json` (78 names, 30 planned slots; no approved value source).
+- Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, screenshots, rights review, or human review run. No token values or DTCG conformance approved/claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the subsection, restore MF-VF-405 to planned, and remove matching backlog/TODO/ledger evidence.
+
 ## MF-VF-404 — Define design-reference proof threshold without fake 100% score
 
 - Added a human comparison threshold to `docs/qa/visual-fidelity-evidence-ledger.md`: captures are not fidelity proof; review evidence records source/fixture/content/viewport/mode provenance, screenshot digest, reviewer/date, qualitative matches and deltas, unresolved questions, and a qualitative disposition. Missing reference bytes block pixel comparison. No numeric fidelity score or implied owner approval is permitted.
