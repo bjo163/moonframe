@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-063 — Draw semantic download icon
+
+- Added `assets/source/icons/download.svg`, an original static 24×24 `currentColor` arrow-and-tray glyph with accessible label `Download`.
+- SHA-256: `e750be7cc80e09ba904941f7f103c12960a7d9fab2ac503019b5b84f4adeabe7`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, or browser captures were run. Light/dark/forced-colors rendering, 16/20/24px legibility, human review, and acceptance remain pending.
+- Live task rows: 81/292 foundation, 57/168 reference, and 28/28 preflight = 166/488 checked; 322 unchecked. Checked does not imply review or acceptance. Host runner owns verification/checkpoint; no commit created.
+- Rollback: remove the SVG and restore this task row, TODO update, and ledger entry.
+
 ## MF-VF-353 — Define original performance title typography hierarchy
 
 - Added `apps/moonframe/templates/visual-reference/r03-title.tsx` and `.module.css`. `R03Title` renders caller-provided title and optional eyebrow as live DOM text, uses a responsive display hierarchy with long-title wrapping, and switches foreground to the system canvas text color in forced-colors mode.
