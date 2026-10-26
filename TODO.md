@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-413):** Added `docs/qa/reviews/moonink-reference-parity.md`, a repeatable same-content desktop/mobile protocol with grayscale and decoration-on/off states, Moonink/Moonscrawl distinction criteria, and explicit human evidence fields. Status `implemented`; no screenshots, validators, package-manager commands, test suites, typecheck, build, or human review run per runner override. No visual approval, rights clearance, or acceptance claimed; host runner owns verification and checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-180):** Added the Moonscrawl sketchbook visual direction and anti-overlap brief at `docs/visual/skins/moonscrawl.md`, grounded in the canonical skin grammar. Status `implemented`; source inspection only. Runner override honored: host runner owns validators, package-manager checks, tests, typecheck, build, captures, and checkpoint. Human visual review, rights review, and acceptance remain pending. Checked backlog row count increases by one; no aggregate totals inferred from inconsistent prior summaries.
 
 **Live execution update (2026-10-27, MF-VF-138):** Added Moonsmash-scoped poster geometry, navigation/card framing, responsive display typography, and visible focus styling in `src/styles.css`. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run; host runner owns verification/checkpoint. No rights, visual approval, or acceptance claimed. See the M13 execution ledger.

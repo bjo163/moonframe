@@ -1847,3 +1847,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a 210-row light/dark matrix covering all 105 unordered pairs from the 15 canonical skin IDs to `docs/qa/visual-fidelity-evidence-ledger.md`. Every row defaults to pending/unreviewed and has explicit reviewer, date, evidence, observation, and exception fields. No human verdict or approval was recorded.
 - Dependency `MF-VF-031` is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No commit created.
 - Rollback: remove the MF-VF-290 matrix and restore its backlog row to planned; remove corresponding TODO and ledger entries.
+## MF-VF-413 — Define Moonink screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonink-reference-parity.md` with a fixed same-content Moonink/Moonscrawl comparison at desktop and mobile, color/grayscale, and decoration-on/off states. It defines structural criteria, required capture provenance/hashes, human observation fields, and pending dispositions.
+- Dependency MF-VF-144 is implemented. Backlog status: `implemented`; source/document inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. No visual verdict, rights clearance, accessibility claim, or acceptance is recorded. No commit created; host runner owns verification/checkpoint.
+- Rollback: remove the protocol and restore MF-VF-413 to planned in the backlog; remove matching TODO and ledger evidence.
