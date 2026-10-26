@@ -48,6 +48,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-138 — Style Moonsmash navigation, layout, and typography
+
+- Added a scoped poster-composition layer in `src/styles.css`: sharp hero framing, offset nav/card edges, balanced display type, visible keyboard focus, and narrow-screen adjustments. Existing semantic text and controls remain live and untransformed.
+- Dependencies: MF-VF-132 implemented. Backlog status: `implemented`; CSS source inspection only. No validators, package-manager commands, suites, typecheck, build, screenshots, or human review run per runner override. Rendered responsiveness, contrast, rights, human review, and acceptance remain pending.
+- No commit created; host runner owns checks and checkpoint. Rollback: remove the MF-VF-138 CSS block and restore this task to planned in the backlog, TODO, and ledger.
+
 ## MF-VF-409 — Define Moonzine screenshot-based anti-clone test
 
 - Added `docs/qa/reviews/moonzine-reference-parity.md` with fixed-content 1440×960 and 360×800 capture protocol, light/dark grayscale and decoration-on/off states, Moonpanel/Moonriot distinction criteria, semantic-surface checks, and pending human-observation fields.

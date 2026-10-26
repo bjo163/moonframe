@@ -633,6 +633,22 @@
 [data-skin="moonsmash"] .mf-hero h1 { font-size: clamp(3rem, 6.5vw, 6rem); text-transform: uppercase; max-inline-size: 15ch; line-height: .98; }
 [data-skin="moonsmash"] .mf-button[data-variant="primary"] { font-size: 1.05rem; padding-inline: 1.7rem; border-radius: 999px; }
 [data-skin="moonsmash"] .mf-stat strong { font-size: 3rem; }
+/* Poster pacing: a sharp entry edge and diagonal cuts make hierarchy visible
+   without relying on the skin's colors. Keep all copy and controls untransformed. */
+[data-skin="moonsmash"] .mf-nav { gap: .65rem; padding-block: .5rem 1rem; }
+[data-skin="moonsmash"] .mf-nav-item { min-block-size: 2.75rem; padding-inline: 1rem; border: 2px solid var(--mf-text); box-shadow: 3px 3px 0 var(--mf-text); }
+[data-skin="moonsmash"] .mf-nav-item[aria-current="page"] { outline: 2px solid currentColor; outline-offset: 3px; }
+[data-skin="moonsmash"] .mf-hero { position: relative; isolation: isolate; overflow: hidden; border-inline-start: .65rem solid var(--mf-text); clip-path: polygon(0 0, 100% 0, 100% 91%, 97% 100%, 0 100%); }
+[data-skin="moonsmash"] .mf-hero h1 { letter-spacing: -.045em; text-wrap: balance; }
+[data-skin="moonsmash"] .mf-hero p { max-inline-size: 58ch; font-size: clamp(1rem, 1.4vw, 1.2rem); }
+[data-skin="moonsmash"] .mf-card { border: 2px solid var(--mf-text); border-radius: 0; box-shadow: 5px 5px 0 var(--mf-border); }
+[data-skin="moonsmash"] .mf-card:nth-child(even) { clip-path: polygon(0 0, 100% 0, 100% 100%, 1rem 100%, 0 calc(100% - 1rem)); }
+[data-skin="moonsmash"] :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+@media (max-width: 40rem) {
+  [data-skin="moonsmash"] .mf-hero { padding-block: 2rem; border-inline-start-width: .4rem; clip-path: polygon(0 0, 100% 0, 100% 96%, 96% 100%, 0 100%); }
+  [data-skin="moonsmash"] .mf-hero h1 { font-size: clamp(2.5rem, 14vw, 4rem); }
+  [data-skin="moonsmash"] .mf-nav { justify-content: flex-start; }
+}
 /* Moonsmash frames shared glyphs as bold radial impact marks. */
 [data-skin="moonsmash"] .mf-nav-item > svg,
 [data-skin="moonsmash"] .mf-button > svg,
