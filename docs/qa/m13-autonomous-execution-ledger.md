@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 12 captured, 67 implemented, 409 planned (79 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- Overall progress: 79/488 (16.2%) implemented-or-captured; 409/488 (83.8%) planned. These task states do not imply owner, rights, or human visual approval.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 12 captured, 67 implemented, 408 planned (79 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 80/488 (16.4%) implemented-or-captured; 408/488 (83.6%) planned. These task states do not imply owner, rights, or human visual approval.
 
 
 
@@ -440,3 +440,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a reduced-motion desktop capture for all 15 skins × 2 modes. The test activates the OS preference and verifies `data-motion="reduced"`, zero transition duration, dashboard KPI, selected Overview nav, all five tasks/status labels, and profile content before writing a provenance-bound PNG. It resets to no-preference before regular tablet/phone captures.
 - `pnpm test` — 13/13 passed; `pnpm run typecheck` — passed; `pnpm run test:browser` — 56/56 passed (production build generated 88 routes); `pnpm run audit:pairs` — 105 pair records plus 30 current-source default captures at each desktop/tablet/phone size; 180/180 named captures match source, fingerprint, PNG hash and font-ready metadata; all 30 reduced-motion records confirm `motionPreference: reduce`. Contract and handoff validators passed with existing SFX playback-truth and missing-LICENSE warnings. Human visual review remains pending.
 - Rollback: revert `15cb218fdd221115bafb9981a869999be015769f`.
+
+## MF-VF-037 — Original negative-space lunar mark candidate C
+
+- Scope: `assets/source/brand/mark-c.svg`; `docs/brand/master-mark-review.md`; matching task, TODO and ledger evidence.
+- Authored a single static crescent contour with an inward-swept negative-space opening from basic vector geometry. No references or third-party artwork were used. Source SHA-256: `4934e3344f10b800d9b7c846ab3fd415ac0e6d5336c9e9a8e67f7fe3279e6a95`.
+- `node scripts/validate-brand-svg.mjs assets/source/brand/mark-c.svg` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 (existing generic SFX playback-truth warning).
+- `pnpm test`, `pnpm run typecheck`, and `pnpm run build` were attempted but stopped when pnpm tried to recreate workspace dependencies and package fetches failed with `EACCES` due to unavailable network access. No browser run; this is an isolated asset/documentation task. No rendered size variants or human review, selection, trademark clearance, or distribution approval claimed.
+- Rollback: remove `assets/source/brand/mark-c.svg` and revert its review note, task status, and matching counts/evidence.

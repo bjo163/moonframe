@@ -8,7 +8,7 @@
 
 **Historical CI blocker (now repaired; see new M13 gate below):** [GitHub Actions run #154 / 40245436959](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` **failed**: runtime unit/SSR 11/12 passed; the twelfth required 30 PNG screenshots absent from clean checkout, so typecheck and production build jobs did not execute. The spec-contract job passed. Existing 30/30 screenshot or 105/105 visual PASS reports must be interpreted as historical/local or automated structural evidence until capture artifacts and independent manual review can be reproduced at the same SHA.
 
-**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `51/292` implemented, `241/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
+**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `52/292` implemented, `240/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
 
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
@@ -19,7 +19,7 @@
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
-| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **51 implemented / 241 planned** | **No implied final acceptance** |
+| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **52 implemented / 240 planned** | **No implied final acceptance** |
 
 ### Current priority / tiny-agent first tickets
 
@@ -36,9 +36,9 @@
 
 ## Four user-supplied mockups · deep visual task addendum (2026-10-26)
 
-**Updated visual queue:** **460 total task IDs: 51 implemented, 409 planned**. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
+**Updated visual queue:** **460 total task IDs: 52 implemented, 408 planned**. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
 
-**M13 overall progress:** **79/488 (16.2%) implemented/captured**, **409/488 (83.8%) planned**. **409/488 (83.8%) remains.**
+**M13 overall progress:** **80/488 (16.4%) implemented/captured**, **408/488 (83.6%) planned**. **408/488 (83.6%) remains.**
 
 - **[Detailed 168 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks, 25 release/evidence tasks and **14 optional consumer-brand palette tasks**.
 - **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
@@ -77,7 +77,7 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 **Operational truth:** [M13 Final Reconciliation Audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable 18 domain gates](contracts/moonframe-m13-readiness-gates-v0.1.json). New [offline M13 integrity validator](scripts/verify-m13-handoff.mjs) checks 15 skins, 78 intended tokens, 105 pairs, SFX IDs/aliases, backlog DAG and truthful status vocabulary. The 14 closed visual P0 tasks have evidence recorded in [MF-VF backlog](docs/backlog/visual-fidelity-subatomic-tasks.md), and must not be redone by AI lokal.
 
-**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **12 captured and 16 implemented**. Combined with 51 implemented visual tasks, the live task ledgers record 79/488 implemented-or-captured and 409 planned. The historical 57/57 tasks are not counted again.
+**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **12 captured and 16 implemented**. Combined with 52 implemented visual tasks, the live task ledgers record 80/488 implemented-or-captured and 408 planned. The historical 57/57 tasks are not counted again.
 
 **Feature gates:** 
 - **CONDITIONAL GO:** one bounded local AI task at a time, after live main/CI/dependency verification. Preserve shared component API and current working theme engine.

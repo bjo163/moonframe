@@ -12,6 +12,10 @@ Source: `assets/source/brand/mark-a.svg`. This generic first-party concept uses 
 
 Source: `assets/source/brand/mark-b.svg`. This generic first-party draft uses a hard-edged frame with two inset vertical signal bars, giving it a silhouette and internal rhythm distinct from candidate A's broken frame and centered circle. It was authored from basic vector geometry without tracing the Moonwitness references or importing third-party artwork. It is a draft only: no selection, distinctiveness claim, trademark clearance, license conclusion, or visual approval is recorded. Static safety check: `node scripts/validate-brand-svg.mjs assets/source/brand/mark-b.svg`.
 
+## Candidate C — negative-space lunar crescent (draft)
+
+Source: `assets/source/brand/mark-c.svg`. This generic first-party concept uses a single filled crescent contour; the open counter is formed by the contour's inward sweep, without a second object, texture, or color cue. It was authored from basic vector geometry and does not trace the Moonwitness references or use third-party artwork. Draft only: no selection, distinctiveness claim, trademark clearance, license conclusion, size-variant inspection, or visual approval is recorded. Static safety check: `node scripts/validate-brand-svg.mjs assets/source/brand/mark-c.svg`.
+
 ## Required source and render set
 
 - Preserve an editable vector source and a static export. The source must have a stable square viewBox, explicit geometry, no external resources, and no active SVG content.
