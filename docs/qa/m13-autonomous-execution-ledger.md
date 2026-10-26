@@ -1642,3 +1642,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added responsive media guidance to `docs/visual/cinematic-mangapunk-reference-bible.md`: preserve aspect ratio, constrain `cover` to atmospheric crops, keep mobile heading/CTA accessible, provide media-failure fallback, and outline a future 1440/768/360 fixture for varied source ratios.
 - Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, screenshots, or human review were run. No runtime API or acceptance is claimed.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the added subsection, restore MF-VF-398 to planned, and remove this ledger/TODO evidence.
+
+## MF-VF-399 — Specify flat versus layered media performance accounting
+
+- Added a documentation-only measurement template in `docs/qa/original-asset-validation-plan.md` for a flat baseline, each delivered layer, and aggregate transfer bytes. It requires same-content/device/viewport/network conditions, asset hashes/dimensions/format/DPR, LCP/CLS observations, variance, and raw trace provenance.
+- No performance measurement, threshold, source reference import, human review, or acceptance is claimed. Dependency MF-VF-013 is implemented. Rollback: remove the subsection and restore MF-VF-399 to planned.
