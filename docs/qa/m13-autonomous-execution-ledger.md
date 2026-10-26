@@ -177,3 +177,39 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Preserved six current runtime aliases and their TypeScript input types as compatibility inputs for contract v0.1; no new aliases or remappings in this contract version. Removal or semantic changes need a future major-version migration decision. No owner approval inferred.
 - Evidence is contract/source comparison only. `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` passed with the existing generic playback-truth and missing-LICENSE warnings; `git diff --check` passed. No browser QA is claimed for this documentation/contract decision.
 - Status: captured; runtime behavior unchanged.
+## MF-PF-016 — SFX interaction and browser-denial regressions
+
+- Browser regressions cover trusted consent and synthetic-event denial, missing/suspended AudioContext, focus-only silence, mute/revoke, visibility/background behavior, reduced motion, and sensitive contexts. Dedicated suspended-context case confirms focus creates no context, attempted playback reports `blocked`, and revoke prevents further creation.
+- Full checks: unit 12/12, typecheck passed, build generated 88 routes, browser suite passed 52/52, structural validators passed. Status: implemented; no human/release approval claimed.
+
+## MF-PF-017 — SFX global rate and deduplication windows
+
+- Playwright clock test verifies 1000 ms global throttling and 2000 ms same-event deduplication: different event immediately rate-limited, same event still deduplicated after 1001 ms, then allowed after 2000 ms.
+- Full checks: unit 12/12, typecheck passed, build 88 routes, browser 53/53, validators passed. Automated timing evidence does not equal human UX review. Status: implemented.
+
+## MF-PF-018 — SFX package asset inventory
+
+- No audio binary found in `src/`; contract has `producedAssets: []` and `producedAudioFiles: 0`. `pnpm pack --dry-run --json` exited 0 and included no media binaries. Nothing was published. Status: captured; no future asset license approval implied.
+
+## MF-PF-024 — Combined motion, forced-colors, RTL and keyboard regression
+
+- Browser check combines OS reduced motion and forced colors at 360px, switches to RTL, and checks reduced-motion resolution, visible heading/long text, keyboard focus outline, zero transition duration, and no horizontal overflow. Full browser suite 54/54; unit 12/12, typecheck, 88-route build and structural validators passed. 180 motion slots and human accessibility sign-off remain pending. Status: implemented.
+
+## MF-PF-026 — DataTable runtime and premium scope reconciliation
+
+- Source inspection confirms caller-owned rows, optional in-memory text search, sortable columns, empty state, and optional client-side pagination. Premium scope now explicitly excludes persistence, authorization, server queries and enterprise-grid features. Structural validators passed. Status: captured; no runtime feature claims beyond source.
+
+## MF-PF-027 — User reference image intake and rights boundary
+
+- Four recorded hashes/dimensions transcribed from the canonical contract; repository scan found zero PNG/JPG/JPEG/WebP files. Hashes were not recomputed against unavailable binaries. No import, reuse license, or visual approval is claimed; pixel review awaits source files. Status: captured.
+
+## MF-VF-006 — Bind skin captures to current render inputs
+
+- Each Playwright skin/mode screenshot carries a sidecar with Git source commit, PNG SHA-256, and SHA-256 fingerprint over tracked render inputs. Pair audit rejects missing/malformed sidecars, altered PNG bytes, and source-fingerprint mismatch. Regression verifies source/image mismatch rejection.
+- At source/capture commit `2034b75`, unit 13/13, typecheck, build 88 routes, browser 54/54 and `audit:pairs` 105 records + 30/30 current-source captures passed; contract/handoff validators and diff check passed. Pixels remain unreviewed. Status: implemented.
+
+## External/dependency blockers
+
+- `MF-PF-002`: maintainer must record code-license and separate trademark/art distribution decisions; manifest MIT alone is not accepted as approval.
+- `MF-PF-020`: named owner must approve/defer canonical 78×30 token source values and migration/versioning. `MF-PF-021` and `MF-PF-022` remain blocked by that dependency.
+- `MF-PF-028`: requires `MF-PF-022` and clean-clone CI evidence; no remote push was authorized. No approval was inferred.
