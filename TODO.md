@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-110):** Added original optional margin screentone `assets/source/skins/moonhalftone/pattern.svg` (SHA-256 `BE45E07E3BF9FCBDDFE8A8BC59BA580EC657A68921404CCD5212A5E855E3514E`). XML parse and static SVG safety scans passed. Rendered review, rights review, and acceptance remain pending; host runner owns full verification and checkpoint.
+
 **Live execution update (2026-10-26, MF-VF-109):** Added original monochrome screened-ink disk `assets/source/skins/moonhalftone/motif.svg` (SHA-256 `094ED437C2ECCAD1C5BCA16A62CE9CC670EDAC48DF0EC01BADA0E35E677E3781`). XML parse and static SVG safety scan passed. Status is implemented; host runner owns validators, package checks, and checkpoint. Rendering, optical review, rights review, and acceptance remain pending.
 **Live execution update (2026-10-26, MF-VF-108):** Added the Moonhalftone monochrome manga-print direction brief at `docs/visual/skins/moonhalftone.md` (SHA-256 `880C06AE626BC3E181513BF1BCC9325F1C9256F461E49C477586996F2776F90F`). Dependency MF-VF-015 is implemented. Source review and `git diff --check` passed; runner override honored, so validators, package-manager commands, suites, typecheck, build, rendering, and human review were not run. Written direction only; rights, visual review, and acceptance remain pending. Host runner owns applicable checks and checkpoint.
 

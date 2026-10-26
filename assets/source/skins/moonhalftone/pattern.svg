@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 96" role="img" aria-labelledby="title desc">
+  <title id="title">Moonhalftone margin screentone</title>
+  <desc id="desc">An original bounded field of monochrome dots for optional noninteractive margins.</desc>
+  <defs>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="currentColor" />
+      <circle cx="9" cy="9" r="1.6" fill="currentColor" />
+    </pattern>
+    <mask id="edge-fade">
+      <path fill="white" d="M0 0h192v96H0z" />
+      <path fill="black" d="M16 16h160v64H16z" />
+    </mask>
+  </defs>
+  <path fill="url(#dots)" mask="url(#edge-fade)" d="M0 0h192v96H0z" />
+</svg>

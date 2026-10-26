@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-110 — Draw original Moonhalftone margin screentone
+
+- Added `assets/source/skins/moonhalftone/pattern.svg`, a bounded 192×96 monochrome dot field with an open center. SHA-256: `BE45E07E3BF9FCBDDFE8A8BC59BA580EC657A68921404CCD5212A5E855E3514E`.
+- Dependency MF-VF-108 is implemented. XML parse and static safety scans passed. No rendering, human optical/rights review, package-manager commands, validators, suites, typecheck, or build run in this authoring step; no acceptance claimed.
+- Status: `implemented`; no commit created. Host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-110 backlog row, TODO update, and this entry to planned.
+
 ## MF-VF-109 — Draw original Moonhalftone screened ink disk
 
 - Added `assets/source/skins/moonhalftone/motif.svg`, a 128×128 original monochrome screened ink disk with a fading paper edge. SHA-256: `094ED437C2ECCAD1C5BCA16A62CE9CC670EDAC48DF0EC01BADA0E35E677E3781`.
