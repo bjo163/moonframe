@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-348 — Prepare R02 responsive screenshot fixture
+
+- Added a deterministic Playwright fixture in `tests/browser/site.spec.js` that renders the R02 masthead, three editorial story tiles, and a three-entry timeline at 1440, 768, and 360 CSS pixels, writing named full-page screenshots under `artifacts/site/` when the host runs the browser suite.
+- Status: `implemented`; screenshots have not been captured. Dependency `MF-VF-023` is implemented. `git diff --check` passed. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser run. Human visual review, original-reference comparison, rights clearance, and acceptance remain pending. No commit created; host runner handles verification and checkpoint.
+- Rollback: remove the R02 test fixture, restore the task to planned, and remove this ledger section.
+
 ## MF-VF-074 — Draw minimal Moonpunk decorative pattern SVG
 
 - Added `assets/source/skins/moonpunk/pattern.svg`, a sparse monochrome square-registration pattern with embedded geometry and accessible title/description. SHA-256: `F9C698844A2E9D6D7BAB8EF108208B8B0539660C0E58E6CA26679EA39DCB7242`.

@@ -5,6 +5,16 @@ import path from 'node:path';
 const siteCaptureDir = path.resolve('artifacts/site');
 fs.mkdirSync(siteCaptureDir, { recursive: true });
 
+test('R02 editorial composition remains stable at desktop, tablet, and phone widths', async ({ page }) => {
+  await page.goto('/lab/r02-fixture');
+
+  for (const [width, name] of [[1440, 'desktop'], [768, 'tablet'], [360, 'mobile']]) {
+    await page.setViewportSize({ width, height: 1000 });
+    await expect(page.getByRole('heading', { name: 'A city after the rain' })).toBeVisible();
+    await page.screenshot({ path: path.join(siteCaptureDir, `r02-${name}.png`), fullPage: true, animations: 'disabled' });
+  }
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
