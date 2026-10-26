@@ -28,6 +28,9 @@ Current proposed catalog: **151** component entries (103 prior + 48 added), **13
 - **P2 premium-v1.x target**: MFA/passkey/SSO presentation, advanced filters/saved views, analytics, billing display, team/settings, file/admin/communication/AI blocks, marketing layouts and starter shells; **not all promised for first release**.
 - **P3 optional/future**: enterprise pivot/grid editing/virtualization, specialized calendars/editor, Moonquest, some Moonledger screens, queue/webhook and rich AI artifacts, vendor-specific adapters. Require actual consumer value and licensing decisions.
 - **Out-of-scope**: credential/session/authorization engines; data persistence; payment or accounting/ERP rule engines; AI model/tool execution; messaging backend; file storage; infrastructure control; games/reward engine.
+### DataTable runtime scope
+
+The current reusable `DataTable` provides optional in-memory text search, sortable columns, empty/no-results output, and optional client-side pagination when `pageSize` is positive. It renders the caller-provided rows and does not fetch, persist, authorize, or synchronize records. It is not an enterprise grid or spreadsheet: pivoting, virtualization, editing, bulk actions, saved views, column management, export, and server-side query orchestration are future/specialized scope unless separately implemented and documented.
 
 ## 4. What makes something premium
 

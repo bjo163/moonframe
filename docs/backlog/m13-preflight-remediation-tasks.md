@@ -1,6 +1,6 @@
 # Moonframe M13 — Nonvisual Preflight: SFX / Tokens / Motion / Package / Security Microtasks
 
-**2026-10-26 · Live status: 9 captured, 12 implemented, 7 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
+**2026-10-26 · Live status: 10 captured, 12 implemented, 6 planned; no human review/acceptance claimed.** Existing [460 visual-fidelity microtasks](visual-fidelity-subatomic-tasks.md) and [reference addendum](reference-mockups-subatomic-tasks.md) retain their original `MF-VF` IDs. These **28 independent `MF-PF` tasks** are targeted reconciliation follow-ups; do not claim completion merely because M13 static CI is green. [Readiness contract](../../contracts/moonframe-m13-readiness-gates-v0.1.json) describes corresponding release blockers; [final audit](../audit/m13-final-reconciliation-2026-10-26.md) is the narrative crosswalk. Existing main branch only.
 
 **Rule:** A green build approves source integrity, not sound playback safety, npm license rights, original artwork or full WCAG status. Work one ID per local agent session. Each task must provide before/after SHA, scoped file diff, tests actually run, fail/pass, source/rights as applicable, status and rollback.
 
@@ -99,10 +99,10 @@
 
 - [x] **MF-PF-025 — Make all auth demo states explicit and never claim authentication** · **P1** · `implemented` · **deps:** `none` · **GitHub issue:** not-created
   - **Scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** Buttons are labeled simulated unless real provider integration; no fake SSO success
-  - **Evidence:** MF-PF-025 remains planned; no implementation or verification is claimed.
-- [ ] **MF-PF-026 — Review DataTable capability claims vs actual runtime behavior** · **P2** · `planned` · **deps:** `MF-PF-004` · **GitHub issue:** not-created
+  - **Evidence (source HEAD `e1a17d5`):** Demo sign-in, OAuth/SSO, verification, recovery, MFA, and onboarding actions/labels explicitly state they are simulated. Copy makes no claim of authentication, redirect, delivery, token timing, verified factors, sessions, or workspace creation. Validators pass; unit 12/12, typecheck, build 88 routes, browser 46/46, and manual demo state review passed at implementation. No identity provider or real auth behavior claimed.
+- [x] **MF-PF-026 — Review DataTable capability claims vs actual runtime behavior** · **P2** · `captured` · **deps:** `MF-PF-004` · **GitHub issue:** not-created
   - **Scope:** `docs/premium/premium-scope-bible.md`. **Acceptance:** Basic sorting/search/pagination vs enterprise grid plans clearly separated
-  - **Evidence:** MF-PF-026 remains planned; no implementation or verification is claimed.
+  - **Evidence (source HEAD `6474ee8`):** Compared `DataTable` runtime and types with premium scope claims. Runtime supports caller-provided rows, optional local text search, sortable columns, empty state, and client-side pagination when `pageSize` is positive. Scope bible now explicitly excludes persistence, server queries, authorization, spreadsheet/enterprise grid capabilities; pivoting, virtualization, editing, bulk actions, saved views, column management and export remain future/specialized scope. No unimplemented runtime behavior claimed.
 - [ ] **MF-PF-027 — Check source/user four PNG hash imports and rights before pixel review** · **P1** · `planned` · **deps:** `none` · **GitHub issue:** not-created
   - **Scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Four hashes verified, files GitHub still absent; do not claim imported/reference-licensed
   - **Evidence:** MF-PF-027 remains planned; no implementation or verification is claimed.
