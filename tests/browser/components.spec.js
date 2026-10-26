@@ -1,4 +1,10 @@
 import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+import { writeSkinCaptureProvenance } from '../../scripts/skin-capture-provenance.mjs';
+
+const captureDir = path.resolve('artifacts/skins');
+fs.mkdirSync(captureDir, { recursive: true });
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/lab/behavior');
@@ -38,6 +44,48 @@ test('default-open modal survives StrictMode effect cleanup and reinitialization
   await expect(dialog).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).not.toBeVisible();
+});
+
+test('fixed T-1045 archive dialog fixture opens deterministically and captures stable modal state', async ({ page, browser }) => {
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+  await page.goto('/lab/behavior?fixture=archive-task');
+  const fixture = page.locator('[data-fixture="archive-task-dialog"]');
+  const trigger = fixture.getByRole('button', { name: 'Archive task T-1045', exact: true });
+  const dialog = page.getByRole('dialog', { name: 'Archive completed task?' });
+  await expect(fixture).toContainText('T-1045 · Verify scheduled export · Mateo Silva · Complete');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toHaveAttribute('aria-describedby');
+  await expect(dialog).toContainText('“Verify scheduled export” is complete. You can find archived tasks in the project history.');
+  await expect(dialog.getByRole('button', { name: 'Keep task', exact: true })).toBeVisible();
+  await expect(dialog.getByRole('button', { name: 'Archive task', exact: true })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await trigger.click();
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await trigger.click();
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole('button', { name: 'Keep task', exact: true })).toBeVisible();
+  await page.evaluate(() => document.fonts.ready.then(() => true));
+  const screenshotPath = path.join(captureDir, 'archive-task-dialog.png');
+  await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+  const capture = await page.evaluate(() => ({
+    viewport: `${window.innerWidth}x${window.innerHeight}`,
+    locale: navigator.language,
+    direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+    timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    frozenTime: new Date().toISOString(),
+    fixture: '/lab/behavior?fixture=archive-task (T-1045 completed-task archive dialog open)',
+    fontStack: getComputedStyle(document.querySelector('main')).fontFamily,
+    fontLoadStatus: document.fonts.status,
+    userAgent: navigator.userAgent,
+  }));
+  writeSkinCaptureProvenance(screenshotPath, { ...capture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+  await dialog.getByRole('button', { name: 'Keep task', exact: true }).click();
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
 });
 
 test('tabs use roving focus, skip disabled items, and honor RTL arrows', async ({ page }) => {

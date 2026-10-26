@@ -9,6 +9,9 @@ import {
 
 export default function BehaviorFixturePage() {
   const [open, setOpen] = useState(false);
+  const [archiveFixture, setArchiveFixture] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
+  const [archiveComplete, setArchiveComplete] = useState(false);
   const [checked, setChecked] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [menuChoice, setMenuChoice] = useState('none');
@@ -19,12 +22,33 @@ export default function BehaviorFixturePage() {
   });
 
   useEffect(() => {
-    setHasInitialParam(new URLSearchParams(window.location.search).has('initial'));
+    const query = new URLSearchParams(window.location.search);
+    setHasInitialParam(query.has('initial'));
+    const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
+    setArchiveFixture(shouldOpenArchiveFixture);
+    setArchiveOpen(shouldOpenArchiveFixture);
   }, []);
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
       <h1>Components</h1>
+      {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">
+        <h2 id="archive-task-fixture-title">Project tasks</h2>
+        <p>T-1045 · Verify scheduled export · Mateo Silva · Complete</p>
+        <Dialog
+          title="Archive completed task?"
+          description={'“Verify scheduled export” is complete. You can find archived tasks in the project history.'}
+          open={archiveOpen}
+          onOpenChange={setArchiveOpen}
+          trigger={<Button variant="danger">Archive task T-1045</Button>}
+        >
+          <div className="mf-dialog-actions">
+            <Button variant="secondary" onClick={() => setArchiveOpen(false)}>Keep task</Button>
+            <Button variant="danger" onClick={() => { setArchiveComplete(true); setArchiveOpen(false); }}>Archive task</Button>
+          </div>
+        </Dialog>
+        {archiveComplete && <p role="status">Task archived in this preview.</p>}
+      </section>}
       {hasInitialParam && (
         <Dialog title="Initially open" defaultOpen>
           Initial modal content

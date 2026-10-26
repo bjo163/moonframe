@@ -66,7 +66,7 @@ Fixture states are separate captures: default; invalid URL with visible text `En
 
 ### `overlays-menus`
 
-Open the dialog from a row action on `T-1045`. Title: **Archive completed task?** Body: **“Verify scheduled export” is complete. You can find archived tasks in the project history.** Actions: `Keep task` (cancel) and `Archive task` (destructive action). The fixture specifies the initial focus target, Escape cancellation, focus containment while modal, and focus return to the invoking row action; these remain behavior requirements for later implementation and are not proven by this document.
+Open the dialog from the `Archive task T-1045` row action. Title: **Archive completed task?** Body: **“Verify scheduled export” is complete. You can find archived tasks in the project history.** Actions: `Keep task` (cancel) and `Archive task` (destructive action). The `/lab/behavior?fixture=archive-task` preview opens the same dialog directly for deterministic capture. Browser coverage verifies the open state, Escape cancellation, and focus return after opening from the row action. The destructive action only updates local preview feedback; it does not archive backend data.
 
 Include one navigation overflow menu with the items `Rename workspace`, `Manage members`, and `Archive workspace`. Disabled and destructive states must have text/semantics; color alone cannot distinguish them.
 
