@@ -11,6 +11,18 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-076 — Draw small Moonpunk edition vector badge
+
+- Added `assets/source/skins/moonpunk/edition.svg`, a self-contained static library/skin label with editable vector text and no external resources, scripts, event handlers, or Moonwitness marks.
+- SHA-256: `cb686696f24b5ec02f456af0a467aead2ea14fe1648b9eae876aaf24f0a9c9aa`. Dependencies MF-VF-072 and MF-VF-039 are implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser capture were run. Trademark/rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore MF-VF-076 to planned, then remove this ledger section and the matching TODO update.
+
+## MF-VF-076 — Draw small Moonpunk edition vector badge
+
+- Added `assets/source/skins/moonpunk/edition.svg`, a self-contained static library/skin label with editable vector text and no external resources, scripts, event handlers, or Moonwitness marks.
+- SHA-256: `cb686696f24b5ec02f456af0a467aead2ea14fe1648b9eae876aaf24f0a9c9aa`. Dependencies MF-VF-072 and MF-VF-039 are implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser capture were run. Trademark/rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore MF-VF-076 to planned, then remove this ledger section and the matching TODO update.
+
 ## MF-VF-075 — Draw original Moonpunk hero illustration SVG
 
 - Added `assets/source/skins/moonpunk/hero.svg`, an original static abstract block-built lunar/urban illustration with title and description. It uses embedded geometry only and contains no consumer branding, external resource, script, or event handler.

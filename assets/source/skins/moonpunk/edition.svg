@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe Moonpunk edition</title>
+  <desc id="desc">A compact framed label identifying the Moonpunk visual edition.</desc>
+  <path fill="#171717" d="M0 0h232v56H8L0 64z"/>
+  <path fill="none" stroke="#cef443" stroke-width="3" d="M7 7h218v42H14z"/>
+  <path fill="#cef443" d="M15 14h8v28h-8zm12 0h3l10 16V14h7v28h-3L34 26v16h-7z"/>
+  <text x="55" y="34" fill="#f3f7df" font-family="ui-monospace, monospace" font-size="14" font-weight="700" letter-spacing="1">MOONPUNK</text>
+  <path fill="#cef443" d="m208 14 12 0-6 9zm0 18 12 0-6 9z"/>
+</svg>
