@@ -102,6 +102,53 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(profileFixture.locator('.fixture-profile-status')).toHaveText('Workspace profile saved.');
     await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
     await expect(profileUrl).toHaveValue('https://northstar.example/workspace');
+    const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
+    const shell = page.locator('.mf-shell');
+    const decorativeSwatches = page.locator('.demo-swatch');
+    const decorativeProjectSymbols = page.locator('.demo-project-symbol');
+    const decorativeBrandMarks = page.locator('.demo-mark, .demo-workspace-icon, .mf-nav-item svg, .demo-skin-option svg');
+    await expect(decorationToggle).not.toBeChecked();
+    await expect(decorativeSwatches.first()).toBeVisible();
+    await expect(decorativeProjectSymbols.first()).toBeVisible();
+    await decorationToggle.check();
+    await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+    await expect(decorativeSwatches.first()).toHaveCSS('display', 'none');
+    await expect(decorativeProjectSymbols.first()).toHaveCSS('display', 'none');
+    await expect(decorativeBrandMarks.first()).toHaveCSS('display', 'none');
+    await expect(page.getByRole('button', { name: 'Overview', exact: false }).first()).toBeVisible();
+    await expect(page.locator('.demo-skin-option[data-active="true"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(fixtureNavItems.nth(0)).toHaveAttribute('aria-current', 'page');
+    await expect(fixtureTaskNames).toHaveCount(5);
+    await expect(fixtureTaskTable.getByText('Blocked', { exact: true })).toBeVisible();
+    await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
+    await expect(profileFixture.getByText('Use the address your team recognizes.', { exact: true })).toBeVisible();
+    await decorationToggle.focus();
+    await expect(decorationToggle).toBeFocused();
+    await profileUrl.fill('not a valid workspace URL');
+    await profileFixture.getByRole('button', { name: 'Save changes', exact: true }).click();
+    await expect(profileFixture.getByText('Enter a valid workspace URL.', { exact: true })).toBeVisible();
+    await expect(profileUrl).toHaveAttribute('aria-describedby', 'fixture-workspace-url-error');
+    await profileUrl.fill('https://northstar.example/workspace');
+    await expect(profileFixture.getByText('Use the address your team recognizes.', { exact: true })).toBeVisible();
+    await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
+    const decorationOffScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-decoration-off.png`);
+    await page.screenshot({ path: decorationOffScreenshotPath, fullPage: true, animations: 'disabled' });
+    const decorationOffCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form; decoration-off state',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(decorationOffScreenshotPath, { ...decorationOffCapture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+    await decorationToggle.uncheck();
+    await expect(shell).not.toHaveAttribute('data-decoration-off', 'true');
+    await expect(decorativeSwatches.first()).toBeVisible();
+    await expect(decorativeProjectSymbols.first()).toBeVisible();
     const root = page.locator('.mf-root');
     await expect(root).toHaveAttribute('data-skin', skin.id);
     await expect(root).toHaveAttribute('data-mode', mode);
@@ -144,7 +191,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; decorations on',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -165,7 +212,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; decorations on',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,
@@ -187,7 +234,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
       timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
       frozenTime: new Date().toISOString(),
-      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, task table and profile form',
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; decorations on',
       fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
       fontLoadStatus: document.fonts.status,
       userAgent: navigator.userAgent,

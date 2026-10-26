@@ -68,7 +68,7 @@ function loadProjects(): ProjectItem[] {
   return seedProjects;
 }
 
-function DashboardFixture() {
+function DashboardFixture({ decorationsOff, onDecorationsOffChange }: { decorationsOff: boolean; onDecorationsOffChange: (enabled: boolean) => void }) {
   const [taskSearch, setTaskSearch] = useState('');
   const [taskSort, setTaskSort] = useState<'due-date' | 'task'>('due-date');
   const [activeNav, setActiveNav] = useState('Overview');
@@ -84,7 +84,10 @@ function DashboardFixture() {
         <h2 id="fixture-dashboard-title">Overview</h2>
         <p>Northstar Studio</p>
       </div>
-      <time dateTime="2026-10-25">Sunday, October 25, 2026</time>
+      <div className="fixture-dashboard-heading-actions">
+        <time dateTime="2026-10-25">Sunday, October 25, 2026</time>
+        <Switch label="Hide decorative elements" checked={decorationsOff} onChange={event => onDecorationsOffChange(event.currentTarget.checked)} />
+      </div>
     </div>
     <nav className="fixture-dashboard-nav" aria-label="Workspace sections">
       {navItems.map(item => <button key={item} type="button" aria-current={activeNav === item ? 'page' : undefined} onClick={() => setActiveNav(item)}>{item}</button>)}
@@ -208,6 +211,7 @@ function DashboardProfileForm() {
 
 function LabWorkspace() {
   const theme = useTheme();
+  const [decorationsOff, setDecorationsOff] = useState(false);
   const [page, setPage] = useState<'workspace' | 'components'>('workspace');
   const [projects, setProjects] = useState<ProjectItem[]>(seedProjects);
   const [hydrated, setHydrated] = useState(false);
@@ -276,7 +280,7 @@ function LabWorkspace() {
     catch { announce('Clipboard unavailable. Select and copy the example in the Components tab.'); }
   }
 
-  return <div className="mf-shell">
+  return <div className="mf-shell" data-decoration-off={decorationsOff ? 'true' : undefined}>
     <a href="#main-content" className="demo-skip">Skip to content</a>
     <aside className="mf-sidebar" aria-label="Workspace and skin navigation">
       <a href="#main-content" className="demo-brand" aria-label="Moonframe home" onClick={() => setPage('workspace')}><span className="demo-mark" aria-hidden="true">m<span>•</span></span><span>moonframe<small>THE SHAPE OF YOUR IDEAS</small></span></a>
@@ -329,7 +333,7 @@ function LabWorkspace() {
           </Card>
         </section>
         <section className="demo-bottom-grid"><Card className="demo-note"><CardHeader><div className="demo-eyebrow">A DIFFERENT POINT OF VIEW</div><CardTitle>One workspace. Fifteen worlds.</CardTitle><CardDescription>Change the skin in the sidebar. Your work stays right where you left it; the entire visual language changes around it.</CardDescription></CardHeader><CardContent><Button variant="ghost" onClick={() => setPage('components')}>Explore the components <Icon name="arrow" size={16} /></Button></CardContent></Card><Card className="demo-note"><CardHeader><div className="demo-eyebrow">CURRENT EDITION</div><CardTitle>{currentSkin.name}</CardTitle><CardDescription>{currentSkin.description}</CardDescription></CardHeader><CardContent><div className="demo-inline"><Badge>{theme.resolvedMode === 'dark' ? 'Dark' : 'Light'} appearance</Badge><Badge>React + CSS</Badge></div></CardContent></Card></section>
-        <DashboardFixture />
+        <DashboardFixture decorationsOff={decorationsOff} onDecorationsOffChange={setDecorationsOff} />
       </> : <Gallery announce={announce} theme={theme} onDialog={() => setDialog(true)} />}
 
       <footer className="demo-footer"><span><strong>moonframe</strong> · Built to feel like you.</span><span>15 skins / 30 appearances / One system</span></footer>
