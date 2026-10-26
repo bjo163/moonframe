@@ -2001,3 +2001,16 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright regression in 	ests/browser/components.spec.js that hides optional artwork on /lab/reference-art-off, then checks the editorial and poster titles remain visible as accessible headings and artwork placeholders are gone.
 - Dependency MF-VF-010 is implemented. Backlog status implemented; source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No screen-reader device test or WCAG claim. No commit created.
 - Rollback: remove the regression, restore the task row to planned, and remove the matching TODO and ledger entries.
+
+## MF-VF-114 — Style Moonhalftone navigation/layout/typography
+
+- Dependency MF-VF-108 is implemented.
+- Added scoped page masthead, monochrome navigation state styling, condensed display hierarchy, staggered cards, and offset ink framing in src/styles.css.
+- Status: implemented. Verification: source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review. Responsive rendering, contrast, rights review, and acceptance remain pending; host runner owns checks and checkpoint.
+- Rollback: remove the MF-VF-114 style rules, restore the backlog status to planned, and remove this ledger/TODO evidence. No commit created.
+# MF-VF-437 — Add 15-skin artwork exclusion review protocol
+
+- Starting HEAD: `0d93aec3b95452ba9465b989f3fdfdd4d7b038c7`.
+- Added `docs/qa/reviews/skin-boundaries.md` covering 15 canonical skin IDs × Light/Dark, same-fixture capture provenance, optional artwork and accessible-content behavior, and the limit that one Moonpunk screenshot cannot represent every skin.
+- Dependency MF-VF-010 is implemented. Backlog status: `implemented` (documentation deliverable); source/document inspection only. No package-manager commands, validators, suites, typecheck, build, browser capture, or human review run under runner override. No visual parity, rights clearance, WCAG conformance, or acceptance claimed.
+- Rollback: remove the protocol, restore MF-VF-437 to planned, and remove this TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.

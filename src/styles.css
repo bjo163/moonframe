@@ -565,6 +565,21 @@
 [data-skin="moonhalftone"] .mf-grid > :first-child { border-block-start-width: 8px; }
 [data-skin="moonhalftone"] .mf-hero h1 { text-transform: uppercase; letter-spacing: .01em; }
 [data-skin="moonhalftone"] .mf-card-title { display: inline-block; background: var(--mf-text); color: var(--mf-surface); padding: .25rem .5rem; }
+/* Give the print edition a page-like masthead and staggered reading rhythm. */
+[data-skin="moonhalftone"] .mf-sidebar { padding: 1.25rem clamp(1rem, 3vw, 2.5rem); }
+[data-skin="moonhalftone"] .mf-nav { gap: .25rem 1.25rem; border-block-start: 1px solid var(--mf-text); padding-block-start: .65rem; }
+[data-skin="moonhalftone"] .mf-nav-item { min-block-size: 2.5rem; padding-inline: .15rem; border-radius: 0; border-block-end: 1px solid var(--mf-border); font-family: var(--mf-display); font-size: .82rem; letter-spacing: .055em; text-transform: uppercase; }
+[data-skin="moonhalftone"] .mf-nav-item:hover,
+[data-skin="moonhalftone"] .mf-nav-item[aria-current="page"],
+[data-skin="moonhalftone"] .mf-nav-item[data-active="true"] { background: transparent; color: var(--mf-text); border-color: var(--mf-text); box-shadow: inset 0 -3px var(--mf-text); }
+[data-skin="moonhalftone"] .mf-header { border-inline-width: 0; border-block-width: 2px 5px; }
+[data-skin="moonhalftone"] .mf-hero { max-inline-size: 68rem; padding-inline: clamp(.25rem, 2vw, 1.5rem); }
+[data-skin="moonhalftone"] .mf-hero h1 { max-inline-size: 14ch; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: .94; letter-spacing: -.025em; }
+[data-skin="moonhalftone"] .mf-grid > :nth-child(even) { margin-block-start: clamp(.75rem, 2vw, 1.5rem); }
+[data-skin="moonhalftone"] .mf-card { box-shadow: 3px 3px 0 var(--mf-border); }
+[data-skin="moonhalftone"] .mf-card:nth-child(even) { box-shadow: -3px 3px 0 var(--mf-border); }
+[data-skin="moonhalftone"] :is(.mf-hero h2, .mf-card-title) { font-family: var(--mf-display); letter-spacing: .015em; }
+[data-skin="moonhalftone"] .mf-card-title { text-transform: uppercase; }
 [data-skin="moonhalftone"] .mf-nav-item > svg,
 [data-skin="moonhalftone"] .mf-button > svg,
 [data-skin="moonhalftone"] .mf-search-icon,
