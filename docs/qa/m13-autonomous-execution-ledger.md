@@ -23,6 +23,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-369 — Define split-screen auth layout and DOM order
+
+- Added `apps/moonframe/templates/visual-reference/r04-layout.tsx` with the sign-in form first in DOM/reading order and optional artwork second; the content is supplied by the consumer.
+- Added `r04-layout.module.css` with a single-column narrow layout and two equal flexible columns at 48rem. The breakpoint is responsive design intent, not a fixed 50/50 requirement. Form and illustration regions have accessible labels.
+- Dependency MF-VF-025 is implemented. Status: `implemented`; static source review only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, screenshot capture, or human review run. No real authentication or reference-image parity is claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove these two files, restore MF-VF-369 to planned, and remove the matching TODO update.
+
 ## MF-VF-360 — Reconcile safe R03 placeholder performance copy
 
 - Confirmed `apps/moonframe/templates/visual-reference/r03-copy.ts` exists and exports generic sample-event copy (title, description, date, venue, and CTA). Source contains no named performer or consumer mark and is not copied lyric text.

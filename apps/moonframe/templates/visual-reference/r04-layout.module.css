@@ -1,0 +1,48 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100svh;
+  color: var(--mf-text, #171717);
+  background: var(--mf-surface, #fff);
+}
+
+.formPanel {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-width: 0;
+  padding: clamp(1.25rem, 5vw, 4rem);
+}
+
+.artworkPanel {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 10rem;
+  overflow: hidden;
+  background: var(--mf-surface-raised, #ece9e5);
+}
+
+@media (min-width: 48rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .formPanel {
+    min-height: 100svh;
+  }
+
+  .artworkPanel {
+    min-height: 100svh;
+  }
+}
+
+@media (forced-colors: active) {
+  .layout,
+  .formPanel,
+  .artworkPanel {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+  }
+}

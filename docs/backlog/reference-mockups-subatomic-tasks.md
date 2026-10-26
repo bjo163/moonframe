@@ -297,9 +297,9 @@
 
 ## L — R04 cinematic authentication: semantically clean form
 
-- [ ] **MF-VF-369 — Define split-screen auth layout and DOM order** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
-  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-layout.tsx (proposed)`. **AC:** Accessible form first, artwork second; 50/50 is desktop design intent not fixed breakpoint.
-  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-369 — Define split-screen auth layout and DOM order** · **P1** · `implemented` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-layout.tsx` and `r04-layout.module.css`. Form is first in DOM and reading order; artwork is an optional second panel. CSS uses a single-column small-screen layout and equal flexible columns from 48rem, treating 50/50 as desktop intent rather than a fixed breakpoint.
+  - **Evidence (source HEAD `ba8dbf1`):** `MF-VF-025` is implemented. Static review confirms form-first DOM order, optional artwork, responsive stacking, and labeled regions. Per runner override, no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review were run; host runner owns verification. No authentication behavior or reference-image parity is claimed. Rollback: remove the R04 layout component/style, restore this row to planned, and remove matching TODO/ledger evidence.
 - [ ] **MF-VF-370 — Build authentic branded introduction slot** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-brand.tsx (proposed)`. **AC:** Consumer provides actual logo; framework offers generic fallback.
   - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
