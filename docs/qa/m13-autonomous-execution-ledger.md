@@ -1835,3 +1835,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - **Evidence:** `contracts/moonframe-creative-reference-contract-v0.1.json` records R02 source media as uploaded in chat but not committed, with visual approval `not-reviewed` and rights limited to owner-supplied reference use. `docs/qa/visual-fidelity-evidence-ledger.md` says missing originals are `reference-missing` and cannot be replaced with fabricated screenshots.
 - **Next condition:** Obtain the original R02 PNG in the checkout, verify its SHA-256 against the canonical contract, then perform and record the human comparison. No review, rights clearance, or acceptance is claimed.
 - **Runner override:** No validators, package-manager commands, test suites, typecheck, build, browser capture, or commit run; the host runner owns verification and checkpoint.
+
+## MF-VF-290 — Track actual human verdicts for 105 unordered pairs
+
+- Added a 210-row light/dark matrix covering all 105 unordered pairs from the 15 canonical skin IDs to `docs/qa/visual-fidelity-evidence-ledger.md`. Every row defaults to pending/unreviewed and has explicit reviewer, date, evidence, observation, and exception fields. No human verdict or approval was recorded.
+- Dependency `MF-VF-031` is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No commit created.
+- Rollback: remove the MF-VF-290 matrix and restore its backlog row to planned; remove corresponding TODO and ledger entries.
