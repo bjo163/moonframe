@@ -29,6 +29,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-300 — Record the R04 import blocker accurately
+
+- Checked `/mnt/data/moonframe_m13_reference_originals.zip`; it is absent. No R04 source PNG is present in the checkout. The creative-reference contract identifies R04 as `MWX-REF-004`, SHA-256 `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90`, 1024 × 576.
+- Updated the matching backlog row from `planned` to `blocked-external-approval` with the precise missing-byte and rights-approval requirements. Existing reference-index metadata is only a transcription and cannot satisfy source import acceptance.
+- Dependency MF-VF-014 is implemented. No package-manager commands, validators, tests, typecheck, build, or commit run/created per runner override; host runner owns verification/checkpoint. No human review or rights approval claimed.
+- Resume when the owner supplies digest-matching bytes and explicitly approves review-only use. Rollback: restore MF-VF-300 to planned and remove this entry.
+
 ## MF-VF-091 — Style Moonriot table, form, and dialog recipes
 
 - Added Moonriot-scoped ruled/striped tables, left-ruled form controls, and an asymmetrically framed dialog with a separated header in `src/styles.css`; existing markup, keyboard behavior, public APIs, and density are unchanged.

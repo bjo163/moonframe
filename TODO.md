@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-300):** Marked R04 source import `blocked-external-approval`: the authorized reference archive and source PNG are absent; import requires digest-matching owner-supplied bytes and explicit review-use rights approval. Canonical hash/dimensions are recorded in the task row; metadata transcription is not byte verification. No package-manager commands, tests, validators, typecheck, build, or commit run per runner override. See `docs/qa/m13-autonomous-execution-ledger.md`; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-091):** Added Moonriot-scoped table, form, and dialog recipes in `src/styles.css` with ruled columns, striped rows, left-ruled controls, and asymmetric dialog framing. Dependencies MF-VF-084 and MF-VF-090 are implemented. Status `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, browser capture, or human review run per runner override. See `docs/qa/m13-autonomous-execution-ledger.md`; host runner owns verification and checkpoint. Human review and acceptance remain pending.
 
 **Live execution update (2026-10-26, MF-VF-373):** Added `apps/moonframe/templates/visual-reference/r04-password-field.tsx` and `.module.css` with a semantic current-password field and keyboard-operable show/hide toggle. Dependency `MF-VF-025` is implemented. Status is `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser capture, or human review run; host runner owns verification. No authentication behavior or acceptance is claimed.
