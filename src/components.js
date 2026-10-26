@@ -1998,33 +1998,33 @@ export function SFXProvider({
     if (now - lastGlobal < 1000) return { played: false, reason: 'rate-limited' };
     if (now - lastSame < 2000) return { played: false, reason: 'deduplicated' };
 
-    timingRef.current.lastPlayedAt = now;
-    timingRef.current.byEvent[canonicalId] = now;
-    setLastEvent({ id: canonicalId, timestamp: now });
-
     try {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) {
-        const ctx = new AudioCtx();
-        const gain = ctx.createGain();
-        gain.gain.setValueAtTime(Math.max(0.01, volume * 0.25), ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + profile.durationMs / 1000);
-        gain.connect(ctx.destination);
-
-        profile.freq.forEach((f, idx) => {
-          const osc = ctx.createOscillator();
-          osc.type = profile.type;
-          osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.045);
-          osc.connect(gain);
-          osc.start(ctx.currentTime + idx * 0.045);
-          osc.stop(ctx.currentTime + (profile.durationMs / 1000) + idx * 0.045);
-        });
+      if (!AudioCtx) return { played: false, reason: 'unsupported' };
+      const ctx = new AudioCtx();
+      if (ctx.state === 'suspended' || ctx.state === 'closed') {
+        return { played: false, reason: 'blocked' };
       }
-    } catch {
-      // Graceful silent fallback per MF-SFX-001
-    }
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(Math.max(0.01, volume * 0.25), ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + profile.durationMs / 1000);
+      gain.connect(ctx.destination);
 
-    return { played: true, eventId: canonicalId };
+      profile.freq.forEach((f, idx) => {
+        const osc = ctx.createOscillator();
+        osc.type = profile.type;
+        osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.045);
+        osc.connect(gain);
+        osc.start(ctx.currentTime + idx * 0.045);
+        osc.stop(ctx.currentTime + (profile.durationMs / 1000) + idx * 0.045);
+      });
+      timingRef.current.lastPlayedAt = now;
+      timingRef.current.byEvent[canonicalId] = now;
+      setLastEvent({ id: canonicalId, timestamp: now });
+      return { played: true, eventId: canonicalId };
+    } catch {
+      return { played: false, reason: 'blocked' };
+    }
   }
 
   const value = useMemo(() => ({

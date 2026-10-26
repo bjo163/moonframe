@@ -5,8 +5,17 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007`, `MF-PF-008`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 23 implemented-or-captured (14 baseline implemented + 6 captured + 3 implemented), 0 blocked, 465 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 24 implemented-or-captured (14 baseline implemented + 6 captured + 4 implemented), 0 blocked, 464 pending/planned. Browser execution for `MF-PF-009` remains unverified after the environment prevented dependency restoration. The license/trademark decision remains pending without inferred owner approval.
+
+## MF-PF-009 — Truthful SFX playback result
+
+- Inspected source HEAD before edits: `0ebeb9de87aa66810e6035b9dc22699bc229efce`.
+- Scope: `src/components.js`, `tests/browser/components.spec.js`, SFX contract, matching task status, root TODO counts, and this ledger.
+- Unsupported Web Audio returns `played:false` with reason `unsupported`; suspended/closed contexts and scheduling errors return `played:false` with reason `blocked`. Cooldown and last-event state advance only after the oscillators are scheduled.
+- `node scripts/validate-contracts.mjs` — exit 0. `node scripts/verify-m13-handoff.mjs` — exit 0; reported existing playback-truth warning because its static rule has not been updated to recognize this implementation, plus missing LICENSE warning.
+- `pnpm test`, `pnpm run typecheck`, `pnpm run build`, and `pnpm run test:browser` were not completed: pnpm's dependency repair hit Windows `EPERM` unlinking the Rolldown native binding, then registry requests failed with `EACCES`. Browser regression is added but execution remains pending.
+- Status: implemented, runtime/browser verification pending. No human review/acceptance claimed. Rollback: revert playback result logic, unsupported-API browser regression, contract note, and matching task/TODO/ledger entries.
 
 ## MF-PF-008 — Trusted SFX consent activation API
 
@@ -121,3 +130,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0; existing play-result and missing-LICENSE warnings remain.
 - `pnpm test` — exit 0; 12/12 passed. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `pnpm run test:browser` — exit 0; 46/46 passed, including synthetic denial and real-click grant.
 - Status: implemented with local verification complete. No human review or acceptance claimed. Rollback: revert the explicit trusted-event API, call site, browser assertion, documentation, and matching task status/evidence.
+
+## MF-PF-009 — Truthful Web Audio playback result
+
+- Inspected source HEAD before edits: `0ebeb9de87aa66810e6035b9dc22699bc229efce`.
+- Scope: `src/components.js`, `tests/browser/components.spec.js`, `contracts/moonframe-sfx-contract-v0.1.json`, matching preflight row, TODO counts, and this ledger.
+- Unsupported Web Audio returns `{ played: false, reason: 'unsupported' }`; suspended/closed contexts and scheduling errors return `blocked`. Cooldown and last-event state are updated only after scheduling succeeds. Added an unsupported-API browser regression and updated the contract warning with local evidence; broader release approval remains separate.
+- `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 locked packages from the local cache.
+- `pnpm test` — exit 0; 12/12 passed. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `pnpm run test:browser` — exit 0; 47/47 passed.
+- `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0. The handoff verifier still reports its generic playback-truth warning; investigate/fix that independent static heuristic before clearing it.
+- Status: implemented with local verification complete. No human review or release approval claimed. Rollback: revert the result states, browser regression, contract note, and matching task/evidence updates.

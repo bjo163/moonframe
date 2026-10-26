@@ -145,3 +145,12 @@ test('brand-and-sfx component detail page renders 15 vector marks and interactiv
   await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
   await expect(page.getByText('Consent: Granted')).toBeVisible();
 });
+
+test('SFX reports unsupported Web Audio without claiming playback', async ({ page }) => {
+  await page.addInitScript(() => { window.AudioContext = undefined; window.webkitAudioContext = undefined; });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: unsupported\)/)).toBeVisible();
+});
