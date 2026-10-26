@@ -1,3 +1,9 @@
+## MF-VF-051 — Record actual checked-in close-icon digest
+
+- Inspected `assets/source/icons/close.svg` at live HEAD `0866017`; it is a self-contained 24×24 `currentColor` close glyph with accessible `Close` label. PowerShell `Get-FileHash ... -Algorithm SHA256` returned `B2C16BB25C5DF5182F956F8F481CE59DFF72525BFAC0DA4B91B8A6EFC8E4F665`.
+- Replaced the backlog row's placeholder `TBD` with this digest. Status remains `implemented`; this source-provenance correction does not claim rendering, small-size legibility, rights clearance, human review, or acceptance.
+- Runner override honored: no package-manager commands, suites, typecheck, build, or validators run; host runner owns verification and commit. Rollback: restore the previous `TBD` evidence in the task row and remove this entry.
+
 # MF-VF-073 — Draw original Moonpunk motif SVG
 
 ## MF-VF-090 — Style Moonriot navigation, layout, and typography
