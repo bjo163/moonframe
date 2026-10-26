@@ -1,0 +1,514 @@
+# Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
+
+**Edition 2026-10-26 · Status all `planned` · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+
+## How this addendum differs from prior 292 tasks
+
+- The first backlog asked for a Moonpunk motif/pattern/hero and 15 unique skin recipes. **This addendum decomposes actual reference screenshots** into individual semantic, decorative, imagery, typography, responsive, evidence and original-IP tasks.
+- **Mapping:** R01 Dashboard = Moonpunk + Moonpanel/Moonglitch; R02 Public Story Landing = Moonpunk + Moonzine/Moonhalftone; R03 Poster = Moonsmash with Moonpunk/Moonzine accents; R04 Auth = restrained Moonpunk split cinematic form. Secondary art influences are not hybrid skin IDs or permissions to merge their public CSS API.
+- No icon/asset is considered actually produced, licensed, used, human-reviewed or shipped by writing a task. Original files and thumbnails may require a separate binary-capable ingestion workflow; pending import cannot be solved by invented paths or references.
+- Every task uses one micro file scope, acceptance, dependency and verification. Shared CSS files are edited serially; test/browser and design reviews are distinct from committing the source. Preserve keyboard behavior, semantic APIs, zoom, accessible text, safe images, clean fallback and named manual reviewer.
+
+## New execution batch summary
+
+| Batch | New IDs | Count | Status |
+|---|---|---:|---|
+| H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 0 done |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 0 done |
+| J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
+| K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
+| L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
+| M — reusable visual composition primitives and token control | `MF-VF-389…MF-VF-406` | 18 | 0 done |
+| N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
+| O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
+| **Total addendum** | `MF-VF-293…MF-VF-446` | **154** | **0 done** |
+
+## H — reference material intake, trust and reusable visual vocabulary
+
+- [ ] **MF-VF-293 — Register image R01 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 31829877f5499480ef8ebbfd2e0b103016917216c3ac70a69d0595b2bf2efa04, 1672×941; status unversioned until image copied.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-294 — Register image R02 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167, 1024×576.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-295 — Register image R03 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff, 682×1024.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-296 — Register image R04 original digest and dimensions** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Digest SHA-256 9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90, 1024×576.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-297 — Import R01 binary reference after rights approval** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/source/ref-001.png (proposed)`. **AC:** Exact original bytes match recorded digest; review-only source, not a production Moonframe pack.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-298 — Import R02 binary reference after rights approval** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/source/ref-002.png (proposed)`. **AC:** Exact original bytes match recorded digest; clear review-only copyright boundary.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-299 — Import R03 binary reference after rights approval** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/source/ref-003.png (proposed)`. **AC:** Exact original bytes match digest; poster lyrics/artwork do not grant redistribution or reuse rights.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-300 — Import R04 binary reference after rights approval** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/source/ref-004.png (proposed)`. **AC:** Exact original bytes match digest; image not embedded into login form UI.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-301 — Define reference IDs and 4-way role classification** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-creative-reference-contract-v0.1.json`. **AC:** Four IDs reflect dashboard/landing/poster/auth; primary/secondary influence never redefines skin IDs.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-302 — Write explicitly excluded brand-specific words and symbols** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Moonwitness name, crown, characters, stories and copy stay consumer supplied, not library icons.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-303 — Create original-work vs source-reference risk matrix** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reference-rights-checklist.md (proposed)`. **AC:** For each frame record view-only license, producer provenance unknowns, derivative clearance and forbidden copying.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-304 — Create nonbinding reference mood palette notes** · **P1** · `planned` · **dep:** `MF-VF-014` · **issue:** not-created
+  - **File scope/output:** `docs/visual/references/reference-index.md (proposed)`. **AC:** Black/white/pink/electric-blue/yellow/violet tagged as mood, not required token values.
+  - **Proof & rollback:** Compare contract ID, SHA, source rights and honest source availability; do not claim imported files. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## I — R01 mission control dashboard: tiny structure and asset slots
+
+- [ ] **MF-VF-305 — Extract top navigation landmark hierarchy** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-topbar.tsx (proposed)`. **AC:** Logical breadcrumbs, search, status, profile; no screenshot-as-header.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-306 — Extract ink-black left sidebar shell** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-sidebar.tsx (proposed)`. **AC:** Persistent desktop rail with keyboard nav and constrained scrawl decoration.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-307 — Draw independent rough white sidebar border source** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/rough-rail-frame.svg (proposed)`. **AC:** Layer art only; CSS keeps accessible border and focus separate.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-308 — Draw brush-ink pink selected nav plate** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/active-nav-stroke.svg (proposed)`. **AC:** Active background never sole state; aria-current required.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-309 — Define left product identity/edition brand slot** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-brand-slot.tsx (proposed)`. **AC:** MOONWITNESS wordmark/crown supplied from consuming app, not framework.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-310 — Build mission hero 2-column L1 grid** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-hero-layout.tsx (proposed)`. **AC:** Text and CTA on one side; scenic art slot on other; non-color structural hierarchy.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-311 — Define oversized expressive heading recipe** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** Scoped Moonpunk display typography with licensed fallback, readable wrapping.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-312 — Place painted micro-caption / marginalia region** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-side-notes.tsx (proposed)`. **AC:** Optional decorator with DOM text and no interference with navigation.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-313 — Define panoramic fictional cyber-city scene art slot** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-scene-slot.tsx (proposed)`. **AC:** Layered image with reserved ratio, responsive crop and appropriate alt.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-314 — Draw original luminous moon backdrop asset concept** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/moon-orbit-scene.svg (proposed)`. **AC:** Vector draft or opt into raster if complex; not copyrighted screenshot derivative.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-315 — Draw original hooded anonymous observer concept** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/observer-scene.svg (proposed)`. **AC:** Story-specific figure supplied by consumer, not universal app icon.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-316 — Define city skyline backplate artwork concept** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/city-silhouette.svg (proposed)`. **AC:** Layered optional environment that works without effects and on phone.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-317 — Build triple-zone dashboard composition grid** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-content-grid.tsx (proposed)`. **AC:** Left creation cards, central signal graphic, right operations cards, then bottom streams.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-318 — Build compact feature tiles with icon slot** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-action-tiles.tsx (proposed)`. **AC:** Card title and value real DOM; tile glyph semantic, no baked asset labels.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-319 — Build radial network hub as data visualization seam** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-signal-hub.tsx (proposed)`. **AC:** Generic chart with accessible alternative table and consumer-provided relationships.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-320 — Draw geometric radial network background only** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r01/radial-network.svg (proposed)`. **AC:** Decorative concentric ring with no fake ontology/data meaning.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-321 — Define project mini-cover card ratios** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-project-covers.tsx (proposed)`. **AC:** Original consumer posters as content images with appropriate aspect and alt.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-322 — Build active workflow feed section** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-workflow-feed.tsx (proposed)`. **AC:** Real list semantics, text statuses in addition to colored dots.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-323 — Build command/status feed region** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-command-feed.tsx (proposed)`. **AC:** Readable log timestamps and status labels, responsive truncated text.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-324 — Add scratch frame treatment to panel recipes** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** Rough decorative image never hides content border or text.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-325 — Mobile collapse command rail into accessible menu** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-mobile-navigation.tsx (proposed)`. **AC:** At 360px labels/actions preserved; content-first tab sequence.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-326 — Mobile reorder 3-zone grid to single meaningful column** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-mobile-layout.tsx (proposed)`. **AC:** No fixed desktop screenshot shrinking, no hidden critical graph explanation.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-327 — Capture R01 wide, tablet and mobile baseline** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Same fixture with 1440/768/360 screenshots and mobile route.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-328 — Review R01 screenshot against original source** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r01.md (proposed)`. **AC:** Side-by-side 4 screenshot zones, structural/art delta list, no automatic pass.
+  - **Proof & rollback:** Use distinct DOM content/scene layers; test 360/768/1440, keyboard and screenshot after proper source import. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## J — R02 editorial public landing: tiny art-direction units
+
+- [ ] **MF-VF-329 — Extract accessible public navigation** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-nav.tsx (proposed)`. **AC:** Link groups are DOM, visible keyboard focus, mobile collapse.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-330 — Define layered editorial masthead box** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-masthead.tsx (proposed)`. **AC:** Expressive heading hierarchy remains real text, not flattened illustration.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-331 — Draw optional torn masthead background** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r02/masthead-scrap.svg (proposed)`. **AC:** Layer behind heading, no hard-coded branded wording.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-332 — Draw original manga editorial illustration concept** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r02/manga-editorial-hero.svg (proposed)`. **AC:** Original art, no borrowed character/artist image or forced face treatment.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-333 — Define city+moon secondary scenery slot** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-world-scene.tsx (proposed)`. **AC:** Hero layered scenery scales independently from text.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-334 — Define sticker/crown/bracket accent slot** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-annotations.tsx (proposed)`. **AC:** Brand motifs consumer-owned; default generic stickers only.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-335 — Draw pink graffiti slash decor** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r02/diagonal-spray.svg (proposed)`. **AC:** Static SVG behind media, optional and bounded to nonessential edges.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-336 — Draw light-yellow paper speech label** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r02/yellow-label.svg (proposed)`. **AC:** Label text remains HTML; no image-only content.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-337 — Build dynamic asymmetric story-tile composition** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-story-grid.tsx (proposed)`. **AC:** Editorial asymmetry distinct from regular same-size cards.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-338 — Build media tile with caption overlay** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-story-card.tsx (proposed)`. **AC:** Caption/CTA live content and hover not required for understanding.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-339 — Prepare accessible article/timeline filmstrip** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-filmstrip.tsx (proposed)`. **AC:** Time and title text accessible, horizontal overflow region labeled if used.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-340 — Prepare crew constellation graph placeholder** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-crew-map.tsx (proposed)`. **AC:** Generic graph view, data controlled by consumer with list alternative.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-341 — Draw neutral constellation pin graphics** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r02/constellation-pins.svg (proposed)`. **AC:** Original static vectors, not characters/assets from screenshot.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-342 — Build bottom recruitment/action banner** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-bottom-cta.tsx (proposed)`. **AC:** Bold CTA as accessible link/action separate from pink paint stroke.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-343 — Style editorial torn border and paper pacing** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** Moonzine influences stay specifically editorial, not universal theme.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-344 — Create readable textured title hierarchy fallback** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** Missing display font never collapses/misaligns CTA or caption.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-345 — Prevent decorative layers over article text** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-layer-order.tsx (proposed)`. **AC:** CSS stacking and pointer events deterministic and safe.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-346 — Adapt masthead to two-column tablet layout** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-responsive.tsx (proposed)`. **AC:** 768px compresses art before copy/CTA.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-347 — Adapt collage and filmstrip to 360 phone** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-responsive.tsx (proposed)`. **AC:** Content-first vertical tiles and labeled horizontal filmstrip.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-348 — Capture R02 desktop+tablet+mobile snapshots** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Stable screenshot fixture content at 1440, 768 and 360.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-349 — Check R02 heading/nav contrast against scene** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Computed text on actual backdrop meets accessible contrast incl hover/focus.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-350 — Human inspect R02 against its image reference** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r02.md (proposed)`. **AC:** Artwork and non-color scene composition reviewed separately from functionality.
+  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## K — R03 creative poster: editorial template, not library controls
+
+- [ ] **MF-VF-351 — Write visual distinction for portrait poster archetype** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `docs/visual/skins/moonsmash.md (proposed)`. **AC:** Art direction not treated as all-purpose login/dashboard styling.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-352 — Establish 2:3-ish portrait artboard semantics** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-artboard.tsx (proposed)`. **AC:** Aspect ratio configurable; responsive preview with separate controls.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-353 — Define original performance title typography hierarchy** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-title.tsx (proposed)`. **AC:** Large expressive headline remains accessible DOM text.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-354 — Draw stage floodlight backdrop artwork concept** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/stage-light.svg (proposed)`. **AC:** No source screenshot tracing; original licensed art.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-355 — Draw generic anonymous stage/crowd silhouettes** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/crowd.svg (proposed)`. **AC:** No copied artist likenesses, no mandatory user identity.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-356 — Define central performer slot separate from background** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-performer-slot.tsx (proposed)`. **AC:** The consumer chooses image rights and alt, framework does not ship characters.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-357 — Draw a decorative geometric spotlight burst** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/spotlight-burst.svg (proposed)`. **AC:** A Moonsmash style cue, with clean reduction when decor disabled.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-358 — Create energetic ink/collage title frame** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/header-frame.svg (proposed)`. **AC:** Optional graphic around headline; never text-only image.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-359 — Create torn-caption generic vector band** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/caption-band.svg (proposed)`. **AC:** Band under selectable/accessibly repeated text.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-360 — Write safe placeholder performance copy** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-copy.ts (proposed)`. **AC:** Original generic short copy; no copied musical lyrics.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-361 — Draw music-note/scribble motif as original vectors** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/music-marks.svg (proposed)`. **AC:** Do not infer any official band logo or real instrument endorsement.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-362 — Draw energetic yellow label/tag motif** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r03/label-sticker.svg (proposed)`. **AC:** Reusable decorative sticker with no fixed wording.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-363 — Define visual reading flow top–center–bottom** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-layout.tsx (proposed)`. **AC:** Meaningful title, art, body/tags, CTA accessible and ordered.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-364 — Implement poster editor-safe crop/zoom preview** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-preview.tsx (proposed)`. **AC:** No cut off poster labels; zoom controls outside content.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-365 — Provide transcript/alt for flattened export** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-accessible-copy.tsx (proposed)`. **AC:** Text remains available to assistive tech even when rendered as export.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-366 — Capture poster at native and mobile viewport** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Preserve portrait geometry without overflowing the page.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-367 — Review artwork originality and lyric-IP safety** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r03-rights.md (proposed)`. **AC:** Source/license proof for any shipped element; no unapproved texts.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-368 — Manual R03 creative parity review** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r03.md (proposed)`. **AC:** Judge structural impact/typography/illustration layers, not whether all of reference copied.
+  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## L — R04 cinematic authentication: semantically clean form
+
+- [ ] **MF-VF-369 — Define split-screen auth layout and DOM order** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-layout.tsx (proposed)`. **AC:** Accessible form first, artwork second; 50/50 is desktop design intent not fixed breakpoint.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-370 — Build authentic branded introduction slot** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-brand.tsx (proposed)`. **AC:** Consumer provides actual logo; framework offers generic fallback.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-371 — Add decorative rough-ink form frame** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r04/form-frame.svg (proposed)`. **AC:** No rough stroke covering focus outline or content.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-372 — Create semantic username/email field** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-form.tsx (proposed)`. **AC:** Real label, error associations, autocomplete attributes appropriate to consumer.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-373 — Create semantic password field** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-form.tsx (proposed)`. **AC:** Input type password, reveal affordance accessible and functional.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-374 — Create remember-me and recovery row** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-form.tsx (proposed)`. **AC:** Checkbox and link keyboard accessible with hit target.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-375 — Create painted CTA decorative backing** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r04/cta-brush.svg (proposed)`. **AC:** Background stroke; live button handles submit, focus and state.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-376 — Define actual disabled/loading/invalid submit states** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-form.tsx (proposed)`. **AC:** No fake authenticated state; consumer auth adapter seam visible.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-377 — Draw moonlit-cyber skyline background concept** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r04/moon-skyline.svg (proposed)`. **AC:** Original optional art, behind/right of form.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-378 — Draw abstract lunar-halo backplate** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r04/lunar-halo.svg (proposed)`. **AC:** No bright halo under input labels; independent opacity/crop.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-379 — Draw generic hooded observer scene concept** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `assets/source/creative-reference/r04/observer.svg (proposed)`. **AC:** Story art optional, not essential to authentication.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-380 — Add side micro-note content slot** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-notes.tsx (proposed)`. **AC:** Decorative scribbles cannot take keyboard focus or hide form.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-381 — Separate social sign-in from illustrative demo copy** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-auth-seam.tsx (proposed)`. **AC:** OAuth action only real if consumer supplies handler/URL; demo truthfully simulated.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-382 — Set screen-reader meaning of decorative artwork** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-scene-slot.tsx (proposed)`. **AC:** aria-hidden where decorative; informative alt if story image meaningful.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-383 — Set mobile form-first collapse order** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r04-responsive.tsx (proposed)`. **AC:** 360px main form+CTA fully visible; art compact or absent.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-384 — Test keyboard focus, escape and form error announcement** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Tab, screen-reader label, form error and focus ring stable.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-385 — Test form contrast under neon scene and grayscale** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `tests/browser/skins.spec.js`. **AC:** Actual input and button contrast verified; scene never behind field.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-386 — Capture R04 1440/768/360 light/dark proof** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Dedicated auth specimen with art on/off variants.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-387 — Review R04 against original design source** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r04.md (proposed)`. **AC:** Split ratio, brush accents and readability reviewed separately.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-388 — Ensure no generic app forcibly adopts Moonwitness brand** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/ref-r04-brand-separation.md (proposed)`. **AC:** A neutral consuming brand can populate same template safely.
+  - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## M — reusable visual composition primitives and token control
+
+- [ ] **MF-VF-389 — Specify ArtLayer manifest schema, no runtime assumptions** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-creative-asset-slot-contract-v0.1.json (proposed)`. **AC:** Role, source, rights, layer order, intrinsic dimensions, alt and fallback fields.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-390 — Specify InkFrame visual role and safe CSS fallback** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Border remains accessible when texture off.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-391 — Specify TornTape backing, no baked UI copy** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Underlying caption/selectable text live, sticker separate.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-392 — Specify GraffitiDisplay accessible text recipe** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Dynamic heading HTML + licensed font/fallback; never arbitrary image text.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-393 — Specify neon/pink light/dark semantic accent policy** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Artwork palette role distinct from success/warning/error semantics.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-394 — Specify graphic CrownMark as consumer asset, not standard icon** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** MOONWITNESS crown not implicitly inserted in Moonframe nav.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-395 — Specify original generic moon/city image slots** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Artwork optional and only when template needs scene.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-396 — Specify ComicPanel vs ZineCollage vs Halftone material distinction** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Three non-color recipes remain distinct when grayscale.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-397 — Specify PosterRenderer separate from component theme core** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/premium/premium-scope-bible.md`. **AC:** Campaign template can host poster visuals without distorting data forms.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-398 — Specify CanvasContainer/responsive image crop contract** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** No stretched entire-page screenshot, no lost CTA at mobile.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-399 — Specify flat vs multilayer media performance accounting** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/original-asset-validation-plan.md`. **AC:** Record actual compressed bytes, dimensions, target LCP/CLS observations.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-400 — Specify text-over-photo contrast sampling gate** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/accessibility-visual-qa-bible.md`. **AC:** Computed contrast in actual background/overlay, not only token ratio.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-401 — Specify SVG security pipeline for grunge mask assets** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/original-asset-validation-plan.md`. **AC:** Reject external URLs, scripts, on* attrs, recursion and unsafe imports.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-402 — Specify alt text/decorative hierarchy per scene layer** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/accessibility-visual-qa-bible.md`. **AC:** No duplicate screen-reader narration of decorative parts.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-403 — Specify skin/appearance independence from consumer identity** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/moonframe-ui-design-system-bible-v1.3.md`. **AC:** No Moonwitness product copy/characters in Moonframe package defaults.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-404 — Define design-reference proof threshold without fake 100% score** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Require human screenshot comparison and delta list, no invented numeric score.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-405 — Enforce style names that are proposals vs approved tokens** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/visual/cinematic-mangapunk-reference-bible.md`. **AC:** Do not hardcode mood image sampled colors into global DTCG tokens.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-406 — Define real 4-image cross-template fixture matrix** · **P1** · `planned` · **dep:** `MF-VF-013` · **issue:** not-created
+  - **File scope/output:** `docs/qa/skin-lab-fixtures.md`. **AC:** R01 admin/R02 public/R03 poster/R04 auth, same-content only when comparing skins.
+  - **Proof & rollback:** Draft contract/fixture only; no new behavior promise without tested implementation. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## N — 15 skin differentiation micro-acceptance addendum
+
+- [ ] **MF-VF-407 — [moonpunk] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-072` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonpunk-reference-parity.md (proposed)`. **AC:** Identify strong hard-offset structural identity even without city artwork. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-408 — [moonriot] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-084` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonriot-reference-parity.md (proposed)`. **AC:** Use angular protest/editorial composition, not merely Moonpunk red. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-409 — [moonzine] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-096` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonzine-reference-parity.md (proposed)`. **AC:** Use authentic editorial paper stacking/tape; no full-screen punk console. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-410 — [moonhalftone] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-108` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonhalftone-reference-parity.md (proposed)`. **AC:** Use screentone raster/panel pacing distinct from paper collage. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-411 — [moonglitch] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-120` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonglitch-reference-parity.md (proposed)`. **AC:** Use diagnostic data rhythm; no flashy signal distortion in form. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-412 — [moonsmash] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-132` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonsmash-reference-parity.md (proposed)`. **AC:** Use poster-like focal impact only in context, preserve normal form semantics. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-413 — [moonink] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-144` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonink-reference-parity.md (proposed)`. **AC:** Use quiet black ink strokes with negative space, not handwritten notebook. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-414 — [mooncrash] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-156` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/mooncrash-reference-parity.md (proposed)`. **AC:** Use industrial plate functional structure distinct from refined finance. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-415 — [moonpanel] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-168` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonpanel-reference-parity.md (proposed)`. **AC:** Use strict comic gutter composition rather than incidental borders. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-416 — [moonscrawl] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-180` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonscrawl-reference-parity.md (proposed)`. **AC:** Use handwritten note/ruled paper, not expressive ink-blot hero. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-417 — [moonraw] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-192` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonraw-reference-parity.md (proposed)`. **AC:** Use intentionally unpolished geometry, almost zero art. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-418 — [moonchrome] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-204` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonchrome-reference-parity.md (proposed)`. **AC:** Use reflective metal contour/material, not telemetry glitch. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-419 — [classic] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-216` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/classic-reference-parity.md (proposed)`. **AC:** Keep clean practical neutral baseline, no forced brand colors/scene. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-420 — [moonquest] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-228` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonquest-reference-parity.md (proposed)`. **AC:** Keep game journal skin scoped to quest presentation, no game engine. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-421 — [moonledger] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-240` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonledger-reference-parity.md (proposed)`. **AC:** Keep enterprise compact ERP without pink-neon moon scene. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
+  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## O — delivery confidence, release gates and archive clarity
+
+- [ ] **MF-VF-422 — Check all four reference metadata records use correct hashes** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-creative-reference-contract-v0.1.json`. **AC:** Four source hashes and original dimensions match imported bytes or remain unversioned.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-423 — Add reference-import-check CLI negative fixture** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `scripts/validate-contracts.mjs`. **AC:** Validator rejects falsely marked imported source without matching path/hash.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-424 — Add new creative-reference schema validation** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `schemas/moonframe-creative-reference.schema.json (proposed)`. **AC:** No duplicate ref IDs, unknown skin IDs, missing status or invented review.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-425 — Check valid layer slot roles and license status** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-creative-asset-slot-contract-v0.1.json (proposed)`. **AC:** L0–L4 roles map to source without granting rights.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-426 — Add art-off screenshot fixture for every reference screen** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** R01–04 UI functional with scene/sticker layers removed.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-427 — Add grayscale screenshot fixture for all four screens** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Layout structural differences not only palette.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-428 — Add forced colors accessibility fixture for R04 auth** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Login form labels/focus buttons visible.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-429 — Add 200% font zoom for R01 operational dashboard** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Panels reflow and critical statuses remain readable.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-430 — Add 400% reflow regression test for R02 landing** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Public CTA and navigation remain functional.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-431 — Add portrait aspect crop safety test for R03 campaign** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** No required campaign copy clipped in poster preview.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-432 — Add alt/aria quality audit on all four templates** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/accessibility-visual-qa-bible.md`. **AC:** Story scenes decorative vs informative classified.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-433 — Add reduced-motion test on active navigation highlight** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/skins.spec.js`. **AC:** No essential animation states, avoid motion sickness.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-434 — Add screen-reader-friendly text fallback for graffiti title** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Heading and landmarks readable without image/font.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-435 — Add performance budget recording template** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/original-asset-validation-plan.md`. **AC:** Measure actual bytes/LCP/layout shift; no invented hard numbers.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-436 — Add visual review sheet with four reference zones** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Human reviewer grades composition/type/assets/semantics with attached captures.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-437 — Add 15-skin artwork exclusion test** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/skin-boundaries.md (proposed)`. **AC:** One Moonpunk screenshot not falsely used as universal skin default.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-438 — Review 15-skin spec status consistency** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-skin-specifications-v1.0.json`. **AC:** Specification overlay only; never auto-approved.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-439 — Review 15 original skin asset briefs status consistency** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-skin-asset-briefs-v0.1.json`. **AC:** Extra art requirements scoped/optional; not mandatory 15 consumer logos.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-440 — Review release claims against actual CI** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/rc-evidence-and-release-ledger.md`. **AC:** No "production ready" in new phase without same-SHA full CI + screenshots.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-441 — Write micro agent prompt for R01 hero art direction** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/handoff/reference-visual-local-agent.md (proposed)`. **AC:** Single task/read contract/render/test/report example; no global repo rewrite.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-442 — Write micro agent prompt for R04 accessible sign in** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/handoff/reference-visual-local-agent.md (proposed)`. **AC:** Use user-content-neutral artwork, no backend auth claims.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-443 — Write micro agent prompt for R03 safe poster mode** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/handoff/reference-visual-local-agent.md (proposed)`. **AC:** Original copy and art, no reprinted protected lyrics.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-444 — Check no output files accidentally generated in docs-only run** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reference-rights-checklist.md (proposed)`. **AC:** Evidence statements consistent with actual file tree.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-445 — Sync root TODO master counts and dependencies** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `TODO.md`. **AC:** Historical 57/57, first-wave 292 and new wave counts separated.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [ ] **MF-VF-446 — Require real owner signoff to call mockup parity accepted** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Named date, screenshot inputs, reviewed issues, waiver reasons.
+  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## Source provenance and approval gate
+
+No original screenshot binary is in this repository at time of writing. Image hashes in `MF-CREATIVE-REF-001` describe source uploads **in this conversation** only. Before using a reference for pixel-level QA or derivative publication, import exact bytes through authorized binary-capable repo workflow, verify digest and rights, then take stable browser captures, compare actual changes, and obtain explicit owner review. Never pretend these tasks have generated or accepted artwork.
