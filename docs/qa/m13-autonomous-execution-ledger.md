@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-043 — Create single-color mark
+
+- Added `assets/source/brand/moonframe-mark-mono.svg`, an original 32×32 static variant of the refined draft mark using `currentColor` only. SHA-256: `f2443d3e095cc1ff60c727d14e20e678b8e4a62cd70cd942817a489fb4ad4c6c`.
+- Dependency `MF-VF-040` is implemented. Status: `implemented`. No validator, package-manager command, suite, typecheck, build, rendered-size inspection, or capture run per runner override; host runner owns verification. Human review, rights, trademark clearance, and acceptance remain pending.
+- Rollback: remove the SVG and restore this entry and task row.
+
 ## Current live counts after MF-VF-343
 
 - Checked task rows: 141/488 implemented or captured (65/292 foundation visual, 48/168 reference visual, and 28/28 preflight); 347/488 remain planned; 0 explicitly blocked. Counts continue the preceding task ledger; checked rows do not imply human review, rights clearance, or acceptance.
