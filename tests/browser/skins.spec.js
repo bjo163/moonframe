@@ -10,6 +10,7 @@ const captureVariants = [
   { viewport: '1440x960', state: 'default' },
   { viewport: '1440x960', state: 'decoration-off' },
   { viewport: '1440x960', state: 'grayscale' },
+  { viewport: '1440x960', state: 'reduced-motion' },
   { viewport: '768x1024', state: 'default' },
   { viewport: '360x800', state: 'default' },
 ];
@@ -257,6 +258,40 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       browserName: browser.browserType().name(),
       browserVersion: browser.version(),
     });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await expect(root).toHaveAttribute('data-motion', 'reduced');
+    await expect(dashboardFixture.getByRole('heading', { level: 2, name: 'Overview' })).toBeVisible();
+    await expect(dashboardFixture.locator('.fixture-dashboard-metric').filter({ hasText: 'Open tasks' })).toContainText('12');
+    await expect(fixtureNavItems.nth(0)).toHaveAttribute('aria-current', 'page');
+    await expect(fixtureTaskNames).toHaveCount(5);
+    await expect(fixtureTaskTable.getByText('Blocked', { exact: true })).toBeVisible();
+    await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
+    const reducedMotionButton = page.locator('.mf-button').first();
+    const reducedTransitionDurations = await reducedMotionButton.evaluate(node => getComputedStyle(node).transitionDuration.split(',').map(duration => Number.parseFloat(duration)));
+    expect(reducedTransitionDurations.every(duration => duration === 0), 'reduced motion removes animated transition time').toBe(true);
+    const reducedMotionScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'reduced-motion'));
+    await waitForFontsReady(page);
+    await page.screenshot({ path: reducedMotionScreenshotPath, fullPage: true, animations: 'disabled' });
+    const reducedMotionCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; reduced-motion preference active',
+      state: 'reduced-motion',
+      motionPreference: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'no-preference',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(reducedMotionScreenshotPath, {
+      ...reducedMotionCapture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await expect(root).toHaveAttribute('data-motion', 'full');
     await grayscaleStyle.evaluate(style => style.remove());
     await expect(page.locator('html')).not.toHaveCSS('filter', 'grayscale(1)');
     await page.setViewportSize({ width: 768, height: 1024 });
