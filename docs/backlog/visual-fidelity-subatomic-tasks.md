@@ -894,8 +894,9 @@
 - [ ] **MF-VF-252 — Replace text-only template gallery card with real screenshot** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** Each item uses real preview thumbnail or explicitly pending placeholder.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-253 — Stabilize template card aspect ratio and accessible alt** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** No CLS and correct decorative image alt.
+- [x] **MF-VF-253 — Stabilize template card aspect ratio and accessible alt** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. Added a fixed 16:9, aria-hidden pending-preview placeholder with a minimum height and theme-token border, radius and raised surface. Because it is text rather than an image, no misleading or redundant image alt is exposed; it reserves layout space before future thumbnails.
+  - **Evidence (2026-10-27):** Source inspection confirms every filtered card renders the same reserved preview frame and the placeholder is hidden from assistive technology as decorative. Status `implemented`; no rendered CLS measurement or visual capture claimed. Runner override honored: host runner owns validation, suites, typecheck, build and checkpoint. Rollback: remove the placeholder frame and restore this task row to planned.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [ ] **MF-VF-254 — Replace uniform SkinCard specimen with actual UI micro-preview** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/components/site/SkinCard.tsx`. **Acceptance:** Dashboard, form or table shown using equal fixture content.

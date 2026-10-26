@@ -95,6 +95,25 @@ export default function TemplatesMarketplacePage() {
               <CardDescription>{tpl.summary}</CardDescription>
             </CardHeader>
             <CardContent style={{ display: 'grid', gap: '0.6rem' }}>
+              <div
+                aria-hidden="true"
+                style={{
+                  aspectRatio: '16 / 9',
+                  minHeight: '7rem',
+                  overflow: 'hidden',
+                  border: '1px solid var(--mf-border)',
+                  borderRadius: 'var(--mf-radius)',
+                  background: 'var(--mf-surface-raised, var(--mf-surface))',
+                  display: 'grid',
+                  placeItems: 'center',
+                  color: 'var(--mf-muted)',
+                  fontSize: '0.8rem',
+                  textAlign: 'center',
+                  padding: '1rem',
+                }}
+              >
+                Preview image pending
+              </div>
               <code style={{ fontSize: '0.75rem', color: 'var(--mf-muted)' }}>{tpl.id}</code>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                 {tpl.componentsUsed.map(comp => (

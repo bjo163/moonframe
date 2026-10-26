@@ -2082,3 +2082,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright matrix in `tests/browser/site.spec.js` covering the R04 sign-in region at 1440/768/360 widths, light/dark color schemes, and optional artwork on/off. It asserts visible headings, labeled email/password fields, and artwork presence. Twelve deterministic screenshot paths are declared under `artifacts/site/`.
 - Backlog status: `implemented`; source inspection only. Runner override honored: no browser execution, screenshots, package-manager commands, validators, tests, typecheck, build, or human review run. Captures, visual/rights review, and acceptance remain pending; no authentication or parity claim.
 - Rollback: remove the MF-VF-386 test, restore the reference backlog row to planned, and remove this TODO/ledger evidence. No commit created; host runner owns verification and checkpoint.
+# MF-VF-253 — Stabilize template card aspect ratio and accessible alt
+
+- Starting HEAD: `9134d019295542b144ee89bc567d2b2a40f3776b`.
+- Added a fixed 16:9 placeholder with minimum height to every template marketplace card; theme tokens provide border, radius, and raised surface. The text placeholder is `aria-hidden` because the card title/summary already provide the content and it is not an image; its reserved box avoids layout shift when a preview is added later.
+- Status: `implemented`. Source inspection only; no rendered CLS measurement, screenshot, or human review claimed. Runner override honored: no validators, package-manager commands, tests, typecheck, build, or commit. Host runner owns verification/checkpoint.
+- Rollback: remove the placeholder frame, restore MF-VF-253 to planned, and remove matching TODO/ledger updates.
