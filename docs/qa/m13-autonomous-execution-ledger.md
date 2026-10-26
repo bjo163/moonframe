@@ -1465,3 +1465,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a CrownMark rule to `docs/visual/cinematic-mangapunk-reference-bible.md`: the Moonwitness-identifying crown stays consumer-supplied and outside generic navigation/defaults/icons; consumer integrations retain live product-name text and a neutral fallback.
 - Dependency MF-VF-013 is implemented. Status `implemented`; documentation-only source review. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run. No ownership, license, runtime behavior, human review, or acceptance is claimed.
 - No commit created; host runner owns checks and checkpoint. Rollback: remove the CrownMark subsection, restore MF-VF-394 to planned in the backlog/TODO, and remove this ledger entry.
+# MF-VF-395 — Specify original generic moon/city image slots
+
+- Added optional generic scene-slot guidance in `docs/visual/cinematic-mangapunk-reference-bible.md`; decorative scenes stay separate from live semantic content, informative scenes require equivalent text, and no-art/responsive/forced-colors/reduced-motion behavior is specified.
+- Dependency MF-VF-013 is implemented. Status `implemented`; documentation/source review only. No runtime behavior, artwork, rights grant, screenshot, human review, or acceptance claimed. Runner override honored: no package-manager commands, tests, validators, typecheck, build, or browser capture run. Host runner owns checks and checkpoint.
+- Rollback: remove the scene-slot subsection, restore MF-VF-395 to planned, and remove this ledger entry. No commit created.

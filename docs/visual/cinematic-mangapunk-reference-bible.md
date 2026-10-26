@@ -4,6 +4,12 @@
 
 **Core distinction:** **Moonwitness** is the consumer/fictional story brand shown in the pictures. **Moonframe** is the general UI toolkit. Moonpunk is the leading skin illustrated here, not a command to recolor all fifteen skins magenta or replace their semantics. [Design System Bible](../moonframe-ui-design-system-bible-v1.3.md), [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json), [Skin Specifications](../../contracts/moonframe-skin-specifications-v1.0.json), and [Asset Brand Bible](../brand/original-asset-brand-bible.md) remain normative.
 
+## Optional generic moon and city scene slots
+
+Templates may expose an optional scene slot for original generic moon, skyline, landscape, or abstract orbital artwork when that scene supports the page's content hierarchy. A slot is not a requirement to include an image, and the reference descriptions do not grant permission to copy a consumer image. Prefer independently authored geometry, licensed assets with documented scope, or caller-supplied artwork; do not place Moonwitness identity, characters, locations, distinctive symbols, or embedded marketing copy in framework defaults.
+
+Keep the scene separate from semantic content and controls. Scene artwork is decorative only when it contributes no information; in that case use empty alternative text or an `aria-hidden` layer, disable pointer input, and keep headings, labels, data, and actions in live DOM. If an image conveys unique information, provide concise meaningful alternative text or an equivalent textual description. Support a no-art fallback that preserves layout and content, responsive cropping without stretching, and reduced-motion/forced-colors contexts without relying on the image for state or contrast. Avoid full-page screenshot backgrounds and reserve clear space around calls to action. No default image, licensing claim, or runtime component API is introduced by this guidance.
+
 ## 1. Art-direction statement
 
 **Cinematic Manga-Punk Neo-Brutalism:** gritty black-and-chalk foundation; editorial manga ink; irregular scratch and pasted-paper motifs; hand-drawn crowns/stickers; electric fuchsia/cyan/signal-yellow bursts; oversized sharp expressive display lettering; dark neo-Tokyo-like imaginary urban world with a luminous moon; visual drama around, **never instead of**, accessible HTML content.
