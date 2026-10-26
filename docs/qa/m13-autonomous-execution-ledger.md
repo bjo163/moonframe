@@ -1620,3 +1620,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright interaction test in `tests/browser/components.spec.js` for the R04 sign-in fixture at 360×800. It checks sequential keyboard focus, visible password-field focus, Escape preserving input focus/value without submission, and native required-field feedback with focus returning to the invalid email field.
 - `pnpm exec playwright test tests/browser/components.spec.js -g "R04 sign-in form keeps keyboard focus"` passed (1/1). `pnpm run test:browser` passed (68/68) after correcting an initial selector mismatch with the actual fixture. The form is not a dialog, so no Escape dismissal is expected; native validation feedback is asserted without claiming an independent screen-reader announcement. No human review or acceptance is claimed.
 - Rollback: remove the test and restore MF-VF-384 to planned in the reference backlog; remove the corresponding TODO and ledger entries.
+## MF-VF-385 — Test form contrast under neon scene and grayscale
+
+- Added a Playwright regression for `MF-VF-385` at 360×800. It applies a neon gradient to the sign-in region, checks opaque field surfaces and explicit text/button colors, then applies grayscale and checks control visibility and keyboard focus. The first full run found the password's actual white background differed from the test's incorrect transparency expectation; corrected the assertion to match the component.
+- Focused and full browser reruns are pending. No contrast ratio or visual approval is claimed; human review and acceptance remain pending.
+- Rollback: remove the regression, restore MF-VF-385 to planned, and remove matching TODO/backlog/ledger notes.

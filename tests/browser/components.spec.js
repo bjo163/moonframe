@@ -202,6 +202,41 @@ test('R04 sign-in form keeps keyboard focus, Escape behavior, and native validat
   expect(await email.evaluate(node => node.validationMessage)).not.toBe('');
 });
 
+test('R04 sign-in fields and submit control stay legible with grayscale treatment', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('/lab/behavior?fixture=auth');
+  const region = page.getByRole('region', { name: 'Sign in to your workspace' });
+  const form = region.getByRole('form', { name: 'Sign in to Northstar Studio' });
+  const fields = [form.getByLabel('Email address'), form.getByLabel('Password')];
+  const submit = form.getByRole('button', { name: 'Sign in', exact: true });
+
+  await region.evaluate(node => {
+    node.style.backgroundColor = '#12151d';
+    node.style.backgroundImage = 'linear-gradient(135deg, #00e5ff, #ff00a8)';
+  });
+  expect(await region.evaluate(node => getComputedStyle(node).backgroundImage)).toContain('linear-gradient');
+
+  for (const field of fields) await expect(field).toBeVisible();
+  await expect(fields[0]).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(fields[0]).toHaveCSS('color', 'rgb(32, 37, 50)');
+  await expect(fields[0]).toHaveCSS('border-top-style', 'solid');
+  await expect(fields[1]).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(fields[1]).toHaveCSS('color', 'rgb(32, 37, 50)');
+  await expect(submit).toBeVisible();
+  await expect(submit).toHaveCSS('background-color', 'rgb(53, 74, 181)');
+  await expect(submit).toHaveCSS('color', 'rgb(255, 255, 255)');
+
+  await page.addStyleTag({ content: 'html { filter: grayscale(1) !important; }' });
+  await expect(region).toBeVisible();
+  for (const field of fields) {
+    await expect(field).toBeVisible();
+    await expect(field).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  }
+  await expect(submit).toBeVisible();
+  await fields[0].focus();
+  await expect(fields[0]).toHaveCSS('outline-style', 'solid');
+});
+
 test('editorial article copy, typography hooks, and image context stay fixed across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
