@@ -161,3 +161,9 @@ Skin-aware layout classes include `mf-shell`, `mf-sidebar`, `mf-main`, `mf-heade
 This package is private and usable through a local tarball; it has not been published to npm. Native HTML controls supply the behavior layer. The broader provider comparison remains research for advanced widgets, and no third-party primitive provider is locked in by these exports. Fonts use local system stacks; CSS decorations require no downloaded image or font assets.
 
 The earlier design contracts remain a record of the broader planned catalog, including premium templates, advanced data adapters, media packs and 105 formal human pair reviews. Those review and future-feature records are not automatically completed by this runtime. Automated runtime/browser checks and screenshots establish the coverage described in the delivery report, not blanket accessibility certification.
+
+---
+
+## Optional consumer brand palette concept (not yet available)
+
+The four Moonwitness sample images indicate a **consumer-level brand accent** concept (pink/cyan/yellow over Moonpunk's non-color design grammar). The proposal is [specified here](../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json) but is **not implemented in this runtime**: do not copy imaginary `brandPalette` props or assume consumers can call them. Today's default Moonpunk remains acid-lime by CSS recipe. Consumer logos and story scenery belong in host-owned asset slots, not in the Moonframe generic icon set. Public API changes await theme, contrast and SSR validation.
