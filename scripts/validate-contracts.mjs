@@ -943,7 +943,7 @@ function brandAndAssetProblems(manifest,briefs){
  if(!sameSet(briefIds,ids))e.push('brand brief skin IDs missing/duplicate');
  if(briefs.ownerApproved!==false||briefs.status!=='briefs-specified-no-art-produced')
   e.push('brand hierarchy prematurely accepted or art claimed produced');
- if(briefs.brandModel!=='single-umbrella-fifteen-endorsed-editions-proposed')
+ if(briefs.brandModel!=='single-umbrella-fifteen-endorsed-editions-approved-structure-only')
   e.push('brand hierarchy unresolved unexpectedly');
  for(const b of briefs.briefs){
    if(!ids.includes(b.skinId))e.push('unknown skin in asset brief '+b.skinId);
@@ -964,7 +964,7 @@ function brandAndAssetProblems(manifest,briefs){
       b.review.artifactHash!==null||b.review.sourceFile!==null)
        e.push('fabricated visual/provenance review '+b.skinId);
  }
- if(manifest.brandHierarchy?.status!=='proposed-pending-owner-approval'||
+ if(manifest.brandHierarchy?.status!=='maintainer-approved-structure-no-mark-clearance'||
    manifest.categoriesAreCandidatePoolNotRequiredPerSkin!==true||
    manifest.licenseGovernance?.repoCodeLicense!=='MIT-code-only-decision-recorded'||
    manifest.licenseGovernance?.repoCodeLicenseRef!=='../../LICENSE'||

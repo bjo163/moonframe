@@ -26,7 +26,7 @@
 |---|---|---|---|
 | 15 autonomous brands/logos | Personalization freedom | Fragmented brand, trademark/review cost × 15, unnecessary duplication | **Reject as default** |
 | One generic mark recolored 15 times | Simple production | Fails independent grammar and 105 pairwise uniqueness objective | **Reject as sole identity** |
-| **One Moonframe umbrella mark + 15 named editions with distinct motif grammar** | Recognizable family, reusable package, distinct visuals, easy licensing and app co-branding | Requires per-skin proof and a clear brand lockup rule | **Proposed default; owner approval required** |
+| **One Moonframe umbrella design-system + 15 visual editions** | Recognizable family, reusable package, distinct visuals, easy licensing and app co-branding | Requires per-skin proof and a clear brand lockup rule | **Maintainer decision recorded 2026-10-26 (structure only); no mark or rights clearance** |
 
 ### Current decisions and open gates
 

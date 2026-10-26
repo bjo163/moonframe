@@ -11,3 +11,9 @@ Decision maker: repository maintainer acting under the owner's explicit delegati
 - **Copyright notice:** `Moonframe contributors` is used as the repository-level notice; individual contribution authorship remains governed by applicable law and contribution records.
 
 The license choice is prospective for code the project has authority to license. It does not retroactively prove ownership of third-party material or override a contributor's rights.
+
+## MF-VF-033 — brand hierarchy
+
+- **Decision:** Moonframe is one umbrella design-system identity with 15 visual editions. Consumer apps retain their own product brands; a skin is not a separate legal entity or product certification.
+- **Scope:** This settles the repository's hierarchy and naming model only. It creates no master mark or wordmark and grants no trademark, endorsement, or artwork rights. Name clearance, mark design, source rights, and visual review remain separate gates.
+- **Basis:** The repository maintainer exercised the owner's explicit delegation recorded in this Codex conversation on 2026-10-26.

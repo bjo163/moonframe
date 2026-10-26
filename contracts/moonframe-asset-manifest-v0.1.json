@@ -326,7 +326,7 @@
   "recordSchemaRef": "../schemas/moonframe-asset-record.schema.json",
   "pipelineAdrRef": "docs/adr/0006-original-asset-pipeline-and-brand.md",
   "brandHierarchy": {
-    "status": "proposed-pending-owner-approval",
+    "status": "maintainer-approved-structure-no-mark-clearance",
     "model": "one-umbrella-brand-with-15-visual-editions",
     "coreBrandMarkStatus": "not-produced",
     "coreWordmarkStatus": "not-produced",

@@ -19,7 +19,7 @@ The word “original” describes intended source ownership and art direction; *
 
 ## 2. Hierarchy and brand-model decision
 
-**Recommended, NOT yet owner-approved:** **Moonframe** is the one umbrella **design-system brand**; 15 skins are **endorsed visual editions** within that family. Each app remains its own product brand; Moonframe is the upstream design language, not the identity provider/business operator. Typical conceptual label: “Moonframe / Moonzine edition” or “Powered by Moonframe UI” only if consumer explicitly requests it. Do not falsely imply a skin is a separate legal company, a game, a financial certification, an official shadcn product, or someone else's trademark.
+**Maintainer decision recorded 2026-10-26 (structure only):** **Moonframe** is one umbrella **design-system brand**; 15 skins are **visual editions** within that family. Each app remains its own product brand; Moonframe is the upstream design language, not the identity provider/business operator. Typical conceptual label: “Moonframe / Moonzine edition” or “Powered by Moonframe UI” only if consumer explicitly requests it. This does not approve or create a logo, grant trademark/endorsement rights, or clear the name. Do not imply a skin is a separate legal company, a game, a financial certification, an official shadcn product, or someone else's trademark.
 
 Stable across editions: master brand name and a future approved core mark, exported functional semantic icon meanings, neutral accessible layout/interaction semantics, typography roles, badge/hierarchy and reference paths. Variable: skin descriptor label treatment, signature texture/motif geometry, illustration framing, palette use through token refs, composition and approved decorative motion.
 
@@ -93,7 +93,7 @@ The [SFX Contract](../../contracts/moonframe-sfx-contract-v0.1.json) **alone own
 
 [Dedicated QA](../qa/original-asset-validation-plan.md) specifies positive/negative metadata fixtures, rights and checksum provenance, file path traversal, malicious SVG, font licenses, 30 appearance coverage, 105 global pair review, raster/performance, silent audio and screen reader/focus. [Atomic roadmap](../backlog/original-asset-atomic-issues.md) scopes work in small tasks. Existing MF-080–086 are *future production* seeds; no real issue creation or installation here.
 
-**Blocking owner decisions:** (1) approve umbrella and edition naming, (2) master mark trademark/search, (3) repository/public package and art pack licenses separately, (4) exact font families/redistribution, (5) per-platform favicon requirements, (6) source/design asset publishing/storage rights, (7) audio/no-audio commercial strategy. No final logo, SVG, PNG, font, raster, SFX, application build or production assets authorized by this task.
+**Remaining gates:** (1) master mark trademark/search, (2) repository/public package and art pack licenses separately, (3) exact font families/redistribution, (4) per-platform favicon requirements, (5) source/design asset publishing/storage rights, (6) audio/no-audio commercial strategy. No final logo, SVG, PNG, font, raster, SFX, application build or production assets authorized by this task.
 
 ### Dedicated asset QA coverage ledger
 
