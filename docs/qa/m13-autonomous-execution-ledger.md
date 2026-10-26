@@ -1871,3 +1871,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/mooncrash-reference-parity.md` with fixed-fixture comparisons against Moonledger at 1440×960 and 360×800, color/grayscale, and decoration-on/off. Criteria cover equipment-zone versus ledger composition, responsive behavior, decoration removal, and shared component behavior; the evidence table remains pending for future captures and human review.
 - Dependency MF-VF-156 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, human verdict, rights review, accessibility conformance, or acceptance claimed.
 - Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run. No commit created; host runner owns verification/checkpoint. Rollback: remove the protocol and restore the backlog row to planned, then remove this ledger entry and TODO update.
+
+## MF-VF-416 — Define Moonscrawl screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/moonscrawl-reference-parity.md`. It specifies matched desktop/mobile captures across light/dark, color/grayscale, and decoration-on/off states, with Moonscrawl/Moonink/Moonzine distinction criteria and human evidence fields.
+- Dependency `MF-VF-180` is implemented. Backlog status: `implemented`; protocol/source inspection only. No screenshots, browser checks, package-manager commands, validators, tests, typecheck, build, rights review, or human verdict run per runner override. Human review and acceptance remain pending; host runner owns verification and checkpoint.
+- Rollback: remove the protocol, restore the task row to planned, and remove this ledger entry and TODO update. No commit created.
