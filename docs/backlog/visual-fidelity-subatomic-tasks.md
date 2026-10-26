@@ -929,9 +929,10 @@
   - **File scope:** `docs/qa/reviews/glitch-chrome.md (proposed)`. **Acceptance:** Signal terminal vs metallic surface.
   - **Evidence:** [Structural comparison](../qa/reviews/glitch-chrome.md) records four light/dark captures, matching provenance and hashes, and contrasts Moonglitch's aligned monospace instrument panel with Moonchrome's rounded, softly elevated surfaces. Human review remains pending.
   - **Verify:** `pnpm run test:browser` was 61/61 at capture source `a2baccb89d904d628187899396b74c26fa8e2c3b`; hash/provenance audit 4/4. Not human visual approval. Rollback: revert this evidence/count commit.
-- [ ] **MF-VF-283 — Compare Mooncrash vs Moonledger** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-283 — Compare Mooncrash vs Moonledger** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reviews/crash-ledger.md (proposed)`. **Acceptance:** Industrial hazard vs compact data office.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence:** [Structural comparison](../qa/reviews/crash-ledger.md) records four light/dark captures, matching provenance/hashes, and contrasts Mooncrash's numbered equipment-plate geometry with Moonledger's compact, aligned workbench. Human approval remains pending.
+  - **Verify:** `pnpm run test:browser` was 61/61 at capture source `a2baccb89d904d628187899396b74c26fa8e2c3b`; hash/provenance audit 4/4. Not human visual approval. Rollback: revert this evidence/count commit.
 - [ ] **MF-VF-284 — Compare Moonraw vs Classic** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reviews/raw-classic.md (proposed)`. **Acceptance:** Raw brutality vs familiar polished baseline.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
