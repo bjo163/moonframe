@@ -80,6 +80,10 @@ InkFrame is a visual treatment for a live HTML container, not an image-backed su
 
 The no-texture fallback uses the same layout and a continuous, sufficiently contrasted border. Do not make a decorative texture the sole indicator of grouping, selection, error, or focus; those meanings belong to live content and semantic state styling. This is a design recipe only; it does not introduce a runtime component, token, asset, or new contrast claim.
 
+### TornTape — separate backing from live caption
+
+TornTape is an optional decorative backing for a caption, label, or short callout. Keep the wording in ordinary selectable HTML text above or alongside the backing; the SVG/image contains only the paper shape and texture, never baked-in interface copy. The backing must not determine the caption's accessible name, meaning, or interaction state. Hide a purely decorative backing from assistive technology, preserve readable contrast in both themes, and keep a plain CSS/background fallback when artwork is disabled, unavailable, or suppressed by forced colors. Do not rotate or clip the text itself to imitate the paper edge. This is an art-direction recipe, not a runtime component or asset-rights grant.
+
 **Typography (at least 4 roles):** (1) heroic irregular expressive brush/splatter display, (2) condensed editorial labels/stickers, (3) readable long body sans, (4) monospaced telemetry/counts. Do not use Impact everywhere or convert headings to unselectable bitmap words. Specify font license, glyph coverage (ID/EN), fallback metrics and viewport wrap. Skew/rotation allowed only in non-interactive decoration, not input labels/focus surfaces.
 
 **Illustration direction:** city + moon = cinematic setting; hoodie/character = a consumer-provided story figure or neutral anonymous sample; manga faces are allowed **where the consumer explicitly chooses**, not mandatory library identity. Avoid borrowed manga IP and photographic artist/celebrity likenesses. Make separate foreground/midground/background art layers if justified by visual proof and measured performance.

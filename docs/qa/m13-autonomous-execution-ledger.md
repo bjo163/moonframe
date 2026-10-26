@@ -1342,3 +1342,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonzine/hero.svg`, an original abstract editorial masthead and paper-stack illustration. Geometry is self-contained and includes no essential wording, scripts, event handlers, external references, or `foreignObject`.
 - SHA-256: `24324426AA4751A94501781FEF08628F7CB162B9071F1E71CBCCDE95D75FAD60`. Dependency MF-VF-096 is implemented. `git diff --check` passed; static unsafe-content scan returned no matches. Status: `implemented`.
 - Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review were run. Rights, optical review, and acceptance remain pending. No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the MF-VF-099 backlog row to planned, then remove this TODO/ledger evidence.
+
+## MF-VF-391 — Specify TornTape backing, no baked UI copy
+
+- Updated `docs/visual/cinematic-mangapunk-reference-bible.md` with an optional TornTape recipe: copy remains selectable HTML, the backing is decorative and carries no accessible meaning/state, and a plain fallback remains available when art is off/unavailable or forced colors apply.
+- Dependency `MF-VF-013` is implemented. Status: `implemented`; documentation/source review only. No validators, package-manager commands, suites, typecheck, build, browser capture, rights review, or human review run/claimed per runner override. No runtime behavior or asset-rights grant is claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the TornTape subsection and restore the task row/TODO/ledger entry.
