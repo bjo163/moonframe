@@ -5,9 +5,17 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 12 captured, 67 implemented, 408 planned (79 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- Overall progress: 80/488 (16.4%) implemented-or-captured; 408/488 (83.6%) planned. These task states do not imply owner, rights, or human visual approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; `MF-VF-038` is captured with a hash-verified monochrome size contact sheet. Mark selection, suitability, rights, and human review remain separate.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 13 captured, 67 implemented, 407 planned (80 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 81/488 (16.6%) implemented-or-captured; 407/488 (83.4%) planned. These task states do not imply owner, rights, or human visual approval.
+
+## MF-VF-038 — Compare draft marks at four sizes
+
+- Source commit before this task: `323d3376c9bf2644a006a941fcf3a4287afdfcdc`.
+- Generated `artifacts/brand-review/mf-vf-038-contact-sheet.png` from the existing candidate A/B/C SVG sources. Each source was rasterized at 16, 24, 32 and 128 CSS px as black on white and white on dark; rendered with Microsoft Edge through a temporary standalone Playwright script. Temporary script was removed after capture.
+- SHA-256: `907bd6bd3d9fcf1c5a69130d2918a8cab0c8017b780ce9f5fed75c4bb428046d`.
+- Visual inspection confirmed the artifact has all three candidates, eight variants per candidate, and visible labels. This is capture evidence only. No visual quality verdict, owner selection, trademark clearance, or human review is recorded.
+- Verification under runner override: no package-manager commands, suites, typecheck, or build run. Rollback: delete the PNG and revert this entry and the MF-VF-038 row to planned.
 
 
 
