@@ -78,7 +78,7 @@ export default function ShowcaseHomePage() {
             { label: 'Canonical Skins', value: '15', delta: '30 Modes', detail: 'Light & Dark recipes per skin', trend: [3, 6, 9, 12, 15] },
             { label: 'Reusable Exports', value: '70+', delta: '100% Typed', detail: 'Primitives + Level C Blocks + SFX', trend: [20, 35, 46, 58, 70] },
             { label: 'Page Templates', value: '43', delta: '8 Starters', detail: 'Live preview + copyable TSX', trend: [4, 8, 14, 22, 43] },
-            { label: 'Contrast Floor', value: '4.5:1', delta: 'WCAG AA', detail: 'Verified across all 30 modes', trend: [4.5, 5.2, 6.1, 7.0, 7.4] },
+            { label: 'Contrast Test Threshold', value: '4.5:1', delta: 'Token samples', detail: 'Automated theme pair checks; not full WCAG certification', trend: [4.5, 5.2, 6.1, 7.0, 7.4] },
           ]}
         />
       </section>
@@ -167,7 +167,7 @@ export default function ShowcaseHomePage() {
         <div className="mf-site-section-head">
           <div>
             <Badge variant="primary">REUSABLE LIBRARY</Badge>
-            <h2 id="components-teaser-heading">66+ Ready-to-Use Components &amp; Level C Blocks</h2>
+            <h2 id="components-teaser-heading">Reusable Components &amp; Level C Blocks</h2>
             <p>
               From low-level accessible primitives (<code>Slot</code>, <code>Dialog</code>, <code>Tabs</code>, <code>OTPInput</code>) to complete composite blocks (<code>PageHeader</code>, <code>MetricGrid</code>, <code>AuthCard</code>, <code>PricingCard</code>, <code>DataTable</code>).
             </p>
