@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 63 implemented-or-captured (14 baseline implemented + 11 captured + 38 implemented), 6 blocked, 419 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 63/488 (12.9%) done/captured; 419/488 (85.9%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 425/488 (87.1%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 64 implemented-or-captured (14 baseline implemented + 11 captured + 39 implemented), 6 blocked, 418 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 64/488 (13.1%) done/captured; 418/488 (85.7%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 424/488 (86.9%) remain incomplete.
 
 
 
@@ -16,6 +16,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
 - The umbrella-brand recommendation is explicitly not owner-approved; owner approval and trademark decisions are listed as blockers. The task requires accepting that brand hierarchy before production marks or edition devices are created.
 - Status: `blocked-external-approval`. No owner decision was available in this repo/task context. No approval or logo direction was invented; no production mark is authorized. Resume after the owner records the umbrella/edition naming decision.
+## MF-VF-278 — Freeze loading/empty/error/denied specimen
+
+- Scope: `apps/moonframe/app/(lab)/lab/behavior/page.tsx`; `tests/browser/components.spec.js`; `docs/qa/reference-screens/states.md`; 120 ignored captures in `artifacts/skins/*-1440x960-state-{loading,empty,error,denied}.png` and provenance sidecars.
+- Added a deterministic `/lab/behavior?fixture=states` state chooser for loading, empty, error and access-denied states. Tests cover exact messages, semantic status/alert/busy roles, available actions, and their local transitions/confirmation behavior across all 15 skins × two modes; no service call, project creation or access request occurs.
+- `pnpm check` — passed (13 runtime tests, typecheck, validation and production build). `pnpm run test:browser` — 61/61 passed; state and dialog capture matrices passed at test commit `a2baccb89d904d628187899396b74c26fa8e2c3b`.
+- Capture audit — 120/120 image hashes match sidecars; one fingerprint/source commit; 30 images per each of four states; explicit route/state, loaded fonts and 1440×960. `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — passed. No human visual review is claimed.
+- Status: implemented as a frozen state/message/action contract; reviewer remains pending. Rollback: revert implementation and timeout commits plus the matching evidence/count commit.
 ## MF-VF-277 — Freeze compact ERP specimen
 
 - Scope: `apps/moonframe/app/(lab)/lab/behavior/page.tsx`; `tests/browser/components.spec.js`; `docs/qa/reference-screens/enterprise.md`; 30 ignored local captures in `artifacts/skins/*-1440x960-enterprise.png` and provenance sidecars.
