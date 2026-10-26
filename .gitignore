@@ -10,3 +10,6 @@ artifacts/
 .DS_Store
 .env
 .env.*
+
+# Unattended Codex scratch output, transcripts and local checkpoints
+.m13-autopilot/
