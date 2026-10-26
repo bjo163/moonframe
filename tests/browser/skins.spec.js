@@ -562,6 +562,34 @@ test('reduced motion, forced colors, keyboard focus, RTL and long text stay usab
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
 
+test('reduced motion keeps the active navigation highlight immediate and identifiable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/lab');
+  await page.locator('html').evaluate(node => node.setAttribute('data-skin', 'moonpunk'));
+  const navigation = page.getByRole('navigation', { name: 'Workspace sections' });
+  const overview = navigation.getByRole('button', { name: 'Overview', exact: true });
+  const reports = navigation.getByRole('button', { name: 'Reports', exact: true });
+
+  await expect(overview).toHaveAttribute('aria-current', 'page');
+  const initialState = await overview.evaluate(node => ({
+    transform: getComputedStyle(node).transform,
+    transitionDuration: getComputedStyle(node).transitionDuration,
+  }));
+  expect(initialState.transitionDuration.split(',').every(duration => parseFloat(duration) === 0)).toBe(true);
+
+  await reports.click();
+  await expect(reports).toHaveAttribute('aria-current', 'page');
+  await expect(overview).not.toHaveAttribute('aria-current', 'page');
+  const activeState = await reports.evaluate(node => ({
+    background: getComputedStyle(node).backgroundColor,
+    transform: getComputedStyle(node).transform,
+    transitionDuration: getComputedStyle(node).transitionDuration,
+  }));
+  const inactiveBackground = await overview.evaluate(node => getComputedStyle(node).backgroundColor);
+  expect(activeState.transitionDuration.split(',').every(duration => parseFloat(duration) === 0)).toBe(true);
+  expect(activeState.background).not.toBe(inactiveBackground);
+});
+
 test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {
   const blockedRequests = [];
   await page.route(/\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i, async route => {
