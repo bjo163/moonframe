@@ -5,8 +5,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, and `MF-PF-005` are captured. `MF-PF-025` is implemented with package verification pending. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 19 implemented-or-captured (14 baseline implemented + 4 captured + 1 implemented), 0 blocked, 469 pending. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, and `MF-PF-006` are captured. `MF-PF-025` is implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 20 implemented-or-captured (14 baseline implemented + 5 captured + 1 implemented), 0 blocked, 468 pending/planned. The license/trademark decision remains pending without inferred owner approval.
 
 ## MF-PF-001 — Freeze current package/release inventory
 
@@ -50,6 +50,18 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node scripts/validate-contracts.mjs` — exit 0; structural contract checks passed.
 - `node scripts/verify-m13-handoff.mjs` — exit 0; handoff integrity passed with existing SFX consent/playback and missing LICENSE release warnings.
 - Status: captured; no human review or acceptance claimed. Rollback: revert only the catalog, matching task/TODO count updates, and this ledger entry.
+
+## MF-PF-006 — Truthful pairwise QA report
+
+- Inspected source HEAD before edits: `a32b9cb66d713c657018936efd2fbdf30f4dc9a3`.
+- Scope: regenerated `docs/qa/skin-pairwise-review-report.md`, matching preflight task row, root TODO live counts, and this ledger.
+- `scripts/audit-skin-pairs.mjs` already distinguished automated structural checks and PNG-path inventory from human visual review; the checked-in report was stale and still contained historical `OWNER-APPROVED`, “Verified”, and plain `PASS` language.
+- `pnpm run audit:pairs` — exit 0; regenerated 105 pair records as `STRUCTURAL-PASS`, listed 30/30 screenshot paths, and retained pending human visual review. The script does not inspect PNG pixels or provenance.
+- `node scripts/validate-contracts.mjs` — exit 0.
+- `node scripts/verify-m13-handoff.mjs` — exit 0; emitted existing SFX consent/playback and missing LICENSE warnings.
+- `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 packages from cache without lockfile changes.
+- `pnpm test` — exit 0; 12/12 tests passed. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `git diff --check` — exit 0. Browser tests were not needed for this report-only change.
+- Status: captured; no human review/acceptance claimed. Rollback: restore the report and revert this task's matching status/count/ledger evidence only.
 
 ## MF-PF-025 — Explicit simulated auth demo states
 
