@@ -22,6 +22,8 @@ jobs:
         run: node scripts/token-subset-proof.mjs
       - name: Validate M13 cross-contract and 460-task handoff integrity
         run: node scripts/verify-m13-handoff.mjs
+      - name: Syntax-check unattended Codex runner
+        run: node --check scripts/run-m13-autopilot.mjs
 
   runtime-and-showcase:
     runs-on: ubuntu-latest
