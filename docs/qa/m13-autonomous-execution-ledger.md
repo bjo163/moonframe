@@ -1852,3 +1852,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/moonink-reference-parity.md` with a fixed same-content Moonink/Moonscrawl comparison at desktop and mobile, color/grayscale, and decoration-on/off states. It defines structural criteria, required capture provenance/hashes, human observation fields, and pending dispositions.
 - Dependency MF-VF-144 is implemented. Backlog status: `implemented`; source/document inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. No visual verdict, rights clearance, accessibility claim, or acceptance is recorded. No commit created; host runner owns verification/checkpoint.
 - Rollback: remove the protocol and restore MF-VF-413 to planned in the backlog; remove matching TODO and ledger evidence.
+
+## MF-VF-441 — Write micro agent prompt for R01 hero art direction
+
+- Added `docs/handoff/reference-visual-local-agent.md`, scoped to a single selected R01 task with canonical reference/dependency checks, dashboard semantics, generic-art provenance, accessibility and responsive constraints, evidence vocabulary, and rollback/report requirements.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source/document inspection only. The original R01 reference remains unversioned and digest verification plus human comparison are required before parity claims.
+- `git diff --check` — exit 0. Per runner override, no validators, package-manager commands, suites, typecheck, build, or screenshots run. No review, rights clearance, or acceptance claimed; host runner owns checks/checkpoint. No commit created.
+- Checkbox recount: 143/292 foundation + 120/168 reference + 28/28 preflight = 291/488 checked; 197 unchecked. Rollback: remove the prompt, restore MF-VF-441 to planned, and remove this ledger/TODO evidence.

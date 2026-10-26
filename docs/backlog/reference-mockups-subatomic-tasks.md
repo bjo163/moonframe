@@ -1,6 +1,6 @@
 # Moonframe — Four Reference Mockups / Subatomic Visual Fidelity Addendum
 
-**Edition 2026-10-26 · Status: 8 captured, 35 implemented, 125 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
+**Edition 2026-10-27 · Status: 8 captured, 36 implemented, 124 planned; no review/acceptance claimed · branch `main` only.** This is an *extension* of the existing [292-task backlog](visual-fidelity-subatomic-tasks.md), not a duplicate implementation; each item refines a bounded output, acceptance, source art slot or proof for one of four user-supplied pictures. Previous task IDs remain unchanged. The uploaded PNG bytes are not committed to GitHub: [creative reference contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) tracks their SHA-256s with explicit `source-unversioned` status. [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) owns explanatory anatomy. Existing [Brand Bible](../brand/original-asset-brand-bible.md) owns rights/identity; [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) owns canonical skins; no second theme source of truth.
 
 ## How this addendum differs from prior 292 tasks
 
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 1 captured, 24 planned |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 34 implemented, 126 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 36 implemented, 124 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -545,9 +545,9 @@
 - [ ] **MF-VF-440 — Review release claims against actual CI** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/rc-evidence-and-release-ledger.md`. **AC:** No "production ready" in new phase without same-SHA full CI + screenshots.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-441 — Write micro agent prompt for R01 hero art direction** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
-  - **File scope/output:** `docs/handoff/reference-visual-local-agent.md (proposed)`. **AC:** Single task/read contract/render/test/report example; no global repo rewrite.
-  - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-441 — Write micro agent prompt for R01 hero art direction** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created
+  - **File scope/output:** `docs/handoff/reference-visual-local-agent.md`. **AC:** Single task/read contract/render/test/report example; no global repo rewrite.
+  - **Evidence (source HEAD `be36aa66727daff2c9444ac2ee2d1945ac0b81cc`):** Added a task-scoped prompt that anchors R01 to its canonical reference contract, preserves semantic dashboard content and public behavior, requires dependency/artifact checks, and covers generic-art provenance, no-art fallback, reduced motion, forced colors, responsive proof, status vocabulary, evidence and rollback. The original R01 image remains source-unversioned; the prompt prohibits parity claims without digest verification and human comparison. Dependency MF-VF-010 is implemented. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run; host runner owns verification/checkpoint. Status `implemented`; no human review, rights clearance, or acceptance claimed. Rollback: remove the prompt and restore this row to planned.
 - [ ] **MF-VF-442 — Write micro agent prompt for R04 accessible sign in** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/handoff/reference-visual-local-agent.md (proposed)`. **AC:** Use user-content-neutral artwork, no backend auth claims.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
