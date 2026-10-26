@@ -35,6 +35,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-134 — Draw minimal Moonsmash decorative pattern
+
+- Added `assets/source/skins/moonsmash/pattern.svg`, an original static set of short monochrome speed strokes intended for optional noninteractive margins. It is hidden from assistive technology and contains no scripts, event attributes, external resources, or embedded copy.
+- SHA-256: `7DF3ED8F0DFF98724A3F1352E9C2A7E4BF21E1958BFA2FE5A4AA0EED346074DD`. Dependency MF-VF-132 is implemented. Backlog status: `implemented`.
+- Static source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, rendering, rights review, or human review run. No visual approval or acceptance claimed; host runner owns verification/checkpoint.
+- Rollback: remove the SVG and restore MF-VF-134 to planned, then remove this ledger and TODO evidence.
+
 ## MF-VF-133 — Draw original Moonsmash motif SVG
 
 - Added `assets/source/skins/moonsmash/motif.svg`, an original static monochrome impact burst with angular rays and an open center. It has accessible title/description, uses `currentColor`, and contains no external resources or scripting. SHA-256: `45272DF266A88A6A68791A41255A64AD49A82EEE65E64B56BE854C67E3136C96`.
