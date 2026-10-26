@@ -1,11 +1,16 @@
 import { R02Filmstrip } from '../../../../templates/visual-reference/r02-filmstrip';
 import { R02Masthead } from '../../../../templates/visual-reference/r02-masthead';
+import { R02Navigation } from '../../../../templates/visual-reference/r02-nav';
 import { R02StoryGrid } from '../../../../templates/visual-reference/r02-story-grid';
 
 /** Stable rendered fixture used by the responsive R02 screenshot task. */
 export default function R02FixturePage() {
   return (
     <main className="mx-auto grid w-full max-w-6xl gap-8 p-6 sm:p-8">
+      <R02Navigation groups={[{ label: 'Stories', links: [
+        { label: 'Latest', href: '#latest' },
+        { label: 'Archive', href: '#archive' },
+      ] }]} />
       <R02Masthead
         eyebrow="Field notes · 04"
         title="A city after the rain"

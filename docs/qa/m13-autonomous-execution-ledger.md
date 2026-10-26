@@ -1241,6 +1241,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-024 is implemented. Status: `implemented`; static source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review run per runner override. No consumer marks, performer imagery, lyrics, external resources, or third-party rights are included or claimed. Optical review, rights review, and acceptance remain pending.
 - No commit created; host runner owns checks and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
 
+## MF-VF-349 — Check R02 heading/navigation contrast
+
+- Added semantic R02 navigation to the deterministic `/lab/r02-fixture` page and a Playwright browser check for computed title/link contrast (4.5:1), hover/focus state, and visible keyboard focus.
+- `git diff --check` exited 0. Browser execution, captures, source-image comparison, human review, and acceptance were not performed; runner override reserves applicable checks for the host runner. The fixture has no original reference backdrop, so scene parity is unclaimed.
+- Status: `implemented`; no commit created. Rollback: remove the fixture navigation and browser test, restore the backlog/TODO update, and remove this entry.
+
 ## MF-VF-355 — Draw generic anonymous stage/crowd silhouettes
 
 - Added `assets/source/creative-reference/r03/crowd.svg`, original abstract audience head-and-shoulder silhouettes with no identifiable people, external resources, scripts, or consumer marks. SHA-256: `EEC321E1E00A59199041A21B9B30A3BDCFCEBFBB481EBDA3B7574F6C03E6293C`.

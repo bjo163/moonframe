@@ -15,6 +15,48 @@ test('R02 editorial composition remains stable at desktop, tablet, and phone wid
   }
 });
 
+test('R02 editorial title and navigation retain readable contrast and visible focus', async ({ page }) => {
+  await page.goto('/lab/r02-fixture');
+  const title = page.getByRole('heading', { level: 1, name: 'A city after the rain' });
+  const link = page.getByRole('link', { name: 'Latest' });
+  const contrast = (foreground, background) => {
+    const luminance = color => {
+      const values = color.match(/[\d.]+/g);
+      if (!values || values.length < 3) throw new Error(`Unable to parse computed color: ${color}`);
+      const normalized = color.startsWith('color(srgb');
+      const linear = value => {
+        const normalizedValue = normalized ? value : value / 255;
+        return normalizedValue <= 0.04045 ? normalizedValue / 12.92 : ((normalizedValue + 0.055) / 1.055) ** 2.4;
+      };
+      const [r, g, b] = values.slice(0, 3).map(Number);
+      return 0.2126 * linear(r) + 0.7152 * linear(g) + 0.0722 * linear(b);
+    };
+    const [a, b] = [luminance(foreground), luminance(background)].sort((x, y) => y - x);
+    return (a + 0.05) / (b + 0.05);
+  };
+  const assertReadable = async locator => {
+    const colors = await locator.evaluate(element => {
+      const style = getComputedStyle(element);
+      let background = style.backgroundColor;
+      for (let ancestor = element; ancestor && (!background || background === 'rgba(0, 0, 0, 0)' || background === 'transparent'); ancestor = ancestor.parentElement) {
+        const candidate = getComputedStyle(ancestor).backgroundColor;
+        if (candidate !== 'rgba(0, 0, 0, 0)' && candidate !== 'transparent') background = candidate;
+      }
+      return { foreground: style.color, background };
+    });
+    expect(contrast(colors.foreground, colors.background), `${locator.toString()} ${JSON.stringify(colors)}`).toBeGreaterThanOrEqual(4.5);
+  };
+
+  await assertReadable(title);
+  await assertReadable(link);
+  await link.hover();
+  await assertReadable(link);
+  await page.keyboard.press('Tab');
+  await expect(link).toBeFocused();
+  await assertReadable(link);
+  await expect(link).toHaveCSS('outline-style', 'solid');
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
