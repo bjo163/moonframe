@@ -1252,3 +1252,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/creative-reference/r03/crowd.svg`, original abstract audience head-and-shoulder silhouettes with no identifiable people, external resources, scripts, or consumer marks. SHA-256: `EEC321E1E00A59199041A21B9B30A3BDCFCEBFBB481EBDA3B7574F6C03E6293C`.
 - Dependency MF-VF-024 is implemented. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run/claimed under runner override. Rights/optical review and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-355 backlog row and this ledger entry to planned.
+# MF-VF-079 — Style Moonpunk table, form, and dialog recipes
+
+- Updated `src/styles.css` with skin-scoped structural treatments for data tables, fields and controls, and dialogs. Shared component APIs/semantics and density remain unchanged.
+- Dependency rows `MF-VF-072` and `MF-VF-078` are implemented. Status: `implemented`; source review only. No package-manager commands, suites, typecheck, build, validators, render, or browser capture run under runner override. Human visual review and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the MF-VF-079 CSS rules and restore this backlog/TODO/ledger evidence.

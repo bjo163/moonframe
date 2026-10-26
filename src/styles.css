@@ -415,6 +415,47 @@
   border-block-end: 3px solid var(--mf-text);
   padding-block-end: .75rem;
 }
+[data-skin="moonpunk"] .mf-table {
+  border: 3px solid var(--mf-text);
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--mf-surface);
+}
+[data-skin="moonpunk"] .mf-table th {
+  padding-block: .8rem;
+  background: var(--mf-text);
+  color: var(--mf-surface);
+  text-align: start;
+}
+[data-skin="moonpunk"] .mf-table td { border-block-end: 1px solid var(--mf-border); }
+[data-skin="moonpunk"] .mf-table tbody tr:nth-child(even) { background: var(--mf-surface-raised); }
+[data-skin="moonpunk"] .mf-field { border-inline-start: 3px solid var(--mf-border); padding-inline-start: .75rem; }
+[data-skin="moonpunk"] .mf-input,
+[data-skin="moonpunk"] .mf-select,
+[data-skin="moonpunk"] .mf-textarea {
+  border: 2px solid var(--mf-text);
+  border-radius: 0;
+  background: var(--mf-surface);
+  box-shadow: 2px 2px 0 var(--mf-border);
+}
+[data-skin="moonpunk"] .mf-input:focus-visible,
+[data-skin="moonpunk"] .mf-select:focus-visible,
+[data-skin="moonpunk"] .mf-textarea:focus-visible { outline: 3px solid var(--mf-accent); outline-offset: 3px; }
+[data-skin="moonpunk"] .mf-dialog {
+  border: 4px solid var(--mf-text);
+  border-radius: 0;
+  box-shadow: 8px 8px 0 var(--mf-border);
+}
+[data-skin="moonpunk"] .mf-dialog::backdrop { background: color-mix(in srgb, var(--mf-text) 72%, transparent); }
+@media (forced-colors: active) {
+  [data-skin="moonpunk"] .mf-input,
+  [data-skin="moonpunk"] .mf-select,
+  [data-skin="moonpunk"] .mf-textarea,
+  [data-skin="moonpunk"] .mf-dialog {
+    border: 1px solid ButtonText;
+    box-shadow: none;
+  }
+}
 
 /* 02 / Moonriot — editorial cuts, asymmetric rules, horizontal section index. */
 [data-skin="moonriot"] { --mf-bg: #f4e9e7; --mf-surface: #fff8f6; --mf-surface-raised: #f0d7d3; --mf-text: #301c1b; --mf-muted: #6e4743; --mf-border: #b67b73; --mf-accent: #b51d32; --mf-accent-text: #ffffff; --mf-radius: 0 1.3rem 0 0; --mf-shadow: none; --mf-display: "Arial Narrow", Impact, sans-serif; }
