@@ -881,9 +881,10 @@
   - **File scope:** `docs/qa/reference-screens/dashboard.md`. **Acceptance:** Same metric/data labels across skins.
   - **Evidence:** See the [frozen Northstar Studio dashboard specimen](../qa/reference-screens/dashboard.md) with all 30 desktop captures (15 skins × light/dark), PNG hashes and source commits. Browser assertions retain the exact headings, date, nav, KPI labels/values, activity items and shared long copy. Human visual review remains pending.
   - **Verify:** `pnpm run test:browser` 56/56 on the current source line (88 routes built); dashboard content assertions ran in each skin/mode case. All 30 capture sidecars share one fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No pixel parity or reviewer approval claimed; rollback: remove this specimen doc and restore the task/count status.
-- [ ] **MF-VF-271 — Freeze sortable table specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/reference-screens/table.md (proposed)`. **Acceptance:** Same search and table rows across skins.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-271 — Freeze sortable table specimen** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/table.md`. **Acceptance:** Same search and table rows across skins.
+  - **Evidence:** See the [frozen sortable table specimen](../qa/reference-screens/table.md) with fixed headers/five rows, default and name-sort order, search probe, and 30 real desktop skin/mode captures with provenance hashes. Human visual review remains pending.
+  - **Verify:** `pnpm run test:browser` 56/56; each skin/mode case asserts table headings, values, sorting and search. All 30 capture sidecars share the fixed fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No visual approval claimed; rollback: remove specimen doc and restore task/count state.
 - [ ] **MF-VF-272 — Freeze long form/error specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reference-screens/form.md (proposed)`. **Acceptance:** Same labels/helper/errors across skins.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

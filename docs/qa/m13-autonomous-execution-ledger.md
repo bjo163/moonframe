@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 56 implemented-or-captured (14 baseline implemented + 11 captured + 31 implemented), 6 blocked, 426 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 56/488 (11.5%) done/captured; 426/488 (87.3%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 432/488 (88.5%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 57 implemented-or-captured (14 baseline implemented + 11 captured + 32 implemented), 6 blocked, 425 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 57/488 (11.7%) done/captured; 425/488 (87.1%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 431/488 (88.3%) remain incomplete.
 
 
 
@@ -16,6 +16,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
 - The umbrella-brand recommendation is explicitly not owner-approved; owner approval and trademark decisions are listed as blockers. The task requires accepting that brand hierarchy before production marks or edition devices are created.
 - Status: `blocked-external-approval`. No owner decision was available in this repo/task context. No approval or logo direction was invented; no production mark is authorized. Resume after the owner records the umbrella/edition naming decision.
+## MF-VF-271 — Freeze sortable table specimen
+
+- Scope: `docs/qa/reference-screens/table.md`; same-content project task table across 15 skins × light/dark.
+- Frozen accessible name/caption, five columns, all five T-1042–T-1046 task rows, due-date default order, task-name order, and the `Hana Kim` search result (`1 of 5 tasks`). The document indexes 30 1440×960 skin/mode captures with per-image hashes and source commits.
+- Verified 30 sidecars share one fixture, loaded fonts and expected viewport; PNG hashes match. `tests/browser/skins.spec.js` asserts table headings, every row field, sorting and search in each skin/mode test. Current local full browser run passed 56/56; contract/handoff validators passed. Human visual review remains pending.
+- Status: implemented as a frozen data/interaction contract. Rollback: remove the specimen doc and restore the prior task/count entries.
 ## MF-VF-270 — Freeze executive dashboard specimen
 
 - Scope: `docs/qa/reference-screens/dashboard.md`; deterministic Northstar Studio dashboard data contract and all skin/mode desktop captures.
