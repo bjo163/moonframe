@@ -1804,3 +1804,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonpanel/motif.svg`, an original monochrome rectangular corner-register motif with accessible title/description and no external references, scripts, event handlers, or embedded text. SHA-256: `9AA787AF0EA317E35A53A3E593B6FEC9A110136CB1B5A365DC10C1F444A22571`.
 - Dependency MF-VF-168 is implemented. Backlog status `implemented`; source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, or human review run. Visual review, rights review, and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-169 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.
+# MF-VF-411 — Define Moonglitch screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonglitch-reference-parity.md` with fixed-fixture same-data comparison criteria for Moonglitch, Moonchrome, and Moonpunk at desktop/mobile grayscale, decoration-on/off. Includes data/form legibility, responsive reflow, metadata, and human observation requirements.
+- Dependency MF-VF-120 is implemented. Backlog status: `implemented`; documentation/source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review run. Captures, visual disposition, rights review, and acceptance remain pending. No commit created; host runner owns checks/checkpoint.
+- Rollback: remove the protocol and restore the task row to planned.
