@@ -41,3 +41,20 @@ New [visual source registry](../../contracts/moonframe-creative-reference-contra
 Proposed new visual layer source classes: `generic-ink-frame`, `torn-label-backdrop`, `optional-grunge-mask`, `neutral-world-scene`, `illustrative-character-slot`, `poster-artboard`, `semantic-icon`. Each requires individual source provenance, hash after production, sanitizer/security inspection, licensed source rights and a11y analysis. Text in CTA/form/status must remain live and interactive; decorative texture SVG cannot contain scripts, event attrs, remote href, executable data URIs or unsafe XML. SVG optimizer is not a sufficient sanitizer. Do not use copied song lyrics, unlicensed artist likeness or scraped manga panels in shipping samples.
 
 For every image-backed design, test semantic UI with all art removed, actual text contrast above mixed artwork, 360/768/1440 layout crop, focal region preservation, user-selected Light/Dark, reduced motion and forced colors. Store measured bytes/format/render dimensions/LCP/CLS only after tests; don't invent passing numerical thresholds.
+
+### SVG import negative-fixture matrix (MF-VF-288)
+
+Any future SVG import boundary must reject the following inputs before optimization or rendering. These are test cases and expected outcomes, not evidence that a general importer/sanitizer exists today. Keep the valid control as a minimal, namespace-qualified SVG with a bounded `viewBox` and static path geometry.
+
+| Fixture | Minimal hostile construct | Expected result |
+|---|---|---|
+| `script-element` | `<script>alert(1)</script>` | Reject active content |
+| `event-handler` | `<path onload="alert(1)" d="M0 0"/>` | Reject event attributes, regardless of case |
+| `foreign-object` | `<foreignObject><div>content</div></foreignObject>` | Reject embedded foreign markup |
+| `external-href` | `<image href="https://example.invalid/a.png"/>` | Reject external `href`/`xlink:href` and `src` references |
+| `data-resource` | `<image href="data:image/svg+xml,..."/>` | Reject data URLs, including encoded executable payloads |
+| `css-url` | `<path style="fill:url(https://example.invalid/a)" d="M0 0"/>` | Reject CSS URL/resource loads in attributes or stylesheets |
+| `doctype-entity` | `<!DOCTYPE svg [<!ENTITY x "payload">]>` | Reject DTD and entity declarations before XML expansion |
+| `javascript-url` | `<a href="javascript:alert(1)">open</a>` | Reject script URL schemes in any attribute |
+
+The future automated test should assert rejection per fixture and successful parsing of the valid control; it should also verify failure is closed (no preview, optimizer, or output file is produced). Use a real XML parser with external-entity expansion disabled; regex checks alone are not a general XML sanitizer. The existing `scripts/validate-brand-svg.mjs` is deliberately a narrow static brand-candidate checker and does not establish safety for arbitrary imported SVGs. No importer, sanitizer, or executable fixture runner is currently claimed by this matrix.

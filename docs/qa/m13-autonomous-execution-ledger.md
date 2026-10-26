@@ -17,6 +17,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-288 — SVG import malicious fixture matrix
+
+- Added a scoped negative-fixture matrix to `docs/qa/original-asset-validation-plan.md` for script elements, event handlers, `foreignObject`, external href/src, data URLs, CSS URLs, DTD/entities, and javascript URLs, plus a safe static control and fail-closed expectations.
+- The document states that this is a test plan, not a general importer/sanitizer implementation; `scripts/validate-brand-svg.mjs` remains narrow and is not evidence of arbitrary SVG import safety.
+- Dependency MF-VF-031 is implemented. Status: `implemented`; source/document inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, or browser checks run. Host runner owns verification/checkpoint; no sanitizer behavior or human review is claimed.
+- Rollback: remove the matrix, restore MF-VF-288 to planned, and remove this entry and the matching TODO update. No commit created.
+
 ## MF-VF-098 — Draw minimal Moonzine decorative pattern
 
 - Added `assets/source/skins/moonzine/pattern.svg`, an original sparse photocopy-registration texture using embedded SVG geometry only. It declares itself hidden from assistive technology; no text, scripts, or external resources are included.
