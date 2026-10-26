@@ -276,6 +276,41 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     for (const [role, ratio] of Object.entries(contrast)) {
       expect(ratio, `${skin.id}/${mode} ${role} contrast`).toBeGreaterThanOrEqual(4.5);
     }
+    const renderedSurfaceStyles = await dashboardFixture.evaluate(node => {
+      const card = node.querySelector('.fixture-dashboard-note');
+      const cardText = card.querySelector('.mf-card-content p');
+      const input = node.querySelector('.fixture-dashboard-table-toolbar .mf-input');
+      const read = element => {
+        const style = getComputedStyle(element);
+        return { color: style.color, backgroundColor: style.backgroundColor };
+      };
+      return { nestedCard: read(card), control: read(input), nestedCardText: read(cardText) };
+    });
+    for (const [surface, styles] of Object.entries(renderedSurfaceStyles)) {
+      expect(styles.color, `${skin.id}/${mode} ${surface} rendered foreground`).not.toBe('rgba(0, 0, 0, 0)');
+      if (surface !== 'nestedCardText') expect(styles.backgroundColor, `${skin.id}/${mode} ${surface} rendered background`).not.toBe('rgba(0, 0, 0, 0)');
+    }
+    const toolbarInput = dashboardFixture.locator('.fixture-dashboard-table-toolbar .mf-input');
+    await toolbarInput.focus();
+    const focusStyle = await toolbarInput.evaluate(element => {
+      const style = getComputedStyle(element);
+      return { outlineStyle: style.outlineStyle, outlineWidth: style.outlineWidth, outlineColor: style.outlineColor };
+    });
+    expect(focusStyle.outlineStyle, `${skin.id}/${mode} actual control focus style`).not.toBe('none');
+    expect(parseFloat(focusStyle.outlineWidth), `${skin.id}/${mode} actual control focus width`).toBeGreaterThan(0);
+    await page.getByRole('button', { name: 'New project', exact: true }).click();
+    const projectDialog = page.getByRole('dialog', { name: 'Give your idea a home.' });
+    await expect(projectDialog).toBeVisible();
+    const overlayStyles = await projectDialog.evaluate(element => ({
+      color: getComputedStyle(element).color,
+      backgroundColor: getComputedStyle(element).backgroundColor,
+      backdropColor: getComputedStyle(element, '::backdrop').backgroundColor,
+    }));
+    expect(overlayStyles.color, `${skin.id}/${mode} overlay foreground`).not.toBe('rgba(0, 0, 0, 0)');
+    expect(overlayStyles.backgroundColor, `${skin.id}/${mode} dialog surface`).not.toBe('rgba(0, 0, 0, 0)');
+    expect(overlayStyles.backdropColor, `${skin.id}/${mode} actual dialog backdrop`).not.toBe('rgba(0, 0, 0, 0)');
+    await projectDialog.getByRole('button', { name: 'Cancel', exact: true }).click();
+    await expect(projectDialog).toBeHidden();
     const screenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'default'));
     await waitForFontsReady(page);
     await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });

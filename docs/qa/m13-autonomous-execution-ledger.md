@@ -14,7 +14,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Rollback: revert the regression test and the `MF-VF-285` status/evidence row.
 - Freeze baseline: 14 implemented / 474 pending. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
 - MF-VF-039 records a delegated maintainer selection of Candidate A as the preferred draft direction for refinement. Live count after MF-VF-293 and MF-VF-039: 85 implemented/captured, 403 planned, 0 blocked. No direct owner inspection, human visual approval, rights, or release authorization is implied.
-- Overall progress: 85/488 (17.4%) implemented-or-captured; 403/488 (82.6%) planned; 0 blocked. These task states do not imply owner, rights, or human visual approval.
+- Overall progress before MF-VF-286: 85/488 (17.4%) implemented-or-captured; 403/488 (82.6%) planned; 0 blocked. These task states do not imply owner, rights, or human visual approval.
 
 ## MF-VF-039 — delegated candidate direction
 
@@ -484,3 +484,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/references/reference-index.md` with the R01 contract ID, attachment label, 1672 × 941 dimensions and SHA-256 copied from `contracts/moonframe-creative-reference-contract-v0.1.json`.
 - Cross-checked the values against the canonical contract. Original bytes remain absent from this checkout; this is metadata capture only and does not verify local bytes, rights, or visual parity.
 - Status: `captured`. Runner override honored: no package-manager commands, test suites, typecheck, or build run. No human review or rights approval claimed. Rollback: revert the index entry and MF-VF-293 status/evidence.
+
+## MF-VF-286 — Rendered nested surface checks
+
+- Added browser assertions to the existing 15-skin × light/dark matrix for nested card text and surface, a rendered toolbar input, its keyboard focus outline, and a native project dialog plus backdrop. The checks inspect computed styles from actual rendered elements; existing token-pair contrast math remains a separate check.
+- `node --check tests/browser/skins.spec.js` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 with existing SFX playback-truth and missing-LICENSE warnings. The browser suite, screenshots, typecheck, and build were not run per runner override, so browser outcomes remain unverified. No human visual or accessibility review claimed.
+- Status: `implemented`; host runner must execute applicable browser verification before capture status. Rollback: revert the browser regression and the MF-VF-286 task/TODO/ledger evidence.
+- Overall progress after this task: 86/488 (17.6%) implemented-or-captured, 402/488 (82.4%) planned, 0 blocked. This count does not imply human review or acceptance.
