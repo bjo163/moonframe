@@ -2,6 +2,19 @@
 
 Updated 2026-10-26. This is an intake inventory, not visual approval, an import record, or a license grant.
 
+## Four-reference-zone human review sheet (MF-VF-436)
+
+Use one record per zone and candidate capture. Keep every field pending until an actual candidate capture and human comparison exist. Reference digests below come from the canonical creative-reference contract; the source bytes are absent from this checkout, so the digest cannot be recomputed here. A recorded digest is not a reuse license. Do not record a review disposition or approval by inference.
+
+| Zone | Reference / recorded SHA-256 / dimensions | Candidate screenshot / SHA-256 | Source commit; fixture/content; viewport/mode; render environment | Human reviewer / date | Composition observations | Typography observations | Asset observations | Semantic/accessibility observations | Disposition / unresolved issues |
+|---|---|---|---|---|---|---|---|---|---|
+| R01 mission control | MWX-REF-001 / `31829877f5499480ef8ebbfd2e0b103016917216c3ac70a69d0595b2bf2efa04` / 1672×941 | pending | pending | pending | pending | pending | pending | pending | pending; source bytes absent, comparison blocked |
+| R02 editorial landing | MWX-REF-002 / `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167` / 1024×576 | pending | pending | pending | pending | pending | pending | pending | pending; source bytes absent, comparison blocked |
+| R03 campaign poster | MWX-REF-003 / `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff` / 682×1024 | pending | pending | pending | pending | pending | pending | pending | pending; source bytes absent, comparison blocked |
+| R04 sign-in | MWX-REF-004 / `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90` / 1024×576 | pending | pending | pending | pending | pending | pending | pending | pending; source bytes absent, comparison blocked |
+
+For a usable comparison, attach or link the candidate capture and record its SHA-256, exact source commit, stable fixture/content identity, viewport and mode, and browser/render environment. Reviewer notes should describe concrete matches, material differences, and unresolved questions in all four observation columns. Use only `pending`, `reviewed-with-deltas`, or `ready-for-owner-decision`; the latter is not acceptance. If source bytes remain unavailable, retain the blocker and do not substitute a textual description for visual inspection.
+
 ## Per-skin source asset inventory (MF-VF-289)
 
 Inventory scope: standalone files under `assets/source/skins/<skin-id>/` at source HEAD `528a127c58e7b13c9c3bf88e29f0fdd9e89e1e96`. “Present” means a checked-in source file exists in that directory; it does not mean integrated, optically reviewed, licensed, or approved. “No standalone source files” is an explicit empty inventory, not a claim that the skin has no runtime styling or inline assets. Hashes below are SHA-256 values computed from the listed repository files during this inventory. Rights/creator records and further asset plans remain governed by the asset manifest and asset briefs; no rights are inferred here.

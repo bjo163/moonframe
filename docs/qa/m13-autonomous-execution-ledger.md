@@ -1920,3 +1920,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - **Evidence boundary:** Existing R03 task records and asset inventory document source files and hashes. This invocation performed no legal review, package-manager commands, validators, tests, typecheck, build, rendering, or browser capture; the host runner owns technical verification and checkpoint.
 - **Resume:** Record the human review disposition and reviewed hashes in the R03 task evidence. Keep this task blocked if external review is unavailable.
 - **Rollback:** Restore `MF-VF-367` to planned and remove this ledger section and the matching TODO update.
+
+## MF-VF-436 — Add visual review sheet with four reference zones
+
+- Added a four-row human review sheet to `docs/qa/visual-fidelity-evidence-ledger.md`, one row for each canonical reference R01–R04. It records reference IDs, contract digests and dimensions, plus pending candidate screenshot/hash, source commit, fixture/content, viewport/mode, render environment, reviewer/date, and composition, typography, asset, semantic/accessibility, and disposition fields.
+- Each reference source is absent from the checkout, so the sheet explicitly leaves comparison pending and blocked. Contract digest metadata was transcribed; no source-byte verification, screenshot capture, human review, rights determination, or acceptance is claimed.
+- Dependency MF-VF-010 is implemented. Backlog status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, screenshot capture, or commit run; host runner owns verification/checkpoint.
+- Rollback: remove the MF-VF-436 subsection from the visual evidence ledger and restore its backlog row; remove this ledger/TODO evidence.
