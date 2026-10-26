@@ -727,5 +727,13 @@
       "noJavascript": "Readable packaged Classic fallback; can follow prefers-color-scheme via CSS where possible",
       "flashPolicy": "measure FOUC with first paint screenshots; no unjustified claims"
     }
+  },
+  "consumerBrandOverlayProposal": {
+    "contract": "moonframe-consumer-brand-overlay-contract-v0.1.json",
+    "status": "proposed-not-runtime-implemented",
+    "behaviorAxesUnchanged": true,
+    "skinIdsUnchanged": true,
+    "appearanceCountsUnchanged": true,
+    "priority": "Forced colors and contrast safeguards win over optional brand accent"
   }
 }
