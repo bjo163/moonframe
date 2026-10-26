@@ -1984,3 +1984,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright case in `tests/browser/site.spec.js` that applies 200% root text sizing on the fixed reference fixture, asserts the R01 dashboard and critical metrics remain visible within viewport/section bounds, and requests a screenshot artifact on execution.
 - Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshot capture run. Host runner owns verification/checkpoint; no actual reflow result, screenshot artifact, human review, or acceptance claimed.
 - Rollback: remove the test and restore MF-VF-429 to planned in the reference backlog; remove this ledger/TODO evidence. No commit created.
+
+## MF-VF-430 — Add 400% reflow regression test for R02 landing
+
+- Added a Playwright case in `tests/browser/site.spec.js` applying 400% root text sizing at a 1280px viewport. It checks the editorial title, navigation and public CTA visibility/focus, section viewport bounds and horizontal overflow, and requests `artifacts/site/r02-landing-400-percent.png` when run.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, or build run. Actual reflow and screenshot remain unverified; host runner owns verification/checkpoint. No human review or acceptance claimed.
+- Rollback: remove the test and restore MF-VF-430 to planned in the reference backlog and TODO; remove this ledger entry. No commit created.

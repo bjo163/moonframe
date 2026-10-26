@@ -121,6 +121,36 @@ test('R01 operational dashboard remains readable with 200% text zoom', async ({ 
   await page.screenshot({ path: path.join(siteCaptureDir, 'r01-dashboard-200-percent.png'), fullPage: true, animations: 'disabled' });
 });
 
+test('R02 editorial landing reflows at 400% text zoom with navigation and story link usable', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.addStyleTag({ content: 'html { font-size: 400% !important; }' });
+
+  const editorial = page.locator('main > section').filter({ has: page.getByRole('heading', { name: 'Editorial landing', exact: true }) });
+  const title = editorial.getByRole('heading', { name: 'A city after the rain' });
+  const navigation = editorial.getByRole('navigation');
+  const latest = navigation.getByRole('link', { name: 'Latest' });
+  const storyLink = editorial.getByRole('link', { name: 'The night market returns' });
+
+  await expect(title).toBeVisible();
+  await expect(latest).toBeVisible();
+  await expect(storyLink).toBeVisible();
+  await latest.focus();
+  await expect(latest).toBeFocused();
+  await storyLink.focus();
+  await expect(storyLink).toBeFocused();
+
+  const bounds = await editorial.evaluate(element => ({
+    right: element.getBoundingClientRect().right,
+    viewport: document.documentElement.clientWidth,
+    scrollWidth: element.scrollWidth,
+    clientWidth: element.clientWidth,
+  }));
+  expect(bounds.right).toBeLessThanOrEqual(bounds.viewport);
+  expect(bounds.scrollWidth).toBeLessThanOrEqual(bounds.clientWidth + 1);
+  await page.screenshot({ path: path.join(siteCaptureDir, 'r02-landing-400-percent.png'), fullPage: true, animations: 'disabled' });
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
