@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-326 — Mobile single-column dashboard flow
+
+- Updated `apps/moonframe/templates/visual-reference/r01-content-grid.tsx` and its CSS module. At the mobile breakpoint the dashboard explicitly uses one column and placement follows DOM/keyboard order: creation, signals, operations, activity streams. The signals region exposes configurable visible graph context with a readable default; no critical explanation is hidden and no fixed desktop screenshot is scaled down.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no package-manager commands, validators, suites, typecheck, build, or browser captures run per runner override. Host runner owns verification/checkpoint; no commit created. Human review and acceptance remain pending.
+- Rollback: revert the component/CSS module and restore the task row, TODO count, and ledger entry.
+- Counts: prior live ledger count 117/488 implemented-or-captured, 371/488 planned, 0 blocked; now 118/488 implemented-or-captured, 370/488 planned, 0 blocked.
+
 ## MF-VF-325 — Mobile command rail disclosure navigation
 
 - Added `apps/moonframe/templates/visual-reference/r01-mobile-navigation.tsx` and `.module.css`. Consumer links remain in source order in a native disclosure at narrow widths, with 44px minimum link/trigger targets, visible keyboard focus, and a horizontal wrapping rail at 48rem and above. No script or image dependency was added.

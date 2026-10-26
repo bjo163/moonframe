@@ -10,6 +10,13 @@
   min-inline-size: 0;
 }
 
+.signalDescription {
+  margin: 0 0 0.75rem;
+  color: var(--mf-muted, #777);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
 .streams {
   grid-column: 1 / -1;
 }
@@ -26,11 +33,18 @@
 
 @media (max-width: 40rem) {
   .dashboard {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
   }
 
   .zone:nth-child(3),
   .streams {
     grid-column: auto;
   }
+
+  /* Explicit single-column placement follows DOM and keyboard order. */
+  .zone:nth-child(1),
+  .zone:nth-child(2),
+  .zone:nth-child(3),
+  .streams { grid-column: 1; }
 }
