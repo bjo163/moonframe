@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-314 — Draw original luminous moon backdrop asset concept
+
+- Added `assets/source/creative-reference/r01/moon-orbit-scene.svg`: original decorative crescent, halo, orbit arcs, and sparse stars in a transparent, self-contained vector source. It carries a viewBox and is hidden from assistive technology when embedded as decorative art. No screenshot-derived elements or consumer marks were used.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; static source inspection only. No package-manager commands, tests, typecheck, build, validators, or browser capture run per runner override. Host runner will verify and checkpoint. Rights clearance and human optical review are not claimed.
+- Current counts: 106 implemented-or-captured, 382 planned, 0 blocked of 488. This task does not imply capture, review, or acceptance. No commit created. Rollback: remove the SVG and revert the matching backlog, TODO, and ledger update.
+
 ## MF-VF-312 — Place painted micro-caption / marginalia region
 
 - Added fixture-local marginalia as a separate DOM paragraph in `apps/moonframe/app/(lab)/lab/page.tsx`, styled in `apps/moonframe/app/(lab)/lab/lab.css`. The content is optional decoration, hidden by the existing decorations-off setting, and remains outside navigation/action controls.
