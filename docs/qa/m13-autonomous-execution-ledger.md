@@ -48,6 +48,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-418 — Define Moonchrome screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonchrome-reference-parity.md` with matched-content comparisons against Moonpunk and Moonhalftone at desktop/mobile, grayscale, decoration-on/off, and Light/Dark. It captures composition distinctions and requires provenance, artifact hashes, human observations, and an explicit disposition.
+- Dependency MF-VF-204 is implemented. Backlog status: `implemented`; documentation/source inspection only. No screenshots, visual verdict, rights review, or acceptance claimed.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or commit run. Host runner owns verification and checkpoint. Rollback: remove the protocol, restore MF-VF-418 to planned, and remove matching TODO and ledger entries.
+
 ## MF-VF-417 — Define Moonraw screenshot-based anti-clone review
 
 - Added `docs/qa/reviews/moonraw-reference-parity.md` with matched-content comparison criteria for Moonraw, Classic, and Moonledger at desktop/mobile, grayscale, decoration-on/off, and light/dark states. It records provenance and human verdict fields and keeps disposition pending until actual review.

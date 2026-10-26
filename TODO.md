@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-418):** Added `docs/qa/reviews/moonchrome-reference-parity.md` with matched-content desktop/mobile comparison conditions against Moonpunk and Moonhalftone, grayscale and decoration-on/off states, mode coverage, structural distinction criteria, and human evidence fields. Status `implemented`; no captures, verdict, rights review, or acceptance claimed. Per runner override, no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns verification/checkpoint. Task dependency MF-VF-204 is implemented.
+
 **Live blocker update (2026-10-27, MF-VF-367):** R03 artwork originality and lyric-IP safety review is `blocked-external-approval`. Static source/hash records cannot establish legal originality, ownership, or clearance; a qualified human rights/IP review with reviewer/date, file hashes, findings, and remediation is required. No approval is inferred. See `docs/qa/m13-autonomous-execution-ledger.md`.
 
 **Live execution update (2026-10-27, MF-VF-204):** Added `docs/visual/skins/moonchrome.md` with a canonical precision-futurist direction, neighboring-skin distinctions, and shared behavior/accessibility constraints. Dependency MF-VF-015 is implemented. Status implemented; documentation/source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run. Font/asset rights, rendered contrast, visual review, and acceptance remain pending. No aggregate recount asserted because existing live snapshots conflict. No commit created; host runner owns verification and checkpoint.
