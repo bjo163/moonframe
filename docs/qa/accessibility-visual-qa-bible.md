@@ -142,3 +142,15 @@ Defect taxonomy: `semantic`, `keyboard`, `focus`, `contrast`, `screen-reader`, `
 | E — Release | Consumer/browser/AT tests, blocking defects resolved, review/waiver policy, versioned artifacts and rollback | **Not-run** |
 
 **Next work:** [atomic QA backlog](../backlog/accessibility-visual-qa-atomic-issues.md), first resolving consumer environment #1, package #4, primitive #3, token #5 and Skin Lab #6. No components, theme engine, production images/fonts/audio, CI visual runner or proprietary paid service installed by specification work.
+
+---
+
+## 2026-10-26 four-image user reference review supplement
+
+The [four reference pictures](../../contracts/moonframe-creative-reference-contract-v0.1.json) are a new *creative fidelity input*, NOT a new universal skin or a finished visual baseline. Use the [Visual Reference Bible](../visual/cinematic-mangapunk-reference-bible.md) for R01–R04 page anatomy and [new atomic backlog](../backlog/reference-mockups-subatomic-tasks.md) for their source and rendered evidence.
+
+Two **separate** judgments are necessary: (A) across 15 skins, identical DOM/data fixture behavior with 105 distinct unordered skin pairs and 30 appearances; (B) for each R01–R04, image-specific visual fidelity (layout silhouette, hierarchy, scene layering, typography, texture, brightness distribution) versus its **actually imported** original reference PNG. Never infer B from A or use prose/texture/crown similarity as evidence.
+
+Human visual checklist for each reference: correct genre and page archetype, same meaningful information ordering, live heading/form/data, image slots separate from required controls, appropriate art composition, no clipped 360px CTA, focus visible over all layers, computed contrast of *rendered* text vs backdrop, grayscale/decorations-off distinction, honest alt/aria policy and original artwork/rights approval. R03 poster requires an accessible text counterpart, not copied protected lyrics. R04 must retain semantic labels/auth-error and never simulate successful authentication as actual proof.
+
+**Reference-storage gap:** originals have SHA-256 recorded but were only uploaded to conversation; no repository PNG import or rights clearance, no screenshot parity PASS. Keep all human reference verdicts `pending` until actual screenshot side-by-side and reviewer signoff. Previous automated pairwise score is structural metadata only, not independent review.
