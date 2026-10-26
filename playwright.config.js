@@ -7,7 +7,9 @@ export default defineConfig({
   reporter: 'list',
   use: {
     baseURL: 'http://127.0.0.1:4173',
-    viewport: { width: 1440, height: 1000 },
+    viewport: { width: 1440, height: 960 },
+    locale: 'en-US',
+    timezoneId: 'UTC',
     trace: 'retain-on-failure',
   },
   webServer: {

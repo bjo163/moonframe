@@ -13,6 +13,7 @@ const inputPaths = [
   'contracts/moonframe-theme-contract-v1.3.json',
   'tests/browser/skins.spec.js',
   'playwright.config.js',
+  'docs/qa/skin-lab-fixtures.md',
   'package.json',
   'pnpm-lock.yaml',
   'pnpm-workspace.yaml',
@@ -34,21 +35,23 @@ export function getSkinCaptureSourceFingerprint() {
   return hash.digest('hex');
 }
 
-export function validateSkinCaptureProvenance(record, expectedSourceFingerprint, expectedImageSha256) {
+export function validateSkinCaptureProvenance(record, expectedSourceFingerprint, expectedImageSha256, expectedCapture) {
   return Boolean(
     record &&
     /^[0-9a-f]{40}$/i.test(record.sourceCommit || '') &&
     record.sourceFingerprint === expectedSourceFingerprint &&
-    record.imageSha256 === expectedImageSha256
+    record.imageSha256 === expectedImageSha256 &&
+    (!expectedCapture || Object.entries(expectedCapture).every(([key, value]) => record.capture?.[key] === value))
   );
 }
 
-export function writeSkinCaptureProvenance(imagePath) {
+export function writeSkinCaptureProvenance(imagePath, capture) {
   const imageSha256 = crypto.createHash('sha256').update(fs.readFileSync(imagePath)).digest('hex');
   const record = {
     sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
     sourceFingerprint: getSkinCaptureSourceFingerprint(),
     imageSha256,
+    capture,
   };
   fs.writeFileSync(`${imagePath}.provenance.json`, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
   return record;

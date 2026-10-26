@@ -390,13 +390,16 @@ test('105 skin pair records and 6-pair pilot pass structural contract checks (no
   // PNG evidence is checked after Playwright. Unit tests must pass in a fresh source checkout.
 });
 
-test('skin screenshot provenance rejects mismatched source or PNG digests', () => {
+test('skin screenshot provenance rejects mismatched source, PNG digests, or capture profile', () => {
   const valid = {
     sourceCommit: 'a'.repeat(40),
     sourceFingerprint: 'b'.repeat(64),
     imageSha256: 'c'.repeat(64),
+    capture: { viewport: '1440x960', locale: 'en-US', direction: 'ltr', timezoneId: 'UTC', frozenTime: '2026-10-25T12:00:00.000Z' },
   };
   assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'c'.repeat(64)), true);
+  assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'c'.repeat(64), { viewport: '1440x960', locale: 'en-US', direction: 'ltr', timezoneId: 'UTC', frozenTime: '2026-10-25T12:00:00.000Z' }), true);
+  assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'c'.repeat(64), { viewport: '1440x1000' }), false);
   assert.equal(validateSkinCaptureProvenance(valid, 'd'.repeat(64), 'c'.repeat(64)), false);
   assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'e'.repeat(64)), false);
   assert.equal(validateSkinCaptureProvenance({ ...valid, sourceCommit: 'invalid' }, 'b'.repeat(64), 'c'.repeat(64)), false);

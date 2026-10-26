@@ -7,6 +7,13 @@ import crypto from 'node:crypto';
 import { getSkinCaptureSourceFingerprint, validateSkinCaptureProvenance } from './skin-capture-provenance.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const expectedCapture = {
+  viewport: '1440x960',
+  locale: 'en-US',
+  direction: 'ltr',
+  timezoneId: 'UTC',
+  frozenTime: '2026-10-25T12:00:00.000Z',
+};
 
 export function auditAllSkinPairs() {
   const grammar = JSON.parse(fs.readFileSync(path.join(root, 'contracts/moonframe-skin-grammar-contract-v1.0.json'), 'utf8'));
@@ -33,7 +40,7 @@ export function auditAllSkinPairs() {
         try {
           const record = JSON.parse(fs.readFileSync(provenancePath, 'utf8'));
           const imageSha256 = crypto.createHash('sha256').update(fs.readFileSync(imagePath)).digest('hex');
-          if (!validateSkinCaptureProvenance(record, sourceFingerprint, imageSha256)) staleScreenshots.push(rel);
+          if (!validateSkinCaptureProvenance(record, sourceFingerprint, imageSha256, expectedCapture)) staleScreenshots.push(rel);
         } catch {
           staleScreenshots.push(rel);
         }

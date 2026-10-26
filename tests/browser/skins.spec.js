@@ -8,12 +8,14 @@ const captureDir = path.resolve('artifacts/skins');
 fs.mkdirSync(captureDir, { recursive: true });
 
 for (const skin of skins) for (const mode of ['light', 'dark']) {
-  test(`${skin.id} ${mode}: rendered, contrast, responsive and RTL`, async ({ page }) => {
+  test(`${skin.id} ${mode}: rendered, contrast, responsive and RTL`, async ({ page, browser }) => {
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
+    await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
     await page.goto('/lab');
     await page.getByRole('button', { name: skin.name, exact: false }).filter({ has: page.locator('.demo-swatch') }).click();
     await page.getByLabel('Appearance', { exact: true }).selectOption(mode);
+    await page.evaluate(() => document.fonts.ready.then(() => true));
     const root = page.locator('.mf-root');
     await expect(root).toHaveAttribute('data-skin', skin.id);
     await expect(root).toHaveAttribute('data-mode', mode);
@@ -50,7 +52,22 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     }
     const screenshotPath = path.join(captureDir, `${skin.id}-${mode}.png`);
     await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
-    writeSkinCaptureProvenance(screenshotPath);
+    const capture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe)',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(screenshotPath, {
+      ...capture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
     await page.setViewportSize({ width: 360, height: 800 });
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);

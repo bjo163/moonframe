@@ -21,6 +21,10 @@ Capture metadata must include commit SHA, fixture schema/version and content has
 
 The root preference `system` resolves to an effective `light` or `dark` capture and is not a third appearance. The four proof skins × two effective modes make **eight planned reference appearances**, not eight completed renders.
 
+## Current implementation screenshot profile (MF-VF-017)
+
+The existing browser capture suite currently screenshots the `/lab` default `PropsPlayground` (Button / primary / md / “Explore Moonframe”), rather than the future Northstar Studio fixture specified above. Its desktop capture is pinned to 1440×960 CSS px, `en-US` / LTR, UTC, and `2026-10-25T12:00:00.000Z`; screenshots wait for `document.fonts.ready`. The capture sidecar records viewport, locale, timezone, frozen time, fixture description, computed root font stack, font loading status, browser name/version and user agent. The current runtime uses its CSS font-family stack and environment-provided fallback; it does not bundle or claim the candidate Noto Sans fixture font. These records make the current implementation captures repeatable and auditable, but do not claim the full future fixture, identical system font rendering across operating systems, or human visual approval.
+
 ## 2. Shared screens and exact content
 
 The prototype uses one fictional project-operations workspace. Visual arrangement may differ by skin; semantics, labels, values, row order, and interaction outcomes do not.
