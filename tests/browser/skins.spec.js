@@ -92,6 +92,25 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await page.setViewportSize({ width: 360, height: 800 });
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);
+    await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('360x800');
+    const phoneScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-phone.png`);
+    await page.screenshot({ path: phoneScreenshotPath, fullPage: true, animations: 'disabled' });
+    const phoneCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe)',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(phoneScreenshotPath, {
+      ...phoneCapture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
     await page.getByLabel('Direction', { exact: true }).selectOption('rtl');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No RTL page overflow').toBe(true);
