@@ -4,6 +4,10 @@
 
 This document defines how a future original Moonframe master-mark candidate is evaluated. It does not draw, select, license, approve, or clear a mark. The hierarchy is one Moonframe design-system identity; consumer apps keep their own product marks. Trademark review and distribution rights remain separate gates.
 
+## Candidate A — geometric frame (draft)
+
+Source: `assets/source/brand/mark-a.svg`. This generic first-party concept uses a broken square frame and a centered circle, authored from basic vector geometry without tracing the Moonwitness references or importing third-party artwork. It is a draft candidate only: no selection, distinctiveness claim, trademark clearance, license conclusion, or visual approval is recorded. The reusable static-subset check is `node scripts/validate-brand-svg.mjs assets/source/brand/mark-a.svg`.
+
 ## Required source and render set
 
 - Preserve an editable vector source and a static export. The source must have a stable square viewBox, explicit geometry, no external resources, and no active SVG content.

@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 77 implemented-or-captured, 0 blocked, 411 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- Overall progress: 77/488 (15.8%) done/captured; 411/488 (84.2%) pending; 0 blocked. 411/488 (84.2%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 78 implemented-or-captured, 0 blocked, 410 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 78/488 (16.0%) done/captured; 410/488 (84.0%) pending; 0 blocked. 410/488 (84.0%) remain incomplete.
 
 
 

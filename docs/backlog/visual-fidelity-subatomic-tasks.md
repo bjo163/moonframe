@@ -160,9 +160,9 @@
 - [x] **MF-VF-034 — Specify legible 16px master silhouette** · **P1** · `implemented` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
   - **File scope:** [master-mark review criteria](../brand/master-mark-review.md). Defines 16/24/32/128 px renders, 1×/2× scales, monochrome/reverse proof, a 1 px optical inset, minimum 1.5 px essential bars/gaps, and human evidence requirements.
   - **Evidence:** `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, `pnpm test` (13/13), `pnpm run typecheck`, and `pnpm run build` (88 routes) passed. Documentation-only change; no mark was drawn or visually approved. Rollback: revert this criteria file and task evidence.
-- [ ] **MF-VF-035 — Draw original geometric-frame logo candidate A** · **P1** · `planned` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
-  - **File scope:** `assets/source/brand/mark-a.svg (proposed)`. **Acceptance:** Static safe viewBox vector, not borrowed art.
-  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-035 — Draw original geometric-frame logo candidate A** · **P1** · `implemented` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/mark-a.svg`; original geometric frame draft using static vector primitives.
+  - **Evidence:** `node scripts/validate-brand-svg.mjs assets/source/brand/mark-a.svg` passed; both M13 structural validators, unit 13/13, typecheck, and build (88 routes) passed. Draft status only; no candidate selection, trademark clearance, or human visual review claimed. Rollback: remove the candidate, static validator, and matching documentation.
 - [ ] **MF-VF-036 — Draw original angular brutalist logo candidate B** · **P1** · `planned` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
   - **File scope:** `assets/source/brand/mark-b.svg (proposed)`. **Acceptance:** Distinct hard-edged geometry from A.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
