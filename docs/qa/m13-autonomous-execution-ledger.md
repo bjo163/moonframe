@@ -1,3 +1,9 @@
+## MF-VF-375 — Create painted CTA decorative backing
+
+- Added `assets/source/creative-reference/r04/cta-brush.svg`, a static generic brush-stroke backing intended only as optional decoration behind live button text. It contains accessible title/description and no external references, scripts, event handlers, or embedded copy. SHA-256: `5EEBA392B4B27F32D2B9136DBE28A39EB8B650DFD1322AEF72F0858988BC5F7A`.
+- Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no package-manager commands, tests, validators, typecheck, build, rendering, browser screenshots, rights review, or human review run. Host runner owns verification/checkpoint. No review or acceptance claimed.
+- Rollback: remove the SVG, restore the task row to planned, and remove this ledger entry and corresponding TODO update. No commit created.
+
 ## MF-VF-051 — Record actual checked-in close-icon digest
 
 - Inspected `assets/source/icons/close.svg` at live HEAD `0866017`; it is a self-contained 24×24 `currentColor` close glyph with accessible `Close` label. PowerShell `Get-FileHash ... -Algorithm SHA256` returned `B2C16BB25C5DF5182F956F8F481CE59DFF72525BFAC0DA4B91B8A6EFC8E4F665`.
