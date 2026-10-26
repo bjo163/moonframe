@@ -981,3 +981,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-023 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, or capture run. Human visual review, source comparison, rights, and acceptance remain pending; host runner owns verification/checkpoint.
 - Checked task counts: 69/292 foundation visual + 52/168 reference visual + 28/28 preflight = 149/488 implemented-or-captured; 339 remain unchecked/planned. No human approval is implied.
 - Rollback: revert the two CSS module changes, `tabIndex` addition, backlog row, TODO update, and this entry.
+
+## MF-VF-057 — Draw semantic warning icon
+
+- Added `assets/source/icons/warning.svg`, an original static 24×24 triangle-and-exclamation glyph using `currentColor` with the accessible label `Warning`. SHA-256: `0e68537c6bbe49acb576ee9e3ff90506305ec8057491b2f55cfa059521eb47e6`.
+- Dependency MF-VF-033 is implemented. Source inspection confirms the file contains only SVG paths/circle, no scripts, event handlers, or external resource references. Status: `implemented`. Under the runner override, no package-manager commands, tests, validators, build, browser rendering, or captures were run. 16/20/24px rendering, light/dark/forced-colors display, human review, and acceptance remain pending; no consumer/third-party artwork or rights claim.
+- Foundation wave count updated from 67 to 68 implemented/captured (224 planned); total task counts are maintained in the backlog/root TODO and remain subject to inconsistent historical ledger snapshots. No commit created; host runner handles verification/checkpoint.
+- Rollback: remove the SVG and restore the MF-VF-057 task row, root TODO totals, and this ledger entry.
