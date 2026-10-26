@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-062 — Draw semantic sort icon
+
+- Added `assets/source/icons/sort.svg`, an original 24×24 `currentColor` glyph with opposing vertical arrows and accessible label `Sort`. SHA-256: `71bf6e991ece6ce0a035cd0b8d1b3f2845c75cd8cdbb4866d27b23d60e22fe52`.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; static source inspection confirms the bounded viewBox and absence of scripts, event attributes, and external resources. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size checks, or browser captures were run. Human review and acceptance are not claimed; 16/20/24px and light/dark/forced-colors visual checks remain pending.
+- Live task checkbox counts after this change: 79/292 foundation visual, 58/168 reference visual, 28/28 preflight = 165/488 checked; 323 unchecked. Checked does not mean reviewed or accepted. No commit created; host runner handles verification and checkpoint. Rollback: remove the SVG and restore this entry, backlog row, and TODO count.
+
 ## MF-VF-362 — Draw energetic yellow label/tag motif
 
 - Added `assets/source/creative-reference/r03/label-sticker.svg`, an original blank yellow sticker backing with irregular geometry and no fixed copy, consumer mark, script, or external resource.
