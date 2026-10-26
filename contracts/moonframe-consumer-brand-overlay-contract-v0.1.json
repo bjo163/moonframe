@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-CONSUMER-BRAND-001",
+  "status": "proposed-not-implemented",
+  "createdOn": "2026-10-26",
+  "authority": {
+    "theme": "moonframe-theme-contract-v1.3.json",
+    "tokens": "moonframe-token-dictionary-v0.1.json",
+    "visual": "moonframe-creative-reference-contract-v0.1.json",
+    "brand": "docs/brand/original-asset-brand-bible.md"
+  },
+  "problem": "Moonpunk defaults currently use acid-lime while user Moonwitness examples use magenta/cyan/yellow artwork accents; the reusable skin grammar must not be recolored globally to match one consumer.",
+  "principle": "Skin is structural design grammar; consumerBrand is an optional separate branding overlay, not a 16th skin and not a third appearance.",
+  "notNewSkin": true,
+  "notNewAppearance": true,
+  "requiresOwnerDecisionBeforeApiFreeze": true,
+  "resolutionOrderProposed": [
+    "baseline semantic fallback",
+    "canonical skin + light/dark appearance tokens",
+    "opt-in consumer brand palette slots constrained by current appearance and contrast",
+    "density and user motion settings separately",
+    "forced-colors/accessibility protection takes precedence"
+  ],
+  "brandOwnedInputs": [
+    "brandId",
+    "brandDisplayName",
+    "optional logo source with separate rights",
+    "optional primary/signal accent values",
+    "optional supporting artwork slots",
+    "brand-safe alternative text and attribution"
+  ],
+  "allowedSlots": [
+    {
+      "id": "brand.primary",
+      "role": "Nonstatus interactive/hero emphasis, must pass real contrast under surface"
+    },
+    {
+      "id": "brand.secondary",
+      "role": "Secondary decoration or neutral supporting artwork"
+    },
+    {
+      "id": "brand.tertiary",
+      "role": "Noncritical highlights; decorative only"
+    },
+    {
+      "id": "brand.ink",
+      "role": "Decorative frame/stroke tint only if legible"
+    },
+    {
+      "id": "brand.artwork",
+      "role": "Optional scene asset source references owned by consumer"
+    }
+  ],
+  "forbiddenOverrideTargets": [
+    "success/danger/warning meaning",
+    "focus visibility",
+    "disabled semantics",
+    "screenreader labels",
+    "CSS geometry / skin identity",
+    "keyboard behavior",
+    "font license and type roles",
+    "table content hierarchy",
+    "high-contrast/forced-colors fallback"
+  ],
+  "fallback": "If no consumer brand, the skin uses its canonical default (Moonpunk acid lime remains possible); invalid/incomplete brand inputs revert to skin tokens without breaking UI.",
+  "consumerExample": {
+    "id": "moonwitness-neon",
+    "name": "Moonwitness",
+    "source": "Four user-supplied design references",
+    "visualPalette": [
+      "near-black",
+      "chalk white",
+      "hot magenta",
+      "electric cyan/blue",
+      "signal yellow",
+      "violet"
+    ],
+    "scope": "consumer demo concept only; not brand/logo asset distribution and not approved CSS token values",
+    "exampleStatuses": [
+      "unapproved-palette",
+      "no-runtime-implementation",
+      "no-production-assets"
+    ]
+  },
+  "testsRequired": [
+    "Without overlay original 15 skins × light/dark render unchanged",
+    "With overlay semantic accent sources vary while geometry/spacing/nav grammar remains identical",
+    "Calculate contextual text/button/hover/contrast for every override",
+    "Selected/active controls retain ARIA beyond color",
+    "Switch skin without leaking Moonwitness branding into other consuming applications",
+    "Switch light/dark, density, forced colors and reduced motion independently",
+    "SSR ThemeScript hydration no FOUC from brand and no persistent ghost branding",
+    "Brand asset missing/invalid safely falls back to generic icon/text",
+    "Do not imply override is a licensed product identity"
+  ],
+  "implementationNote": "No new runtime props, CSS, TypeScript exports or token values created or approved by this specification. First prototype as one opt-in consumer-only experiment; approve public API after a11y and theme runtime evidence.",
+  "backlogs": [
+    "docs/backlog/visual-fidelity-subatomic-tasks.md",
+    "docs/backlog/reference-mockups-subatomic-tasks.md"
+  ]
+}
