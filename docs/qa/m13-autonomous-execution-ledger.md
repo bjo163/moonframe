@@ -1,6 +1,16 @@
 # M13 autonomous execution ledger
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
+## MF-VF-303 — Original-work vs source-reference risk matrix
+
+- Added `docs/qa/reference-rights-checklist.md` with per-reference use, provenance unknowns, view-only treatment, derivative clearance, consumer-specific exclusions, and safe original-work directions for MWX-REF-001 through MWX-REF-004.
+- Cross-checked scope against the creative-reference contract, Visual Reference Bible, and Asset Brand Bible. Rights and derivative permissions remain unverified; no legal conclusion or permission is inferred.
+- Dependency `MF-VF-014` is implemented. Status: `captured` (documentation deliverable). Runner override honored: no package-manager commands, test suites, typecheck, build, or browser checks run. No commit created; host runner handles verification/checkpoint. Rollback: revert the checklist and task evidence.
+
+## Current counts after MF-VF-303
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous ledger counts: 93 implemented-or-captured, 395 planned, 0 explicitly blocked. This task adds one captured record: 94 implemented-or-captured, 394 planned, 0 explicitly blocked. Counts do not imply rights, human visual review, or acceptance.
 
 ## MF-VF-302 — Explicit consumer-only words and symbols
 
