@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="title">
+  <title id="title">Moonframe geometric frame draft</title>
+  <path fill="currentColor" fill-rule="evenodd" d="M5 5h22v22H5V5Zm3 3v16h16V8H8Z"/>
+  <circle cx="16" cy="16" r="4" fill="currentColor"/>
+</svg>

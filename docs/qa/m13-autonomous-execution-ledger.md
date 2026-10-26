@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-047 — Create safe SVG favicon candidate
+
+- Added `assets/exports/brand/favicon.svg`, a static 32×32 candidate using only the existing generic geometric-frame draft direction. SHA-256: `8ade2ea8431f62d34fec3b2fd9c2f0ce79757a1994c9d0b1b4273f31f25e0c4f`.
+- Source inspection confirms the file uses only an SVG title, path and circle with no executable or external content. Task status is `implemented`; per runner override, no validators, package-manager commands, suites, typecheck, build, render or capture were run. Host runner owns verification/checkpoint. No candidate approval, human review, trademark clearance or distribution rights are claimed.
+- The 488-task total moves one task from planned to implemented: this task is an update only, not an independently recounted aggregate because prior ledger counts conflict. Rollback: delete the SVG and restore the task row and this entry.
+
 ## MF-VF-045 — Render actual 16px favicon PNG — blocked
 
 - Dependency MF-VF-040 is implemented, but the required raster renderer is unavailable in this environment: Python/Pillow, ImageMagick, and Inkscape are not installed; `convert.exe` is the Windows filesystem utility. No placeholder or synthetic PNG was created.

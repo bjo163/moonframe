@@ -202,9 +202,10 @@
 - [ ] **MF-VF-046 — Render actual 32px favicon PNG** · **P1** · `planned` · **dependency:** `MF-VF-040` · **GitHub issue:** not-created
   - **File scope:** `assets/exports/brand/favicon-32.png (proposed)`. **Acceptance:** 2x crisp, correct alpha.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-047 — Create safe SVG favicon candidate** · **P1** · `planned` · **dependency:** `MF-VF-040` · **GitHub issue:** not-created
+- [x] **MF-VF-047 — Create safe SVG favicon candidate** · **P1** · `implemented` · **dependency:** `MF-VF-040` · **GitHub issue:** not-created
   - **File scope:** `assets/exports/brand/favicon.svg (proposed)`. **Acceptance:** No executable or external vector content.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (2026-10-26):** Added a static 32×32 SVG favicon candidate derived from the existing original geometric-frame draft. It contains only a title, a frame path, and a circle; no script, event attributes, embedded content, or external references. Source SHA-256: `8ade2ea8431f62d34fec3b2fd9c2f0ce79757a1994c9d0b1b4273f31f25e0c4f`. Runner override honored: no validators, package-manager commands, suites, typecheck, build, render, or capture run. Host runner owns verification. Candidate remains unapproved; no trademark, rights, or production-use claim. Rollback: remove `assets/exports/brand/favicon.svg` and restore this row to planned.
 - [ ] **MF-VF-048 — Integrate approved logo only in Moonframe showcase** · **P1** · `planned` · **dependency:** `MF-VF-039, MF-VF-040, MF-VF-049` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/components/site/SiteShell.tsx`. **Acceptance:** Consumer brands unaffected.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
