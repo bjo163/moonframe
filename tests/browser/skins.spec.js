@@ -38,6 +38,50 @@ async function waitForFontsReady(page) {
   expect(status, 'document fonts should finish loading before capture').toBe('loaded');
 }
 
+test('legacy defaults have no brand overlay, first-paint flash, or cross-consumer persistence', async ({ browser }) => {
+  const firstContext = await browser.newContext();
+  const firstPage = await firstContext.newPage();
+  const initialStates = [];
+  await firstPage.addInitScript(() => { window.__initialThemeState = null; });
+  await firstPage.goto('/lab');
+  await expect(firstPage.locator('.mf-root')).toBeVisible();
+  const firstPaintState = await firstPage.locator('.mf-root').evaluate((node) => ({
+    skin: node.getAttribute('data-skin'),
+    mode: node.getAttribute('data-mode'),
+    brand: node.getAttribute('data-brand'),
+    brandProperties: [...getComputedStyle(node).cssText.matchAll(/--mf-brand-[^:]+/g)].map((match) => match[0]),
+    storageKeys: Object.keys(localStorage).filter((key) => /brand/i.test(key)),
+  }));
+  expect(firstPaintState.brand).toBeNull();
+  expect(firstPaintState.brandProperties).toEqual([]);
+  expect(firstPaintState.storageKeys).toEqual([]);
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    const page = await firstContext.newPage();
+    await page.goto('/lab');
+    await page.getByRole('button', { name: skin.name, exact: false }).filter({ has: page.locator('.demo-swatch') }).click();
+    await page.getByLabel('Appearance', { exact: true }).selectOption(mode);
+    const state = await page.locator('.mf-root').evaluate((node) => ({
+      skin: node.getAttribute('data-skin'),
+      mode: node.getAttribute('data-mode'),
+      brand: node.getAttribute('data-brand'),
+      brandProperties: Object.keys(node.style).filter((key) => key.startsWith('--mf-brand-')),
+    }));
+    expect(state).toEqual({ skin: skin.id, mode, brand: null, brandProperties: [] });
+    initialStates.push({ skin: skin.id, mode });
+    await page.close();
+  }
+  expect(initialStates).toHaveLength(30);
+  const secondContext = await browser.newContext();
+  const secondPage = await secondContext.newPage();
+  await secondPage.goto('/lab');
+  await expect(secondPage.locator('.mf-root')).not.toHaveAttribute('data-brand');
+  await expect(secondPage.locator('.mf-root')).toHaveAttribute('data-skin', 'classic');
+  await expect(secondPage.locator('.mf-root')).toHaveAttribute('data-mode', 'light');
+  expect(await secondPage.evaluate(() => Object.keys(localStorage).filter((key) => /brand/i.test(key)))).toEqual([]);
+  await firstContext.close();
+  await secondContext.close();
+});
+
 for (const skin of skins) for (const mode of ['light', 'dark']) {
   test(`${skin.id} ${mode}: rendered, contrast, responsive and RTL`, async ({ page, browser }) => {
     const errors = [];

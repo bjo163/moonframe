@@ -116,6 +116,8 @@ test('every skin server renders with a stable initial theme and no browser globa
     );
     assert.ok(html.includes(`data-skin="${skin}"`));
     assert.ok(html.includes(`data-mode="${mode}"`));
+    assert.ok(!html.includes('data-brand'), `no brand overlay for legacy default ${skin}/${mode}`);
+    assert.ok(!html.includes('--mf-brand-'), `no injected brand tokens for legacy default ${skin}/${mode}`);
     assert.ok(html.includes('Save'));
   }
 });
