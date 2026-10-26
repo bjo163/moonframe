@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-136 — Draw Moonsmash edition badge
+
+- Added `assets/source/skins/moonsmash/edition.svg`, an original static Moonframe visual-edition label with accessible title/description, live text and angular impact geometry; no consumer brand or external resource.
+- SHA-256: `1BEC283C2D0C11757984D2671A32076DF18F6D34863E622BC0897A7661C03885`. Dependencies MF-VF-132 and MF-VF-039 are implemented. Backlog status `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, or human review run. Rights review and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG, restore the task row to planned, and remove matching TODO and ledger evidence.
+
 ## MF-VF-405 — Distinguish proposed palette language from approved tokens
 
 - Added “Palette language and canonical token status” to `docs/visual/cinematic-mangapunk-reference-bible.md`. Palette terms are explicitly illustrative proposals; sampled Moonwitness image colors must not become global token values. Production values and contrast evidence remain governed by `contracts/moonframe-token-source-plan-v0.1.json` (78 names, 30 planned slots; no approved value source).

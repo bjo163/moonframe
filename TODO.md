@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-136):** Added original static `assets/source/skins/moonsmash/edition.svg` (SHA-256 `1BEC283C2D0C11757984D2671A32076DF18F6D34863E622BC0897A7661C03885`) identifying Moonsmash as a Moonframe visual edition using live text and angular impact geometry. Dependencies MF-VF-132 and MF-VF-039 are implemented. Status `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, rendering, or human review run per runner override. Rights review and acceptance remain pending; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-123):** Added original static `assets/source/skins/moonglitch/hero.svg`, a monochrome telemetry console illustration with no essential text (SHA-256 `203340EA4FF9DC49D553E30536A86FC99466A5CAB3460780CF3D09D51B2822CA`). Dependency MF-VF-120 is implemented. Source inspection and `git diff --check` passed; no package-manager commands, validators, tests, typecheck, build, render, or human review run per runner override. Rights, optical review, and acceptance remain pending; host runner owns verification/checkpoint. No aggregate recount asserted.
 
 **Live execution update (2026-10-27, MF-VF-405):** Clarified that reference palette names are art-direction proposals, not approved token values, in `docs/visual/cinematic-mangapunk-reference-bible.md`. No colors were sampled or promoted. Documentation/source inspection only; runner override honored, host runner owns verification/checkpoint. No token approval, human review, or acceptance claimed.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe Moonsmash edition</title>
+  <desc id="desc">A compact angular label identifying the Moonsmash visual edition within Moonframe.</desc>
+  <path fill="currentColor" d="M5 7h230v58H5l10-29z"/>
+  <path fill="none" stroke="currentColor" stroke-width="2" d="M1 3h238v66H1l12-33z"/>
+  <path fill="none" stroke="currentColor" stroke-width="3" d="m202 15 11 13 15-7-8 15 10 13-17-2-8 14-3-17-16-6 15-7z"/>
+  <text x="25" y="31" fill="Canvas" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="800" letter-spacing="2">MOONFRAME</text>
+  <text x="25" y="51" fill="Canvas" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="900" letter-spacing="2">MOONSMASH EDITION</text>
+</svg>
