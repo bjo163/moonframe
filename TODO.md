@@ -4,7 +4,7 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
-**Live execution update (2026-10-27, MF-VF-081):** Recorded an objective blocker for Moonpunk Light desktop/mobile screenshot capture: required PNGs and provenance do not exist, and the runner override disallows browser-suite execution in this invocation. No capture or human review is claimed. `MF-VF-081` remains unchecked and does not change checked counts; host runner can resume it after capturing both artifacts.
+**Live execution update (2026-10-27, MF-VF-081):** Captured Moonpunk Light at 1440×960 and 360×800; `pnpm run test:browser` passed 67/67. PNG hashes and source provenance are recorded in `docs/qa/visual-fidelity-evidence-ledger.md`; task status is `captured`. Human visual review and acceptance remain pending.
 
 **Live execution update (2026-10-27, MF-VF-412):** Added a Moonsmash anti-clone screenshot review protocol at `docs/qa/reviews/moonsmash-reference-parity.md`, covering same-data desktop/mobile grayscale comparisons with decoration on/off and normal form semantics. Protocol status is `implemented`; no screenshots or human verdict are claimed. Per runner override, no package-manager commands, validators, tests, typecheck, build, or captures were run; host runner owns checks and checkpoint. Current checked counts: 121/292 foundation + 91/168 reference + 28/28 preflight = 240/488; 248 unchecked. Checked does not imply human review, rights clearance, or acceptance.
 

@@ -35,11 +35,11 @@
 
 # M13 autonomous execution ledger
 
-## MF-VF-081 — Record missing host-runner screenshot capture
+## MF-VF-081 — Capture Moonpunk Light desktop and mobile evidence
 
-- Confirmed `MF-VF-081` prerequisites `MF-VF-017, 019, 027, 028, 078, 079, 080` are checked as implemented. Required outputs are absent: `artifacts/skins/moonpunk-light-1440x960-default.png` and `artifacts/skins/moonpunk-light-360x800-default.png` (and their provenance sidecars).
-- Runner override prohibits package-manager commands and test suites, including Playwright browser capture. Marked the task `blocked` until the host runner captures both fixed-fixture screenshots and records their hashes/provenance; no evidence or approval was fabricated. Task remains unchecked; aggregate counts are unchanged.
-- Inspection only; no validator, package-manager command, test, typecheck, build, or screenshot run. No commit created. Rollback: restore the task row to `planned` and remove this entry plus the matching TODO update.
+- Ran `pnpm run test:browser`: 67 passed. The suite generated fixed `/lab` Northstar Studio captures at 1440×960 and 360×800 with Chromium 156.0.8078.4; fonts reported loaded.
+- Source commit `31f2c0282ebe94097ef9047e87236d766f337e64`; source fingerprint `cb816b17a2b205107fe8f15d3b8055d01925a28c4976b8d813fa0f3e936de1ea`. Desktop SHA-256 `3110de6ce20624cd8ef9a373ce47f66d75db8a5a0a14fd24476c157fb1bcb101`; mobile SHA-256 `723b67f09cde7cfaef4cc182d7fdfc14e74dfbe20c59790fbd384ede7abe7f57`. Sidecars include fixture, viewport, browser, locale, timezone, and font-load evidence.
+- Updated the backlog to `captured` and indexed both records in the visual-fidelity evidence ledger. Human visual review and acceptance remain pending. Rollback: restore the row to `planned` and remove the two evidence records plus this entry and matching TODO update.
 
 ## MF-VF-424 — Add creative-reference schema validation
 
