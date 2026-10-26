@@ -1198,3 +1198,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/icons/lock.svg`, an original static 24×24 `currentColor` lock glyph with accessible `Lock` title. SHA-256: `45e2afd5d29d91053cdfa6c64a81c38dc6e2d8d42e8b36ba935e20f154ff8688`.
 - Dependency `MF-VF-033` is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser capture were run; host runner owns applicable checks. Light/dark/forced-colors appearance, 16/20/24px legibility, human review, and acceptance remain pending.
 - Rollback: remove the SVG and restore the matching backlog row, TODO update, and this ledger entry.
+
+## MF-VF-085 — Draw original Moonriot motif SVG
+
+- Added ssets/source/skins/moonriot/motif.svg, an original accessible 96×96 angular directional shard with embedded geometry and currentColor; SHA-256: $hash.
+- Dependency MF-VF-084 is implemented. Status: implemented; static source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review were run. Mono-size legibility, skin distinction, rights review, and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger entry.
