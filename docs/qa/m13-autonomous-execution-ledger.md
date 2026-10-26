@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-329 — Accessible editorial navigation
+
+- Added `apps/moonframe/templates/visual-reference/r02-nav.tsx` and `.module.css` with grouped semantic link lists, native mobile disclosure, visible keyboard focus, touch-sized links, and a responsive desktop grouping layout.
+- Dependency `MF-VF-023` is implemented. Static source review and `git diff --check` passed. No package-manager commands, validators, tests, typecheck, build, or browser capture run per runner override; host runner owns verification/checkpoint. No source-reference comparison, human review, or acceptance claimed.
+- Rollback: remove the component/CSS module and restore the task row, TODO count, and ledger entry.
+- Counts: prior live ledger count 118/488 implemented-or-captured, 370/488 planned, 0 blocked; now 119/488 implemented-or-captured, 369/488 planned, 0 blocked.
+
 ## MF-VF-326 — Mobile single-column dashboard flow
 
 - Updated `apps/moonframe/templates/visual-reference/r01-content-grid.tsx` and its CSS module. At the mobile breakpoint the dashboard explicitly uses one column and placement follows DOM/keyboard order: creation, signals, operations, activity streams. The signals region exposes configurable visible graph context with a readable default; no critical explanation is hidden and no fixed desktop screenshot is scaled down.

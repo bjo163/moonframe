@@ -139,9 +139,9 @@
 
 ## J — R02 editorial public landing: tiny art-direction units
 
-- [ ] **MF-VF-329 — Extract accessible public navigation** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
-  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-nav.tsx (proposed)`. **AC:** Link groups are DOM, visible keyboard focus, mobile collapse.
-  - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+- [x] **MF-VF-329 — Extract accessible public navigation** · **P1** · `implemented` · **dep:** `MF-VF-023` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-nav.tsx` and `.module.css`. **AC:** Link groups are DOM, visible keyboard focus, mobile collapse.
+  - **Evidence (2026-10-26):** Added a reusable editorial navigation with caller-provided grouped links in semantic lists, visible group headings and labeled navigation. Native `<details>/<summary>` collapses the links on narrow screens; at 48rem and above groups render as a wrapping navigation layout. Links and trigger have visible focus, 44px minimum targets, and forced-colors borders. Dependency `MF-VF-023` is implemented. Static source review and `git diff --check` passed; no package-manager commands, validators, suites, typecheck, build, or browser captures run per runner override. No R02 source comparison, human review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row and progress evidence.
 - [ ] **MF-VF-330 — Define layered editorial masthead box** · **P1** · `planned` · **dep:** `MF-VF-023` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r02-masthead.tsx (proposed)`. **AC:** Expressive heading hierarchy remains real text, not flattened illustration.
   - **Proof & rollback:** Capture reproducible image/DOM layering and compare with verified R02 upload, no color-only verdict. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
