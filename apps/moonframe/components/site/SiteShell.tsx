@@ -125,13 +125,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="mf-site-footer-brand">
             <strong>moonframe</strong>
             <p>
-              One React 19 &amp; Next.js 16 component architecture with 15 unmistakable Light &amp; Dark visual skins, 66+ reusable exports, and 22 production templates.
+              One React 19 &amp; Next.js 16 UI architecture with {SKIN_CATALOG.length} skins, {TEMPLATE_CATALOG.length} implemented page templates and {STARTER_CATALOG.length} multi-route starters. Visual and asset approval remain separate.
             </p>
           </div>
           <div className="mf-site-footer-links">
             <Link href="/skins">15 Skins</Link>
-            <Link href="/components">66+ Components</Link>
-            <Link href="/templates">22 Templates</Link>
+            <Link href="/components">{COMPONENT_CATALOG.length} Component Guides</Link>
+            <Link href="/templates">{TEMPLATE_CATALOG.length} Templates</Link>
             <Link href="/docs">Next.js &amp; pnpm Docs</Link>
             <Link href="/lab">Interactive Skin Lab</Link>
           </div>
