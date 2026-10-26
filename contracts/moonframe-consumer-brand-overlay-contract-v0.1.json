@@ -16,7 +16,15 @@
   "notNewAppearance": true,
   "requiresOwnerDecisionBeforeApiFreeze": false,
   "maintainerDecision": "Owner-delegated maintainer decision recorded 2026-10-26; behavior contract only. Public props, token values, and runtime implementation are not approved.",
-  "apiStatus": "not-designed-not-exported",
+  "apiStatus": "deferred-pending-owner-public-api-review",
+  "apiDecision": {
+    "status": "deferred",
+    "decisionDate": "2026-10-27",
+    "decision": "Do not design, export, or implement a public consumer-brand prop or token input in M13 without explicit owner review. Keep this contract as a behavior proposal only; any later API requires a separately reviewed versioned contract and compatibility evidence.",
+    "rationale": "The contract defines overlay constraints but expressly leaves the public API and palette values unapproved. A safe implementation decision is to preserve the existing public surface and defer API shape rather than infer owner approval.",
+    "approvedPublicProps": [],
+    "approvedRuntimeTokenValues": false
+  },
   "overlayInputValidation": {
     "noBrand": "Omit overlay and use the exact canonical skin plus light/dark baseline.",
     "malformedOrIncomplete": "Reject the entire overlay atomically and use canonical skin tokens; never apply a partial subset.",
