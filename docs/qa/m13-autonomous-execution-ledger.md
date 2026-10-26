@@ -2,6 +2,12 @@
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
 
+## MF-VF-301 — Four reference role classes
+
+- Verified the canonical creative-reference contract defines four distinct records: mission-control administrative dashboard (`MWX-REF-001`), editorial landing (`MWX-REF-002`), campaign poster (`MWX-REF-003`), and authentication scene (`MWX-REF-004`). Each has a primary skin and secondary influences, while the contract authority preserves the canonical 15-skin IDs.
+- The contract already satisfied the task acceptance criteria, so no competing classification field or contract edit was added. This structural capture does not verify image bytes, rights, or visual fidelity.
+- Status: `captured`. Structural validators and package/test/build commands were not run under runner override. No human review or rights approval claimed. Rollback: restore the task row to planned and remove this evidence.
+
 ## MF-VF-295 — Register R03 original digest and dimensions
 
 - Added the R03 reference row to `docs/visual/references/reference-index.md` from `contracts/moonframe-creative-reference-contract-v0.1.json`: ID `MWX-REF-003`, SHA-256 `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff`, dimensions 682 × 1024.
