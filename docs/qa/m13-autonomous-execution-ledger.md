@@ -1900,3 +1900,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonink/motif.svg`: static monochrome, tapered brush swipe with an open center and irregular dry-brush contours; no external references or consumer-brand content. SHA-256: `05a9ab8abc342636fa3f32bc12a553897a1d95732d91850a66776a47d7b3c70f`.
 - Dependency `MF-VF-144` is implemented. Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run under runner override. Host runner owns verification/checkpoint; optical review, rights review, and acceptance remain pending.
 - Rollback: remove the SVG and restore `MF-VF-145` to planned in the backlog and TODO; remove this ledger entry.
+
+## MF-VF-367 — Review R03 artwork originality and lyric-IP safety
+
+- **Status:** `blocked-external-approval` (2026-10-27). The R03 source assets use generic vector geometry and existing placeholder copy; static inspection cannot establish originality, rights ownership, or legal clearance.
+- **Unmet dependency:** A qualified human rights/IP reviewer must examine the R03 artwork/copy file hashes and record findings, reviewer identity/date, and any remediation. No reviewer or owner approval is fabricated.
+- **Evidence boundary:** Existing R03 task records and asset inventory document source files and hashes. This invocation performed no legal review, package-manager commands, validators, tests, typecheck, build, rendering, or browser capture; the host runner owns technical verification and checkpoint.
+- **Resume:** Record the human review disposition and reviewed hashes in the R03 task evidence. Keep this task blocked if external review is unavailable.
+- **Rollback:** Restore `MF-VF-367` to planned and remove this ledger section and the matching TODO update.

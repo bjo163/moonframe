@@ -288,9 +288,10 @@
 - [ ] **MF-VF-366 — Capture poster at native and mobile viewport** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Preserve portrait geometry without overflowing the page.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-367 — Review artwork originality and lyric-IP safety** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+- [ ] **MF-VF-367 — Review artwork originality and lyric-IP safety** · **P1** · `blocked-external-approval` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r03-rights.md (proposed)`. **AC:** Source/license proof for any shipped element; no unapproved texts.
-  - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Blocker (2026-10-27):** Static source inventory can establish that the R03 SVGs contain generic geometry and no embedded lyrics or consumer marks, but it cannot establish legal originality, rights ownership, or clearance. This task requires a qualified human rights/IP reviewer and documented disposition; neither is available in this invocation. No legal clearance or owner approval is inferred. Resume by recording reviewer identity/date, reviewed file hashes, findings, and any remediation. Existing source inventory and hashes are documented in `docs/qa/m13-autonomous-execution-ledger.md`; this remains blocked pending external review.
+  - **Rollback:** Restore this row to planned and remove its blocker evidence.
 - [ ] **MF-VF-368 — Manual R03 creative parity review** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r03.md (proposed)`. **AC:** Judge structural impact/typography/illustration layers, not whether all of reference copied.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
