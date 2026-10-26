@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-373):** Added `apps/moonframe/templates/visual-reference/r04-password-field.tsx` and `.module.css` with a semantic current-password field and keyboard-operable show/hide toggle. Dependency `MF-VF-025` is implemented. Status is `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser capture, or human review run; host runner owns verification. No authentication behavior or acceptance is claimed.
+
 **Live execution update (2026-10-26, MF-VF-371):** Added an original optional R04 rough-ink form-frame SVG at `assets/source/creative-reference/r04/form-frame.svg` (SHA-256 `12673cbec99f9a6ffffc5b5ab384a56ab2ca7c512cf063b8b813f84e74728a4e`). It is not wired into runtime content and cannot obscure fields or focus. Status is implemented; no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, rights review, or human review run/claimed per runner override. Current task checkboxes: 228/488 checked; no approval is implied. Host runner owns checks and checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-423):** Added creative-reference import integrity validation and a negative self-test fixture in `scripts/validate-contracts.mjs`. Current backlog checkbox recount after this update: 117/292 foundation + 82/168 reference + 28/28 preflight = 227/488 checked; 261 unchecked. Checked includes implemented/captured statuses and does not imply human review, rights clearance, or acceptance. Runner override honored; host runner owns validation and commit.
