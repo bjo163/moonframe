@@ -1055,6 +1055,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-347 — Adapt R02 collage and filmstrip to 360 phone
 
+## Live recount — 2026-10-26
+
+- Recounted task checkboxes in all three canonical backlogs after confirming `MF-VF-346` was already implemented. Counts: 81/292 foundation visual, 58/168 reference visual, and 28/28 preflight = 167/488 checked, 321 unchecked. `MF-VF-328` remains explicitly blocked pending original R01 media. This recount does not elevate implementation to capture, human review, or acceptance.
+- No source implementation or task status changed in this invocation. Runner override honored: no package-manager commands, validators, tests, typecheck, build, or browser checks run; host runner owns applicable verification.
+
 - Updated `r02-story-grid.module.css` to force content-first single-column cards, normal DOM flow, compact mobile spacing, and a bounded 16:9 media frame.
 - Updated `r02-filmstrip.module.css` and `r02-filmstrip.tsx` to provide a labeled horizontal scroll track with snap-aligned entries, a keyboard-focusable list, visible focus, and forced-colors support.
 - Dependency MF-VF-023 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, or capture run. Human visual review, source comparison, rights, and acceptance remain pending; host runner owns verification/checkpoint.
