@@ -556,3 +556,9 @@ The four supplied Moonwitness reference pictures now have an explicit [creative 
 **Skin != product brand != content:** MOONWITNESS typography/crown/campaign text and character stories are **consumer assets/data**, not the Moonframe master logo, generic semantic icon pack or default core. Four images are reference only; source PNGs have not been committed. Original/copyright/license approval is separately required.
 
 **Implementation discipline:** Preserve L0 semantic DOM content and actions; layer L1 geometry, L2 optional ink/collage, L3 optional scene illustration and L4 active controls. Compare non-color geometry and safe decoration-off fallback. Do not replace an entire app with one fixed screenshot; phone and zoom recompose content meaningfully. All visual/pair approval claims require actual screenshots and named human review. Earlier headings and statuses above describe historical specification phases, not approval of this 2026-10-26 reference set.
+
+---
+
+### 2026-10-26 brand palette overlay candidate
+
+The existing Moonpunk default acid-lime vs the user-supplied Moonwitness magenta/cyan sample is not a contradiction requiring new skins. It identifies an optional **consumer brand overlay axis/extension proposal** with constrained color/logo/art slots, not an extra appearance. See [Consumer Brand Overlay Contract](../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). The skin's structural grammar and every interaction/focus/accessibility contract remain canonical. This overlay is not yet implemented, tested, or API-approved.
