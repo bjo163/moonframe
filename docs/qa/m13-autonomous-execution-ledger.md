@@ -2133,3 +2133,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Stylesheet SHA-256: `9EE20BCFC0C83E1C8B22832AD02A52E990BD2C362D20D6D1503EBD5DAC5D453B`.
 - Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. Responsive rendering, human visual review, and acceptance remain pending. Host runner owns verification and checkpoint.
 - Rollback: restore the MF-VF-126 row to planned and remove this entry and matching TODO update. No commit created.
+
+## MF-VF-147 — Draw original Moonink hero illustration SVG
+
+- Added ssets/source/skins/moonink/hero.svg, an original monochrome brush landscape with generous negative space and no essential text.
+- SHA-256: 767af5c75beddb65b5108d6771b614313289832aff8c09e59ec62223bf74827c.
+- Dependency MF-VF-144 is implemented. Backlog status: implemented; source inspection only.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, screenshots, or human review run. Host runner owns verification and checkpoint. Optical review, rights review, integration, and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-147 to planned, and remove this ledger/TODO evidence. No commit created.

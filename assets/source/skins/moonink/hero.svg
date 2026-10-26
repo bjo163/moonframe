@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonink quiet brush landscape</title>
+  <desc id="desc">An original monochrome landscape formed from a sweeping ink ridge and a few tapered brush marks around open negative space.</desc>
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 339c74-20 111-103 186-127 50-16 70 22 118 5 56-20 111-98 217-112" stroke-width="25" opacity=".16"/>
+    <path d="M83 357c92-18 128-82 205-104 59-17 89 20 141-1 58-23 103-87 217-103" stroke-width="8" opacity=".82"/>
+    <path d="M167 315c47-6 81-43 119-55m190-20c39-17 70-49 108-62" stroke-width="3"/>
+    <path d="M115 395c67-8 113-21 159-51m241 26c35-9 62-20 93-43" stroke-width="2" opacity=".55"/>
+  </g>
+  <g fill="currentColor" opacity=".72">
+    <path d="M236 221c11-15 24-25 38-31-3 16-12 29-28 39zM557 137c14-13 29-21 44-24-7 15-19 26-37 32zM177 319c8-10 18-17 29-21-3 12-10 21-23 27z"/>
+  </g>
+  <path d="M145 164c14-5 24-5 34 0m358 54c11-7 22-10 34-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".42"/>
+</svg>
