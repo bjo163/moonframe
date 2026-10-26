@@ -209,9 +209,9 @@
 
 ## D — individual functional SVG glyphs (one icon = one task)
 
-- [ ] **MF-VF-050 — Draw semantic search icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+- [x] **MF-VF-050 — Draw semantic search icon** · **P1** · `implemented` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
   - **File scope:** `assets/source/icons/search.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly lens + handle, not filter at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
-  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (source SHA-256 `f3281be61e5bc81eb86df219d776c77c1f7e649de9d0a33e201c94101c340015`):** Added an original 24×24 vector with a circular lens and separate handle, transparent fill and `currentColor` stroke. Authored from basic vector geometry without references or third-party assets. A targeted Node structural check confirmed dimensions, accessible label, lens/handle path, currentColor and absence of script/event/external-resource constructs — exit 0. `node scripts/validate-contracts.mjs` — exit 0. `node scripts/verify-m13-handoff.mjs` — exit 0 with existing generic SFX playback-truth warning. Package-manager tests/typecheck/build/browser checks were not run under the runner override. Status `implemented`; 16/20/24px visual rendering and human review remain pending; no trademark or distribution clearance claimed. Rollback: remove `assets/source/icons/search.svg` and restore this task row.
 - [ ] **MF-VF-051 — Draw semantic close icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
   - **File scope:** `assets/source/icons/close.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly dismiss X, not delete at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
   - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

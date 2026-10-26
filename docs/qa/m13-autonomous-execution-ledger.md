@@ -9,6 +9,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Freeze baseline: 14 implemented / 474 pending. Live count: 13 captured, 67 implemented, 407 planned (80 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
 - Overall progress: 81/488 (16.6%) implemented-or-captured; 407/488 (83.4%) planned. These task states do not imply owner, rights, or human visual approval.
 
+## MF-VF-050 — Draw semantic search icon
+
+- Added `assets/source/icons/search.svg`, an original 24×24 transparent search lens and handle using `currentColor`; no reference artwork or third-party asset was used.
+- Source SHA-256: `f3281be61e5bc81eb86df219d776c77c1f7e649de9d0a33e201c94101c340015`.
+- Targeted Node structural check for viewBox, accessible label, lens/handle geometry, currentColor and forbidden active/external-resource constructs — exit 0. `node scripts/validate-contracts.mjs` — exit 0. `node scripts/verify-m13-handoff.mjs` — exit 0 with the existing generic SFX playback-truth warning.
+- Runner override honored: no package-manager commands, test suites, typecheck, or build run. No rendered size inspection, human visual review, trademark clearance, or distribution approval claimed. Rollback: remove the SVG and revert this entry and MF-VF-050 task evidence.
+
 ## MF-VF-038 — Compare draft marks at four sizes
 
 - Source commit before this task: `323d3376c9bf2644a006a941fcf3a4287afdfcdc`.
