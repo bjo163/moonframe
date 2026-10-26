@@ -78,3 +78,22 @@ test('Skins gallery, skin detail, components catalog, templates marketplace, and
 
   expect(errors).toEqual([]);
 });
+
+test('R01 mission dashboard baseline captures wide, tablet, and mobile layouts', async ({ page }) => {
+  const layouts = [
+    { name: 'wide', width: 1440, height: 960 },
+    { name: 'tablet', width: 768, height: 1024 },
+    { name: 'mobile', width: 360, height: 800 },
+  ];
+
+  for (const layout of layouts) {
+    await page.setViewportSize({ width: layout.width, height: layout.height });
+    await page.goto('/lab?skin=moonpunk&mode=dark');
+    await expect(page.locator('[data-fixture="dashboard-overview"]')).toBeVisible();
+    await page.screenshot({
+      path: path.join(siteCaptureDir, `r01-mission-dashboard-${layout.name}.png`),
+      fullPage: true,
+      animations: 'disabled',
+    });
+  }
+});

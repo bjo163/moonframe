@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-327 — Capture R01 wide, tablet and mobile baseline
+
+- Added a Playwright case in `tests/browser/site.spec.js` for the same `/lab` dashboard fixture at 1440×960, 768×1024 and 360×800. It saves wide, tablet and mobile screenshots under `artifacts/site/`.
+- Status: `implemented`; test/capture execution, image inspection, reference comparison and human review remain pending. No package-manager commands, suites, typecheck, build or validators were run per runner override; host runner owns verification/checkpoint. No reference media, rights approval or acceptance is claimed.
+- Rollback: remove the test and restore the MF-VF-327 row and TODO count.
+- Counts: prior live TODO count 120/488 implemented-or-captured, 368/488 planned, 0 blocked; now 121/488 implemented-or-captured, 367/488 planned, 0 blocked.
+
 ## MF-VF-330 — Layered editorial masthead
 
 - Added `apps/moonframe/templates/visual-reference/r02-masthead.tsx` and `.module.css`, with selectable semantic heading text, optional decorative layer, responsive hierarchy and action content slot.
