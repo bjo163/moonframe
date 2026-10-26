@@ -7,6 +7,15 @@ import {
   OTPInput, PasswordField, TagInput, SegmentedControl,
 } from '@moonwitness/moonframe';
 
+const erpServices = [
+  { service: 'Payments API', environment: 'Production', status: 'Healthy', region: 'sin1', requests: '12.4k', latency: '42 ms', cost: '$840' },
+  { service: 'Auth Service', environment: 'Production', status: 'Healthy', region: 'iad1', requests: '8.2k', latency: '39 ms', cost: '$610' },
+  { service: 'Events Worker', environment: 'Production', status: 'Degraded', region: 'sfo1', requests: '22.1k', latency: '116 ms', cost: '$490' },
+  { service: 'Customer Sync', environment: 'Staging', status: 'Healthy', region: 'fra1', requests: '3.6k', latency: '57 ms', cost: '$320' },
+  { service: 'Search Index', environment: 'Production', status: 'Attention', region: 'syd1', requests: '18.8k', latency: '203 ms', cost: '$390' },
+  { service: 'Audit Export', environment: 'Staging', status: 'Healthy', region: 'sin1', requests: '1.2k', latency: '64 ms', cost: '$190' },
+];
+
 export default function BehaviorFixturePage() {
   const [open, setOpen] = useState(false);
   const [archiveFixture, setArchiveFixture] = useState(false);
@@ -15,6 +24,10 @@ export default function BehaviorFixturePage() {
   const [authFixture, setAuthFixture] = useState(false);
   const [authMessage, setAuthMessage] = useState('');
   const [articleFixture, setArticleFixture] = useState(false);
+  const [erpFixture, setErpFixture] = useState(false);
+  const [erpStatusFilter, setErpStatusFilter] = useState('all');
+  const [erpRegionFilter, setErpRegionFilter] = useState('all');
+  const [erpSearch, setErpSearch] = useState('');
   const [checked, setChecked] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [menuChoice, setMenuChoice] = useState('none');
@@ -29,10 +42,19 @@ export default function BehaviorFixturePage() {
     setHasInitialParam(query.has('initial'));
     setAuthFixture(query.get('fixture') === 'auth');
     setArticleFixture(query.get('fixture') === 'article');
+    setErpFixture(query.get('fixture') === 'enterprise');
     const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
     setArchiveFixture(shouldOpenArchiveFixture);
     setArchiveOpen(shouldOpenArchiveFixture);
   }, []);
+
+  const filteredErpServices = erpServices.filter(row => {
+    const matchesStatus = erpStatusFilter === 'all' || row.status === erpStatusFilter;
+    const matchesRegion = erpRegionFilter === 'all' || row.region === erpRegionFilter;
+    const query = erpSearch.trim().toLowerCase();
+    const matchesSearch = !query || `${row.service} ${row.region}`.toLowerCase().includes(query);
+    return matchesStatus && matchesRegion && matchesSearch;
+  });
 
   function submitAuthPreview(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -42,7 +64,7 @@ export default function BehaviorFixturePage() {
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
-      {!authFixture && !articleFixture && <h1>Components</h1>}
+      {!authFixture && !articleFixture && !erpFixture && <h1>Components</h1>}
       {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
         <header style={{ marginBlockEnd: '1.5rem' }}>
           <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
@@ -84,6 +106,28 @@ export default function BehaviorFixturePage() {
           <p>Return to the work, notice what changed, and choose the next honest step. Progress becomes easier to share when the plan makes space for both direction and discovery.</p>
         </div>
       </article>}
+      {erpFixture && <section data-fixture="enterprise-preview" aria-labelledby="enterprise-preview-title" style={{ maxWidth: 1200, margin: '2rem auto', color: 'var(--mf-text)' }}>
+        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: '1rem', marginBlockEnd: '1.25rem' }}>
+          <div><p style={{ color: 'var(--mf-muted)', fontSize: '.8rem' }}>OPERATIONS · DEMO DATA · 12:00 UTC</p><h1 id="enterprise-preview-title">Service operations</h1><p style={{ color: 'var(--mf-muted)' }}>Production and staging service health, traffic, and monthly cost.</p></div>
+          <Button variant="secondary">Export report</Button>
+        </header>
+        <dl aria-label="Service summary" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: '.75rem', marginBlock: '1.25rem' }}>
+          {[['Services', '6'], ['Healthy', '4'], ['Needs attention', '2'], ['Monthly spend', '$2,840']].map(([label, value]) => <div key={label} style={{ border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)', padding: '.75rem 1rem' }}><dt style={{ color: 'var(--mf-muted)', fontSize: '.8rem' }}>{label}</dt><dd style={{ margin: '.25rem 0 0', fontSize: '1.25rem', fontWeight: 700 }}>{value}</dd></div>)}
+        </dl>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'end', gap: '.75rem', marginBlock: '1rem' }}>
+          <label style={{ display: 'grid', gap: '.25rem', fontSize: '.8rem' }}>Search services<Input aria-label="Search services" placeholder="Service or region" value={erpSearch} onChange={event => setErpSearch(event.target.value)} /></label>
+          <label style={{ display: 'grid', gap: '.25rem', fontSize: '.8rem' }}>Status<Select aria-label="Filter by status" value={erpStatusFilter} onChange={event => setErpStatusFilter(event.target.value)}><option value="all">All statuses</option><option value="Healthy">Healthy</option><option value="Degraded">Degraded</option><option value="Attention">Attention</option></Select></label>
+          <label style={{ display: 'grid', gap: '.25rem', fontSize: '.8rem' }}>Region<Select aria-label="Filter by region" value={erpRegionFilter} onChange={event => setErpRegionFilter(event.target.value)}><option value="all">All regions</option><option value="sin1">sin1</option><option value="iad1">iad1</option><option value="sfo1">sfo1</option><option value="fra1">fra1</option><option value="syd1">syd1</option></Select></label>
+          <p aria-live="polite" style={{ marginInlineStart: 'auto', color: 'var(--mf-muted)', fontSize: '.875rem' }}>{filteredErpServices.length} of 6 services</p>
+        </div>
+        <div style={{ overflowX: 'auto', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)' }}>
+          <table aria-label="Service inventory" style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--mf-surface)', fontSize: '.8rem', lineHeight: 1.35 }}>
+            <caption style={{ padding: '.65rem .8rem', textAlign: 'start', fontWeight: 700 }}>Service inventory · refreshed 12:00 UTC</caption>
+            <thead><tr>{['Service', 'Environment', 'Status', 'Region', 'Requests / 24h', 'p95 latency', 'Monthly cost'].map(label => <th key={label} scope="col" style={{ padding: '.55rem .7rem', textAlign: 'start', whiteSpace: 'nowrap', borderBlock: '1px solid var(--mf-border)', color: 'var(--mf-muted)' }}>{label}</th>)}</tr></thead>
+            <tbody>{filteredErpServices.map(row => <tr key={row.service}>{[row.service, row.environment, row.status, row.region, row.requests, row.latency, row.cost].map((value, index) => <td key={index} style={{ padding: '.55rem .7rem', whiteSpace: 'nowrap', borderBlockEnd: '1px solid var(--mf-border)' }}>{value}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+      </section>}
       {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">
         <h2 id="archive-task-fixture-title">Project tasks</h2>
         <p>T-1045 · Verify scheduled export · Mateo Silva · Complete</p>

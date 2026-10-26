@@ -200,6 +200,81 @@ test('editorial article copy, typography hooks, and image context stay fixed acr
   }
 });
 
+test('compact enterprise rows, summary, and filters remain consistent across every skin and mode', async ({ page, browser }) => {
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    await page.goto('/lab/behavior?fixture=enterprise');
+    const main = page.locator('main').first();
+    await main.evaluate((node, selection) => {
+      node.dataset.skin = selection.skin;
+      node.dataset.mode = selection.mode;
+    }, { skin: skin.id, mode });
+    const fixture = page.locator('[data-fixture="enterprise-preview"]');
+    await expect(fixture).toBeVisible();
+    await expect(fixture.getByRole('heading', { level: 1, name: 'Service operations' })).toBeVisible();
+    await expect(fixture).toContainText('OPERATIONS · DEMO DATA · 12:00 UTC');
+    await expect(fixture.locator('dl[aria-label="Service summary"] > div')).toHaveText([
+      'Services6', 'Healthy4', 'Needs attention2', 'Monthly spend$2,840',
+    ]);
+    const table = fixture.getByRole('table', { name: 'Service inventory' });
+    await expect(table.getByRole('columnheader')).toHaveText([
+      'Service', 'Environment', 'Status', 'Region', 'Requests / 24h', 'p95 latency', 'Monthly cost',
+    ]);
+    const rows = table.locator('tbody tr');
+    await expect(rows).toHaveCount(6);
+    for (const values of [
+      ['Payments API', 'Production', 'Healthy', 'sin1', '12.4k', '42 ms', '$840'],
+      ['Auth Service', 'Production', 'Healthy', 'iad1', '8.2k', '39 ms', '$610'],
+      ['Events Worker', 'Production', 'Degraded', 'sfo1', '22.1k', '116 ms', '$490'],
+      ['Customer Sync', 'Staging', 'Healthy', 'fra1', '3.6k', '57 ms', '$320'],
+      ['Search Index', 'Production', 'Attention', 'syd1', '18.8k', '203 ms', '$390'],
+      ['Audit Export', 'Staging', 'Healthy', 'sin1', '1.2k', '64 ms', '$190'],
+    ]) {
+      const row = rows.filter({ hasText: values[0] });
+      for (const value of values) await expect(row).toContainText(value);
+    }
+    await expect(fixture.getByText('6 of 6 services', { exact: true })).toBeVisible();
+
+    const fontStatus = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return document.fonts.status;
+    });
+    expect(fontStatus).toBe('loaded');
+    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}-1440x960-enterprise.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+    const capture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: `/lab/behavior?fixture=enterprise (${document.querySelector('[data-fixture="enterprise-preview"]')?.textContent?.trim()}; ${document.querySelector('main')?.getAttribute('data-skin')} ${document.querySelector('main')?.getAttribute('data-mode')}; all regions/statuses)`,
+      state: 'enterprise-default',
+      fontStack: getComputedStyle(document.querySelector('[data-fixture="enterprise-preview"]')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(screenshotPath, { ...capture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+
+    const statusFilter = fixture.getByLabel('Filter by status');
+    await statusFilter.selectOption('Degraded');
+    await expect(rows).toHaveCount(1);
+    await expect(rows.first()).toContainText('Events Worker');
+    await expect(fixture.getByText('1 of 6 services', { exact: true })).toBeVisible();
+    await statusFilter.selectOption('all');
+    await fixture.getByLabel('Filter by region').selectOption('sin1');
+    await expect(rows).toHaveCount(2);
+    await expect(rows.nth(0)).toContainText('Payments API');
+    await expect(rows.nth(1)).toContainText('Audit Export');
+    await fixture.getByLabel('Filter by region').selectOption('all');
+    await fixture.getByLabel('Search services').fill('Search Index');
+    await expect(rows).toHaveCount(1);
+    await expect(rows.first()).toContainText('Search Index');
+    await expect(fixture.getByText('1 of 6 services', { exact: true })).toBeVisible();
+  }
+});
+
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
