@@ -76,7 +76,7 @@ while (iteration < cyclesMax) {
   say('Cycle '+iteration+' '+JSON.stringify(before));
   if (before.pending<=0) break;
   const output=path.join(logDir,'last-'+iteration+'.txt');
-  const prompt=master+'\n\nRUNNER-OVERRIDE: Complete exactly ONE dependency-ready task this invocation, or record an objective blocker. Update its correct status/evidence. Do not commit or push: the host runner handles that after testing. End with M13_RESULT_JSON and return for next cycle. Never ask user a routine question.';
+  const prompt=master+'\n\nRUNNER-OVERRIDE: Complete exactly ONE dependency-ready task this invocation, or record an objective blocker. Update its correct status/evidence. Do not run package-manager commands (pnpm/npm/yarn), test suites, typecheck, or builds; the host runner performs all applicable verification after this invocation and preserves changes if a check fails. Do not commit or push: the host runner handles that after testing. End with M13_RESULT_JSON and return for next cycle. Never ask user a routine question.';
   const exit=await new Promise(resolve=>{
     const p=spawn('codex',['exec','-c','approval_policy="never"','--sandbox','workspace-write','--ephemeral','--output-last-message',output,'-'],{cwd:root,env:{...process.env,CI:'1'},stdio:['pipe','pipe','pipe']});
     p.stdin.end(prompt);
