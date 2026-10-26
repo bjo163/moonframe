@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-061 — Draw semantic filter icon
+
+- Added `assets/source/icons/filter.svg`, an original self-contained 24×24 funnel glyph using `currentColor` with accessible label `Filter`. The source contains a single outlined funnel path and no scripts or external resources.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, human review, or acceptance claimed. 16/20/24px legibility and light/dark/forced-colors review remain pending; host runner owns verification/checkpoint.
+- Aggregate counts are not restated because the root summary and historic ledger snapshots conflict. Rollback: remove the SVG and restore the MF-VF-061 backlog row and this entry.
+
 ## MF-VF-060 — Draw semantic edit icon
 
 - Added `assets/source/icons/edit.svg`, an original self-contained 24×24 pencil glyph using `currentColor` with accessible label `Edit`. SHA-256: `972634dda7ff4454c1c383e8c945c864e23dcca3884da58a7103f5b78b141933`.
