@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Mooncrash margin safety hatching</title>
+  <desc id="desc">Sparse diagonal hatch marks arranged in two corner groups, leaving the center open.</desc>
+  <g stroke="currentColor" stroke-width="3" stroke-linecap="square">
+    <path d="M14 24h24m-24 12h24m-24 12h24M122 112h24m-24 12h24m-24 12h24" />
+    <path d="m16 58 18-18m-18 30 18-18m94 74 18-18m-6 30 18-18" />
+  </g>
+</svg>

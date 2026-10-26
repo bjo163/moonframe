@@ -2157,3 +2157,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size capture, or human review ran; the host runner owns verification and checkpoint.
 - Originality provenance: authored in this repository for this task; no external assets or reference imagery used. Optical review, rights review, and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-148 to planned in the backlog, and remove this ledger/TODO evidence. No commit created.
+# MF-VF-158 — Draw minimal decorative Mooncrash pattern SVG
+
+- Starting HEAD: `eb59bf6` (worktree clean).
+- Added original optional `assets/source/skins/mooncrash/pattern.svg`, with sparse diagonal hatching confined to two corner groups and an open center. It carries no essential content and is not integrated into interactive surfaces.
+- SHA-256: `B136849E1E436B2B0FA57D91E73240FB049AE55B97AF6FB211206669593ED553`.
+- Dependency MF-VF-156 is implemented. Backlog status: `implemented`.
+- Source inspection and `git diff --check` passed. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or human review were run; host runner owns verification/checkpoint.
+- Original generic artwork authored for Moonframe; no external imagery used. Optical review, rights review, and acceptance remain pending. No commit created.
+- Rollback: remove the SVG, restore MF-VF-158 to planned, and remove matching TODO/ledger evidence.

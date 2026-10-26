@@ -17,7 +17,9 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
-**Current M13 backlog count (2026-10-27, MF-VF-150):** 329/488 task rows are checked (153/292 foundation, 148/168 reference, 28/28 preflight); 9 are blocked and 150 remain actionable (159 unchecked), including MF-VF-449 blocked pending owner review of the consumer-brand API. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+**Current M13 backlog count (2026-10-27, MF-VF-158):** 334/488 task rows are checked; 154 remain unchecked, of which 10 are blocked and 144 actionable. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+
+**Live execution update (2026-10-27, MF-VF-158):** Added original optional corner-hatch pattern `assets/source/skins/mooncrash/pattern.svg`, SHA-256 `B136849E1E436B2B0FA57D91E73240FB049AE55B97AF6FB211206669593ED553`. Dependency MF-VF-156 is implemented. Status `implemented`; source inspection and `git diff --check` passed. Runner override honored: no package-manager commands, validators, suites, typecheck, build, rendering, human review, or commit. No rights clearance or acceptance claimed; host runner owns verification/checkpoint. See the M13 execution ledger.
 
 **Live execution update (2026-10-27, MF-VF-449):** Recorded MF-VF-449 as `blocked-external-approval` in the reference backlog. Its API fixture cannot be authored without implying a public prop or token input that the canonical overlay contract explicitly defers pending owner review. The row remains unchecked; no API or approval is claimed. The host runner now counts external-approval blockers separately from actionable pending tasks. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
 
