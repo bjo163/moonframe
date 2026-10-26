@@ -949,3 +949,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, browser rendering, or capture were run. 16/20/24px rendering, light/dark/forced-colors review, human review, and acceptance remain pending.
 - Checkbox counts after update: 67/292 foundation tasks, 47/168 reference tasks, and 28/28 preflight tasks = 142/488 implemented-or-captured; 346 remain unchecked. This does not imply human review, rights clearance, or acceptance.
 - No commit created; host runner handles verification and checkpoint. Rollback: remove the SVG and restore its backlog/TODO/ledger evidence.
+## MF-VF-044 — Create reverse-dark mark
+
+- Added `assets/source/brand/moonframe-mark-reverse.svg`, a self-authored static reverse-light variant of the existing 32×32 draft geometry, with a solid light fill and no glow or external content. SHA-256: `1199a36c77c384c22ed6f8dc865d518e2836a0035c0934c55ce0b9c47fbb1c60`.
+- Dependency MF-VF-040 is implemented. Status: `implemented`; source inspection only. No SVG validator, rendering, package-manager commands, suites, typecheck, build, browser capture, human review, trademark clearance, or distribution approval claimed under runner override. Host runner owns verification/checkpoint.
+- Backlog checkbox counts before this change were 146/488 (68 foundation + 50 reference + 28 preflight); now 147/488 implemented-or-captured and 341 planned. Counts do not imply review, rights, or acceptance.
+- Rollback: remove the SVG and restore the matching backlog, TODO summary, and ledger entry.
