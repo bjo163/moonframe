@@ -1,5 +1,11 @@
 # M13 autonomous execution ledger
 
+## MF-VF-060 — Draw semantic edit icon
+
+- Added `assets/source/icons/edit.svg`, an original self-contained 24×24 pencil glyph using `currentColor` with accessible label `Edit`. SHA-256: `972634dda7ff4454c1c383e8c945c864e23dcca3884da58a7103f5b78b141933`.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, or capture were run. 16/20/24px legibility, light/dark/forced-colors review, human review, and acceptance remain pending. Host runner owns verification/checkpoint.
+- Root TODO aggregate figures conflict with live historical task evidence, so no aggregate is claimed or recalculated. Rollback: remove the SVG and restore the MF-VF-060 backlog status and this entry.
+
 ## MF-VF-072 — Write Moonpunk visual direction and anti-overlap brief
 
 - Added `docs/visual/skins/moonpunk.md`, a direction brief covering block/offset composition, geometry, type and surface roles, navigation/component principles, and distinctions from Moonriot, Moonsmash, and Moonzine. It preserves live DOM/behavior semantics, acid-lime skin identity, decoration-off/reduced-motion constraints, and excludes Moonwitness consumer branding and reference-derived artwork.
