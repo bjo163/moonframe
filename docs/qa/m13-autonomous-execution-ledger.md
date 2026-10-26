@@ -17,6 +17,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-360 — Reconcile safe R03 placeholder performance copy
+
+- Confirmed `apps/moonframe/templates/visual-reference/r03-copy.ts` exists and exports generic sample-event copy (title, description, date, venue, and CTA). Source contains no named performer or consumer mark and is not copied lyric text.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, or browser capture run per runner override; host runner owns verification/checkpoint. Rights review, human review, and acceptance remain pending.
+- No commit created. Rollback: restore MF-VF-360 to planned in the reference backlog, remove its TODO update and this ledger section.
+
 ## MF-VF-288 — SVG import malicious fixture matrix
 
 - Added a scoped negative-fixture matrix to `docs/qa/original-asset-validation-plan.md` for script elements, event handlers, `foreignObject`, external href/src, data URLs, CSS URLs, DTD/entities, and javascript URLs, plus a safe static control and fail-closed expectations.
