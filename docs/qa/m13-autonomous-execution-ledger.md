@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-400 — Specify text-over-photo contrast sampling gate
+
+- Updated `docs/qa/accessibility-visual-qa-bible.md` with a rendered-background procedure for text over photos and other variable backdrops. It requires contextual sampling for each text run, recording crop/compositing and environment, reporting the lowest measured contrast, and repeating across material crop, viewport, overlay, and mode changes. It points to the applicable SC 1.4.3 thresholds and keeps focus/boundary checks separate.
+- Dependency MF-VF-013 is implemented. Status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, browser sampling, screenshot evidence, or human review run. No current media pass or WCAG conformance claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the sampling-gate subsection, restore the backlog row to planned, and remove this TODO/ledger entry.
+
 ## MF-VF-081 — Capture Moonpunk Light desktop and mobile evidence
 
 - Ran `pnpm run test:browser`: 67 passed. The suite generated fixed `/lab` Northstar Studio captures at 1440×960 and 360×800 with Chromium 156.0.8078.4; fonts reported loaded.

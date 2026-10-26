@@ -7,6 +7,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-400):** Added a rendered-background text contrast sampling protocol to `docs/qa/accessibility-visual-qa-bible.md`, including variable image/crop sampling, minimum contrast evidence, responsive and theme-mode repetition, and safe fallback guidance. Status `implemented`; documentation/source inspection only. No validators, package-manager commands, test suites, typecheck, build, browser sampling, or human review run per runner override. No current page/media pass or WCAG conformance claimed; host runner owns checks/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-144):** Added `docs/visual/skins/moonink.md` with a contract-grounded brush-ink direction, calm margins, Moonscrawl distinction, and shared semantic/art-off constraints. Status `implemented`; source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, or human review run per runner override. Rights, visual review, and acceptance remain pending; no aggregate recount asserted because task summaries conflict.
 
 **Live execution update (2026-10-27, MF-VF-385):** Added a Playwright check using a neon gradient behind the R04 sign-in region and grayscale treatment at 360×800. It checks opaque field surfaces, explicit field/button colors, visibility, and focus. The first full run exposed an incorrect password-background expectation, now corrected to the actual white control surface; focused and full browser reruns are pending. No contrast ratio or visual approval is claimed.
