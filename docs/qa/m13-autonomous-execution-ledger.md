@@ -1951,3 +1951,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-216 is implemented. Backlog status: `implemented`; documentation/source inspection only. No captures, visual verdict, rights review, or acceptance claimed.
 - Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser capture, or commit run. Host runner owns verification and checkpoint.
 - Rollback: remove the protocol and restore MF-VF-419 to planned in the reference backlog and TODO.
+# MF-VF-427 — Add grayscale fixture for all four reference screens
+
+- Starting HEAD: `94ec334`.
+- Updated `tests/browser/site.spec.js` with a grayscale Playwright case for `/lab/reference-art-off`. It checks that all four named regions and representative heading/form content remain visible, confirms the grayscale filter is active, and requests a full-page screenshot at `artifacts/site/reference-screens-grayscale.png` when executed.
+- Dependency MF-VF-010 is implemented. Backlog status: `implemented` (fixture code added; execution pending).
+- Verification: source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, or build run. Host runner owns verification and checkpoint. No screenshot artifact exists from this invocation; no reference parity, rights clearance, human review, or acceptance claimed.
+- Rollback: remove the added test in `tests/browser/site.spec.js`, restore MF-VF-427 to planned in the reference backlog, and remove matching TODO/ledger evidence. No commit created.

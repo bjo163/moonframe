@@ -80,6 +80,26 @@ test('all four reference screens preserve content with optional artwork hidden',
   await expect(page.getByRole('link', { name: 'VIEW EVENT DETAILS' })).toBeVisible();
 });
 
+test('all four reference screen compositions remain present in grayscale', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.addStyleTag({ content: 'html { filter: grayscale(1) !important; }' });
+
+  for (const name of ['Mission dashboard', 'Editorial landing', 'Campaign poster', 'Sign in']) {
+    const screen = page.locator('main > section').filter({ has: page.getByRole('heading', { name, exact: true }) });
+    await expect(screen).toBeVisible();
+    await expect(screen.getByRole('heading', { name, exact: true })).toBeVisible();
+  }
+  await expect(page.getByRole('heading', { name: 'A city after the rain' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Signals After Sundown' })).toBeVisible();
+  await expect(page.getByLabel('Email address')).toBeVisible();
+  await expect(page.locator('[data-reference-art]')).toHaveCount(4);
+  await page.screenshot({ path: path.join(siteCaptureDir, 'reference-screens-grayscale.png'), fullPage: true, animations: 'disabled' });
+
+  const grayscaleActive = await page.evaluate(() => getComputedStyle(document.documentElement).filter.includes('grayscale(1)'));
+  expect(grayscaleActive).toBe(true);
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
