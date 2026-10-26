@@ -68,6 +68,27 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
       browserName: browser.browserType().name(),
       browserVersion: browser.version(),
     });
+    await page.setViewportSize({ width: 768, height: 1024 });
+    await expect.poll(() => page.evaluate(() => `${window.innerWidth}x${window.innerHeight}`)).toBe('768x1024');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 768px').toBe(true);
+    const tabletScreenshotPath = path.join(captureDir, `${skin.id}-${mode}-tablet.png`);
+    await page.screenshot({ path: tabletScreenshotPath, fullPage: true, animations: 'disabled' });
+    const tabletCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe)',
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(tabletScreenshotPath, {
+      ...tabletCapture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
     await page.setViewportSize({ width: 360, height: 800 });
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow at 360px').toBe(true);
