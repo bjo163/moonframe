@@ -36,9 +36,9 @@
 
 ## Four user-supplied mockups · deep visual task addendum (2026-10-26)
 
-**Updated visual queue:** **460 total task IDs: 53 implemented, 407 planned**. The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
+**Updated visual queue:** **460 total task IDs: 53 implemented/captured, 406 planned, 1 blocked pending external owner decision** (`MF-VF-039`). The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
 
-**M13 overall progress:** **82/488 (16.8%) implemented/captured**, **406/488 (83.2%) planned**. **406/488 (83.2%) remains.**
+**M13 overall progress:** **81/488 (16.6%) implemented/captured**, **406/488 (83.2%) planned**, **1/488 (0.2%) blocked pending external owner decision**. `MF-VF-039` awaits a named, dated choice among the three draft master marks and a rejected-option rationale; see the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--get-actual-owner-candidate-choice). No owner choice or visual approval is inferred.
 
 - **[Detailed 168 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks, 25 release/evidence tasks and **14 optional consumer-brand palette tasks**.
 - **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
