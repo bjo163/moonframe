@@ -1324,3 +1324,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonzine.md`, grounded in the existing skin grammar/specification. It defines editorial collage composition and distinguishes Moonzine from Moonpanel, Moonhalftone, and Moonpunk while preserving semantic, focus, fallback, and responsive constraints.
 - Dependency MF-VF-015 is implemented. Status: `implemented`; source review only. Per runner override, no package-manager commands, tests, validators, typecheck, build, screenshots, or human review were run. Human visual review and acceptance remain pending. No aggregate recount asserted because live snapshots conflict.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the brief, restore the backlog row to planned, and remove this ledger/TODO evidence.
+# MF-VF-097 — Create original Moonzine torn-paper motif
+
+- Added `assets/source/skins/moonzine/motif.svg`, an original monochrome torn-paper scrap with a folded corner, a live `currentColor` silhouette, Canvas contrast details, and accessible title/description. No external resources or baked-in text.
+- SHA-256: `7C620FF39F56A19BA44503B08A8616D4D0F7D6A6623DAD1B9B8DDE5A5DE44918`. Dependency MF-VF-096 is implemented. Status: `implemented`; source inspection and `git diff --check` only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, rendering, or human review. Rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-097 backlog row to planned, then remove this ledger/TODO evidence.
