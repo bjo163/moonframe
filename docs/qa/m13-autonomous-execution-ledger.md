@@ -620,3 +620,14 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Status: `implemented`; no screenshot capture, source art, human review, or asset-rights approval claimed. Contracts and handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser suite passed 64/64, including the 30 skin × mode grid checks.
 - Counts: 102 implemented-or-captured, 386 planned, 0 explicitly blocked of 488 total. Counts do not imply human review, rights, or acceptance.
 - Rollback: revert the two browser assertions and matching task/TODO/ledger evidence.
+
+## MF-VF-311 — Oversized expressive heading recipe
+
+- Updated the existing R01 dashboard fixture heading in `apps/moonframe/app/(lab)/lab/lab.css` with responsive `clamp()` sizing, tighter display tracking, balanced wrapping, and a bounded measure. Text remains a semantic DOM heading; no font or artwork dependency was added.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; capture, human review, and acceptance are not claimed.
+- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Full browser suite had 63/64 pass: the only failure was an unrelated SFX AudioContext cleanup assertion; its isolated retry passed 1/1. All R01 skin/mode rendering cases passed. No commit created yet. Rollback: revert the scoped CSS and task evidence.
+
+## Current counts after MF-VF-311
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous ledger counts: 102 implemented-or-captured, 386 planned, 0 explicitly blocked. This task adds one implemented record: 103 implemented-or-captured, 385 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
