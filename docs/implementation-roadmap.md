@@ -222,3 +222,23 @@ Existing MF-020, MF-084 (SFX policy), MF-085 (future audio production), MF-092 (
 - **Existing issue dependency chain:** #1 environment → #2 Classic, #3 provider → component API; #5 token format → approved values; #4 distribution ADR → package proof; #6 deterministic fixtures → genuine 30/105 visual review. Provider and package decisions require maintainer approval rather than inferred green CI.
 - **Specialist specs after foundations:** MFI-005 tokens, MFI-006 component semantics, MFI-007 blocks/templates, MFI-008 auth/data, MFI-009 assets/motion, MFI-010 QA evidence, MFI-011 release gates, MFI-012 optional issue form. Each scoped issue references existing specialist backlog to prevent parallel truths.
 - **Documentation-sprint gate:** verified 15 skin IDs, 30 **pending** token slots, 105 **not-reviewed** skin pairs, 270 **not-rendered** visual cells, and 151 mapped component IDs. Status fields cannot advance without actual evidence; `node scripts/validate-contracts.mjs` is spec-only.
+
+---
+
+## M13 — Four-Reference Visual Fidelity & Asset/Brand Integration (2026-10-26; PLANNED)
+
+**Scope:** reconcile four supplied Moonwitness visuals with reusable Moonframe skins, original media slots and page archetypes. This **does not reopen historical M0–M12 implementation checklists**. It defines a new visual-quality gate with **460 planned `MF-VF` microtasks**: [292 foundational](backlog/visual-fidelity-subatomic-tasks.md) plus [168 reference/consumer-brand tasks](backlog/reference-mockups-subatomic-tasks.md). **Completed in this phase: 0/460.** These are task records in docs, not verified created GitHub Issues and not delivered art.
+
+**M13.0 audit/reliability:** repair missing screenshot artifacts in current CI and separate real human approval from automated JSON-string comparison; no screenshot `PASS` on a missing blob.
+
+**M13.1 reference source intake:** [Creative Reference Contract](../contracts/moonframe-creative-reference-contract-v0.1.json) records SHA-256s for four conversation-only PNGs. Permission/rights and binary ingestion must precede pixel-level reference matching.
+
+**M13.2 four pilot archetypes:** R01 illustrated Mission Control (**Moonpunk**, structural Moonpanel + technical Moonglitch); R02 editorial public landing (**Moonpunk**, Moonzine collage + Halftone ink); R03 portrait campaign poster (**Moonsmash**, with Moonpunk energy + Moonzine collateral); R04 split-screen accessible auth (**Moonpunk**, form clean and art optional). [Visual Reference Bible](visual/cinematic-mangapunk-reference-bible.md) defines art/semantics split.
+
+**M13.3 brand overlay:** maintain acid-lime Moonpunk as default and prototype opt-in consumer Moonwitness magenta/cyan/yellow accents under [Consumer Brand Overlay Contract](../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). This is **proposed, not implemented**; status colors, accessibility, SSR and skin geometry stay safe.
+
+**M13.4 imagery micro pipeline:** one safe original master/graphic element per task; mark source rights/checksum/creator, alternative text and derivative exports; leave Moonwitness crowns/wordmarks/stories in consumer-owned identity. A poster uses artwork-first composition but must not turn forms/tables into static bitmaps.
+
+**M13.5 proof/release:** same-content 4-skin pilot, 30 appearance baseline proof, 105 unordered human anti-overlap comparisons, 4 uploaded-reference page comparisons (only after binary import), responsive/zoom/grayscale/decorations-off/keyboard, and named owner signoff. Current M13 status is **PLANNED**, not production-approved.
+
+**Branch discipline:** retain `main`, avoid duplicate branch/issue creation, record exact CI SHA in every completion task.
