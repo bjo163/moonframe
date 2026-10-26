@@ -1035,3 +1035,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: $h.
 - Dependency MF-VF-033 is implemented. Status: implemented; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser rendering, capture, or human review run/claimed. Human optical review and acceptance remain pending.
 - No commit created; host runner performs checks and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+# MF-VF-084 — Write Moonriot visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonriot.md`, based on the canonical skin specification and existing captured structural comparison. The brief specifies Moonriot's open full-width editorial shell, directional cuts and top-band navigation, with explicit distinctions from Moonpunk and Moonsmash. Shared behavior, decoration-off, reduced-motion, accessibility, and rights boundaries are recorded.
+- Dependency MF-VF-015 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, screenshots, human review, or acceptance were performed per runner override. Host runner owns verification/checkpoint. No asset or font rights are claimed.
+- Rollback: remove the brief and restore the MF-VF-084 backlog row and this entry.
