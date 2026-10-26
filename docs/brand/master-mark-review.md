@@ -1,8 +1,12 @@
 # Moonframe master mark — small-size review criteria
 
-**Status:** criteria-specified-no-candidate · **Task:** MF-VF-034 · **Updated:** 2026-10-26
+**Status:** candidate-a-selected-for-refinement-draft-only · **Tasks:** MF-VF-034, MF-VF-039 · **Updated:** 2026-10-26
 
 This document defines how a future original Moonframe master-mark candidate is evaluated. It does not draw, select, license, approve, or clear a mark. The hierarchy is one Moonframe design-system identity; consumer apps keep their own product marks. Trademark review and distribution rights remain separate gates.
+
+## Delegated direction (draft only)
+
+On 2026-10-26 the repository maintainer, acting under the owner's explicit delegation in the Codex conversation, chose Candidate A as the preferred direction for refinement. Candidate B was not chosen because its twin inset bars read as a generic signal/menu motif at small size. Candidate C was not chosen because the crescent alone is less distinctive as a frame-system identity. This records a reversible repository design decision only: the owner did not directly inspect or approve the contact sheet; no human visual review, trademark clearance, source/license conclusion, or production use is claimed. Keep the mark draft-only through optical refinement and any required independent review.
 
 ## Candidate A — geometric frame (draft)
 

@@ -17,3 +17,10 @@ The license choice is prospective for code the project has authority to license.
 - **Decision:** Moonframe is one umbrella design-system identity with 15 visual editions. Consumer apps retain their own product brands; a skin is not a separate legal entity or product certification.
 - **Scope:** This settles the repository's hierarchy and naming model only. It creates no master mark or wordmark and grants no trademark, endorsement, or artwork rights. Name clearance, mark design, source rights, and visual review remain separate gates.
 - **Basis:** The repository maintainer exercised the owner's explicit delegation recorded in this Codex conversation on 2026-10-26.
+
+## MF-VF-039 — preferred master-mark draft direction
+
+- **Decision:** Candidate A (`assets/source/brand/mark-a.svg`) is the preferred direction for refinement among the three original drafts.
+- **Rejected options:** Candidate B's twin inset bars read as a generic signal/menu motif at small size. Candidate C's crescent alone is less distinctive as a frame-system identity.
+- **Basis:** Repository maintainer's delegated, reversible design choice under the owner's explicit authority in the Codex conversation on 2026-10-26, informed by the captured comparison sheet.
+- **Boundary:** This is not direct owner inspection, human visual approval, trademark clearance, a license finding, or production authorization. The candidate remains draft-only pending optical refinement and applicable independent review.
