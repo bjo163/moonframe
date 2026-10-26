@@ -1647,3 +1647,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Added a documentation-only measurement template in `docs/qa/original-asset-validation-plan.md` for a flat baseline, each delivered layer, and aggregate transfer bytes. It requires same-content/device/viewport/network conditions, asset hashes/dimensions/format/DPR, LCP/CLS observations, variance, and raw trace provenance.
 - No performance measurement, threshold, source reference import, human review, or acceptance is claimed. Dependency MF-VF-013 is implemented. Rollback: remove the subsection and restore MF-VF-399 to planned.
+
+## MF-VF-401 — Specify SVG security pipeline for grunge mask assets
+
+- Added a documentation-only SVG import sequence to `docs/qa/original-asset-validation-plan.md`: preserve provenance; parse hardened XML; reject the established hostile fixture classes; sanitize to bounded static SVG; optimize only sanitized content; then re-parse and revalidate before hashing. Optional decoration and accessibility constraints are explicit.
+- Dependency MF-VF-013 is implemented. Source inspection only. No package-manager commands, suites, validators, typecheck, build, rendering, or human review run under runner override. This is proposed guidance, not an importer/security implementation or acceptance claim.
+- Rollback: remove the MF-VF-401 subsection and restore its backlog status to planned. No commit created; host runner owns verification/checkpoint.

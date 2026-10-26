@@ -77,6 +77,12 @@ Any future SVG import boundary must reject the following inputs before optimizat
 
 The future automated test should assert rejection per fixture and successful parsing of the valid control; it should also verify failure is closed (no preview, optimizer, or output file is produced). Use a real XML parser with external-entity expansion disabled; regex checks alone are not a general XML sanitizer. The existing `scripts/validate-brand-svg.mjs` is deliberately a narrow static brand-candidate checker and does not establish safety for arbitrary imported SVGs. No importer, sanitizer, or executable fixture runner is currently claimed by this matrix.
 
+### Optional grunge-mask SVG validation pipeline (MF-VF-401)
+
+Treat imported or generated masks as untrusted until they pass the same vector security gate. Preserve the original source and provenance separately; parse with a hardened XML parser that rejects DTDs, entities, malformed input, and oversized documents; reject the hostile constructs in the matrix above; sanitize to an allowlist of static SVG elements and attributes with bounded dimensions and a valid `viewBox`; optimize only the sanitized document with a pinned optimizer; then re-parse and repeat the security checks on the optimized output before hashing and recording it.
+
+Masks remain optional decoration. They must not contain text or state, intercept input, or become the only way to identify a control. Hide decorative masks from assistive technology and verify content remains legible with decoration disabled, under forced colors, and with reduced stimulation. Optimizer success alone is not a security verdict. This defines a future acceptance pipeline; it does not claim an importer, sanitizer, or rendering test currently exists.
+
 ### Flat vs multilayer media performance accounting (MF-VF-399)
 
 Use the same page content, skin, mode, viewport, browser/device class, and network/cache conditions when comparing a flat raster with a layered composition. Record every delivered layer separately and also record the aggregate transfer cost; do not count source files that are not requested by the page. “Flat” and “multilayer” describe the tested delivery, not an assumed faster option.
