@@ -29,6 +29,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-091 — Style Moonriot table, form, and dialog recipes
+
+- Added Moonriot-scoped ruled/striped tables, left-ruled form controls, and an asymmetrically framed dialog with a separated header in `src/styles.css`; existing markup, keyboard behavior, public APIs, and density are unchanged.
+- Status `implemented`; source inspection only. Forced-colors treatment removes decorative shadows and preserves system borders. No validators, package-manager commands, test suites, typecheck, build, browser capture, or human review run per runner override. Visual review and acceptance remain pending.
+- Dependencies MF-VF-084 and MF-VF-090 are implemented. No commit created; host runner owns verification/checkpoint. Rollback: remove the MF-VF-091 CSS block, restore the task row, and remove this ledger/TODO entry.
+
 ## MF-VF-299 — Record the R03 import blocker accurately
 
 - Checked `/mnt/data/moonframe_m13_reference_originals.zip`; it is absent. No R03 source PNG is present in the checkout. The creative-reference contract identifies R03 as `MWX-REF-003`, SHA-256 `326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff`, 682 × 1024.

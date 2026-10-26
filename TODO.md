@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-091):** Added Moonriot-scoped table, form, and dialog recipes in `src/styles.css` with ruled columns, striped rows, left-ruled controls, and asymmetric dialog framing. Dependencies MF-VF-084 and MF-VF-090 are implemented. Status `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, browser capture, or human review run per runner override. See `docs/qa/m13-autonomous-execution-ledger.md`; host runner owns verification and checkpoint. Human review and acceptance remain pending.
+
 **Live execution update (2026-10-26, MF-VF-373):** Added `apps/moonframe/templates/visual-reference/r04-password-field.tsx` and `.module.css` with a semantic current-password field and keyboard-operable show/hide toggle. Dependency `MF-VF-025` is implemented. Status is `implemented`; source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser capture, or human review run; host runner owns verification. No authentication behavior or acceptance is claimed.
 
 **Live execution update (2026-10-26, MF-VF-371):** Added an original optional R04 rough-ink form-frame SVG at `assets/source/creative-reference/r04/form-frame.svg` (SHA-256 `12673cbec99f9a6ffffc5b5ab384a56ab2ca7c512cf063b8b813f84e74728a4e`). It is not wired into runtime content and cannot obscure fields or focus. Status is implemented; no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, rights review, or human review run/claimed per runner override. Current task checkboxes: 228/488 checked; no approval is implied. Host runner owns checks and checkpoint.
