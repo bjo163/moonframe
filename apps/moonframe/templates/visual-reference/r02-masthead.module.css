@@ -1,0 +1,67 @@
+.masthead {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(18rem, 48vw, 34rem);
+  align-items: end;
+  overflow: hidden;
+  padding: clamp(1.25rem, 5vw, 4rem);
+  border-block: 2px solid var(--mf-text, #171717);
+  color: var(--mf-text, #171717);
+  background: var(--mf-surface, #fff);
+}
+
+.backdrop {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.content {
+  width: min(100%, 58rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  background: color-mix(in srgb, var(--mf-surface, #fff) 92%, transparent);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 58ch;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead *,
+  .masthead *::before,
+  .masthead *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

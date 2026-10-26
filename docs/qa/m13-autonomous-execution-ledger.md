@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-330 — Layered editorial masthead
+
+- Added `apps/moonframe/templates/visual-reference/r02-masthead.tsx` and `.module.css`, with selectable semantic heading text, optional decorative layer, responsive hierarchy and action content slot.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; package-manager commands, validators, suites, typecheck, build, browser capture and R02 reference comparison were not run per runner override. Human review and acceptance are not claimed; host runner owns verification/checkpoint.
+- Rollback: remove the component and stylesheet and restore the matching backlog/TODO/ledger evidence.
+- Counts: prior live ledger count 119/488 implemented-or-captured, 369/488 planned, 0 blocked; now 120/488, 368/488, 0 blocked.
+
 ## MF-VF-329 — Accessible editorial navigation
 
 - Added `apps/moonframe/templates/visual-reference/r02-nav.tsx` and `.module.css` with grouped semantic link lists, native mobile disclosure, visible keyboard focus, touch-sized links, and a responsive desktop grouping layout.
