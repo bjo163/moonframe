@@ -34,10 +34,13 @@
 }
 
 .title {
-  max-width: 16ch;
+  max-width: min(16ch, 100%);
   margin: 0;
-  font-size: clamp(2.5rem, 9vw, 7rem);
-  line-height: 0.94;
+  font-family: var(--mf-display-font, "Arial Black", "Helvetica Neue", sans-serif);
+  font-size: clamp(2.25rem, 9vw, 7rem);
+  font-weight: 900;
+  line-height: 0.98;
+  overflow-wrap: anywhere;
   text-wrap: balance;
 }
 

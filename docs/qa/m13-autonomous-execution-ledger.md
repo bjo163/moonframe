@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-344 — Create readable textured title hierarchy fallback
+
+- Updated `apps/moonframe/templates/visual-reference/r02-masthead.module.css` with a resilient system display-font fallback, constrained responsive title width, readable minimum sizing and weight, balanced wrapping, and safe breaking of long unspaced titles. Heading text remains live DOM text; no third-party font or asset was added.
+- Dependency MF-VF-023 is implemented. Status: `implemented`; static source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, render, browser capture, or source comparison run. Human visual review, rights clearance, and acceptance are not claimed; host runner owns verification/checkpoint.
+- Counts: 144/488 implemented-or-captured, 344/488 planned, 0 explicitly blocked. Counts do not imply capture, review, or acceptance.
+- Rollback: revert the masthead CSS adjustment and restore this task row plus the TODO and ledger count.
+
 ## MF-VF-043 — Create single-color mark
 
 - Added `assets/source/brand/moonframe-mark-mono.svg`, an original 32×32 static variant of the refined draft mark using `currentColor` only. SHA-256: `f2443d3e095cc1ff60c727d14e20e678b8e4a62cd70cd942817a489fb4ad4c6c`.
