@@ -49,7 +49,7 @@ const forbidden = name => /(^|\/)(\.env(?:\.|$)|\.git\/|\.aws|\.ssh|\.codex\/|\.
  /\.(pem|p12|pfx|key)$/i.test(name) ||
  ['LICENSE','AGENTS.md','docs/governance/M13_PLAN_FREEZE_2026-10-26.md','contracts/moonframe-m13-plan-freeze-v0.1.json'].includes(name);
 const original = git('rev-parse','HEAD');
-if (git('branch','--show-current') !== 'main') throw Error('This runner only works on the existing main branch.');
+if (!dryRun && git('branch','--show-current') !== 'main') throw Error('This runner only works on existing main. Detached read-only dry-run is permitted for CI.');
 if (changes().length) throw Error('Non-clean worktree. Preserve/checkpoint your current changes first.');
 if (push) {
   const remote=git('remote','get-url','origin');
