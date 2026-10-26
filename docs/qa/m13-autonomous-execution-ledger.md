@@ -1120,3 +1120,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/icons/upload.svg`, an original static 24×24 `currentColor` upward-arrow-and-tray glyph with accessible label `Upload`.
 - SHA-256: `7bf095e5684cb2791b090e7987fa4c0c8c008a10d06b4e0e399ff273c736f603`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, browser rendering, captures, human review, or acceptance claimed under the runner override. Light/dark/forced-colors display and 16/20/24px legibility remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
+# MF-VF-065 — Draw semantic external-link icon
+
+- Added `assets/source/icons/external-link.svg`, an original static 24×24 `currentColor` glyph showing an arrow leaving an outlined square.
+- SHA-256: `E5F2240F9DB8C842C0BF78901AA709447C317A57CC098DF03F70429714939B9B`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size checks, browser captures, human review, or acceptance claimed under the runner override. Light/dark/forced-colors appearance and 16/20/24px legibility remain pending.
+- Live row state: 167/488 checked (implemented/captured), 321 pending, 0 explicitly blocked. This count does not imply visual review or acceptance. No commit created; host runner owns verification/checkpoint.
+- Rollback: remove the SVG and restore the matching backlog/TODO row and this ledger entry.
