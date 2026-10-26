@@ -1,4 +1,11 @@
 # M13 autonomous execution ledger
+## MF-VF-322 — Build active workflow feed section
+
+- Added `apps/moonframe/templates/visual-reference/r01-workflow-feed.tsx` and `r01-workflow-feed.module.css`: an ordered activity list with status text independent of its decorative dot, optional detail/time, and a mobile stacked layout.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no validators, package-manager commands, suites, typecheck, build, browser capture, reference comparison, or human review run/claimed per runner override. Host runner owns verification and checkpoint. No reference media or rights/acceptance claim.
+- Rollback: remove the component and CSS module and restore the matching backlog/TODO evidence.
+- Counts: prior ledger count 111/488 implemented-or-captured, 377/488 planned, 0 blocked; now 112/488, 376/488, 0 blocked.
+
 ## MF-VF-318 — Build compact feature tiles with icon slot
 
 - Added `apps/moonframe/templates/visual-reference/r01-action-tiles.tsx` and `r01-action-tiles.module.css`: data-driven semantic list, DOM text for metric titles and values, optional aria-hidden icon slot, optional detail, and wrapping grid.
