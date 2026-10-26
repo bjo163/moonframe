@@ -100,16 +100,16 @@ export function generatePairwiseReportMarkdown(audit) {
     '**Scope:** 6 pilot + 105 contract-string pair checks; no human screenshot signoff generated  ',
     '**Automated Verifier:** `pnpm run audit:pairs` (`scripts/audit-skin-pairs.mjs`)',
     '',
-    '**Evidence boundary:** The script compares descriptions and CSS selector presence, counts PNG files, and does not inspect screenshot pixels, visual mockup fidelity or named human reviews. Historical M4/M9 signoffs do not approve the current design.
+    '**Evidence boundary:** This script compares contract descriptions and CSS selector presence, counts PNG files, and does not inspect screenshot pixels, visual fidelity or named human reviews. Previous signoffs are not current visual approval.',
     '',
     '## 1. Executive Summary',
     '',
     `- **Canonical Skins Evaluated:** ${audit.skinCount} (\`moonpunk\`, \`moonriot\`, \`moonzine\`, \`moonhalftone\`, \`moonglitch\`, \`moonsmash\`, \`moonink\`, \`mooncrash\`, \`moonpanel\`, \`moonscrawl\`, \`moonraw\`, \`moonchrome\`, \`classic\`, \`moonquest\`, \`moonledger\`)`,
-    `- **Screenshot inventory:** ${30 - audit.missingScreenshots.length}/30 paths present; image content and provenance not verified
+    `- **Screenshot inventory:** ${30 - audit.missingScreenshots.length}/30 paths present; image content and provenance not verified`,
     `- **Pilot pair metadata:** ${audit.pilotSixCount}/6 checked structurally; human visual review pending`,
     `- **Pair metadata:** ${audit.pairCount}/105 checked structurally; human visual review pending`,
     `- **Minimum Materially Distinct Non-Color Dimensions Across All 105 Pairs:** **${audit.minDistinctDimensions} / 8** (contract minimum: 4/8; neighboring-concept target: 5/8)`,
-    '- **Grayscale and decoration-off visual comparisons:** NOT verified by this structural script; require browser screenshots and reviewer.
+    '- **Grayscale and decoration-off visual comparisons:** NOT verified by this structural script; require browser screenshots and a reviewer.',
     '',
     '## 2. First Six Pair Reviews (`MF-SKINLAB-003` — Four-Skin Reference Matrix)',
     '',
