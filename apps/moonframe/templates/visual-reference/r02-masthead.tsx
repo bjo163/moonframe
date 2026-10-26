@@ -19,7 +19,7 @@ export function R02Masthead({
 }: R02MastheadProps) {
   return (
     <header className={styles.masthead}>
-      {backdrop ? <div className={styles.backdrop} aria-hidden="true">{backdrop}</div> : null}
+      {backdrop ? <div className={styles.backdrop} aria-hidden="true" inert>{backdrop}</div> : null}
       <div className={styles.content}>
         {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
         <h1 className={styles.title}>{title}</h1>

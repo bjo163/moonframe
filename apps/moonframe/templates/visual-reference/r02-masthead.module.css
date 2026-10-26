@@ -13,13 +13,15 @@
 
 .backdrop {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   width: min(100%, 58rem);
   padding: clamp(1rem, 3vw, 2rem);
   background: color-mix(in srgb, var(--mf-surface, #fff) 92%, transparent);

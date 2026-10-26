@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-345 — Prevent decorative layers over article text
+
+- Made R02 masthead layer order explicit in `r02-masthead.module.css`: backdrop is z-index 0, semantic content is positioned at z-index 1, and the parent isolated stacking context contains both. Backdrop JSX is marked `aria-hidden` and `inert`; CSS disables pointer input.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or reference comparison run; host runner owns verification/checkpoint. Human visual review, rights clearance and acceptance remain pending.
+- Counts: 145/488 implemented-or-captured, 343/488 planned, 0 explicitly blocked. Checked rows do not imply review, rights clearance or acceptance.
+- Rollback: restore the original masthead CSS/JSX, task row, TODO count and this ledger entry.
+
 ## MF-VF-344 — Create readable textured title hierarchy fallback
 
 - Updated `apps/moonframe/templates/visual-reference/r02-masthead.module.css` with a resilient system display-font fallback, constrained responsive title width, readable minimum sizing and weight, balanced wrapping, and safe breaking of long unspaced titles. Heading text remains live DOM text; no third-party font or asset was added.
