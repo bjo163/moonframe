@@ -1625,3 +1625,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright regression for `MF-VF-385` at 360×800. It applies a neon gradient to the sign-in region, checks opaque field surfaces and explicit text/button colors, then applies grayscale and checks control visibility and keyboard focus. The first full run found the password's actual white background differed from the test's incorrect transparency expectation; corrected the assertion to match the component.
 - Focused and full browser reruns are pending. No contrast ratio or visual approval is claimed; human review and acceptance remain pending.
 - Rollback: remove the regression, restore MF-VF-385 to planned, and remove matching TODO/backlog/ledger notes.
+
+## MF-VF-122 — Draw Moonglitch diagnostic scanline pattern
+
+- Added `assets/source/skins/moonglitch/pattern.svg`, an original static 160×160 intermittent scanline pattern using `currentColor`, intended only for optional noninteractive margins. SHA-256: `B2B8C726C4D6516A55974F3459150EA509DAE373FE6ECF09E9D07D0CD589735C`.
+- Static source scan found no script, event-handler, external-reference, `foreignObject`, or `url()` patterns; `git diff --check` exited 0. Dependency MF-VF-120 is implemented. Status `implemented`; no rendering, package-manager commands, validators, suites, typecheck, build, or human visual review run under runner override. Optionality/integration and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-122 to planned, and remove matching TODO/ledger evidence. No commit created; host runner owns verification/checkpoint.

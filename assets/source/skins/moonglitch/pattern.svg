@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Moonglitch diagnostic scanline pattern</title>
+  <desc id="desc">A restrained original pattern of intermittent horizontal scanlines for optional noninteractive margins.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="2" opacity=".42">
+    <path d="M8 20h42m12 0h90M8 36h18m12 0h70m14 0h30M8 52h92m14 0h38M8 68h26m12 0h58m14 0h34M8 84h68m12 0h64M8 100h24m14 0h94M8 116h84m12 0h36M8 132h42m12 0h62m12 0h16M8 148h98m12 0h22" />
+  </g>
+</svg>
