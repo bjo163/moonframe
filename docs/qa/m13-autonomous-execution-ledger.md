@@ -2,6 +2,13 @@
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
 
+## MF-VF-040 — Refine selected mark optical padding
+
+- Refined the selected draft source `assets/source/brand/mark-a.svg` within its existing 32×32 viewBox, increasing the uniform inset to 2.5 units and the centered circle radius to 3.5 units. The bounded geometry remains inside the canvas; this is source-level refinement, not rendered-size proof.
+- Source SHA-256: `f1d53209bf0af36b90bfaeb0a4348fc1471541e2d3c045bf3289632f44ce2d2d`.
+- `node scripts/validate-brand-svg.mjs assets/source/brand/mark-a.svg` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 with the existing SFX playback-truth warning. No package-manager commands, suites, typecheck, build, or browser capture run per runner override.
+- Status: `implemented`. Native-size inspection and human review, trademark clearance, and distribution approval remain pending. Rollback: restore the SVG and remove this entry and the MF-VF-040 backlog evidence.
+
 ## MF-VF-301 — Four reference role classes
 
 - Verified the canonical creative-reference contract defines four distinct records: mission-control administrative dashboard (`MWX-REF-001`), editorial landing (`MWX-REF-002`), campaign poster (`MWX-REF-003`), and authentication scene (`MWX-REF-004`). Each has a primary skin and secondary influences, while the contract authority preserves the canonical 15-skin IDs.
