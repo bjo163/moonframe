@@ -593,3 +593,14 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - Previous live count: 98 implemented-or-captured, 390 planned, 0 explicitly blocked. This task adds one implemented record: 99 implemented-or-captured, 389 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
+
+## MF-VF-308 — Draw brush-ink pink selected nav plate
+
+- Added `assets/source/creative-reference/r01/active-nav-stroke.svg`, an original decorative pink plate with irregular brush-like geometry and a transparent canvas. It does not communicate selected state by itself; the existing DOM `aria-current` and CSS focus treatment remain authoritative.
+- Dependency MF-VF-022 is implemented. SVG source is authored in-repository; no third-party imagery used. No package-manager commands, suites, typecheck, build, contract validation, or handoff validation run per runner override. No capture or human visual review claimed.
+- Status: `implemented`; no commit created. Host runner handles verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-308 task/TODO/ledger evidence.
+
+## Current counts after MF-VF-308
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- Previous live count: 99 implemented-or-captured, 389 planned, 0 explicitly blocked. This task adds one implemented record: 100 implemented-or-captured, 388 planned, 0 explicitly blocked. Counts do not imply human review, rights, or acceptance.
