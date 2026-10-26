@@ -1,5 +1,12 @@
 # MF-VF-073 — Draw original Moonpunk motif SVG
 
+## MF-VF-067 — Draw semantic sun icon
+
+- Added `assets/source/icons/sun.svg`, an original static 24×24 `currentColor` sun glyph with accessible label `Sun`.
+- SHA-256: `0d63383d2e0d81d0f33ab795457ba8627b8bdd9a6b7e716349f066af47e20a00`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendered-size checks, or browser captures were run. Light/dark/forced-colors rendering, small-size legibility, human review, and acceptance remain pending.
+- Live task rows: 82/292 foundation, 57/168 reference, and 28/28 preflight = 167/488 checked; 321 unchecked. Checked does not imply review or acceptance. Host runner owns verification/checkpoint; no commit created.
+- Rollback: remove the SVG and restore this task row, TODO update, and ledger entry.
+
 - Added original abstract Moonpunk offset-slab motif `assets/source/creative-reference/r01/moonpunk-offset-slab.svg` (SHA-256 `75D6BE881EDC388016A78D82FC900B73FAC87B194EE70145873DB1B7F1A8C5C3`). It uses embedded geometry only and contains no consumer branding. Dependency MF-VF-072 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size inspection, browser capture, human review, or acceptance claimed under runner override. Backlog and summary counts updated to 168/488 checked (82/292 foundation visual + 58/168 reference + 28/28 preflight); rights and acceptance remain pending. No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the MF-VF-073 row and root counts.
 
 # M13 autonomous execution ledger
