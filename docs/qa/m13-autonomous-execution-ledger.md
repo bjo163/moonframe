@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-113 — Style Moonhalftone semantic icon frames
+
+- Added skin-scoped screentone-backed frames and consistent dimensions for navigation, button, search, callout, empty-state, and stat icons in `src/styles.css`.
+- Shared SVG artwork and accessibility semantics remain unchanged. Dependencies MF-VF-108, MF-VF-050, and MF-VF-057 are implemented. `git diff --check` passed; browser rendering and human optical review remain pending.
+- Status: `implemented`; no commit created. Host runner owns full verification/checkpoint. Rollback: remove the scoped rule block and restore the backlog row, TODO update, and this entry to planned.
+
 ## MF-VF-112 — Draw Moonhalftone edition badge
 
 - Added `assets/source/skins/moonhalftone/edition.svg`, a compact monochrome badge labeling Moonhalftone as a Moonframe visual edition. SHA-256: `1158DAA144A8D5A151B75AF46A399772E3574DB82A03BD54F288128C17D12518`.

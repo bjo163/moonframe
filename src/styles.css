@@ -522,6 +522,28 @@
 [data-skin="moonhalftone"] .mf-grid > :first-child { border-block-start-width: 8px; }
 [data-skin="moonhalftone"] .mf-hero h1 { text-transform: uppercase; letter-spacing: .01em; }
 [data-skin="moonhalftone"] .mf-card-title { display: inline-block; background: var(--mf-text); color: var(--mf-surface); padding: .25rem .5rem; }
+[data-skin="moonhalftone"] .mf-nav-item > svg,
+[data-skin="moonhalftone"] .mf-button > svg,
+[data-skin="moonhalftone"] .mf-search-icon,
+[data-skin="moonhalftone"] .mf-callout-icon,
+[data-skin="moonhalftone"] .mf-empty-icon,
+[data-skin="moonhalftone"] .mf-stat-header > svg {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 1.85rem;
+  block-size: 1.85rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--mf-text);
+  background-color: var(--mf-surface);
+  background-image: radial-gradient(color-mix(in srgb, var(--mf-border) 40%, transparent) .55px, transparent .7px);
+  background-size: 5px 5px;
+}
+[data-skin="moonhalftone"] .mf-nav-item > svg,
+[data-skin="moonhalftone"] .mf-button > svg,
+[data-skin="moonhalftone"] .mf-stat-header > svg { padding: .25rem; }
+[data-skin="moonhalftone"] .mf-search-icon,
+[data-skin="moonhalftone"] .mf-callout-icon { line-height: 1; }
+[data-skin="moonhalftone"] .mf-empty-icon { inline-size: 2.75rem; block-size: 2.75rem; padding: .35rem; }
 
 /* 05 / Moonglitch — instrument keys, telemetry rails and aligned logs. */
 [data-skin="moonglitch"] { --mf-bg: #e6f1ec; --mf-surface: #f7fffb; --mf-surface-raised: #d7e9df; --mf-text: #12372a; --mf-muted: #3c6352; --mf-border: #6f9b86; --mf-accent: #006c4c; --mf-accent-text: #ffffff; --mf-radius: 2px; --mf-shadow: none; --mf-font: "Cascadia Code", "SFMono-Regular", Consolas, monospace; --mf-display: var(--mf-font); }
