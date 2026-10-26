@@ -17,6 +17,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-298 — R02 reference import blocker
+
+- R02 source bytes are absent from the checkout, and `Test-Path /mnt/data/moonframe_m13_reference_originals.zip` returned `False`. The canonical record is `MWX-REF-002`, SHA-256 `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167`, 1024 × 576; bytes cannot be verified locally.
+- Changed backlog status from `planned` to `blocked-external-approval`. Resume after owner supplies the original bytes matching the digest and explicitly approves review-only use. No redistribution permission is implied.
+- Dependency MF-VF-014 is implemented. No validators, package-manager commands, suites, typecheck, build, screenshot, or human review run per runner override. No commit created; host runner owns verification and checkpoint.
+- Task checkbox count remains 198/488 (289 unchecked, 1 explicitly blocked). Rollback: restore MF-VF-298 to planned and remove this ledger/TODO update.
+
 ## MF-VF-389 — Specify ArtLayer manifest schema, no runtime assumptions
 
 - Added `contracts/moonframe-creative-asset-slot-contract-v0.1.json` as a proposed metadata contract. It defines role, logical source, canonical rights evidence reference, ordering hint, intrinsic dimensions/viewBox, informative/decorative alt treatment, and safe fallback fields.
