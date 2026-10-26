@@ -285,8 +285,9 @@
   - **Rollback:** Remove the transcript component and restore this task row and ledger entry.
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r03-accessible-copy.tsx (proposed)`. **AC:** Text remains available to assistive tech even when rendered as export.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-366 — Capture poster at native and mobile viewport** · **P1** · `planned` · **dep:** `MF-VF-024` · **issue:** not-created
+- [x] **MF-VF-366 — Capture poster at native and mobile viewport** · **P1** · `implemented` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Preserve portrait geometry without overflowing the page.
+  - **Evidence (2026-10-27):** Added a browser fixture asserting the R03 artboard stays within portrait proportions and the viewport at 1440×960 and 360×800, and requesting native/mobile screenshots at `artifacts/site/r03-poster-native.png` and `artifacts/site/r03-poster-mobile.png`. Dependency MF-VF-024 is implemented. Source inspection only; runner override honored, so no browser suite, package-manager commands, validators, typecheck, build, or screenshot capture run. Captures, rights review, reference parity, human review, and acceptance remain pending; host runner owns verification/checkpoint. Rollback: remove the fixture and restore this row to planned.
   - **Proof & rollback:** Rights-safe art direction and human review; no inferred lyric or performer rights. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-367 — Review artwork originality and lyric-IP safety** · **P1** · `blocked-external-approval` · **dep:** `MF-VF-024` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r03-rights.md (proposed)`. **AC:** Source/license proof for any shipped element; no unapproved texts.

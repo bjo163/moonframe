@@ -2027,3 +2027,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reference-rights-checklist.md` documenting checks for generated outputs and evidence boundaries around hashes, rights, and review.
 - Status: `implemented`. This docs-only task ran no generators, screenshots, validators, package-manager commands, tests, typecheck, or build under the runner override. Host runner owns verification/checkpoint. No source-media rights, visual review, or acceptance claim.
 - Rollback: remove the checklist, restore MF-VF-444 to planned in the reference backlog, and remove matching TODO/ledger evidence. No commit created.
+## MF-VF-366 — Capture R03 poster at native and mobile viewports
+
+- Added a Playwright case in `tests/browser/site.spec.js` asserting portrait artboard proportions and no viewport/page overflow at 1440×960 and 360×800, with screenshot paths `artifacts/site/r03-poster-native.png` and `artifacts/site/r03-poster-mobile.png`.
+- Dependency MF-VF-024 is implemented. Backlog status: `implemented` (fixture added; execution and captures pending). Source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, build, screenshot capture, or commit run. Host runner owns applicable verification and checkpoint. No reference parity, rights clearance, human review, or acceptance claimed.
+- Rollback: remove the fixture, restore MF-VF-366 to planned, and remove its TODO and ledger evidence.

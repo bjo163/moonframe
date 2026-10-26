@@ -182,6 +182,37 @@ test('R03 portrait poster keeps required campaign copy inside its artboard on ph
   await page.screenshot({ path: path.join(siteCaptureDir, 'r03-poster-phone.png'), fullPage: true, animations: 'disabled' });
 });
 
+test('R03 poster preserves native portrait geometry on desktop and phone', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  const poster = page.getByRole('region', { name: 'Campaign poster' });
+  const artboard = poster.locator('section[aria-label="Poster preview"] > div').first();
+
+  for (const viewport of [{ width: 1440, height: 960 }, { width: 360, height: 800 }]) {
+    await page.setViewportSize(viewport);
+    await expect(poster).toBeVisible();
+    const geometry = await artboard.evaluate(element => {
+      const rect = element.getBoundingClientRect();
+      return {
+        width: rect.width,
+        height: rect.height,
+        ratio: rect.width / rect.height,
+        right: rect.right,
+        viewport: document.documentElement.clientWidth,
+        pageWidth: document.documentElement.scrollWidth,
+      };
+    });
+    expect(geometry.ratio).toBeGreaterThan(0.6);
+    expect(geometry.ratio).toBeLessThan(0.75);
+    expect(geometry.right).toBeLessThanOrEqual(geometry.viewport);
+    expect(geometry.pageWidth).toBeLessThanOrEqual(geometry.viewport);
+  }
+
+  await page.setViewportSize({ width: 1440, height: 960 });
+  await page.screenshot({ path: path.join(siteCaptureDir, 'r03-poster-native.png'), fullPage: true, animations: 'disabled' });
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.screenshot({ path: path.join(siteCaptureDir, 'r03-poster-mobile.png'), fullPage: true, animations: 'disabled' });
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
