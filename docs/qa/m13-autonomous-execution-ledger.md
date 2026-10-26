@@ -48,6 +48,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-180 — Write Moonscrawl visual direction
+
+- Added `docs/visual/skins/moonscrawl.md` with the contract-grounded sketchbook canvas, exploratory clusters, notebook navigation, controlled annotations, neighboring-skin distinctions, and accessible responsive/art-off/reduced-motion constraints.
+- Dependency MF-VF-015 is implemented. Backlog status is `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, captures, or human review run. Human review, rights review, and acceptance remain pending.
+- Rollback: remove the brief and restore MF-VF-180 to planned in the backlog, TODO, and ledger. No commit created; host runner owns verification and checkpoint.
+
 ## MF-VF-138 — Style Moonsmash navigation, layout, and typography
 
 - Added a scoped poster-composition layer in `src/styles.css`: sharp hero framing, offset nav/card edges, balanced display type, visible keyboard focus, and narrow-screen adjustments. Existing semantic text and controls remain live and untransformed.

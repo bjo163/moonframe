@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-180):** Added the Moonscrawl sketchbook visual direction and anti-overlap brief at `docs/visual/skins/moonscrawl.md`, grounded in the canonical skin grammar. Status `implemented`; source inspection only. Runner override honored: host runner owns validators, package-manager checks, tests, typecheck, build, captures, and checkpoint. Human visual review, rights review, and acceptance remain pending. Checked backlog row count increases by one; no aggregate totals inferred from inconsistent prior summaries.
+
 **Live execution update (2026-10-27, MF-VF-138):** Added Moonsmash-scoped poster geometry, navigation/card framing, responsive display typography, and visible focus styling in `src/styles.css`. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run; host runner owns verification/checkpoint. No rights, visual approval, or acceptance claimed. See the M13 execution ledger.
 
 **Live execution update (2026-10-27, MF-VF-240):** Added `docs/visual/skins/moonledger.md`, a canonical-contract-derived enterprise workbench direction covering persistent filters, split panes, dense readable data, and distinctions from adjacent skins. Status `implemented`; dependency MF-VF-015 is implemented. Documentation/source inspection only; runner override honored, so host runner owns validators, tests, typecheck, build, and rendering. No rights review, human visual approval, or acceptance claimed. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
