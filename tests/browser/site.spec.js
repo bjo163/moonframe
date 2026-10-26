@@ -151,6 +151,37 @@ test('R02 editorial landing reflows at 400% text zoom with navigation and story 
   await page.screenshot({ path: path.join(siteCaptureDir, 'r02-landing-400-percent.png'), fullPage: true, animations: 'disabled' });
 });
 
+test('R03 portrait poster keeps required campaign copy inside its artboard on phone', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  await page.setViewportSize({ width: 360, height: 800 });
+
+  const campaign = page.locator('main > section').filter({ has: page.getByRole('heading', { name: 'Campaign poster', exact: true }) });
+  const artboard = campaign.locator('section[aria-label="Poster preview"] > div').first();
+  const copy = [
+    campaign.getByRole('heading', { name: 'Signals After Sundown' }),
+    campaign.getByText('An evening of improvised sound, light, and shared discovery.', { exact: true }),
+    campaign.getByText(/FRIDAY, 8:00 PM.*THE OPEN ROOM · CITY CENTER/),
+    campaign.getByRole('link', { name: 'VIEW EVENT DETAILS' }),
+  ];
+
+  for (const locator of copy) await expect(locator).toBeVisible();
+  const artboardBounds = await artboard.evaluate(element => {
+    const rect = element.getBoundingClientRect();
+    return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right };
+  });
+  for (const locator of copy) {
+    const bounds = await locator.evaluate(element => {
+      const rect = element.getBoundingClientRect();
+      return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right };
+    });
+    expect(bounds.top).toBeGreaterThanOrEqual(artboardBounds.top);
+    expect(bounds.bottom).toBeLessThanOrEqual(artboardBounds.bottom);
+    expect(bounds.left).toBeGreaterThanOrEqual(artboardBounds.left);
+    expect(bounds.right).toBeLessThanOrEqual(artboardBounds.right);
+  }
+  await page.screenshot({ path: path.join(siteCaptureDir, 'r03-poster-phone.png'), fullPage: true, animations: 'disabled' });
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));

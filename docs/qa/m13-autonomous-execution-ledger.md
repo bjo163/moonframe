@@ -1990,3 +1990,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright case in `tests/browser/site.spec.js` applying 400% root text sizing at a 1280px viewport. It checks the editorial title, navigation and public CTA visibility/focus, section viewport bounds and horizontal overflow, and requests `artifacts/site/r02-landing-400-percent.png` when run.
 - Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, or build run. Actual reflow and screenshot remain unverified; host runner owns verification/checkpoint. No human review or acceptance claimed.
 - Rollback: remove the test and restore MF-VF-430 to planned in the reference backlog and TODO; remove this ledger entry. No commit created.
+# MF-VF-431 — Add portrait aspect crop safety test for R03 campaign
+
+- Added a 360×800 Playwright case to `tests/browser/site.spec.js` for the R03 fixture. It asserts the live title, description, date/venue details, and CTA remain visible and geometrically within the poster figure; the test requests `artifacts/site/r03-poster-phone.png` on execution.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Per runner override, no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshot capture were run. Host runner owns verification/checkpoint. No parity, human review, rights clearance, or acceptance claimed.
+- Rollback: remove the R03 test, restore its backlog row to planned, and remove the matching TODO and ledger evidence. No commit created.
