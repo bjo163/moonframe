@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-404 — Define design-reference proof threshold without fake 100% score
+
+- Added a human comparison threshold to `docs/qa/visual-fidelity-evidence-ledger.md`: captures are not fidelity proof; review evidence records source/fixture/content/viewport/mode provenance, screenshot digest, reviewer/date, qualitative matches and deltas, unresolved questions, and a qualitative disposition. Missing reference bytes block pixel comparison. No numeric fidelity score or implied owner approval is permitted.
+- Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. `git diff --check` exited 0. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshot capture, or human review run. No visual pass, rights clearance, or acceptance claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the MF-VF-404 section in the visual evidence ledger, restore the backlog row to planned, and remove its TODO/ledger entry.
+
 ## MF-VF-134 — Draw minimal Moonsmash decorative pattern
 
 - Added `assets/source/skins/moonsmash/pattern.svg`, an original static set of short monochrome speed strokes intended for optional noninteractive margins. It is hidden from assistive technology and contains no scripts, event attributes, external resources, or embedded copy.

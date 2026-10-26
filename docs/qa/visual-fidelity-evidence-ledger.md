@@ -25,6 +25,14 @@ Inventory scope: standalone files under `assets/source/skins/<skin-id>/` at sour
 | moonzine | `edition.svg`, `hero.svg`, `motif.svg`, `pattern.svg` | `edition.svg` `BEE1A2D3485FEE115669C7776909AC3CD26F21557ED8886281837396E5DCC663`; `hero.svg` `24324426AA4751A94501781FEF08628F7CB162B9071F1E71CBCCDE95D75FAD60`; `motif.svg` `7C620FF39F56A19BA44503B08A8616D4D0F7D6A6623DAD1B9B8DDE5A5DE44918`; `pattern.svg` `5CCBEC714D66920B6D7859F71B967840AAE85EEFF2E09E43461166B42B36D51B` | files present; rights/review pending |
 This is a point-in-time source inventory; rerun/reconcile it when files change. It complements the captured-appearance tables below and does not replace normative asset provenance or rights evidence.
 
+## Human design-reference comparison threshold (MF-VF-404)
+
+A captured screenshot establishes only that a render was produced from the recorded source and fixture. It does not establish design fidelity, visual quality, or acceptance. A reference comparison is reviewable only when the reviewer can inspect the reference and candidate at their intended dimensions and has the candidate's source commit, fixture/content identity, viewport, mode, browser/render environment, and screenshot digest. If the original reference bytes are unavailable, record that comparison as blocked; metadata or a textual description cannot substitute for the pixels.
+
+For each review, record the reference identifier and digest (or the exact missing-source blocker), candidate screenshot path and SHA-256, source commit, fixture and content identity, viewport/mode, reviewer identity and date, and a concise list of observed matches, material differences, and unresolved questions. Compare like-for-like content and viewport where the design allows it; record unavoidable differences such as unavailable fonts or assets. The reviewer records a qualitative disposition such as `pending`, `reviewed-with-deltas`, or `ready-for-owner-decision`; no percentage, aggregate fidelity score, automated similarity threshold, or implied owner approval is permitted. `ready-for-owner-decision` remains distinct from accepted.
+
+This threshold defines evidence fields and review states only. It does not claim that any current screenshot has passed human review, that source artwork may be redistributed, or that a task has been accepted. A reviewer may conclude that evidence is insufficient and request a new capture without changing the underlying source artifact.
+
 ## Four user-provided creative references
 
 Canonical metadata lives in `contracts/moonframe-creative-reference-contract-v0.1.json`. It records SHA-256 values and dimensions as received in the original chat upload inventory:
