@@ -1733,3 +1733,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/reviews/moonhalftone-reference-parity.md` with a repeatable same-data comparison against Moonzine and Moonpanel at desktop/mobile sizes, grayscale, and decoration-on/off. The record includes composition, gray identity, decoration-off structure, semantic surfaces, and responsive review criteria.
 - Dependency MF-VF-108 is implemented. Backlog status `implemented`; documentation/source inspection only. No screenshots, human observations, or verdict were recorded. Runner override honored: no package-manager commands, tests, validators, typecheck, build, or browser capture run. No acceptance claimed.
 - Rollback: remove the protocol, restore MF-VF-410 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.
+## MF-VF-137 — Style stable semantic icon frames for Moonsmash
+
+- Added Moonsmash-scoped circular double-outline frames and offset hard shadows for shared semantic SVG icon slots in `src/styles.css`. Scope targets navigation, buttons, search, callout, empty-state, and stat icons; shared glyphs and semantic/ARIA ownership remain unchanged.
+- Dependencies MF-VF-132, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Rights/visual review and acceptance remain pending.
+- Rollback: remove the Moonsmash icon selector block, restore MF-VF-137 to planned, and remove matching TODO/backlog/ledger evidence. No commit created; host runner owns verification and checkpoint.

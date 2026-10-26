@@ -633,6 +633,26 @@
 [data-skin="moonsmash"] .mf-hero h1 { font-size: clamp(3rem, 6.5vw, 6rem); text-transform: uppercase; max-inline-size: 15ch; line-height: .98; }
 [data-skin="moonsmash"] .mf-button[data-variant="primary"] { font-size: 1.05rem; padding-inline: 1.7rem; border-radius: 999px; }
 [data-skin="moonsmash"] .mf-stat strong { font-size: 3rem; }
+/* Moonsmash frames shared glyphs as bold radial impact marks. */
+[data-skin="moonsmash"] .mf-nav-item > svg,
+[data-skin="moonsmash"] .mf-button > svg,
+[data-skin="moonsmash"] .mf-search-icon > svg,
+[data-skin="moonsmash"] .mf-callout-icon > svg,
+[data-skin="moonsmash"] .mf-empty-icon > svg,
+[data-skin="moonsmash"] .mf-stat-header > svg {
+  inline-size: 1.2em;
+  block-size: 1.2em;
+  flex: 0 0 auto;
+  padding: .12em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  outline: 1px solid var(--mf-border);
+  outline-offset: 2px;
+}
+[data-skin="moonsmash"] .mf-nav-item > svg,
+[data-skin="moonsmash"] .mf-button > svg { filter: drop-shadow(1px 2px 0 var(--mf-border)); }
+[data-skin="moonsmash"] .mf-callout-icon > svg { color: var(--mf-accent); }
+[data-skin="moonsmash"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 
 /* 07 / Moonink — organic margins and a restrained reading column. */
 [data-skin="moonink"] { --mf-bg: #eae7e1; --mf-surface: #fffdf7; --mf-surface-raised: #e1e5dd; --mf-text: #27332e; --mf-muted: #58665c; --mf-border: #7c8d80; --mf-accent: #355c4b; --mf-accent-text: #ffffff; --mf-radius: 2px; --mf-shadow: none; --mf-display: Georgia, "Palatino Linotype", serif; }

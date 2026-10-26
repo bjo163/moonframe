@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-137):** Added Moonsmash-scoped circular double-outline frames and offset shadows for shared semantic SVG icon slots in `src/styles.css`. Shared glyph and ARIA meaning remain unchanged. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human review run; host runner owns verification/checkpoint. Review and acceptance remain pending. No aggregate recount asserted because live task summaries conflict.
+
 **Live execution update (2026-10-27, MF-VF-410):** Added a Moonhalftone screenshot review protocol for same-data comparisons against Moonzine and Moonpanel at desktop/mobile in grayscale and art-on/off states. Status `implemented`; captures and human observations remain pending. Source/document inspection only; runner override honored, so no package-manager commands, suites, typecheck, build, validators, or browser capture were run. No visual verdict or acceptance claimed; host runner owns checks and checkpoint.
 
 **Live execution update (2026-10-27, MF-VF-136):** Added original static `assets/source/skins/moonsmash/edition.svg` (SHA-256 `1BEC283C2D0C11757984D2671A32076DF18F6D34863E622BC0897A7661C03885`) identifying Moonsmash as a Moonframe visual edition using live text and angular impact geometry. Dependencies MF-VF-132 and MF-VF-039 are implemented. Status `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, rendering, or human review run per runner override. Rights review and acceptance remain pending; host runner owns verification/checkpoint.
