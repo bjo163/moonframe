@@ -14,7 +14,7 @@
 | Batch | New IDs | Count | Status |
 |---|---|---:|---|
 | H — reference material intake, trust and reusable visual vocabulary | `MF-VF-293…MF-VF-304` | 12 | 8 captured, 4 planned |
-| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 13 implemented, 11 planned |
+| I — R01 mission control dashboard: tiny structure and asset slots | `MF-VF-305…MF-VF-328` | 24 | 14 implemented, 10 planned |
 | J — R02 editorial public landing: tiny art-direction units | `MF-VF-329…MF-VF-350` | 22 | 0 done |
 | K — R03 creative poster: editorial template, not library controls | `MF-VF-351…MF-VF-368` | 18 | 0 done |
 | L — R04 cinematic authentication: semantically clean form | `MF-VF-369…MF-VF-388` | 20 | 0 done |
@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 13 implemented, 147 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 14 implemented, 146 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -104,9 +104,9 @@
 - [x] **MF-VF-317 — Build triple-zone dashboard composition grid** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-content-grid.tsx` and `r01-content-grid.module.css`. Added consumer supplied creation, signal, operations, and bottom activity-stream slots with semantic section labels, three-column desktop composition, two-column tablet adaptation, and one-column phone fallback.
   - **Evidence (2026-10-26):** Dependency `MF-VF-022` is implemented. The component provides only an optional scene seam; no image is bundled or sourced. No browser capture, 360/768/1440 check, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No image rights, visual review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row.
-- [ ] **MF-VF-318 — Build compact feature tiles with icon slot** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
+- [x] **MF-VF-318 — Build compact feature tiles with icon slot** · **P1** · `implemented` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-action-tiles.tsx (proposed)`. **AC:** Card title and value real DOM; tile glyph semantic, no baked asset labels.
-  - **Evidence (2026-10-26):** Dependency `MF-VF-022` is implemented. The component provides only an optional scene seam; no image is bundled or sourced. No browser capture, 360/768/1440 check, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No image rights, visual review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row.
+  - **Evidence (2026-10-26):** Added `apps/moonframe/templates/visual-reference/r01-action-tiles.tsx` and `.module.css`: data-driven semantic list of compact metrics with visible DOM headings and values, optional decorative React icon slot, and optional detail text. The CSS grid wraps across available widths and numeric values use tabular figures. Dependency `MF-VF-022` is implemented. No browser capture, 360/768/1440 check, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No image rights, visual review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row.
 - [ ] **MF-VF-319 — Build radial network hub as data visualization seam** · **P1** · `planned` · **dep:** `MF-VF-022` · **issue:** not-created
   - **File scope/output:** `apps/moonframe/templates/visual-reference/r01-signal-hub.tsx (proposed)`. **AC:** Generic chart with accessible alternative table and consumer-provided relationships.
   - **Evidence (2026-10-26):** Dependency `MF-VF-022` is implemented. The component provides only an optional scene seam; no image is bundled or sourced. No browser capture, 360/768/1440 check, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner will verify. No image rights, visual review, or acceptance claimed. Rollback: remove the component/CSS module and restore this task row.

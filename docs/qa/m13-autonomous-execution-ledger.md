@@ -1,4 +1,10 @@
 # M13 autonomous execution ledger
+## MF-VF-318 — Build compact feature tiles with icon slot
+
+- Added `apps/moonframe/templates/visual-reference/r01-action-tiles.tsx` and `r01-action-tiles.module.css`: data-driven semantic list, DOM text for metric titles and values, optional aria-hidden icon slot, optional detail, and wrapping grid.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`. Runner override honored: no package-manager commands, test suites, typecheck, build, validators, or browser capture run. Host runner will verify and checkpoint. No image rights, visual comparison, human review, or acceptance claimed. No commit created.
+- Current counts: 110 implemented-or-captured, 378 planned, 0 blocked of 488. Rollback: remove the component/CSS module and revert matching backlog, TODO and ledger entries.
+
 ## MF-VF-317 — Build triple-zone dashboard composition grid
 
 - Added `apps/moonframe/templates/visual-reference/r01-content-grid.tsx` and `r01-content-grid.module.css`: consumer supplied creation, signal, operations and stream regions with responsive three-, two- and one-column layouts.
@@ -671,4 +677,4 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `67cdaf4c710fedf9a09d15817f33fbfe6fafd1c3d57e0574844d4ea510f83e8f`.
 - Dependency MF-VF-022 is implemented. Status: `implemented`; no rights clearance, human optical review, or acceptance claimed. Runner override honored: no package-manager commands, tests, typecheck, build, validator, or browser capture run. Host runner owns verification/checkpoint.
 - Rollback: remove the SVG and revert this ledger entry and the matching backlog/TODO evidence.
-- Counts: 109/488 implemented-or-captured, 379/488 planned, 0 explicitly blocked. Counts do not imply capture, review, or acceptance.
+- Counts: 110/488 implemented-or-captured, 378/488 planned, 0 explicitly blocked. Counts do not imply capture, review, or acceptance.

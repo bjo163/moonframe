@@ -1,0 +1,66 @@
+.section,
+.grid,
+.tile {
+  min-inline-size: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  padding: 1rem;
+  border: 1px solid var(--mf-border, #52525b);
+  border-radius: 0.5rem;
+  background: var(--mf-surface, #18181b);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon > svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.title,
+.value,
+.detail {
+  margin: 0;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.value {
+  margin-block-start: 0.75rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.detail {
+  margin-block-start: 0.25rem;
+  color: var(--mf-muted, #a1a1aa);
+  font-size: 0.8125rem;
+}
