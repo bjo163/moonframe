@@ -1676,3 +1676,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added original static `assets/source/skins/moonglitch/edition.svg`, a compact diagnostic label identifying Moonglitch as a Moonframe visual edition rather than an independent company mark. SHA-256: `F97680857583243966D08AB129E7D99C6824A8B6ACDE261048B862CBAD292BE1`.
 - Dependencies MF-VF-120 and MF-VF-039 are implemented. Backlog status `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, or human optical review run under runner override. Rights, trademark clearance, and acceptance remain pending. Host runner owns verification/checkpoint.
 - Rollback: remove the SVG, restore MF-VF-124 to planned, and remove this ledger/TODO evidence. No commit created.
+# MF-VF-228 — Write Moonquest visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonquest.md` defining a sequential field-journal composition, chapter and contents hierarchy, and structural differences from Moonzine and Moonledger. The brief preserves shared component behavior and requires optional decoration, art-off/reduced-motion fallback, grayscale, mode, and responsive review.
+- Dependency MF-VF-015 is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshots, or human review run. No artwork, rights clearance, visual approval, or acceptance is claimed.
+- No commit created. Rollback: remove the brief and restore MF-VF-228 to planned in the backlog and remove this ledger entry and TODO update.
