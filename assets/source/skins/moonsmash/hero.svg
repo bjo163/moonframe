@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Moonsmash kinetic impact field</title>
+  <desc id="desc">An original monochrome impact scene with a broken orbital ring, angular fragments, and a central open burst. No words or interface content are embedded.</desc>
+  <g fill="none" stroke="currentColor" stroke-linejoin="bevel">
+    <path stroke-width="5" d="M106 360 218 272 170 180 286 220 356 72 390 218 532 146 468 270 620 302 482 344 540 428 406 380 324 448 300 366 184 422z" opacity=".42"/>
+    <path stroke-width="3" d="m74 106 102 64m368-92-76 98M44 284l122-18m470 116-122-40M242 64l38 98m198 234 46 38" opacity=".7"/>
+    <path stroke-width="8" d="M266 292a112 112 0 0 1 160-118m31 34a112 112 0 0 1-166 152m-34-35a112 112 0 0 1-15-77"/>
+    <path stroke-width="3" d="m314 274 42-76 18 65 77-17-61 49 35 57-70-32-43 55 16-68-69-15z"/>
+  </g>
+  <g fill="currentColor">
+    <path d="m118 116 52 20-36 36zM580 112l-25 64-39-36zM82 370l76-20-30 55zM598 400l-70-43 75-9zM250 68l34 63-56-21zM482 430l-21-68 57 29z"/>
+    <path d="m338 282 24-45 9 43 42-10-34 27 20 34-40-19-25 31 9-39-39-9z" opacity=".28"/>
+  </g>
+</svg>

@@ -12,6 +12,13 @@
 
 # MF-VF-073 — Draw original Moonpunk motif SVG
 
+## MF-VF-135 — Draw original Moonsmash hero illustration
+
+- Added `assets/source/skins/moonsmash/hero.svg`, an original, static, monochrome kinetic impact scene with an open central burst and no embedded interface text. It uses inline geometry and `currentColor`, with accessible title and description. SHA-256: `DDEBE260FC04B14259EA766631056A8C6131E8E014308CEE1234ED331E3C8B7A`.
+- Dependency `MF-VF-132` is implemented. Backlog status: `implemented`; source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, rights review, or human review run. No visual approval, rights clearance, or acceptance claimed.
+- Checkbox recount across the three M13 backlogs: 246/488 checked (124 foundation, 94 reference, 28 preflight); 242 unchecked. Checked does not imply review or acceptance.
+- Rollback: remove the SVG, restore the backlog row to planned, and remove this ledger entry and matching TODO update. No commit created; host runner owns verification and checkpoint.
+
 ## MF-VF-090 — Style Moonriot navigation, layout, and typography
 
 - Added Moonriot-scoped editorial layout styling in `src/styles.css`: asymmetric spacing, monochrome directional rules, oversized condensed heading treatment, offset hard-shadow cards, and small-screen overrides. Shared component markup, keyboard behavior, and ARIA semantics are unchanged.
