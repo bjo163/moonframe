@@ -1551,3 +1551,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `apps/moonframe/templates/visual-reference/r04-layout.tsx` and `.module.css`: sign-in remains first in DOM and visual order; on narrow screens it fills the viewport and optional artwork is limited to a compact 6–12rem panel. Desktop keeps the existing two-column, full-height layout.
 - Backlog status `implemented`; static source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser screenshots, or human review run. No authentication behavior or acceptance claimed.
 - No commit created; host runner owns verification/checkpoint. Rollback: restore the prior layout sizing/comments, restore this row to planned, and remove this ledger/TODO evidence.
+# MF-VF-102 — Style Moonzine navigation, layout, and typography
+
+- Updated `src/styles.css` with editorial navigation hierarchy, an asymmetrical open-grid rhythm, responsive single-column shell behavior, and reduced-motion removal of decorative offsets. Existing component markup and behavior remain unchanged.
+- Dependency MF-VF-096 is implemented. Backlog status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, or browser captures were run. Human visual review and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the MF-VF-102 rules, restore the backlog row to planned, and remove this TODO/ledger evidence.

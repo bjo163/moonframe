@@ -535,6 +535,22 @@
 [data-skin="moonzine"] .mf-card-header { border-block-end: 1px dashed var(--mf-border); margin-block-end: var(--mf-space); }
 [data-skin="moonzine"] .mf-badge { border-radius: 0; font-family: Georgia, serif; font-style: italic; }
 [data-skin="moonzine"] .mf-table th { font-family: Georgia, serif; font-size: .9rem; font-style: italic; }
+[data-skin="moonzine"] .mf-main { min-inline-size: 0; }
+[data-skin="moonzine"] .mf-header { border-block-end: 1px solid var(--mf-border); }
+[data-skin="moonzine"] .mf-nav { gap: .25rem .75rem; }
+[data-skin="moonzine"] .mf-nav-item[aria-current="page"] { border-block-end-style: solid; font-weight: 700; }
+[data-skin="moonzine"] .mf-grid { align-items: start; column-gap: clamp(1rem, 2.5vw, 2.5rem); row-gap: clamp(1.25rem, 3vw, 3rem); }
+[data-skin="moonzine"] .mf-grid > :nth-child(3n + 2) { translate: 0 .6rem; }
+[data-skin="moonzine"] .mf-hero { margin-block-end: clamp(1.5rem, 4vw, 3.5rem); }
+@media (max-width: 48rem) {
+  [data-skin="moonzine"] .mf-shell { grid-template-columns: minmax(0, 1fr); }
+  [data-skin="moonzine"] .mf-sidebar { border-inline-end: 0; border-block-end: 1px dashed var(--mf-border); }
+  [data-skin="moonzine"] .mf-nav { flex-direction: row; flex-wrap: wrap; }
+  [data-skin="moonzine"] .mf-grid > :nth-child(3n + 2) { translate: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-skin="moonzine"] .mf-grid > :nth-child(3n + 2) { translate: none; }
+}
 
 /* 04 / Moonhalftone — sequential manga frames and screened outer gutters. */
 [data-skin="moonhalftone"] { --mf-bg: #dedede; --mf-surface: #ffffff; --mf-surface-raised: #eeeeee; --mf-text: #181818; --mf-muted: #525252; --mf-border: #595959; --mf-accent: #202020; --mf-accent-text: #ffffff; --mf-radius: 0px; --mf-shadow: 7px 7px 0 #777777; --mf-display: Impact, "Arial Narrow", sans-serif; }
