@@ -1444,3 +1444,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `assets/source/skins/moonzine/edition.svg`, an original layered-paper edition badge with live Moonframe/Moonzine wording, an accessible title/description, and monochrome `currentColor` geometry.
 - SHA-256: `bee1a2d3485fee115669c7776909ac3cd26f21557ed8886281837396e5dcc663`. Dependencies MF-VF-096 and MF-VF-039 are implemented. Status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human visual review run. Rights review, small-size optical review, and acceptance remain pending.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG, restore MF-VF-100 to planned, and remove this ledger entry.
+# MF-VF-101 — Style Moonzine semantic icon frames
+
+- Added a scoped `src/styles.css` block for shared SVG icons in navigation, buttons, search, callouts, empty states, and stat headers. Moonzine nav/button glyphs get a quiet paper-edge shadow; callout icons use the existing semantic accent; empty-state icons are larger. No glyph source, label, ARIA, or component API changed.
+- Dependencies MF-VF-096, MF-VF-050, and MF-VF-057 are implemented. Status `implemented`; source inspection only. As required by runner override, no package-manager commands, suites, validators, typecheck, build, rendered capture, or human review run. Host runner owns applicable verification/checkpoint. Human review and acceptance remain pending.
+- Rollback: remove the `Moonzine keeps shared icon glyphs` CSS block and restore the task row to planned; remove its TODO and ledger entries.

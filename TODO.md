@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-101):** Added Moonzine-scoped semantic SVG sizing and restrained editorial icon frames in `src/styles.css`; shared glyph meanings and ARIA are unchanged. Status implemented; source inspection only. Per runner override, host runner performs validators, tests, typecheck, build, and browser checks; rendering and human review remain pending.
+
 **Live execution update (2026-10-26, MF-VF-113):** Added Moonhalftone-scoped semantic icon frames in `src/styles.css`; original SVG glyphs and their accessible meaning remain unchanged. `git diff --check` passed. Browser and human visual review remain pending; host runner owns full verification and checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-112):** Added original monochrome Moonhalftone edition badge `assets/source/skins/moonhalftone/edition.svg` (SHA-256 `1158DAA144A8D5A151B75AF46A399772E3574DB82A03BD54F288128C17D12518`). XML parse and static safety scans passed. Optical/rights review and acceptance remain pending; host runner owns full verification and checkpoint.

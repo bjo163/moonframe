@@ -687,6 +687,28 @@
 [data-skin="moonledger"] .mf-table tbody tr:nth-child(even) { background: var(--mf-surface-raised); }
 [data-skin="moonledger"] .mf-stat strong { font-size: 1.8rem; font-weight: 600; }
 
+/* Moonzine keeps shared icon glyphs crisp inside quiet editorial frames. */
+[data-skin="moonzine"] .mf-nav-item > svg,
+[data-skin="moonzine"] .mf-button > svg,
+[data-skin="moonzine"] .mf-search-icon > svg,
+[data-skin="moonzine"] .mf-callout-icon > svg,
+[data-skin="moonzine"] .mf-empty-icon > svg,
+[data-skin="moonzine"] .mf-stat-header > svg {
+  inline-size: 1.1em;
+  block-size: 1.1em;
+  flex: 0 0 auto;
+}
+[data-skin="moonzine"] .mf-nav-item > svg,
+[data-skin="moonzine"] .mf-button > svg {
+  color: var(--mf-text);
+  filter: drop-shadow(1px 1px 0 var(--mf-surface));
+}
+[data-skin="moonzine"] .mf-callout-icon > svg { color: var(--mf-accent); }
+[data-skin="moonzine"] .mf-empty-icon > svg {
+  inline-size: 2rem;
+  block-size: 2rem;
+}
+
 /* Independent accessibility preferences always follow the skin recipes. */
 [data-skin][data-contrast="high"] { --mf-border: var(--mf-text); --mf-muted: var(--mf-text); }
 [data-skin][data-density="compact"] { --mf-space: .65rem; --mf-gap: .8rem; --mf-control-height: 2.25rem; }
