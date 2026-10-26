@@ -8,18 +8,18 @@
 
 **Historical CI blocker (now repaired; see new M13 gate below):** [GitHub Actions run #154 / 40245436959](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` **failed**: runtime unit/SSR 11/12 passed; the twelfth required 30 PNG screenshots absent from clean checkout, so typecheck and production build jobs did not execute. The spec-contract job passed. Existing 30/30 screenshot or 105/105 visual PASS reports must be interpreted as historical/local or automated structural evidence until capture artifacts and independent manual review can be reproduced at the same SHA.
 
-**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `52/292` implemented/captured, `240/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
+**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `55/292` implemented/captured, `236/292` planned, `1/292` blocked; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
 
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
 | A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `16 implemented · 0 pending` | Honest green clean-CI gate + runtime release claims |
 | B · deterministic screenshot Skin Lab | `MF-VF-017…032` | 16 | `16 implemented · 0 pending` | Desktop/tablet/phone profiles, dashboard/table/form/nav fixtures and reproducible archive dialog are captured |
-| C · one master logo production | `MF-VF-033…049` | 17 | `4 implemented · 13 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
+| C · one master logo production | `MF-VF-033…049` | 17 | `5 implemented · 1 captured · 1 blocked · 10 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
 | D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `2 implemented / 20 planned` | Search/close/delete/warning/navigation/etc; ARIA meanings unchanged |
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
-| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **52 implemented / 240 planned** | **No implied final acceptance** |
+| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **55 implemented/captured / 236 planned / 1 blocked** | **No implied final acceptance** |
 
 ### Current priority / tiny-agent first tickets
 
@@ -36,9 +36,9 @@
 
 ## Four user-supplied mockups · deep visual task addendum (2026-10-26)
 
-**Updated visual queue:** **460 total task IDs: 53 implemented/captured, 406 planned, 1 blocked pending external owner decision** (`MF-VF-039`). The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
+**Updated visual queue:** **460 total task IDs: 56 implemented/captured, 403 planned, 1 blocked pending owner decision** (`MF-VF-039`). The preceding `292` tasks remain intact; the new **168** tasks use `MF-VF-293…460` and are intentionally **not** GitHub Issues until explicitly created and deduplicated. No owner approval is implied.
 
-**M13 overall progress:** **82/488 (16.8%) implemented/captured**, **405/488 (83.0%) planned**, **1/488 (0.2%) blocked pending external owner decision**. `MF-VF-039` awaits a named, dated choice among the three draft master marks and a rejected-option rationale; see the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--get-actual-owner-candidate-choice). No owner choice or visual approval is inferred.
+**M13 overall progress:** **84/488 (17.2%) implemented/captured**, **403/488 (82.6%) planned**, **1/488 (0.2%) blocked**. `MF-VF-039` awaits a named, dated choice among the three draft master marks and a rejected-option rationale; see the [autonomous execution ledger](docs/qa/m13-autonomous-execution-ledger.md#mf-vf-039--get-actual-owner-candidate-choice). No owner choice or visual approval is inferred.
 
 - **[Detailed 168 reference-mockup subatomic tasks](docs/backlog/reference-mockups-subatomic-tasks.md)** — 12 reference provenance tasks, 24 Mission Control dashboard tasks, 22 editorial landing tasks, 18 campaign poster tasks, 20 cinematic sign-in tasks, 18 cross-layer composition tasks, 15 skin-specific anti-clone QA tasks, 25 release/evidence tasks and **14 optional consumer-brand palette tasks**.
 - **[Creative Reference Contract](contracts/moonframe-creative-reference-contract-v0.1.json)** — four supplied original image identifiers/sizes/SHA-256s, four page archetypes and per-skin (15) classification. The actual image uploads are still *conversation attachments*, not checked-in repository files; their reference file path and rights cannot be invented.
@@ -77,7 +77,7 @@ The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, exe
 
 **Operational truth:** [M13 Final Reconciliation Audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable 18 domain gates](contracts/moonframe-m13-readiness-gates-v0.1.json). New [offline M13 integrity validator](scripts/verify-m13-handoff.mjs) checks 15 skins, 78 intended tokens, 105 pairs, SFX IDs/aliases, backlog DAG and truthful status vocabulary. The 14 closed visual P0 tasks have evidence recorded in [MF-VF backlog](docs/backlog/visual-fidelity-subatomic-tasks.md), and must not be redone by AI lokal.
 
-**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **12 captured and 16 implemented**. Combined with 53 implemented visual tasks, the live task ledgers record 81/488 implemented-or-captured and 407 planned. The historical 57/57 tasks are not counted again.
+**Separate nonvisual readiness work:** [28 additional atomic `MF-PF-001…028` items](docs/backlog/m13-preflight-remediation-tasks.md): package/license, SFX consent/playback/cleanup, token source/brand palette, motion QA, auth demo and release proof. At freeze these were **0/28 done**; current live state is **12 captured and 16 implemented**. Combined with 56 implemented/captured visual tasks, the live task ledgers now record 84/488 implemented-or-captured, 403 planned, and 1 blocked. The historical 57/57 tasks are not counted again.
 
 **Feature gates:** 
 - **CONDITIONAL GO:** one bounded local AI task at a time, after live main/CI/dependency verification. Preserve shared component API and current working theme engine.

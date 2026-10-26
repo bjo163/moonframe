@@ -7,8 +7,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; `MF-VF-038` is captured with a hash-verified monochrome size contact sheet. Mark selection, suitability, rights, and human review remain separate.
 - Freeze baseline: 14 implemented / 474 pending. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- MF-VF-039 is blocked pending an actual owner selection among the three draft marks. Updated aggregate count: 81 implemented/captured, 406 planned, 1 blocked-external-approval. No owner, rights, or human visual approval is implied.
-- Overall progress: 81/488 (16.6%) implemented-or-captured; 406/488 (83.2%) planned; 1/488 (0.2%) blocked-external-approval. These task states do not imply owner, rights, or human visual approval.
+- MF-VF-039 is blocked pending an actual owner selection among the three draft marks. Live count after MF-VF-293: 84 implemented/captured, 403 planned, 1 blocked-external-approval. No owner, rights, or human visual approval is implied.
+- Overall progress after MF-VF-293: 84/488 (17.2%) implemented-or-captured; 403/488 (82.6%) planned; 1/488 (0.2%) blocked-external-approval. These task states do not imply owner, rights, or human visual approval.
 
 ## MF-VF-039 — Get actual owner candidate choice
 
@@ -470,3 +470,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `node scripts/validate-brand-svg.mjs assets/source/brand/mark-c.svg` — exit 0; `node scripts/validate-contracts.mjs` — exit 0; `node scripts/verify-m13-handoff.mjs` — exit 0 (existing generic SFX playback-truth warning).
 - `pnpm test`, `pnpm run typecheck`, and `pnpm run build` were attempted but stopped when pnpm tried to recreate workspace dependencies and package fetches failed with `EACCES` due to unavailable network access. No browser run; this is an isolated asset/documentation task. No rendered size variants or human review, selection, trademark clearance, or distribution approval claimed.
 - Rollback: remove `assets/source/brand/mark-c.svg` and revert its review note, task status, and matching counts/evidence.
+
+
+## MF-VF-293 — Register image R01 original digest and dimensions
+
+- Dependency MF-VF-014 is implemented; its Brand Bible and asset contract distinguish inline runtime marks from independent source assets.
+- Added `docs/visual/references/reference-index.md` with the R01 contract ID, attachment label, 1672 × 941 dimensions and SHA-256 copied from `contracts/moonframe-creative-reference-contract-v0.1.json`.
+- Cross-checked the values against the canonical contract. Original bytes remain absent from this checkout; this is metadata capture only and does not verify local bytes, rights, or visual parity.
+- Status: `captured`. Runner override honored: no package-manager commands, test suites, typecheck, or build run. No human review or rights approval claimed. Rollback: revert the index entry and MF-VF-293 status/evidence.
