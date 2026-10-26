@@ -15,7 +15,9 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
-**Current M13 backlog count (2026-10-27, MF-VF-446):** 319/488 task rows are checked (148/292 foundation, 143/168 reference, 28/28 preflight); 169 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+**Current M13 backlog count (2026-10-27, MF-VF-386):** 326/488 task rows are checked (151/292 foundation, 147/168 reference, 28/28 preflight); 162 remain unchecked. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
+
+**Live execution update (2026-10-27, MF-VF-386):** Added an R04 sign-in Playwright capture matrix for 1440/768/360 widths, light/dark, and artwork on/off, with visible heading and labeled control assertions. Twelve screenshot paths are defined under `artifacts/site/`; capture execution remains pending. Status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshots run. Human visual/rights review and acceptance are not claimed. See the M13 execution ledger.
 
 **Live execution update (2026-10-27, MF-VF-446):** Added an owner decision record to [the visual-fidelity evidence ledger](docs/qa/visual-fidelity-evidence-ledger.md), requiring exact capture inputs, review identity/date, findings, waiver rationale and dated disposition. The disposition stays pending until an actual owner decision. Status `implemented`; documentation inspection only. Runner override honored: host runner owns validators and verification; no screenshots, owner review, package-manager commands, tests, typecheck, build, or captures run. No approval or acceptance claimed.
 

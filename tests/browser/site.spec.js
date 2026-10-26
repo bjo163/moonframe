@@ -213,6 +213,42 @@ test('R03 poster preserves native portrait geometry on desktop and phone', async
   await page.screenshot({ path: path.join(siteCaptureDir, 'r03-poster-mobile.png'), fullPage: true, animations: 'disabled' });
 });
 
+test('R04 sign-in specimen captures light and dark art-on and art-off states at three widths', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  const signIn = page.locator('main.reference-art-off-fixture > section[aria-label="Sign in"]');
+  const email = page.getByLabel('Email address');
+  const password = page.getByLabel('Password');
+  const artToggle = page.getByRole('checkbox', { name: 'Hide reference artwork' });
+
+  for (const colorScheme of ['light', 'dark']) {
+    await page.emulateMedia({ colorScheme });
+    for (const artOff of [false, true]) {
+      if (await artToggle.isChecked() !== artOff) {
+        if (artOff) await artToggle.check({ force: true });
+        else await artToggle.uncheck({ force: true });
+      }
+      await expect(signIn).toBeVisible();
+      await expect(signIn.getByRole('heading', { name: 'Sign in' })).toBeVisible();
+      await expect(signIn.getByRole('heading', { name: 'Welcome back' })).toBeVisible();
+      await expect(email).toBeVisible();
+      await expect(password).toBeVisible();
+      await expect(signIn.locator('[data-reference-art="r04"]')).toHaveCount(artOff ? 0 : 1);
+
+      for (const [width, height, name] of [[1440, 1000, 'desktop'], [768, 1024, 'tablet'], [360, 800, 'mobile']]) {
+        await page.setViewportSize({ width, height });
+        await signIn.scrollIntoViewIfNeeded();
+        await expect(email).toBeVisible();
+        await expect(password).toBeVisible();
+        await page.screenshot({
+          path: path.join(siteCaptureDir, `r04-${colorScheme}-${artOff ? 'art-off' : 'art-on'}-${name}.png`),
+          fullPage: false,
+          animations: 'disabled',
+        });
+      }
+    }
+  }
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));

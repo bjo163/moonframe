@@ -2075,3 +2075,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-156 is implemented. Backlog status: `implemented`.
 - Source inspection only: static SVG uses no scripts, event handlers, external references, or embedded text. Runner override honored; no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, or commit run. Host runner owns applicable verification and checkpoint.
 - Optical review, rights review, and acceptance remain pending. Rollback: remove the SVG, restore the backlog row to planned, and remove matching TODO/ledger evidence.
+
+# MF-VF-386 — Add R04 responsive/mode/art capture fixture
+
+- Dependency MF-VF-025 is implemented.
+- Added a Playwright matrix in `tests/browser/site.spec.js` covering the R04 sign-in region at 1440/768/360 widths, light/dark color schemes, and optional artwork on/off. It asserts visible headings, labeled email/password fields, and artwork presence. Twelve deterministic screenshot paths are declared under `artifacts/site/`.
+- Backlog status: `implemented`; source inspection only. Runner override honored: no browser execution, screenshots, package-manager commands, validators, tests, typecheck, build, or human review run. Captures, visual/rights review, and acceptance remain pending; no authentication or parity claim.
+- Rollback: remove the MF-VF-386 test, restore the reference backlog row to planned, and remove this TODO/ledger evidence. No commit created; host runner owns verification and checkpoint.
