@@ -1563,3 +1563,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `src/styles.css` with editorial navigation hierarchy, an asymmetrical open-grid rhythm, responsive single-column shell behavior, and reduced-motion removal of decorative offsets. Existing component markup and behavior remain unchanged.
 - Dependency MF-VF-096 is implemented. Backlog status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, or browser captures were run. Human visual review and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the MF-VF-102 rules, restore the backlog row to planned, and remove this TODO/ledger evidence.
+# MF-VF-132 — Write Moonsmash visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/moonsmash.md` with a contract-grounded campaign/poster composition direction, anti-overlap distinctions from Moonpunk, Moonzine, and Moonhalftone, plus live-copy, art-off, reduced-motion, and responsive constraints.
+- Dependency MF-VF-015 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. Rights, production tokens, visual review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the brief, restore MF-VF-132 to planned, and remove this TODO/ledger evidence.
