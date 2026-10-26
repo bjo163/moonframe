@@ -76,3 +76,17 @@ Any future SVG import boundary must reject the following inputs before optimizat
 | `javascript-url` | `<a href="javascript:alert(1)">open</a>` | Reject script URL schemes in any attribute |
 
 The future automated test should assert rejection per fixture and successful parsing of the valid control; it should also verify failure is closed (no preview, optimizer, or output file is produced). Use a real XML parser with external-entity expansion disabled; regex checks alone are not a general XML sanitizer. The existing `scripts/validate-brand-svg.mjs` is deliberately a narrow static brand-candidate checker and does not establish safety for arbitrary imported SVGs. No importer, sanitizer, or executable fixture runner is currently claimed by this matrix.
+
+### Flat vs multilayer media performance accounting (MF-VF-399)
+
+Use the same page content, skin, mode, viewport, browser/device class, and network/cache conditions when comparing a flat raster with a layered composition. Record every delivered layer separately and also record the aggregate transfer cost; do not count source files that are not requested by the page. “Flat” and “multilayer” describe the tested delivery, not an assumed faster option.
+
+| Delivery / layer | Asset path and SHA-256 | Encoded dimensions | Encoded transfer bytes | Format / DPR | Requested or lazy-loaded | Notes |
+|---|---|---:|---:|---|---|---|
+| Flat baseline | | | | | | |
+| Layer 1 | | | | | | |
+| Layer 2 | | | | | | |
+| Layer 3 (if present) | | | | | | |
+| Multilayer total | | — | | — | — | Sum actual transferred bytes; account for cache hits explicitly |
+
+For each delivery, add one row to the [performance measurement record](#performance-measurement-record-mf-vf-435) for LCP and CLS at the same viewport. Include the capture commit, date, browser/device, repetitions, raw trace or report path, and whether requests came from cache. Report observed values and variance without substituting targets or estimates. This is a measurement template only: it sets no byte, LCP, or CLS budget, establishes no performance result, and does not require unavailable reference imagery to be imported.
