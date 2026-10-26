@@ -77,6 +77,14 @@
 ## Recent prior entries
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
+
+## MF-VF-041 — Create editable Moonframe wordmark SVG
+
+- Added `assets/source/brand/moonframe-wordmark.svg`, an original editable vector wordmark using the selected generic frame-mark draft direction and live SVG text with a system font stack. No reference art or third-party asset was used.
+- SHA-256: `CDDE127E2AD3467895385C20611BF0A319CBFA42629D6DDFD6BCF013CA74F302`. Dependency MF-VF-039 is implemented as a draft-direction choice.
+- Status: `implemented`; no SVG validator, package-manager command, test suite, typecheck, build, rendered-size inspection, or visual capture run per runner override. Trademark/source rights review, human review, and acceptance are not claimed. No commit created; host runner handles validation and checkpoint.
+- Rollback: remove the SVG and restore the MF-VF-041 row and matching TODO/ledger update.
+- Counts: prior live ledger count 118/488 implemented-or-captured, 370/488 planned, 0 blocked; now 119/488 implemented-or-captured, 369/488 planned, 0 blocked.
 ## MF-VF-304 — Nonbinding reference mood palette
 
 - Added a note in `docs/visual/references/reference-index.md` describing black, white, pink, electric blue, yellow and violet as mood cues from the reference set only. It expressly makes no token-value, semantic-color, consumer-overlay, or skin decision.
