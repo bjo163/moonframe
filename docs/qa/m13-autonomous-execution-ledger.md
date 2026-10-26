@@ -11,6 +11,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-074 — Draw minimal Moonpunk decorative pattern SVG
+
+- Added `assets/source/skins/moonpunk/pattern.svg`, a sparse monochrome square-registration pattern with embedded geometry and accessible title/description. SHA-256: `F9C698844A2E9D6D7BAB8EF108208B8B0539660C0E58E6CA26679EA39DCB7242`.
+- Dependency MF-VF-072 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, browser capture, or human optical review run/claimed under runner override. Margin-only placement, optional hide behavior, and visual review remain pending.
+- Live task rows: 83/292 foundation, 58/168 reference, and 28/28 preflight = 169/488 checked; 319 unchecked. Checked does not imply review or acceptance. Host runner owns verification/checkpoint; no commit created.
+- Rollback: remove the SVG and restore the MF-VF-074 row, TODO count, and this ledger entry.
+
 ## MF-VF-049 — Register real accepted art source rights/hash
 
 - Inspected existing draft brand sources and their MF-VF-039–042 evidence alongside `docs/brand/original-asset-brand-bible.md`. Rights, trademark, human visual review, and production approval remain pending; no verified creator/license evidence is available to register.

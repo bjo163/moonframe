@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpunk offset registration pattern</title>
+  <desc id="desc">A sparse arrangement of square ink marks with hard lime-free registration shadows.</desc>
+  <g fill="none" stroke="#171717" stroke-width="4" stroke-linecap="square">
+    <path d="M12 26h28v28H12zM18 32h28v28H18z" />
+    <path d="M104 12h34v4h-30v30h-4zM110 18h34v4h-30v30h-4z" />
+    <path d="M24 102h4v34H58v4H24zM30 108h4v34H64v4H30z" />
+    <path d="M108 104h30v4h-26v26h-4zM114 110h30v4h-26v26h-4z" />
+  </g>
+  <g fill="#171717">
+    <circle cx="78" cy="30" r="2"/><circle cx="86" cy="30" r="2"/><circle cx="94" cy="30" r="2"/>
+    <circle cx="72" cy="38" r="2"/><circle cx="80" cy="38" r="2"/><circle cx="88" cy="38" r="2"/>
+    <circle cx="72" cy="46" r="2"/><circle cx="80" cy="46" r="2"/><circle cx="88" cy="46" r="2"/>
+    <circle cx="72" cy="114" r="2"/><circle cx="80" cy="114" r="2"/><circle cx="88" cy="114" r="2"/>
+    <circle cx="78" cy="122" r="2"/><circle cx="86" cy="122" r="2"/><circle cx="94" cy="122" r="2"/>
+  </g>
+</svg>
