@@ -4,6 +4,8 @@
 
 Moonframe UI provides **70+ reusable React components & Level C composite blocks**, **15 distinct skins (each in Light and Dark)**, a persistent Next.js/SSR-safe theme runtime, original M10 geometric vector brand marks (`SkinBrandMark`), an opt-in WebAudio synthesizer runtime (`SFXProvider`), the **Moonframe CLI Scaffolder** (`pnpm run cli`), and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) featuring **43 production page templates** and **8 Level E Multi-Route Starter Applications**.
 
+> **M13 readiness (2026-10-26):** [Final cross-domain audit](docs/audit/m13-final-reconciliation-2026-10-26.md) and [machine-readable gates](contracts/moonframe-m13-readiness-gates-v0.1.json) distinguish current library functionality from historical planning. [AI-local handoff](docs/handoff/moonframe-visual-reference-microagent-prompt.md) covers 460 small visual tasks; their human artwork/release approvals are NOT complete. The current CI validates contract/unit/typecheck/build/browser/capture inventory, but automated pairs are not manually signed visual reviews.
+
 ## Start using it
 
 Use **Node.js 24.22.1 LTS**, pinned in [.nvmrc](.nvmrc), and **pnpm** (`corepack enable`).
@@ -41,7 +43,7 @@ export default function App() {
 
 ## Implementation and review status
 
-The repository is structured as a **pnpm workspace** combining the `@moonwitness/moonframe` runtime library (`src/`) and the `moonframe` Next.js 16 showcase application (`apps/moonframe`). It remains private (`"private": true`) and has not been published to npm. The larger historical specifications below also cover future catalog items, optional original assets, and formal release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
+The repository is structured as a **pnpm workspace** combining the `@moonwitness/moonframe` runtime library (`src/`) and the `moonframe` Next.js 16 showcase application (`apps/moonframe`). The current root `package.json` identifies `@moonwitness/moonframe` version `0.1.1` with `"private": false`, `"license": "MIT"` and public publish configuration; this repository audit does **not** verify an npm registry publication, standalone `LICENSE` file, or final public release authorization. The larger historical specifications below also cover future catalog items, optional original assets, and formal release reviews. Their 105 formal skin-pair review records are not automatically approved by implementation or screenshots.
 
 **Development runtime:** Node.js 24.22.1 LTS, pinned in [.nvmrc](.nvmrc) and used by [CI](.github/workflows/contract-validation.yml).
 
