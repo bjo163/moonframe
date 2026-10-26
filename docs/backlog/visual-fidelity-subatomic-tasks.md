@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 42 implementation/evidence tasks completed in this wave, 249 remaining planned and one owner-blocked · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 51 implementation/evidence tasks completed in this wave, 241 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockup Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 42 implemented, 417 pending, 1 owner-approval blocker**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockup Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 51 implemented, 409 planned**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -21,12 +21,12 @@
 |---|---:|---:|
 | A — P0 repair release evidence and CI | 16 | 16 |
 | B — deterministic lab and snapshot fixture microtasks | 16 | 16 |
-| C — master logo and its smallest production assets | 17 | 0 |
+| C — master logo and its smallest production assets | 17 | 4 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
 | G — final 9 specimens, cross-family QA and release gate | 23 | 9 |
-| **TOTAL** | **292** | **41** |
+| **TOTAL** | **292** | **51** |
 
 ## A — P0 repair release evidence and CI
 
@@ -163,9 +163,10 @@
 - [x] **MF-VF-035 — Draw original geometric-frame logo candidate A** · **P1** · `implemented` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
   - **File scope:** `assets/source/brand/mark-a.svg`; original geometric frame draft using static vector primitives.
   - **Evidence:** `node scripts/validate-brand-svg.mjs assets/source/brand/mark-a.svg` passed; both M13 structural validators, unit 13/13, typecheck, and build (88 routes) passed. Draft status only; no candidate selection, trademark clearance, or human visual review claimed. Rollback: remove the candidate, static validator, and matching documentation.
-- [ ] **MF-VF-036 — Draw original angular brutalist logo candidate B** · **P1** · `planned` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
-  - **File scope:** `assets/source/brand/mark-b.svg (proposed)`. **Acceptance:** Distinct hard-edged geometry from A.
-  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-036 — Draw original angular brutalist logo candidate B** · **P1** · `implemented` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/mark-b.svg`; `scripts/validate-brand-svg.mjs`; `docs/brand/master-mark-review.md`. **Acceptance:** Distinct hard-edged geometry from A.
+  - **Evidence (2026-10-26):** Added an original angular frame with paired inset signal bars, structurally distinct from candidate A's broken frame and centered circle. Source SHA-256: `43ac621e4453f4b5413c3d8ebdd2e9bba513f6e011b33de9f50085ee5db0c630`. `node scripts/validate-brand-svg.mjs assets/source/brand/mark-b.svg` passed using the extended static subset validator; candidate A remains subject to its existing frame-plus-center validation. No native-size rendered comparison, candidate selection, trademark clearance, or visual approval is claimed.
+  - **Rollback:** Remove candidate B and revert the candidate-specific validator/documentation changes.
 - [ ] **MF-VF-037 — Draw original negative-space lunar logo candidate C** · **P1** · `planned` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
   - **File scope:** `assets/source/brand/mark-c.svg (proposed)`. **Acceptance:** Distinct recognizable negative-space silhouette.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

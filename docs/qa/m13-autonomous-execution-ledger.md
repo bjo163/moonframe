@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-020`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-021` and `MF-PF-022` are implemented; `MF-PF-028` is captured with clean-clone verification. `MF-VF-033` is implemented as a hierarchy decision; mark and artwork rights/review remain separate.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 78 implemented-or-captured, 0 blocked, 410 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
-- Overall progress: 78/488 (16.0%) done/captured; 410/488 (84.0%) pending; 0 blocked. 410/488 (84.0%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 12 captured, 67 implemented, 409 planned (79 checked), 0 task rows in blocked status. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 79/488 (16.2%) implemented-or-captured; 409/488 (83.8%) planned. These task states do not imply owner, rights, or human visual approval.
 
 
 
@@ -349,6 +349,14 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `MF-PF-002`: resolved by delegated maintainer decision; MIT applies to project-owned code/documentation only. The standalone LICENSE and asset-manifest policy exclude trademark clearance and all third-party/customer artwork rights; no publish approval is implied.
 - `MF-PF-020`: named owner must approve/defer canonical 78×30 token source values and migration/versioning. `MF-PF-021` and `MF-PF-022` remain blocked by that dependency.
 - `MF-PF-028`: requires `MF-PF-022` and clean-clone CI evidence; no remote push was authorized. No approval was inferred.
+
+## MF-VF-036 — Draw original angular brutalist logo candidate B
+
+- Added the original static SVG `assets/source/brand/mark-b.svg`, with a hard-edged frame and paired inset bars distinct from candidate A. Source SHA-256: `43ac621e4453f4b5413c3d8ebdd2e9bba513f6e011b33de9f50085ee5db0c630`.
+- Updated `scripts/validate-brand-svg.mjs` to preserve candidate A's frame-and-circle requirement while validating candidate B's path geometry; documented source and provenance boundary in `docs/brand/master-mark-review.md`.
+- `node scripts/validate-brand-svg.mjs assets/source/brand/mark-a.svg` — exit 0; candidate B equivalent — exit 0. `node scripts/validate-contracts.mjs` — exit 0. `node scripts/verify-m13-handoff.mjs` — exit 0 (existing SFX playback-truth warning). `git diff --check` — exit 0.
+- `pnpm test`, `pnpm run typecheck`, and `pnpm run build` each exited 1 while pnpm attempted workspace dependency retrieval; registry requests returned `EACCES` under the network restriction. These checks were not completed. Browser QA was not applicable to this source-only asset/validator task.
+- Status: implemented. No render at 16/24/32/128px, visual approval, candidate selection, trademark clearance, or distribution rights are claimed. Rollback: remove candidate B and revert its validator and documentation changes.
 
 ## MF-VF-018 — Pin tablet screenshot layout 768x1024
 
