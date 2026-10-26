@@ -860,3 +860,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-023` is implemented. Source review only; runner override honored: no package-manager commands, tests, validators, typecheck, build, browser render or captures. No reference comparison, human visual review, rights clearance or acceptance claimed. No commit created; host runner handles checks and checkpoint.
 - Counts advance from the latest ledger-recorded 132/488 implemented-or-captured, 356 planned, 0 blocked to 133/488, 355 planned, 0 explicitly blocked. These counts do not imply capture, review or acceptance.
 - Rollback: remove the component and CSS module and restore this ledger entry, backlog row and TODO count.
+## MF-VF-339 — Prepare accessible article/timeline filmstrip
+
+- Added `R02Filmstrip` and its CSS module at `apps/moonframe/templates/visual-reference/r02-filmstrip.tsx` and `.module.css`. Entries use ordered-list semantics, a `<time>` element, and semantic titles; the layout stacks on narrow screens and does not rely on a horizontal overflow region.
+- Dependency MF-VF-023 is implemented. Status: `implemented`; no reference artwork is bundled. No package-manager commands, validators, suites, typecheck, build, browser capture, or reference comparison run per runner override. Human review, rights clearance, and acceptance are not claimed. Host runner owns verification/checkpoint.
+- Counts advance from the prior ledger-recorded 133/488 implemented-or-captured-or-implemented, 355 planned, 0 blocked to 134/488, 354 planned, 0 blocked.
+- Rollback: remove the component and CSS module and restore the matching backlog, TODO, and ledger evidence.
