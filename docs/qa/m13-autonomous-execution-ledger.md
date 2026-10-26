@@ -1449,3 +1449,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a scoped `src/styles.css` block for shared SVG icons in navigation, buttons, search, callouts, empty states, and stat headers. Moonzine nav/button glyphs get a quiet paper-edge shadow; callout icons use the existing semantic accent; empty-state icons are larger. No glyph source, label, ARIA, or component API changed.
 - Dependencies MF-VF-096, MF-VF-050, and MF-VF-057 are implemented. Status `implemented`; source inspection only. As required by runner override, no package-manager commands, suites, validators, typecheck, build, rendered capture, or human review run. Host runner owns applicable verification/checkpoint. Human review and acceptance remain pending.
 - Rollback: remove the `Moonzine keeps shared icon glyphs` CSS block and restore the task row to planned; remove its TODO and ledger entries.
+# MF-VF-370 — Build authentic branded introduction slot
+
+- Added `apps/moonframe/templates/visual-reference/r04-brand.tsx` and `r04-brand.module.css`. Consumers can supply their own logo content; without it, a required consumer-provided name remains selectable live text. Optional description is also live text. No Moonwitness mark or framework-owned identity is assumed.
+- Dependency MF-VF-025 is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, responsive screenshots, rights review, or human review run. Host runner owns verification/checkpoint; accessibility/rendering, rights, and acceptance remain pending.
+- Rollback: remove the component and CSS module, restore MF-VF-370 to planned, and remove the matching TODO and ledger entries. No commit created.

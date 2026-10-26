@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-370):** Added the R04 auth introduction slot at `apps/moonframe/templates/visual-reference/r04-brand.tsx` with consumer-supplied logo content and a selectable generic name fallback. No Moonwitness branding is assumed. Status `implemented`; host runner owns validators, tests, typecheck, build, and responsive screenshots. Human/rights review and acceptance remain pending.
+
 **Live execution update (2026-10-26, MF-VF-101):** Added Moonzine-scoped semantic SVG sizing and restrained editorial icon frames in `src/styles.css`; shared glyph meanings and ARIA are unchanged. Status implemented; source inspection only. Per runner override, host runner performs validators, tests, typecheck, build, and browser checks; rendering and human review remain pending.
 
 **Live execution update (2026-10-26, MF-VF-113):** Added Moonhalftone-scoped semantic icon frames in `src/styles.css`; original SVG glyphs and their accessible meaning remain unchanged. `git diff --check` passed. Browser and human visual review remain pending; host runner owns full verification and checkpoint.
