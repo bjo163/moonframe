@@ -22,7 +22,19 @@ Visual identity is not a generic dark dashboard with neon buttons. Required dist
 
 **Important:** The 4 pictured screens each use different L1 templates over compatible art grammar. A hero/scene component is not a full-screen bitmap substitution for app UI.
 
-## 2. Reference-by-reference visual anatomy
+## 2. Explicit consumer-only words and symbols
+
+The reference images are Moonwitness consumer material. The following content must remain supplied and controlled by that consumer; it is excluded from Moonframe framework defaults, generic component icons, starter assets, and reusable sample copy:
+
+- The **Moonwitness** name and product identity, including any product or campaign wordmark.
+- The **crown** and other symbols whose meaning identifies Moonwitness or its story world. A generic geometric decoration may use independent geometry, but must not reproduce or imply the consumer symbol.
+- Named or recognizable fictional characters, their costumes and likenesses, and Moonwitness-specific locations, factions, sacred terms, and story references.
+- Song titles, lyrics, slogans, dialogue, narrative copy, and other distinctive reference-image text. Reusable examples must use original neutral sample wording.
+- Consumer-specific project names, cards, logos, portraits, and promotional artwork.
+
+This is a scope and provenance boundary, not a finding about ownership or a license. A user-provided reference image does not grant permission to reproduce, distribute, or derive these elements. Use consumer-supplied content only in an explicitly consumer-owned integration with its own rights basis; otherwise use independently created generic material and record its source. The generic Moonframe mark and stable semantic icons remain separate from Moonwitness identity.
+
+## 3. Reference-by-reference visual anatomy
 
 ### MWX-REF-001 — Mission Control dashboard, 1672×941
 

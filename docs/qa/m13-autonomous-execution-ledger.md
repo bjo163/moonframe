@@ -2,6 +2,18 @@
 
 Updated 2026-10-26. This ledger records local task execution evidence; it does not certify owner, legal, license, or human visual approval.
 
+## MF-VF-302 — Explicit consumer-only words and symbols
+
+- Added a dedicated exclusion section to `docs/visual/cinematic-mangapunk-reference-bible.md`. It keeps Moonwitness names/wordmarks, crown and story symbols, characters and story-specific terms, distinctive wording/lyrics, and consumer project/promotional assets out of generic Moonframe defaults and examples.
+- The text explicitly says this is a scope/provenance boundary, not an ownership finding or reuse license. Generic independently created material remains the safe default.
+- Dependency `MF-VF-014` is implemented; `MF-VF-301` is captured. Status: `captured` (documentation deliverable); no rights or human review claimed.
+- Runner override honored: no package-manager commands, test suites, typecheck, build, or browser checks run. No commit created; host runner handles verification/checkpoint. Rollback: remove the section and restore the task row to planned.
+
+## Current counts after MF-VF-302
+
+- Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
+- The task ledgers record 93/488 implemented-or-captured, 395/488 planned, and 0 explicitly blocked. This count is an execution state only and does not imply rights, human visual review, or acceptance.
+
 ## MF-VF-040 — Refine selected mark optical padding
 
 - Refined the selected draft source `assets/source/brand/mark-a.svg` within its existing 32×32 viewBox, increasing the uniform inset to 2.5 units and the centered circle radius to 3.5 units. The bounded geometry remains inside the canvas; this is source-level refinement, not rendered-size proof.
