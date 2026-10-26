@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe Moonglitch edition</title>
+  <desc id="desc">A compact diagnostic label identifying the Moonglitch visual edition.</desc>
+  <path fill="#171a1e" d="M0 0h232v56H8L0 64z" />
+  <path fill="none" stroke="#96a5ad" stroke-width="2" d="M7 7h218v42H14z" />
+  <path fill="none" stroke="#b7f34a" stroke-width="3" d="M16 32h10l5-10 8 20 6-13 5 3h8" />
+  <path fill="#b7f34a" d="M70 17h3v30h-3zm8 0h3v30h-3z" />
+  <text x="91" y="27" fill="#e9eef0" font-family="ui-monospace, monospace" font-size="11" font-weight="700" letter-spacing="1.5">MOONFRAME</text>
+  <text x="91" y="42" fill="#b7f34a" font-family="ui-monospace, monospace" font-size="10" font-weight="700" letter-spacing="1.5">MOONGLITCH EDITION</text>
+</svg>

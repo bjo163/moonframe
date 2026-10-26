@@ -1670,3 +1670,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a per-skin source inventory in `docs/qa/visual-fidelity-evidence-ledger.md` for all 15 canonical skins. It records standalone source assets and SHA-256 values where present, and explicit empty inventories otherwise. The evidence separates source-file presence from rights clearance, runtime/inline styling, integration, and human visual review.
 - Hashes computed using PowerShell `Get-FileHash -Algorithm SHA256` at source HEAD `528a127c58e7b13c9c3bf88e29f0fdd9e89e1e96`. Backlog status `implemented`; no validators, package-manager commands, tests, typecheck, build, or review run under runner override. Host runner owns verification/checkpoint; rights, human review, and acceptance remain pending.
 - Rollback: remove the MF-VF-289 inventory section and restore the task row to planned. No commit created.
+
+## MF-VF-124 — Draw Moonglitch edition badge
+
+- Added original static `assets/source/skins/moonglitch/edition.svg`, a compact diagnostic label identifying Moonglitch as a Moonframe visual edition rather than an independent company mark. SHA-256: `F97680857583243966D08AB129E7D99C6824A8B6ACDE261048B862CBAD292BE1`.
+- Dependencies MF-VF-120 and MF-VF-039 are implemented. Backlog status `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, or human optical review run under runner override. Rights, trademark clearance, and acceptance remain pending. Host runner owns verification/checkpoint.
+- Rollback: remove the SVG, restore MF-VF-124 to planned, and remove this ledger/TODO evidence. No commit created.
