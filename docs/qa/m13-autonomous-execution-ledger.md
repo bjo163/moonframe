@@ -35,6 +35,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-133 — Draw original Moonsmash motif SVG
+
+- Added `assets/source/skins/moonsmash/motif.svg`, an original static monochrome impact burst with angular rays and an open center. It has accessible title/description, uses `currentColor`, and contains no external resources or scripting. SHA-256: `45272DF266A88A6A68791A41255A64AD49A82EEE65E64B56BE854C67E3136C96`.
+- Dependency MF-VF-132 is implemented. Backlog status: `implemented`; static source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, rendering, rights review, or human review run. No rights, visual approval, or acceptance claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG, restore the task row to planned, and remove this entry and matching TODO update.
+
 ## MF-VF-400 — Specify text-over-photo contrast sampling gate
 
 - Updated `docs/qa/accessibility-visual-qa-bible.md` with a rendered-background procedure for text over photos and other variable backdrops. It requires contextual sampling for each text run, recording crop/compositing and environment, reporting the lowest measured contrast, and repeating across material crop, viewport, overlay, and mode changes. It points to the applicable SC 1.4.3 thresholds and keeps focus/boundary checks separate.
