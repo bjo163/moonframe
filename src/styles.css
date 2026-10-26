@@ -602,6 +602,24 @@
 [data-skin="moonglitch"] .mf-table { font-size: .8rem; }
 [data-skin="moonglitch"] .mf-table td { border-inline-end: 1px dashed var(--mf-border); }
 [data-skin="moonglitch"] .mf-badge { border-radius: 2px; }
+/* Moonglitch frames shared semantic glyphs as compact diagnostic readouts. */
+[data-skin="moonglitch"] .mf-nav-item > svg,
+[data-skin="moonglitch"] .mf-button > svg,
+[data-skin="moonglitch"] .mf-search-icon > svg,
+[data-skin="moonglitch"] .mf-callout-icon > svg,
+[data-skin="moonglitch"] .mf-empty-icon > svg,
+[data-skin="moonglitch"] .mf-stat-header > svg {
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  flex: 0 0 auto;
+  border: 1px dashed currentColor;
+  padding: .12em;
+  border-radius: 2px;
+}
+[data-skin="moonglitch"] .mf-nav-item > svg,
+[data-skin="moonglitch"] .mf-button > svg { filter: drop-shadow(1px 0 0 var(--mf-accent)); }
+[data-skin="moonglitch"] .mf-callout-icon > svg { color: var(--mf-accent); }
+[data-skin="moonglitch"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 
 /* 06 / Moonsmash — a dominant typographic focal plane and radial perimeter. */
 [data-skin="moonsmash"] { --mf-bg: #fff0da; --mf-surface: #fffaf0; --mf-surface-raised: #ffdfad; --mf-text: #3e2414; --mf-muted: #775033; --mf-border: #bb8752; --mf-accent: #ab3d0c; --mf-accent-text: #ffffff; --mf-radius: 1.5rem .25rem 1.5rem .25rem; --mf-shadow: 0 6px 0 var(--mf-surface-raised); --mf-display: Impact, "Arial Black", sans-serif; }
