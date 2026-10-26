@@ -468,6 +468,16 @@
 [data-skin="moonriot"] .mf-hero { border: 0; border-block-end: 2px solid var(--mf-border); padding-inline-start: 0; background: linear-gradient(125deg, var(--mf-bg) 75%, var(--mf-surface-raised) 75%); }
 [data-skin="moonriot"] .mf-hero h1 { text-transform: uppercase; font-style: italic; max-inline-size: 19ch; }
 [data-skin="moonriot"] .mf-table th { background: var(--mf-text); color: var(--mf-surface); text-transform: uppercase; }
+[data-skin="moonriot"] .mf-nav-item > svg,
+[data-skin="moonriot"] .mf-button > svg,
+[data-skin="moonriot"] .mf-search-icon > svg,
+[data-skin="moonriot"] .mf-callout-icon > svg,
+[data-skin="moonriot"] .mf-empty-icon > svg,
+[data-skin="moonriot"] .mf-stat-header > svg { inline-size: 1.15em; block-size: 1.15em; flex: 0 0 auto; }
+[data-skin="moonriot"] .mf-nav-item > svg,
+[data-skin="moonriot"] .mf-button > svg { filter: drop-shadow(1px 1px 0 var(--mf-border)); }
+[data-skin="moonriot"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
+[data-skin="moonriot"] .mf-callout-icon > svg { color: var(--mf-accent); }
 
 /* 03 / Moonzine — magazine spread and stacked print materials. */
 [data-skin="moonzine"] { --mf-bg: #e9dfce; --mf-surface: #fff9ed; --mf-surface-raised: #eee1c8; --mf-text: #332923; --mf-muted: #6c5749; --mf-border: #968267; --mf-accent: #753d5d; --mf-accent-text: #fff9ed; --mf-radius: 0px; --mf-shadow: 4px 5px 0 var(--mf-surface-raised), 5px 6px 0 var(--mf-border); --mf-display: Georgia, "Times New Roman", serif; }

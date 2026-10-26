@@ -1361,3 +1361,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Updated `docs/visual/cinematic-mangapunk-reference-bible.md` with an optional TornTape recipe: copy remains selectable HTML, the backing is decorative and carries no accessible meaning/state, and a plain fallback remains available when art is off/unavailable or forced colors apply.
 - Dependency `MF-VF-013` is implemented. Status: `implemented`; documentation/source review only. No validators, package-manager commands, suites, typecheck, build, browser capture, rights review, or human review run/claimed per runner override. No runtime behavior or asset-rights grant is claimed.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the TornTape subsection and restore the task row/TODO/ledger entry.
+# MF-VF-089 — Style Moonriot semantic icon frames
+
+- Added Moonriot-scoped SVG sizing/alignment for navigation, buttons, search, callouts, empty states, and stat headers in `src/styles.css`; nav/button glyphs receive a restrained offset shadow, while empty-state glyphs use a larger frame. Shared glyph source and accessible meaning are unchanged.
+- Dependencies MF-VF-084, MF-VF-050, and MF-VF-057 are implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, rendering, or browser capture run per runner override. Human visual review and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the scoped CSS block, restore the backlog row to planned, and remove this TODO/ledger evidence.
