@@ -1568,3 +1568,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonsmash.md` with a contract-grounded campaign/poster composition direction, anti-overlap distinctions from Moonpunk, Moonzine, and Moonhalftone, plus live-copy, art-off, reduced-motion, and responsive constraints.
 - Dependency MF-VF-015 is implemented. Status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, screenshots, or human review were run. Rights, production tokens, visual review, and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the brief, restore MF-VF-132 to planned, and remove this TODO/ledger evidence.
+
+# MF-VF-380 — Add side micro-note content slot
+
+- Added `apps/moonframe/templates/visual-reference/r04-notes.tsx`, an optional consumer-authored side note component. Informative copy is a labeled complementary landmark; callers can explicitly mark ornamental copy as decorative so it is hidden from assistive technology. The component stays independent of the sign-in form.
+- Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser screenshots, or human review run. No authentication behavior, asset rights approval, or acceptance is claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the component, restore MF-VF-380 to planned in the reference backlog, and remove matching TODO/ledger evidence.
