@@ -2068,3 +2068,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependencies MF-VF-144, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Host runner owns verification and checkpoint. Visual/accessibility review and acceptance remain pending.
 - Checkbox recount: 150/292 foundation + 146/168 reference + 28/28 preflight = 324/488 checked; 164 unchecked. Checked does not imply human review or acceptance.
 - Rollback: remove the MF-VF-149 CSS block, restore its backlog row to planned, and remove this ledger/TODO evidence. No commit created.
+# MF-VF-157 — Draw original Mooncrash motif SVG
+
+- Added `assets/source/skins/mooncrash/motif.svg`: a monochrome notched equipment plate with a central inspection aperture and descriptive title/description.
+- SHA-256: `c0918127aabc713bfd2725d651dc44e41701e78a28e991c7882907e1780e4c24`.
+- Dependency MF-VF-156 is implemented. Backlog status: `implemented`.
+- Source inspection only: static SVG uses no scripts, event handlers, external references, or embedded text. Runner override honored; no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, or commit run. Host runner owns applicable verification and checkpoint.
+- Optical review, rights review, and acceptance remain pending. Rollback: remove the SVG, restore the backlog row to planned, and remove matching TODO/ledger evidence.

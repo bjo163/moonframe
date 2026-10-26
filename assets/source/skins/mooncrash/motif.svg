@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Mooncrash equipment plate motif</title>
+  <desc id="desc">A monochrome notched equipment plate with a central inspection aperture.</desc>
+  <path d="M30 12h28l8 8h28l8-8h28v28l8 8v28l-8 8v28l8 8v28h-28l-8-8H66l-8 8H30v-28l-8-8V56l8-8V12Z" stroke="currentColor" stroke-width="5" stroke-linejoin="bevel"/>
+  <path d="M52 48h56v64H52z" stroke="currentColor" stroke-width="4"/>
+  <path d="M64 60h32v40H64zM38 38h8m68 0h8M38 122h8m68 0h8" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+</svg>
