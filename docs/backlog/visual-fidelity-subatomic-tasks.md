@@ -157,9 +157,9 @@
   - **File scope:** `docs/brand/original-asset-brand-bible.md`. **Acceptance:** One Moonframe brand; no 15 separate legal-brand logo requirement.
   - **Evidence:** Owner-delegated maintainer decision recorded in [maintainer decisions](../governance/maintainer-decisions-2026-10-26.md#mf-vf-033--brand-hierarchy). One Moonframe design-system umbrella with 15 visual editions; consumer apps retain their own product brands. This is a structure decision only; no mark, trademark search/clearance, endorsement rights, or artwork approval is claimed.
   - **Status:** Implemented as a recorded hierarchy decision. Logo/device production remains gated by rights, source, visual QA and per-asset review tasks below.
-- [ ] **MF-VF-034 — Specify legible 16px master silhouette** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
-  - **File scope:** `docs/brand/master-mark-review.md (proposed)`. **Acceptance:** Monochrome silhouette and optical margin pass criteria.
-  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-034 — Specify legible 16px master silhouette** · **P1** · `implemented` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** [master-mark review criteria](../brand/master-mark-review.md). Defines 16/24/32/128 px renders, 1×/2× scales, monochrome/reverse proof, a 1 px optical inset, minimum 1.5 px essential bars/gaps, and human evidence requirements.
+  - **Evidence:** `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, `pnpm test` (13/13), `pnpm run typecheck`, and `pnpm run build` (88 routes) passed. Documentation-only change; no mark was drawn or visually approved. Rollback: revert this criteria file and task evidence.
 - [ ] **MF-VF-035 — Draw original geometric-frame logo candidate A** · **P1** · `planned` · **dependency:** `MF-VF-034` · **GitHub issue:** not-created
   - **File scope:** `assets/source/brand/mark-a.svg (proposed)`. **Acceptance:** Static safe viewBox vector, not borrowed art.
   - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
