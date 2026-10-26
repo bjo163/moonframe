@@ -1495,7 +1495,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-085 — Draw original Moonriot motif SVG
 
-- Added ssets/source/skins/moonriot/motif.svg, an original accessible 96×96 angular directional shard with embedded geometry and currentColor; SHA-256: $hash.
+- Added ssets/source/skins/moonriot/motif.svg, an original accessible 96×96 angular directional shard with embedded geometry and currentColor; SHA-256: 05a9ab8abc342636fa3f32bc12a553897a1d95732d91850a66776a47d7b3c70f.
 - Dependency MF-VF-084 is implemented. Status: implemented; static source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review were run. Mono-size legibility, skin distinction, rights review, and acceptance remain pending.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger entry.
 # MF-VF-354 — Draw stage floodlight backdrop artwork concept
@@ -1894,3 +1894,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonchrome.md` with a specification-derived precision-futurist composition, opaque content planes, restrained peripheral metallic cues, and explicit distinctions from Moonglitch, Mooncrash, and generic glass.
 - Dependency `MF-VF-015` is implemented. Backlog status: `implemented`; source/document inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, screenshots, or human review run. Contrast, font/asset rights, visual review, and acceptance remain pending.
 - Rollback: remove the brief, restore MF-VF-204 to planned in the visual backlog, and remove this ledger and TODO entry. No commit created; host runner owns verification and checkpoint.
+
+## MF-VF-145 — Create original Moonink motif
+
+- Added `assets/source/skins/moonink/motif.svg`: static monochrome, tapered brush swipe with an open center and irregular dry-brush contours; no external references or consumer-brand content. SHA-256: `05a9ab8abc342636fa3f32bc12a553897a1d95732d91850a66776a47d7b3c70f`.
+- Dependency `MF-VF-144` is implemented. Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run under runner override. Host runner owns verification/checkpoint; optical review, rights review, and acceptance remain pending.
+- Rollback: remove the SVG and restore `MF-VF-145` to planned in the backlog and TODO; remove this ledger entry.
