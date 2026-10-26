@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Deterministic 105-pair non-color visual grammar audit & report generator (MF-SKINLAB-003 & MF-SKIN-004).
+// Deterministic string/selector audit and PNG inventory (NOT human visual review) (MF-SKINLAB-003 & MF-SKIN-004).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -72,7 +72,7 @@ export function auditAllSkinPairs() {
       darkScreenshots: [`artifacts/skins/${pair.a}-dark.png`, `artifacts/skins/${pair.b}-dark.png`],
       summaryA: `${a.geometry}; ${a.surface}`,
       summaryB: `${b.geometry}; ${b.surface}`,
-      verdict: distinctDimensions >= 5 && hasCssSelectorA && hasCssSelectorB ? 'PASS' : 'FAIL',
+      verdict: distinctDimensions >= 5 && hasCssSelectorA && hasCssSelectorB ? 'STRUCTURAL-PASS' : 'STRUCTURAL-FAIL',
     });
   }
 
@@ -80,7 +80,10 @@ export function auditAllSkinPairs() {
     skinCount: grammar.skins.length,
     pairCount: results.length,
     pilotSixCount: results.filter(r => r.isPilotSix).length,
-    allPassed: results.every(r => r.verdict === 'PASS') && missingScreenshots.length === 0,
+    structuralPassed: results.every(r => r.verdict === 'STRUCTURAL-PASS'),
+    capturesComplete: missingScreenshots.length === 0,
+    humanReviewStatus: 'pending-human-visual-review',
+    allPassed: results.every(r => r.verdict === 'STRUCTURAL-PASS') && missingScreenshots.length === 0,
     minDistinctDimensions: Math.min(...results.map(r => r.distinctDimensions)),
     missingScreenshots,
     antiOverlapRules: grammar.antiOverlapRules,
@@ -93,20 +96,20 @@ export function generatePairwiseReportMarkdown(audit) {
   const lines = [
     '# Moonframe UI — 6-Pair Pilot & 105-Pair Skin Grammar Review Report',
     '',
-    '**Status:** `OWNER-APPROVED` · **Date:** 2026-10-26 · **Reviewer:** `bjo163 (Repository Owner)`  ',
-    '**Tasks Completed:** `MF-SKINLAB-003` (First 6 Pair Reviews) & `MF-SKIN-004` (All 105 Distinct Pair Reviews)  ',
+    '**Status:** `AUTOMATED CONTRACT CHECK, NOT HUMAN-APPROVED` · **Human reviewer:** `pending`  ',
+    '**Scope:** 6 pilot + 105 contract-string pair checks; no human screenshot signoff generated  ',
     '**Automated Verifier:** `pnpm run audit:pairs` (`scripts/audit-skin-pairs.mjs`)',
     '',
-    '> **Governance Note:** Machine specification contracts in `contracts/moonframe-skin-grammar-contract-v1.0.json` intentionally keep their baseline schema state (`specified-not-implemented` / `not-reviewed`) so offline negative-fixture self-tests in `scripts/validate-contracts.mjs` remain deterministic. This document is the canonical completed QA review ledger for M4 (`MF-SKINLAB-003`) and M9 (`MF-SKIN-004`).',
+    '**Evidence boundary:** The script compares descriptions and CSS selector presence, counts PNG files, and does not inspect screenshot pixels, visual mockup fidelity or named human reviews. Historical M4/M9 signoffs do not approve the current design.
     '',
     '## 1. Executive Summary',
     '',
     `- **Canonical Skins Evaluated:** ${audit.skinCount} (\`moonpunk\`, \`moonriot\`, \`moonzine\`, \`moonhalftone\`, \`moonglitch\`, \`moonsmash\`, \`moonink\`, \`mooncrash\`, \`moonpanel\`, \`moonscrawl\`, \`moonraw\`, \`moonchrome\`, \`classic\`, \`moonquest\`, \`moonledger\`)`,
-    `- **Rendered Baseline Appearances Verified:** 30 / 30 PNG captures in \`artifacts/skins/*.png\` (15 Light + 15 Dark)`,
-    `- **Pilot Pair Reviews (\`MF-SKINLAB-003\`):** ${audit.pilotSixCount} / 6 passed`,
-    `- **Full Pairwise Matrix (\`MF-SKIN-004\`):** ${audit.pairCount} / 105 unordered pairs passed`,
+    `- **Screenshot inventory:** ${30 - audit.missingScreenshots.length}/30 paths present; image content and provenance not verified
+    `- **Pilot pair metadata:** ${audit.pilotSixCount}/6 checked structurally; human visual review pending`,
+    `- **Pair metadata:** ${audit.pairCount}/105 checked structurally; human visual review pending`,
     `- **Minimum Materially Distinct Non-Color Dimensions Across All 105 Pairs:** **${audit.minDistinctDimensions} / 8** (contract minimum: 4/8; neighboring-concept target: 5/8)`,
-    '- **Grayscale & `data-decorations="off"` Verification:** All 15 skins maintain distinct silhouette, border weight, corner radius, typography hierarchy, and structural shell rhythm when color saturation is stripped (`filter: grayscale(1)`) and when decorative artwork is hidden (`[data-decorations="off"]`).',
+    '- **Grayscale and decoration-off visual comparisons:** NOT verified by this structural script; require browser screenshots and reviewer.
     '',
     '## 2. First Six Pair Reviews (`MF-SKINLAB-003` — Four-Skin Reference Matrix)',
     '',
@@ -118,7 +121,7 @@ export function generatePairwiseReportMarkdown(audit) {
     '',
     '## 3. Anti-Overlap Rule Verification (10 Canonical Rules)',
     '',
-    ...audit.antiOverlapRules.map((rule, idx) => `${idx + 1}. **Verified:** ${rule}`),
+    ...audit.antiOverlapRules.map((rule, idx) => `${idx + 1}. **Review rule:** ${rule}`),
     '',
     '## 4. Complete 105 Pairwise Skin Grammar Review Ledger (`MF-SKIN-004`)',
     '',
@@ -145,5 +148,5 @@ if (isMain) {
   }
   const reportPath = path.join(root, 'docs/qa/skin-pairwise-review-report.md');
   fs.writeFileSync(reportPath, generatePairwiseReportMarkdown(audit), 'utf8');
-  console.log(`PASS: 105/105 skin pairs & 6/6 pilot pairs verified (${audit.minDistinctDimensions}/8 min distinct non-color dimensions; 30/30 PNG captures present).`);
+  console.log(`STRUCTURAL + INVENTORY PASS: ${audit.pairCount} pair metadata records, ${audit.minDistinctDimensions}/8 distinct contract-string dimensions minimum, 30/30 screenshot paths present. Human visual review pending.`);
 }
