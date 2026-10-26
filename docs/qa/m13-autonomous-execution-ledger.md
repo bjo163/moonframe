@@ -1609,3 +1609,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added original `assets/source/creative-reference/r04/lunar-halo.svg`, a self-contained optional crescent and low-opacity orbital decoration without embedded UI copy, external references, scripts, or event handlers. SHA-256: `7fe4ce36ea247e57f63be0dd07b94cc62d761959cf3f7804ce481ea6f4b5aceb`.
 - Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; static source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendered-size/viewport captures, rights review, or human review run; host runner owns verification/checkpoint. Rights, optical review, and acceptance remain pending.
 - No commit created. Rollback: remove the SVG, restore MF-VF-378 to planned, and remove this ledger entry and matching TODO update.
+
+## MF-VF-381 — Separate social sign-in from illustrative demo copy
+
+- Added `apps/moonframe/templates/visual-reference/r04-auth-seam.tsx`. The provider button requires a consumer-supplied action; labels and marks are consumer-owned. Without a handler, no button appears; optional caller-supplied demo copy is rendered as ordinary text and the component claims no authentication behavior.
+- Source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser capture, human review, or commit. Host runner owns verification/checkpoint. No provider integration or acceptance claimed.
+- Rollback: remove the component, restore MF-VF-381 to planned, and remove matching TODO/ledger evidence.
