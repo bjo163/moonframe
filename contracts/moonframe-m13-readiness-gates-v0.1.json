@@ -8,7 +8,8 @@
     "branch": "main",
     "lastGreenCommit": "5d18bbc9a3d7f385a79cd039ba047c4104a83f50",
     "lastGreenRun": "https://github.com/bjo163/moonframe/actions/runs/40252233550",
-    "interpretation": "Last green checked for cited SHA only. Subsequent documentation commits must be separately tested. Do not call public release approved."
+    "interpretation": "Last green checked for cited SHA only. Subsequent documentation commits must be separately tested. Do not call public release approved.",
+    "reconciliationNote": "Historical audited green SHA is not a claim about all later commits; check latest workflow before handoff."
   },
   "authority": "Read-only observed operational gate overlay; existing domain contracts remain normative and historical status fields retain original scope.",
   "decision": {
@@ -29,7 +30,11 @@
     "visualApproval": "NO-GO",
     "assetRelease": "NO-GO",
     "publicNpmPublish": "NO-GO",
-    "meaning": "Technical CI and handoff may be ready while art/rights/UX release remains blocked."
+    "meaning": "Technical CI and handoff may be ready while art/rights/UX release remains blocked.",
+    "microtaskLanes": [
+      "460 MF-VF visual/artwork tasks",
+      "28 MF-PF SFX/tokens/package/security preflight tasks"
+    ]
   },
   "canonicalQuantities": {
     "skins": 15,
@@ -46,7 +51,9 @@
     "pageManifestPlanned": 72,
     "pageTemplatesImplemented": 43,
     "startersManifestAndShowcase": 8,
-    "plannedNewMicroTasks": 460
+    "plannedNewMicroTasks": 460,
+    "additionalPreflightMicroTasks": 28,
+    "totalNewM13MicroTasks": 488
   },
   "gates": [
     {
@@ -225,6 +232,7 @@
     "docs/audit/m13-final-reconciliation-2026-10-26.md",
     "docs/backlog/visual-fidelity-subatomic-tasks.md",
     "docs/backlog/reference-mockups-subatomic-tasks.md",
-    "docs/handoff/moonframe-visual-reference-microagent-prompt.md"
+    "docs/handoff/moonframe-visual-reference-microagent-prompt.md",
+    "docs/backlog/m13-preflight-remediation-tasks.md"
   ]
 }
