@@ -1981,6 +1981,15 @@ export function SFXProvider({
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof document === 'undefined') return undefined;
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') stopActiveSound();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
+
   function grantConsent(event) {
     const nativeEvent = event?.nativeEvent || event;
     const activationEvents = new Set(['click', 'pointerup', 'keydown', 'touchend']);

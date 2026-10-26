@@ -189,3 +189,40 @@ test('SFX reuses its AudioContext and closes it on provider unmount', async ({ p
   await page.locator('a[href="/"]').first().click();
   await expect.poll(() => page.evaluate(() => window.__audioContexts[0]?.state)).toBe('closed');
 });
+
+test('SFX stops on backgrounding and does not catch up when visibility returns', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__oscillators = [];
+    class FakeAudioContext {
+      constructor() { this.state = 'running'; this.currentTime = 0; this.destination = {}; }
+      createGain() { return { gain: { setValueAtTime() {}, exponentialRampToValueAtTime() {} }, connect() {} }; }
+      createOscillator() {
+        const oscillator = { stopCalls: 0, frequency: { setValueAtTime() {} }, connect() {}, start() {}, stop() { this.stopCalls += 1; }, addEventListener() {}, disconnect() {} };
+        window.__oscillators.push(oscillator);
+        return oscillator;
+      }
+    }
+    window.AudioContext = FakeAudioContext;
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' });
+  });
+  await page.goto('/components/brand-and-sfx');
+  await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  const stopsBeforeBackground = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'hidden' });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const stopsAfterBackground = await page.evaluate(() => window.__oscillators.reduce((sum, oscillator) => sum + oscillator.stopCalls, 0));
+  expect(stopsAfterBackground).toBeGreaterThan(stopsBeforeBackground);
+  await page.getByRole('button', { name: '🔔 success' }).click();
+  await expect(page.getByText(/Silenced event: "success" \(reason: background-tab\)/)).toBeVisible();
+  const countWhileHidden = await page.evaluate(() => window.__oscillators.length);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.waitForTimeout(100);
+  expect(await page.evaluate(() => window.__oscillators.length)).toBe(countWhileHidden);
+});
