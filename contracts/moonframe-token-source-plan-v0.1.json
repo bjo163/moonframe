@@ -496,5 +496,16 @@
     ],
     "SSR": "no motion on initial hydration if preference unresolved, no accidental animations on first paint",
     "generatedAssets": []
+  },
+  "runtimeReconciliation": {
+    "observedOn": "2026-10-26",
+    "source": "src/styles.css",
+    "interimCssVars": 17,
+    "proposedCanonicalTokenNames": 78,
+    "proposedAppearanceSlots": 30,
+    "bridgeTest": "pnpm run tokens verified on CI green run 40252233550",
+    "scope": "Runtime static CSS recipes and deterministic bounded generator fixture exist, but canonical full value source tokens/source/**/*.tokens.json does not exist and token source contract approval remains pending.",
+    "ownerDecision": "Explicit full canonical value source & DTCG subset decision required before public design-token API freeze.",
+    "notApproveValues": true
   }
 }
