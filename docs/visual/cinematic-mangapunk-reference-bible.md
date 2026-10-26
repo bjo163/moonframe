@@ -120,3 +120,9 @@ Visual identity is not a generic dark dashboard with neon buttons. Required dist
 - [Skin Lab fixtures](../qa/skin-lab-fixtures.md): fixed content and viewport inputs.
 
 **State now:** reference classification and task planning only. Artwork production, logo approval, real visual similarity, and 105 human pair-review gates remain pending.
+
+---
+
+## 8. Default Moonpunk acid-lime vs Moonwitness magenta: avoid a palette-only patch
+
+The *existing* Moonpunk runtime uses acid-lime as its signature default accent. The pictured Moonwitness application uses magenta/cyan/yellow accents. To preserve one reusable Moonpunk grammar, a separately controlled and contrast-tested [consumer brand palette overlay](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json) is proposed. This is **not** a new skin, an implemented React prop, a demand to set pink globally, or a way to bypass status/focus/contrast semantics. Structural Moonpunk (ink framing, offset print, expressionistic display and layout) must be retained even when the consumer uses a different approved brand accent. Release only after light/dark/forced-colors/SSR proof.
