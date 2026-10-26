@@ -1,10 +1,10 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 18 implementation/CI tasks evidenced, 274 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 19 implementation/CI tasks evidenced, 273 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
 **Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 18 implemented, 442 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 19 implemented, 441 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
@@ -20,13 +20,13 @@
 | Workstream | Tasks | Done |
 |---|---:|---:|
 | A — P0 repair release evidence and CI | 16 | 16 |
-| B — deterministic lab and snapshot fixture microtasks | 16 | 2 |
+| B — deterministic lab and snapshot fixture microtasks | 16 | 3 |
 | C — master logo and its smallest production assets | 17 | 0 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
 | G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
-| **TOTAL** | **292** | **18** |
+| **TOTAL** | **292** | **19** |
 
 ## A — P0 repair release evidence and CI
 
@@ -106,7 +106,7 @@
 - [x] **MF-VF-018 — Pin tablet screenshot layout 768x1024** · **P1** · `implemented` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created · **evidence:** 30 real 768×1024 tablet captures with per-image SHA/source sidecars and no-overflow checks; see [tablet capture ledger](../qa/visual-fidelity-evidence-ledger.md#tablet-screenshot-captures-mf-vf-018).
   - **File scope:** `docs/qa/skin-lab-fixtures.md`. **Acceptance:** Real tablet reflow, no resized desktop approximation.
   - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-019 — Pin phone screenshot layout 360x800** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+- [x] **MF-VF-019 — Pin phone screenshot layout 360x800** · **P1** · `implemented` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created · **evidence:** 30 real 360×800 phone captures with per-image SHA/source sidecars and no-overflow checks; see [phone capture ledger](../qa/visual-fidelity-evidence-ledger.md#phone-screenshot-captures-mf-vf-019).
   - **File scope:** `docs/qa/skin-lab-fixtures.md`. **Acceptance:** No horizontal overflow or clipped focus controls.
   - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [ ] **MF-VF-020 — Add same-data dashboard specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
