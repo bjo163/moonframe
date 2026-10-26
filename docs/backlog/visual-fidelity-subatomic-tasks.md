@@ -30,51 +30,64 @@
 
 ## A — P0 repair release evidence and CI
 
-- [ ] **MF-VF-001 — Pin current broken CI evidence** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+- [x] **MF-VF-001 — Pin current broken CI evidence** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Commit 00c9bd65 and run 40245436959 logged; 30 missing captures, 11/12 tests, skipped build/typecheck.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-002 — Decouple unit tests from generated screenshots** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Old failure pinned in M13 reconciliation; run 40245436959 (missing 30 PNGs) and later green run 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-002 — Decouple unit tests from generated screenshots** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `tests/runtime.test.mjs`. **Acceptance:** Unit/SSR tests run on clean clone without prior PNGs.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-003 — Add Playwright browser-install job step** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Unit test no longer checks browser screenshot existence; source commit 502dcf9 and subsequent green 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-003 — Add Playwright browser-install job step** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Playwright browser installed deterministically in CI.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-004 — Add Playwright execution after build** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Playwright Chromium CI installation verified at run 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-004 — Add Playwright execution after build** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Browser test runs and fails correctly on regression.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-005 — Upload screenshot, trace and failure artifacts** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Playwright runs after build, generated screenshot inventory verified at run 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-005 — Upload screenshot, trace and failure artifacts** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Artifact archive named by run SHA; inspectable.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / completion (2026-10-26):** actions/upload-artifact@v4 succeeded at run 40253520325. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
 - [ ] **MF-VF-006 — Enforce same-commit capture input for pair auditing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Do not inspect stale local PNG from unrelated HEAD.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-007 — Demote auto-generated 105 pair verdicts to structural-only** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+- [x] **MF-VF-007 — Demote auto-generated 105 pair verdicts to structural-only** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Source-text inequality never yields human visual PASS.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-008 — Remove generator hardcoded owner signoff** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Audit now returns STRUCTURAL-PASS with humanReviewStatus pending; generated report cannot authorize review. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-008 — Remove generator hardcoded owner signoff** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** No automatic OWNER-APPROVED string from algorithm.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-009 — Correct historic 105/105 claims with current proof status** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Hardcoded OWNER-APPROVED removed from scripts/audit-skin-pairs.mjs; checked in new M13 verifier. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-009 — Correct historic 105/105 claims with current proof status** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/skin-pairwise-review-report.md`. **Acceptance:** Previous scores attributed as structure-derived, capture/human review tracked separately.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / completion (2026-10-26):** Historic pair QA report receives M13 audit override; visual human review explicitly pending. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
 - [ ] **MF-VF-010 — Create new evidence ledger for screenshot IDs** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** One row schema for SHA, fixture, screen, path, reviewer, status, exception.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-011 — Reconcile npm/public/private/package naming** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+- [x] **MF-VF-011 — Reconcile npm/public/private/package naming** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `README.md`. **Acceptance:** Current root package.json and documented claims agree; registry evidence only if checked.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-012 — Fix site footer stale 66+ and 22 counts** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** README updated for @moonwitness/moonframe@0.1.1, private false and unverified public registry/license status. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-012 — Fix site footer stale 66+ and 22 counts** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/components/site/SiteShell.tsx`. **Acceptance:** Accurate catalogs shown without obsolete hardcoded counts.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-013 — Remove blanket WCAG certification from landing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Footer now derives skins/template/starter totals from SKIN_CATALOG/TEMPLATE_CATALOG/STARTER_CATALOG. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-013 — Remove blanket WCAG certification from landing** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** Token contrast checks described narrowly.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-014 — Distinguish inline runtime marks from approved source brand assets** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Landing metric describes token pair threshold and excludes complete WCAG certification. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-014 — Distinguish inline runtime marks from approved source brand assets** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/brand/original-asset-brand-bible.md`. **Acceptance:** Existing vector JSX not misrepresented as rights-cleared independent asset set.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-015 — Inventory earlier mockup images or mark references missing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **Evidence / completion (2026-10-26):** Brand Bible and asset contract distinguish inline JSX marks from rights-reviewed original asset sources. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
+- [x] **MF-VF-015 — Inventory earlier mockup images or mark references missing** · **P0** · `implemented` · **dependency:** `none` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Path/hash/rights only when actual reference retrievable; no fabricated pixel parity.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence / completion (2026-10-26):** Four actual user-uploaded PNGs SHA-256/dimensions catalogued; original binaries in repo still missing and flagged. CI: https://github.com/bjo163/moonframe/actions/runs/40253520325. Visual human approval is not implied.
 - [ ] **MF-VF-016 — Prove clean checkout CI all jobs green** · **P0** · `planned` · **dependency:** `MF-VF-002, MF-VF-003, MF-VF-004, MF-VF-005` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Real link to same-SHA contract/unit/typecheck/build/browser run.
   - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
