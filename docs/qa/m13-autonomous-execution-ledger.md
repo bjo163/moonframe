@@ -62,6 +62,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-440 — Review release claims against actual CI
+
+- Reviewed `.github/workflows/contract-validation.yml`, `docs/architecture/release-train-and-adoption.md`, and the RC evidence ledger at starting HEAD `1a0bd8347dd2a92de1a19b1750e285db7850725e`.
+- Recorded the workflow's required check families and clarified that historical green runs do not verify current HEAD. Same-SHA full CI and relevant screenshot evidence are required before any production-ready claim.
+- Status: `implemented`. Verification: source/document inspection only. Runner override honored: no network CI lookup, package-manager commands, validators, test suites, typecheck, build, or screenshots. No current CI success, human review, or release approval claimed. No commit; host runner owns checks and checkpoint.
+
 ## MF-VF-445 — Sync root TODO master counts and dependencies
 
 - Recounted canonical backlog task rows: 148/292 foundation + 142/168 reference + 28/28 preflight = 318/488 checked and 170 unchecked. A checked box represents recorded work/evidence status, not necessarily captured evidence, human review, or acceptance.

@@ -1,5 +1,9 @@
 # Moonframe UI — RC Evidence Package, QA Ledger & Owner Release Decision (`v0.1.0`)
 
+## M13 live CI evidence boundary (2026-10-27)
+
+The repository workflow defines contract validation, token generation, unit tests, typechecks, build, browser tests, and pair audit as CI checks. This source review does not establish that those checks passed for current HEAD `1a0bd8347dd2a92de1a19b1750e285db7850725e`: no live Actions run was verified during this invocation. Historical green runs elsewhere in this ledger remain tied to their recorded SHAs and cannot support a current production-ready claim. Require a same-SHA full CI run and relevant screenshot evidence before making that claim. This note is a source/document review only; no CI status, release, rights, or human approval is asserted.
+
 **Status:** `OWNER-APPROVED` · **Date:** 2026-10-26 · **Owner / Reviewer:** `bjo163`  
 **Covered Milestones & Tasks:** `MF-004` (#2), `MF-005` (#3), `MF-006` (#4), `MF-013` (#5), `MFI-011`, `MF-SKINLAB-003`, `MF-SKIN-004`, `MFI-010`, `MF-QA-003`, `MF-REL-001`, `MF-REL-002`, `MF-REL-003`
 

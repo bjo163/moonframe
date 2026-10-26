@@ -172,7 +172,7 @@
 
 **New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Frozen planning baseline:** `70/292` implemented/captured and `222/292` planned; no new GitHub Issues and no owner or visual approval implied. Proposed asset paths are not actual file deliveries.
 
-**Live M13 checklist count (2026-10-27):** 147/292 foundation visual + 133/168 reference + 28/28 preflight = **308/488 checked**. Checked statuses include implemented/captured and do not imply human review, external rights approval, or acceptance. MF-VF-082 dark captures are recorded with source fingerprint and PNG digests in the detailed backlog and [execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
+**Live M13 checklist count (2026-10-27):** 147/292 foundation visual + 133/168 reference + 28/28 preflight = **308/488 checked**. Checked statuses include implemented/captured and do not imply human review, external rights approval, or acceptance. MF-VF-082 dark captures are recorded with source fingerprint and PNG digests in the detailed backlog and [execution ledger](docs/qa/m13-autonomous-execution-ledger.md). MF-VF-440 records that historical CI runs do not establish current-HEAD readiness; see the [RC evidence ledger](docs/qa/rc-evidence-and-release-ledger.md).
 
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
