@@ -1372,3 +1372,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added Moonriot-scoped SVG sizing/alignment for navigation, buttons, search, callouts, empty states, and stat headers in `src/styles.css`; nav/button glyphs receive a restrained offset shadow, while empty-state glyphs use a larger frame. Shared glyph source and accessible meaning are unchanged.
 - Dependencies MF-VF-084, MF-VF-050, and MF-VF-057 are implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, suites, typecheck, build, rendering, or browser capture run per runner override. Human visual review and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the scoped CSS block, restore the backlog row to planned, and remove this TODO/ledger evidence.
+
+## MF-VF-392 — GraffitiDisplay accessible text recipe
+
+- Added the GraffitiDisplay recipe to `docs/visual/cinematic-mangapunk-reference-bible.md`: required copy remains live selectable text, display fonts require license and glyph-coverage checks before bundling, narrow layouts wrap, and decorative treatments stay separate from readable glyphs and focus.
+- Dependency MF-VF-013 is implemented. Status: `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshot, font-rights review, or human review run. No font license or runtime component is included.
+- Rollback: remove the subsection, restore MF-VF-392 to planned, and remove this ledger entry. No commit created; host runner owns verification/checkpoint.
