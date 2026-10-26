@@ -29,6 +29,34 @@ Return a concise report with task ID, starting HEAD, changed files, exact checks
 
 ---
 
+# Moonframe M13 — R03 Safe Poster Microtask
+
+Use this prompt for one bounded R03 poster task after selecting its exact backlog ID and confirming dependencies from the live files.
+
+## Assignment
+
+- **Task ID:** `MF-VF-443` (do not work on another ID in this invocation).
+- **Output scope:** only the selected task's declared files and matching backlog, TODO, and execution-ledger evidence.
+- **Reference:** `MWX-REF-003` in `contracts/moonframe-creative-reference-contract-v0.1.json`. Read its dimensions, digest, source presence, and review status there. Do not claim comparison unless original bytes are present and digest-verified.
+
+## Poster constraints
+
+- Build a poster composition from original, consumer-authored copy and original or rights-cleared artwork. Do not reproduce the reference's title, lyrics, slogans, characters, logos, or other protected expression.
+- Keep meaningful poster text as live selectable HTML with a logical heading order and adequate contrast. Artwork is optional and decorative unless it has a concise accessible equivalent; never make artwork the only carrier of required information.
+- Keep the composition responsive: preserve hierarchy and readable type at narrow widths, avoid cropping important copy, and provide an art-off fallback. Honor reduced-motion and forced-colors preferences.
+- Keep Moonwitness-specific identity and materials out of generic Moonframe library assets unless supplied and authorized by the consumer. Record source and rights status; never infer ownership or clearance.
+
+## Work and evidence
+
+1. Make only the selected bounded change; add regression coverage only when the task changes behavior.
+2. Run the task's required checks and record exact commands and exit codes. For visual work, bind captures to source revision and fixture. Without digest-matched originals and human comparison, report structural evidence only, not reference parity.
+3. Mark `implemented` for source-level completion or `captured` only for actual captures. Never self-assign `human-reviewed` or `accepted`.
+4. Record changed paths, dependency evidence, provenance/rights boundary, verification limits, and rollback in the execution ledger and root TODO.
+
+Return a concise report with task ID, starting HEAD, changed files, exact checks/results, evidence paths/hashes, status, blockers, and rollback. Do not commit, push, publish, create issues, or broaden the assignment unless the active runner explicitly directs it.
+
+---
+
 # Moonframe M13 — R04 Accessible Sign-in Microtask
 
 Use this prompt for one bounded R04 sign-in task after selecting its exact backlog ID and confirming dependencies from the live files.

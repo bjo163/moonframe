@@ -1,3 +1,11 @@
+## MF-VF-443 — Write micro agent prompt for R03 safe poster mode
+
+- Starting HEAD: `390048423176bd6c8c51e429d4e0714eb873ebfd`.
+- Added an R03-specific prompt in `docs/handoff/reference-visual-local-agent.md`, anchored to `MWX-REF-003`; it requires original copy/art, live accessible poster text, responsive and art-off behavior, preference support, and explicit provenance/rights boundaries.
+- Dependency MF-VF-010 is implemented. Status: `implemented` (documentation deliverable); no capture, reference parity, rights clearance, human review, or acceptance claimed.
+- Verification: source/document inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, or screenshot/reference comparison. Host runner owns applicable checks and checkpoint.
+- Rollback: remove the R03 prompt section, restore the backlog row to planned, and remove matching TODO and ledger entries. No commit created.
+
 ## MF-VF-428 — Add forced-colors accessibility fixture for R04 auth
 
 - Added a focused Playwright scenario at 360×800 with forced-colors emulation, asserting sign-in labels and controls remain visible, required-field validity remains native, and keyboard focus has a solid outline at least 2px wide.
