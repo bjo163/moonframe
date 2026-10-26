@@ -5,8 +5,20 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007` and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 22 implemented-or-captured (14 baseline implemented + 6 captured + 2 implemented), 0 blocked, 466 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, and `MF-PF-019` are captured. `MF-PF-007`, `MF-PF-008`, and `MF-PF-025` are implemented. `MF-PF-002` remains pending because it needs an explicit maintainer license/trademark distribution decision; no approval was inferred or recorded.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 23 implemented-or-captured (14 baseline implemented + 6 captured + 3 implemented), 0 blocked, 465 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+
+## MF-PF-008 — Trusted SFX consent activation API
+
+- Inspected source at live HEAD `d5d8ef9c29b466fc53ddd9896cb89c61bc47763b`.
+- Scope: `src/components.js`, `src/components.d.ts`, `apps/moonframe/components/site/InteractivePlayground.tsx`, `tests/browser/components.spec.js`, `docs/motion/motion-interaction-sfx-bible.md`, matching preflight row, root TODO live counts, and this ledger.
+- `grantConsent(event)` now accepts only trusted native `click`, `pointerup`, `keydown`, or `touchend` activation and returns a boolean. React synthetic events are unwrapped; missing, untrusted, or unrelated events do not enable audio. The UI forwards its click event. The Bible records app-level semantics and says no browser permission prompt, persistence, or playback occurs during consent.
+- `node scripts/validate-contracts.mjs` — exit 0.
+- `node scripts/verify-m13-handoff.mjs` — exit 0; existing SFX playback-truth and missing-LICENSE warnings remain.
+- `pnpm test` — blocked before execution: managed wrapper attempted to recreate `node_modules` and hit Windows `EPERM` unlinking `rolldown-binding.win32-x64-msvc.node`.
+- `pnpm install --frozen-lockfile --offline` — exit 1; lockfile check passed, but offline package metadata for `@emnapi/runtime` is missing.
+- `node --test tests/runtime.test.mjs` — exit 1 because React was unavailable after the partial workspace refresh. Typecheck/build/browser checks were not run. A browser assertion was added to prove an untrusted synthetic click leaves consent off before the existing real click assertion, but it still needs execution after dependency recovery.
+- Status: implemented; execution verification remains pending due to environment dependency refresh failure. No reviewer/acceptance claimed. Rollback: revert this task's API, call-site, test, documentation, and evidence edits only.
 
 ## MF-PF-001 — Freeze current package/release inventory
 
@@ -99,3 +111,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `pnpm run test:browser` — exit 0; 46/46 passed.
 - `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0; existing release warnings remain.
 - Status: implemented with local verification complete. No human review or acceptance claimed. Rollback: revert the initialization change, its runtime assertion, and matching task status/evidence.
+
+## MF-PF-008 — Explicit trusted-event consent API
+
+- Inspected source HEAD before edits: `d5d8ef9c29b466fc53ddd9896cb89c61bc47763b`.
+- Scope: `src/components.js`, `src/components.d.ts`, `apps/moonframe/components/site/InteractivePlayground.tsx`, `docs/motion/motion-interaction-sfx-bible.md`, and `tests/browser/components.spec.js`.
+- `grantConsent(event)` accepts only a trusted click, pointerup, keydown, or touchend event; synthetic events and calls without a native event leave consent disabled and return false. The playground forwards its actual click event. No browser permission, persistence, or autoplay is added.
+- The unattended pnpm run hit Windows `EPERM` during dependency refresh. `pnpm install --frozen-lockfile --offline` — exit 0; restored the 31 locked workspace packages from the local cache.
+- `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs`, and `git diff --check` — exit 0; existing play-result and missing-LICENSE warnings remain.
+- `pnpm test` — exit 0; 12/12 passed. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes generated. `pnpm run test:browser` — exit 0; 46/46 passed, including synthetic denial and real-click grant.
+- Status: implemented with local verification complete. No human review or acceptance claimed. Rollback: revert the explicit trusted-event API, call site, browser assertion, documentation, and matching task status/evidence.

@@ -569,7 +569,8 @@ export interface SFXContextValue {
   volume: number;
   consentGranted: boolean;
   lastEvent: { id: string; timestamp: number } | null;
-  grantConsent: () => void;
+  /** Grant app-level audio consent from a trusted click, pointerup, keydown, or touchend event. Does not request browser permission. */
+  grantConsent: (event: Event | React.SyntheticEvent) => boolean;
   revokeConsent: () => void;
   setMuted: (muted: boolean) => void;
   setVolume: (volume: number) => void;

@@ -1963,9 +1963,13 @@ export function SFXProvider({
     if (Number.isFinite(clamped)) setVolumeState(clamped);
   }
 
-  function grantConsent() {
+  function grantConsent(event) {
+    const nativeEvent = event?.nativeEvent || event;
+    const activationEvents = new Set(['click', 'pointerup', 'keydown', 'touchend']);
+    if (!nativeEvent?.isTrusted || !activationEvents.has(nativeEvent.type)) return false;
     setConsentGranted(true);
     setMutedState(false);
+    return true;
   }
 
   function revokeConsent() {

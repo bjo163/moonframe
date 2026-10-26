@@ -297,7 +297,7 @@ function SFXStudioInner() {
 
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           {!sfx.consentGranted || sfx.muted ? (
-            <Button size="sm" variant="primary" onClick={() => sfx.grantConsent()}>
+            <Button size="sm" variant="primary" onClick={(event) => sfx.grantConsent(event)}>
               🔊 Grant Consent &amp; Unmute
             </Button>
           ) : (

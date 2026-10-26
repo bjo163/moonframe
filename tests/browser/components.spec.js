@@ -138,6 +138,10 @@ test('brand-and-sfx component detail page renders 15 vector marks and interactiv
   await expect(page.locator('[data-skin-mark]').first()).toBeVisible();
   await page.getByRole('tab', { name: '3. Opt-In WebAudio SFX Studio (M10)' }).click();
   await expect(page.getByText('Consent: Not Granted')).toBeVisible();
+  await page.getByRole('button', { name: /Grant Consent & Unmute/i }).evaluate((button) => {
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  });
+  await expect(page.getByText('Consent: Not Granted')).toBeVisible();
   await page.getByRole('button', { name: /Grant Consent & Unmute/i }).click();
   await expect(page.getByText('Consent: Granted')).toBeVisible();
 });
