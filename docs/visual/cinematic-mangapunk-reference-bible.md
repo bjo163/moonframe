@@ -125,6 +125,14 @@ In grayscale, ComicPanel must still read through aligned geometry and gutters, Z
 
 **Original screenshot matching:** never declare pixel-perfect parity before reference images are ingested, normalized for viewport/fonts, and reviewed against runtime screenshots. Art/image matching and semantic control matching are separate gates.
 
+
+### Responsive canvas and image-crop contract (specification only)
+
+Treat artwork as an optional media layer inside a bounded `CanvasContainer`, never as a full-page screenshot or an image that carries required controls. Preserve the source aspect ratio by default (`object-fit: contain` for complete posters and diagrams); use `cover` only for atmospheric scenes whose focal area can be safely cropped. Keep focal position caller-configurable or use a documented safe center, and do not distort image dimensions. The container establishes its own responsive bounds and reserves the layout space needed to avoid content shifts while media loads.
+
+At phone widths, recompose the surrounding page so headings and the primary CTA remain live DOM content and visible without scrolling through an oversized image. For campaign posters, allow a contained preview with an adjacent or subsequent accessible details/transcript region; do not scale the canvas to the width of its longest source dimension or force page-wide horizontal scrolling. If a crop could remove meaningful content, switch to `contain`, provide an explicit uncropped view/details, or omit the art. Missing or failed media falls back to a neutral surface without hiding or disabling the content.
+
+This is a design contract, not a shipped component/API or measured breakpoint promise. A future implementation fixture should exercise portrait, landscape, and square media at 1440, 768, and 360 CSS-pixel viewports, verify intrinsic aspect ratio and no overflow, and confirm the heading and primary CTA remain visible and keyboard reachable with media enabled, disabled, and failed.
 ## 5. Asset inventory and split between generic and consumer-specific
 
 | Asset candidate | Core reusable? | Skin pack? | Moonwitness consumer only? | Suggested implementation |

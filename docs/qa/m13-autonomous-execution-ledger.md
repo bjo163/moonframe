@@ -1636,3 +1636,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonink.md`, defining a spacious brush-ink composition, calm control surfaces, and structural distinction from Moonscrawl while preserving shared component semantics and decoration-off/reduced-motion fallbacks.
 - Dependency MF-VF-015 is implemented. Task status `implemented`; documentation/source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, human review, rights clearance, or acceptance run/claimed under runner override.
 - Updated the matching visual backlog row and root TODO. No aggregate recount asserted because live snapshots conflict. No commit created; host runner owns checks and checkpoint. Rollback: remove the brief and restore MF-VF-144 to planned in both indexes; remove this ledger entry.
+
+## MF-VF-398 — Specify CanvasContainer/responsive image crop contract
+
+- Added responsive media guidance to `docs/visual/cinematic-mangapunk-reference-bible.md`: preserve aspect ratio, constrain `cover` to atmospheric crops, keep mobile heading/CTA accessible, provide media-failure fallback, and outline a future 1440/768/360 fixture for varied source ratios.
+- Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no package-manager commands, validators, suites, typecheck, build, screenshots, or human review were run. No runtime API or acceptance is claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the added subsection, restore MF-VF-398 to planned, and remove this ledger/TODO evidence.
