@@ -845,3 +845,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-023` is implemented. `git diff --check` passed. Per runner override, no package-manager commands, validators, test suites, typecheck, build, browser captures, or reference comparison were run. Human review, rights clearance, and acceptance remain pending.
 - Rollback: remove the component and stylesheet and restore the matching backlog/TODO/ledger entry.
 - Counts: prior live summary 123/488 implemented-or-captured, 365 planned, 0 explicitly blocked; now 124/488, 364 planned, 0 explicitly blocked.
+
+## MF-VF-337 — Build dynamic asymmetric story-tile composition
+
+- Added `apps/moonframe/templates/visual-reference/r02-story-grid.tsx` and `r02-story-grid.module.css`. Consumer-provided entries render as semantic articles with live titles/summaries and optional links/media. Asymmetric desktop spans and a featured tile establish varied pacing; mobile uses a single column preserving DOM order.
+- Dependency `MF-VF-023` is implemented. Status: `implemented`; no human review, source rights, or acceptance claimed.
+- Static source review only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, render, browser capture, or reference comparison. Host runner owns verification/checkpoint.
+- Live task row counts after this change: VF foundation 64/292 implemented-or-captured; reference addendum 40/168 implemented-or-captured; preflight 28/28 implemented-or-captured; total 132/488 implemented-or-captured, 356 planned.
+- Rollback: remove the component and stylesheet, restore task row to planned and revert matching root summary and ledger entry.
