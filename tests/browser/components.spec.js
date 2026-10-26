@@ -237,6 +237,36 @@ test('R04 sign-in fields and submit control stay legible with grayscale treatmen
   await expect(fields[0]).toHaveCSS('outline-style', 'solid');
 });
 
+test('R04 sign-in labels, fields, and keyboard focus remain visible in forced colors', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('/lab/behavior?fixture=auth');
+  await page.emulateMedia({ forcedColors: 'active' });
+  expect(await page.evaluate(() => window.matchMedia('(forced-colors: active)').matches)).toBe(true);
+
+  const region = page.getByRole('region', { name: 'Sign in to your workspace' });
+  const form = region.getByRole('form', { name: 'Sign in to Northstar Studio' });
+  const email = form.getByLabel('Email address');
+  const password = form.getByLabel('Password');
+  const submit = form.getByRole('button', { name: 'Sign in', exact: true });
+  for (const control of [email, password, submit]) await expect(control).toBeVisible();
+  await expect(email).toHaveAccessibleName('Email address');
+  await expect(password).toHaveAccessibleName('Password');
+
+  await email.focus();
+  await expect(email).toBeFocused();
+  const focusStyle = await email.evaluate(node => ({
+    outlineWidth: getComputedStyle(node).outlineWidth,
+    outlineStyle: getComputedStyle(node).outlineStyle,
+    borderStyle: getComputedStyle(node).borderStyle,
+  }));
+  expect(parseFloat(focusStyle.outlineWidth), 'forced-colors focus indicator remains visible').toBeGreaterThanOrEqual(2);
+  expect(focusStyle.outlineStyle).toBe('solid');
+  expect(focusStyle.borderStyle).toBe('solid');
+  expect(await form.evaluate(node => node.checkValidity())).toBe(false);
+  await submit.focus();
+  await expect(submit).toBeFocused();
+});
+
 test('editorial article copy, typography hooks, and image context stay fixed across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 

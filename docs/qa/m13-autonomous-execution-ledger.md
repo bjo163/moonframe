@@ -1,3 +1,9 @@
+## MF-VF-428 — Add forced-colors accessibility fixture for R04 auth
+
+- Added a focused Playwright scenario at 360×800 with forced-colors emulation, asserting sign-in labels and controls remain visible, required-field validity remains native, and keyboard focus has a solid outline at least 2px wide.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Per runner override, no browser suite, package-manager commands, validators, typecheck, build, screenshot, or human review run. Host runner owns verification/checkpoint. No WCAG conformance or acceptance claimed.
+- Rollback: remove the focused R04 test and restore MF-VF-428 to planned in the reference backlog and TODO; remove this ledger entry. No commit created.
+
 ## MF-VF-375 — Create painted CTA decorative backing
 
 - Added `assets/source/creative-reference/r04/cta-brush.svg`, a static generic brush-stroke backing intended only as optional decoration behind live button text. It contains accessible title/description and no external references, scripts, event handlers, or embedded copy. SHA-256: `5EEBA392B4B27F32D2B9136DBE28A39EB8B650DFD1322AEF72F0858988BC5F7A`.

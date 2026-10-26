@@ -508,8 +508,9 @@
 - [ ] **MF-VF-427 — Add grayscale screenshot fixture for all four screens** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Layout structural differences not only palette.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-428 — Add forced colors accessibility fixture for R04 auth** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+- [x] **MF-VF-428 — Add forced colors accessibility fixture for R04 auth** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Login form labels/focus buttons visible.
+  - **Evidence (2026-10-27):** Added an R04 sign-in browser regression at 360×800 with Playwright forced-colors emulation. It asserts the media state, visible email/password fields, labels and submit control, native required-field validity, and a solid keyboard focus outline of at least 2px. Dependency MF-VF-010 is implemented. Source inspection only; per runner override, no browser suite, package-manager command, validator, typecheck, or build was run. Host runner owns verification and checkpoint. This is automated fixture coverage, not screenshot capture, human accessibility review, or WCAG conformance. Rollback: remove the focused R04 test and restore this task row to planned.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-429 — Add 200% font zoom for R01 operational dashboard** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** Panels reflow and critical statuses remain readable.
