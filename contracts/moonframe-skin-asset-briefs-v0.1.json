@@ -103,7 +103,26 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "primary-dash-landing-auth",
+        "referenceIds": [
+          "MWX-REF-001",
+          "MWX-REF-002",
+          "MWX-REF-004"
+        ],
+        "distinctionRequirement": "Cinematic manga-punk structured UI uses ink-offset frames, irregular border devices and strong hero/scene split; keep labeled controls on clean semantic surfaces.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonriot",
@@ -194,7 +213,24 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-contrast",
+        "referenceIds": [
+          "MWX-REF-001"
+        ],
+        "distinctionRequirement": "Angles and signal disruption define Moonriot, not copied Moonpunk pink slabs or universal night city.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonzine",
@@ -285,7 +321,25 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-landing-poster",
+        "referenceIds": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "distinctionRequirement": "Layered paper editorial/collage, torn heading labels and whitespace; do not default to cyber command dashboard.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonhalftone",
@@ -376,7 +430,25 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-manga-print",
+        "referenceIds": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "distinctionRequirement": "Screentone/raster ink rendering and page pacing; separate from zine paper scrap and strict panel-only grammar.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonglitch",
@@ -467,7 +539,24 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-operational-detail",
+        "referenceIds": [
+          "MWX-REF-001"
+        ],
+        "distinctionRequirement": "Telemetry grid and technical signal rhythm, never mandatory flashing glitch or Moonpunk all-over neon art.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonsmash",
@@ -558,7 +647,24 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "primary-poster",
+        "referenceIds": [
+          "MWX-REF-003"
+        ],
+        "distinctionRequirement": "Campaign/poster impact grammar for expressive content. Basic data/forms retain semantics; portrait poster not universal shell.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonink",
@@ -649,7 +755,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "independent",
+        "referenceIds": [],
+        "distinctionRequirement": "Use painterly brush expression and negative space, not punk sticker saturation or notebook annotations.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "mooncrash",
@@ -740,7 +861,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "independent",
+        "referenceIds": [],
+        "distinctionRequirement": "Utility hazard mechanical plates, not Moonwitness city artwork or ledger corporate quiet.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonpanel",
@@ -831,7 +967,25 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-panel-layout",
+        "referenceIds": [
+          "MWX-REF-001",
+          "MWX-REF-002"
+        ],
+        "distinctionRequirement": "Rigid modular information panels and deliberate gutters; style-derived from structure only, not copyrighted consumer covers.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonscrawl",
@@ -922,7 +1076,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "independent",
+        "referenceIds": [],
+        "distinctionRequirement": "Notebook annotation grammar with ruled construction; not Moonink calligraphic landscape.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonraw",
@@ -1010,7 +1179,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "independent",
+        "referenceIds": [],
+        "distinctionRequirement": "Expose pure brutalist unornamented geometry. No neon, anime or collage as default.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonchrome",
@@ -1101,7 +1285,24 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "secondary-auth-scenery-only",
+        "referenceIds": [
+          "MWX-REF-004"
+        ],
+        "distinctionRequirement": "Metal/spectral rim optional around cinema slot; preserve polished futuristic skin vs ink punk.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "classic",
@@ -1189,7 +1390,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "neutral-control",
+        "referenceIds": [],
+        "distinctionRequirement": "Keep standard familiar UI as control group; do not leak Moonpunk promo branding.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonquest",
@@ -1280,7 +1496,22 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "independent",
+        "referenceIds": [],
+        "distinctionRequirement": "Use quest journal/relic frame from canonical spec, not Moonwitness fiction or any hidden game backend.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     },
     {
       "skinId": "moonledger",
@@ -1368,7 +1599,28 @@
         "artifactHash": null,
         "accepted": false
       },
-      "implementationStatus": "not-produced"
+      "implementationStatus": "not-produced",
+      "creativeReference": {
+        "role": "enterprise-control",
+        "referenceIds": [],
+        "distinctionRequirement": "Dense enterprise/ERP layout and quiet data clarity; no punk/moon city artwork default.",
+        "originalAssetCategories": [
+          "geometry-only optional skin motif",
+          "noninteractive texture only if justified",
+          "optional scene illustration",
+          "separately approved edition label"
+        ],
+        "consumerBrandAssetExcluded": true,
+        "sourceRightsRequiredBeforeDistribution": true,
+        "textAndFormMustRemainAccessible": true,
+        "status": "art-direction-proposed-no-reusable-media-delivered"
+      }
     }
-  ]
+  ],
+  "creativeReferenceOverlay": {
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "styleBible": "docs/visual/cinematic-mangapunk-reference-bible.md",
+    "status": "references-uploaded-to-conversation-not-shipped",
+    "approvedAssetsGeneratedFromReferences": 0
+  }
 }
