@@ -1,0 +1,931 @@
+# Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
+
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Status:** all new tasks `planned` · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+
+**Observed red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
+
+## Authority and nonnegotiable acceptance rules
+
+- Normative documents: [UI Bible](../moonframe-ui-design-system-bible-v1.3.md), [skin grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json), [skin asset briefs](../../contracts/moonframe-skin-asset-briefs-v0.1.json), [brand Bible](../brand/original-asset-brand-bible.md), [asset manifest](../../contracts/moonframe-asset-manifest-v0.1.json), [skin fixtures](../qa/skin-lab-fixtures.md), [visual QA Bible](../qa/accessibility-visual-qa-bible.md), [existing policy-level asset backlog](original-asset-atomic-issues.md). This micro queue does not redefine tokens, IDs, UI APIs, licenses, or existing asset approval state.
+- New task IDs `MF-VF-###` avoid legacy task ID collisions. Every checkbox below starts unchecked. They are *not* GitHub issues and no code, image, logo, font or screenshot is produced merely by adding this backlog.
+- All generated media requires source/edit lineage, exact creator and rights, SHA-256 once created, static SVG security validation (no scripts/events/foreignObject/external href/data URL), bounded viewBox/optical sizes, a11y meaning, light/dark/mono, optional decoration-off fallback. AI-produced art is not automatically copyrighted/trademark-cleared. One Moonframe brand, 15 visual editions; do not force 15 separate corporate logos or replace consuming app marks.
+- `15 skins × 2 modes = 30 appearances`; `15 choose 2 = 105 unordered skin pairs`. Same pinned fixture/content/fonts/time/viewport. A score from different contract strings or mere PNG presence is NOT human visual review. Review light/dark, grayscale, decoration-off, reduced-motion, forced-colors, RTL, mobile reflow, focus, interaction; missing earlier mockups must be labelled `reference-missing` instead of invented parity.
+- Stages: `planned → in-progress → implemented → captured → human-reviewed → accepted`, also `blocked/rejected`. P0 evidence truth first; then Classic/Moonpunk/Moonzine/Moonledger four-skin pilot; remaining skins; showcase, accessibility and 105 human comparisons. One micro ID per local-agent session. Source paths marked `(proposed)` do not yet exist.
+- Per-task DoD = named file diff (one file or bounded shared-file edit), actual commands/outputs, same-SHA screenshot or source where relevant, safe provenance/rights, reviewer where needed, rollback notes. Shared `src/styles.css` changes serially, not many competing agents. Do not create branches, issues or publish package without separate request.
+
+## Workstream totals
+
+| Workstream | Tasks | Done |
+|---|---:|---:|
+| A — P0 repair release evidence and CI | 16 | 0 |
+| B — deterministic lab and snapshot fixture microtasks | 16 | 0 |
+| C — master logo and its smallest production assets | 17 | 0 |
+| D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
+| E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
+| F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
+| G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
+| **TOTAL** | **292** | **0** |
+
+## A — P0 repair release evidence and CI
+
+- [ ] **MF-VF-001 — Pin current broken CI evidence** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Commit 00c9bd65 and run 40245436959 logged; 30 missing captures, 11/12 tests, skipped build/typecheck.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-002 — Decouple unit tests from generated screenshots** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `tests/runtime.test.mjs`. **Acceptance:** Unit/SSR tests run on clean clone without prior PNGs.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-003 — Add Playwright browser-install job step** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Playwright browser installed deterministically in CI.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-004 — Add Playwright execution after build** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Browser test runs and fails correctly on regression.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-005 — Upload screenshot, trace and failure artifacts** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `.github/workflows/contract-validation.yml`. **Acceptance:** Artifact archive named by run SHA; inspectable.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-006 — Enforce same-commit capture input for pair auditing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Do not inspect stale local PNG from unrelated HEAD.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-007 — Demote auto-generated 105 pair verdicts to structural-only** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Source-text inequality never yields human visual PASS.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-008 — Remove generator hardcoded owner signoff** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** No automatic OWNER-APPROVED string from algorithm.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-009 — Correct historic 105/105 claims with current proof status** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/skin-pairwise-review-report.md`. **Acceptance:** Previous scores attributed as structure-derived, capture/human review tracked separately.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-010 — Create new evidence ledger for screenshot IDs** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** One row schema for SHA, fixture, screen, path, reviewer, status, exception.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-011 — Reconcile npm/public/private/package naming** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `README.md`. **Acceptance:** Current root package.json and documented claims agree; registry evidence only if checked.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-012 — Fix site footer stale 66+ and 22 counts** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/components/site/SiteShell.tsx`. **Acceptance:** Accurate catalogs shown without obsolete hardcoded counts.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-013 — Remove blanket WCAG certification from landing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** Token contrast checks described narrowly.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-014 — Distinguish inline runtime marks from approved source brand assets** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `docs/brand/original-asset-brand-bible.md`. **Acceptance:** Existing vector JSX not misrepresented as rights-cleared independent asset set.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-015 — Inventory earlier mockup images or mark references missing** · **P0** · `planned` · **dependency:** `none` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Path/hash/rights only when actual reference retrievable; no fabricated pixel parity.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-016 — Prove clean checkout CI all jobs green** · **P0** · `planned` · **dependency:** `MF-VF-002, MF-VF-003, MF-VF-004, MF-VF-005` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/rc-evidence-and-release-ledger.md`. **Acceptance:** Real link to same-SHA contract/unit/typecheck/build/browser run.
+  - **Verify:** Link true CI result, test log and commit SHA. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## B — deterministic lab and snapshot fixture microtasks
+
+- [ ] **MF-VF-017 — Pin desktop screenshot layout 1440x960** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/skin-lab-fixtures.md`. **Acceptance:** Frozen data, fonts, clock, locale and 1440×960 viewport.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-018 — Pin tablet screenshot layout 768x1024** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/skin-lab-fixtures.md`. **Acceptance:** Real tablet reflow, no resized desktop approximation.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-019 — Pin phone screenshot layout 360x800** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/skin-lab-fixtures.md`. **Acceptance:** No horizontal overflow or clipped focus controls.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-020 — Add same-data dashboard specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Metrics, labels, sections fixed across skins.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-021 — Add same-data table specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Table rows and interactive state identical.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-022 — Add same-data form specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Form labels, error text and fields identical.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-023 — Add reproducible open dialog specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/behavior/page.tsx`. **Acceptance:** Modal visible at stable deterministic state.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-024 — Add common sidebar/nav specimen** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Selected item and information architecture fixed.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-025 — Add decoration-off toggle for fixture** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Optional art removable without semantic loss.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-026 — Add grayscale capture variant** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Same fixture compared without hue cues.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-027 — Wait for fonts-ready or documented fallback** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** No transient font loading screenshot difference.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-028 — Encode skin/mode/viewport/state in output filename** · **P1** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** No overwrites; stable evidence ID.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-029 — Capture reduced motion specimen** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** No critical meaning missing when motion removed.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-030 — Capture forced colors specimen** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Visible focus and controls under system forced colors.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-031 — Build contact sheet with A/B rendered images** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `scripts/audit-skin-pairs.mjs`. **Acceptance:** Images directly comparable, no auto reviewer approval.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-032 — Record pilot manual review fields** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger same contents and typed reviewer status.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## C — master logo and its smallest production assets
+
+- [ ] **MF-VF-033 — Approve one-umbrella logo vs edition devices** · **P1** · `planned` · **dependency:** `MF-VF-014` · **GitHub issue:** not-created
+  - **File scope:** `docs/brand/original-asset-brand-bible.md`. **Acceptance:** One Moonframe brand; no 15 separate legal-brand logo requirement.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-034 — Specify legible 16px master silhouette** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `docs/brand/master-mark-review.md (proposed)`. **Acceptance:** Monochrome silhouette and optical margin pass criteria.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-035 — Draw original geometric-frame logo candidate A** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/mark-a.svg (proposed)`. **Acceptance:** Static safe viewBox vector, not borrowed art.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-036 — Draw original angular brutalist logo candidate B** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/mark-b.svg (proposed)`. **Acceptance:** Distinct hard-edged geometry from A.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-037 — Draw original negative-space lunar logo candidate C** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/mark-c.svg (proposed)`. **Acceptance:** Distinct recognizable negative-space silhouette.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-038 — Compare three marks at 16/24/32/128px** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `docs/brand/master-mark-review.md (proposed)`. **Acceptance:** Contact sheet in mono/light/dark; not preapproved.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-039 — Get actual owner candidate choice** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `docs/brand/master-mark-review.md (proposed)`. **Acceptance:** Named dated decision and rejected option rationale.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-040 — Refine selected mark optical padding** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/moonframe-mark.svg (proposed)`. **Acceptance:** No clipping, stable viewBox and small-size readability.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-041 — Create editable Moonframe wordmark SVG** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/moonframe-wordmark.svg (proposed)`. **Acceptance:** Readable letters, source/font usage rights established.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-042 — Create horizontal mark+wordmark lockup** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/moonframe-lockup.svg (proposed)`. **Acceptance:** Legible mobile nav safe-zone.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-043 — Create single-color mark** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/moonframe-mark-mono.svg (proposed)`. **Acceptance:** No reliance on gradient/accent hue.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-044 — Create reverse-dark mark** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/brand/moonframe-mark-reverse.svg (proposed)`. **Acceptance:** Survives dark surfaces without glow.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-045 — Render actual 16px favicon PNG** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/exports/brand/favicon-16.png (proposed)`. **Acceptance:** Tab-sized visual proof; no unreadable strokes.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-046 — Render actual 32px favicon PNG** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/exports/brand/favicon-32.png (proposed)`. **Acceptance:** 2x crisp, correct alpha.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-047 — Create safe SVG favicon candidate** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/exports/brand/favicon.svg (proposed)`. **Acceptance:** No executable or external vector content.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-048 — Integrate approved logo only in Moonframe showcase** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/components/site/SiteShell.tsx`. **Acceptance:** Consumer brands unaffected.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-049 — Register real accepted art source rights/hash** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `contracts/moonframe-asset-manifest-v0.1.json`. **Acceptance:** License/creator/SHA256/reviewer evidence filled only after valid asset exists.
+  - **Verify:** Inspect size variants, SVG safety, provenance, human review. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## D — individual functional SVG glyphs (one icon = one task)
+
+- [ ] **MF-VF-050 — Draw semantic search icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/search.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly lens + handle, not filter at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-051 — Draw semantic close icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/close.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly dismiss X, not delete at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-052 — Draw semantic menu icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/menu.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly three menu bars at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-053 — Draw semantic chevron-down icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/chevron-down.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly disclosure/expand at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-054 — Draw semantic arrow-right icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/arrow-right.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly logical direction incl RTL at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-055 — Draw semantic plus icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/plus.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly add action at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-056 — Draw semantic check icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/check.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly selection/completion at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-057 — Draw semantic warning icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/warning.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly triangle exclamation at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-058 — Draw semantic info icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/info.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly information at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-059 — Draw semantic trash icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/trash.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly delete/bin distinct from X at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-060 — Draw semantic edit icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/edit.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly pencil at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-061 — Draw semantic filter icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/filter.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly filter funnel at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-062 — Draw semantic sort icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/sort.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly sort neutral/asc/desc semantic at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-063 — Draw semantic download icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/download.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly down to receiver at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-064 — Draw semantic upload icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/upload.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly up from receiver at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-065 — Draw semantic external-link icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/external-link.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly external destination at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-066 — Draw semantic moon icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/moon.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly dark appearance cue at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-067 — Draw semantic sun icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/sun.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly light appearance cue at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-068 — Draw semantic settings icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/settings.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly gear at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-069 — Draw semantic user icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/user.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly neutral profile at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-070 — Draw semantic calendar icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/calendar.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly date at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-071 — Draw semantic lock icon** · **P1** · `planned` · **dependency:** `MF-VF-033` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/icons/lock.svg (proposed)`. **Acceptance:** 24×24 currentColor source. Clearly secured state label at 16/20/24px; icon-only control requires accessible label; no change of semantics between skins.
+  - **Verify:** Static SVG no script/external resource, display in light/dark/forced colors; preserve aria role. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## E — 15 skins x 12 subatomic design, illustration and review actions
+
+- [ ] **MF-VF-072 — [moonpunk] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonpunk.md (proposed)`. **Acceptance:** One approved visual recipe for manga punk / neo-brutalist offset slab; distinguish from moonriot, moonsmash in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-073 — [moonpunk] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpunk/motif.svg (proposed)`. **Acceptance:** Static safe vector ink burst corner; mono recognizable, distinct from moonriot, moonsmash.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-074 — [moonpunk] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpunk/pattern.svg (proposed)`. **Acceptance:** Original hard shadow registration restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-075 — [moonpunk] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpunk/hero.svg (proposed)`. **Acceptance:** One brutalist manga hero source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-076 — [moonpunk] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpunk/edition.svg (proposed)`. **Acceptance:** Label for moonpunk as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-077 — [moonpunk] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonpunk wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-078 — [moonpunk] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color manga punk / neo-brutalist offset slab composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-079 — [moonpunk] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-080 — [moonpunk] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonpunk decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-081 — [moonpunk] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-082 — [moonpunk] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-083 — [moonpunk] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-072` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonpunk.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonriot, moonsmash; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-084 — [moonriot] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonriot.md (proposed)`. **Acceptance:** One approved visual recipe for angular riot editorial; distinguish from moonpunk, moonsmash in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-085 — [moonriot] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonriot/motif.svg (proposed)`. **Acceptance:** Static safe vector pointed signal wedge; mono recognizable, distinct from moonpunk, moonsmash.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-086 — [moonriot] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonriot/pattern.svg (proposed)`. **Acceptance:** Original directional red-signal stripes restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-087 — [moonriot] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonriot/hero.svg (proposed)`. **Acceptance:** One cut-paper split editorial hero source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-088 — [moonriot] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonriot/edition.svg (proposed)`. **Acceptance:** Label for moonriot as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-089 — [moonriot] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonriot wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-090 — [moonriot] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color angular riot editorial composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-091 — [moonriot] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-092 — [moonriot] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonriot decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-093 — [moonriot] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-094 — [moonriot] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-095 — [moonriot] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-084` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonriot.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonpunk, moonsmash; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-096 — [moonzine] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonzine.md (proposed)`. **Acceptance:** One approved visual recipe for underground magazine collage; distinguish from moonhalftone, moonpanel in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-097 — [moonzine] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonzine/motif.svg (proposed)`. **Acceptance:** Static safe vector torn-edge paper scrap; mono recognizable, distinct from moonhalftone, moonpanel.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-098 — [moonzine] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonzine/pattern.svg (proposed)`. **Acceptance:** Original photocopy paper layer restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-099 — [moonzine] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonzine/hero.svg (proposed)`. **Acceptance:** One editorial masthead and paper stack source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-100 — [moonzine] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonzine/edition.svg (proposed)`. **Acceptance:** Label for moonzine as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-101 — [moonzine] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonzine wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-102 — [moonzine] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color underground magazine collage composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-103 — [moonzine] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-104 — [moonzine] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonzine decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-105 — [moonzine] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-106 — [moonzine] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-107 — [moonzine] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-096` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonzine.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonhalftone, moonpanel; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-108 — [moonhalftone] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonhalftone.md (proposed)`. **Acceptance:** One approved visual recipe for monochrome manga screentone; distinguish from moonzine, moonpanel in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-109 — [moonhalftone] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonhalftone/motif.svg (proposed)`. **Acceptance:** Static safe vector screened ink disk; mono recognizable, distinct from moonzine, moonpanel.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-110 — [moonhalftone] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonhalftone/pattern.svg (proposed)`. **Acceptance:** Original bounded halftone dots restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-111 — [moonhalftone] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonhalftone/hero.svg (proposed)`. **Acceptance:** One panel-paced comic caption hero source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-112 — [moonhalftone] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonhalftone/edition.svg (proposed)`. **Acceptance:** Label for moonhalftone as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-113 — [moonhalftone] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonhalftone wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-114 — [moonhalftone] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color monochrome manga screentone composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-115 — [moonhalftone] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-116 — [moonhalftone] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonhalftone decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-117 — [moonhalftone] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-118 — [moonhalftone] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-119 — [moonhalftone] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-108` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonhalftone.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonzine, moonpanel; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-120 — [moonglitch] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonglitch.md (proposed)`. **Acceptance:** One approved visual recipe for terminal diagnostics; distinguish from moonchrome in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-121 — [moonglitch] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonglitch/motif.svg (proposed)`. **Acceptance:** Static safe vector signal-break glyph; mono recognizable, distinct from moonchrome.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-122 — [moonglitch] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonglitch/pattern.svg (proposed)`. **Acceptance:** Original restrained scanline restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-123 — [moonglitch] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonglitch/hero.svg (proposed)`. **Acceptance:** One measured telemetry console source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-124 — [moonglitch] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonglitch/edition.svg (proposed)`. **Acceptance:** Label for moonglitch as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-125 — [moonglitch] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonglitch wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-126 — [moonglitch] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color terminal diagnostics composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-127 — [moonglitch] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-128 — [moonglitch] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonglitch decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-129 — [moonglitch] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-130 — [moonglitch] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-131 — [moonglitch] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-120` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonglitch.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonchrome; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-132 — [moonsmash] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonsmash.md (proposed)`. **Acceptance:** One approved visual recipe for radial kinetic poster; distinguish from moonpunk, moonriot in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-133 — [moonsmash] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonsmash/motif.svg (proposed)`. **Acceptance:** Static safe vector impact burst; mono recognizable, distinct from moonpunk, moonriot.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-134 — [moonsmash] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonsmash/pattern.svg (proposed)`. **Acceptance:** Original short radial speed lines restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-135 — [moonsmash] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonsmash/hero.svg (proposed)`. **Acceptance:** One oversized kinetic impact layout source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-136 — [moonsmash] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonsmash/edition.svg (proposed)`. **Acceptance:** Label for moonsmash as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-137 — [moonsmash] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonsmash wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-138 — [moonsmash] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color radial kinetic poster composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-139 — [moonsmash] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-140 — [moonsmash] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonsmash decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-141 — [moonsmash] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-142 — [moonsmash] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-143 — [moonsmash] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-132` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonsmash.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonpunk, moonriot; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-144 — [moonink] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonink.md (proposed)`. **Acceptance:** One approved visual recipe for brush ink with calm margin; distinguish from moonscrawl in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-145 — [moonink] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonink/motif.svg (proposed)`. **Acceptance:** Static safe vector brush swipe; mono recognizable, distinct from moonscrawl.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-146 — [moonink] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonink/pattern.svg (proposed)`. **Acceptance:** Original sparse ink fleck restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-147 — [moonink] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonink/hero.svg (proposed)`. **Acceptance:** One illustrated brush and negative space source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-148 — [moonink] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonink/edition.svg (proposed)`. **Acceptance:** Label for moonink as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-149 — [moonink] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonink wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-150 — [moonink] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color brush ink with calm margin composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-151 — [moonink] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-152 — [moonink] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonink decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-153 — [moonink] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-154 — [moonink] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-155 — [moonink] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-144` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonink.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonscrawl; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-156 — [mooncrash] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/mooncrash.md (proposed)`. **Acceptance:** One approved visual recipe for industrial mechanic hazard; distinguish from moonledger in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-157 — [mooncrash] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/mooncrash/motif.svg (proposed)`. **Acceptance:** Static safe vector equipment plate notch; mono recognizable, distinct from moonledger.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-158 — [mooncrash] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/mooncrash/pattern.svg (proposed)`. **Acceptance:** Original limited safety hatching restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-159 — [mooncrash] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/mooncrash/hero.svg (proposed)`. **Acceptance:** One rugged equipment operations hero source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-160 — [mooncrash] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/mooncrash/edition.svg (proposed)`. **Acceptance:** Label for mooncrash as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-161 — [mooncrash] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped mooncrash wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-162 — [mooncrash] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color industrial mechanic hazard composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-163 — [mooncrash] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-164 — [mooncrash] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when mooncrash decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-165 — [mooncrash] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-166 — [mooncrash] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-167 — [mooncrash] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/mooncrash.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonledger; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-168 — [moonpanel] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonpanel.md (proposed)`. **Acceptance:** One approved visual recipe for modular comic grid; distinguish from moonhalftone in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-169 — [moonpanel] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpanel/motif.svg (proposed)`. **Acceptance:** Static safe vector grid corner register; mono recognizable, distinct from moonhalftone.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-170 — [moonpanel] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpanel/pattern.svg (proposed)`. **Acceptance:** Original strict rectangular gutters restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-171 — [moonpanel] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpanel/hero.svg (proposed)`. **Acceptance:** One comic-panel pacing with captions source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-172 — [moonpanel] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonpanel/edition.svg (proposed)`. **Acceptance:** Label for moonpanel as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-173 — [moonpanel] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonpanel wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-174 — [moonpanel] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color modular comic grid composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-175 — [moonpanel] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-176 — [moonpanel] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonpanel decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-177 — [moonpanel] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-178 — [moonpanel] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-179 — [moonpanel] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-168` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonpanel.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonhalftone; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-180 — [moonscrawl] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonscrawl.md (proposed)`. **Acceptance:** One approved visual recipe for loose sketch notebook; distinguish from moonink in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-181 — [moonscrawl] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonscrawl/motif.svg (proposed)`. **Acceptance:** Static safe vector hand annotation arrow; mono recognizable, distinct from moonink.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-182 — [moonscrawl] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonscrawl/pattern.svg (proposed)`. **Acceptance:** Original subtle notebook lines restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-183 — [moonscrawl] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonscrawl/hero.svg (proposed)`. **Acceptance:** One scribbled margin annotations source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-184 — [moonscrawl] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonscrawl/edition.svg (proposed)`. **Acceptance:** Label for moonscrawl as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-185 — [moonscrawl] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonscrawl wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-186 — [moonscrawl] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color loose sketch notebook composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-187 — [moonscrawl] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-188 — [moonscrawl] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonscrawl decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-189 — [moonscrawl] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-190 — [moonscrawl] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-191 — [moonscrawl] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-180` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonscrawl.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonink; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-192 — [moonraw] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonraw.md (proposed)`. **Acceptance:** One approved visual recipe for raw minimalist brutalism; distinguish from classic in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-193 — [moonraw] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonraw/motif.svg (proposed)`. **Acceptance:** Static safe vector construction line marker; mono recognizable, distinct from classic.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-194 — [moonraw] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonraw/pattern.svg (proposed)`. **Acceptance:** Original near-zero texture restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-195 — [moonraw] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonraw/hero.svg (proposed)`. **Acceptance:** One exposed structure and rigid type source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-196 — [moonraw] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonraw/edition.svg (proposed)`. **Acceptance:** Label for moonraw as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-197 — [moonraw] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonraw wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-198 — [moonraw] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color raw minimalist brutalism composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-199 — [moonraw] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-200 — [moonraw] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonraw decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-201 — [moonraw] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-202 — [moonraw] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-203 — [moonraw] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-192` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonraw.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs classic; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-204 — [moonchrome] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonchrome.md (proposed)`. **Acceptance:** One approved visual recipe for futuristic metal; distinguish from moonglitch in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-205 — [moonchrome] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonchrome/motif.svg (proposed)`. **Acceptance:** Static safe vector reflective rim segment; mono recognizable, distinct from moonglitch.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-206 — [moonchrome] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonchrome/pattern.svg (proposed)`. **Acceptance:** Original controlled metallic highlight restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-207 — [moonchrome] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonchrome/hero.svg (proposed)`. **Acceptance:** One chrome surface without glitch source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-208 — [moonchrome] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonchrome/edition.svg (proposed)`. **Acceptance:** Label for moonchrome as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-209 — [moonchrome] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonchrome wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-210 — [moonchrome] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color futuristic metal composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-211 — [moonchrome] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-212 — [moonchrome] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonchrome decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-213 — [moonchrome] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-214 — [moonchrome] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-215 — [moonchrome] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-204` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonchrome.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonglitch; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-216 — [classic] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/classic.md (proposed)`. **Acceptance:** One approved visual recipe for restrained conventional UI; distinguish from moonraw in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-217 — [classic] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/classic/motif.svg (proposed)`. **Acceptance:** Static safe vector simple balanced frame; mono recognizable, distinct from moonraw.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-218 — [classic] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/classic/pattern.svg (proposed)`. **Acceptance:** Original intentional texture absent restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-219 — [classic] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/classic/hero.svg (proposed)`. **Acceptance:** One familiar neutral baseline source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-220 — [classic] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/classic/edition.svg (proposed)`. **Acceptance:** Label for classic as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-221 — [classic] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped classic wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-222 — [classic] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color restrained conventional UI composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-223 — [classic] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-224 — [classic] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when classic decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-225 — [classic] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-226 — [classic] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-227 — [classic] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-216` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/classic.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonraw; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-228 — [moonquest] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonquest.md (proposed)`. **Acceptance:** One approved visual recipe for quest book fantasy presentation; distinguish from moonzine, moonledger in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-229 — [moonquest] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonquest/motif.svg (proposed)`. **Acceptance:** Static safe vector original geometric sigil; mono recognizable, distinct from moonzine, moonledger.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-230 — [moonquest] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonquest/pattern.svg (proposed)`. **Acceptance:** Original restrained parchment rule restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-231 — [moonquest] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonquest/hero.svg (proposed)`. **Acceptance:** One guild journal/inventory source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-232 — [moonquest] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonquest/edition.svg (proposed)`. **Acceptance:** Label for moonquest as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-233 — [moonquest] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonquest wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-234 — [moonquest] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color quest book fantasy presentation composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-235 — [moonquest] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-236 — [moonquest] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonquest decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-237 — [moonquest] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-238 — [moonquest] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-239 — [moonquest] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-228` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonquest.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonzine, moonledger; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-240 — [moonledger] Write derived visual direction and anti-overlap brief** · **P1** · `planned` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
+  - **File scope:** `docs/visual/skins/moonledger.md (proposed)`. **Acceptance:** One approved visual recipe for precise enterprise ledger; distinguish from mooncrash, classic in geometry/type/nav/data, using existing canonical contracts.
+  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-241 — [moonledger] Draw original motif SVG** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonledger/motif.svg (proposed)`. **Acceptance:** Static safe vector aligned ledger register; mono recognizable, distinct from mooncrash, classic.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-242 — [moonledger] Draw minimal decorative pattern SVG** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonledger/pattern.svg (proposed)`. **Acceptance:** Original thin accounting separator restricted to noninteractive margins, optional to hide.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-243 — [moonledger] Draw original hero illustration SVG** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonledger/hero.svg (proposed)`. **Acceptance:** One compact professional grid source illustration, no essential text baked in image.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-244 — [moonledger] Draw small skin-edition vector badge** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `assets/source/skins/moonledger/edition.svg (proposed)`. **Acceptance:** Label for moonledger as Moonframe edition, not independent company logo.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-245 — [moonledger] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Scoped moonledger wrapper; shared SVG glyph meaning/ARIA unchanged.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-246 — [moonledger] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color precise enterprise ledger composition without palette-only theme.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-247 — [moonledger] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-248 — [moonledger] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonledger decoration disabled.
+  - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-249 — [moonledger] Capture same-content light 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real light evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-250 — [moonledger] Capture same-content dark 1440px and 360px** · **P2** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-251 — [moonledger] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-240` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/moonledger.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs mooncrash, classic; named reviewer verdict, never auto PASS.
+  - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## F — visual thumbnail marketplace & Moonwitness adoption
+
+- [ ] **MF-VF-252 — Replace text-only template gallery card with real screenshot** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** Each item uses real preview thumbnail or explicitly pending placeholder.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-253 — Stabilize template card aspect ratio and accessible alt** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** No CLS and correct decorative image alt.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-254 — Replace uniform SkinCard specimen with actual UI micro-preview** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/components/site/SkinCard.tsx`. **Acceptance:** Dashboard, form or table shown using equal fixture content.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-255 — Expose both light/dark real SkinCard previews** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/components/site/SkinCard.tsx`. **Acceptance:** Correct same-content light/dark previews for each skin.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-256 — Add two-skin side-by-side diff selection** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Identical content appears in both skin containers.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-257 — Add grayscale/decor-off toggle on diff view** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Review non-color properties by disabling color/decorations.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-258 — Show actual human-reviewed/pending state on skin detail** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/skins/[id]/page.tsx`. **Acceptance:** Do not show approved badge based on CSS score.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-259 — Add optional art slot to showcase landing hero** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** CTA/title remain visible when illustration fails/hidden.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-260 — Show 4 pilot skin screenshots on landing** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger visibly different.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-261 — Add real visual previews to eight starter cards** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/starters/page.tsx`. **Acceptance:** Eight independent screenshots or honest missing labels.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-262 — Find inert buttons in 43 templates** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** Audit per action working/demo/integration seam.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-263 — Label demo auth/OAuth actions as simulated** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** No fake sign-in success claim.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-264 — Screenshot 43 templates deterministically** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/site.spec.js`. **Acceptance:** One capture per template with same recorded viewport/skin mode.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-265 — Track 43 individual template review records** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/template-fidelity-ledger.md (proposed)`. **Acceptance:** Reference, image, rights, reviewer, exceptions, explicit pending state.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-266 — Document consumer UI seam: Corpus Reader** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/examples/moonwitness-corpus-reader.md (proposed)`. **Acceptance:** Reading layout composes Moonframe primitives; data and theology not core.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-267 — Document consumer UI seam: ontology explorer** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/examples/moonwitness-ontology-explorer.md (proposed)`. **Acceptance:** Graph renderer integration is optional and not falsely claimed shipped.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-268 — Document consumer UI seam: prophetic table** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/examples/moonwitness-prophetic-table.md (proposed)`. **Acceptance:** Generic table affordances without hard-coded domain truth.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-269 — Document consumer UI seam: glossary/terms index** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/examples/moonwitness-terms-index.md (proposed)`. **Acceptance:** Search/index presentation separated from actual knowledge.
+  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## G — final 9 specimens, cross-family QA and release gate
+
+- [ ] **MF-VF-270 — Freeze executive dashboard specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/dashboard.md (proposed)`. **Acceptance:** Same metric/data labels across skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-271 — Freeze sortable table specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/table.md (proposed)`. **Acceptance:** Same search and table rows across skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-272 — Freeze long form/error specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/form.md (proposed)`. **Acceptance:** Same labels/helper/errors across skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-273 — Freeze dialog/popover specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/dialog.md (proposed)`. **Acceptance:** Same focus and overlay interaction across skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-274 — Freeze sidebar/header specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/navigation.md (proposed)`. **Acceptance:** Same IA and active route across skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-275 — Freeze auth flow specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/auth.md (proposed)`. **Acceptance:** Explicit simulated authentication fixture.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-276 — Freeze editorial long article specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/article.md (proposed)`. **Acceptance:** Same typography content and image context.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-277 — Freeze compact ERP specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/enterprise.md (proposed)`. **Acceptance:** Same dense rows, summary and filters.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-278 — Freeze loading/empty/error/denied specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/states.md (proposed)`. **Acceptance:** Same variant states and actions.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-279 — Compare Moonpunk vs Moonriot vs Moonsmash** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/punk-riot-smash.md (proposed)`. **Acceptance:** Distinct non-color composition approved only with screenshots.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-280 — Compare Moonzine vs Moonhalftone vs Moonpanel** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/zine-halftone-panel.md (proposed)`. **Acceptance:** Collage, raster ink, rigid comic panels remain different.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-281 — Compare Moonink vs Moonscrawl** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/ink-scrawl.md (proposed)`. **Acceptance:** Brush work vs notebook mark.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-282 — Compare Moonglitch vs Moonchrome** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/glitch-chrome.md (proposed)`. **Acceptance:** Signal terminal vs metallic surface.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-283 — Compare Mooncrash vs Moonledger** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/crash-ledger.md (proposed)`. **Acceptance:** Industrial hazard vs compact data office.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-284 — Compare Moonraw vs Classic** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reviews/raw-classic.md (proposed)`. **Acceptance:** Raw brutality vs familiar polished baseline.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-285 — Test shared functional icon ARIA in all 15 skins** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/components.spec.js`. **Acceptance:** Same search/delete/warning labels and semantics regardless styling.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-286 — Test contrast of actual nested rendered surfaces** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Rendered controls/focus/overlays checked, not token pairs alone.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-287 — Test no-art/no-custom-font behavior** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** All critical actions still work and content readable.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-288 — Test SVG import malicious fixture cases** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/original-asset-validation-plan.md`. **Acceptance:** Reject scripts/event handlers/foreignObject/external refs.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-289 — Track asset rights and hashes in one evidence ledger** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Real vs planned assets clearly marked for all 15 skins.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-290 — Track actual human verdicts for 105 unordered pairs** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Evidence link and reviewer required; pending default.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-291 — Gate visual release on all true CI jobs** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/architecture/release-train-and-adoption.md`. **Acceptance:** Same-SHA contracts/unit/type/build/browser/capture linked.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [ ] **MF-VF-292 — Record owner final visual signoff and exceptions** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** No autogenerated name/date/approval; open deltas explicit.
+  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+
+## Micro-agent operating contract
+
+1. Clone/sync existing `main`, read root `TODO.md`, choose one `MF-VF` task and check its dependencies and canonical authority. No new branches or unrelated edits.
+2. For code: run applicable `node scripts/validate-contracts.mjs`, `pnpm test`, `pnpm run typecheck`, `pnpm run build`, `pnpm run test:browser`; record whether they really executed on same SHA. Browser artifacts must be accessible to reviewer.
+3. For artwork: one SVG/icon/logo/vector/optional raster source per task, with viewBox, accessibility, secure sanitizer process, original/rights evidence, source/master and export separation and review at small sizes. Do not commit dubious/unlicensed material.
+4. Completion reply: `ID | actual files | before/after | exact tests | artifact URI/hash | SHA | review status | unresolved risks`. Root TODO is an index, not a second copy of the task body.
