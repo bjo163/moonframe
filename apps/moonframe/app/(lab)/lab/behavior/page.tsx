@@ -40,11 +40,11 @@ export default function BehaviorFixturePage() {
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
-      <h1>Components</h1>
+      {!authFixture && <h1>Components</h1>}
       {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
         <header style={{ marginBlockEnd: '1.5rem' }}>
           <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
-          <h2 id="auth-preview-title">Sign in to your workspace</h2>
+          <h1 id="auth-preview-title">Sign in to your workspace</h1>
           <p>Enter your details to preview the sign-in flow.</p>
         </header>
         <form aria-label="Sign in to Northstar Studio" onSubmit={submitAuthPreview} style={{ display: 'grid', gap: '1rem' }}>

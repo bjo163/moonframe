@@ -101,7 +101,8 @@ test('simulated sign-in fixture keeps its form contract consistent across every 
     }, { skin: skin.id, mode });
     const fixture = page.locator('[data-fixture="auth-preview"]');
     await expect(fixture).toBeVisible();
-    await expect(fixture.getByRole('heading', { name: 'Sign in to your workspace' })).toBeVisible();
+    await expect(fixture.getByRole('heading', { level: 1, name: 'Sign in to your workspace' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Components', exact: true })).toHaveCount(0);
     await expect(fixture).toContainText('Northstar Studio workspace');
     await expect(fixture).toContainText('Local preview only. Credentials are not sent or saved; no account or session is created.');
 
