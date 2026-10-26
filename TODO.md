@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-26, MF-VF-120):** Added `docs/visual/skins/moonglitch.md`, a canonical-contract-derived telemetry/diagnostics direction with structural distinctions from Moonchrome, Moonpunk, and Moonhalftone. Dependency MF-VF-015 is implemented. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or human review were run. Live task rows: 116/292 foundation + 81/168 reference + 28/28 preflight = 225/488 checked; 263 unchecked. Checked does not imply human review, rights clearance, or acceptance; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-26, MF-VF-396):** Added grayscale-distinct material recipes for ComicPanel (grid/gutters), ZineCollage (overlap/irregular paper edges), and Halftone (monochrome dot fields/ink) to the cinematic reference bible. Status `implemented`; documentation/source inspection only. No checks, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. No runtime behavior, rights, visual approval, or acceptance claimed; host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-26, MF-VF-393):** Specified in the cinematic reference bible that neon accents are optional artwork/consumer-brand cues, status meanings remain canonical and noncolor-labeled, light/dark overlay values require separate contrast checks, and focus/forced-colors behavior stays independent. Status `implemented`; documentation only. Host runner owns validators and checkpoint; no tests/build/screenshots or human review run/claimed. Rights and acceptance remain pending.

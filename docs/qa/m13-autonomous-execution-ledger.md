@@ -29,6 +29,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-120 — Write Moonglitch visual direction
+
+- Added `docs/visual/skins/moonglitch.md`, a contract-derived telemetry/diagnostics direction covering shell composition, geometry, typography, neighboring-skin distinction, shared behavior, reduced motion, and decoration-off fallback.
+- Dependency MF-VF-015 is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run. Rights, visual approval, and acceptance remain pending.
+- Live checkbox recount: 116/292 foundation + 81/168 reference + 28/28 preflight = 225/488 checked; 263 unchecked. Checked does not imply review or acceptance. No commit created; host runner owns verification/checkpoint. Rollback: remove the brief, restore MF-VF-120 to planned, and remove this ledger entry.
+
 ## MF-VF-396 — Specify ComicPanel vs ZineCollage vs Halftone material distinction
 
 - Added a section in `docs/visual/cinematic-mangapunk-reference-bible.md` defining ComicPanel through grid/gutters, ZineCollage through layered paper overlap/irregular edges, and Halftone through monochrome dot fields/ink contrast. Stated grayscale distinctions, legibility constraints, and plain-surface fallback; aligned terminology with the canonical skin grammar.
