@@ -92,7 +92,16 @@
       "data": "bold stat slabs; simplified charts with sharp markers",
       "media": "original manga ink, torn-paper edges, halftone used sparingly",
       "motion": "snappy 100–180ms; short impact settle; reduced-motion removes overshoot",
-      "antiOverlap": "must not become Moonriot recolored red or Moonsmash with lime"
+      "antiOverlap": "must not become Moonriot recolored red or Moonsmash with lime",
+      "userVisualReference": {
+        "role": "primary-dash-landing-auth",
+        "refs": [
+          "MWX-REF-001",
+          "MWX-REF-002",
+          "MWX-REF-004"
+        ],
+        "guard": "Cinematic manga-punk structured UI uses ink-offset frames, irregular border devices and strong hero/scene split; keep labeled controls on clean semantic surfaces."
+      }
     },
     {
       "id": "moonriot",
@@ -106,7 +115,14 @@
       "data": "signal strips and segmented metrics; labels remain steady and readable",
       "media": "riot posters, signal marks, abstract original cut-up forms",
       "motion": "short directional wipes; glitch only as optional nonessential accent",
-      "antiOverlap": "must not use Moonpunk's hard-slab composition or Moonzine's paper collage grammar"
+      "antiOverlap": "must not use Moonpunk's hard-slab composition or Moonzine's paper collage grammar",
+      "userVisualReference": {
+        "role": "secondary-contrast",
+        "refs": [
+          "MWX-REF-001"
+        ],
+        "guard": "Angles and signal disruption define Moonriot, not copied Moonpunk pink slabs or universal night city."
+      }
     },
     {
       "id": "moonzine",
@@ -120,7 +136,15 @@
       "data": "report cards and story summaries; visible source/annotation areas",
       "media": "original collage, cut paper, xerox grain and editorial crops",
       "motion": "page-like reveals and gentle layering; reduced motion becomes static",
-      "antiOverlap": "must not collapse into strict comic panels (Moonpanel) or monochrome screentone-only (Moonhalftone)"
+      "antiOverlap": "must not collapse into strict comic panels (Moonpanel) or monochrome screentone-only (Moonhalftone)",
+      "userVisualReference": {
+        "role": "secondary-landing-poster",
+        "refs": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "guard": "Layered paper editorial/collage, torn heading labels and whitespace; do not default to cyber command dashboard."
+      }
     },
     {
       "id": "moonhalftone",
@@ -134,7 +158,15 @@
       "data": "panelized stories, annotated metrics, clear chart equivalents",
       "media": "original screentone patterns and abstract ink assets",
       "motion": "panel reveal and restrained directional transition",
-      "antiOverlap": "must not use Moonpanel's rigid uniform grid as its entire identity"
+      "antiOverlap": "must not use Moonpanel's rigid uniform grid as its entire identity",
+      "userVisualReference": {
+        "role": "secondary-manga-print",
+        "refs": [
+          "MWX-REF-002",
+          "MWX-REF-003"
+        ],
+        "guard": "Screentone/raster ink rendering and page pacing; separate from zine paper scrap and strict panel-only grammar."
+      }
     },
     {
       "id": "moonglitch",
@@ -148,7 +180,14 @@
       "data": "live event stream, logs, time-series and compact telemetry",
       "media": "original abstract signal traces; glitch never obscures text",
       "motion": "signal transitions; no perpetual flashing; reduced motion disables distortion",
-      "antiOverlap": "must remain functional telemetry, not decorative cyberpunk or neon-only styling"
+      "antiOverlap": "must remain functional telemetry, not decorative cyberpunk or neon-only styling",
+      "userVisualReference": {
+        "role": "secondary-operational-detail",
+        "refs": [
+          "MWX-REF-001"
+        ],
+        "guard": "Telemetry grid and technical signal rhythm, never mandatory flashing glitch or Moonpunk all-over neon art."
+      }
     },
     {
       "id": "moonsmash",
@@ -162,7 +201,14 @@
       "data": "milestone meters and high-visibility stats; detail views remain calm",
       "media": "original abstract burst, speed lines and impact forms",
       "motion": "brief radial or scale response with reduced-motion static replacement",
-      "antiOverlap": "must not share Moonpunk's persistent slab framing or Moonriot's diagonal signal language"
+      "antiOverlap": "must not share Moonpunk's persistent slab framing or Moonriot's diagonal signal language",
+      "userVisualReference": {
+        "role": "primary-poster",
+        "refs": [
+          "MWX-REF-003"
+        ],
+        "guard": "Campaign/poster impact grammar for expressive content. Basic data/forms retain semantics; portrait poster not universal shell."
+      }
     },
     {
       "id": "moonink",
@@ -176,7 +222,12 @@
       "data": "annotated narrative charts and editorial callouts",
       "media": "original vector brush strokes and ink wash assets",
       "motion": "stroke-draw accents are optional; never required to understand state",
-      "antiOverlap": "must not become sketchbook notes (Moonscrawl) or monochrome raster texture (Moonhalftone)"
+      "antiOverlap": "must not become sketchbook notes (Moonscrawl) or monochrome raster texture (Moonhalftone)",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Use painterly brush expression and negative space, not punk sticker saturation or notebook annotations."
+      }
     },
     {
       "id": "mooncrash",
@@ -190,7 +241,12 @@
       "data": "resource gauges, logs and operational status blocks",
       "media": "original industrial motifs and abstract technical markings",
       "motion": "mechanical slide/click feedback; no decorative shaking on errors",
-      "antiOverlap": "must not use Moonchrome's reflective material or Moonglitch's terminal telemetry treatment"
+      "antiOverlap": "must not use Moonchrome's reflective material or Moonglitch's terminal telemetry treatment",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Utility hazard mechanical plates, not Moonwitness city artwork or ledger corporate quiet."
+      }
     },
     {
       "id": "moonpanel",
@@ -204,7 +260,15 @@
       "data": "modular visual summaries and panels with consistent data placement",
       "media": "original panel motifs; illustrative content stays inside bounded frames",
       "motion": "panel focus/slide transitions; consistent grid continuity",
-      "antiOverlap": "must not become Moonhalftone with different colors; its identity is structural grid and panel span"
+      "antiOverlap": "must not become Moonhalftone with different colors; its identity is structural grid and panel span",
+      "userVisualReference": {
+        "role": "secondary-panel-layout",
+        "refs": [
+          "MWX-REF-001",
+          "MWX-REF-002"
+        ],
+        "guard": "Rigid modular information panels and deliberate gutters; style-derived from structure only, not copyrighted consumer covers."
+      }
     },
     {
       "id": "moonscrawl",
@@ -218,7 +282,12 @@
       "data": "annotated diagrams, brainstorm maps and exploratory flows",
       "media": "original sketches, arrows, circles and handwritten callouts",
       "motion": "draw-on annotations optional; static fallback is complete",
-      "antiOverlap": "must remain intentional and structured, not Moonzine collage or Moonink brush painting"
+      "antiOverlap": "must remain intentional and structured, not Moonzine collage or Moonink brush painting",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Notebook annotation grammar with ruled construction; not Moonink calligraphic landscape."
+      }
     },
     {
       "id": "moonraw",
@@ -232,7 +301,12 @@
       "data": "plain dense tables and direct metrics with minimal framing",
       "media": "typography and structure dominate; textures mostly absent",
       "motion": "minimal transitions; immediate state feedback",
-      "antiOverlap": "must not borrow Moonledger's enterprise-specific compact workbench or Classic's polished neutral finish"
+      "antiOverlap": "must not borrow Moonledger's enterprise-specific compact workbench or Classic's polished neutral finish",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Expose pure brutalist unornamented geometry. No neon, anime or collage as default."
+      }
     },
     {
       "id": "moonchrome",
@@ -246,7 +320,14 @@
       "data": "precision gauges, orbital metrics and crisp visualizations",
       "media": "original abstract chrome, orbit and spectral forms",
       "motion": "light-shift/reflection effects only on demand; reduced motion uses static materials",
-      "antiOverlap": "must not become generic glassmorphism or Mooncrash industrial plating"
+      "antiOverlap": "must not become generic glassmorphism or Mooncrash industrial plating",
+      "userVisualReference": {
+        "role": "secondary-auth-scenery-only",
+        "refs": [
+          "MWX-REF-004"
+        ],
+        "guard": "Metal/spectral rim optional around cinema slot; preserve polished futuristic skin vs ink punk."
+      }
     },
     {
       "id": "classic",
@@ -260,7 +341,12 @@
       "data": "familiar tables, forms and cards with conservative styling",
       "media": "no skin-specific illustration requirement; functional icon defaults",
       "motion": "restrained conventional transition; respect reduced motion",
-      "antiOverlap": "must be documented as Moonframe's compatibility baseline, not official shadcn branding"
+      "antiOverlap": "must be documented as Moonframe's compatibility baseline, not official shadcn branding",
+      "userVisualReference": {
+        "role": "neutral-control",
+        "refs": [],
+        "guard": "Keep standard familiar UI as control group; do not leak Moonpunk promo branding."
+      }
     },
     {
       "id": "moonquest",
@@ -274,7 +360,12 @@
       "data": "XP/progression, rarity, quest lists and item slots as presentation only",
       "media": "original game-inspired symbols, map textures and item-frame assets",
       "motion": "reward/level-up accents are opt-in; reduced motion keeps progress information",
-      "antiOverlap": "must not place game rules, rewards, inventory persistence or scoring logic in the UI package"
+      "antiOverlap": "must not place game rules, rewards, inventory persistence or scoring logic in the UI package",
+      "userVisualReference": {
+        "role": "independent",
+        "refs": [],
+        "guard": "Use quest journal/relic frame from canonical spec, not Moonwitness fiction or any hidden game backend."
+      }
     },
     {
       "id": "moonledger",
@@ -288,7 +379,12 @@
       "data": "dense but readable tables, filters, saved views and audit timelines",
       "media": "minimal; charts/tables carry the interface, decorative art is excluded",
       "motion": "subtle transitions; prioritize feedback latency and stability",
-      "antiOverlap": "must not shrink controls below tested target requirements or inherit Moonquest's game treatment"
+      "antiOverlap": "must not shrink controls below tested target requirements or inherit Moonquest's game treatment",
+      "userVisualReference": {
+        "role": "enterprise-control",
+        "refs": [],
+        "guard": "Dense enterprise/ERP layout and quiet data clarity; no punk/moon city artwork default."
+      }
     }
   ],
   "pairwiseReviewMatrix": [
@@ -1784,5 +1880,13 @@
     "./moonframe-theme-contract-v1.3.json"
   ],
   "revisionDate": "2026-10-25",
-  "skinSpecificationSource": "./moonframe-skin-specifications-v1.0.json"
+  "skinSpecificationSource": "./moonframe-skin-specifications-v1.0.json",
+  "creativeReferenceOverlay": {
+    "referenceContract": "moonframe-creative-reference-contract-v0.1.json",
+    "styleBible": "docs/visual/cinematic-mangapunk-reference-bible.md",
+    "status": "supplemental-reference-not-reviewed",
+    "overrideCanonicalSkins": false,
+    "doNotInterpretSecondaryInfluenceAsHybridSkin": true,
+    "evidenceRule": "Single source image, prose contrast, or 8/8 string score cannot approve a pair: require same-content browser captures in light/dark/grayscale/decoration-off and named review."
+  }
 }
