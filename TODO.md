@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-388):** Updated the generic showcase header to use its existing neutral “M” mark rather than the skin-varying `SkinBrandMark`. The linked product name remains live text and the mark is decorative; no Moonwitness identity is imposed on a neutral consumer. Status `implemented`; source inspection only. Per runner override, host runner owns validators, tests, typecheck, build, and browser screenshots. No rights review or human acceptance claimed.
+
 **Live execution update (2026-10-27, MF-VF-439):** Compared all 15 original skin asset brief IDs with the canonical theme contract; ordered IDs match and every brief remains `not-produced`. Optional asset lists do not require 15 consumer logos. Recorded the consistency result in `contracts/moonframe-skin-asset-briefs-v0.1.json`; status `implemented`. JSON parse and ID/status inspection succeeded via Node. No package-manager commands, validators, suites, typecheck, build, rendering, rights review, or human review run under runner override. No asset, rights, or owner approval claimed; host runner owns verification/checkpoint.
 
 **Live execution update (2026-10-27, MF-VF-258):** Added an accessible pending-human-review status to each skin detail page; automated checks and screenshots are explicitly not represented as approval. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, or browser capture run; host runner owns verification/checkpoint. Human review and acceptance remain pending.

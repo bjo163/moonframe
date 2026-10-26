@@ -364,8 +364,9 @@
 - [ ] **MF-VF-387 — Review R04 against original design source** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r04.md (proposed)`. **AC:** Split ratio, brush accents and readability reviewed separately.
   - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-388 — Ensure no generic app forcibly adopts Moonwitness brand** · **P1** · `planned` · **dep:** `MF-VF-025` · **issue:** not-created
+- [x] **MF-VF-388 — Ensure no generic app forcibly adopts Moonwitness brand** · **P1** · `implemented` · **dep:** `MF-VF-025` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/ref-r04-brand-separation.md (proposed)`. **AC:** A neutral consuming brand can populate same template safely.
+  - **Evidence (2026-10-27):** The generic showcase `SiteShell` now uses its existing neutral “M” text mark instead of `SkinBrandMark`, whose glyph changes with the active skin. The link’s visible live-text name remains Moonframe, and the neutral CSS mark is aria-hidden. A neutral consumer can use the R04 consumer-owned brand seam without Moonwitness identity being imposed. `MF-VF-025` is implemented. Source inspection only; per runner override, no package-manager commands, validators, suites, typecheck, build, browser captures, or human review run. No rights or acceptance claimed; host runner owns verification/checkpoint. Rollback: restore `SkinBrandMark` in `SiteShell` and restore this row to planned.
   - **Proof & rollback:** Check accessible auth semantics and truthfulness; screenshot across 360/768/1440. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 
 ## M — reusable visual composition primitives and token control

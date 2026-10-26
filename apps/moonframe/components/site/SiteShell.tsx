@@ -9,7 +9,6 @@ import {
   SkinSelector,
   ModeSelector,
   CommandPalette,
-  SkinBrandMark,
   useTheme,
   type SkinId,
 } from '@moonwitness/moonframe';
@@ -70,7 +69,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="mf-site-header-inner">
           <div className="mf-site-brand-row">
             <Link href="/" className="mf-site-logo">
-              <SkinBrandMark size={26} style={{ marginRight: '0.4rem' }} />
+              <span className="mf-site-logo-mark" aria-hidden="true">M</span>
               <span className="mf-site-logo-text">
                 moonframe
                 <small>UI &amp; TEMPLATE SYSTEM</small>

@@ -1772,3 +1772,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/mooncrash.md` from the canonical skin specification and grammar. The brief defines equipment-rack navigation, stacked work zones, restrained hazard emphasis, component recipes, and the structural distinction from Moonledger while preserving common component behavior and accessible fallback requirements.
 - Dependency MF-VF-015 is implemented. Backlog status: `implemented`; source review only. Under the runner override, no validators, package-manager commands, tests, typecheck, build, screenshots, or human review were run. No production values, font/assets, rights clearance, or acceptance claimed.
 - Rollback: remove the brief and restore MF-VF-156 to planned in the backlog; remove the matching TODO and ledger entries. No commit created; host runner owns verification and checkpoint.
+## MF-VF-388 — Keep generic showcase branding consumer neutral
+
+- Updated `apps/moonframe/components/site/SiteShell.tsx` to use the existing neutral “M” text mark instead of the skin-varying `SkinBrandMark`. Existing styles already provide a bounded, decorative mark; the adjacent linked product name remains live text. This avoids forcing Moonwitness identity on a generic consumer while preserving the same layout.
+- `MF-VF-025` dependency is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser capture run. Human review, rights clearance, and acceptance are not claimed; host runner owns verification/checkpoint.
+- Rollback: restore `SkinBrandMark` and remove the evidence/status update in the backlog and TODO. No commit created.
