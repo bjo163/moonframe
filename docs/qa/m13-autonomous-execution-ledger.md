@@ -1141,3 +1141,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `E5F2240F9DB8C842C0BF78901AA709447C317A57CC098DF03F70429714939B9B`. Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size checks, browser captures, human review, or acceptance claimed under the runner override. Light/dark/forced-colors appearance and 16/20/24px legibility remain pending.
 - Live row state: 167/488 checked (implemented/captured), 321 pending, 0 explicitly blocked. This count does not imply visual review or acceptance. No commit created; host runner owns verification/checkpoint.
 - Rollback: remove the SVG and restore the matching backlog/TODO row and this ledger entry.
+
+## MF-VF-066 — Draw semantic moon icon
+
+- Added `assets/source/icons/moon.svg`, an original static 24×24 `currentColor` crescent glyph with accessible label `Moon`.
+- Dependency MF-VF-033 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size checks, or browser captures were run under runner override. Light/dark/forced-colors appearance, 16/20/24px legibility, human review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO row and this ledger entry.

@@ -8,14 +8,14 @@
 
 **Historical CI blocker (now repaired; see new M13 gate below):** [GitHub Actions run #154 / 40245436959](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` **failed**: runtime unit/SSR 11/12 passed; the twelfth required 30 PNG screenshots absent from clean checkout, so typecheck and production build jobs did not execute. The spec-contract job passed. Existing 30/30 screenshot or 105/105 visual PASS reports must be interpreted as historical/local or automated structural evidence until capture artifacts and independent manual review can be reproduced at the same SHA.
 
-**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `69/292` implemented/captured, `223/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
+**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `70/292` implemented/captured, `222/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
 
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
 | A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `16 implemented · 0 pending` | Honest green clean-CI gate + runtime release claims |
 | B · deterministic screenshot Skin Lab | `MF-VF-017…032` | 16 | `16 implemented · 0 pending` | Desktop/tablet/phone profiles, dashboard/table/form/nav fixtures and reproducible archive dialog are captured |
 | C · one master logo production | `MF-VF-033…049` | 17 | `5 implemented · 1 captured · 1 blocked · 10 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
-| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `10 implemented / 12 planned` | Search/close/menu/chevron/arrow/plus/check/warning/external-link; ARIA meanings unchanged |
+| D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `11 implemented / 11 planned` | Search/close/menu/chevron/arrow/plus/check/warning/external-link; ARIA meanings unchanged |
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
