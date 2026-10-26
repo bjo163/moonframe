@@ -29,6 +29,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-371 — Add decorative rough-ink form frame
+
+- Added original `assets/source/creative-reference/r04/form-frame.svg`, an optional static abstract outline with open center. SHA-256: `12673cbec99f9a6ffffc5b5ab384a56ab2ca7c512cf063b8b813f84e74728a4e`.
+- Dependency `MF-VF-025` is implemented. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, render, browser capture, rights review, or human review run/claimed. Host runner owns verification/checkpoint; acceptance remains pending.
+- Rollback: remove the SVG and restore MF-VF-371 to planned in the backlog/TODO; remove this entry. No commit created.
+
 ## MF-VF-120 — Write Moonglitch visual direction
 
 - Added `docs/visual/skins/moonglitch.md`, a contract-derived telemetry/diagnostics direction covering shell composition, geometry, typography, neighboring-skin distinction, shared behavior, reduced motion, and decoration-off fallback.
