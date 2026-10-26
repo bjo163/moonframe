@@ -2117,3 +2117,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-144 is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, or human review run. Host runner owns verification and checkpoint.
 - The SVG is optional and not integrated. Optical review, rights review, and acceptance remain pending. No commit created.
 - Rollback: remove the SVG, restore MF-VF-146 to planned, and remove this ledger/TODO evidence.
+
+## MF-VF-126 — Style Moonglitch navigation, layout, and typography
+
+- Dependency MF-VF-120 is implemented.
+- Reconciled existing scoped rules in `src/styles.css`: compact two-column shell, dashed sidebar separator, current-page edge marker, block-framed hero, condensed tracked uppercase card labels, and segmented table borders.
+- Stylesheet SHA-256: `9EE20BCFC0C83E1C8B22832AD02A52E990BD2C362D20D6D1503EBD5DAC5D453B`.
+- Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. Responsive rendering, human visual review, and acceptance remain pending. Host runner owns verification and checkpoint.
+- Rollback: restore the MF-VF-126 row to planned and remove this entry and matching TODO update. No commit created.
