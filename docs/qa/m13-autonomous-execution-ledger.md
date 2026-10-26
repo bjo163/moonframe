@@ -1814,3 +1814,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonledger.md` from the canonical Moonledger grammar and skin specification. It defines persistent filtering, table/detail split panes, aligned dense data, accessible compact controls, and distinctions from Mooncrash, Moonquest, and Classic.
 - Dependency MF-VF-015 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, screenshots, or human review were run. Production token values, font/asset rights, visual review, and acceptance remain pending.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the brief and restore MF-VF-240 to planned in the backlog; remove matching TODO and ledger evidence.
+
+## MF-VF-426 — Add art-off fixture for all four reference screens
+
+- Added pps/moonframe/app/(lab)/lab/reference-art-off/page.tsx, a stable fixture using existing reference components and generic removable decorative scene placeholders for R01–R04.
+- Added a Playwright scenario in 	ests/browser/site.spec.js that checks all four screens and key live content remain visible after artwork removal; the poster keeps its decorative frame.
+- Dependency MF-VF-010 is implemented. Backlog status implemented; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, or build run. Host runner owns verification and checkpoint. No screenshot capture, source parity, rights clearance, human review, or acceptance claimed.
+- Rollback: remove the fixture route and browser scenario, restore MF-VF-426 to planned, and remove matching TODO/ledger entries. No commit created.

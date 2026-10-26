@@ -57,6 +57,29 @@ test('R02 editorial title and navigation retain readable contrast and visible fo
   await expect(link).toHaveCSS('outline-style', 'solid');
 });
 
+test('all four reference screens preserve content with optional artwork hidden', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  const screenNames = ['Mission dashboard', 'Editorial landing', 'Campaign poster', 'Sign in'];
+  for (const name of screenNames) {
+    await expect(page.getByRole('heading', { name })).toBeVisible();
+  }
+  await expect(page.locator('[data-reference-art]')).toHaveCount(4);
+  await expect(page.getByRole('heading', { name: 'A city after the rain' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Signals After Sundown' })).toBeVisible();
+  await expect(page.getByLabel('Email address')).toBeVisible();
+
+  await page.getByRole('checkbox', { name: 'Hide reference artwork' }).check();
+  await expect(page.locator('[data-reference-art]')).toHaveCount(0);
+  await expect(page.locator('[data-reference-art-fallback="r03"]')).toBeAttached();
+  for (const name of screenNames) {
+    await expect(page.getByRole('heading', { name })).toBeVisible();
+  }
+  await expect(page.getByRole('heading', { name: 'A city after the rain' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Signals After Sundown' })).toBeVisible();
+  await expect(page.getByLabel('Email address')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'VIEW EVENT DETAILS' })).toBeVisible();
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
