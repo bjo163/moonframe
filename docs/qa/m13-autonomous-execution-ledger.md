@@ -1378,3 +1378,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added the GraffitiDisplay recipe to `docs/visual/cinematic-mangapunk-reference-bible.md`: required copy remains live selectable text, display fonts require license and glyph-coverage checks before bundling, narrow layouts wrap, and decorative treatments stay separate from readable glyphs and focus.
 - Dependency MF-VF-013 is implemented. Status: `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshot, font-rights review, or human review run. No font license or runtime component is included.
 - Rollback: remove the subsection, restore MF-VF-392 to planned, and remove this ledger entry. No commit created; host runner owns verification/checkpoint.
+
+## MF-VF-438 — Review 15-skin spec status consistency
+
+- Compared `contracts/moonframe-skin-specifications-v1.0.json` against canonical theme IDs: all 15 IDs match in count and order. The spec remains `specified-not-implemented`; no implementation or visual approval is implied.
+- JSON parsing and ordered-list comparison via Node succeeded. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshots, or human review run. No commit created; host runner owns checks and checkpoint.
+- Rollback: remove the added `m13StatusReview` metadata and restore the MF-VF-438 row to planned; remove this ledger entry.

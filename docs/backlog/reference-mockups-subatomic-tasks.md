@@ -513,8 +513,9 @@
 - [ ] **MF-VF-437 — Add 15-skin artwork exclusion test** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/skin-boundaries.md (proposed)`. **AC:** One Moonpunk screenshot not falsely used as universal skin default.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-438 — Review 15-skin spec status consistency** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+- [x] **MF-VF-438 — Review 15-skin spec status consistency** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `contracts/moonframe-skin-specifications-v1.0.json`. **AC:** Specification overlay only; never auto-approved.
+  - **Evidence (2026-10-26):** Compared the ordered 15 skin IDs in the specification with the canonical theme contract; all IDs and ordering match. Added `m13StatusReview` metadata recording this structural result. The specification remains `specified-not-implemented`; human visual review and owner approval remain pending. JSON parsing and ordered-list comparison via Node succeeded. No package-manager commands, validators, test suites, typecheck, build, captures, or human review run per runner override. Rollback: remove the metadata and restore this row to planned.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-439 — Review 15 original skin asset briefs status consistency** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `contracts/moonframe-skin-asset-briefs-v0.1.json`. **AC:** Extra art requirements scoped/optional; not mandatory 15 consumer logos.
