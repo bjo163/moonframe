@@ -31,3 +31,13 @@ Current verified commands in workflow: node scripts/validate-contracts.mjs and n
 ### Machine-readable visual review ledger (2026-10-25)
 
 [Asset QA coverage](../../contracts/moonframe-asset-qa-coverage-v0.1.json) references **15 skin IDs × Light/Dark × four context cases = 120 proposed cells**, all `not-rendered`. The four cases are umbrella master brand, edition signature motif, functional icon and decoration-off fallback. None demands fifteen independent logos or production binary files. It intentionally has zero rendered/reviewed/passed screenshots and 0 human reviewer attestations, checked by the existing validator. Global 105 grammar pair comparisons stay in the original [Skin Grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json) and are not a second set of 105 approval records.
+
+---
+
+## 2026-10-26 creative reference artwork safety and proof extension
+
+New [visual source registry](../../contracts/moonframe-creative-reference-contract-v0.1.json) records R01–R04 Moonwitness references as chat-only uploads with actual digest/dimensions. They are **not** ingested/distributable asset files. A local agent must not invent repository `docs/visual/references/source/*.png` binary evidence or treat reference access as public redistribution rights.
+
+Proposed new visual layer source classes: `generic-ink-frame`, `torn-label-backdrop`, `optional-grunge-mask`, `neutral-world-scene`, `illustrative-character-slot`, `poster-artboard`, `semantic-icon`. Each requires individual source provenance, hash after production, sanitizer/security inspection, licensed source rights and a11y analysis. Text in CTA/form/status must remain live and interactive; decorative texture SVG cannot contain scripts, event attrs, remote href, executable data URIs or unsafe XML. SVG optimizer is not a sufficient sanitizer. Do not use copied song lyrics, unlicensed artist likeness or scraped manga panels in shipping samples.
+
+For every image-backed design, test semantic UI with all art removed, actual text contrast above mixed artwork, 360/768/1440 layout crop, focal region preservation, user-selected Light/Dark, reduced motion and forced colors. Store measured bytes/format/render dimensions/LCP/CLS only after tests; don't invent passing numerical thresholds.
