@@ -24,6 +24,8 @@ jobs:
         run: node scripts/verify-m13-handoff.mjs
       - name: Syntax-check unattended Codex runner
         run: node --check scripts/run-m13-autopilot.mjs
+      - name: Dry-run frozen autonomous queue (no Codex launch)
+        run: node scripts/run-m13-autopilot.mjs --dry-run
 
   runtime-and-showcase:
     runs-on: ubuntu-latest
