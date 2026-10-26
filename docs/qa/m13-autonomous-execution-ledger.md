@@ -1755,3 +1755,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a visible, accessible pending-human-review status to every skin detail page, explicitly distinguishing automated evidence from approval.
 - Backlog status: `implemented`. Source inspection only; no verification commands or browser capture run per runner override. Human review and acceptance remain pending.
 - Rollback: remove the status paragraph in `apps/moonframe/app/(site)/skins/[id]/page.tsx` and restore the backlog row to planned. No commit created.
+## MF-VF-439 — Review 15 original skin asset briefs status consistency
+
+- Compared the ordered 15 brief IDs with the canonical theme contract; all IDs match. All briefs state `not-produced`; optional assets do not require consumer logos or imply delivery.
+- Added `m13StatusReview` metadata to the asset brief contract. JSON parse and ID/status inspection succeeded via Node. Backlog status: `implemented`; no artwork, rights review, human review, or acceptance claimed.
+- Runner override honored: no package-manager commands, validators, suites, typecheck, build, or browser checks run. No commit created; host runner owns verification/checkpoint. Rollback: remove the metadata, restore the backlog row and group count, and remove this TODO/ledger entry.

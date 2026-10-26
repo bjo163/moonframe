@@ -9,6 +9,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-439):** Compared all 15 original skin asset brief IDs with the canonical theme contract; ordered IDs match and every brief remains `not-produced`. Optional asset lists do not require 15 consumer logos. Recorded the consistency result in `contracts/moonframe-skin-asset-briefs-v0.1.json`; status `implemented`. JSON parse and ID/status inspection succeeded via Node. No package-manager commands, validators, suites, typecheck, build, rendering, rights review, or human review run under runner override. No asset, rights, or owner approval claimed; host runner owns verification/checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-258):** Added an accessible pending-human-review status to each skin detail page; automated checks and screenshots are explicitly not represented as approval. Status `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, or browser capture run; host runner owns verification/checkpoint. Human review and acceptance remain pending.
 
 **Live execution update (2026-10-27, MF-VF-425):** Added `contracts/moonframe-creative-asset-slot-contract-v0.1.json` to define L0–L4 creative asset placement roles, expected source/provenance fields, and explicit unverified license states. Slot roles and reference mappings grant no copyright, trademark, redistribution, or derivative rights. Status `implemented`; source inspection only. No package-manager commands, validators, tests, typecheck, build, or review run per runner override; host runner owns verification/checkpoint. No rights clearance or approval claimed.
