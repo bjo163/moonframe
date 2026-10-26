@@ -68,3 +68,11 @@ The **existing** [Auth UI Bible](auth-ui-suite.md) now owns security-flow integr
 ## Package & DX distribution boundary (2026-10-25)
 
 [Package Architecture & DX Bible](../architecture/package-architecture-dx-bible.md) and [ADR-0010](../adr/0010-package-distribution.md) distinguish a future *npm runtime dependency* from *source-owned premium blocks/templates* copied through a possible registry. The [package contract](../../contracts/moonframe-package-architecture-v0.1.json) explicitly does not ship 131 concrete blocks, 72 page templates, 8 starter implementations or optional data/auth/chart/SFX dependencies into the base runtime. Registry/server/installer remain **not implemented** until consumer and license evidence. Refer to existing [block manifest](../../contracts/moonframe-block-manifest-v0.1.json) and [template manifest](../../contracts/moonframe-page-template-manifest-v0.1.json); do not create a second catalog.
+
+---
+
+## 2026-10-26 premium template visual direction (Moonwitness samples, generic APIs)
+
+The four user-supplied mockups [R01–R04](../../contracts/moonframe-creative-reference-contract-v0.1.json) refine the **template composition** layer, not core business logic or stable semantics. Candidate template recipes: `cinematic-command-center` (R01, Moonpunk, heavy dashboard), `editorial-story-home` (R02, Moonpunk + Moonzine), `campaign-poster-canvas` (R03, Moonsmash, artwork-first), and `cinematic-split-sign-in` (R04, Moonpunk with accessible semantic form).
+
+Each template needs one compositional layout, bounded optional original art slots, a fallback when source media absent, light/dark and responsive views, same behavior across skins and explicit integration seam. The product-specific MOONWITNESS logo/crown/characters/lyrics must be injected by a consumer only with rights; no hypothetical 15-logo or artist likeness package ships in generic core. The [visual style guide](../visual/cinematic-mangapunk-reference-bible.md) provides screenshot anatomy; [subatomic tasks](../backlog/reference-mockups-subatomic-tasks.md) specify implementation/QA outputs. Do not classify the poster as a semantic enterprise form.
