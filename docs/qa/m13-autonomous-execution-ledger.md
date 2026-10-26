@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-360 — Write safe placeholder performance copy
+
+- Added `apps/moonframe/templates/visual-reference/r03-copy.ts` with an original generic event title, short description, sample date and venue, and neutral CTA. It contains no lyrics, real performer identity, or consumer brand marks.
+- Dependency MF-VF-024 is implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, render, browser capture, or human review run. Host runner owns verification/checkpoint. Rights review and acceptance remain pending.
+- This advances the reference backlog by one checked task; aggregate snapshots elsewhere have conflicting historical totals, so no independently recounted aggregate is asserted here.
+- Rollback: remove the copy module and restore the MF-VF-360 row and this entry.
+
 # MF-VF-359 — Create torn-caption generic vector band
 
 - Added `assets/source/creative-reference/r03/caption-band.svg`, an original static torn-edge paper backing with a clear center reserved for separately supplied live text. It includes an SVG title and description and contains no embedded copy, lyrics, consumer marks, performer imagery, scripts, event handlers, or external resources.
