@@ -6,8 +6,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 64 implemented-or-captured (14 baseline implemented + 11 captured + 39 implemented), 6 blocked, 418 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 64/488 (13.1%) done/captured; 418/488 (85.7%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 424/488 (86.9%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 65 implemented-or-captured (14 baseline implemented + 11 captured + 40 implemented), 6 blocked, 417 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 65/488 (13.3%) done/captured; 417/488 (85.5%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 423/488 (86.7%) remain incomplete.
 
 
 
@@ -16,6 +16,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
 - The umbrella-brand recommendation is explicitly not owner-approved; owner approval and trademark decisions are listed as blockers. The task requires accepting that brand hierarchy before production marks or edition devices are created.
 - Status: `blocked-external-approval`. No owner decision was available in this repo/task context. No approval or logo direction was invented; no production mark is authorized. Resume after the owner records the umbrella/edition naming decision.
+## MF-VF-279 — Compare Moonpunk vs Moonriot vs Moonsmash
+
+- Scope: `docs/qa/reviews/punk-riot-smash.md`; six existing ignored default captures (Moonpunk, Moonriot, Moonsmash × light/dark).
+- Inspected the six 1440×960 captures directly. The persistent vertical command rail and offset slabs (Moonpunk), top-spanning horizontal navigation and asymmetric editorial panels (Moonriot), and centered single-column layout with oversized radial hero/headline (Moonsmash) remain structurally distinct in both modes. `src/styles.css` defines corresponding geometry and typography; the screenshot comparison records observations and all six hashes.
+- Provenance audit: 6/6 image hashes match sidecars; all use source commit `a2baccb89d904d628187899396b74c26fa8e2c3b`, fingerprint `016c6522a24cab82e969046bf71969897b4086c83362b162fc87dd89b7a4a27c`, same fixed fixture/time/viewport/browser, and loaded fonts.
+- The full browser suite at that source was 61/61 (recorded under MF-VF-278); it is functional/capture evidence, not human visual approval. Reviewer/approval remains pending. Contract/handoff validators and `git diff --check` are recorded after the documentation update. Rollback: revert the evidence/count documentation commit.
 ## MF-VF-278 — Freeze loading/empty/error/denied specimen
 
 - Scope: `apps/moonframe/app/(lab)/lab/behavior/page.tsx`; `tests/browser/components.spec.js`; `docs/qa/reference-screens/states.md`; 120 ignored captures in `artifacts/skins/*-1440x960-state-{loading,empty,error,denied}.png` and provenance sidecars.
