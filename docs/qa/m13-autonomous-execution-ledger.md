@@ -33,6 +33,12 @@
 
 - Added original abstract Moonpunk offset-slab motif `assets/source/creative-reference/r01/moonpunk-offset-slab.svg` (SHA-256 `75D6BE881EDC388016A78D82FC900B73FAC87B194EE70145873DB1B7F1A8C5C3`). It uses embedded geometry only and contains no consumer branding. Dependency MF-VF-072 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size inspection, browser capture, human review, or acceptance claimed under runner override. Backlog and summary counts updated to 168/488 checked (82/292 foundation visual + 58/168 reference + 28/28 preflight); rights and acceptance remain pending. No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the MF-VF-073 row and root counts.
 
+## MF-VF-407 — Define Moonpunk screenshot-based anti-clone test
+
+- Added `docs/qa/reviews/moonpunk-reference-parity.md` with fixed same-data desktop/mobile capture conditions, grayscale and decoration-on/off states, Moonriot/Moonsmash comparison criteria, semantic-surface checks, and required provenance fields.
+- Dependency MF-VF-072 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, visual verdict, rights clearance, or human review claimed. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns verification/checkpoint.
+- No commit created; host runner owns checks and checkpoint. Rollback: remove the protocol and restore MF-VF-407 to planned in the backlog, TODO, and ledger.
+
 # M13 autonomous execution ledger
 
 ## MF-VF-136 — Draw Moonsmash edition badge

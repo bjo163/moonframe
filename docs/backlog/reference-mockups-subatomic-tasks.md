@@ -428,9 +428,10 @@
 
 ## N — 15 skin differentiation micro-acceptance addendum
 
-- [ ] **MF-VF-407 — [moonpunk] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-072` · **issue:** not-created
+- [x] **MF-VF-407 — [moonpunk] Define screenshot-based anti-clone test** · **P2** · `implemented` · **dep:** `MF-VF-072` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/moonpunk-reference-parity.md (proposed)`. **AC:** Identify strong hard-offset structural identity even without city artwork. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
-  - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+  - **Evidence (2026-10-27):** Added `docs/qa/reviews/moonpunk-reference-parity.md` with fixed same-data desktop/mobile capture conditions, grayscale and decoration-on/off states, Moonriot/Moonsmash comparison criteria, semantic-surface checks, and required provenance fields. Dependency MF-VF-072 is implemented. Status `implemented`; documentation/source inspection only. No captures, visual verdict, rights clearance, or human review claimed. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns verification/checkpoint.
+  - **Rollback:** Remove the protocol, restore this row to planned, and remove the matching TODO and ledger evidence.
 - [ ] **MF-VF-408 — [moonriot] Define screenshot-based anti-clone test** · **P2** · `planned` · **dep:** `MF-VF-084` · **issue:** not-created
   - **File scope/output:** `docs/qa/reviews/moonriot-reference-parity.md (proposed)`. **AC:** Use angular protest/editorial composition, not merely Moonpunk red. Require one real same-data screenshot at desktop and mobile grayscale, art-on/off.
   - **Proof & rollback:** Review two nearest concept comparators and note visual human decision. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.

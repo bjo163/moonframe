@@ -7,6 +7,8 @@
 
 **Live execution update (2026-10-26, MF-VF-435):** Added a performance measurement record template to `docs/qa/original-asset-validation-plan.md` for observed asset bytes, LCP, CLS, environment, repetitions, variance, and raw evidence. No pass/fail budget or measurements were invented. Status implemented; source inspection only; runner override honored (no package commands/tests/build/validators/browser performance capture). Human review and acceptance remain pending; host runner owns checks/checkpoint.
 
+**Live execution update (2026-10-27, MF-VF-407):** Added `docs/qa/reviews/moonpunk-reference-parity.md` with a same-data, desktop/mobile grayscale and decoration-on/off comparison protocol against Moonriot and Moonsmash. Status `implemented`; documentation/source inspection only. No screenshots, visual verdict, rights clearance, or human review claimed. Per runner override, no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns checks/checkpoint. No commit created.
+
 # Moonframe UI — Master TODO (live execution index)
 
 **Live execution update (2026-10-27, MF-VF-439):** Compared all 15 original skin asset brief IDs with the canonical theme contract; ordered IDs match and every brief remains `not-produced`. Optional asset lists do not require 15 consumer logos. Recorded the consistency result in `contracts/moonframe-skin-asset-briefs-v0.1.json`; status `implemented`. JSON parse and ID/status inspection succeeded via Node. No package-manager commands, validators, suites, typecheck, build, rendering, rights review, or human review run under runner override. No asset, rights, or owner approval claimed; host runner owns verification/checkpoint.
