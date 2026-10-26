@@ -1859,3 +1859,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-010 is implemented. Backlog status `implemented`; source/document inspection only. The original R01 reference remains unversioned and digest verification plus human comparison are required before parity claims.
 - `git diff --check` — exit 0. Per runner override, no validators, package-manager commands, suites, typecheck, build, or screenshots run. No review, rights clearance, or acceptance claimed; host runner owns checks/checkpoint. No commit created.
 - Checkbox recount: 143/292 foundation + 120/168 reference + 28/28 preflight = 291/488 checked; 197 unchecked. Rollback: remove the prompt, restore MF-VF-441 to planned, and remove this ledger/TODO evidence.
+
+## MF-VF-415 — Define Moonpanel screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/moonpanel-reference-parity.md` with fixed-fixture comparisons against Moonhalftone and Moonzine, capture provenance fields, desktop/mobile light/dark grayscale and decoration-on/off states, and Moonpanel grid distinction criteria.
+- Dependency MF-VF-168 is implemented. Backlog status `implemented`; documentation/source inspection only. No screenshots, visual verdict, rights review, or acceptance claimed. Per runner override, no package-manager commands, validators, tests, typecheck, build, or browser capture run; host runner owns verification and checkpoint.
+- Rollback: remove the protocol and restore MF-VF-415 to planned in the reference backlog; remove matching TODO and ledger entries. No commit created.
