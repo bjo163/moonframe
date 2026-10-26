@@ -1,7 +1,7 @@
 # MF-VF-449 — Write typed consumerBrand palette input fixture
 
 - Selected as dependency-ready after MF-VF-448 and MF-VF-450. The canonical `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json` records `apiStatus: deferred-pending-owner-public-api-review`, no approved public props, and no approved runtime token values. Creating a fixture for the proposed input would imply an unapproved public API.
-- Recorded `blocked-external-approval` rationale in `docs/backlog/reference-mockups-subatomic-tasks.md`; checkbox remains unchecked. Resume only after owner review and a versioned API decision. Counts remain 326/488 checked and 162 unchecked; blocked is not treated as completed.
+- Recorded `blocked-external-approval` in the task row; it remains unchecked and resumes only after owner review and a versioned API decision. The runner count now treats `blocked-external-approval` as blocked rather than pending. Dry-run recount: 488 total, 328 checked, 9 blocked, 151 actionable pending (160 unchecked); blocked is not treated as completed.
 - Source/contract inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, or build run. No implementation, approval, or acceptance claimed. No commit created; host runner owns verification/checkpoint.
 
 ## MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast

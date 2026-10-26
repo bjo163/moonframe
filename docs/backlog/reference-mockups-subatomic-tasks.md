@@ -22,7 +22,7 @@
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 1 implemented, 14 planned |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 1 captured, 1 implemented, 23 planned |
 | P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 3 implemented, 1 blocked, 10 planned |
-| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **8 captured, 37 implemented, 123 planned** |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **10 captured, 138 implemented, 8 blocked, 12 planned** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -604,7 +604,7 @@ The existing acid-lime Moonpunk default and hot-magenta Moonwitness reference mu
   - **Proof & rollback:** Revert the added `apiDecision`, restore the prior `apiStatus`, and return this task to planned if contract validation or review identifies a contradiction. No public API was added.
   - **File scope/output:** `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json`. **AC:** Owner chooses proposed token/prop input boundary; no implementation before public API review.
   - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
-- [ ] **MF-VF-449 — Write typed consumerBrand palette input fixture** · **P1** · `planned` · **dep:** `MF-VF-448` · **issue:** not-created
+- [ ] **MF-VF-449 — Write typed consumerBrand palette input fixture** · **P1** · `blocked-external-approval` · **dep:** `MF-VF-448` · **issue:** not-created
   - **Blocker (2026-10-27):** The prerequisite decision in `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json` explicitly defers design/export/implementation of a public consumer-brand prop or token input until explicit owner review; `approvedPublicProps` is empty and `approvedRuntimeTokenValues` is false. A fixture accepting a not-approved API would imply a public contract that does not exist. Keep the row unchecked and resume only after the owner reviews and versions an API decision. Runner override honored: no validators, package-manager commands, suites, typecheck, or build run; host runner owns verification/checkpoint. No API, type evidence, or approval is claimed.
   - **File scope/output:** `tests/types.tsx`. **AC:** Accept only supported non-status brand slots; invalid props rejected.
   - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.

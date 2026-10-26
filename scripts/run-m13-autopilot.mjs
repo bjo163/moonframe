@@ -49,7 +49,7 @@ function countTasks() {
     total+=matches.length;
     for (const line of matches) {
       if (line.startsWith('- [x]')) done++;
-      else if (/·\s*`blocked`(?:\s|·)/.test(line)) blocked++;
+      else if (/·\s*`blocked(?:-external-approval)?`(?:\s|·)/.test(line)) blocked++;
     }
   }
   return {total,done,blocked,pending:total-done-blocked};
