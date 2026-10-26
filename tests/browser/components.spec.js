@@ -89,6 +89,68 @@ test('fixed T-1045 archive dialog fixture opens deterministically and captures s
   await expect(trigger).toBeFocused();
 });
 
+test('simulated sign-in fixture keeps its form contract consistent across every skin and mode', async ({ page, browser }) => {
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    await page.goto('/lab/behavior?fixture=auth');
+    const main = page.locator('main').first();
+    await main.evaluate((node, selection) => {
+      node.dataset.skin = selection.skin;
+      node.dataset.mode = selection.mode;
+    }, { skin: skin.id, mode });
+    const fixture = page.locator('[data-fixture="auth-preview"]');
+    await expect(fixture).toBeVisible();
+    await expect(fixture.getByRole('heading', { name: 'Sign in to your workspace' })).toBeVisible();
+    await expect(fixture).toContainText('Northstar Studio workspace');
+    await expect(fixture).toContainText('Local preview only. Credentials are not sent or saved; no account or session is created.');
+
+    const form = fixture.getByRole('form', { name: 'Sign in to Northstar Studio' });
+    const email = form.getByLabel('Email address');
+    const password = form.getByLabel('Password');
+    await expect(email).toHaveAttribute('type', 'email');
+    await expect(email).toHaveAttribute('autocomplete', 'email');
+    await expect(email).toHaveAttribute('required', '');
+    await expect(password).toHaveAttribute('type', 'password');
+    await expect(password).toHaveAttribute('autocomplete', 'current-password');
+    await expect(password).toHaveAttribute('required', '');
+    await expect(form.getByRole('checkbox', { name: 'Remember this device' })).not.toBeChecked();
+    await expect(form.getByRole('button', { name: 'Sign in', exact: true })).toBeVisible();
+    expect(await form.evaluate(node => node.checkValidity())).toBe(false);
+
+    const fontStatus = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return document.fonts.status;
+    });
+    expect(fontStatus).toBe('loaded');
+    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}-1440x960-auth.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+    const capture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: `/lab/behavior?fixture=auth (${document.querySelector('[data-fixture="auth-preview"]')?.textContent?.trim()}; ${document.querySelector('main')?.getAttribute('data-skin')} ${document.querySelector('main')?.getAttribute('data-mode')}; empty sign-in form)`,
+      state: 'auth-preview-ready',
+      fontStack: getComputedStyle(document.querySelector('main')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(screenshotPath, { ...capture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+
+    await email.fill('not-an-email');
+    await password.fill('preview-only-password');
+    expect(await form.evaluate(node => node.checkValidity())).toBe(false);
+    await email.fill('alex@northstar.example');
+    expect(await form.evaluate(node => node.checkValidity())).toBe(true);
+    const routeBeforeSubmit = page.url();
+    await form.getByRole('button', { name: 'Sign in', exact: true }).click();
+    await expect(fixture.getByRole('status')).toHaveText('Preview sign-in accepted for alex@northstar.example. No account or session was created.');
+    expect(page.url()).toBe(routeBeforeSubmit);
+  }
+});
+
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 

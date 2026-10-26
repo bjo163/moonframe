@@ -12,6 +12,8 @@ export default function BehaviorFixturePage() {
   const [archiveFixture, setArchiveFixture] = useState(false);
   const [archiveOpen, setArchiveOpen] = useState(false);
   const [archiveComplete, setArchiveComplete] = useState(false);
+  const [authFixture, setAuthFixture] = useState(false);
+  const [authMessage, setAuthMessage] = useState('');
   const [checked, setChecked] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [menuChoice, setMenuChoice] = useState('none');
@@ -24,14 +26,40 @@ export default function BehaviorFixturePage() {
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     setHasInitialParam(query.has('initial'));
+    setAuthFixture(query.get('fixture') === 'auth');
     const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
     setArchiveFixture(shouldOpenArchiveFixture);
     setArchiveOpen(shouldOpenArchiveFixture);
   }, []);
 
+  function submitAuthPreview(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    setAuthMessage(`Preview sign-in accepted for ${String(formData.get('email'))}. No account or session was created.`);
+  }
+
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
       <h1>Components</h1>
+      {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
+        <header style={{ marginBlockEnd: '1.5rem' }}>
+          <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
+          <h2 id="auth-preview-title">Sign in to your workspace</h2>
+          <p>Enter your details to preview the sign-in flow.</p>
+        </header>
+        <form aria-label="Sign in to Northstar Studio" onSubmit={submitAuthPreview} style={{ display: 'grid', gap: '1rem' }}>
+          <Field label="Email address" required>
+            <Input name="email" type="email" autoComplete="email" required />
+          </Field>
+          <Field label="Password" required>
+            <Input name="password" type="password" autoComplete="current-password" required />
+          </Field>
+          <Checkbox name="remember" label="Remember this device" />
+          <Button type="submit">Sign in</Button>
+        </form>
+        <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem', marginBlock: '1rem' }}>Local preview only. Credentials are not sent or saved; no account or session is created.</p>
+        <p role="status" aria-live="polite">{authMessage}</p>
+      </section>}
       {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">
         <h2 id="archive-task-fixture-title">Project tasks</h2>
         <p>T-1045 · Verify scheduled export · Mateo Silva · Complete</p>
