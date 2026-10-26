@@ -2108,3 +2108,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - The source image is absent from this checkout; without the digest-verified source bytes and an actual human reviewer, no parity judgment can be made. Updated the backlog status to `blocked-external-approval`, leaving it unchecked.
 - Verification: documentation/source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, screenshots, or human review run. Host runner owns verification/checkpoint. No parity, rights clearance, human review, or acceptance claimed.
 - Resume when owner-supplied R03 bytes are available and verified against the canonical digest, then a human records findings and disposition. Rollback: restore MF-VF-368 to planned and remove this entry.
+
+## MF-VF-146 — Draw minimal decorative Moonink pattern SVG
+
+- Starting HEAD: `f892f08232bb6ba13e83a2e60c16ac3421a2dacf`.
+- Added `assets/source/skins/moonink/pattern.svg`, a static original sparse brush-line pattern designed to preserve open space and use `currentColor`.
+- SHA-256: `b659170a99f8f716c6930899d33d72eead3f03ec43008e98ed53583657df026d`.
+- Dependency MF-VF-144 is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, screenshots, or human review run. Host runner owns verification and checkpoint.
+- The SVG is optional and not integrated. Optical review, rights review, and acceptance remain pending. No commit created.
+- Rollback: remove the SVG, restore MF-VF-146 to planned, and remove this ledger/TODO evidence.
