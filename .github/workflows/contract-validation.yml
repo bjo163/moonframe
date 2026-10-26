@@ -20,6 +20,8 @@ jobs:
         run: node scripts/validate-contracts.mjs --self-test
       - name: Prove bounded token fixture
         run: node scripts/token-subset-proof.mjs
+      - name: Validate M13 cross-contract and 460-task handoff integrity
+        run: node scripts/verify-m13-handoff.mjs
 
   runtime-and-showcase:
     runs-on: ubuntu-latest
