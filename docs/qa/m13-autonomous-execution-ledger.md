@@ -62,6 +62,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-082 — Capture Moonpunk dark desktop and phone evidence
+
+- Recorded existing deterministic captures for the fixed `/lab` Northstar Studio fixture: desktop 1440×960 PNG SHA-256 `7d9cc389463df3ec224d1bbdcd8e39cba4eb99a7e8733d5242150fea54b8b9dd`; phone 360×800 PNG SHA-256 `050fcdd4fe774b513702eca77ad0e43baf3eabaf8a2f94438d8a97ac63dccd66`.
+- Both provenance sidecars identify source commit `94ec334e4b3ab99ae66fecff0742a5cd411d316e`, source fingerprint `908e7e64f50c8a742a9f1c5e659eaf0964342792223d27100706d8d02e3310ca`, Chromium 156.0.8078.4, loaded fonts, fixed locale/time/fixture and matching image digests. Status `captured`; no human visual review or acceptance claimed.
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or commit run in this invocation. Host runner owns subsequent verification/checkpoint.
+- Live checked task count after this update: 147/292 foundation + 133/168 reference + 28/28 preflight = 308/488. Rollback: restore MF-VF-082 to planned and remove this entry and its matching TODO count/evidence.
+
 ## MF-VF-432 — Add alt/ARIA quality audit on all four templates
 
 - Added an R01–R04 source-level classification to `docs/qa/accessibility-visual-qa-bible.md`, covering meaningful scene descriptions, decorative image/diagram layers, live text equivalents, form labels and consumer-provided media/mark responsibilities.

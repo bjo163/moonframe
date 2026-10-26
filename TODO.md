@@ -156,7 +156,9 @@
 
 **Historical CI blocker (now repaired; see new M13 gate below):** [GitHub Actions run #154 / 40245436959](https://github.com/bjo163/moonframe/actions/runs/40245436959) on `00c9bd65` **failed**: runtime unit/SSR 11/12 passed; the twelfth required 30 PNG screenshots absent from clean checkout, so typecheck and production build jobs did not execute. The spec-contract job passed. Existing 30/30 screenshot or 105/105 visual PASS reports must be interpreted as historical/local or automated structural evidence until capture artifacts and independent manual review can be reproduced at the same SHA.
 
-**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Original visual wave: `70/292` implemented/captured, `222/292` planned; no new GitHub Issues and no owner or visual approval implied.** Proposed asset paths are not actual file deliveries.
+**New execution backlog:** [292 subatomic `MF-VF-001…292` tasks — Visual Fidelity, Original Assets, Vector, Logo, Icon & Brutalist grammar](docs/backlog/visual-fidelity-subatomic-tasks.md). This is the canonical **new-phase task-detail owner**; this root TODO only indexes batches and live status. **Frozen planning baseline:** `70/292` implemented/captured and `222/292` planned; no new GitHub Issues and no owner or visual approval implied. Proposed asset paths are not actual file deliveries.
+
+**Live M13 checklist count (2026-10-27):** 147/292 foundation visual + 133/168 reference + 28/28 preflight = **308/488 checked**. Checked statuses include implemented/captured and do not imply human review, external rights approval, or acceptance. MF-VF-082 dark captures are recorded with source fingerprint and PNG digests in the detailed backlog and [execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
 
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
@@ -167,7 +169,7 @@
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
 | F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
-| **NEW WAVE TOTAL** | **`MF-VF-001…292`** | **292** | **68 implemented/captured / 224 planned** | **No implied final acceptance** |
+| **NEW WAVE TOTAL (frozen baseline)** | **`MF-VF-001…292`** | **292** | **68 implemented/captured / 224 planned at plan freeze** | **Live checklist counts are recorded above; no implied final acceptance** |
 
 ### Current priority / tiny-agent first tickets
 
