@@ -1,9 +1,15 @@
 # M13 autonomous execution ledger
 
-## Current live counts after MF-VF-358
+## Current live counts after MF-VF-342
 
-- Checked task rows: 139/488 implemented or captured (65/292 foundation visual, 46/168 reference visual, and 28/28 preflight); 349/488 remain planned; 0 explicitly blocked. Checked rows do not imply human review, rights clearance, or acceptance.
-- This count was recomputed from checkbox states across the three live backlogs before and after the task. The root TODO summary is synchronized to that count.
+- Checked task rows: 140/488 implemented or captured (65/292 foundation visual, 47/168 reference visual, and 28/28 preflight); 348/488 remain planned; 0 explicitly blocked. Checked rows do not imply human review, rights clearance, or acceptance.
+- The prior recorded count was 139/488; MF-VF-342 adds one implemented row. Root TODO summary is synchronized to the updated count. Exact full recount deferred to host verification; no claim of independent runtime verification.
+
+## MF-VF-342 — Build bottom recruitment/action banner
+
+- Added `apps/moonframe/templates/visual-reference/r02-bottom-cta.tsx` and `r02-bottom-cta.module.css`: semantic heading/copy, a real caller-configured link, optional decorative paint isolated from the interaction, visible keyboard focus, narrow-screen stacked layout, and reduced-motion handling.
+- Dependency `MF-VF-023` is implemented. Status `implemented`; per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering/capture, or reference comparison were run. Host runner owns verification/checkpoint. Human review, rights clearance, and acceptance remain pending.
+- Rollback: remove the component and stylesheet and restore the matching backlog/TODO/ledger evidence.
 
 ## MF-VF-358 — Create energetic ink/collage title frame
 
