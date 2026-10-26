@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract music marks</title>
+  <desc id="desc">Original decorative eighth notes and loose ink strokes for a generic performance poster.</desc>
+  <g fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="10" d="M48 57c14-17 29-23 44-19m-17 2v70m1-1c-8 10-21 13-29 7-6-5-3-14 6-19 8-4 17-2 23 2m-1 3c9 8 20 8 28 1"/>
+    <path stroke-width="9" d="M218 53c18 8 32 23 39 41m-4-47c16 16 25 35 29 54m-79 66c20-10 39-12 59-6m-67 21c20-8 42-7 62 1"/>
+    <path stroke-width="8" d="M43 174c17-13 32-15 46-7m-39 23c13-8 26-8 38-1m132-127c-7 9-11 19-11 30m-2-32c5-10 11-17 19-22"/>
+  </g>
+  <g fill="#171717">
+    <ellipse cx="68" cy="115" rx="14" ry="10" transform="rotate(-24 68 115)"/>
+    <ellipse cx="95" cy="119" rx="14" ry="10" transform="rotate(-24 95 119)"/>
+  </g>
+</svg>

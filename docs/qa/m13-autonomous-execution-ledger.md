@@ -1055,3 +1055,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-024 is implemented. Status: `implemented`; source review only. No validators, package-manager commands, suites, typecheck, build, screenshots, or human review run under runner override. Rights, visual parity, and acceptance remain pending; host runner owns verification/checkpoint.
 - Live TODO recount at the time of this task: 154/488 checked implemented-or-captured, 334 unchecked, 0 explicitly blocked. Checked task states do not imply human review, rights approval, or acceptance.
 - No commit created. Rollback: remove the brief and restore the matching backlog, TODO, and ledger evidence.
+
+## MF-VF-361 — Draw music-note/scribble motif as original vectors
+
+- Added `assets/source/creative-reference/r03/music-marks.svg`, a standalone static SVG with generic paired eighth notes and loose abstract ink strokes. SHA-256: `2e89f2589c45042ef314f81d2f752d00c4ae60536d8026e553e8b49e43c17caf`.
+- Dependency `MF-VF-024` is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendering, browser capture, human review, or rights approval run/claimed under runner override. No official band mark or performer association is implied; optical review, rights, and acceptance remain pending.
+- Live task checkbox count advances from 158/488 to 159/488 implemented-or-captured-or-implemented; 329 remain unchecked/planned and 0 explicitly blocked. Status counts do not imply review or acceptance. Host runner owns verification and checkpoint.
+- Rollback: remove the SVG and restore the matching backlog/TODO status and this ledger entry.
