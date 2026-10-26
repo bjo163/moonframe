@@ -2038,3 +2038,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a Playwright case in `tests/browser/site.spec.js` asserting portrait artboard proportions and no viewport/page overflow at 1440×960 and 360×800, with screenshot paths `artifacts/site/r03-poster-native.png` and `artifacts/site/r03-poster-mobile.png`.
 - Dependency MF-VF-024 is implemented. Backlog status: `implemented` (fixture added; execution and captures pending). Source inspection only. Runner override honored: no browser suite, package-manager commands, validators, typecheck, build, screenshot capture, or commit run. Host runner owns applicable verification and checkpoint. No reference parity, rights clearance, human review, or acceptance claimed.
 - Rollback: remove the fixture, restore MF-VF-366 to planned, and remove its TODO and ledger evidence.
+## MF-VF-216 — Write Classic visual direction and anti-overlap brief
+
+- Added `docs/visual/skins/classic.md` from the canonical theme and skin grammar contracts. It defines a restrained conventional application baseline, distinguishes Classic from Moonraw, Moonledger, and Moonpunk, and records shared semantics, responsive and accessibility constraints, and review boundaries.
+- Dependency MF-VF-015 is implemented. Backlog status: `implemented`; documentation/source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, or human review were run under runner override. Human review, rights review, and acceptance remain pending.
+- Rollback: remove the brief, restore MF-VF-216 to planned in the visual backlog, and remove this ledger and TODO entry. No commit created; host runner owns checks and checkpoint.
