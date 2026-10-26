@@ -1,4 +1,12 @@
 # M13 autonomous execution ledger
+
+## MF-VF-324 — Add scratch frame treatment to panel recipes
+
+- Added a decorative dashed inset frame to `apps/moonframe/templates/visual-reference/r01-command-feed.module.css`. It uses a pointer-transparent pseudo-element and preserves the existing solid panel edge and content.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no validators, package-manager commands, test suites, typecheck, build, browser capture, or visual review run/claimed under the runner override. Host runner owns verification/checkpoint; no commit created.
+- Rollback: remove `.feed::after` and its relative positioning, then restore the task/TODO/ledger status.
+- Counts: prior live ledger count 113/488 implemented-or-captured, 375/488 planned, 0 blocked; now 114/488, 374/488, 0 blocked.
+
 ## MF-VF-323 — Build command/status feed region
 
 - Added `apps/moonframe/templates/visual-reference/r01-command-feed.tsx` and `r01-command-feed.module.css`: consumer-provided command log entries with semantic timestamps, visible status labels, and single-line command truncation that adapts to narrow viewports.

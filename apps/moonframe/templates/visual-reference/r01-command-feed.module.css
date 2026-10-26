@@ -1,9 +1,18 @@
 .feed {
+  position: relative;
   min-width: 0;
   padding: 1rem;
   border: 1px solid var(--mf-border, #52606d);
   background: var(--mf-surface, #101820);
   color: var(--mf-text, #f5f7fa);
+}
+
+.feed::after {
+  position: absolute;
+  inset: 0.3rem;
+  border: 1px dashed color-mix(in srgb, var(--mf-muted, #b8c2cc) 40%, transparent);
+  content: '';
+  pointer-events: none;
 }
 
 .heading {
