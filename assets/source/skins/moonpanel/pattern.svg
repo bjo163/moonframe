@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpanel gutter grid</title>
+  <desc id="desc">A quiet rectangular panel grid confined to the outer margin, with an open center for live content.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+    <path d="M12 12h64v2H14v36h-2zM164 12h64v38h-2V14h-62zM12 110h2v36h62v2H12zM226 110h2v38h-64v-2h62z" />
+    <path d="M12 64h30m156 0h30M120 12v20m0 96v20" stroke-width="1.5" />
+  </g>
+</svg>

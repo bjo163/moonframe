@@ -1927,3 +1927,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Each reference source is absent from the checkout, so the sheet explicitly leaves comparison pending and blocked. Contract digest metadata was transcribed; no source-byte verification, screenshot capture, human review, rights determination, or acceptance is claimed.
 - Dependency MF-VF-010 is implemented. Backlog status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, screenshot capture, or commit run; host runner owns verification/checkpoint.
 - Rollback: remove the MF-VF-436 subsection from the visual evidence ledger and restore its backlog row; remove this ledger/TODO evidence.
+## MF-VF-170 — Draw Moonpanel gutter pattern
+
+- Added `assets/source/skins/moonpanel/pattern.svg`, an original static rectangular gutter grid with an open center and accessible title/description. SHA-256: `8d9c46e98467192680bbdb975c4b889efb0bc65634934ff863bb9c26e82c78f7`.
+- Dependency MF-VF-168 is implemented. Backlog status `implemented`; source inspection and hash calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, or human review run. Asset remains optional and unintegrated; rights review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-170 to planned, and remove this ledger entry. No commit created; host runner owns checks and checkpoint.

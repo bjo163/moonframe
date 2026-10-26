@@ -11,6 +11,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-170):** Added original optional `assets/source/skins/moonpanel/pattern.svg` with an open center and rectangular gutter marks. SHA-256 `8d9c46e98467192680bbdb975c4b889efb0bc65634934ff863bb9c26e82c78f7`. Dependency MF-VF-168 is implemented. Status `implemented`; source inspection and hash only. No package-manager commands, validators, suites, typecheck, build, rendering, rights review, or human review run per runner override. Asset remains unintegrated; host runner owns verification/checkpoint. No approval or acceptance claimed.
+
 **Live execution update (2026-10-27, MF-VF-418):** Added `docs/qa/reviews/moonchrome-reference-parity.md` with matched-content desktop/mobile comparison conditions against Moonpunk and Moonhalftone, grayscale and decoration-on/off states, mode coverage, structural distinction criteria, and human evidence fields. Status `implemented`; no captures, verdict, rights review, or acceptance claimed. Per runner override, no validators, package-manager commands, suites, typecheck, build, or browser capture run; host runner owns verification/checkpoint. Task dependency MF-VF-204 is implemented.
 
 **Live blocker update (2026-10-27, MF-VF-367):** R03 artwork originality and lyric-IP safety review is `blocked-external-approval`. Static source/hash records cannot establish legal originality, ownership, or clearance; a qualified human rights/IP review with reviewer/date, file hashes, findings, and remediation is required. No approval is inferred. See `docs/qa/m13-autonomous-execution-ledger.md`.
