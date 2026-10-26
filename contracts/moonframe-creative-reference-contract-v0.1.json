@@ -1,0 +1,470 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractVersion": "0.1.0",
+  "contractId": "MF-CREATIVE-REF-001",
+  "status": "user-supplied-visual-direction-unversioned-media-no-review-approval",
+  "createdOn": "2026-10-26",
+  "canonicalTheme": "moonframe-theme-contract-v1.3.json",
+  "canonicalGrammar": "moonframe-skin-grammar-contract-v1.0.json",
+  "canonicalSpecs": "moonframe-skin-specifications-v1.0.json",
+  "canonicalAssetBriefs": "moonframe-skin-asset-briefs-v0.1.json",
+  "authority": "Supplemental artwork/page-composition interpretation of user-provided pictures. Never changes the canonical 15-skin ID list or behavioral contract.",
+  "referenceStorage": {
+    "uploadedToConversation": true,
+    "committedToRepository": false,
+    "repositoryMediaPath": null,
+    "sourceImportGate": "Place user-supplied originals in review-only repo path with recorded checksum and explicit permission; no false public URL in contract; future screenshots require exact reference evidence.",
+    "hashMethod": "SHA-256 of original user-supplied PNG bytes as received on 2026-10-26"
+  },
+  "photos": [
+    {
+      "id": "MWX-REF-001",
+      "attachment": "image.png",
+      "sha256": "31829877f5499480ef8ebbfd2e0b103016917216c3ac70a69d0595b2bf2efa04",
+      "width": 1672,
+      "height": 941,
+      "kind": "mission-control-dashboard",
+      "product": "Moonwitness Mission Control",
+      "primarySkin": "moonpunk",
+      "secondarySkinInfluences": [
+        "moonpanel",
+        "moonglitch",
+        "moonriot"
+      ],
+      "role": "administrative application shell and illustrated dashboard",
+      "layout": "Permanent left rail with raw painted active stroke; thin top header; massive mixed-type hero; cyber-city moon illustration right; graphic workflow center; tight comic-bordered operation panels, statuses and miniature project cards",
+      "composition": [
+        "brand-left-rail",
+        "thin-command-topbar",
+        "left-overlay-copy-on-hero",
+        "right-cinematic-world-scene",
+        "comic-bordered-3-zone-operational-grid",
+        "round-knowledge-signal-hub",
+        "mini-editorial-project-covers",
+        "readable-tables-and-status-chips"
+      ],
+      "assets": [
+        "painted-moonwitness-wordmark",
+        "hand-drawn-crown",
+        "large-moon-neon-city",
+        "hooded-observer",
+        "rough-panel-borders",
+        "brush-stroke-active-nav",
+        "radial-knowledge-diagram",
+        "project-card-thumbnails"
+      ],
+      "avoid": "Do not bake the entire screenshot into the dashboard background; labels, statuses, data and actions must be DOM content.",
+      "referenceStatus": "source-uploaded-in-chat-not-versioned-in-repository",
+      "visualApprovalStatus": "not-reviewed",
+      "rightsForReuse": "owner-supplied-reference-not-a-reuse-license",
+      "maturity": "creative-reference-only"
+    },
+    {
+      "id": "MWX-REF-002",
+      "attachment": "image(1).png",
+      "sha256": "1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167",
+      "width": 1024,
+      "height": 576,
+      "kind": "editorial-story-landing",
+      "product": "Moonwitness public landing",
+      "primarySkin": "moonpunk",
+      "secondarySkinInfluences": [
+        "moonzine",
+        "moonpanel",
+        "moonhalftone"
+      ],
+      "role": "consumer-facing editorial storytelling home",
+      "layout": "Hand-painted visual masthead on neon moon city and manga imagery; layered collage tape/stickers; editorial story tiles; contact-sheet timeline; crew-map rail; irregular but intentional column rhythm",
+      "composition": [
+        "visible-accessible-site-navigation",
+        "art-directed-cinematic-hero",
+        "cutout-story-tiles",
+        "comic-ink-panel-separators",
+        "crew-world-map",
+        "short-archive-filmstrip",
+        "paint-stroke-primary-cta"
+      ],
+      "assets": [
+        "manga-artwork-portrait",
+        "scrap-tape-shapes",
+        "poster-tear-labels",
+        "neon-city-moon",
+        "cyan-pink-overprint",
+        "black-white-comic-illustration",
+        "hand-drawn-symbols"
+      ],
+      "avoid": "Public landing can be more expressive than dense admin; do not use rasterized entire page as UI.",
+      "referenceStatus": "source-uploaded-in-chat-not-versioned-in-repository",
+      "visualApprovalStatus": "not-reviewed",
+      "rightsForReuse": "owner-supplied-reference-not-a-reuse-license",
+      "maturity": "creative-reference-only"
+    },
+    {
+      "id": "MWX-REF-003",
+      "attachment": "image(2).png",
+      "sha256": "326ebd139769e13da396a2e02f25322a6b8f9b2036d303f0d61fd63b98452dff",
+      "width": 682,
+      "height": 1024,
+      "kind": "full-bleed-performance-poster",
+      "product": "Moonwitness story/campaign poster",
+      "primarySkin": "moonsmash",
+      "secondarySkinInfluences": [
+        "moonpunk",
+        "moonzine",
+        "moonhalftone"
+      ],
+      "role": "editorial campaign artwork, NOT standard admin form or shell",
+      "layout": "Tall portrait full-bleed stage illustration; layered performer silhouettes, crowns, scratches, torn handwritten caption stickers, sound/energy burst and high-impact diagonal overprints; meaningful copy remains text when published as accessible webpage",
+      "composition": [
+        "portrait-artwork-stage",
+        "oversized-impact-title",
+        "dynamic-center-illustration",
+        "hand-torn-quote-bands",
+        "sticker-motifs",
+        "footer-performance-silhouette"
+      ],
+      "assets": [
+        "music-stage-scene",
+        "hoodie-costumes",
+        "crowns",
+        "painted-brush-title",
+        "cut-paper-stickers",
+        "speaker-and-lighting",
+        "scribbled-lightning"
+      ],
+      "avoid": "Never turn dense data tables, authentication fields or semantic buttons into all-over poster layers; do not copy copyrighted lyrics or licensed artist likeness into reusable asset pack.",
+      "referenceStatus": "source-uploaded-in-chat-not-versioned-in-repository",
+      "visualApprovalStatus": "not-reviewed",
+      "rightsForReuse": "owner-supplied-reference-not-a-reuse-license",
+      "maturity": "creative-reference-only"
+    },
+    {
+      "id": "MWX-REF-004",
+      "attachment": "image(3).png",
+      "sha256": "9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90",
+      "width": 1024,
+      "height": 576,
+      "kind": "split-screen-cinematic-auth",
+      "product": "Moonwitness sign in",
+      "primarySkin": "moonpunk",
+      "secondarySkinInfluences": [
+        "moonzine",
+        "moonchrome"
+      ],
+      "role": "sign-in screen with strong framed brand world and legible accessible form",
+      "layout": "About half left for branded intro and semantic username/password form in gritty framed dark panel; about half right for original night-city blue moon and hooded character artwork; brand scratches isolated to margins; clear neon-pink CTA",
+      "composition": [
+        "left-form-with-visible-labels",
+        "right-cinematic-scene",
+        "horizontal-wordmark-header",
+        "rough-ink-border",
+        "decorative-sidebar-micro-copy",
+        "high-contrast-primary-cta"
+      ],
+      "assets": [
+        "moon-city-skyline",
+        "night-moon-blue",
+        "hooded-generic-figure",
+        "chalk-scratches",
+        "spray-tag-accents",
+        "brush-painted-title"
+      ],
+      "avoid": "Do not put text fields into image, do not fake auth result, do not crop the form on narrow screens.",
+      "referenceStatus": "source-uploaded-in-chat-not-versioned-in-repository",
+      "visualApprovalStatus": "not-reviewed",
+      "rightsForReuse": "owner-supplied-reference-not-a-reuse-license",
+      "maturity": "creative-reference-only"
+    }
+  ],
+  "creativeNorthStar": "Cinematic Manga-Punk Neo-Brutalism — original ink, graffiti editorial edges, cyber city/moon narrative, strong material silhouettes, readable UI layered above cinematic art.",
+  "brandSeparation": {
+    "moonframe": "generic reusable library brand with one optional master mark",
+    "moonwitness": "product/customer identity, crown, names, fictional characters, copy, project cards, sacred terms and story-specific symbols belong only to Moonwitness consumer data/assets",
+    "editionMarks": "stylistic skin signatures are not 15 independent company logos",
+    "icons": "stable accessible semantic glyph across all skins"
+  },
+  "paletteGuidance": {
+    "role": "Non-binding artwork direction; semantic tokens retain palette ownership",
+    "ink": [
+      "near-black",
+      "warm off-white/chalk"
+    ],
+    "accents": [
+      "hot magenta",
+      "electric cyan/blue",
+      "signal yellow",
+      "violet"
+    ],
+    "rules": [
+      "neon never only signal for status",
+      "allow skin palette differences and separate light/dark",
+      "ensure text contrast on actual artwork overlays not just tokens",
+      "high saturation concentrated in accents rather than all body UI"
+    ]
+  },
+  "referenceStylePolicy": {
+    "componentSemantics": "one API/keyboard/form behavior across 15 skins",
+    "layers": [
+      "L0 semantic DOM layout+content",
+      "L1 layout geometry/panel frames",
+      "L2 optional decorative textures",
+      "L3 optional character/scenery illustration",
+      "L4 interactive controls and readable type"
+    ],
+    "responsive": "At 360px reorder layout meaningfully; do not shrink screenshot or crop form/navigation",
+    "typography": "Display brush hand-painted aesthetic must use real text or licensed lettering; never bake required labels/buttons into artwork",
+    "assetDelivery": "PNG/WebP/AVIF are derived previews when justified, SVG is canonical for simple geometric vector, artwork may be raster if layered complexity justified",
+    "safety": "No borrowed brand marks, photographs, artist likeness, copyrighted lyrics, or unreviewed licenses in distributable pack",
+    "a11y": "alt text policy, decorative aria-hidden, focus visible, reduced motion/forced colors, readable body copy, no color-only states",
+    "performance": "Reserve image dimensions, break hero into optimized art layers, budget source/outputs with measured baseline, lazy-load only noncritical imagery"
+  },
+  "screenLayers": [
+    {
+      "referenceId": "MWX-REF-001",
+      "semanticShell": [
+        "brand-left-rail",
+        "thin-command-topbar",
+        "left-overlay-copy-on-hero",
+        "right-cinematic-world-scene",
+        "comic-bordered-3-zone-operational-grid",
+        "round-knowledge-signal-hub",
+        "mini-editorial-project-covers",
+        "readable-tables-and-status-chips"
+      ],
+      "assetTasks": [
+        "painted-moonwitness-wordmark",
+        "hand-drawn-crown",
+        "large-moon-neon-city",
+        "hooded-observer",
+        "rough-panel-borders",
+        "brush-stroke-active-nav",
+        "radial-knowledge-diagram",
+        "project-card-thumbnails"
+      ],
+      "reviewRequirement": "Compare grayscale+decoration-off+mobile and screen-reader reading order with screenshot evidence"
+    },
+    {
+      "referenceId": "MWX-REF-002",
+      "semanticShell": [
+        "visible-accessible-site-navigation",
+        "art-directed-cinematic-hero",
+        "cutout-story-tiles",
+        "comic-ink-panel-separators",
+        "crew-world-map",
+        "short-archive-filmstrip",
+        "paint-stroke-primary-cta"
+      ],
+      "assetTasks": [
+        "manga-artwork-portrait",
+        "scrap-tape-shapes",
+        "poster-tear-labels",
+        "neon-city-moon",
+        "cyan-pink-overprint",
+        "black-white-comic-illustration",
+        "hand-drawn-symbols"
+      ],
+      "reviewRequirement": "Compare grayscale+decoration-off+mobile and screen-reader reading order with screenshot evidence"
+    },
+    {
+      "referenceId": "MWX-REF-003",
+      "semanticShell": [
+        "portrait-artwork-stage",
+        "oversized-impact-title",
+        "dynamic-center-illustration",
+        "hand-torn-quote-bands",
+        "sticker-motifs",
+        "footer-performance-silhouette"
+      ],
+      "assetTasks": [
+        "music-stage-scene",
+        "hoodie-costumes",
+        "crowns",
+        "painted-brush-title",
+        "cut-paper-stickers",
+        "speaker-and-lighting",
+        "scribbled-lightning"
+      ],
+      "reviewRequirement": "Compare grayscale+decoration-off+mobile and screen-reader reading order with screenshot evidence"
+    },
+    {
+      "referenceId": "MWX-REF-004",
+      "semanticShell": [
+        "left-form-with-visible-labels",
+        "right-cinematic-scene",
+        "horizontal-wordmark-header",
+        "rough-ink-border",
+        "decorative-sidebar-micro-copy",
+        "high-contrast-primary-cta"
+      ],
+      "assetTasks": [
+        "moon-city-skyline",
+        "night-moon-blue",
+        "hooded-generic-figure",
+        "chalk-scratches",
+        "spray-tag-accents",
+        "brush-painted-title"
+      ],
+      "reviewRequirement": "Compare grayscale+decoration-off+mobile and screen-reader reading order with screenshot evidence"
+    }
+  ],
+  "skinClassification": [
+    {
+      "skinId": "moonpunk",
+      "roleForTheseExamples": "primary",
+      "direction": "manga-punk neo-brutalist + cyber-city graphic command shell",
+      "nonColorGeometry": "thick irregular ink borders + offset hard shadows + bold paint strokes",
+      "typeHierarchy": "impact brush display over readable technical mono/body",
+      "referenceMapping": "all four refs except poster uses Moonsmash as primary",
+      "antiOverlap": "do not substitute pink neon alone for graffiti/geometry",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonriot",
+      "roleForTheseExamples": "secondary",
+      "direction": "angular disruptive editorial cyberpunk",
+      "nonColorGeometry": "sharp split wedge, diagonal signal rail, hard torn heading",
+      "typeHierarchy": "manifesto condensed headline + disciplined body",
+      "referenceMapping": "R01 angular hero notes",
+      "antiOverlap": "not Moonpunk hard slab with red recolor",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonzine",
+      "roleForTheseExamples": "secondary",
+      "direction": "collage editorial zine / photocopy",
+      "nonColorGeometry": "paper tear, overprint, tape, misregistration",
+      "typeHierarchy": "editorial asymmetry/long-form legibility",
+      "referenceMapping": "R02 and R03 torn caption collage",
+      "antiOverlap": "not Halftone screentone or all-over punk admin",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonhalftone",
+      "roleForTheseExamples": "secondary",
+      "direction": "screened monochrome manga / dot raster",
+      "nonColorGeometry": "printed dots + ink panels + deliberate screen shading",
+      "typeHierarchy": "manga captions and screentone pacing",
+      "referenceMapping": "R02 and R03 manga print texture",
+      "antiOverlap": "not colored glitch scanlines",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonglitch",
+      "roleForTheseExamples": "secondary",
+      "direction": "instrument/telemetry terminal",
+      "nonColorGeometry": "rules, scanline zones, pixel metrics",
+      "typeHierarchy": "mono diagnostics and data density",
+      "referenceMapping": "R01 monitoring tiles",
+      "antiOverlap": "not dynamic glitch on form",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonsmash",
+      "roleForTheseExamples": "primary for R03",
+      "direction": "kinetic impact poster composition",
+      "nonColorGeometry": "oversized radial burst, focal illustration and off-axis titles",
+      "typeHierarchy": "huge action-lettering with legible content layering",
+      "referenceMapping": "R03 full-bleed performance poster",
+      "antiOverlap": "not every product page becomes a poster",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonink",
+      "roleForTheseExamples": "independent",
+      "direction": "quiet painterly expressive brush",
+      "nonColorGeometry": "handpainted strokes with generous negative space",
+      "typeHierarchy": "brush-dominant headline + plain text body",
+      "referenceMapping": "brush gestures only, no full composition inheritance",
+      "antiOverlap": "not scattered Moonscrawl handwriting",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "mooncrash",
+      "roleForTheseExamples": "independent",
+      "direction": "industrial mechanical signal plates",
+      "nonColorGeometry": "hazard panels, etched bolts and mechanical seams",
+      "typeHierarchy": "industrial operational labels and functional hierarchy",
+      "referenceMapping": "R01 utility feeling only, not neon manga art",
+      "antiOverlap": "not enterprise Moonledger",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonpanel",
+      "roleForTheseExamples": "secondary",
+      "direction": "strict modular comic-page information architecture",
+      "nonColorGeometry": "boxed panels, hard white gutters, caption-strip grid",
+      "typeHierarchy": "lettered panel heading with stable rows",
+      "referenceMapping": "R01 panels, R02 multi-tile stories",
+      "antiOverlap": "not Moonhalftone raster-only",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonscrawl",
+      "roleForTheseExamples": "independent",
+      "direction": "notebook freehand annotations",
+      "nonColorGeometry": "ruled sketch paper, hand markers",
+      "typeHierarchy": "hand-annotated hierarchy with plain readable body",
+      "referenceMapping": "R02 scribbled note accents only",
+      "antiOverlap": "not Moonink brush black/white painting",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonraw",
+      "roleForTheseExamples": "independent",
+      "direction": "non-decorative raw grid and exposed frame",
+      "nonColorGeometry": "plain sharp-edged boundaries",
+      "typeHierarchy": "minimal direct labels, no nostalgic decoration",
+      "referenceMapping": "contrast example rather than copying picture",
+      "antiOverlap": "not Classic polished system UI",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonchrome",
+      "roleForTheseExamples": "secondary limited",
+      "direction": "futuristic reflective metal / moon edge",
+      "nonColorGeometry": "reflective metal rim, spectral precise highlights",
+      "typeHierarchy": "controlled sci-fi display + accessible body",
+      "referenceMapping": "R04 glows but no required hooded art",
+      "antiOverlap": "not Moonglitch terminal noise",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "classic",
+      "roleForTheseExamples": "independent",
+      "direction": "neutral familiar clean interface",
+      "nonColorGeometry": "subtle surfaces, restrained form",
+      "typeHierarchy": "ordinary accessible typographic hierarchy",
+      "referenceMapping": "contrast-control specimen only",
+      "antiOverlap": "never force punk painting",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonquest",
+      "roleForTheseExamples": "independent",
+      "direction": "storyworld RPG quest journal",
+      "nonColorGeometry": "framed relic inventory and readable parchment",
+      "typeHierarchy": "quest progression UI, not game engine",
+      "referenceMapping": "storyworld atmosphere only",
+      "antiOverlap": "not Moonwitness identity or Moonpunk default",
+      "approval": "design-direction-proposed-not-production-approved"
+    },
+    {
+      "skinId": "moonledger",
+      "roleForTheseExamples": "independent",
+      "direction": "compact enterprise/ERP data workbench",
+      "nonColorGeometry": "aligned grid, dense rows, subtle separators",
+      "typeHierarchy": "clear tabular numeric and finance typography",
+      "referenceMapping": "same content reference counterexample",
+      "antiOverlap": "not Mooncrash hazard nor neon poster",
+      "approval": "design-direction-proposed-not-production-approved"
+    }
+  ],
+  "requiredReview": [
+    "Build one real same-content specimen for moonpunk/moonzine/moonpanel/moonsmash/classic/moonledger",
+    "Review original references 4/4 only after source media imported to repository",
+    "At least light/dark/360/768/1440 and grayscale/decorations-off captures for representative pages",
+    "Human reviewer must sign screen composition and differentiating grammar",
+    "No status change to old 105 pair cells from text/spec overlay"
+  ],
+  "backlog": "docs/backlog/visual-fidelity-subatomic-tasks.md"
+}
