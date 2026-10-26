@@ -6,11 +6,18 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
 - `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; no approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 54 implemented-or-captured (14 baseline implemented + 11 captured + 29 implemented), 5 blocked, 429 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 54/488 (11.1%) done/captured; 429/488 (87.9%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 434/488 (88.9%) remain incomplete.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 55 implemented-or-captured (14 baseline implemented + 11 captured + 30 implemented), 5 blocked, 428 pending/planned. The license/trademark decision remains pending without inferred owner approval.
+- Overall progress: 55/488 (11.3%) done/captured; 428/488 (87.7%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 433/488 (88.7%) remain incomplete.
 
 
 
+## MF-VF-032 — Record pilot manual review fields
+
+- Scope: `docs/qa/visual-fidelity-evidence-ledger.md`; six pilot skin pairs × light/dark = 12 review cells.
+- All cells link the actual A/B screenshots for the same fixed `/lab` + Northstar Studio fixture. Checked 24 PNG files and sidecars: image digests match, capture viewport is 1440×960, fonts are loaded, and all fixture strings match exactly.
+- Added typed `review_status`, `verdict`, `reviewer`, `reviewed_at`, `observations` and `exception` fields. Initial values are `pending` / `unreviewed` / `unassigned` / `not-reviewed` / `not-recorded` / `not-assessed`. No manual visual verdict or reviewer identity was invented. The contact sheet link is included for direct comparison.
+- `node scripts/validate-contracts.mjs`, `node scripts/verify-m13-handoff.mjs` and `git diff --check` — passed. This documentation task adds no visual approval; all 12 cells remain pending human review.
+- Status: implemented. Rollback: remove the worksheet and restore the prior MF-VF-032 task/count entries.
 ## MF-VF-031 — Build contact sheet with A/B rendered images
 
 - Inspected implementation baseline after MF-VF-030; pilot captures have current-source SHA-256 provenance.

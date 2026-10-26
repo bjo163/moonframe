@@ -336,3 +336,31 @@ Thirty desktop captures cover every skin × light/dark mode with the forced-colo
 | moonsmash | light | `artifacts/skins/moonsmash-light-1440x960-forced-colors.png` | `956b4c9bb35b211486be914b7bebcdf790a40486b017fa4e19bcf29c46d6134c` | `9cb668c55cc6c5512417cd2147c6f4ed86d14fbe` | `03bf44ac5ab067909ed2aae9ae41d63e23ff1f5bbd3f118071e792b5d9527b5b` | 1440×960 | pending | captured-structural |
 | moonzine | dark | `artifacts/skins/moonzine-dark-1440x960-forced-colors.png` | `35364ee294c1cde019533524c4e5ff1b4b6a6c1cc70be50c9d08aa93a16c9e31` | `9cb668c55cc6c5512417cd2147c6f4ed86d14fbe` | `03bf44ac5ab067909ed2aae9ae41d63e23ff1f5bbd3f118071e792b5d9527b5b` | 1440×960 | pending | captured-structural |
 | moonzine | light | `artifacts/skins/moonzine-light-1440x960-forced-colors.png` | `f57f74fb2e28e53daa2ac41f74e40c403e62833047bf24f77f461c74d815bd68` | `9cb668c55cc6c5512417cd2147c6f4ed86d14fbe` | `03bf44ac5ab067909ed2aae9ae41d63e23ff1f5bbd3f118071e792b5d9527b5b` | 1440×960 | pending | captured-structural |
+
+## Pilot visual review worksheet (MF-VF-032)
+
+The six unordered pairs among Classic, Moonpunk, Moonzine and Moonledger are listed in both light and dark mode. Each cell points to the actual same-content desktop captures and maps to the [A/B contact sheet](../../artifacts/skins/pilot-pair-contact-sheet.html). Provenance sidecars record the identical fixed `/lab` + Northstar Studio fixture, viewport, font state, source and image digest. This worksheet stores review state; capture or structural checks do not set a visual verdict.
+
+Typed field values:
+
+- `review_status`: `pending` or `completed`.
+- `verdict`: `unreviewed`, `pass`, `needs-changes`, or `blocked`. `pass` and `needs-changes` require a human review; only `pass` means the pair has a positive visual verdict.
+- `reviewer`: a human-provided identifier; remains `unassigned` until supplied.
+- `reviewed_at`: ISO-8601 timestamp; remains `not-reviewed` until a reviewer records it.
+- `observations`: reviewer notes; remains `not-recorded` until review.
+- `exception`: `not-assessed` until review determines an exception, then record its reason. No exception has been inferred.
+
+| Pair | Mode | Fixture parity | Rendered images (A/B) | `review_status` | Reviewer | `reviewed_at` | `verdict` | Observations | Exception |
+|---|---|---|---|---|---|---|---|---|---|
+| moonpunk vs moonzine | light | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-light-1440x960-default.png) · [moonzine B](../../artifacts/skins/moonzine-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonpunk vs moonzine | dark | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-dark-1440x960-default.png) · [moonzine B](../../artifacts/skins/moonzine-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonpunk vs classic | light | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-light-1440x960-default.png) · [classic B](../../artifacts/skins/classic-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonpunk vs classic | dark | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-dark-1440x960-default.png) · [classic B](../../artifacts/skins/classic-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonpunk vs moonledger | light | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-light-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonpunk vs moonledger | dark | same fixed /lab + Northstar Studio content | [moonpunk A](../../artifacts/skins/moonpunk-dark-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonzine vs classic | light | same fixed /lab + Northstar Studio content | [moonzine A](../../artifacts/skins/moonzine-light-1440x960-default.png) · [classic B](../../artifacts/skins/classic-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonzine vs classic | dark | same fixed /lab + Northstar Studio content | [moonzine A](../../artifacts/skins/moonzine-dark-1440x960-default.png) · [classic B](../../artifacts/skins/classic-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonzine vs moonledger | light | same fixed /lab + Northstar Studio content | [moonzine A](../../artifacts/skins/moonzine-light-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| moonzine vs moonledger | dark | same fixed /lab + Northstar Studio content | [moonzine A](../../artifacts/skins/moonzine-dark-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| classic vs moonledger | light | same fixed /lab + Northstar Studio content | [classic A](../../artifacts/skins/classic-light-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-light-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |
+| classic vs moonledger | dark | same fixed /lab + Northstar Studio content | [classic A](../../artifacts/skins/classic-dark-1440x960-default.png) · [moonledger B](../../artifacts/skins/moonledger-dark-1440x960-default.png) | `pending` | `unassigned` | `not-reviewed` | `unreviewed` | `not-recorded` | `not-assessed` |

@@ -147,10 +147,10 @@
   - **File scope:** `scripts/audit-skin-pairs.mjs`; generated artifact `artifacts/skins/pilot-pair-contact-sheet.html`. **Acceptance:** Images directly comparable, no auto reviewer approval.
   - **Evidence:** Six pilot pairs show actual light and dark 1440×960 captures side-by-side for both skins; jump links and responsive layout included. The sheet labels its evidence as machine-assembled and leaves human visual review pending.
   - **Verify:** `pnpm run audit:pairs` passed: 105 pair records, 90 current-source default captures; browser inspection loaded all 24 images across six pair sections. Human visual review pending; rollback: `git revert 6bf517524b78a0017a69ef3ab1bee3e9389918eb`.
-- [ ] **MF-VF-032 — Record pilot manual review fields** · **P2** · `planned` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger same contents and typed reviewer status.
-  - **Verify:** Scoped source review + actual commands + screenshot when visual. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-
+- [x] **MF-VF-032 — Record pilot manual review fields** · **P2** · `implemented` · **dependency:** `MF-VF-010` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/visual-fidelity-evidence-ledger.md`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger same contents and typed reviewer status.
+  - **Evidence:** Added 12 initial review cells covering six unordered pairs × light/dark. Each links its actual A/B captures and leaves reviewer, timestamp and verdict explicitly unreviewed; field enums are documented and no visual approval is inferred.
+  - **Verify:** Twelve cells and all 24 linked captures/sidecars checked against the same fixture, viewport and current source; contract/handoff validators and `git diff --check` passed. Human visual review remains pending; rollback: remove the worksheet and restore the previous task status/count entries.
 ## C — master logo and its smallest production assets
 
 - [ ] **MF-VF-033 — Approve one-umbrella logo vs edition devices** · **P1** · `planned` · **dependency:** `MF-VF-014` · **GitHub issue:** not-created
