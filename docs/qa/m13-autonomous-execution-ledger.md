@@ -1593,3 +1593,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-025 is implemented. Backlog status `implemented`; static source inspection only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser capture, or human review run. The host runner owns checks and checkpoint; responsive rendering/integration and acceptance remain pending.
 - Live checked counts advance to 241/488 (foundation 121, reference 92, preflight 28); checked does not imply human review, rights clearance, or acceptance. No commit created.
 - Rollback: remove the R04 form files, restore MF-VF-376 to planned, and remove this ledger/TODO evidence.
+# MF-VF-377 — Draw moonlit-cyber skyline background concept
+
+- Added `assets/source/creative-reference/r04/moon-skyline.svg`, an original, self-contained abstract city silhouette and crescent moon scene, intended only as optional decoration separate from the sign-in form. SHA-256: `3340A8B359A52FD1068251218F35BBA5C3943980D0CB31BCFDFD7D7845683366`.
+- Dependency `MF-VF-025` is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, rendering, viewport captures, rights review, or human visual review run. Host runner owns verification and checkpoint; no acceptance claimed.
+- Checkbox counts advance to 121/292 foundation + 93/168 reference + 28/28 preflight = 242/488 checked. No commit created. Rollback: remove the SVG, restore MF-VF-377 to planned, and remove matching TODO/ledger evidence.
