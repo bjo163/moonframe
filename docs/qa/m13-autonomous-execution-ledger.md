@@ -1945,3 +1945,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/qa/moonpunk-acid-lime-audit.md`. Source inspection confirms the shared CSS currently has global light/dark accent bridge values and no Moonpunk-specific accent override, while the canonical theme contract describes Moonpunk as specified but not implemented.
 - Dependency MF-VF-293 is captured. Backlog status: `captured`; no colors changed or proposed. No contrast calculations, browser captures, package-manager commands, validators, suites, typecheck, build, human review, or acceptance claimed; the host runner owns verification/checkpoint.
 - Rollback: remove the audit, restore MF-VF-447 to planned, and remove this ledger/TODO evidence. No commit created.
+# MF-VF-419 — Define Classic screenshot-based anti-clone review
+
+- Added `docs/qa/reviews/classic-reference-parity.md` with fixed same-fixture desktop/mobile captures, Light/Dark, color/grayscale, decoration-on/off states, comparison criteria, and pending human observation fields.
+- Dependency MF-VF-216 is implemented. Backlog status: `implemented`; documentation/source inspection only. No captures, visual verdict, rights review, or acceptance claimed.
+- Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser capture, or commit run. Host runner owns verification and checkpoint.
+- Rollback: remove the protocol and restore MF-VF-419 to planned in the reference backlog and TODO.
