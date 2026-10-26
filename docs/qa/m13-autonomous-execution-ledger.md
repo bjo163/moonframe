@@ -1,5 +1,13 @@
 # M13 autonomous execution ledger
 
+## MF-VF-046 — Render actual 32px favicon PNG
+
+- Added `assets/exports/brand/favicon-32.png`, rasterized from `assets/exports/brand/favicon.svg` using a temporary Node script with 8× coverage sampling. The 32×32 RGBA result preserves transparent pixels (736 fully transparent pixels).
+- PNG SHA-256: `2f08d6889ca2550898a8a1cb71858bad60fa09339b7b8d026b8ebe2646a2453a`; source SVG SHA-256: `8ade2ea8431f62d34fec3b2fd9c2f0ce79757a1994c9d0b1b4273f31f25e0c4f`.
+- Chromium launch through Playwright failed with `spawn EPERM`; no validators, package-manager commands, suites, typecheck, build, or browser suite were run per runner override. Implementation status only; optical/human review, rights, trademark, and acceptance remain pending. Host runner owns verification/checkpoint.
+- Live task rows: 162/488 implemented or captured, 326 planned, 0 explicitly blocked. Checked status does not imply capture, human review, or acceptance.
+- Rollback: remove the PNG and restore the task row plus this ledger entry.
+
 ## MF-VF-360 — Write safe placeholder performance copy
 
 - Added `apps/moonframe/templates/visual-reference/r03-copy.ts` with an original generic event title, short description, sample date and venue, and neutral CTA. It contains no lyrics, real performer identity, or consumer brand marks.
