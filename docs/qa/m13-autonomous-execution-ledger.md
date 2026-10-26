@@ -23,6 +23,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-109 — Draw original Moonhalftone screened ink disk
+
+- Added `assets/source/skins/moonhalftone/motif.svg`, a 128×128 original monochrome screened ink disk with a fading paper edge. SHA-256: `094ED437C2ECCAD1C5BCA16A62CE9CC670EDAC48DF0EC01BADA0E35E677E3781`.
+- Dependency MF-VF-108 is implemented. XML parse and static scans for scripts, event handlers, `foreignObject`, external references, and nonlocal URL references passed. No rendering, optical review, validators, package-manager commands, suites, typecheck, build, rights review, or human acceptance claimed in this authoring step.
+- Status: `implemented`; no commit created. Host runner owns verification and checkpoint. Rollback: remove the SVG and restore the MF-VF-109 backlog row, TODO update, and this entry to planned.
+
 ## MF-VF-435 — Add performance measurement recording template
 
 - Added a reproducible per-page/viewport measurement record to `docs/qa/original-asset-validation-plan.md`: asset hashes, transfer bytes, LCP, CLS, browser/device, cache/network conditions, repetitions, variance, and raw evidence reference.
