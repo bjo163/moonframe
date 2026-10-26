@@ -1,15 +1,15 @@
 # Moonframe UI — Visual Fidelity & Original Asset Subatomic Backlog
 
-**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Status:** all new tasks `planned` · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
+**Draft date:** 2026-10-26 · **Branch:** existing `main` only · **Current status:** 14 implementation/CI tasks evidenced, 278 remaining planned · **Audited starting HEAD:** `00c9bd65f4068e0e858f36ba637151815c350983`.
 
-**Observed red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
+**Historical now-repaired red CI:** [run #154](https://github.com/bjo163/moonframe/actions/runs/40245436959) has 30 missing generated screenshots, 11/12 unit tests passing, with later build/typecheck skipped. Existing historical 57/57 TODO items are not new visual-parity approval.
 
-> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 planned tasks, 0 completed**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
+> **2026-10-26 reference-specific deepening:** The four attached Moonwitness sample images introduce **168 additional, non-overlapping `MF-VF-293…460` microtasks** in [Reference Mockups Subatomic Addendum](reference-mockups-subatomic-tasks.md). The table below intentionally counts only this original `MF-VF-001…292` wave; **combined visual-fidelity queue: 460 task IDs, 14 implemented, 446 pending**. The original-image hashes, four page archetypes, and 15-skin interpretation are in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). These uploads are not yet committed as repo PNGs. A given reference styling influence is not a new skin name or production approval.
 
 ## Authority and nonnegotiable acceptance rules
 
 - Normative documents: [UI Bible](../moonframe-ui-design-system-bible-v1.3.md), [skin grammar](../../contracts/moonframe-skin-grammar-contract-v1.0.json), [skin asset briefs](../../contracts/moonframe-skin-asset-briefs-v0.1.json), [brand Bible](../brand/original-asset-brand-bible.md), [asset manifest](../../contracts/moonframe-asset-manifest-v0.1.json), [skin fixtures](../qa/skin-lab-fixtures.md), [visual QA Bible](../qa/accessibility-visual-qa-bible.md), [existing policy-level asset backlog](original-asset-atomic-issues.md). This micro queue does not redefine tokens, IDs, UI APIs, licenses, or existing asset approval state.
-- New task IDs `MF-VF-###` avoid legacy task ID collisions. Every checkbox below starts unchecked. They are *not* GitHub issues and no code, image, logo, font or screenshot is produced merely by adding this backlog.
+- New task IDs `MF-VF-###` avoid legacy task ID collisions. All originally entered tasks started unchecked; completed tasks are now marked `[x]` only with linked evidence. They are *not* GitHub issues and no code, image, logo, font or screenshot is produced merely by adding this backlog.
 - All generated media requires source/edit lineage, exact creator and rights, SHA-256 once created, static SVG security validation (no scripts/events/foreignObject/external href/data URL), bounded viewBox/optical sizes, a11y meaning, light/dark/mono, optional decoration-off fallback. AI-produced art is not automatically copyrighted/trademark-cleared. One Moonframe brand, 15 visual editions; do not force 15 separate corporate logos or replace consuming app marks.
 - `15 skins × 2 modes = 30 appearances`; `15 choose 2 = 105 unordered skin pairs`. Same pinned fixture/content/fonts/time/viewport. A score from different contract strings or mere PNG presence is NOT human visual review. Review light/dark, grayscale, decoration-off, reduced-motion, forced-colors, RTL, mobile reflow, focus, interaction; missing earlier mockups must be labelled `reference-missing` instead of invented parity.
 - Stages: `planned → in-progress → implemented → captured → human-reviewed → accepted`, also `blocked/rejected`. P0 evidence truth first; then Classic/Moonpunk/Moonzine/Moonledger four-skin pilot; remaining skins; showcase, accessibility and 105 human comparisons. One micro ID per local-agent session. Source paths marked `(proposed)` do not yet exist.
@@ -19,14 +19,14 @@
 
 | Workstream | Tasks | Done |
 |---|---:|---:|
-| A — P0 repair release evidence and CI | 16 | 0 |
+| A — P0 repair release evidence and CI | 16 | 14 |
 | B — deterministic lab and snapshot fixture microtasks | 16 | 0 |
 | C — master logo and its smallest production assets | 17 | 0 |
 | D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
 | E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
 | F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
 | G — final 9 specimens, cross-family QA and release gate | 23 | 0 |
-| **TOTAL** | **292** | **0** |
+| **TOTAL** | **292** | **14** |
 
 ## A — P0 repair release evidence and CI
 
