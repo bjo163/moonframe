@@ -100,6 +100,27 @@ test('all four reference screen compositions remain present in grayscale', async
   expect(grayscaleActive).toBe(true);
 });
 
+test('R01 operational dashboard remains readable with 200% text zoom', async ({ page }) => {
+  await page.goto('/lab/reference-art-off');
+  await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
+
+  const dashboard = page.locator('main > section').filter({ has: page.getByRole('heading', { name: 'Mission dashboard', exact: true }) });
+  await expect(dashboard).toBeVisible();
+  await expect(dashboard.getByRole('heading', { name: 'Mission dashboard', exact: true })).toBeVisible();
+  await expect(dashboard.getByRole('heading', { name: 'Northstar Studio operations' })).toBeVisible();
+  await expect(dashboard.getByText('Active signals', { exact: true })).toBeVisible();
+  await expect(dashboard.getByText('Queued actions', { exact: true })).toBeVisible();
+
+  const bounds = await dashboard.evaluate(element => {
+    const rect = element.getBoundingClientRect();
+    return { left: rect.left, right: rect.right, viewport: document.documentElement.clientWidth, scrollWidth: element.scrollWidth, clientWidth: element.clientWidth };
+  });
+  expect(bounds.left).toBeGreaterThanOrEqual(0);
+  expect(bounds.right).toBeLessThanOrEqual(bounds.viewport);
+  expect(bounds.scrollWidth).toBeLessThanOrEqual(bounds.clientWidth + 1);
+  await page.screenshot({ path: path.join(siteCaptureDir, 'r01-dashboard-200-percent.png'), fullPage: true, animations: 'disabled' });
+});
+
 test('Moonframe showcase landing, skin wall, global skin selector, and command launcher work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));

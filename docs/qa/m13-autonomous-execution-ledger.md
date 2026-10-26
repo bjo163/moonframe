@@ -1979,3 +1979,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-228 is implemented. Backlog status `implemented`; documentation/source inspection only. No captures, visual verdict, rights review, human review, or acceptance claimed.
 - Runner override honored: no package-manager commands, validators, test suites, typecheck, build, or browser captures run. Host runner owns verification and checkpoint. Checked counts: 146/292 foundation + 133/168 reference + 28/28 preflight = 307/488; checked does not imply human review or acceptance.
 - Rollback: remove the protocol and restore MF-VF-420 to planned in the reference backlog and TODO; remove this ledger entry. No commit created.
+## MF-VF-429 — Add 200% font zoom regression fixture for R01
+
+- Added a Playwright case in `tests/browser/site.spec.js` that applies 200% root text sizing on the fixed reference fixture, asserts the R01 dashboard and critical metrics remain visible within viewport/section bounds, and requests a screenshot artifact on execution.
+- Dependency MF-VF-010 is implemented. Backlog status `implemented`; source inspection only. Runner override honored: no browser suite, package-manager commands, validators, tests, typecheck, build, or screenshot capture run. Host runner owns verification/checkpoint; no actual reflow result, screenshot artifact, human review, or acceptance claimed.
+- Rollback: remove the test and restore MF-VF-429 to planned in the reference backlog; remove this ledger/TODO evidence. No commit created.
