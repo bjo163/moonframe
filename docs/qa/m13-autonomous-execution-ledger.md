@@ -1,5 +1,12 @@
 # M13 autonomous execution ledger
 
+## MF-VF-325 — Mobile command rail disclosure navigation
+
+- Added `apps/moonframe/templates/visual-reference/r01-mobile-navigation.tsx` and `.module.css`. Consumer links remain in source order in a native disclosure at narrow widths, with 44px minimum link/trigger targets, visible keyboard focus, and a horizontal wrapping rail at 48rem and above. No script or image dependency was added.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; no validators, package-manager commands, test suites, typecheck, build, or browser capture run per runner override. The host runner owns verification/checkpoint; no commit created. Reference comparison and human review remain pending.
+- Rollback: remove the component/CSS module and restore the task row, TODO count and ledger entry.
+- Counts: prior live ledger count 116/488 implemented-or-captured, 372/488 planned, 0 blocked; now 117/488 implemented-or-captured, 371/488 planned, 0 blocked.
+
 ## MF-VF-321 — Define project mini-cover card ratios
 
 - Added `apps/moonframe/templates/visual-reference/r01-project-covers.tsx` and `.module.css`, with a 4:3 landscape default and 2:3 poster variant. The image slot requires descriptive alt text and uses lazy loading; consumer art is supplied separately.
