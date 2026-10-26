@@ -697,6 +697,27 @@
 [data-skin="moonink"] .mf-card-title { font-weight: 500; font-size: 1.3rem; }
 [data-skin="moonink"] .mf-button { border-radius: 35% 4% 30% 5% / 8% 15% 10% 12%; }
 [data-skin="moonink"] .mf-table th { background: transparent; border-block-end: 2px solid var(--mf-accent); font-style: italic; }
+/* Moonink frames shared glyphs with quiet, irregular ink edges; the glyphs and
+   their accessible names remain owned by the shared components. */
+[data-skin="moonink"] .mf-nav-item > svg,
+[data-skin="moonink"] .mf-button > svg,
+[data-skin="moonink"] .mf-search-icon > svg,
+[data-skin="moonink"] .mf-callout-icon > svg,
+[data-skin="moonink"] .mf-empty-icon > svg,
+[data-skin="moonink"] .mf-stat-header > svg {
+  inline-size: 1.2em;
+  block-size: 1.2em;
+  flex: 0 0 auto;
+  padding: .14em;
+  border: 1px solid currentColor;
+  border-inline-start-width: 2px;
+  border-block-end-width: 2px;
+  border-radius: 52% 4% 38% 7% / 8% 14% 9% 12%;
+}
+[data-skin="moonink"] .mf-nav-item > svg,
+[data-skin="moonink"] .mf-button > svg { color: currentColor; }
+[data-skin="moonink"] .mf-callout-icon > svg { color: var(--mf-accent); }
+[data-skin="moonink"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
 
 /* 08 / Mooncrash — equipment rack, plate borders and mechanical fasteners. */
 [data-skin="mooncrash"] { --mf-bg: #dfe2df; --mf-surface: #f3f4ec; --mf-surface-raised: #d5d9cf; --mf-text: #293027; --mf-muted: #535d4c; --mf-border: #7c8770; --mf-accent: #79530b; --mf-accent-text: #ffffff; --mf-radius: 4px; --mf-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border); --mf-display: "Arial Narrow", Impact, sans-serif; }

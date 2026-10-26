@@ -2061,3 +2061,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency `MF-VF-010` is implemented. Backlog status: `implemented` (documentation deliverable). No screenshots, owner review, approval, validators, package-manager commands, suites, typecheck, build, or browser capture run under the runner override; host runner owns verification/checkpoint. No parity or acceptance claimed.
 - Checkbox recount based on live rows: 148/292 foundation + 143/168 reference + 28/28 preflight = 319/488 checked; 169 unchecked. Checked does not imply review or approval.
 - Rollback: remove the MF-VF-446 section from the evidence ledger, restore the reference backlog row to planned, and remove this entry and the MF-VF-446 live update/count from TODO. No commit created.
+
+## MF-VF-149 — Style Moonink semantic icon frames
+
+- Added Moonink-scoped irregular outline frames for navigation, button, search, callout, empty-state, and stat SVG icons in `src/styles.css`. Shared glyph geometry, component behavior, and ARIA meanings remain unchanged.
+- Dependencies MF-VF-144, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Host runner owns verification and checkpoint. Visual/accessibility review and acceptance remain pending.
+- Checkbox recount: 150/292 foundation + 146/168 reference + 28/28 preflight = 324/488 checked; 164 unchecked. Checked does not imply human review or acceptance.
+- Rollback: remove the MF-VF-149 CSS block, restore its backlog row to planned, and remove this ledger/TODO evidence. No commit created.
