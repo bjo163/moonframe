@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-077 — Style stable semantic Moonpunk icon frames
+
+- Updated `src/styles.css` with Moonpunk-scoped SVG icon frame sizing/alignment across navigation, buttons, search, callouts, empty states, and stat headers. Navigation/button glyphs receive a small offset ink shadow; empty-state glyphs are larger; callout glyphs use the existing accent. No shared component markup, glyph meaning, or ARIA behavior changed.
+- Dependencies MF-VF-072, MF-VF-050, and MF-VF-057 are implemented. Status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, render, browser capture, or human review run. Host runner owns applicable verification/checkpoint; visual review and acceptance remain pending.
+- Rollback: remove the scoped CSS rules and restore the matching backlog/TODO entry.
+
 ## MF-VF-076 — Draw small Moonpunk edition vector badge
 
 - Added `assets/source/skins/moonpunk/edition.svg`, a self-contained static library/skin label with editable vector text and no external resources, scripts, event handlers, or Moonwitness marks.

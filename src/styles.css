@@ -353,6 +353,21 @@
 [data-skin="moonpunk"] .mf-button { border: 2px solid var(--mf-border); box-shadow: 3px 3px 0 var(--mf-border); text-transform: uppercase; letter-spacing: .04em; }
 [data-skin="moonpunk"] .mf-nav-item[aria-current="page"] { background: var(--mf-accent); color: var(--mf-accent-text); border: 2px solid var(--mf-border); transform: translateX(.35rem); }
 [data-skin="moonpunk"] .mf-table th { border-block: 3px solid var(--mf-border); text-transform: uppercase; }
+[data-skin="moonpunk"] .mf-nav-item > svg,
+[data-skin="moonpunk"] .mf-button > svg,
+[data-skin="moonpunk"] .mf-search-icon > svg,
+[data-skin="moonpunk"] .mf-callout-icon > svg,
+[data-skin="moonpunk"] .mf-empty-icon > svg,
+[data-skin="moonpunk"] .mf-stat-header > svg {
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+[data-skin="moonpunk"] .mf-nav-item > svg,
+[data-skin="moonpunk"] .mf-button > svg { filter: drop-shadow(1px 1px 0 var(--mf-border)); }
+[data-skin="moonpunk"] .mf-empty-icon > svg { inline-size: 2rem; block-size: 2rem; }
+[data-skin="moonpunk"] .mf-callout-icon > svg { color: var(--mf-accent); }
 
 /* 02 / Moonriot — editorial cuts, asymmetric rules, horizontal section index. */
 [data-skin="moonriot"] { --mf-bg: #f4e9e7; --mf-surface: #fff8f6; --mf-surface-raised: #f0d7d3; --mf-text: #301c1b; --mf-muted: #6e4743; --mf-border: #b67b73; --mf-accent: #b51d32; --mf-accent-text: #ffffff; --mf-radius: 0 1.3rem 0 0; --mf-shadow: none; --mf-display: "Arial Narrow", Impact, sans-serif; }
