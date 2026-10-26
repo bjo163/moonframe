@@ -1681,3 +1681,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added `docs/visual/skins/moonquest.md` defining a sequential field-journal composition, chapter and contents hierarchy, and structural differences from Moonzine and Moonledger. The brief preserves shared component behavior and requires optional decoration, art-off/reduced-motion fallback, grayscale, mode, and responsive review.
 - Dependency MF-VF-015 is implemented. Backlog status: `implemented`; source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, screenshots, or human review run. No artwork, rights clearance, visual approval, or acceptance is claimed.
 - No commit created. Rollback: remove the brief and restore MF-VF-228 to planned in the backlog and remove this ledger entry and TODO update.
+# MF-VF-402 — Specify alt text/decorative hierarchy per scene layer
+
+- Added “Alternative text by scene layer” to `docs/visual/cinematic-mangapunk-reference-bible.md`. It assigns empty alt/hidden semantics to noninformative texture and atmosphere, calls for concise contextual text for unique information, describes composite-scene deduplication, keeps embedded words in live DOM, and prevents repetition of adjacent content.
+- Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run. No runtime behavior or WCAG conformance is claimed.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the subsection, restore MF-VF-402 to planned, and remove matching TODO/backlog/ledger evidence.

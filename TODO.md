@@ -146,6 +146,8 @@
 
 ## M13 PLAN FROZEN — Autonomous Codex execution authorized (2026-10-26)
 
+**Live execution update (2026-10-27, MF-VF-402):** Added layer-specific decorative versus informative alt-text guidance to `docs/visual/cinematic-mangapunk-reference-bible.md`, including composite-scene redundancy and live-text rules. Status `implemented`; documentation inspection only. No validators, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. Host runner owns verification/checkpoint; no runtime or WCAG conformance claim.
+
 **Frozen vision/contracts/task definitions:** [Freeze document](docs/governance/M13_PLAN_FREEZE_2026-10-26.md) and [content-addressed manifest](contracts/moonframe-m13-plan-freeze-v0.1.json) pin the baseline commit `723964322f9176bebf117b588e7976aff4030650`. The historical source is immutable by SHA; current working `main` intentionally continues to change as tasks are implemented. No new branch, Git tag, public release or human/rights approval is implied.
 
 **Codex no-routine-confirmation execution:** [Autonomous M13 master prompt](docs/handoff/CODEX_M13_AUTONOMOUS_MASTER_PROMPT.md), [repository AGENTS.md](AGENTS.md), and [local resume/test/commit runner](scripts/run-m13-autopilot.mjs). From a **clean local checkout** with Codex, Node/pnpm and git credentials configured:
