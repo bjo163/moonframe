@@ -62,6 +62,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-432 — Add alt/ARIA quality audit on all four templates
+
+- Added an R01–R04 source-level classification to `docs/qa/accessibility-visual-qa-bible.md`, covering meaningful scene descriptions, decorative image/diagram layers, live text equivalents, form labels and consumer-provided media/mark responsibilities.
+- Dependency `MF-VF-010` is implemented. Backlog status: `implemented`; source inspection only. Consumer-provided arbitrary content and rendered landmark/reading behavior still require browser and human assistive-technology review; no WCAG conformance or parity claim is made.
+- Runner override honored: no package-manager commands, validators, test suites, typecheck, build, browser capture, or commit run. Host runner owns checks and checkpoint. Checkbox recount: 146/292 foundation + 132/168 reference + 28/28 preflight = 306/488 checked.
+- Rollback: remove the MF-VF-432 subsection, restore its backlog checkbox/status, and remove matching TODO and ledger entries. No commit created.
+
 ## MF-VF-418 — Define Moonchrome screenshot-based anti-clone test
 
 - Added `docs/qa/reviews/moonchrome-reference-parity.md` with matched-content comparisons against Moonpunk and Moonhalftone at desktop/mobile, grayscale, decoration-on/off, and Light/Dark. It captures composition distinctions and requires provenance, artifact hashes, human observations, and an explicit disposition.

@@ -523,7 +523,7 @@
 - [ ] **MF-VF-431 — Add portrait aspect crop safety test for R03 campaign** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `tests/browser/site.spec.js`. **AC:** No required campaign copy clipped in poster preview.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
-- [ ] **MF-VF-432 — Add alt/aria quality audit on all four templates** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
+- [x] **MF-VF-432 — Add alt/aria quality audit on all four templates** · **P1** · `implemented` · **dep:** `MF-VF-010` · **issue:** not-created · **evidence:** Source-level informative/decorative classification and remaining consumer/browser checks recorded in [Accessibility & Visual QA Bible](../qa/accessibility-visual-qa-bible.md#2026-10-27-reference-template-altaria-source-audit-mf-vf-432); no rendered review or conformance claim.
   - **File scope/output:** `docs/qa/accessibility-visual-qa-bible.md`. **AC:** Story scenes decorative vs informative classified.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
 - [ ] **MF-VF-433 — Add reduced-motion test on active navigation highlight** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
