@@ -18,7 +18,7 @@
   position: relative;
   display: grid;
   min-width: 0;
-  min-height: 10rem;
+  min-height: 6rem;
   overflow: hidden;
   background: var(--mf-surface-raised, #ece9e5);
 }
@@ -34,6 +34,17 @@
 
   .artworkPanel {
     min-height: 100svh;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .formPanel {
+    min-height: 100svh;
+  }
+
+  .artworkPanel {
+    min-height: 6rem;
+    max-height: 12rem;
   }
 }
 

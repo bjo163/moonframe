@@ -1540,3 +1540,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added a specification-only PosterRenderer boundary to `docs/premium/premium-scope-bible.md`. It places poster composition at the template/presentation layer, keeps essential copy live in DOM, allows optional caller media with a neutral fallback, and prevents poster styling from changing shared component semantics or data-form behavior.
 - Dependency MF-VF-013 is implemented. Backlog status: `implemented`; documentation/source inspection only. Per runner override, no package-manager commands, validators, test suites, typecheck, build, screenshot, or human review run. No renderer API, runtime behavior, asset rights, or shipped template is claimed.
 - Rollback: remove the subsection and restore MF-VF-397 to planned in the reference backlog; remove this ledger entry. No commit created; host runner owns verification and checkpoint.
+# MF-VF-383 — Set mobile form-first collapse order
+
+- Updated `apps/moonframe/templates/visual-reference/r04-layout.tsx` and `.module.css`: sign-in remains first in DOM and visual order; on narrow screens it fills the viewport and optional artwork is limited to a compact 6–12rem panel. Desktop keeps the existing two-column, full-height layout.
+- Backlog status `implemented`; static source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser screenshots, or human review run. No authentication behavior or acceptance claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: restore the prior layout sizing/comments, restore this row to planned, and remove this ledger/TODO evidence.
