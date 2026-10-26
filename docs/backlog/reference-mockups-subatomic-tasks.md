@@ -21,7 +21,8 @@
 | M — reusable visual composition primitives and token control | `MF-VF-389…MF-VF-406` | 18 | 0 done |
 | N — 15 skin differentiation micro-acceptance addendum | `MF-VF-407…MF-VF-421` | 15 | 0 done |
 | O — delivery confidence, release gates and archive clarity | `MF-VF-422…MF-VF-446` | 25 | 0 done |
-| **Total addendum** | `MF-VF-293…MF-VF-446` | **154** | **0 done** |
+| P — Consumer brand palette without changing Moonpunk grammar | `MF-VF-447…MF-VF-460` | 14 | 0 done |
+| **Total addendum** | `MF-VF-293…MF-VF-460` | **168** | **0 done** |
 
 ## H — reference material intake, trust and reusable visual vocabulary
 
@@ -508,6 +509,55 @@
 - [ ] **MF-VF-446 — Require real owner signoff to call mockup parity accepted** · **P1** · `planned` · **dep:** `MF-VF-010` · **issue:** not-created
   - **File scope/output:** `docs/qa/visual-fidelity-evidence-ledger.md (proposed)`. **AC:** Named date, screenshot inputs, reviewed issues, waiver reasons.
   - **Proof & rollback:** Reference contract or CI evidence actually present, never automatically accepted. Actual commit/test/screenshot/rights evidence required; if it regresses, revert scoped change; no automatic owner approval.
+
+## P — Optional consumer-brand accent overlay
+
+The existing acid-lime Moonpunk default and hot-magenta Moonwitness reference must coexist through a [proposed Consumer Brand Overlay Contract](../../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). No extra skin or production brand API is approved. This batch implements the optional contract only after owner review and tests.
+
+- [ ] **MF-VF-447 — Audit actual Moonpunk acid-lime CSS and Light/Dark tokens** · **P1** · `planned` · **dep:** `MF-VF-293` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** Record default accent source in both modes without changing values.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-448 — Define opt-in brand accent public API decision** · **P1** · `planned` · **dep:** `MF-VF-447` · **issue:** not-created
+  - **File scope/output:** `contracts/moonframe-consumer-brand-overlay-contract-v0.1.json`. **AC:** Owner chooses proposed token/prop input boundary; no implementation before public API review.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-449 — Write typed consumerBrand palette input fixture** · **P1** · `planned` · **dep:** `MF-VF-448` · **issue:** not-created
+  - **File scope/output:** `tests/types.tsx`. **AC:** Accept only supported non-status brand slots; invalid props rejected.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast** · **P1** · `planned` · **dep:** `MF-VF-448` · **issue:** not-created
+  - **File scope/output:** `docs/architecture/token-pipeline.md`. **AC:** No brand override of status, focus, forced colors or non-color grammar.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-451 — Implement opt-in brand variable bridge with safe fallback** · **P1** · `planned` · **dep:** `MF-VF-449, MF-VF-450` · **issue:** not-created
+  - **File scope/output:** `src/styles.css`. **AC:** No-overlay Moonpunk stays canonical lime; brand slots only affect constrained emphasis.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-452 — Prototype branded ThemeProvider/SSR hydration handling** · **P1** · `planned` · **dep:** `MF-VF-451` · **issue:** not-created
+  - **File scope/output:** `src/theme.js`. **AC:** No Flash of Wrong Brand or cross-tenant persisted palette; default behavior unchanged.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-453 — Add Moonwitness palette **demo configuration**, no IP assets** · **P1** · `planned` · **dep:** `MF-VF-451` · **issue:** not-created
+  - **File scope/output:** `apps/moonframe/app/(lab)/lab/page.tsx`. **AC:** Conceptual magenta/cyan/yellow applied only to demo; not all skins/global default.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-454 — Verify no overlay fallback and invalid input** · **P1** · `planned` · **dep:** `MF-VF-451, MF-VF-452` · **issue:** not-created
+  - **File scope/output:** `tests/runtime.test.mjs`. **AC:** Fallback to original skin/mode tokens without runtime exception.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-455 — Check light/dark brand contrasts on actual controls** · **P1** · `planned` · **dep:** `MF-VF-451` · **issue:** not-created
+  - **File scope/output:** `tests/browser/skins.spec.js`. **AC:** Primary text, hover, disabled, focus, overlays measured in both modes.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-456 — Check high-contrast and forced-colors priority** · **P1** · `planned` · **dep:** `MF-VF-451` · **issue:** not-created
+  - **File scope/output:** `tests/browser/skins.spec.js`. **AC:** Brand accent never removes outline or systemic readability.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-457 — Check selected nav and semantic status parity** · **P1** · `planned` · **dep:** `MF-VF-451` · **issue:** not-created
+  - **File scope/output:** `tests/browser/components.spec.js`. **AC:** Visual status is not color-only; warning/error/success meanings stable.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-458 — Check theme switching and multi-consumer isolation** · **P1** · `planned` · **dep:** `MF-VF-452` · **issue:** not-created
+  - **File scope/output:** `tests/browser/site.spec.js`. **AC:** No Moonwitness logo, color or art leaks to other consumer pages after skin change.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-459 — Document BrandPalette consumer example (only after API proof)** · **P1** · `planned` · **dep:** `MF-VF-453, MF-VF-454` · **issue:** not-created
+  - **File scope/output:** `docs/runtime-usage.md`. **AC:** Real code sample matches published props; until then mark proposal only.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+- [ ] **MF-VF-460 — Human compare default-lime Moonpunk with brand-pink Moonpunk** · **P1** · `planned` · **dep:** `MF-VF-454, MF-VF-455, MF-VF-456, MF-VF-457, MF-VF-458` · **issue:** not-created
+  - **File scope/output:** `docs/qa/reviews/moonpunk-consumer-accent.md (proposed)`. **AC:** Same non-color structure and behavior; actual light/dark & grayscale screenshots linked and approved or left pending.
+  - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
+
+---
 
 ## Source provenance and approval gate
 
