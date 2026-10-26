@@ -60,6 +60,23 @@
   margin-top: 1.5rem;
 }
 
+@media (min-width: 48rem) and (max-width: 70rem) {
+  .masthead {
+    min-height: 30rem;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 4rem);
+  }
+
+  .content {
+    width: min(72%, 46rem);
+    margin-inline-start: auto;
+  }
+
+  .title {
+    font-size: clamp(3.25rem, 7vw, 5.5rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .masthead *,
   .masthead *::before,

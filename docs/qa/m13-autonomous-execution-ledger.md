@@ -962,3 +962,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-040 is implemented. Status: `implemented`; source inspection only. No SVG validator, rendering, package-manager commands, suites, typecheck, build, browser capture, human review, trademark clearance, or distribution approval claimed under runner override. Host runner owns verification/checkpoint.
 - Backlog checkbox counts before this change were 146/488 (68 foundation + 50 reference + 28 preflight); now 147/488 implemented-or-captured and 341 planned. Counts do not imply review, rights, or acceptance.
 - Rollback: remove the SVG and restore the matching backlog, TODO summary, and ledger entry.
+
+## MF-VF-346 — Adapt R02 masthead to tablet width
+
+- Updated `apps/moonframe/templates/visual-reference/r02-masthead.module.css` with a 48–70rem tablet layout: bounded right-side content column, vertical centering, and tablet-scaled title sizing. Decorative backdrop remains behind semantic text.
+- Updated task status to `implemented` in the reference backlog and synchronized current TODO counts (148/488 implemented-or-captured-or-implemented; 340 planned). Evidence is source-level only. Per runner override, no package-manager commands, validators, tests, typecheck, build, browser capture, or visual comparison were run; host runner owns verification/checkpoint.
+- Human visual review and source-image rights remain pending. Rollback: remove the tablet media query and restore the task/TODO/ledger evidence.
