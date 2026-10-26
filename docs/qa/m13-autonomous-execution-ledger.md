@@ -1,3 +1,7 @@
+# MF-VF-073 — Draw original Moonpunk motif SVG
+
+- Added original abstract Moonpunk offset-slab motif `assets/source/creative-reference/r01/moonpunk-offset-slab.svg` (SHA-256 `75D6BE881EDC388016A78D82FC900B73FAC87B194EE70145873DB1B7F1A8C5C3`). It uses embedded geometry only and contains no consumer branding. Dependency MF-VF-072 is implemented. Status: `implemented`; source inspection only. No validators, package-manager commands, tests, typecheck, build, rendered-size inspection, browser capture, human review, or acceptance claimed under runner override. Backlog and summary counts updated to 168/488 checked (82/292 foundation visual + 58/168 reference + 28/28 preflight); rights and acceptance remain pending. No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the MF-VF-073 row and root counts.
+
 # M13 autonomous execution ledger
 
 ## MF-VF-365 — Provide transcript/alt for flattened export

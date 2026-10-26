@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Offset slab surface study</title>
+  <desc id="desc">An original abstract composition of outlined rectangular slabs and hard offset shadows.</desc>
+  <rect x="86" y="72" width="438" height="222" fill="#17151C" stroke="#F2F0E8" stroke-width="8"/>
+  <path d="M62 54h438v218H62z" fill="#A8D92F" stroke="#17151C" stroke-width="8"/>
+  <path d="M112 102h338v22H112zM112 144h196v18H112zM112 180h270v18H112zM112 226h92v18h-92z" fill="#17151C"/>
+  <path d="M410 144h40v100h-40z" fill="#F2F0E8" stroke="#17151C" stroke-width="6"/>
+  <path d="M422 157h16v74h-16z" fill="#A8D92F"/>
+</svg>
