@@ -877,9 +877,10 @@
 
 ## G — final 9 specimens, cross-family QA and release gate
 
-- [ ] **MF-VF-270 — Freeze executive dashboard specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
-  - **File scope:** `docs/qa/reference-screens/dashboard.md (proposed)`. **Acceptance:** Same metric/data labels across skins.
-  - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+- [x] **MF-VF-270 — Freeze executive dashboard specimen** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `docs/qa/reference-screens/dashboard.md`. **Acceptance:** Same metric/data labels across skins.
+  - **Evidence:** See the [frozen Northstar Studio dashboard specimen](../qa/reference-screens/dashboard.md) with all 30 desktop captures (15 skins × light/dark), PNG hashes and source commits. Browser assertions retain the exact headings, date, nav, KPI labels/values, activity items and shared long copy. Human visual review remains pending.
+  - **Verify:** `pnpm run test:browser` 56/56 on the current source line (88 routes built); dashboard content assertions ran in each skin/mode case. All 30 capture sidecars share one fixture, loaded fonts and 1440×960 viewport; PNG hashes match. Contract/handoff validators passed. No pixel parity or reviewer approval claimed; rollback: remove this specimen doc and restore the task/count status.
 - [ ] **MF-VF-271 — Freeze sortable table specimen** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/reference-screens/table.md (proposed)`. **Acceptance:** Same search and table rows across skins.
   - **Verify:** Link actual screenshot/CI and reviewer or explicitly blocked. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
