@@ -607,8 +607,9 @@ The existing acid-lime Moonpunk default and hot-magenta Moonwitness reference mu
 - [ ] **MF-VF-449 — Write typed consumerBrand palette input fixture** · **P1** · `planned` · **dep:** `MF-VF-448` · **issue:** not-created
   - **File scope/output:** `tests/types.tsx`. **AC:** Accept only supported non-status brand slots; invalid props rejected.
   - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
-- [ ] **MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast** · **P1** · `planned` · **dep:** `MF-VF-448` · **issue:** not-created
+- [x] **MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast** · **P1** · `implemented` · **dep:** `MF-VF-448` · **issue:** not-created
   - **File scope/output:** `docs/architecture/token-pipeline.md`. **AC:** No brand override of status, focus, forced colors or non-color grammar.
+  - **Evidence (source HEAD `158cad0`):** Added a proposal-only precedence section: skin/mode values resolve before allowlisted nonstatus emphasis; independent preferences remain separate; forced-colors, high-contrast, focus visibility, and semantic status retain authority. Invalid or missing overlays fall back to existing skin/mode values. It explicitly records that no runtime overlay, public input, or approved palette values exist. Documentation/source inspection only; runner override prohibited validators and test/build commands, so host runner owns validation. No public API, contrast proof, browser evidence, review, or acceptance claimed. Rollback: remove the added section and restore this task row to planned.
   - **Proof & rollback:** Show real source diff/tests/captures and exact SHA; revert only scoped behavior if semantics/regression fails. Human approval separately required.
 - [ ] **MF-VF-451 — Implement opt-in brand variable bridge with safe fallback** · **P1** · `planned` · **dep:** `MF-VF-449, MF-VF-450` · **issue:** not-created
   - **File scope/output:** `src/styles.css`. **AC:** No-overlay Moonpunk stays canonical lime; brand slots only affect constrained emphasis.

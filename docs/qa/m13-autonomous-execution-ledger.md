@@ -1,3 +1,11 @@
+# MF-VF-450 — Define CSS layer precedence for brand vs skin vs contrast
+
+- Starting HEAD: `158cad02b7319bfbce105481dc29d96b7bbc31bc`.
+- Updated `docs/architecture/token-pipeline.md` with proposal-only precedence and protected-role rules for a future consumer brand overlay: resolved skin/mode first; allowlisted nonstatus brand emphasis second; independent preferences separate; accessibility/forced-colors/high-contrast/focus/status protections remain authoritative. Invalid or absent overlays preserve current skin/mode values.
+- Dependency MF-VF-448 is implemented. Backlog status: `implemented`. Source/document inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, or build run; host runner owns verification and checkpoint.
+- No runtime overlay, public API, approved palette, contrast/browser proof, human review, or acceptance claimed. No commit created.
+- Rollback: remove the added section in `docs/architecture/token-pipeline.md`, restore MF-VF-450 to planned in the reference backlog, and remove matching TODO and ledger evidence.
+
 ## MF-VF-443 — Write micro agent prompt for R03 safe poster mode
 
 - Starting HEAD: `390048423176bd6c8c51e429d4e0714eb873ebfd`.
