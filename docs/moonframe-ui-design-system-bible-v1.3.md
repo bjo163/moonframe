@@ -562,3 +562,6 @@ The four supplied Moonwitness reference pictures now have an explicit [creative 
 ### 2026-10-26 brand palette overlay candidate
 
 The existing Moonpunk default acid-lime vs the user-supplied Moonwitness magenta/cyan sample is not a contradiction requiring new skins. It identifies an optional **consumer brand overlay axis/extension proposal** with constrained color/logo/art slots, not an extra appearance. See [Consumer Brand Overlay Contract](../contracts/moonframe-consumer-brand-overlay-contract-v0.1.json). The skin's structural grammar and every interaction/focus/accessibility contract remain canonical. This overlay is not yet implemented, tested, or API-approved.
+## Consumer identity boundary
+
+Moonframe skin identity and appearance mode describe the reusable library's visual composition. They do not identify or imply a consumer brand. Generic package defaults, starter content, and shared component examples must not include Moonwitness product copy, fictional characters, logos, story material, or private data. A consumer may add its own identity through consumer-owned content and assets, with its own rights review; this does not create a new Moonframe skin or alter shared component behavior. The Moonpunk skin keeps its canonical acid-lime direction and does not silently inherit Moonwitness colors or imagery.

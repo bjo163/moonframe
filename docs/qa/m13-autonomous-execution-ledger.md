@@ -1693,3 +1693,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added “Alternative text by scene layer” to `docs/visual/cinematic-mangapunk-reference-bible.md`. It assigns empty alt/hidden semantics to noninformative texture and atmosphere, calls for concise contextual text for unique information, describes composite-scene deduplication, keeps embedded words in live DOM, and prevents repetition of adjacent content.
 - Dependency MF-VF-013 is implemented. Backlog status `implemented`; documentation/source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, screenshots, or human review run. No runtime behavior or WCAG conformance is claimed.
 - No commit created; host runner owns verification and checkpoint. Rollback: remove the subsection, restore MF-VF-402 to planned, and remove matching TODO/backlog/ledger evidence.
+# MF-VF-403 — Specify skin/appearance independence from consumer identity
+
+- Added a consumer identity boundary to `docs/moonframe-ui-design-system-bible-v1.3.md`. Generic Moonframe defaults remain separate from Moonwitness product copy, characters, logos, story, and private data; consumers own identity integration and rights review. Skin and appearance remain orthogonal.
+- Dependency MF-VF-013 is implemented. Backlog status: `implemented`; documentation/source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshots, or human review run. No rights clearance, review, or acceptance claimed.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the added subsection and restore the backlog status and matching TODO/ledger evidence.
