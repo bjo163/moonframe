@@ -104,3 +104,15 @@ The [120-cell appearance review ledger](../../contracts/moonframe-asset-qa-cover
 ## Motion/SFX runtime relationship (2026-10-25)
 
 The focused [Motion, Interaction & SFX Bible](../motion/motion-interaction-sfx-bible.md) owns **sound-event/playback policy, reduced stimulation and optional sound eligibility**; the [existing SFX contract](../../contracts/moonframe-sfx-contract-v0.1.json) stays canonical for the six event IDs. **This Asset Bible remains exclusive authority** for any future sound source/master/export rights, provenance, file checksum and legally cleared distribution. No audio or visual asset produced by motion specification, no 15 mandatory sound packs. [ADR-0007](../adr/0007-motion-and-optional-audio-engines.md) does not select or install an engine.
+
+---
+
+## 2026-10-26 Moonwitness supplied-art direction and single-brand boundary
+
+Four original user-provided *reference images* (Mission Control, storytelling landing, performance poster, sign-in) are catalogued by digest/size in [Creative Reference Contract](../../contracts/moonframe-creative-reference-contract-v0.1.json) and discussed in [Cinematic Manga-Punk Reference Bible](../visual/cinematic-mangapunk-reference-bible.md). **Their byte files are present only as chat uploads, not GitHub binaries**, so `source-in-repository=false`; no master vector, licensed source, illustration PNG or approved wordmark is implied. Never claim per-picture hash proves rights, similarity approval or a generated source asset.
+
+**Brand/skin/content partition:** the `Moonframe` root maintains a single optional master mark, stable generic icon API and 15 visual *editions*. The illustrated **Moonwitness** wordmark, crown, narrative hooded character, graffiti copy, chapter characters/campaign scenes and third-party lyrics or band concepts stay in the *consumer* layer. A generic `SkinBrandMark` is not proof of these copyrighted consumer symbols and must not automatically substitute for a full approved wordmark.
+
+**Original asset work classification:** neutral scratch/ink border, torn paper mask, radial pattern or safe generic geometric motifs can be future optional skin-pack sources after provenance and small-size review; detailed character, city and concert/storyline illustrations are typically consumer-supplied media slots unless separately authored and rights-cleared as sample assets. A 22-icon semantic family retains one function per icon across skins; optional decorative frames must not change meaning. The 15 skin category lists are a candidate pool, **not 15 mandatory logos or 15 images per category**.
+
+**Gate order:** (1) approved brief and explicit original/source rights; (2) binary ingestion with checksum; (3) safe SVG inspection and source/export separation; (4) alt and non-decorative text fallback; (5) desktop/tablet/mobile, dark/light/mono and art-off proof; (6) human art, trademark and release review. A captured PNG cannot fill those gates. Follow [existing asset QA](../qa/original-asset-validation-plan.md) and new [microtask addendum](../backlog/reference-mockups-subatomic-tasks.md).
