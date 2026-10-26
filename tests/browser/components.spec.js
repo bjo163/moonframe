@@ -152,6 +152,54 @@ test('simulated sign-in fixture keeps its form contract consistent across every 
   }
 });
 
+test('editorial article copy, typography hooks, and image context stay fixed across every skin and mode', async ({ page, browser }) => {
+  await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
+
+  for (const skin of skins) for (const mode of ['light', 'dark']) {
+    await page.goto('/lab/behavior?fixture=article');
+    const main = page.locator('main').first();
+    await main.evaluate((node, selection) => {
+      node.dataset.skin = selection.skin;
+      node.dataset.mode = selection.mode;
+    }, { skin: skin.id, mode });
+    const article = page.locator('[data-fixture="article-preview"]');
+    await expect(article).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Components', exact: true })).toHaveCount(0);
+    await expect(article.getByRole('heading', { level: 1, name: 'Make room for the work that matters' })).toBeVisible();
+    await expect(article.getByText('Field notes · Planning', { exact: true })).toBeVisible();
+    await expect(article.getByText('A gentler planning rhythm can make ambitious work easier to begin, easier to share, and easier to finish.', { exact: true })).toBeVisible();
+    await expect(article.getByText('By Maya Chen · October 25, 2026 · 8 min read', { exact: true })).toBeVisible();
+    await expect(article.locator('time')).toHaveAttribute('datetime', '2026-10-25');
+    await expect(article.getByRole('img', { name: 'Abstract illustration of a glowing moon above a quiet horizon, with an orbiting path and small stars' })).toBeVisible();
+    await expect(article.locator('figcaption')).toHaveText('A clear horizon makes the next step easier to see.');
+    await expect(article.getByRole('heading', { level: 2 })).toHaveText(['Start with the next honest step', 'Leave space for the unexpected']);
+    await expect(article.getByRole('blockquote')).toHaveText('“A good plan creates room to pay attention.”');
+    const fontFamily = await article.evaluate(node => getComputedStyle(node).fontFamily);
+    expect(fontFamily).not.toBe('');
+
+    const fontStatus = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return document.fonts.status;
+    });
+    expect(fontStatus).toBe('loaded');
+    const screenshotPath = path.join(captureDir, `${skin.id}-${mode}-1440x960-article.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true, animations: 'disabled' });
+    const capture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: `/lab/behavior?fixture=article (${document.querySelector('[data-fixture="article-preview"]')?.textContent?.trim()}; ${document.querySelector('main')?.getAttribute('data-skin')} ${document.querySelector('main')?.getAttribute('data-mode')}; article-default)`,
+      state: 'article-default',
+      fontStack: getComputedStyle(document.querySelector('[data-fixture="article-preview"]')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(screenshotPath, { ...capture, browserName: browser.browserType().name(), browserVersion: browser.version() });
+  }
+});
+
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
