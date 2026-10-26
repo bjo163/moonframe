@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonriot directional margin pattern</title>
+  <desc id="desc">A repeating set of angled red-signal stripes for optional noninteractive margins.</desc>
+  <g stroke="currentColor" stroke-width="8" stroke-linecap="square">
+    <path d="M12 82 48 14" />
+    <path d="M60 82 96 14" />
+    <path d="M108 82 144 14" />
+    <path d="M156 82 192 14" />
+    <path d="M204 82 228 37" />
+  </g>
+</svg>

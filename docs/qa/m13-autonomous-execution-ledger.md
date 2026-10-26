@@ -11,6 +11,12 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-086 — Draw minimal Moonriot decorative pattern SVG
+
+- Added `assets/source/skins/moonriot/pattern.svg`, an original static five-stripe directional pattern for optional noninteractive margins. SHA-256: `F5337BB7A5042B9FE07DE093C060720089469A94B85CBAA40F159A90FFD3A168`.
+- Dependency MF-VF-084 is implemented. XML parse and static scan for scripts, event attributes, `foreignObject`, hrefs, and URL references passed. No package-manager commands, validators, suites, typecheck, build, rendering, browser capture, or human review were run per runner override. Color/contrast, visual distinction, rights review, and acceptance remain pending.
+- Status: `implemented`; no commit created. Checkbox counts: 97/292 foundation + 66/168 reference + 28/28 preflight = 191/488 checked; 297 unchecked. Rollback: remove the SVG and restore its backlog row, TODO update, and this entry.
+
 ## MF-VF-078 — Moonpunk structural navigation, layout, and typography
 
 - Added a scoped Moonpunk composition in `src/styles.css`: offset sidebar slabs and nav rails, an angular split hero, condensed uppercase display headings, and a heavy header rule. Shared component markup, keyboard behavior, and accessible semantics are unchanged.
