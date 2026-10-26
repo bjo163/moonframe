@@ -35,6 +35,13 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-121 — Draw original Moonglitch motif SVG
+
+- Added `assets/source/skins/moonglitch/motif.svg`, an original static monochrome diagnostic glyph combining a broken signal ring and stepped pulse. SHA-256: `5D7CF0CC15FE00DDB914F3188F50912C47383FA7C8E846D8435E32B91908017E`.
+- Dependency MF-VF-120 is implemented. Status `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, or human review run. Rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification and checkpoint. Rollback: remove the SVG, restore the task row to planned, and remove this ledger/TODO entry.
+
+
 ## MF-VF-382 — Set screen-reader meaning of decorative artwork
 
 - Updated `apps/moonframe/templates/visual-reference/r04-layout.tsx`: optional `artworkLabel` marks meaningful artwork with an accessible name; absent a label, the artwork aside is `aria-hidden`.

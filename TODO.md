@@ -2,6 +2,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-121):** Added an original Moonglitch monochrome signal-break motif SVG at `assets/source/skins/moonglitch/motif.svg` (SHA-256 `5D7CF0CC15FE00DDB914F3188F50912C47383FA7C8E846D8435E32B91908017E`). Dependency MF-VF-120 is implemented. Status `implemented`; source inspection only. Per runner override, validators, package-manager commands, tests, typecheck, build, rendering, and human review were not run. Rights, optical review, and acceptance remain pending; host runner owns verification and checkpoint.
+
 **Live execution update (2026-10-27, MF-VF-102):** Added Moonzine-scoped editorial navigation hierarchy, staggered open-grid rhythm, section spacing, and responsive single-column shell styling in `src/styles.css`. Status `implemented`; source inspection only. Per runner override, validators, package-manager commands, test suites, typecheck, build, browser capture, and human review were not run; host runner owns verification/checkpoint. Acceptance remains pending.
 
 **Live execution update (2026-10-27, MF-VF-382):** `R04Layout` now hides unlabeled decorative artwork from assistive technology and accepts an optional accessible label for informative artwork. Source inspection only; no validators, package-manager commands, tests, typecheck, build, browser capture, or human review run per runner override. Status `implemented`; no acceptance claimed. See `docs/qa/m13-autonomous-execution-ledger.md`; host runner owns verification/checkpoint.
