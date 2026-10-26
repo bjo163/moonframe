@@ -74,6 +74,12 @@ This is a scope and provenance boundary, not a finding about ownership or a lice
 
 **Border/roughness:** separate accessible CSS border/outline hit area from decorative chipped PNG/SVG scratch; active focus ring never becomes scribbled or partially erased. Prefer crisp geometry plus lightweight optional overlay; reduce noise near form/text.
 
+### InkFrame — accessible border with optional texture
+
+InkFrame is a visual treatment for a live HTML container, not an image-backed substitute for the container. Keep the structural border as a normal CSS border (or an equivalent shape with a solid fallback) so the edge remains perceivable when decoration is disabled, assets fail to load, or forced-colors mode replaces author colors. Any chipped-ink texture is a separate, optional decorative layer: it must not cover text, control hit areas, or keyboard focus, and may be removed without changing geometry, semantics, or state.
+
+The no-texture fallback uses the same layout and a continuous, sufficiently contrasted border. Do not make a decorative texture the sole indicator of grouping, selection, error, or focus; those meanings belong to live content and semantic state styling. This is a design recipe only; it does not introduce a runtime component, token, asset, or new contrast claim.
+
 **Typography (at least 4 roles):** (1) heroic irregular expressive brush/splatter display, (2) condensed editorial labels/stickers, (3) readable long body sans, (4) monospaced telemetry/counts. Do not use Impact everywhere or convert headings to unselectable bitmap words. Specify font license, glyph coverage (ID/EN), fallback metrics and viewport wrap. Skew/rotation allowed only in non-interactive decoration, not input labels/focus surfaces.
 
 **Illustration direction:** city + moon = cinematic setting; hoodie/character = a consumer-provided story figure or neutral anonymous sample; manga faces are allowed **where the consumer explicitly chooses**, not mandatory library identity. Avoid borrowed manga IP and photographic artist/celebrity likenesses. Make separate foreground/midground/background art layers if justified by visual proof and measured performance.

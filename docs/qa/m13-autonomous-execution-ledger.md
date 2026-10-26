@@ -1306,3 +1306,8 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - The approved local archive /mnt/data/moonframe_m13_reference_originals.zip is absent (Test-Path returned False); the source PNG is not present in the checkout. Its expected SHA-256 is 31829877f5499480ef8ebbfd2e0b103016917216c3ac70a69d0595b2bf2efa04.
 - Status changed to locked-external-approval. Resume requires owner-supplied original bytes matching the digest plus explicit review-use rights approval. No reuse or distribution rights are inferred.
 - Dependency MF-VF-014 is implemented. No package-manager commands, tests, typecheck, build, or commit run/created per runner override. Rollback: restore the backlog row to planned and remove this ledger entry.
+# MF-VF-390 — Specify InkFrame visual role and safe CSS fallback
+
+- Updated `docs/visual/cinematic-mangapunk-reference-bible.md` with an InkFrame design recipe. The structural border remains live CSS when texture is off/unavailable; texture cannot replace focus or semantic state.
+- Status: `implemented`; documentation/source inspection only. No package-manager commands, validators, suites, typecheck, build, screenshots, or human review run under runner override. No runtime component or contrast certification claimed. Host runner owns verification/checkpoint.
+- Rollback: remove the InkFrame subsection, restore the MF-VF-390 row to planned, and remove the matching TODO/ledger evidence.
