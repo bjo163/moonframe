@@ -11,6 +11,7 @@ const captureVariants = [
   { viewport: '1440x960', state: 'decoration-off' },
   { viewport: '1440x960', state: 'grayscale' },
   { viewport: '1440x960', state: 'reduced-motion' },
+  { viewport: '1440x960', state: 'forced-colors' },
   { viewport: '768x1024', state: 'default' },
   { viewport: '360x800', state: 'default' },
 ];
@@ -292,6 +293,53 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await expect(root).toHaveAttribute('data-motion', 'full');
+    await page.emulateMedia({ forcedColors: 'active' });
+    expect(await page.evaluate(() => window.matchMedia('(forced-colors: active)').matches)).toBe(true);
+    await expect(page.getByLabel('Appearance', { exact: true })).toBeVisible();
+    await expect(dashboardFixture.getByRole('button', { name: 'Overview', exact: true })).toHaveAttribute('aria-current', 'page');
+    await expect(dashboardFixture.getByLabel('Search project tasks', { exact: true })).toBeVisible();
+    await expect(dashboardFixture.getByLabel('Sort project tasks', { exact: true })).toBeVisible();
+    await expect(fixtureTaskNames).toHaveCount(5);
+    await expect(fixtureTaskTable.getByText('Blocked', { exact: true })).toBeVisible();
+    await expect(profileFixture.getByLabel('Workspace name', { exact: true })).toHaveValue('Northstar Studio');
+    const forcedColorsFocusTarget = profileFixture.getByLabel('Workspace name', { exact: true });
+    await forcedColorsFocusTarget.focus();
+    await expect(forcedColorsFocusTarget).toBeFocused();
+    const forcedColorsFocusStyle = await forcedColorsFocusTarget.evaluate(node => ({
+      outlineWidth: getComputedStyle(node).outlineWidth,
+      outlineStyle: getComputedStyle(node).outlineStyle,
+      borderWidth: getComputedStyle(node).borderTopWidth,
+      borderStyle: getComputedStyle(node).borderTopStyle,
+    }));
+    expect(parseFloat(forcedColorsFocusStyle.outlineWidth), 'forced-colors focus indicator remains visible').toBeGreaterThanOrEqual(2);
+    expect(forcedColorsFocusStyle.outlineStyle).toBe('solid');
+    expect(forcedColorsFocusStyle.borderWidth).toBe('1px');
+    expect(forcedColorsFocusStyle.borderStyle).toBe('solid');
+    const forcedColorsScreenshotPath = path.join(captureDir, skinCaptureFilename(skin, mode, '1440x960', 'forced-colors'));
+    await waitForFontsReady(page);
+    await page.screenshot({ path: forcedColorsScreenshotPath, fullPage: true, animations: 'disabled' });
+    const forcedColorsCapture = await page.evaluate(() => ({
+      viewport: `${window.innerWidth}x${window.innerHeight}`,
+      locale: navigator.language,
+      direction: document.documentElement.dir || getComputedStyle(document.documentElement).direction,
+      timezoneId: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      frozenTime: new Date().toISOString(),
+      fixture: '/lab default PropsPlayground (Button / primary / md / Explore Moonframe) + fixed Northstar Studio dashboard, workspace nav, task table and profile form; forced-colors active with Workspace name focus',
+      state: 'forced-colors',
+      forcedColors: window.matchMedia('(forced-colors: active)').matches ? 'active' : 'none',
+      focusedControl: document.activeElement?.getAttribute('aria-label') || document.activeElement?.getAttribute('name'),
+      fontStack: getComputedStyle(document.querySelector('.mf-root')).fontFamily,
+      fontLoadStatus: document.fonts.status,
+      userAgent: navigator.userAgent,
+    }));
+    writeSkinCaptureProvenance(forcedColorsScreenshotPath, {
+      ...forcedColorsCapture,
+      browserName: browser.browserType().name(),
+      browserVersion: browser.version(),
+    });
+    await forcedColorsFocusTarget.evaluate(node => node.blur());
+    await page.emulateMedia({ forcedColors: 'none' });
+    expect(await page.evaluate(() => window.matchMedia('(forced-colors: active)').matches)).toBe(false);
     await grayscaleStyle.evaluate(style => style.remove());
     await expect(page.locator('html')).not.toHaveCSS('filter', 'grayscale(1)');
     await page.setViewportSize({ width: 768, height: 1024 });
