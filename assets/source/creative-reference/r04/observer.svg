@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract lunar observer</title>
+  <desc id="desc">A generic, anonymous hooded silhouette beneath a quiet crescent moon.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#192331"/>
+      <stop offset="1" stop-color="#080c12"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#sky)"/>
+  <circle cx="486" cy="112" r="48" fill="#d9e6df"/>
+  <circle cx="508" cy="96" r="45" fill="#192331"/>
+  <path d="M0 370 112 296l75 48 104-105 106 112 78-66 165 93v102H0Z" fill="#111923"/>
+  <path d="M225 480c9-91 29-145 65-174 10-9 22-14 34-14s24 5 34 14c36 29 56 83 65 174Z" fill="#080c12" stroke="#879a9a" stroke-width="3"/>
+  <path d="M264 326c3-72 24-123 60-147 36 24 57 75 60 147-17-17-38-26-60-26s-43 9-60 26Z" fill="#111923" stroke="#b4c4b8" stroke-width="4"/>
+  <path d="M290 271c10-12 21-18 34-18s24 6 34 18" fill="none" stroke="#c8d5c9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M311 278h26" stroke="#7ec8c0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M320 52v18m0 276v18M164 188h18m276 0h18" stroke="#7ec8c0" stroke-width="2" opacity=".7"/>
+</svg>
