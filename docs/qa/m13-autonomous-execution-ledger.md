@@ -498,3 +498,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `pnpm run test:browser -- --grep "critical lab actions and readable content"` — 1/1 passed after scoping the repeated task-name assertion to its summary list. The host runner's first full browser attempt caught that ambiguous locator; it retained the patch without committing. Full browser suite, unit tests, typecheck, build, contracts, and handoff validation are running again before checkpoint. No human visual review claimed.
 - Status: `implemented`; targeted browser behavior verified. Rollback: revert the regression and matching task/TODO/ledger evidence.
 - Overall progress after this task: 87/488 (17.8%) implemented-or-captured, 401/488 (82.2%) planned, 0 blocked. This arithmetic follows the immediately preceding live ledger count and does not imply human review or acceptance.
+
+## MF-VF-294 — Register R02 original digest and dimensions
+
+- Dependency `MF-VF-014` is implemented. Added the R02 (`MWX-REF-002`) contract metadata to `docs/visual/references/reference-index.md`: SHA-256 `1de1d94a2d251901503dd7edc5bc42aff77b65251dde6e29fd4b5455b7376167`, 1024 × 576.
+- Cross-checked ID, digest, dimensions, and source status against `contracts/moonframe-creative-reference-contract-v0.1.json`. Original bytes are absent from this checkout; the hash is transcribed, not recomputed. No import, license, or visual approval is claimed.
+- Runner override honored: no package-manager commands, test suites, typecheck, or build run. No commit created; host runner will verify and checkpoint.
+- Rollback: revert the MF-VF-294 status/evidence and its one R02 index row.
