@@ -384,12 +384,13 @@
     "evidenceCount": 0
   },
   "licenseGovernance": {
-    "repoCodeLicense": "not-selected-no-LICENSE-present",
-    "brandTrademarkStatus": "not-reviewed",
-    "brandMarkLicense": "not-selected",
+    "repoCodeLicense": "MIT-code-only-decision-recorded",
+    "repoCodeLicenseRef": "../../LICENSE",
+    "brandTrademarkStatus": "reserved-no-clearance-or-license-granted",
+    "brandMarkLicense": "no-license-granted",
     "fontsLicense": "per-file-not-selected",
     "soundRights": "not-selected",
-    "publicRedistribution": "blocked-pending-owner-rights-decision",
+    "publicRedistribution": "code-MIT-only-no-artwork-or-mark-rights-granted",
     "spdxCurrentVersionSeen": "3.29.0 2026-09-16"
   },
   "creativeReferenceProvenance": {

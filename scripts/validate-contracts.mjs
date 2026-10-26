@@ -966,8 +966,12 @@ function brandAndAssetProblems(manifest,briefs){
  }
  if(manifest.brandHierarchy?.status!=='proposed-pending-owner-approval'||
    manifest.categoriesAreCandidatePoolNotRequiredPerSkin!==true||
-   manifest.licenseGovernance?.repoCodeLicense!=='not-selected-no-LICENSE-present')
-   e.push('brand/license approval claimed without owner decision');
+   manifest.licenseGovernance?.repoCodeLicense!=='MIT-code-only-decision-recorded'||
+   manifest.licenseGovernance?.repoCodeLicenseRef!=='../../LICENSE'||
+   manifest.licenseGovernance?.brandTrademarkStatus!=='reserved-no-clearance-or-license-granted'||
+   manifest.licenseGovernance?.brandMarkLicense!=='no-license-granted'||
+   manifest.licenseGovernance?.publicRedistribution!=='code-MIT-only-no-artwork-or-mark-rights-granted')
+   e.push('brand/license decision record or rights boundary inconsistent');
  if(manifest.plannedPerSkin.length!==15||
     !sameSet(manifest.plannedPerSkin.map(x=>x.skinId),ids)||
     manifest.plannedPerSkin.some(x=>x.assets.length!==0||x.status!=='not-produced')||

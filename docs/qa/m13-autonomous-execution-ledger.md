@@ -5,12 +5,18 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## Current counts
 
 - Total task IDs: 488 (460 `MF-VF` + 28 `MF-PF`).
-- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-002`, `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` are blocked on owner or dependency/clean-clone requirements; `MF-VF-033` is blocked pending brand hierarchy owner sign-off. No approval was inferred or recorded.
-- Freeze baseline: 14 implemented / 474 pending. Live count: 70 implemented-or-captured (14 baseline implemented + 11 captured + 45 implemented), 6 blocked, 412 pending/planned. The license/trademark decision remains pending without inferred owner approval.
-- Overall progress: 70/488 (14.3%) done/captured; 412/488 (84.4%) still actionable; 6/488 (1.2%) externally blocked. Including blockers, 418/488 (85.7%) remain incomplete.
+- `MF-PF-001`, `MF-PF-003`, `MF-PF-004`, `MF-PF-005`, `MF-PF-006`, `MF-PF-019`, `MF-PF-023`, `MF-PF-018`, `MF-PF-026`, and `MF-PF-027` are captured. `MF-PF-002`, `MF-PF-007`, `MF-PF-008`, `MF-PF-009`, `MF-PF-010`, `MF-PF-011`, `MF-PF-012`, `MF-PF-013`, `MF-PF-014`, `MF-PF-016`, `MF-PF-017`, `MF-PF-024`, and `MF-PF-025` are implemented. `MF-PF-020`, `MF-PF-021`, `MF-PF-022`, and `MF-PF-028` remain blocked on the delegated token-source decision/dependency and clean-clone handoff. `MF-VF-033` remains blocked pending the brand-hierarchy decision.
+- Freeze baseline: 14 implemented / 474 pending. Live count: 71 implemented-or-captured (14 baseline implemented + 11 captured + 46 implemented), 5 blocked, 412 pending/planned. The code-license selection is recorded under explicit maintainer delegation; trademark clearance, artwork rights and publication approval remain separate and ungranted.
+- Overall progress: 71/488 (14.5%) done/captured; 412/488 (84.4%) still actionable; 5/488 (1.0%) externally blocked. Including blockers, 417/488 (85.5%) remain incomplete.
 
 
 
+## MF-PF-002 — Code license and rights distribution decision
+
+- Decision by the repository maintainer under explicit owner delegation: MIT for project-owned code and documentation only; added the matching root `LICENSE`. The existing package SPDX field remains `MIT`.
+- No trademark license/clearance is granted. No rights are granted to conversation reference images, Moonwitness marks/characters, third-party/customer artwork, fonts or audio. They remain outside code-license scope and must not enter distributable assets without item-specific rights. npm publication remains unverified and unauthorized by this decision.
+- Updated the asset-manifest license governance and structural validator to enforce this scope. `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` passed; no release/rights clearance claimed beyond the code-license selection.
+- Rollback: revert the LICENSE, decision record, manifest/validator and task/count evidence together.
 ## MF-VF-033 — Approve one-umbrella logo vs edition devices
 
 - Inspected `docs/brand/original-asset-brand-bible.md` and `docs/research/original-asset-brand-research-log.md`.
@@ -340,7 +346,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## External/dependency blockers
 
-- `MF-PF-002`: maintainer must record code-license and separate trademark/art distribution decisions; manifest MIT alone is not accepted as approval.
+- `MF-PF-002`: resolved by delegated maintainer decision; MIT applies to project-owned code/documentation only. The standalone LICENSE and asset-manifest policy exclude trademark clearance and all third-party/customer artwork rights; no publish approval is implied.
 - `MF-PF-020`: named owner must approve/defer canonical 78×30 token source values and migration/versioning. `MF-PF-021` and `MF-PF-022` remain blocked by that dependency.
 - `MF-PF-028`: requires `MF-PF-022` and clean-clone CI evidence; no remote push was authorized. No approval was inferred.
 
