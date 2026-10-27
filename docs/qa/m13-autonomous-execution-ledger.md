@@ -2393,3 +2393,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-031 is implemented. Added `docs/examples/moonwitness-corpus-reader.md` describing how a consumer can compose Moonframe presentation primitives while retaining ownership of corpus records, search, interpretation, citations, and any theology.
 - Status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run; host runner owns verification and checkpoint. No backend, shipped product, human review, or acceptance is claimed.
 - Rollback: remove the example document, restore MF-VF-266 to planned, and remove matching TODO and ledger evidence. No commit created.
+
+## MF-VF-094 — Moonriot dark capture invocation blocker
+
+- Dependencies are implemented; task requires real dark 1440px and 360px browser captures with fixture provenance.
+- Invocation override forbids package-manager commands and browser/test runs, so captures and hashes could not be produced. No package commands, tests, validators, typecheck, build, or browser checks run.
+- Backlog temporarily records locked for this invocation only. Retry when the host runner permits browser capture; restore to planned if capture tooling is still unavailable. No artifact or human review claimed.
