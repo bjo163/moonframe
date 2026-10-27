@@ -987,6 +987,35 @@
 [data-skin="moonscrawl"] .mf-card { border: 2px solid var(--mf-border); }
 [data-skin="moonscrawl"] .mf-card-title { text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: .25rem; }
 [data-skin="moonscrawl"] .mf-table td { border-block-end-style: dashed; }
+[data-skin="moonscrawl"] .mf-table th {
+  border-block-end: 2px solid var(--mf-border);
+  font-family: var(--mf-display);
+  font-size: .82rem;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+[data-skin="moonscrawl"] .mf-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--mf-surface-raised) 52%, transparent); }
+[data-skin="moonscrawl"] .mf-field { gap: .5rem; }
+[data-skin="moonscrawl"] .mf-field > .mf-label { font-family: var(--mf-display); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: .2em; }
+[data-skin="moonscrawl"] .mf-input,
+[data-skin="moonscrawl"] .mf-textarea,
+[data-skin="moonscrawl"] .mf-select {
+  border-width: 0 0 2px;
+  border-style: dashed;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--mf-surface) 82%, transparent);
+}
+[data-skin="moonscrawl"] .mf-input:focus-visible,
+[data-skin="moonscrawl"] .mf-textarea:focus-visible,
+[data-skin="moonscrawl"] .mf-select:focus-visible { outline-offset: 3px; }
+[data-skin="moonscrawl"] .mf-dialog { border: 2px dashed var(--mf-border); box-shadow: 6px 6px 0 color-mix(in srgb, var(--mf-border) 30%, transparent); }
+[data-skin="moonscrawl"] .mf-dialog-header { border-block-end: 1px dashed var(--mf-border); padding-block-end: .75rem; }
+[data-skin="moonscrawl"] .mf-dialog-title { font-family: var(--mf-display); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: .2em; }
+@media (forced-colors: active) {
+  [data-skin="moonscrawl"] .mf-input,
+  [data-skin="moonscrawl"] .mf-textarea,
+  [data-skin="moonscrawl"] .mf-select { border: 1px solid CanvasText; background: Canvas; }
+}
 [data-skin="moonscrawl"] .mf-icon,
 [data-skin="moonscrawl"] .mf-search-icon,
 [data-skin="moonscrawl"] .mf-timeline-marker,

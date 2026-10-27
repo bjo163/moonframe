@@ -2438,3 +2438,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependencies MF-VF-180, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`.
 - Stylesheet SHA-256: `2B931AC52D09458C3DE61534A83515793C74ED16D8F5ED169B0E18429FE8814A`. Static source/class inspection only; runner override honored, so no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or human review ran. Responsive/contrast review and acceptance remain pending; host runner owns verification/checkpoint.
 - No commit created. Rollback: remove the MF-VF-185 selector rules, restore the backlog row to planned, and remove the matching TODO and ledger entries.
+## MF-VF-187 — Moonscrawl table, form, and dialog recipes
+
+- Starting HEAD: `37800d9` (`main`, clean worktree).
+- Dependencies MF-VF-180 and MF-VF-186 are implemented. Added Moonscrawl-scoped notebook styling for table headings/rows, field labels and controls, and dialogs in `src/styles.css`; shared markup, component APIs, interaction behavior, focus handling, and control sizing remain unchanged.
+- Source SHA-256: `F7800D706CF0CA53F3F16ACB0F09D6725185549DEE72EA6483C826F8B041B38B`. `git diff --check` exited 0 (Git emitted line-ending normalization warnings).
+- Backlog status: `implemented`. Source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or commit run; host runner owns verification and checkpoint. Responsive/contrast review, rights review, human review, and acceptance remain pending.
+- Checkbox recount after this task: 370/488 checked and 118 unchecked, based on the preceding ledger recount of 369/488. Checked does not imply acceptance.
+- Rollback: remove the Moonscrawl MF-VF-187 rules, restore the task to planned, and remove matching TODO and ledger evidence.
