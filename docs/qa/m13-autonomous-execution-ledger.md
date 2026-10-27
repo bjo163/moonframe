@@ -2373,3 +2373,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `1F0A94C023004FCD7E6ACA57B4FBD5DF155A7F681174152036A9AD56BFD3CFB3`.
 - Backlog status: `implemented`. Source inspection and digest calculation only; runner override honored. No validators, package-manager commands, suites, typecheck, build, rendering, screenshot, or human review run. Host runner owns checks and checkpoint. Rights/optical review, use in a hideable margin, and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-182 to planned in the backlog, and remove this TODO/ledger evidence. No commit created.
+## MF-VF-183 — Moonscrawl hero illustration SVG
+
+- Starting HEAD: `8acc58cea8930a0d4a92f53205e10a922abea9ac`.
+- Dependency MF-VF-180 is implemented. Added original static `assets/source/skins/moonscrawl/hero.svg`, depicting loose annotation circles, arrows, and short rules around an open center; accessible title/description are included and essential text is not baked into the image.
+- SHA-256: `817FFC50D71FE632F08734F283CC4BAD1777C6D6EB130C488EC6DDA7BFE5CC03`.
+- Backlog status: `implemented`. Source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG security validation, rendering, screenshot capture, or commit run; host runner owns checks and checkpoint. Rights/optical review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-183 to planned, and remove matching TODO and ledger evidence.

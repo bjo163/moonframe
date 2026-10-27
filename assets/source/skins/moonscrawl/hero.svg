@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonscrawl annotated notebook margin</title>
+  <desc id="desc">Loose hand-drawn circles, arrows, and short ruled marks arranged around an open center, like exploratory notes in a sketchbook margin.</desc>
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 34c8-7 25-8 34-1 8 7 7 20-1 27-9 8-25 7-33 0-7-7-7-19 0-26Zm-4-5c-11 10-12 27-2 37m53-31 31 8m-9-13 10 13-14 7" stroke-width="2.5"/>
+    <path d="M232 32c13 3 23 14 22 26-1 12-13 20-25 17-12-3-19-14-15-25 3-9 10-16 18-18Zm-5-8c-15 5-24 20-21 35m36 23-18 22m17-10 1 12-12-3" stroke-width="2.5"/>
+    <path d="M31 144c13-5 27-4 38 2m-42 8 35 1m-29 8 24 2m178-21 37-3m-32 11 25-1m-20 10 29-2" stroke-width="2" opacity=".72"/>
+    <path d="M127 43c8 4 12 11 11 18m-9-3 10 3-2-10m34 92c-7 5-10 12-8 19m10-4-10 4 1-10" stroke-width="2" opacity=".58"/>
+    <circle cx="160" cy="96" r="3" stroke-width="2" opacity=".45"/>
+  </g>
+</svg>
