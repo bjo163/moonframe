@@ -2222,3 +2222,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-156 is implemented. Backlog status: implemented; no human review, rights clearance, or acceptance claimed. Asset remains optional and unintegrated.
 - SHA-256: `996BAAF2DFEE5825C6C70BCE9995497252659084C16471D9CF11730F0857B005`. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshot, or commit run. Host runner owns applicable verification and checkpoint.
 - Rollback: remove the SVG, restore MF-VF-159 to planned, and remove matching TODO/ledger evidence.
+## MF-VF-254 — Replace SkinCard generic sample with equal-content dashboard preview
+
+- Dependency MF-VF-031 is implemented. Replaced generic primary/secondary buttons and a progress meter in `apps/moonframe/components/site/SkinCard.tsx` with a fixed-content dashboard: two metric tiles and a status row. The existing card-level ThemeProvider still scopes the preview to the selected skin/mode.
+- Backlog status: `implemented`. Source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, browser render, screenshots, or commit run; host runner owns checks and checkpoint.
+- Responsive behavior, visual review, and acceptance remain pending. No approval claimed.
+- Rollback: restore the former button/progress sample, revert the MF-VF-254 row to planned, and remove matching TODO and ledger evidence.

@@ -12,7 +12,6 @@ import {
   CardFooter,
   Button,
   Badge,
-  Progress,
   useTheme,
 } from '@moonwitness/moonframe';
 import type { SkinCatalogEntry } from '../../lib/catalog';
@@ -44,12 +43,26 @@ export function SkinCard({
             <CardDescription>{skin.description}</CardDescription>
           </CardHeader>
           <CardContent style={{ display: 'grid', gap: '0.75rem' }}>
-            <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <Button size="sm">Primary</Button>
-              <Button variant="secondary" size="sm">Secondary</Button>
-              <Badge>Token Surface</Badge>
-            </div>
-            <Progress value={76} label={`${skin.name} sample metric`} />
+            <section aria-label={`${skin.name} dashboard sample`} style={{ display: 'grid', gap: '0.55rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', padding: '0.75rem', background: 'var(--mf-surface)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem' }}>
+                <strong style={{ fontSize: '0.8rem' }}>Workspace overview</strong>
+                <Badge variant="secondary">Live preview</Badge>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.45rem' }}>
+                <div style={{ border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', padding: '0.5rem' }}>
+                  <div style={{ color: 'var(--mf-muted)', fontSize: '0.68rem' }}>Open tasks</div>
+                  <strong style={{ fontSize: '1rem' }}>12</strong>
+                </div>
+                <div style={{ border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', padding: '0.5rem' }}>
+                  <div style={{ color: 'var(--mf-muted)', fontSize: '0.68rem' }}>Completed</div>
+                  <strong style={{ fontSize: '1rem' }}>76%</strong>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', fontSize: '0.72rem' }}>
+                <span>Quarterly planning</span>
+                <Badge variant="success">On track</Badge>
+              </div>
+            </section>
             <div style={{ fontSize: '0.78rem', color: 'var(--mf-muted)' }}>
               <strong>Geometry:</strong> {skin.geometry}
             </div>
