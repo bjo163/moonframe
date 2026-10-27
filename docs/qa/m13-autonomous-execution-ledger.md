@@ -2366,3 +2366,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-180 is implemented. Added original static `assets/source/skins/moonscrawl/motif.svg`: a monochrome loose curved hand-annotation arrow with an open arrowhead, authored from basic vector geometry for the sketchbook visual direction. SHA-256: `9F5A569A7BDD0AB2A06D96D0386417FFA5477577A61D2807A97B04727B42E0DE`.
 - Backlog status: `implemented`. Source inspection and digest calculation only; runner override honored. No validators, package-manager commands, suites, typecheck, build, render, screenshot, or commit run. Host runner owns verification/checkpoint. No rights clearance, optical/human review, or acceptance claimed.
 - Rollback: remove the SVG, restore MF-VF-181 to planned in backlog and remove matching TODO/ledger evidence.
+# MF-VF-182 — Moonscrawl decorative pattern SVG
+
+- Starting HEAD: `2a8fcd4` (`main`, clean worktree).
+- Dependency MF-VF-180 is implemented. Added original static `assets/source/skins/moonscrawl/pattern.svg`, a faint notebook-rule pattern with a narrow margin rail for optional noninteractive decoration.
+- SHA-256: `1F0A94C023004FCD7E6ACA57B4FBD5DF155A7F681174152036A9AD56BFD3CFB3`.
+- Backlog status: `implemented`. Source inspection and digest calculation only; runner override honored. No validators, package-manager commands, suites, typecheck, build, rendering, screenshot, or human review run. Host runner owns checks and checkpoint. Rights/optical review, use in a hideable margin, and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-182 to planned in the backlog, and remove this TODO/ledger evidence. No commit created.

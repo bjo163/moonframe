@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonscrawl notebook margin pattern</title>
+  <desc id="desc">Faint, irregular horizontal notebook rules with a narrow left margin, intended for optional noninteractive decoration.</desc>
+  <g stroke="currentColor" stroke-width="1" opacity=".28">
+    <path d="M34 24h188M34 48h188M34 72h188M34 96h188M34 120h188M34 144h188" stroke-dasharray="188" stroke-dashoffset="0"/>
+    <path d="M22 12v136" stroke-width="1.5" opacity=".6"/>
+  </g>
+  <path d="M17 38c2-2 3-2 5 0m-5 72c2-2 3-2 5 0" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".2"/>
+</svg>
