@@ -2315,3 +2315,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `3AB4AB3B7BC0E292A194A408C34C688150DF440B85D566103C3F02D88B128B8F`. Dependencies MF-VF-168 and MF-VF-039 are implemented.
 - Backlog status: `implemented`. Source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG security validation, render, small-size capture, or human review ran. Optical/rights review and acceptance remain pending; host runner owns verification/checkpoint.
 - Rollback: remove the SVG, restore MF-VF-172 to planned, and remove this ledger/TODO evidence.
+## MF-VF-173 — Moonpanel semantic icon frames
+
+- Added Moonpanel-scoped square inset frames for generic, search, timeline, callout, and empty-state icon wrappers in src/styles.css; shared SVG glyph meaning, accessible names, and component behavior remain unchanged.
+- Dependencies MF-VF-168, MF-VF-050, and MF-VF-057 are implemented. Backlog status: implemented.
+- Source/class inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering, screenshot capture, or human review run; host runner owns verification/checkpoint. Contrast/responsive review, rights review, and acceptance remain pending.
+- Rollback: remove the six Moonpanel icon selector rules, restore MF-VF-173 to planned, and remove this ledger/TODO evidence. No commit created.

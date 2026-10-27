@@ -874,6 +874,16 @@
 [data-skin="moonpanel"] .mf-card-title { text-transform: uppercase; font-size: .9rem; }
 [data-skin="moonpanel"] .mf-nav-item { border: 2px solid var(--mf-border); font-weight: 800; }
 [data-skin="moonpanel"] .mf-table th, [data-skin="moonpanel"] .mf-table td { border: 1px solid var(--mf-border); }
+[data-skin="moonpanel"] .mf-icon,
+[data-skin="moonpanel"] .mf-search-icon,
+[data-skin="moonpanel"] .mf-timeline-marker,
+[data-skin="moonpanel"] .mf-callout-icon,
+[data-skin="moonpanel"] .mf-empty-icon { border: 2px solid var(--mf-border); border-radius: 0; background: var(--mf-surface-raised); box-shadow: inset 0 0 0 2px var(--mf-surface); }
+[data-skin="moonpanel"] .mf-icon { display: inline-grid; place-items: center; min-inline-size: 2rem; min-block-size: 2rem; }
+[data-skin="moonpanel"] .mf-search-icon,
+[data-skin="moonpanel"] .mf-timeline-marker,
+[data-skin="moonpanel"] .mf-callout-icon { display: inline-grid; place-items: center; min-inline-size: 1.75rem; min-block-size: 1.75rem; }
+[data-skin="moonpanel"] .mf-empty-icon { display: inline-grid; place-items: center; padding: .35rem; }
 
 /* 10 / Moonscrawl — notebook margins, tabs and irregular pencil contours. */
 [data-skin="moonscrawl"] { --mf-bg: #f5efda; --mf-surface: #fffcef; --mf-surface-raised: #eae5cf; --mf-text: #333f51; --mf-muted: #536079; --mf-border: #7c8ca3; --mf-accent: #3d5796; --mf-accent-text: #ffffff; --mf-radius: 1.1rem .3rem .8rem .4rem / .4rem .8rem .35rem 1rem; --mf-shadow: none; --mf-display: "Segoe Print", "Bradley Hand", cursive; }
