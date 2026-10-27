@@ -590,6 +590,47 @@ test('reduced motion keeps the active navigation highlight immediate and identif
   expect(activeState.background).not.toBe(inactiveBackground);
 });
 
+test('Moonzine decoration-off preserves content and reduced-motion keeps editorial layout static', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  await page.goto('/lab?skin=moonzine');
+  await expect(page.locator('.mf-root')).toHaveAttribute('data-skin', 'moonzine');
+  await page.getByLabel('Motion', { exact: true }).selectOption('reduced');
+
+  const root = page.locator('.mf-root');
+  const shell = page.locator('.mf-shell');
+  const nav = page.locator('.mf-nav-item').first();
+  const card = page.locator('.mf-grid > *').nth(1);
+  const navTransformBefore = await nav.evaluate(node => getComputedStyle(node).transform);
+  await expect(root).toHaveAttribute('data-motion', 'reduced');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(nav).toBeVisible();
+  await expect(card).toBeVisible();
+
+  const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
+  await decorationToggle.check();
+  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(nav).toBeVisible();
+  await expect(card).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
+  await decorationToggle.focus();
+  await expect(decorationToggle).toBeFocused();
+
+  const motionState = await root.evaluate(node => {
+    const grid = node.querySelector('.mf-grid');
+    const staggered = node.querySelector('.mf-grid > :nth-child(3n + 2)');
+    return {
+      preference: node.getAttribute('data-motion'),
+      transitionDuration: getComputedStyle(grid).transitionDuration,
+      cardTranslate: getComputedStyle(staggered).translate,
+    };
+  });
+  expect(motionState.preference).toBe('reduced');
+  expect(motionState.transitionDuration.split(',').every(value => Number.parseFloat(value) === 0)).toBe(true);
+  expect(motionState.cardTranslate).toBe('none');
+  expect(await nav.evaluate(node => getComputedStyle(node).transform)).toBe(navTransformBefore);
+});
+
 test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {
   const blockedRequests = [];
   await page.route(/\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i, async route => {

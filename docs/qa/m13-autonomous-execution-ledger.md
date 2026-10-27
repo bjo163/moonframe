@@ -1,3 +1,10 @@
+## MF-VF-104 — Moonzine decoration-off and reduced-motion fallback
+
+- Added a focused Playwright scenario in `tests/browser/skins.spec.js` to verify core heading, navigation, card content, action, and control focus remain available when decorations are disabled. It also checks reduced-motion removes the Moonzine stagger and transitions without shifting navigation geometry.
+- Dependencies MF-VF-098, MF-VF-099, and MF-VF-103 are implemented. Backlog status: `implemented`.
+- Static source inspection only. Runner override honored: no browser tests, validators, package-manager commands, typecheck, or build run; host runner owns verification/checkpoint. No rendered or human visual review, accessibility certification, or acceptance claimed.
+- Rollback: remove the focused test and restore MF-VF-104 to planned in the backlog; remove its TODO and ledger entry. No commit created.
+
 ## MF-VF-128 — Moonglitch decoration-off and reduced-motion fallback
 
 - Added a scoped art-off reset in `apps/moonframe/app/(lab)/lab/lab.css` for Moonglitch diagnostic SVG borders, padding, and accent filters. Icon glyphs and semantic text/controls remain present; shared fixture decoration-off and reduced-motion rules remain active.
