@@ -2301,3 +2301,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `lab.css` `BD00D96C78737C8189772D88C4760F595C4E4B40E2352CADF6A4E1E37E8410C8`; `skins.spec.js` `5E25458801C327A71F7C61EB263C6809DA55198508B239FA6446760CC07C70C0`. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes.
 - Runner override honored: no browser suite, validators, package-manager commands, typecheck, build, captures, or commit run. Host runner owns verification/checkpoint. No human review, rendered evidence, or acceptance claimed.
 - Rollback: remove the scoped CSS rule and browser test, restore MF-VF-164 to planned, and remove matching TODO/backlog evidence.
+## MF-VF-171 — Draw original Moonpanel hero illustration SVG
+
+- Added `assets/source/skins/moonpanel/hero.svg`, an original optional observatory scene composed as a sequence of bounded rectangular panels, with no embedded text and an accessible title/description.
+- SHA-256: `bb65ac9bce7a15edb7d7c294b691f1f8ef470dba5427249f0dc9442b6e2b8436`.
+- Dependency MF-VF-168 is implemented. Backlog status: `implemented`; source inspection and digest calculation only.
+- Runner override honored: no validators, package-manager commands, test suites, typecheck, build, SVG security validation, rendering, capture, or human review run. Host runner owns checks and checkpoint. Rights/optical review and acceptance remain pending; asset is not integrated.
+- Updated task checkbox recount: 335/488 checked, 153 unchecked. Checked does not imply approval.
+- Rollback: remove the SVG, restore MF-VF-171 to planned, and remove matching TODO/ledger evidence. No commit created.

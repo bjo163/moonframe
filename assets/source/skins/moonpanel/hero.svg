@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpanel modular observatory</title>
+  <desc id="desc">A quiet observatory scene arranged as a sequence of bounded rectangular panels: a wide lunar horizon, a small instrument bay, and a narrow star chart. All details are decorative and contain no text.</desc>
+  <rect width="960" height="560" fill="#f3f1e9"/>
+  <g fill="none" stroke="#20252b" stroke-width="8">
+    <path d="M24 24h912v512H24zM24 360h912M640 24v336M320 360v176"/>
+  </g>
+  <g fill="#d8d5ca" stroke="#20252b" stroke-width="5">
+    <path d="M48 48h568v288H48z"/>
+    <path d="M664 48h248v288H664z"/>
+    <path d="M48 384h248v128H48z"/>
+    <path d="M344 384h568v128H344z"/>
+  </g>
+  <g fill="#303944">
+    <circle cx="778" cy="132" r="44"/>
+    <path d="M722 267h132v12H722zM736 240h104v12H736zM764 188h48v54h-48z"/>
+    <path d="M70 288c78-84 145-70 215-12 58-55 133-62 220-4v64H70z"/>
+    <path d="M376 470h88v-38h74v38h98v-54h52v54h200v22H376z"/>
+  </g>
+  <g fill="#78869a">
+    <circle cx="122" cy="104" r="5"/><circle cx="238" cy="154" r="4"/><circle cx="478" cy="96" r="5"/>
+    <circle cx="414" cy="426" r="5"/><circle cx="624" cy="412" r="4"/><circle cx="866" cy="448" r="5"/>
+  </g>
+  <g fill="none" stroke="#566273" stroke-width="4">
+    <path d="M80 420h170M80 448h110M80 476h142M370 412h128M370 438h184M370 464h96"/>
+    <path d="M704 312h160M704 288h104"/>
+  </g>
+</svg>
