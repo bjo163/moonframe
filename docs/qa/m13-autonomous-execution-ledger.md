@@ -17,7 +17,7 @@
 - Added a scoped art-off reset in `apps/moonframe/app/(lab)/lab/lab.css` for Moonglitch diagnostic SVG borders, padding, and accent filters. Icon glyphs and semantic text/controls remain present; shared fixture decoration-off and reduced-motion rules remain active.
 - Dependencies MF-VF-122, MF-VF-123, and MF-VF-127 are implemented. Backlog status: `implemented`.
 - Stylesheet SHA-256: `AB96477EEC4CA4AB4D29128E9DFFEB5AC42CC276C1C3BCDBAE6386D21A7050B0`.
-- Source inspection and `git diff --check` passed. Runner override honored: no package-manager commands, validators, test suites, browser run, typecheck, build, screenshot, or human review. Host runner owns verification/checkpoint. No accessibility or visual acceptance claimed.
+- Source inspection and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Runner override honored: no package-manager commands, validators, test suites, browser run, typecheck, build, screenshot, or human review. Host runner owns verification/checkpoint. No accessibility or visual acceptance claimed.
 - Rollback: remove the Moonglitch art-off selector block, restore MF-VF-128 to planned, and remove matching TODO/backlog evidence. No commit created.
 
 ## MF-VF-160 — Mooncrash edition badge
@@ -399,7 +399,7 @@
 
 - Added a scoped Moonpunk composition in `src/styles.css`: offset sidebar slabs and nav rails, an angular split hero, condensed uppercase display headings, and a heavy header rule. Shared component markup, keyboard behavior, and accessible semantics are unchanged.
 - SHA-256 of the resulting stylesheet: `87FC658D887E86229CE3D0483F928258B9D146FAAEAE1126AC66D510308B2EAD`.
-- Dependency MF-VF-072 is implemented. Status: `implemented`; `git diff --check` passed. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. Human visual review and acceptance remain pending. No aggregate recount is asserted because existing snapshots conflict.
+- Dependency MF-VF-072 is implemented. Status: `implemented`; Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no validators, package-manager commands, tests, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. Human visual review and acceptance remain pending. No aggregate recount is asserted because existing snapshots conflict.
 - No commit created. Rollback: remove the MF-VF-078 CSS block and restore its backlog row and this ledger entry.
 
 ## MF-VF-077 — Style stable semantic Moonpunk icon frames
@@ -435,7 +435,7 @@
 ## MF-VF-348 — Prepare R02 responsive screenshot fixture
 
 - Added a deterministic Playwright fixture in `tests/browser/site.spec.js` that renders the R02 masthead, three editorial story tiles, and a three-entry timeline at 1440, 768, and 360 CSS pixels, writing named full-page screenshots under `artifacts/site/` when the host runs the browser suite.
-- Status: `implemented`; screenshots have not been captured. Dependency `MF-VF-023` is implemented. `git diff --check` passed. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser run. Human visual review, original-reference comparison, rights clearance, and acceptance remain pending. No commit created; host runner handles verification and checkpoint.
+- Status: `implemented`; screenshots have not been captured. Dependency `MF-VF-023` is implemented. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no package-manager commands, validators, test suites, typecheck, build, or browser run. Human visual review, original-reference comparison, rights clearance, and acceptance remain pending. No commit created; host runner handles verification and checkpoint.
 - Rollback: remove the R02 test fixture, restore the task to planned, and remove this ledger section.
 
 ## MF-VF-074 — Draw minimal Moonpunk decorative pattern SVG
@@ -487,7 +487,7 @@
 
 - Added `assets/source/creative-reference/r03/label-sticker.svg`, an original blank yellow sticker backing with irregular geometry and no fixed copy, consumer mark, script, or external resource.
 - SHA-256: `895ED690BEEF5342AAA344A124FE91B8552801C87FF10C03127205624772CE90`.
-- Dependency `MF-VF-024` is implemented. Status is `implemented`; static source inspection and `git diff --check` passed. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. No human optical review, rights approval, or acceptance is claimed.
+- Dependency `MF-VF-024` is implemented. Status is `implemented`; static source inspection and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or browser captures were run; host runner owns verification/checkpoint. No human optical review, rights approval, or acceptance is claimed.
 - Counts are not restated because the root/backlog aggregate snapshots conflict. Rollback: remove the SVG and restore the backlog row and this entry.
 
 ## MF-VF-328 — Review R01 screenshot against original source (blocked)
@@ -601,7 +601,7 @@
 
 - Added `assets/source/creative-reference/r03/header-frame.svg`, an original static frame of angular paper fragments and loose ink strokes with a clear center for selectable/live headline text. No consumer mark, embedded heading, performer imagery, external resource, script, or event attribute is present.
 - SHA-256: `20de87341f4e87d371886a34f63e44f0e499c0ac02d83eba1072f1b60e326be8`.
-- Dependency `MF-VF-024` is implemented. Status: `implemented`; static source inspection and `git diff --check` passed. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, capture, or reference comparison were run. Host runner owns verification/checkpoint. Rights clearance, human optical review, and acceptance remain pending.
+- Dependency `MF-VF-024` is implemented. Status: `implemented`; static source inspection and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no package-manager commands, validators, suites, typecheck, build, browser rendering, capture, or reference comparison were run. Host runner owns verification/checkpoint. Rights clearance, human optical review, and acceptance remain pending.
 - Rollback: remove the SVG and restore the matching task row and root TODO count/summary.
 
 ## MF-VF-341 — Draw neutral constellation pin graphics
@@ -682,7 +682,7 @@
 ## MF-VF-329 — Accessible editorial navigation
 
 - Added `apps/moonframe/templates/visual-reference/r02-nav.tsx` and `.module.css` with grouped semantic link lists, native mobile disclosure, visible keyboard focus, touch-sized links, and a responsive desktop grouping layout.
-- Dependency `MF-VF-023` is implemented. Static source review and `git diff --check` passed. No package-manager commands, validators, tests, typecheck, build, or browser capture run per runner override; host runner owns verification/checkpoint. No source-reference comparison, human review, or acceptance claimed.
+- Dependency `MF-VF-023` is implemented. Static source review and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. No package-manager commands, validators, tests, typecheck, build, or browser capture run per runner override; host runner owns verification/checkpoint. No source-reference comparison, human review, or acceptance claimed.
 - Rollback: remove the component/CSS module and restore the task row, TODO count, and ledger entry.
 - Counts: prior live ledger count 118/488 implemented-or-captured, 370/488 planned, 0 blocked; now 119/488 implemented-or-captured, 369/488 planned, 0 blocked.
 
@@ -737,14 +737,14 @@
 ## MF-VF-317 — Build triple-zone dashboard composition grid
 
 - Added `apps/moonframe/templates/visual-reference/r01-content-grid.tsx` and `r01-content-grid.module.css`: consumer supplied creation, signal, operations and stream regions with responsive three-, two- and one-column layouts.
-- Dependency `MF-VF-022` is implemented. Status: `implemented`; `git diff --check` passed. Runner override honored: no package-manager commands, test suites, typecheck, build, validators, or browser capture. Host runner will verify and checkpoint.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Runner override honored: no package-manager commands, test suites, typecheck, build, validators, or browser capture. Host runner will verify and checkpoint.
 - Current counts: 108 implemented-or-captured, 380 planned, 0 blocked of 488. No image rights, reference comparison, human review, or acceptance claimed. No commit created. Rollback: remove the component and CSS module and revert the matching backlog, TODO and ledger updates.
 
 
 ## MF-VF-316 — Define city skyline backplate artwork concept
 
 - Added `assets/source/creative-reference/r01/city-silhouette.svg`: original layered geometric skyline backplate on a transparent canvas, with no embedded text or story-specific figures. SHA-256: `54ed556523a0ed23001f70a275d6303a24073752a6a95166788e1cd48b94fcf1`. It is an optional visual layer and does not bundle reference imagery.
-- Dependency `MF-VF-022` is implemented. Status: `implemented`; static source inspection and `git diff --check` passed. No SVG/security validator, package-manager commands, tests, typecheck, build, or browser capture run per runner override. Host runner will verify and checkpoint. Rights clearance and human optical review are not claimed.
+- Dependency `MF-VF-022` is implemented. Status: `implemented`; static source inspection and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. No SVG/security validator, package-manager commands, tests, typecheck, build, or browser capture run per runner override. Host runner will verify and checkpoint. Rights clearance and human optical review are not claimed.
 - Current counts: 107 implemented-or-captured, 381 planned, 0 blocked of 488. This task does not imply capture, review, or acceptance. No commit created. Rollback: remove the SVG and revert the matching backlog, TODO, and ledger update.
 
 ## MF-VF-314 — Draw original luminous moon backdrop asset concept
@@ -985,7 +985,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Inspected implementation baseline after MF-VF-030; pilot captures have current-source SHA-256 provenance.
 - Scope: `scripts/audit-skin-pairs.mjs`; generated local artifact `artifacts/skins/pilot-pair-contact-sheet.html` and refreshed structural report.
 - The existing six-pair pilot set is rendered as direct A/B comparisons for both light and dark modes at matching 1440×960 capture viewports. The HTML has jump links, responsive two-column presentation, descriptive image text and lazy image loading. It explicitly labels the result machine-assembled; no scores are presented as human visual verdicts.
-- `node --check scripts/audit-skin-pairs.mjs` — passed. `pnpm run audit:pairs` — passed: 105 structural pair records, 30 desktop + 30 tablet + 30 phone current-source captures. Browser inspection loaded all 24 images across six pair sections. Contract and handoff validators and `git diff --check` passed. The local screenshot suite was run in this checkout: unit 13/13, typecheck, production build 88 routes and browser 56/56.
+- `node --check scripts/audit-skin-pairs.mjs` — passed. `pnpm run audit:pairs` — passed: 105 structural pair records, 30 desktop + 30 tablet + 30 phone current-source captures. Browser inspection loaded all 24 images across six pair sections. Contract and handoff validators and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. The local screenshot suite was run in this checkout: unit 13/13, typecheck, production build 88 routes and browser 56/56.
 - Status: implemented; reviewer remains pending. Implementation commit: `6bf517524b78a0017a69ef3ab1bee3e9389918eb`. Rollback: `git revert 6bf517524b78a0017a69ef3ab1bee3e9389918eb`; revert matching evidence-only commit if needed.
 ## MF-VF-030 — Capture forced-colors specimen
 
@@ -1151,7 +1151,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Scope: `src/components.js`, `tests/browser/components.spec.js`, task evidence, TODO and this ledger. A live OS motion-preference listener and root `data-motion` observer stop active oscillators when reduced motion becomes active; future cues remain suppressed while the status interface stays usable.
 - `pnpm install --frozen-lockfile --offline` — exit 0; restored 31 locked packages from local cache. Syntax checks and both structural validators — exit 0; handoff retains its generic playback-truth and missing-LICENSE warnings.
 - `pnpm test` — exit 0; 12/12. `pnpm run typecheck` — exit 0. `pnpm run build` — exit 0; 88 routes. `pnpm run test:browser` — exit 0; 50/50, including reduced-motion stop/suppression regression. `git diff --check` — exit 0.
-- Status: implemented, local verification complete. No human review or acceptance claimed. After restoring dependencies with `pnpm install --frozen-lockfile --offline`, the current checkout was revalidated: unit 13/13, typecheck, build 88 routes, browser 56/56 (including this regression), both contract/handoff validators, and `git diff --check` passed. The implementation commit remains `e8c05e3` (`fix(sfx): honor reduced motion preference`); no duplicate implementation commit was needed. Rollback: revert the motion listeners, browser test and matching ledger/task evidence.
+- Status: implemented, local verification complete. No human review or acceptance claimed. After restoring dependencies with `pnpm install --frozen-lockfile --offline`, the current checkout was revalidated: unit 13/13, typecheck, build 88 routes, browser 56/56 (including this regression), both contract/handoff validators, and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. The implementation commit remains `e8c05e3` (`fix(sfx): honor reduced motion preference`); no duplicate implementation commit was needed. Rollback: revert the motion listeners, browser test and matching ledger/task evidence.
 ## MF-PF-014 — Sensitive consumer-context SFX suppression
 
 - Source baseline: commit `e8c05e3` (MF-PF-013 verified). Added explicit provider `context` and root `data-sfx-context` fallback. Auth/authentication, finance/financial, destructive, and security contexts suppress playback even after user consent.
@@ -1161,7 +1161,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## MF-PF-015 — Freeze alias compatibility semantics
 
 - Preserved six current runtime aliases and their TypeScript input types as compatibility inputs for contract v0.1; no new aliases or remappings in this contract version. Removal or semantic changes need a future major-version migration decision. No owner approval inferred.
-- Evidence is contract/source comparison only. `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` passed with the existing generic playback-truth and missing-LICENSE warnings; `git diff --check` passed. No browser QA is claimed for this documentation/contract decision.
+- Evidence is contract/source comparison only. `node scripts/validate-contracts.mjs` and `node scripts/verify-m13-handoff.mjs` passed with the existing generic playback-truth and missing-LICENSE warnings; Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. No browser QA is claimed for this documentation/contract decision.
 - Status: captured; runtime behavior unchanged.
 ## MF-PF-016 — SFX interaction and browser-denial regressions
 
@@ -1338,7 +1338,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## MF-VF-305 — Extract top navigation landmark hierarchy
 
 - Added responsive breadcrumb navigation, task search, labeled update status, and named profile avatar to the live R01 dashboard fixture in `apps/moonframe/app/(lab)/lab/page.tsx` and `apps/moonframe/app/(lab)/lab/lab.css`. Search is connected to the existing task filter; duplicate table search was removed. The interface is live DOM content, not screenshot imagery.
-- Dependency `MF-VF-022` is implemented. `node --check tests/browser/skins.spec.js`, contracts, handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Targeted browser checks passed 2/2. The full browser suite passed the 30 skin × mode matrix plus the no-art fallback scenario, 63/64 total; one unrelated existing dashboard-filter test exceeded its 30-second timeout. Status remains `implemented`, not captured. No image rights or human review claimed.
+- Dependency `MF-VF-022` is implemented. `node --check tests/browser/skins.spec.js`, contracts, handoff, runtime tests (13/13), typecheck, build (88 routes), and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Targeted browser checks passed 2/2. The full browser suite passed the 30 skin × mode matrix plus the no-art fallback scenario, 63/64 total; one unrelated existing dashboard-filter test exceeded its 30-second timeout. Status remains `implemented`, not captured. No image rights or human review claimed.
 - Rollback: revert the fixture/CSS changes and restore the task row to planned. No commit created; host runner handles verification and checkpoint.
 
 ## Current counts after MF-VF-305
@@ -1349,7 +1349,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## MF-VF-306 — Extract ink-black left sidebar shell
 
 - Implemented semantic sidebar navigation and responsive ink-black rail in `apps/moonframe/app/(lab)/lab/page.tsx` and `lab.css`; marks are constrained decorative CSS and hidden from assistive technology. Dependency MF-VF-022 is implemented.
-- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser matrix passed 30/30 skin × mode cases, including responsive breakpoints, keyboard focus, and accessible navigation names. Status is `implemented`, not captured. No human review or asset-rights claim.
+- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Browser matrix passed 30/30 skin × mode cases, including responsive breakpoints, keyboard focus, and accessible navigation names. Status is `implemented`, not captured. No human review or asset-rights claim.
 - Live task rows: 98 implemented-or-captured (20.1%), 390 planned (79.9%), 0 explicitly blocked of 488. Browser verification is complete for this task; commit/push follows scoped checkpoint.
 - Rollback: revert the fixture/CSS and task/TODO/ledger evidence for MF-VF-306.
 
@@ -1387,7 +1387,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 # MF-VF-310 — Build mission hero 2-column L1 grid
 
 - Dependency `MF-VF-022` is implemented. The existing R01 dashboard content has a two-column activity/supporting-note grid that collapses to one column at the 800px breakpoint. Added browser assertions for the desktop grid and the 360px single-column layout in `tests/browser/skins.spec.js`.
-- Status: `implemented`; no screenshot capture, source art, human review, or asset-rights approval claimed. Contracts and handoff, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Browser suite passed 64/64, including the 30 skin × mode grid checks.
+- Status: `implemented`; no screenshot capture, source art, human review, or asset-rights approval claimed. Contracts and handoff, runtime tests (13/13), typecheck, build (88 routes), and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Browser suite passed 64/64, including the 30 skin × mode grid checks.
 - Counts: 102 implemented-or-captured, 386 planned, 0 explicitly blocked of 488 total. Counts do not imply human review, rights, or acceptance.
 - Rollback: revert the two browser assertions and matching task/TODO/ledger evidence.
 
@@ -1395,7 +1395,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Updated the existing R01 dashboard fixture heading in `apps/moonframe/app/(lab)/lab/lab.css` with responsive `clamp()` sizing, tighter display tracking, balanced wrapping, and a bounded measure. Text remains a semantic DOM heading; no font or artwork dependency was added.
 - Dependency `MF-VF-022` is implemented. Status: `implemented`; capture, human review, and acceptance are not claimed.
-- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and `git diff --check` passed. Full browser suite had 63/64 pass: the only failure was an unrelated SFX AudioContext cleanup assertion; its isolated retry passed 1/1. All R01 skin/mode rendering cases passed. No commit created yet. Rollback: revert the scoped CSS and task evidence.
+- Contract and handoff validators, runtime tests (13/13), typecheck, build (88 routes), and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Full browser suite had 63/64 pass: the only failure was an unrelated SFX AudioContext cleanup assertion; its isolated retry passed 1/1. All R01 skin/mode rendering cases passed. No commit created yet. Rollback: revert the scoped CSS and task evidence.
 
 ## Current counts after MF-VF-311
 
@@ -1461,7 +1461,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 ## MF-VF-334 — Define R02 decorative accent slot
 
 - Added `R02Annotations` and its CSS module at `apps/moonframe/templates/visual-reference/r02-annotations.tsx` and `.module.css`. Caller supplies any decorative marks; default output is empty, with no bundled consumer marks. Content is pointer-transparent and hidden from assistive technology as decoration.
-- Dependency `MF-VF-023` is implemented. `git diff --check` passed. Per runner override, no package-manager commands, validators, test suites, typecheck, build, browser captures, or reference comparison were run. Human review, rights clearance, and acceptance remain pending.
+- Dependency `MF-VF-023` is implemented. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no package-manager commands, validators, test suites, typecheck, build, browser captures, or reference comparison were run. Human review, rights clearance, and acceptance remain pending.
 - Rollback: remove the component and stylesheet and restore the matching backlog/TODO/ledger entry.
 - Counts: prior live summary 123/488 implemented-or-captured, 365 planned, 0 explicitly blocked; now 124/488, 364 planned, 0 explicitly blocked.
 
@@ -1713,7 +1713,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 # MF-VF-108 — Write Moonhalftone visual direction
 
 - Added `docs/visual/skins/moonhalftone.md`, a contract-derived monochrome manga-print recipe and anti-overlap direction. SHA-256: `880C06AE626BC3E181513BF1BCC9325F1C9256F461E49C477586996F2776F90F`.
-- Dependency `MF-VF-015` is implemented. Backlog status: `implemented`. `git diff --check` passed. Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot/rendering, or human review run. Rights and acceptance remain pending.
+- Dependency `MF-VF-015` is implemented. Backlog status: `implemented`. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot/rendering, or human review run. Rights and acceptance remain pending.
 - Rollback: remove the brief and restore MF-VF-108 to planned in the backlog; remove matching TODO and ledger entries. No commit created; host runner owns verification and checkpoint.
 
 ## MF-VF-100 — Draw Moonzine edition badge
@@ -2208,7 +2208,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added original optional `assets/source/skins/mooncrash/pattern.svg`, with sparse diagonal hatching confined to two corner groups and an open center. It carries no essential content and is not integrated into interactive surfaces.
 - SHA-256: `B136849E1E436B2B0FA57D91E73240FB049AE55B97AF6FB211206669593ED553`.
 - Dependency MF-VF-156 is implemented. Backlog status: `implemented`.
-- Source inspection and `git diff --check` passed. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or human review were run; host runner owns verification/checkpoint.
+- Source inspection and Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or human review were run; host runner owns verification/checkpoint.
 - Original generic artwork authored for Moonframe; no external imagery used. Optical review, rights review, and acceptance remain pending. No commit created.
 - Rollback: remove the SVG, restore MF-VF-158 to planned, and remove matching TODO/ledger evidence.
 
@@ -2284,7 +2284,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Added a skin-scoped industrial double-plate frame to existing stat, empty-state, callout, search, and timeline icon wrappers in `src/styles.css`; glyphs and ARIA semantics are unchanged.
 - Dependencies MF-VF-156, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`.
-- Stylesheet SHA-256: `E4D2E78D95AEA66DDDB8345FE872DB3C79A011BC06B8E3FE47A79ECB9A11C9A9`. `git diff --check` passed.
+- Stylesheet SHA-256: `E4D2E78D95AEA66DDDB8345FE872DB3C79A011BC06B8E3FE47A79ECB9A11C9A9`. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes.
 - Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser render, screenshots, or human review. Host runner owns applicable checks/checkpoint. Responsive and contrast review, rights review, and acceptance remain pending.
 - Rollback: remove the new Mooncrash selector block and restore the backlog row; remove matching TODO/ledger evidence. No commit created.
 ## MF-PF-020 — Canonical 78×30 token source-value decision remains externally blocked
@@ -2293,3 +2293,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Exact unmet dependency: an authorized maintainer must approve or defer canonical 78×30 source-value production with migration/versioning. No owner decision or token values were fabricated. Dependent MF-PF-021/MF-PF-022 are not made newly eligible by this record.
 - Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or commit run; host runner owns verification and checkpoint.
 - Rollback: restore the MF-PF-020 backlog row/evidence to its previous wording and remove this ledger entry.
+## MF-VF-164 — Mooncrash art-off and reduced-motion fallback
+
+- Starting HEAD: `62f1c09` (clean worktree).
+- Updated `apps/moonframe/app/(lab)/lab/lab.css` to remove Mooncrash's generated navigation rack indices only when decoration is disabled. Added a browser regression in `tests/browser/skins.spec.js` for ornament removal, retained heading/navigation/action visibility, keyboard focus, and reduced-motion state.
+- Dependencies MF-VF-158, MF-VF-159, and MF-VF-163 are implemented. Backlog status: `implemented`.
+- SHA-256: `lab.css` `BD00D96C78737C8189772D88C4760F595C4E4B40E2352CADF6A4E1E37E8410C8`; `skins.spec.js` `5E25458801C327A71F7C61EB263C6809DA55198508B239FA6446760CC07C70C0`. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Mooncrash decoration-off removes rack indices' --workers=1` passed 1/1 after correcting the selector to target the root skin attribute. The first full suite exposed that mismatch; the corrected focused run passes.
+- Runner override honored: no browser suite, validators, package-manager commands, typecheck, build, captures, or commit run. Host runner owns verification/checkpoint. No human review, rendered evidence, or acceptance claimed.
+- Rollback: remove the scoped CSS rule and browser test, restore MF-VF-164 to planned, and remove matching TODO/backlog evidence.

@@ -631,6 +631,32 @@ test('Moonzine decoration-off preserves content and reduced-motion keeps editori
   expect(await nav.evaluate(node => getComputedStyle(node).transform)).toBe(navTransformBefore);
 });
 
+test('Mooncrash decoration-off removes rack indices without hiding navigation or actions', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  await page.goto('/lab?skin=mooncrash');
+  await page.getByLabel('Motion', { exact: true }).selectOption('reduced');
+
+  const root = page.locator('.mf-root');
+  const shell = page.locator('.mf-shell');
+  const nav = page.locator('.mf-nav-item').first();
+  const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
+  const navIndexBefore = await nav.evaluate(node => getComputedStyle(node, '::before').content);
+  expect(navIndexBefore).not.toBe('none');
+
+  await decorationToggle.check();
+  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(nav).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
+  expect(await nav.evaluate(node => getComputedStyle(node, '::before').content)).toBe('none');
+
+  await decorationToggle.focus();
+  await expect(decorationToggle).toBeFocused();
+  await expect(root).toHaveAttribute('data-motion', 'reduced');
+  const durations = await shell.evaluate(node => getComputedStyle(node).transitionDuration.split(',').map(value => Number.parseFloat(value)));
+  expect(durations.every(duration => duration === 0)).toBe(true);
+});
+
 test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {
   const blockedRequests = [];
   await page.route(/\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i, async route => {

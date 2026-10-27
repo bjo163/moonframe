@@ -207,6 +207,8 @@ button svg, a svg { flex-shrink: 0; }
 .mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-sidebar::after { display: none; }
 .mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card { box-shadow: none; }
 .mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card:nth-of-type(even) { translate: none; }
+/* Mooncrash rack indices are optional decoration; keep the navigation labels and targets intact. */
+.mf-root[data-skin="mooncrash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before { content: none !important; }
 /* Keep Moonglitch's diagnostic icon framing optional with the other artwork. */
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-nav-item > svg,
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-button > svg,
