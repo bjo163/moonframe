@@ -2360,3 +2360,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Identified local navigation/dialog/demo callbacks and inert controls; source inspection only. Backlog status: `captured`; no code behavior changed, browser interaction review or acceptance claimed.
 - Runner override honored: no package-manager commands, validators, suites, typecheck, build, or commit. Host runner owns verification and checkpoint.
 - Rollback: restore MF-VF-262 to planned and remove the audit document and matching TODO/ledger evidence.
+## MF-VF-181 — Moonscrawl motif SVG
+
+- Starting HEAD: `388a95762d773f87449a16b86dff7fc142eddae0` (`main`).
+- Dependency MF-VF-180 is implemented. Added original static `assets/source/skins/moonscrawl/motif.svg`: a monochrome loose curved hand-annotation arrow with an open arrowhead, authored from basic vector geometry for the sketchbook visual direction. SHA-256: `9F5A569A7BDD0AB2A06D96D0386417FFA5477577A61D2807A97B04727B42E0DE`.
+- Backlog status: `implemented`. Source inspection and digest calculation only; runner override honored. No validators, package-manager commands, suites, typecheck, build, render, screenshot, or commit run. Host runner owns verification/checkpoint. No rights clearance, optical/human review, or acceptance claimed.
+- Rollback: remove the SVG, restore MF-VF-181 to planned in backlog and remove matching TODO/ledger evidence.

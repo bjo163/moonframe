@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonscrawl hand annotation motif</title>
+  <desc id="desc">A loose curved arrow with a small open arrowhead, drawn as a notebook margin annotation.</desc>
+  <path d="M12 49C18 43 19 34 26 27c6-6 13-8 22-7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m39 14 10 6-8 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 49c2-2 4-3 7-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+</svg>
