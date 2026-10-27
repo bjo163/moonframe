@@ -2506,3 +2506,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - MF-PF-020 remains unchecked with status blocked-external-approval. Completion requires an authorized maintainer decision on the production source-value scope and migration/versioning. No values, approval, or dependent readiness were invented.
 - Documentation/status evidence only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, or commit run; host runner owns verification/checkpoint.
 - Rollback: restore MF-PF-020 to planned, restore the pre-blocker summary, and remove matching TODO and ledger notes.
+## MF-VF-198 — Moonraw navigation, layout, and typography
+
+- Starting HEAD: `b3c97466b7e27b4da1265d8bd58a1c5dad8ac417` (`main`, clean worktree).
+- Dependency MF-VF-192 is implemented.
+- Added Moonraw-specific open layout spacing, current-page structural navigation emphasis, constrained display-heading measure, tabular numerals, and narrow-screen spacing rules in `src/styles.css`; shared DOM, semantic active-state attributes, behavior, and status meaning remain unchanged.
+- Stylesheet SHA-256: `c02e82f1f892d7e05a836e5732434934b21aa0f7263948dc742dba53f75567a8`.
+- Backlog status: `implemented`. Source/class inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, browser rendering/capture, or commit run. Host runner owns verification/checkpoint; responsive rendering, contrast and human review/acceptance remain pending.
+- Rollback: remove the MF-VF-198 rules, restore the backlog row to planned, and remove matching TODO and ledger evidence.
