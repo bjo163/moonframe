@@ -2266,3 +2266,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Mobile capture: `artifacts/skins/moonriot-light-360x800-default.png`; SHA-256 `870d94dfceff0df78c97cbf4cafae116670bb7716b08df173112767f98b3e5be`.
 - Both `.provenance.json` sidecars validate their PNG digest, viewport, locale, direction, UTC/frozen time, loaded fonts, and source fingerprint `dd5153a4c575f092997b51f7e5796402ff5acd2c4103bb4a27293f9c7f4b1fc0` at source commit `3fe280c6ebfa32db9f641ea1c2acc293600844d0`.
 - Status: `captured`. Human visual review, rights review, and acceptance are not claimed. Rollback: remove the four capture/provenance files and restore MF-VF-093 to planned.
+# MF-VF-161 — Mooncrash semantic icon frames
+
+- Added a skin-scoped industrial double-plate frame to existing stat, empty-state, callout, search, and timeline icon wrappers in `src/styles.css`; glyphs and ARIA semantics are unchanged.
+- Dependencies MF-VF-156, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`.
+- Stylesheet SHA-256: `E4D2E78D95AEA66DDDB8345FE872DB3C79A011BC06B8E3FE47A79ECB9A11C9A9`. `git diff --check` passed.
+- Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser render, screenshots, or human review. Host runner owns applicable checks/checkpoint. Responsive and contrast review, rights review, and acceptance remain pending.
+- Rollback: remove the new Mooncrash selector block and restore the backlog row; remove matching TODO/ledger evidence. No commit created.

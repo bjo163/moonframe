@@ -845,6 +845,14 @@
 [data-skin="mooncrash"] .mf-card-title { text-transform: uppercase; letter-spacing: .08em; }
 [data-skin="mooncrash"] .mf-button { border: 2px solid var(--mf-border); box-shadow: inset 0 -3px 0 #0002; font-weight: 800; }
 [data-skin="mooncrash"] .mf-table td { border-inline-end: 1px solid var(--mf-border); }
+[data-skin="mooncrash"] .mf-stat-header .mf-icon,
+[data-skin="mooncrash"] .mf-empty-icon,
+[data-skin="mooncrash"] .mf-callout-icon,
+[data-skin="mooncrash"] .mf-search-icon,
+[data-skin="mooncrash"] .mf-timeline-marker { display: inline-grid; place-items: center; min-inline-size: 1.75rem; min-block-size: 1.75rem; border: 2px solid var(--mf-border); border-radius: 2px; box-shadow: inset 0 0 0 2px var(--mf-surface); font-weight: 800; }
+[data-skin="mooncrash"] .mf-empty-icon { margin-block-end: .75rem; padding: .35rem; }
+[data-skin="mooncrash"] .mf-callout-icon,
+[data-skin="mooncrash"] .mf-timeline-marker { inline-size: 1.75rem; }
 
 /* 09 / Moonpanel — continuous framed grid and attached caption bars. */
 [data-skin="moonpanel"] { --mf-bg: #bec8df; --mf-surface: #ffffff; --mf-surface-raised: #e2e8f5; --mf-text: #26304b; --mf-muted: #546382; --mf-border: #3e4d70; --mf-accent: #344f9d; --mf-accent-text: #ffffff; --mf-radius: 0px; --mf-shadow: none; --mf-display: "Arial Black", system-ui, sans-serif; }
