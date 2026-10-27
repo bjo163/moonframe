@@ -2394,8 +2394,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run; host runner owns verification and checkpoint. No backend, shipped product, human review, or acceptance is claimed.
 - Rollback: remove the example document, restore MF-VF-266 to planned, and remove matching TODO and ledger evidence. No commit created.
 
-## MF-VF-094 — Moonriot dark capture invocation blocker
+## MF-VF-094 — Moonriot dark desktop and mobile captures
 
-- Dependencies are implemented; task requires real dark 1440px and 360px browser captures with fixture provenance.
-- Invocation override forbids package-manager commands and browser/test runs, so captures and hashes could not be produced. No package commands, tests, validators, typecheck, build, or browser checks run.
-- Backlog temporarily records locked for this invocation only. Retry when the host runner permits browser capture; restore to planned if capture tooling is still unavailable. No artifact or human review claimed.
+- Dependencies MF-VF-017, MF-VF-019, MF-VF-027, MF-VF-028, MF-VF-090, MF-VF-091, and MF-VF-092 are implemented.
+- `pnpm exec playwright test tests/browser/skins.spec.js -g "moonriot dark: rendered" --workers=1` — exit 0, 1 passed; captured fixed-fixture dark desktop and mobile screenshots.
+- `artifacts/skins/moonriot-dark-1440x960-default.png`: SHA-256 `50d40c4210dc9b4cba3b3565eed3a8c3c1cc4628952717dc613cea7adf7ce022`.
+- `artifacts/skins/moonriot-dark-360x800-default.png`: SHA-256 `c52227f62fa14f4275ceb4028fee49fa53d0acdca98c0e38bfe0f88858f4f8aa`.
+- Both provenance sidecars record source commit `7e3a624844f667c8165276daaac556debf8bdb65`, source fingerprint `ae55f4f208406c0cf8a13476d0dc2b7bc7f9b31f0cc29ba7e1bfed239e847af9`, the fixed Northstar dashboard fixture, Chromium 156, en-US, UTC, and loaded fonts. Backlog status: `captured`; human visual review and acceptance remain pending.
+- Rollback: remove these four evidence files, restore MF-VF-094 to planned, and remove matching TODO/ledger evidence.
