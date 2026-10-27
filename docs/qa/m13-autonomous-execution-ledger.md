@@ -2380,3 +2380,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `817FFC50D71FE632F08734F283CC4BAD1777C6D6EB130C488EC6DDA7BFE5CC03`.
 - Backlog status: `implemented`. Source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG security validation, rendering, screenshot capture, or commit run; host runner owns checks and checkpoint. Rights/optical review and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-183 to planned, and remove matching TODO and ledger evidence.
+# MF-VF-184 — Moonscrawl edition badge SVG
+
+- Starting HEAD: `407e3b8ae3e84f9c5781034b6a810c0b89d60992` (`main`; no tracked worktree changes reported).
+- Dependencies MF-VF-180 and MF-VF-039 are implemented. Added original static `assets/source/skins/moonscrawl/edition.svg`, an outlined notebook label naming Moonscrawl as a Moonframe edition rather than a separate company.
+- SHA-256: `CEAFD45A588F797C9AF776BFA237D0418D949A52350E59C594641F7B9775BE5C`.
+- Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, capture, or human review run under runner override. Host runner owns verification/checkpoint. Optical/rights review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-184 to planned in the visual backlog and remove matching TODO and ledger evidence.

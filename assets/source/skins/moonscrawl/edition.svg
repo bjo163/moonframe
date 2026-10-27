@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 32" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonscrawl, a Moonframe edition</title>
+  <desc id="desc">A hand-drawn notebook label identifying Moonscrawl as a Moonframe edition.</desc>
+  <path d="M3 5c21-2 63-2 89 1l-2 21c-26 3-62 2-85 0L3 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M6 7c24-1 59-1 83 1M7 25c25 1 57 2 80 0" stroke="currentColor" stroke-width=".7" opacity=".55"/>
+  <text x="48" y="14" fill="currentColor" text-anchor="middle" font-family="ui-monospace, monospace" font-size="6" letter-spacing="1">MOONSCRAWL</text>
+  <text x="48" y="21" fill="currentColor" text-anchor="middle" font-family="ui-monospace, monospace" font-size="4" letter-spacing=".55">A MOONFRAME EDITION</text>
+</svg>
