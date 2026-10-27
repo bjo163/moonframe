@@ -2250,3 +2250,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Recount: 168/292 foundation + 148/168 reference + 28/28 preflight = 344/488 checked. Checked does not imply human review or acceptance.
 - Rollback: remove the four scoped CSS rules, restore MF-VF-092 to planned, and remove this ledger/TODO evidence. No commit created.
 # Live execution update (2026-10-27, MF-VF-151): Added Moonink-specific data-table, form-field/control, and dialog recipes to `src/styles.css`. The table uses ruled rows; fields receive a margin rail and underlined controls; dialogs use a quiet side rail. All selectors are scoped to Moonink and shared component behavior/semantic status colors remain unchanged. Dependencies MF-VF-144 and MF-VF-150 are implemented. Status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser captures, or human review run. Responsive rendering, contrast, and acceptance remain pending; host runner owns verification/checkpoint. Stylesheet SHA-256 `45BFC0AC8BD4D17D38007B24559F94275C2FD98C345756EBDAF4DC9711F58E45`. No commit created. Rollback: remove the MF-VF-151 CSS block and restore the task row; remove corresponding TODO and ledger evidence.
+
+## MF-VF-093 — Capture Moonriot light desktop/mobile evidence
+
+- `pnpm exec playwright test tests/browser/skins.spec.js -g "moonriot light: rendered" --workers=1` — exit 0, 1 passed.
+- Desktop capture: `artifacts/skins/moonriot-light-1440x960-default.png`; SHA-256 `571b6f5359b08f350875f3d9d9225ea6143d4d74249bd3fd833e48cccdf3b49b`.
+- Mobile capture: `artifacts/skins/moonriot-light-360x800-default.png`; SHA-256 `870d94dfceff0df78c97cbf4cafae116670bb7716b08df173112767f98b3e5be`.
+- Both `.provenance.json` sidecars validate their PNG digest, viewport, locale, direction, UTC/frozen time, loaded fonts, and source fingerprint `dd5153a4c575f092997b51f7e5796402ff5acd2c4103bb4a27293f9c7f4b1fc0` at source commit `3fe280c6ebfa32db9f641ea1c2acc293600844d0`.
+- Status: `captured`. Human visual review, rights review, and acceptance are not claimed. Rollback: remove the four capture/provenance files and restore MF-VF-093 to planned.
