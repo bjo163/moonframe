@@ -2321,3 +2321,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependencies MF-VF-168, MF-VF-050, and MF-VF-057 are implemented. Backlog status: implemented.
 - Source/class inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering, screenshot capture, or human review run; host runner owns verification/checkpoint. Contrast/responsive review, rights review, and acceptance remain pending.
 - Rollback: remove the six Moonpanel icon selector rules, restore MF-VF-173 to planned, and remove this ledger/TODO evidence. No commit created.
+
+## MF-VF-174 — Moonpanel navigation, layout, and typography
+
+- Dependency MF-VF-168 is implemented.
+- Added scoped panel-inset framing, thick-edge active navigation, condensed uppercase display typography, a two-column panel grid, and a single-column mobile layout to `src/styles.css`. The distinctions are structural and typographic as well as chromatic; shared component markup, keyboard behavior, and ARIA semantics remain unchanged.
+- Source SHA-256: `4879D74E08E0320603913D29C7EEF48060134B513686B1965FA4ED5D1E169824`. `git diff --check` exited 0; Git emitted a line-ending normalization warning.
+- Backlog status: `implemented`. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or human review run; host runner owns verification/checkpoint. Responsive rendering, contrast, human review, and acceptance remain pending. No commit created.
+- Rollback: remove the MF-VF-174 CSS block, restore the backlog row to planned, and remove this TODO/ledger evidence.
