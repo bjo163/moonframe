@@ -2402,3 +2402,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - `artifacts/skins/moonriot-dark-360x800-default.png`: SHA-256 `c52227f62fa14f4275ceb4028fee49fa53d0acdca98c0e38bfe0f88858f4f8aa`.
 - Both provenance sidecars record source commit `7e3a624844f667c8165276daaac556debf8bdb65`, source fingerprint `ae55f4f208406c0cf8a13476d0dc2b7bc7f9b31f0cc29ba7e1bfed239e847af9`, the fixed Northstar dashboard fixture, Chromium 156, en-US, UTC, and loaded fonts. Backlog status: `captured`; human visual review and acceptance remain pending.
 - Rollback: remove these four evidence files, restore MF-VF-094 to planned, and remove matching TODO/ledger evidence.
+# MF-VF-116 — Moonhalftone decoration-off and reduced-motion fallback
+
+- Starting HEAD: `338f269` (`main`, clean worktree).
+- Added skin-scoped rules to `apps/moonframe/app/(lab)/lab/lab.css` to remove optional icon frames, screentone backgrounds, shadows, and filters when Moonhalftone decoration is off; the reduced-motion media rule disables smooth scrolling. Icons, labels, and controls remain in place.
+- Dependencies MF-VF-110, MF-VF-111, and MF-VF-115 are implemented. Backlog status: `implemented`.
+- Source SHA-256: `0840A641D8A152582809412B6DCE657DD9F9C787AEE8F1A99528C648290CECFE`; browser-test SHA-256: `5601376242B6F726375E6CC6DC4AAD5D443B0FBD724353DDB4E25410A07D92E4`. `pnpm exec playwright test tests/browser/skins.spec.js -g 'Moonhalftone decoration-off removes screentone icon frames' --workers=1` passed 1/1. The first full browser run passed 81 tests but hit an isolated 30-second timeout in the legacy defaults test; host runner retries the full suite. Human review and acceptance remain pending.
+- Rollback: remove the Moonhalftone fallback block from `lab.css`, restore MF-VF-116 to planned, and remove its matching TODO and ledger evidence.
