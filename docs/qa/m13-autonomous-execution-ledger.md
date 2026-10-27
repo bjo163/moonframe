@@ -2418,3 +2418,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Rollback: remove the SVG, restore MF-VF-196 to planned in the backlog, and remove its TODO and ledger entries.
 
 - SHA-256: `835C93725C28FBA2742E0D4856FE98C8F05DEFCBB647B3D59869AF8002C070A9`.
+# MF-VF-267 — Ontology Explorer consumer UI seam
+
+- Starting HEAD: `d2d5a4139bfea52d5a9d49995bab9d913464c426` (`main`; no preexisting worktree changes).
+- Dependency MF-VF-031 is implemented. Added `docs/examples/moonwitness-ontology-explorer.md` describing optional graph-renderer integration, consumer-owned ontology meaning/data, and accessible DOM alternatives.
+- Backlog status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, screenshot capture, or commit run; host runner owns verification/checkpoint. No shipped graph renderer, human review, or acceptance claimed.
+- Rollback: remove the example document, restore MF-VF-267 to planned, and remove matching backlog/TODO/ledger evidence.
