@@ -2484,3 +2484,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, SVG renderer, screenshots, or commit run; host runner owns checks and checkpoint. Optical/rights review and acceptance remain pending.
 - Current checkbox recount: 374/488 checked (198/292 foundation, 149/168 reference, 27/28 preflight); 114 unchecked. Checked does not imply review or acceptance.
 - Rollback: remove the SVG, restore MF-VF-206 to planned, and remove matching TODO/backlog/ledger evidence.
+# MF-VF-255 — Expose both light/dark real SkinCard previews
+
+- Starting HEAD: `5fc1d17` (clean worktree).
+- Dependency MF-VF-031 is implemented. Updated `apps/moonframe/components/site/SkinCard.tsx` with per-card Light/Dark controls. The same workspace dashboard sample remains mounted as content under the selected skin and mode; the existing `mode` prop initializes the selection. Controls report `aria-pressed` and use the visible “Preview mode” label.
+- Backlog status: `implemented`. Source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser rendering/capture, or commit run; host runner owns checks and checkpoint. Responsive behavior, visual review, and acceptance remain pending.
+- Rollback: revert the SkinCard change, restore MF-VF-255 to planned, and remove matching TODO/backlog/ledger evidence.

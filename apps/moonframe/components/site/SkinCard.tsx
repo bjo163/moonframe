@@ -26,17 +26,18 @@ export function SkinCard({
   showActions?: boolean;
 }) {
   const globalTheme = useTheme();
+  const [previewMode, setPreviewMode] = React.useState<'light' | 'dark'>(mode);
   const isCurrent = globalTheme.skin === skin.id;
 
   return (
     <div className="mf-skin-showcase-item">
-      <ThemeProvider defaultSkin={skin.id} defaultMode={mode} storageKey={null}>
+      <ThemeProvider key={`${skin.id}-${previewMode}`} defaultSkin={skin.id} defaultMode={previewMode} storageKey={null}>
         <Card className="mf-skin-preview-card">
           <CardHeader>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem' }}>
               <Badge variant="primary">{skin.territory}</Badge>
               <span style={{ fontSize: '0.75rem', color: 'var(--mf-muted)', fontFamily: 'ui-monospace, monospace' }}>
-                {skin.id} · {mode}
+                {skin.id} · {previewMode}
               </span>
             </div>
             <CardTitle style={{ marginTop: '0.5rem' }}>{skin.name}</CardTitle>
@@ -67,6 +68,11 @@ export function SkinCard({
               <strong>Geometry:</strong> {skin.geometry}
             </div>
           </CardContent>
+          <CardFooter style={{ justifyContent: 'flex-start', gap: '0.5rem', paddingTop: 0 }}>
+            <span id={`skin-preview-mode-${skin.id}`} style={{ fontSize: '0.75rem', color: 'var(--mf-muted)' }}>Preview mode</span>
+            <Button size="sm" variant={previewMode === 'light' ? 'primary' : 'secondary'} aria-pressed={previewMode === 'light'} aria-labelledby={`skin-preview-mode-${skin.id}`} onClick={() => setPreviewMode('light')}>Light</Button>
+            <Button size="sm" variant={previewMode === 'dark' ? 'primary' : 'secondary'} aria-pressed={previewMode === 'dark'} aria-labelledby={`skin-preview-mode-${skin.id}`} onClick={() => setPreviewMode('dark')}>Dark</Button>
+          </CardFooter>
           {showActions && (
             <CardFooter style={{ justifyContent: 'space-between' }}>
               <Button

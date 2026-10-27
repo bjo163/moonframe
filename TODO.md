@@ -224,7 +224,7 @@
 | C · one master logo production | `MF-VF-033…049` | 17 | `5 implemented · 1 captured · 1 blocked · 10 pending` | Original A/B/C SVG masters, optically tested mark, wordmark, favicon |
 | D · canonical semantic SVG icon glyphs | `MF-VF-050…071` | 22 | `11 implemented / 11 planned` | Search/close/menu/chevron/arrow/plus/check/warning/external-link; ARIA meanings unchanged |
 | E · fifteen distinct skin grammar + artwork | `MF-VF-072…251` | 180 | `planned` | For **each skin**, 12 smallest tasks: brief, motif vector, pattern, hero illustration, edition badge, icon wrapper, nav/type, table/form/dialog, art-off, light capture, dark capture, human anti-overlap |
-| F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `planned` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
+| F · marketplace and consumer-adoption proof | `MF-VF-252…269` | 18 | `in progress` | Real preview thumbnails, two-skin compare, truthful template/auth demo states, Moonwitness consumer seams |
 | G · final specimen/QA/human review | `MF-VF-270…292` | 23 | `15 implemented · 8 pending` | 9 frozen reference contexts, close-family reviews, real A11y/rights/release gates |
 | **NEW WAVE TOTAL (frozen baseline)** | **`MF-VF-001…292`** | **292** | **68 implemented/captured / 224 planned at plan freeze** | **Live checklist counts are recorded above; no implied final acceptance** |
 
@@ -234,6 +234,8 @@
 2. **Pilot fidelity:** `MF-VF-017…032` same-content reproducible Skin Lab, then the per-skin tasks for **Classic, Moonpunk, Moonzine and Moonledger** in the detailed backlog. Do not start full 105-pair approval based only on metadata.
 3. **Micro asset production:** `MF-VF-033…049` one brand mark and variant/review gates, `MF-VF-050…071` one functional original icon SVG per task, followed by the per-skin motif/pattern/hero/edition label tasks. All visual/source files require rights, safe-SVG and mono/light/dark checks; no automatic approval or external font delivery.
 4. **Showcase acceptance:** only after actual previews exist, `MF-VF-252…292` makes gallery/template previews visually useful, checks same-content pair differences, and documents remaining blocked design references.
+
+**Live execution update (2026-10-27, MF-VF-255):** Added per-card Light/Dark controls to `apps/moonframe/components/site/SkinCard.tsx`; each selected skin retains identical dashboard sample content while its nested ThemeProvider switches mode. Controls expose pressed state and an associated “Preview mode” label. Dependency MF-VF-031 is implemented. Source inspection only; runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run. Responsive rendering and acceptance remain pending; host runner owns verification/checkpoint. Status `implemented`; no commit created. See the M13 execution ledger.
 
 **AI execution rule:** pick exactly *one* `MF-VF-###` microtask, inspect current `main`, follow its scope/dependencies/acceptance/checks, make one bounded change, run relevant tests, attach actual SHA/evidence and update status without overwriting older history. No new branches by habit; no bulk fake GitHub issues, auto-approval, npm publication or rights assumption. The skin, token, component, asset and QA canonical references remain in their existing contracts/Bibles.
 
