@@ -205,6 +205,8 @@
 
 **Live M13 checklist count (2026-10-27):** 182/292 foundation visual + 148/168 reference + 27/28 preflight = **357/488 checked**. Checked statuses include implemented/captured and do not imply human review, external rights approval, or acceptance. MF-VF-082 dark captures are recorded with source fingerprint and PNG digests in the detailed backlog and [execution ledger](docs/qa/m13-autonomous-execution-ledger.md). MF-VF-440 records that historical CI runs do not establish current-HEAD readiness; see the [RC evidence ledger](docs/qa/rc-evidence-and-release-ledger.md).
 
+**Live execution update (2026-10-27, MF-VF-262):** Captured a source audit of the template action callsites, classifying navigation, dialogs, demo callbacks, inert controls, and consumer integration seams in [template action audit](docs/qa/template-action-audit.md). Source inspection only; no browser, tests, validators, package-manager commands, typecheck, or build run under runner override. No runtime behavior or human acceptance claimed. Current checklist tally gains one checked task; preceding aggregate is retained as the prior snapshot and is not a fresh full recount.
+
 | Lane | New task IDs | Microtasks | Current status | Execution outcome |
 |---|---|---:|---|---|
 | A · P0 CI truth & evidence | `MF-VF-001…016` | 16 | `16 implemented · 0 pending` | Honest green clean-CI gate + runtime release claims |

@@ -937,9 +937,9 @@
 - [ ] **MF-VF-261 — Add real visual previews to eight starter cards** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/starters/page.tsx`. **Acceptance:** Eight independent screenshots or honest missing labels.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-262 — Find inert buttons in 43 templates** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-262 — Find inert buttons in 43 templates** · **P2** · `captured` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** Audit per action working/demo/integration seam.
-  - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
+  - **Evidence (2026-10-27):** Source audit classifies navigation, local dialog triggers, local demo callbacks, and inert actions with their consumer integration seams in [template action audit](../qa/template-action-audit.md). The source contains inert controls including Reset Avatar, Install with pnpm, Explore 15 Skins, and finance/operations/inventory/security actions without handlers. Source inspection only; no browser interaction review, tests, validators, package-manager commands, typecheck, or build run under runner override. No behavior change or human acceptance claimed. Rollback: restore this row to planned and remove the audit document.
 - [ ] **MF-VF-263 — Label demo auth/OAuth actions as simulated** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** No fake sign-in success claim.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.

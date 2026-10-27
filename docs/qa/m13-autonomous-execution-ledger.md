@@ -2353,3 +2353,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-216 is implemented. Backlog status: `implemented`; source inspection and digest calculation only. `git diff --check` exited 0 (Git reports LF-to-CRLF normalization for the backlog file).
 - Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot, or commit run. Host runner owns verification/checkpoint. SVG security/rendering and optical, rights, human, and acceptance reviews remain pending.
 - Rollback: remove the SVG and restore MF-VF-217 to planned in the backlog and TODO, then remove this ledger entry.
+# MF-VF-262 — Template action audit
+
+- Starting HEAD: `421073f` (`main`, clean worktree).
+- Dependency MF-VF-031 is implemented. Audited action callsites in `apps/moonframe/templates/index.tsx` and recorded behavior classes plus consumer seams in `docs/qa/template-action-audit.md`.
+- Identified local navigation/dialog/demo callbacks and inert controls; source inspection only. Backlog status: `captured`; no code behavior changed, browser interaction review or acceptance claimed.
+- Runner override honored: no package-manager commands, validators, suites, typecheck, build, or commit. Host runner owns verification and checkpoint.
+- Rollback: restore MF-VF-262 to planned and remove the audit document and matching TODO/ledger evidence.
