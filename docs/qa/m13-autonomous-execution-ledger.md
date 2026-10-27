@@ -2329,3 +2329,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source SHA-256: `4879D74E08E0320603913D29C7EEF48060134B513686B1965FA4ED5D1E169824`. `git diff --check` exited 0; Git emitted a line-ending normalization warning.
 - Backlog status: `implemented`. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or human review run; host runner owns verification/checkpoint. Responsive rendering, contrast, human review, and acceptance remain pending. No commit created.
 - Rollback: remove the MF-VF-174 CSS block, restore the backlog row to planned, and remove this TODO/ledger evidence.
+## MF-VF-175 — Moonpanel table, form, and dialog recipes
+
+- Starting HEAD: `2ddd40e1dc9af9465c0a2eaab22707c6ffd3a37f` (worktree had no reported changes at task start).
+- Dependencies MF-VF-168 and MF-VF-174 are implemented. Added Moonpanel-only structural table, field/control, and dialog styles in `src/styles.css`; shared component markup, semantics, sizing, and behavior were not changed.
+- Source SHA-256: `6D7E231BA31E0440273F26CA9243D8EA24AE5DB1D6218FDFC73D72541A2EDD57`. `git diff --check` exited 0; Git reported LF-to-CRLF normalization warning. First full browser run found Moonpanel controls retained a 2px border in forced colors; added an explicit 1px forced-colors override. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'moonpanel (light|dark): rendered' --workers=1` passed 2/2 after the fix. Full suite and final checkpoint are delegated to the host runner.
+- Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or human review run. Host runner owns verification and checkpoint. Responsive/contrast review and acceptance remain pending; no commit created.
+- Rollback: remove the MF-VF-175 selector block, restore the backlog row to planned, and remove this TODO/ledger evidence.

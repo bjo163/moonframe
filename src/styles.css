@@ -939,6 +939,34 @@
   [data-skin="moonpanel"] .mf-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* Moonpanel controls use framed cells and indexed table rules without changing density or semantics. */
+[data-skin="moonpanel"] .mf-table-wrapper { border: 3px solid var(--mf-border); padding: .25rem; }
+[data-skin="moonpanel"] .mf-table th {
+  border-block: 3px solid var(--mf-border);
+  font-family: var(--mf-display);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+[data-skin="moonpanel"] .mf-table td { border-block-end: 2px solid var(--mf-border); }
+[data-skin="moonpanel"] .mf-table tbody tr:nth-child(even) { background: var(--mf-surface-raised); }
+[data-skin="moonpanel"] .mf-field { border-inline-start: 4px solid var(--mf-border); padding-inline-start: .65rem; }
+[data-skin="moonpanel"] .mf-label { font-family: var(--mf-display); font-size: .82rem; letter-spacing: .035em; text-transform: uppercase; }
+[data-skin="moonpanel"] .mf-input,
+[data-skin="moonpanel"] .mf-textarea,
+[data-skin="moonpanel"] .mf-select {
+  border: 2px solid var(--mf-border);
+  box-shadow: inset 0 0 0 2px var(--mf-surface-raised);
+}
+[data-skin="moonpanel"] .mf-input:focus-visible,
+[data-skin="moonpanel"] .mf-textarea:focus-visible,
+[data-skin="moonpanel"] .mf-select:focus-visible { outline-offset: 3px; }
+[data-skin="moonpanel"] .mf-dialog {
+  border: 4px solid var(--mf-border);
+  box-shadow: inset 0 0 0 4px var(--mf-surface-raised), 0 20px 80px #0005;
+}
+[data-skin="moonpanel"] .mf-dialog-header { border-block-end: 3px solid var(--mf-border); padding-block-end: .75rem; }
+[data-skin="moonpanel"] .mf-dialog-title { font-family: var(--mf-display); text-transform: uppercase; }
+
 /* 10 / Moonscrawl — notebook margins, tabs and irregular pencil contours. */
 [data-skin="moonscrawl"] { --mf-bg: #f5efda; --mf-surface: #fffcef; --mf-surface-raised: #eae5cf; --mf-text: #333f51; --mf-muted: #536079; --mf-border: #7c8ca3; --mf-accent: #3d5796; --mf-accent-text: #ffffff; --mf-radius: 1.1rem .3rem .8rem .4rem / .4rem .8rem .35rem 1rem; --mf-shadow: none; --mf-display: "Segoe Print", "Bradley Hand", cursive; }
 [data-skin="moonscrawl"][data-mode="dark"] { --mf-bg: #20252d; --mf-surface: #2b333d; --mf-surface-raised: #3a4551; --mf-text: #fff8dd; --mf-muted: #c8d0d9; --mf-border: #8c9db1; --mf-accent: #b4c9ff; --mf-accent-text: #21365d; }
@@ -1069,6 +1097,7 @@
   [data-skin="moonglitch"] .mf-input, [data-skin="moonglitch"] .mf-select, [data-skin="moonglitch"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
   [data-skin="moonink"] .mf-input, [data-skin="moonink"] .mf-select, [data-skin="moonink"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
   [data-skin="mooncrash"] .mf-input, [data-skin="mooncrash"] .mf-select, [data-skin="mooncrash"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
+  [data-skin="moonpanel"] .mf-input, [data-skin="moonpanel"] .mf-select, [data-skin="moonpanel"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
   .mf-nav-item[aria-current="page"], .mf-tabs-trigger[aria-selected="true"] { outline: 2px solid Highlight; }
   .mf-progress { border: 1px solid CanvasText; }
 }
