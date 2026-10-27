@@ -1,3 +1,10 @@
+## MF-VF-186 — Moonscrawl navigation, layout, and typography
+
+- Starting HEAD: `1a484824835a51a6f1147188f422c8d72cba1cee` (`main`, clean worktree).
+- Added Moonscrawl-scoped notebook navigation spacing and slight alternating rotations, handwritten sidebar/hero/card headings, and a dashed header separator in `src/styles.css`. Shared navigation markup and behavior are unchanged. Dependency MF-VF-180 is implemented.
+- Stylesheet SHA-256: `EEEF13C86BDD6FE1F174D2CE1E8858F95808AA1BC8B73B33FDDC6692E73F4088`. Source inspection and `git diff --check` passed. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, browser render, captures, or commit. Host runner owns verification/checkpoint; responsive/contrast and human review/acceptance remain pending.
+- Backlog count after task: 369/488 checked (194/292 foundation, 148/168 reference, 27/28 preflight); 119 remain unchecked, including explicitly blocked work. Checkbox does not imply acceptance. Rollback: remove the eight MF-VF-186 rules and restore the task row and matching TODO evidence.
+
 ## MF-VF-163 — Mooncrash table, form, and dialog recipes
 
 - Starting HEAD: `1e714a247c10f60e1d16c3be973a80b430ec6087` (worktree clean).

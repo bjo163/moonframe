@@ -974,6 +974,14 @@
 [data-skin="moonscrawl"] .mf-sidebar { background: transparent; border-inline-end: 3px double var(--mf-border); }
 [data-skin="moonscrawl"] .mf-main { background-image: linear-gradient(transparent 31px, color-mix(in srgb, var(--mf-border) 25%, transparent) 32px); background-size: 100% 32px; }
 [data-skin="moonscrawl"] .mf-nav-item { font-family: var(--mf-display); border-block-end: 1px solid var(--mf-border); border-radius: .6rem .6rem 0 0; }
+[data-skin="moonscrawl"] .mf-nav { display: grid; gap: .35rem; padding-inline: .65rem; }
+[data-skin="moonscrawl"] .mf-nav-item { min-block-size: 2.75rem; padding: .55rem .7rem .45rem; text-align: start; transform: rotate(-.35deg); }
+[data-skin="moonscrawl"] .mf-nav-item:nth-child(even) { transform: rotate(.3deg); }
+[data-skin="moonscrawl"] .mf-sidebar h2,
+[data-skin="moonscrawl"] .mf-sidebar h3 { font-family: var(--mf-display); font-weight: 600; text-decoration: underline; text-decoration-style: wavy; text-underline-offset: .3em; }
+[data-skin="moonscrawl"] .mf-header { border-block-end: 1px dashed var(--mf-border); padding-block-end: .8rem; }
+[data-skin="moonscrawl"] .mf-hero h1 { font-family: var(--mf-display); line-height: 1.15; }
+[data-skin="moonscrawl"] .mf-card-title { font-family: var(--mf-display); }
 [data-skin="moonscrawl"] .mf-hero { border: 0; border-inline-start: 3px solid var(--mf-accent); }
 [data-skin="moonscrawl"] .mf-hero h1 { letter-spacing: -.04em; font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; }
 [data-skin="moonscrawl"] .mf-card { border: 2px solid var(--mf-border); }
