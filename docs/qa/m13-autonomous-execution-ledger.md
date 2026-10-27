@@ -2469,3 +2469,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Backlog status: `implemented`. Source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, screenshot, or human review ran. Host runner owns verification and checkpoint. Optical/rights review and acceptance remain pending.
 - SHA-256: `67443a5d48e7e909b9ef1e63d6053b9c576740d514c19b89093b71221a3bb98b`.
 - Rollback: remove the SVG, restore MF-VF-205 to planned in the visual backlog, and remove the matching TODO and ledger entries.
+# MF-VF-206 — Moonchrome decorative pattern SVG
+
+- Starting HEAD: `b31fa736aa9f9f2b975b92ca70076cc85cf1ec61` (clean worktree).
+- Dependency MF-VF-204 is implemented. Added original static `assets/source/skins/moonchrome/pattern.svg`: a monochrome contour-line and registration-mark pattern intended only for optional noninteractive margins. It uses `currentColor`; title/description are included; no external resources, scripts, event handlers, or essential text.
+- SHA-256: `8dfb0995dc695a7edc5e249475234b044356efe750d929716cb7a3e6627d40d7`. Backlog status: `implemented`.
+- Source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, SVG renderer, screenshots, or commit run; host runner owns checks and checkpoint. Optical/rights review and acceptance remain pending.
+- Current checkbox recount: 374/488 checked (198/292 foundation, 149/168 reference, 27/28 preflight); 114 unchecked. Checked does not imply review or acceptance.
+- Rollback: remove the SVG, restore MF-VF-206 to planned, and remove matching TODO/backlog/ledger evidence.

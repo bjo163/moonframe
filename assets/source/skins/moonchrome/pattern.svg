@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonchrome margin highlight</title>
+  <desc id="desc">A restrained sequence of metallic contour lines and registration marks for optional noninteractive margins.</desc>
+  <path d="M0 12H320M0 84H320" stroke="currentColor" stroke-opacity=".32" stroke-width="1"/>
+  <path d="M12 8V16M28 10V14M292 10V14M308 8V16M12 80V88M28 82V86M292 82V86M308 80V88" stroke="currentColor" stroke-opacity=".48" stroke-width="1"/>
+  <path d="M44 12H276M44 84H276" stroke="currentColor" stroke-opacity=".16" stroke-width="1" stroke-dasharray="2 6"/>
+</svg>
