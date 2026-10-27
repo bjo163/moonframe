@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonraw — Moonframe edition</title>
+  <desc id="desc">An open, minimalist edition label built from a baseline, a single exposed frame, and direct typographic strokes.</desc>
+  <path fill="none" stroke="#20252b" stroke-width="3" d="M3 3v58h234M12 12v40h34M12 32h34M12 52h34"/>
+  <path fill="#20252b" d="M62 15h164v6H62zM62 27h126v4H62zM62 38h148v4H62zM62 49h91v3H62z"/>
+</svg>

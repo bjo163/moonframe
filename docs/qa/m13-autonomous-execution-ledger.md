@@ -2409,3 +2409,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependencies MF-VF-110, MF-VF-111, and MF-VF-115 are implemented. Backlog status: `implemented`.
 - Source SHA-256: `0840A641D8A152582809412B6DCE657DD9F9C787AEE8F1A99528C648290CECFE`; browser-test SHA-256: `5601376242B6F726375E6CC6DC4AAD5D443B0FBD724353DDB4E25410A07D92E4`. `pnpm exec playwright test tests/browser/skins.spec.js -g 'Moonhalftone decoration-off removes screentone icon frames' --workers=1` passed 1/1. The first full browser run passed 81 tests but hit an isolated 30-second timeout in the legacy defaults test; host runner retries the full suite. Human review and acceptance remain pending.
 - Rollback: remove the Moonhalftone fallback block from `lab.css`, restore MF-VF-116 to planned, and remove its matching TODO and ledger evidence.
+## MF-VF-196 — Moonraw edition badge
+
+- Starting HEAD: `a3deac773faecfc005be479e483dd98e6afde556` (worktree clean).
+- Added original static `assets/source/skins/moonraw/edition.svg`, an open baseline/frame label identifying Moonraw as a Moonframe edition; no consumer brand symbol, external asset, or reference imagery used.
+- Dependencies MF-VF-192 and MF-VF-039 are implemented. Backlog status: `implemented`.
+- Source/document inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG security validation, rendering, screenshot capture, or commit run; host runner owns applicable verification and checkpoint. Optical/rights review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-196 to planned in the backlog, and remove its TODO and ledger entries.
+
+- SHA-256: `835C93725C28FBA2742E0D4856FE98C8F05DEFCBB647B3D59869AF8002C070A9`.
