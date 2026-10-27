@@ -1,3 +1,10 @@
+## MF-VF-193 — Moonraw construction mark
+
+- Starting branch: `main`; the initial `git status --short` was empty. Dependency MF-VF-192 is implemented.
+- Added original static `assets/source/skins/moonraw/motif.svg`: a monochrome rigid baseline with open registration brackets, plus SVG title and description. SHA-256: `611933b28f8a33523a9d102b4729d0c1f758d6b7fec6a2fd84cac1a7f4d39cbf`.
+- Backlog status: `implemented`. Source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG rendering/security validation, browser capture, or commit run. Host runner owns verification/checkpoint. Rights/optical review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-193 to planned, and remove its TODO/backlog/ledger evidence.
+
 ## MF-VF-186 — Moonscrawl navigation, layout, and typography
 
 - Starting HEAD: `1a484824835a51a6f1147188f422c8d72cba1cee` (`main`, clean worktree).

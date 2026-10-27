@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-labelledby="title desc">
+  <title id="title">Moonraw construction mark</title>
+  <desc id="desc">A rigid baseline interrupted by two open registration brackets.</desc>
+  <path d="M8 40H152M16 8V32H40M144 8V32H120M52 8V40M108 8V40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+</svg>
