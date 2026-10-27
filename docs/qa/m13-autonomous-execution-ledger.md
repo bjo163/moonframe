@@ -2490,3 +2490,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-031 is implemented. Updated `apps/moonframe/components/site/SkinCard.tsx` with per-card Light/Dark controls. The same workspace dashboard sample remains mounted as content under the selected skin and mode; the existing `mode` prop initializes the selection. Controls report `aria-pressed` and use the visible “Preview mode” label.
 - Backlog status: `implemented`. Source inspection only. Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser rendering/capture, or commit run; host runner owns checks and checkpoint. Responsive behavior, visual review, and acceptance remain pending.
 - Rollback: revert the SkinCard change, restore MF-VF-255 to planned, and remove matching TODO/backlog/ledger evidence.
+
+## MF-PF-020 — Canonical token source-value production decision blocker
+
+- Starting HEAD: b8977e49a6afcc2989eab01860748dabeca5b5df; initial worktree was clean.
+- Dependency MF-PF-019 is captured. ADR-0002 selects a bounded format and future source layout but does not approve canonical values, a production generator, 78×30 coverage, or a public token API.
+- MF-PF-020 remains unchecked with status blocked-external-approval. Completion requires an authorized maintainer decision on the production source-value scope and migration/versioning. No values, approval, or dependent readiness were invented.
+- Documentation/status evidence only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, or commit run; host runner owns verification/checkpoint.
+- Rollback: restore MF-PF-020 to planned, restore the pre-blocker summary, and remove matching TODO and ledger notes.
