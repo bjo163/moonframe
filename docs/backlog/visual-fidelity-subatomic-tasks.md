@@ -623,7 +623,7 @@
 - [ ] **MF-VF-161 — [mooncrash] Style stable semantic icon frames** · **P1** · `planned` · **dependency:** `MF-VF-156, MF-VF-050, MF-VF-057` · **GitHub issue:** not-created
   - **File scope:** `src/styles.css`. **Acceptance:** Scoped mooncrash wrapper; shared SVG glyph meaning/ARIA unchanged.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-162 — [mooncrash] Style unique navigation/layout/typography** · **P1** · `planned` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
+- [x] **MF-VF-162 — [mooncrash] Style unique navigation/layout/typography** · **P1** · `implemented` · **dependency:** `MF-VF-156` · **GitHub issue:** not-created
   - **File scope:** `src/styles.css`. **Acceptance:** Strong non-color industrial mechanic hazard composition without palette-only theme.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [ ] **MF-VF-163 — [mooncrash] Style data-table/form/dialog recipes** · **P1** · `planned` · **dependency:** `MF-VF-156, MF-VF-162` · **GitHub issue:** not-created

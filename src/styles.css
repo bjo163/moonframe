@@ -816,6 +816,8 @@
 [data-skin="mooncrash"][data-mode="dark"] { --mf-bg: #1b211b; --mf-surface: #2a3328; --mf-surface-raised: #3c4735; --mf-text: #f0f3e3; --mf-muted: #c0cbb0; --mf-border: #899778; --mf-accent: #f1c96a; --mf-accent-text: #322400; }
 [data-skin="mooncrash"] .mf-shell { grid-template-columns: 14rem minmax(0, 1fr); border-block-start: 8px solid var(--mf-accent); }
 [data-skin="mooncrash"] .mf-sidebar { border-inline-end: 5px double var(--mf-border); }
+[data-skin="mooncrash"] .mf-sidebar { background-image: repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in srgb, var(--mf-border) 12%, transparent) 14px 16px); }
+[data-skin="mooncrash"] .mf-header { border-block-end: 4px solid var(--mf-border); box-shadow: inset 0 -8px 0 -5px var(--mf-accent); }
 [data-skin="mooncrash"] .mf-nav { counter-reset: rack; }
 [data-skin="mooncrash"] .mf-nav-item::before { counter-increment: rack; content: counter(rack, decimal-leading-zero); font: 700 .7rem monospace; border: 1px solid var(--mf-border); padding: .15rem; }
 [data-skin="mooncrash"] .mf-card, [data-skin="mooncrash"] .mf-hero { border-width: 2px; }

@@ -2235,3 +2235,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Backlog status: `implemented`. Source inspection only. Runner override honored: no package-manager commands, validators, test suites, typecheck, build, browser render, screenshots, or commit run; host runner owns checks and checkpoint.
 - Responsive behavior, visual review, and acceptance remain pending. No approval claimed.
 - Rollback: restore the former button/progress sample, revert the MF-VF-254 row to planned, and remove matching TODO and ledger evidence.
+
+## MF-VF-162 — Mooncrash navigation/layout/typography
+
+- Extended the Mooncrash rules in `src/styles.css` with subtle diagonal equipment hazard striping on the sidebar and a layered mechanical rule beneath the header. Existing numbered navigation, compact industrial shell, and double-plate card borders remain in place; all added decoration uses existing border/accent tokens.
+- Dependency MF-VF-156 is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser rendering, screenshots, or human review run. Host runner owns checks and checkpoint.
+- Contrast/responsive visual review, rights review, and acceptance remain pending. No human approval claimed. Rollback: remove the two added Mooncrash selectors, restore MF-VF-162 to planned in the backlog, and remove the matching TODO and ledger entries. No commit created.
