@@ -10,6 +10,10 @@
 4. A green `node scripts/validate-contracts.mjs` gate covers documentation/contracts only. Production claims require real builds/tests, assistive-tech/manual reviews, screenshots, provenance and consumer evidence. `15 × light/dark = 30` appearances and `15 choose 2 = 105` skin-pair reviews are required for a **full-skin** claim, not automatically for a carefully scoped early-preview subset; all unreviewed pairs remain `not-reviewed`.
 5. Before a release decision, capture a verdict: `release`, `prerelease`, `docs-only checkpoint` or `blocked`, with reviewer name if authorized, links, change notes, blocker and recovery task. Never infer reviewer identity. A blocked milestone is not released.
 
+### M13 visual release gate (task MF-VF-291)
+
+Visual release evidence is valid only when the contracts validator, unit tests, typecheck, production build, browser suite, and required screenshot/capture inventory all identify the **same source revision**. Record the full Git SHA beside each job result and link the capture inventory generated from that revision. A historical green run or a job from another SHA does not satisfy this gate. Missing, failed, or SHA-mismatched evidence leaves the visual release decision `blocked` until the affected checks and captures are rerun on one revision. This gate records technical evidence only; it does not grant human visual approval, asset rights, accessibility conformance, or owner release authorization.
+
 ## M0–M12 milestone-to-artifact / release/adoption matrix
 
 | Milestone | Entry/prerequisites | Artifact | Validation/evidence | Who can adopt | Release decision type | Version/tag policy (proposal) | Changelog/migration | Rollback | Excluded until later | Current status |

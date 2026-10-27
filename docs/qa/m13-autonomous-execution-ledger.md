@@ -1,3 +1,11 @@
+## MF-VF-291 — Gate visual release on all true CI jobs
+
+- Starting HEAD: `f59f649939e2d8560bb27fd3ee7c0e721c35534f`.
+- Added the M13 visual-release gate to `docs/architecture/release-train-and-adoption.md`. Contracts, unit, typecheck, build, browser, and screenshot/capture evidence must identify one source SHA; missing, failed, historical-only, or mismatched evidence leaves release blocked.
+- Dependency MF-VF-031 is implemented. Backlog status: `implemented`.
+- Documentation inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, captures, or commit run; host runner owns verification/checkpoint. This records a gate definition, not evidence that any current revision passed it. No visual/human review or release approval claimed.
+- Rollback: remove the M13 gate section, restore MF-VF-291 to planned, and remove the matching TODO update.
+
 # MF-VF-241 — Original Moonledger motif
 
 - Added `assets/source/skins/moonledger/motif.svg`, a static monochrome register grid with aligned rows and a narrow index column.

@@ -19,6 +19,8 @@
 
 # Moonframe UI — Master TODO (live execution index)
 
+**Live execution update (2026-10-27, MF-VF-291):** Added an M13 visual-release gate requiring contracts, unit, typecheck, build, browser, and capture evidence from the same source SHA; absent or mismatched evidence leaves release blocked. Dependency MF-VF-031 is implemented. Documentation inspection only; runner override honored and host runner owns verification/checkpoint. No current CI pass, capture, human review, or release approval is claimed. See the [M13 execution ledger](docs/qa/m13-autonomous-execution-ledger.md).
+
 **Current M13 backlog count (2026-10-27, MF-VF-158):** 334/488 task rows are checked; 154 remain unchecked, of which 10 are blocked and 144 actionable. Checkbox state records work/evidence status only and does not imply human review or acceptance. Individual dependency and status authority remains in the three canonical backlog files.
 
 **Live execution update (2026-10-27, MF-VF-158):** Added original optional corner-hatch pattern `assets/source/skins/mooncrash/pattern.svg`, SHA-256 `B136849E1E436B2B0FA57D91E73240FB049AE55B97AF6FB211206669593ED553`. Dependency MF-VF-156 is implemented. Status `implemented`; source inspection and `git diff --check` passed. Runner override honored: no package-manager commands, validators, suites, typecheck, build, rendering, human review, or commit. No rights clearance or acceptance claimed; host runner owns verification/checkpoint. See the M13 execution ledger.
