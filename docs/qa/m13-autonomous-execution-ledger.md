@@ -2199,3 +2199,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - The split-ratio, brush-accent, and readability comparison requires the original source. Dependency MF-VF-025 is implemented. No source comparison, human review, parity verdict, or rights clearance is claimed.
 - Runner override honored: no package-manager commands, validators, tests, typecheck, build, screenshots, or commit run. Host runner owns checks/checkpoint. Resume after owner-supplied bytes match the recorded digest and review-use rights approval is documented.
 - Rollback: restore the MF-VF-387 row to planned and remove matching TODO/ledger evidence.
+
+## MF-VF-103 — Style Moonzine table, form, and dialog recipes
+
+- Dependency MF-VF-096 and MF-VF-102 are implemented.
+- Added skin-scoped double-rule table framing with alternating editorial rows, paper-backed form groups and labeled controls, and layered print-like dialogs in `src/styles.css`. Shared markup and behavior remain unchanged.
+- Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, captures, or human review run. Host runner owns verification/checkpoint. Human review and acceptance remain pending.
+- Rollback: remove the MF-VF-103 selector rules, restore the task row to planned, and remove this ledger entry. No commit created.

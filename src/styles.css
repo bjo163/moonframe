@@ -541,6 +541,20 @@
 [data-skin="moonzine"] .mf-nav-item[aria-current="page"] { border-block-end-style: solid; font-weight: 700; }
 [data-skin="moonzine"] .mf-grid { align-items: start; column-gap: clamp(1rem, 2.5vw, 2.5rem); row-gap: clamp(1.25rem, 3vw, 3rem); }
 [data-skin="moonzine"] .mf-grid > :nth-child(3n + 2) { translate: 0 .6rem; }
+[data-skin="moonzine"] .mf-table { border-collapse: separate; border-spacing: 0; border-block: 3px double var(--mf-text); }
+[data-skin="moonzine"] .mf-table th { background: transparent; border-block-end: 1px solid var(--mf-text); text-align: start; }
+[data-skin="moonzine"] .mf-table tbody tr:nth-child(even) { background: var(--mf-surface-raised); }
+[data-skin="moonzine"] .mf-table tbody td { border-block-end: 1px dotted var(--mf-border); }
+[data-skin="moonzine"] .mf-field { border-inline-start: 2px solid var(--mf-border); padding: .65rem .75rem; background: var(--mf-surface); }
+[data-skin="moonzine"] .mf-field label { font-family: var(--mf-display); font-style: italic; }
+[data-skin="moonzine"] .mf-field input,
+[data-skin="moonzine"] .mf-field select,
+[data-skin="moonzine"] .mf-field textarea,
+[data-skin="moonzine"] .mf-field .mf-input { border: 1px solid var(--mf-border); border-block-end-width: 2px; border-radius: 0; background: var(--mf-bg); }
+[data-skin="moonzine"] .mf-dialog,
+[data-skin="moonzine"] [role="dialog"] { border: 1px solid var(--mf-text); border-block-start-width: 5px; border-radius: 0; box-shadow: 5px 5px 0 var(--mf-surface-raised), 6px 6px 0 var(--mf-border); }
+[data-skin="moonzine"] .mf-dialog-header { border-block-end: 1px dashed var(--mf-border); padding-block-end: .75rem; }
+[data-skin="moonzine"] .mf-dialog-title { font-family: var(--mf-display); font-weight: 500; }
 [data-skin="moonzine"] .mf-hero { margin-block-end: clamp(1.5rem, 4vw, 3.5rem); }
 @media (max-width: 48rem) {
   [data-skin="moonzine"] .mf-shell { grid-template-columns: minmax(0, 1fr); }
