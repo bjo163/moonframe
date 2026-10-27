@@ -953,7 +953,8 @@
 - [ ] **MF-VF-265 — Track 43 individual template review records** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/template-fidelity-ledger.md (proposed)`. **Acceptance:** Reference, image, rights, reviewer, exceptions, explicit pending state.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-266 — Document consumer UI seam: Corpus Reader** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-266 — Document consumer UI seam: Corpus Reader** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **Evidence (2026-10-27):** Added [Corpus Reader consumer seam](../examples/moonwitness-corpus-reader.md), assigning layout primitives to Moonframe and corpus data, search, interpretation, and theology to the consuming application. The document explicitly avoids claiming a backend or shipped reader product. Dependency MF-VF-031 is implemented. Documentation/source inspection only; runner override honored, so no validators, package-manager commands, suites, typecheck, build, or screenshots run. No human review or acceptance claimed. Rollback: remove the example document and restore this row to planned.
   - **File scope:** `docs/examples/moonwitness-corpus-reader.md (proposed)`. **Acceptance:** Reading layout composes Moonframe primitives; data and theology not core.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [ ] **MF-VF-267 — Document consumer UI seam: ontology explorer** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created

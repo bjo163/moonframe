@@ -2387,3 +2387,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `CEAFD45A588F797C9AF776BFA237D0418D949A52350E59C594641F7B9775BE5C`.
 - Backlog status: `implemented`. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, capture, or human review run under runner override. Host runner owns verification/checkpoint. Optical/rights review and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-184 to planned in the visual backlog and remove matching TODO and ledger evidence.
+# MF-VF-266 — Corpus Reader consumer UI seam
+
+- Starting HEAD: `0a726a3c40f5374154610d67068028fd50d62ce0` (`main`, clean worktree).
+- Dependency MF-VF-031 is implemented. Added `docs/examples/moonwitness-corpus-reader.md` describing how a consumer can compose Moonframe presentation primitives while retaining ownership of corpus records, search, interpretation, citations, and any theology.
+- Status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, or screenshots run; host runner owns verification and checkpoint. No backend, shipped product, human review, or acceptance is claimed.
+- Rollback: remove the example document, restore MF-VF-266 to planned, and remove matching TODO and ledger evidence. No commit created.
