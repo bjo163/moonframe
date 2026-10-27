@@ -143,6 +143,14 @@
 
 # M13 autonomous execution ledger
 
+## MF-VF-194 — Moonraw margin pattern
+
+- Starting HEAD: `7e03f31551bbf0c2b01552f23be328f97b7734d6` (`main`, clean worktree). Dependency MF-VF-192 is implemented.
+- Added original static `assets/source/skins/moonraw/pattern.svg`, a sparse registration-tick and fine-baseline motif intended for noninteractive margins. It has a title and description and uses only simple geometry authored for this task; no reference or third-party asset was used.
+- SHA-256: `037B01BF357664C03AC8C5566137E209ADBCA3887F9472B492404CAA1480612E`. Backlog status: `implemented`.
+- Verification: source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, rendering, browser capture, or commit run. Host runner owns verification/checkpoint. The asset is not integrated; optical/rights review and acceptance remain pending.
+- Rollback: remove the SVG, restore MF-VF-194 to planned, and remove its TODO/backlog/ledger evidence.
+
 ## MF-VF-150 — Style Moonink navigation/layout/typography
 
 - Starting HEAD: `b1296db2b4bc887b5188c59d8f42a12e6151386a` (clean worktree).
