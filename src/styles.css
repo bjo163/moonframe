@@ -617,6 +617,17 @@
 [data-skin="moonglitch"] .mf-table { font-size: .8rem; }
 [data-skin="moonglitch"] .mf-table td { border-inline-end: 1px dashed var(--mf-border); }
 [data-skin="moonglitch"] .mf-badge { border-radius: 2px; }
+[data-skin="moonglitch"] .mf-table { border: 1px solid var(--mf-border); border-block-start: 3px solid var(--mf-accent); }
+[data-skin="moonglitch"] .mf-table th { color: var(--mf-text); background: var(--mf-surface-raised); font-family: var(--mf-font); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+[data-skin="moonglitch"] .mf-table td { border-inline-end: 1px dashed var(--mf-border); }
+[data-skin="moonglitch"] .mf-field { padding: .65rem; border: 1px dashed var(--mf-border); border-inline-start: 2px solid var(--mf-accent); background: var(--mf-surface); }
+[data-skin="moonglitch"] .mf-field > label { font-family: var(--mf-font); font-size: .78rem; letter-spacing: .035em; }
+[data-skin="moonglitch"] .mf-input,
+[data-skin="moonglitch"] .mf-select,
+[data-skin="moonglitch"] .mf-textarea { border-radius: 0; border-style: dashed; background: var(--mf-bg); }
+[data-skin="moonglitch"] .mf-dialog { border-block-start: 3px solid var(--mf-accent); border-radius: 0; }
+[data-skin="moonglitch"] .mf-dialog-title { font-family: var(--mf-font); font-size: 1.05rem; letter-spacing: -.035em; }
+[data-skin="moonglitch"] .mf-dialog-header { border-block-end: 1px dashed var(--mf-border); padding-block-end: .75rem; }
 /* Moonglitch frames shared semantic glyphs as compact diagnostic readouts. */
 [data-skin="moonglitch"] .mf-nav-item > svg,
 [data-skin="moonglitch"] .mf-button > svg,
@@ -922,6 +933,7 @@
   [data-skin], [data-skin][data-mode], [data-skin][data-contrast] { --mf-bg: Canvas; --mf-surface: Canvas; --mf-surface-raised: Canvas; --mf-text: CanvasText; --mf-muted: CanvasText; --mf-border: CanvasText; --mf-accent: Highlight; --mf-accent-text: HighlightText; --mf-danger: LinkText; --mf-shadow: none; }
   [data-skin] .mf-shell, [data-skin] .mf-main, [data-skin] .mf-hero, [data-skin] .mf-sidebar { background-image: none; }
   .mf-button, .mf-card, .mf-input, .mf-select, .mf-textarea, .mf-dialog, .mf-switch, .mf-tabs-trigger { border: 1px solid ButtonText; box-shadow: none; }
+  [data-skin="moonglitch"] .mf-input, [data-skin="moonglitch"] .mf-select, [data-skin="moonglitch"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
   .mf-nav-item[aria-current="page"], .mf-tabs-trigger[aria-selected="true"] { outline: 2px solid Highlight; }
   .mf-progress { border: 1px solid CanvasText; }
 }

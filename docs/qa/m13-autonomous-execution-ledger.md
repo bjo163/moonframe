@@ -2166,3 +2166,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source inspection and `git diff --check` passed. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, or human review were run; host runner owns verification/checkpoint.
 - Original generic artwork authored for Moonframe; no external imagery used. Optical review, rights review, and acceptance remain pending. No commit created.
 - Rollback: remove the SVG, restore MF-VF-158 to planned, and remove matching TODO/ledger evidence.
+
+## MF-VF-127 — Style Moonglitch data-table, form, and dialog recipes
+
+- Added scoped diagnostic table headers/cell dividers, boxed field groups and dashed controls, and a hard-edged dialog header in src/styles.css; component markup and shared behavior were not changed.
+- Dependencies MF-VF-120 and MF-VF-126 are implemented. Backlog status: implemented.
+- Stylesheet SHA-256:  6A3F1CB26E8B62DDE1D2CFB9E22ABCC0CF98A2F544D39E2F5857BDCAEEAB3B9.
+- Static source/class inspection and git diff --check only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, render, or human review run; host runner owns verification and checkpoint.
+- Responsive/contrast review and acceptance remain pending. Rollback: remove the MF-VF-127 selector block, restore the backlog row to planned, and remove matching TODO/ledger notes.
