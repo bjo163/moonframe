@@ -2455,3 +2455,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `lab.css` `C0C2A8CF78807A415EBE622231B7BFB8E5DE69754EB4074963D3E8B873600A0A`; `skins.spec.js` `922A614CEE035D5EAE5EEF6E312041358AD41C3BDE787101953DF6E0AF054C2E`. `git diff --check` exited 0.
 - Runner override honored: no package-manager commands, validators, browser tests, typecheck, build, screenshot capture, or commit run. Host runner owns verification/checkpoint. Human visual review, accessibility certification, and acceptance remain pending.
 - Rollback: remove the CSS additions and browser test, restore MF-VF-188 to planned, and remove matching TODO/backlog/ledger evidence.
+
+## MF-VF-083 — Moonpunk nearest-skin human review blocker
+
+- Starting HEAD: `de4875e48572e49a99186cef27d6eed89b2cb162` (`main`, clean worktree).
+- Dependencies MF-VF-025, MF-VF-026, MF-VF-081, and MF-VF-082 are recorded complete/captured. Acceptance requires a named human verdict comparing Moonpunk with Moonriot and Moonsmash using grayscale and decoration-off evidence.
+- No reviewer verdict is available. Updated the task to `blocked-external-approval`; it remains unchecked. No review or approval was fabricated. Resume when a reviewer records an evidence-linked verdict in `docs/qa/reviews/moonpunk.md`.
+- Runner override honored: no package-manager commands, suites, typecheck, build, or commit run. Host runner owns checkpoint.

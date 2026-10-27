@@ -354,7 +354,8 @@
 
   - **File scope:** `tests/browser/skins.spec.js`. **Acceptance:** Real dark evidence captures with fixed fixture SHA/filename.
   - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-083 — [moonpunk] Human review nearest-skin comparison** · **P2** · `planned` · **dependency:** `MF-VF-025, MF-VF-026, MF-VF-081, MF-VF-082` · **GitHub issue:** not-created
+- [ ] **MF-VF-083 — [moonpunk] Human review nearest-skin comparison** · **P2** · `blocked-external-approval` · **dependency:** `MF-VF-025, MF-VF-026, MF-VF-081, MF-VF-082` · **GitHub issue:** not-created
+  - **Blocker/evidence (2026-10-27):** Required light/dark captures exist (MF-VF-081/082) but acceptance explicitly requires a named human reviewer to compare them with Moonriot and Moonsmash, including grayscale and decoration-off evidence. No reviewer verdict is present, and this invocation cannot provide human review. Leave unchecked; resume when a reviewer records an evidence-linked verdict in `docs/qa/reviews/moonpunk.md`. No visual approval is inferred.
   - **File scope:** `docs/qa/reviews/moonpunk.md (proposed)`. **Acceptance:** Light/dark grayscale and no-decoration evidence vs moonriot, moonsmash; named reviewer verdict, never auto PASS.
   - **Verify:** Cite actual screenshot and fixture/CI SHA; review by human separately. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-084 — [moonriot] Write derived visual direction and anti-overlap brief** · **P1** · `implemented` · **dependency:** `MF-VF-015` · **GitHub issue:** not-created
