@@ -2424,3 +2424,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependency MF-VF-031 is implemented. Added `docs/examples/moonwitness-ontology-explorer.md` describing optional graph-renderer integration, consumer-owned ontology meaning/data, and accessible DOM alternatives.
 - Backlog status: `implemented`. Documentation/source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, screenshot capture, or commit run; host runner owns verification/checkpoint. No shipped graph renderer, human review, or acceptance claimed.
 - Rollback: remove the example document, restore MF-VF-267 to planned, and remove matching backlog/TODO/ledger evidence.
+## MF-VF-185 — Moonscrawl semantic icon frames
+
+- Starting HEAD: `91570212ff8d8e5f8444eced559890f8c93dab3f` (worktree clean).
+- Added skin-scoped dashed, irregular notebook-ink frames for `.mf-icon`, `.mf-search-icon`, `.mf-timeline-marker`, `.mf-callout-icon`, and `.mf-empty-icon` in `src/styles.css`. Existing SVG glyphs, accessible names, and behavior are unchanged.
+- Dependencies MF-VF-180, MF-VF-050, and MF-VF-057 are implemented. Backlog status: `implemented`.
+- Stylesheet SHA-256: `2B931AC52D09458C3DE61534A83515793C74ED16D8F5ED169B0E18429FE8814A`. Static source/class inspection only; runner override honored, so no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or human review ran. Responsive/contrast review and acceptance remain pending; host runner owns verification/checkpoint.
+- No commit created. Rollback: remove the MF-VF-185 selector rules, restore the backlog row to planned, and remove the matching TODO and ledger entries.
