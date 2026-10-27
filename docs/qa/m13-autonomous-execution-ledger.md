@@ -2183,3 +2183,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source/class inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run; host runner owns verification/checkpoint.
 - Responsive rendering, browser behavior, contrast, rights review, and acceptance remain pending. No commit created.
 - Rollback: remove the MF-VF-115 selector block, restore the backlog row to planned, and remove matching TODO/ledger evidence.
+
+## MF-VF-387 — Review R04 against original design source
+
+- Starting HEAD: `d66f65f825e97e61f2e612594f71c3796163a4cd` (worktree clean).
+- Recorded `blocked-external-approval` in the task row. `/mnt/data/moonframe_m13_reference_originals.zip` is absent and the R04 source PNG is not present in the checkout. The creative reference contract provides expected SHA-256 `9d565501a1aa681f1122d666cb01dbdfad4b8fd8dd89f9648b676d652080eb90` and dimensions 1024 × 576; no source-byte verification or review-use rights approval is available.
+- The split-ratio, brush-accent, and readability comparison requires the original source. Dependency MF-VF-025 is implemented. No source comparison, human review, parity verdict, or rights clearance is claimed.
+- Runner override honored: no package-manager commands, validators, tests, typecheck, build, screenshots, or commit run. Host runner owns checks/checkpoint. Resume after owner-supplied bytes match the recorded digest and review-use rights approval is documented.
+- Rollback: restore the MF-VF-387 row to planned and remove matching TODO/ledger evidence.
