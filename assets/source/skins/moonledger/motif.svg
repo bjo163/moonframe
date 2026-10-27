@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonledger register motif</title>
+  <desc id="desc">A restrained register grid with aligned rows and a narrow index column.</desc>
+  <g stroke="currentColor" stroke-width="2">
+    <path d="M28 34h264M28 66h264M28 98h264M28 130h264M28 162h264" />
+    <path d="M68 34v128M196 34v128" />
+    <path d="M36 48h20M36 80h20M36 112h20M36 144h20" stroke-width="3" />
+    <path d="M80 48h92M208 48h72M80 80h72M208 80h92M80 112h108M208 112h56M80 144h64M208 144h80" stroke-width="1.5" />
+  </g>
+</svg>

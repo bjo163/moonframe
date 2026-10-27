@@ -1,3 +1,11 @@
+# MF-VF-241 — Original Moonledger motif
+
+- Added `assets/source/skins/moonledger/motif.svg`, a static monochrome register grid with aligned rows and a narrow index column.
+- SHA-256: `B21079DAD9E0D4D96483305C9D2E534AD721593A1715994E1C1696F61BB1410A`.
+- Dependency MF-VF-240 is implemented. Backlog status: `implemented`.
+- Verification: source inspection and digest calculation only. Runner override honored; no validators, package-manager commands, tests, typecheck, build, rendering, screenshot, or human review were run. Rights, optical review, and acceptance remain pending.
+- No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and this record; restore MF-VF-241 to planned and remove matching TODO evidence.
+
 # MF-VF-139 — Style Moonsmash data-table, form, and dialog recipes
 
 - Starting HEAD: `f4d0d0b73c4ff66d982e1e774c5a046f7409295f` (worktree clean).
