@@ -1,3 +1,10 @@
+## MF-VF-160 — Mooncrash edition badge
+
+- Added `assets/source/skins/mooncrash/edition.svg`, a static equipment-label badge identifying Mooncrash as a Moonframe edition; live text avoids baking explanatory copy into artwork, and SVG title/description provide accessible naming.
+- SHA-256: `2722F3F81CB96039771118D4DBDD5C533F5ED91AC8C5A1CC72B55D3D4FBE3C0D`. Original in-repository generic artwork; no external imagery used.
+- Dependencies MF-VF-156 and MF-VF-039 are implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, renderer, browser capture, or human review run. Optical review, rights review, integration, and acceptance remain pending; host runner owns verification/checkpoint.
+- Rollback: remove the SVG, restore MF-VF-160 to planned, and remove matching TODO and backlog evidence.
+
 ## MF-VF-291 — Gate visual release on all true CI jobs
 
 - Starting HEAD: `f59f649939e2d8560bb27fd3ee7c0e721c35534f`.
