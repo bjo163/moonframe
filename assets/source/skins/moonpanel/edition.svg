@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonpanel — Moonframe edition</title>
+  <desc id="desc">A compact rectangular edition label with a modular panel mark.</desc>
+  <path fill="#f3f1e9" stroke="#20252b" stroke-width="3" d="M3 3h234v58H3z"/>
+  <path fill="none" stroke="#20252b" stroke-width="3" d="M11 11h38v42H11zM29 11v42M11 32h38"/>
+  <path fill="#d8d5ca" d="M14 14h12v15H14zM32 14h14v15H32zM14 35h12v15H14zM32 35h14v15H32z"/>
+  <path fill="#20252b" d="M62 16h164v5H62zM62 27h118v4H62zM62 38h145v4H62zM62 49h86v3H62z"/>
+</svg>

@@ -2309,3 +2309,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Runner override honored: no validators, package-manager commands, test suites, typecheck, build, SVG security validation, rendering, capture, or human review run. Host runner owns checks and checkpoint. Rights/optical review and acceptance remain pending; asset is not integrated.
 - Updated task checkbox recount: 335/488 checked, 153 unchecked. Checked does not imply approval.
 - Rollback: remove the SVG, restore MF-VF-171 to planned, and remove matching TODO/ledger evidence. No commit created.
+# MF-VF-172 — Moonpanel edition badge
+
+- Added `assets/source/skins/moonpanel/edition.svg`, an original compact modular-grid edition label that names Moonpanel as a Moonframe edition rather than an independent company logo.
+- SHA-256: `3AB4AB3B7BC0E292A194A408C34C688150DF440B85D566103C3F02D88B128B8F`. Dependencies MF-VF-168 and MF-VF-039 are implemented.
+- Backlog status: `implemented`. Source inspection and digest calculation only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, SVG security validation, render, small-size capture, or human review ran. Optical/rights review and acceptance remain pending; host runner owns verification/checkpoint.
+- Rollback: remove the SVG, restore MF-VF-172 to planned, and remove this ledger/TODO evidence.
