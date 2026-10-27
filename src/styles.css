@@ -811,6 +811,26 @@
   [data-skin="moonink"] .mf-hero::after { display: none; }
 }
 
+/* Moonink treats dense controls as inked editorial artifacts: compact ruled
+   tables, handwritten-margin field cues, and a dialog with a quiet side rail. */
+[data-skin="moonink"] .mf-table { border-block: 2px solid var(--mf-border); border-collapse: separate; border-spacing: 0; }
+[data-skin="moonink"] .mf-table th { padding-block: .65rem; border-block-end: 2px solid var(--mf-border); color: var(--mf-text); font-size: .76rem; letter-spacing: .045em; }
+[data-skin="moonink"] .mf-table td { padding-block: .9rem; border-block-end: 1px solid color-mix(in srgb, var(--mf-border) 68%, transparent); }
+[data-skin="moonink"] .mf-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--mf-surface-raised) 55%, transparent); }
+[data-skin="moonink"] .mf-field { gap: .45rem; padding-inline-start: .8rem; border-inline-start: 2px solid var(--mf-border); }
+[data-skin="moonink"] .mf-input,
+[data-skin="moonink"] .mf-select,
+[data-skin="moonink"] .mf-textarea { border: 0; border-block-end: 2px solid var(--mf-border); border-radius: 0; background: color-mix(in srgb, var(--mf-surface-raised) 45%, var(--mf-surface)); }
+[data-skin="moonink"] .mf-input:focus-visible,
+[data-skin="moonink"] .mf-select:focus-visible,
+[data-skin="moonink"] .mf-textarea:focus-visible { outline: 2px solid var(--mf-accent); outline-offset: 2px; }
+[data-skin="moonink"] .mf-input[aria-invalid="true"],
+[data-skin="moonink"] .mf-select[aria-invalid="true"],
+[data-skin="moonink"] .mf-textarea[aria-invalid="true"] { border-block-end: 3px solid var(--mf-danger); }
+[data-skin="moonink"] .mf-dialog { border: 0; border-inline-start: 5px solid var(--mf-accent); border-radius: 0 1.25rem 0 0; box-shadow: 0 18px 55px #0003; }
+[data-skin="moonink"] .mf-dialog-title { font-style: italic; }
+[data-skin="moonink"] .mf-dialog-close { border-radius: 35% 4% 30% 5%; }
+
 /* 08 / Mooncrash — equipment rack, plate borders and mechanical fasteners. */
 [data-skin="mooncrash"] { --mf-bg: #dfe2df; --mf-surface: #f3f4ec; --mf-surface-raised: #d5d9cf; --mf-text: #293027; --mf-muted: #535d4c; --mf-border: #7c8770; --mf-accent: #79530b; --mf-accent-text: #ffffff; --mf-radius: 4px; --mf-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border); --mf-display: "Arial Narrow", Impact, sans-serif; }
 [data-skin="mooncrash"][data-mode="dark"] { --mf-bg: #1b211b; --mf-surface: #2a3328; --mf-surface-raised: #3c4735; --mf-text: #f0f3e3; --mf-muted: #c0cbb0; --mf-border: #899778; --mf-accent: #f1c96a; --mf-accent-text: #322400; }
@@ -968,6 +988,7 @@
   [data-skin] .mf-shell, [data-skin] .mf-main, [data-skin] .mf-hero, [data-skin] .mf-sidebar { background-image: none; }
   .mf-button, .mf-card, .mf-input, .mf-select, .mf-textarea, .mf-dialog, .mf-switch, .mf-tabs-trigger { border: 1px solid ButtonText; box-shadow: none; }
   [data-skin="moonglitch"] .mf-input, [data-skin="moonglitch"] .mf-select, [data-skin="moonglitch"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
+  [data-skin="moonink"] .mf-input, [data-skin="moonink"] .mf-select, [data-skin="moonink"] .mf-textarea { border: 1px solid ButtonText !important; box-shadow: none; }
   .mf-nav-item[aria-current="page"], .mf-tabs-trigger[aria-selected="true"] { outline: 2px solid Highlight; }
   .mf-progress { border: 1px solid CanvasText; }
 }
