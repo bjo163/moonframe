@@ -657,6 +657,41 @@ test('Mooncrash decoration-off removes rack indices without hiding navigation or
   expect(durations.every(duration => duration === 0)).toBe(true);
 });
 
+test('Moonpanel decoration-off removes icon frames without hiding content or actions', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  await page.goto('/lab?skin=moonpanel');
+  await page.getByLabel('Motion', { exact: true }).selectOption('reduced');
+
+  const root = page.locator('.mf-root');
+  const shell = page.locator('.mf-shell');
+  const nav = page.getByRole('navigation', { name: 'Workspace sections' }).getByRole('button', { name: 'Overview', exact: true });
+  const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
+  await expect(root).toHaveAttribute('data-skin', 'moonpanel');
+  await shell.evaluate(node => {
+    const icon = document.createElement('span');
+    icon.className = 'mf-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = '•';
+    node.append(icon);
+  });
+  const iconFrame = shell.locator('.mf-icon');
+  await expect(iconFrame).toBeVisible();
+  expect(await iconFrame.evaluate(node => getComputedStyle(node).borderTopWidth)).not.toBe('0px');
+
+  await decorationToggle.check();
+  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(nav).toBeVisible();
+  await expect(iconFrame).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
+  expect(await iconFrame.evaluate(node => getComputedStyle(node).borderTopWidth)).toBe('0px');
+  await decorationToggle.focus();
+  await expect(decorationToggle).toBeFocused();
+  await expect(root).toHaveAttribute('data-motion', 'reduced');
+  const durations = await shell.evaluate(node => getComputedStyle(node).transitionDuration.split(',').map(value => Number.parseFloat(value)));
+  expect(durations.every(duration => duration === 0)).toBe(true);
+});
+
 test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {
   const blockedRequests = [];
   await page.route(/\.(?:png|jpe?g|webp|avif|woff2?|ttf|otf)(?:[?#]|$)/i, async route => {

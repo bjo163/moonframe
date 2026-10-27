@@ -2336,3 +2336,13 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Source SHA-256: `6D7E231BA31E0440273F26CA9243D8EA24AE5DB1D6218FDFC73D72541A2EDD57`. `git diff --check` exited 0; Git reported LF-to-CRLF normalization warning. First full browser run found Moonpanel controls retained a 2px border in forced colors; added an explicit 1px forced-colors override. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'moonpanel (light|dark): rendered' --workers=1` passed 2/2 after the fix. Full suite and final checkpoint are delegated to the host runner.
 - Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or human review run. Host runner owns verification and checkpoint. Responsive/contrast review and acceptance remain pending; no commit created.
 - Rollback: remove the MF-VF-175 selector block, restore the backlog row to planned, and remove this TODO/ledger evidence.
+
+## MF-VF-176 — Moonpanel decoration-off and reduced-motion fallback
+
+- Starting HEAD: `6ed3375` (worktree clean).
+- Added Moonpanel-only decoration-off selectors in `apps/moonframe/app/(lab)/lab/lab.css` to remove optional icon-cell borders, inset shadows, and raised surfaces while retaining the icons themselves.
+- Added a Playwright regression in `tests/browser/skins.spec.js` checking the skin, decoration state, visible heading/navigation/icon/action, keyboard focus on the toggle, and zero transition duration under reduced motion.
+- Dependencies MF-VF-170, MF-VF-171, and MF-VF-175 are implemented. Backlog status: `implemented`.
+- SHA-256: `lab.css` `EB25BF9656D75947494CF6D2C2211C77F833933D03AA256CDA662055B31FCCFD`; `skins.spec.js` `51F8507F38B305A6247D83E064BCE185D33750691135CC65BBF9B481504D4C94`. `git diff --check` exited 0; Git reported LF-to-CRLF normalization for the test file. The first full browser run showed the lab had no `.mf-search-icon`; the regression now injects a minimal aria-hidden `.mf-icon` into the shell. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Moonpanel decoration-off removes icon frames' --workers=1` passed 1/1.
+- The corrected focused test passed; host runner owns the final full suite, validators, typecheck, build, and checkpoint. Responsive/visual review and acceptance remain pending. No commit created.
+- Rollback: remove the Moonpanel decoration-off selector block and focused browser test, restore MF-VF-176 to planned, and remove matching TODO and ledger evidence.
