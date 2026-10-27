@@ -2241,3 +2241,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Extended the Mooncrash rules in `src/styles.css` with subtle diagonal equipment hazard striping on the sidebar and a layered mechanical rule beneath the header. Existing numbered navigation, compact industrial shell, and double-plate card borders remain in place; all added decoration uses existing border/accent tokens.
 - Dependency MF-VF-156 is implemented. Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser rendering, screenshots, or human review run. Host runner owns checks and checkpoint.
 - Contrast/responsive visual review, rights review, and acceptance remain pending. No human approval claimed. Rollback: remove the two added Mooncrash selectors, restore MF-VF-162 to planned in the backlog, and remove the matching TODO and ledger entries. No commit created.
+
+## MF-VF-092 — Moonriot art-off and reduced-motion fallback
+
+- Dependencies MF-VF-086, MF-VF-087, and MF-VF-091 are implemented.
+- Added scoped rules in `apps/moonframe/app/(lab)/lab/lab.css` to hide the Moonriot sidebar decoration and remove card shadow/offset when decoration is disabled; reduced-motion also removes card offset. Text, focusable controls, and actions remain in the DOM.
+- Backlog status: `implemented`; source inspection only. Runner override honored: no package-manager commands, validators, tests, typecheck, build, or browser captures run. Host runner owns verification/checkpoint. No browser result, human visual/accessibility review, rights clearance, or acceptance claimed.
+- Recount: 168/292 foundation + 148/168 reference + 28/28 preflight = 344/488 checked. Checked does not imply human review or acceptance.
+- Rollback: remove the four scoped CSS rules, restore MF-VF-092 to planned, and remove this ledger/TODO evidence. No commit created.

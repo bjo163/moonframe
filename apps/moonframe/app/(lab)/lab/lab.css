@@ -204,11 +204,17 @@ button svg, a svg { flex-shrink: 0; }
 .mf-shell[data-decoration-off="true"] .mf-nav-item svg,
 .mf-shell[data-decoration-off="true"] .demo-skin-option svg { display: none !important; }
 .mf-shell[data-decoration-off="true"] .demo-project-name { gap: 0; }
+.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-sidebar::after { display: none; }
+.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card { box-shadow: none; }
+.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card:nth-of-type(even) { translate: none; }
 @media (max-width: 800px) { .fixture-dashboard-content { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .fixture-dashboard-body { grid-template-columns: minmax(0, 1fr); } .fixture-dashboard-rail { gap: 12px; padding: 10px; } .fixture-dashboard-rail nav { grid-template-columns: repeat(5, minmax(0, 1fr)); } .fixture-dashboard-rail nav button { justify-content: center; padding-inline: 6px; } .fixture-dashboard-rail-scratch { inset-inline-end: 3%; inset-block-end: 6px; } }
 @media (max-width: 480px) { .fixture-dashboard-rail { flex-direction: row; align-items: center; gap: 8px; } .fixture-dashboard-rail-brand { flex: 0 0 auto; } .fixture-dashboard-rail-brand > span:last-child { display: none; } .fixture-dashboard-rail nav { flex: 1; } .fixture-dashboard-rail nav button { min-block-size: 38px; flex-direction: column; gap: 3px; font-size: 9px; } .fixture-dashboard-rail-glyph { font-size: 14px; } }
 @media (max-width: 560px) { .fixture-profile { padding: 14px; } .fixture-profile-grid { grid-template-columns: 1fr; gap: 12px; } .fixture-profile-heading { align-items: start; flex-direction: column; gap: 4px; } .fixture-profile-actions { align-items: stretch; flex-direction: column; } .fixture-profile-actions > div:last-child { justify-content: flex-end; } }
 @media (max-width: 480px) { .fixture-dashboard-heading { align-items: start; flex-direction: column; } .fixture-dashboard-metrics { gap: 7px; } .fixture-dashboard-metric { padding: 10px 8px; } .fixture-dashboard-metric dt { font-size: 9px; } .fixture-dashboard-metric dd { margin-block-start: 7px; font-size: 23px; } .fixture-dashboard-activity li { align-items: start; gap: 8px; } .fixture-dashboard-activity li > div:last-child { max-inline-size: 100px; } .fixture-dashboard-activity strong { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  .mf-shell[data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: none; }
+}
 @media (forced-colors: active) { .demo-orbit, .demo-swatch { display: none; } .demo-skin-option[data-active] { border: 2px solid Highlight; } .demo-toast { border: 2px solid CanvasText; } }
 @media (max-width: 560px) { .fixture-dashboard-utility { align-items: stretch; flex-direction: column; } .fixture-dashboard-utility-actions { flex-wrap: wrap; } .fixture-dashboard-utility-actions .mf-input { flex: 1 1 100%; inline-size: 100%; } }
