@@ -1511,7 +1511,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-059 — Draw semantic trash icon
 
-- Added ssets/source/icons/trash.svg, a self-authored static 24×24 currentColor trash glyph with accessible label Delete.
+- Added assets/source/icons/trash.svg, a self-authored static 24×24 currentColor trash glyph with accessible label Delete.
 - SHA-256: $h.
 - Dependency MF-VF-033 is implemented. Status: implemented; source inspection only. Per runner override, no validators, package-manager commands, tests, typecheck, build, browser rendering, capture, or human review run/claimed. Human optical review and acceptance remain pending.
 - No commit created; host runner performs checks and checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger evidence.
@@ -1587,7 +1587,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-085 — Draw original Moonriot motif SVG
 
-- Added ssets/source/skins/moonriot/motif.svg, an original accessible 96×96 angular directional shard with embedded geometry and currentColor; SHA-256: 05a9ab8abc342636fa3f32bc12a553897a1d95732d91850a66776a47d7b3c70f.
+- Added assets/source/skins/moonriot/motif.svg, an original accessible 96×96 angular directional shard with embedded geometry and currentColor; SHA-256: 05a9ab8abc342636fa3f32bc12a553897a1d95732d91850a66776a47d7b3c70f.
 - Dependency MF-VF-084 is implemented. Status: implemented; static source inspection only. Per runner override, no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review were run. Mono-size legibility, skin distinction, rights review, and acceptance remain pending.
 - No commit created; host runner owns verification/checkpoint. Rollback: remove the SVG and restore the matching backlog/TODO/ledger entry.
 # MF-VF-354 — Draw stage floodlight backdrop artwork concept
@@ -2160,7 +2160,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 ## MF-VF-147 — Draw original Moonink hero illustration SVG
 
-- Added ssets/source/skins/moonink/hero.svg, an original monochrome brush landscape with generous negative space and no essential text.
+- Added assets/source/skins/moonink/hero.svg, an original monochrome brush landscape with generous negative space and no essential text.
 - SHA-256: 767af5c75beddb65b5108d6771b614313289832aff8c09e59ec62223bf74827c.
 - Dependency MF-VF-144 is implemented. Backlog status: implemented; source inspection only.
 - Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, screenshots, or human review run. Host runner owns verification and checkpoint. Optical review, rights review, integration, and acceptance remain pending.
@@ -2187,7 +2187,7 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 
 - Added scoped diagnostic table headers/cell dividers, boxed field groups and dashed controls, and a hard-edged dialog header in src/styles.css; component markup and shared behavior were not changed.
 - Dependencies MF-VF-120 and MF-VF-126 are implemented. Backlog status: implemented.
-- Stylesheet SHA-256:  6A3F1CB26E8B62DDE1D2CFB9E22ABCC0CF98A2F544D39E2F5857BDCAEEAB3B9.
+- Stylesheet SHA-256: 6A3F1CB26E8B62DDE1D2CFB9E22ABCC0CF98A2F544D39E2F5857BDCAEEAB3B9.
 - Static source/class inspection and git diff --check only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, render, or human review run; host runner owns verification and checkpoint.
 - Responsive/contrast review and acceptance remain pending. Rollback: remove the MF-VF-127 selector block, restore the backlog row to planned, and remove matching TODO/ledger notes.
 
@@ -2214,3 +2214,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Added skin-scoped double-rule table framing with alternating editorial rows, paper-backed form groups and labeled controls, and layered print-like dialogs in `src/styles.css`. Shared markup and behavior remain unchanged.
 - Backlog status: `implemented`; source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, captures, or human review run. Host runner owns verification/checkpoint. Human review and acceptance remain pending.
 - Rollback: remove the MF-VF-103 selector rules, restore the task row to planned, and remove this ledger entry. No commit created.
+
+## MF-VF-159 — Draw original Mooncrash hero illustration SVG
+
+- Added assets/source/skins/mooncrash/hero.svg, an original rugged equipment-bay scene with no essential text baked into the image.
+- Static source inspection: standalone SVG; no scripts, event handlers, external references, or foreignObject; accessible title/description included. No renderer or security validator run under the runner override.
+- Dependency MF-VF-156 is implemented. Backlog status: implemented; no human review, rights clearance, or acceptance claimed. Asset remains optional and unintegrated.
+- SHA-256: `996BAAF2DFEE5825C6C70BCE9995497252659084C16471D9CF11730F0857B005`. Runner override honored: no package-manager commands, validators, suites, typecheck, build, screenshot, or commit run. Host runner owns applicable verification and checkpoint.
+- Rollback: remove the SVG, restore MF-VF-159 to planned, and remove matching TODO/ledger evidence.
