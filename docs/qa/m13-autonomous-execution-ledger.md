@@ -1,3 +1,11 @@
+## MF-VF-128 — Moonglitch decoration-off and reduced-motion fallback
+
+- Added a scoped art-off reset in `apps/moonframe/app/(lab)/lab/lab.css` for Moonglitch diagnostic SVG borders, padding, and accent filters. Icon glyphs and semantic text/controls remain present; shared fixture decoration-off and reduced-motion rules remain active.
+- Dependencies MF-VF-122, MF-VF-123, and MF-VF-127 are implemented. Backlog status: `implemented`.
+- Stylesheet SHA-256: `AB96477EEC4CA4AB4D29128E9DFFEB5AC42CC276C1C3BCDBAE6386D21A7050B0`.
+- Source inspection and `git diff --check` passed. Runner override honored: no package-manager commands, validators, test suites, browser run, typecheck, build, screenshot, or human review. Host runner owns verification/checkpoint. No accessibility or visual acceptance claimed.
+- Rollback: remove the Moonglitch art-off selector block, restore MF-VF-128 to planned, and remove matching TODO/backlog evidence. No commit created.
+
 ## MF-VF-160 — Mooncrash edition badge
 
 - Added `assets/source/skins/mooncrash/edition.svg`, a static equipment-label badge identifying Mooncrash as a Moonframe edition; live text avoids baking explanatory copy into artwork, and SVG title/description provide accessible naming.
