@@ -2346,3 +2346,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SHA-256: `lab.css` `EB25BF9656D75947494CF6D2C2211C77F833933D03AA256CDA662055B31FCCFD`; `skins.spec.js` `51F8507F38B305A6247D83E064BCE185D33750691135CC65BBF9B481504D4C94`. `git diff --check` exited 0; Git reported LF-to-CRLF normalization for the test file. The first full browser run showed the lab had no `.mf-search-icon`; the regression now injects a minimal aria-hidden `.mf-icon` into the shell. Focused `pnpm exec playwright test tests/browser/skins.spec.js -g 'Moonpanel decoration-off removes icon frames' --workers=1` passed 1/1.
 - The corrected focused test passed; host runner owns the final full suite, validators, typecheck, build, and checkpoint. Responsive/visual review and acceptance remain pending. No commit created.
 - Rollback: remove the Moonpanel decoration-off selector block and focused browser test, restore MF-VF-176 to planned, and remove matching TODO and ledger evidence.
+## MF-VF-217 — Classic motif SVG
+
+- Starting HEAD: `cb7d3432e8fb9e0768d7b5eba27093704bb3d6d2` (worktree clean).
+- Added original static `assets/source/skins/classic/motif.svg`, a balanced double-square frame using `currentColor`, with accessible title and description. SHA-256: `2fac5fcaad3bd63a034dc2c6956565c162ef57191651012118aab538f95d2762`.
+- Dependency MF-VF-216 is implemented. Backlog status: `implemented`; source inspection and digest calculation only. `git diff --check` exited 0 (Git reports LF-to-CRLF normalization for the backlog file).
+- Runner override honored: no validators, package-manager commands, suites, typecheck, build, screenshot, or commit run. Host runner owns verification/checkpoint. SVG security/rendering and optical, rights, human, and acceptance reviews remain pending.
+- Rollback: remove the SVG and restore MF-VF-217 to planned in the backlog and TODO, then remove this ledger entry.
