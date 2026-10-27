@@ -237,6 +237,19 @@ button svg, a svg { flex-shrink: 0; }
   box-shadow: none;
   filter: none;
 }
+/* Moonscrawl's hand-drawn frames and rotations are optional decoration; keep readable labels and controls. */
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item,
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-card {
+  rotate: none;
+  box-shadow: none;
+}
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after {
+  content: none !important;
+}
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-card {
+  border-style: solid;
+}
 @media (prefers-reduced-motion: reduce) {
   .mf-root[data-skin="moonhalftone"] .mf-shell * { scroll-behavior: auto; }
 }
@@ -248,6 +261,14 @@ button svg, a svg { flex-shrink: 0; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (prefers-reduced-motion: reduce) {
   .mf-shell[data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: none; }
+  .mf-root[data-skin="moonscrawl"] .mf-shell *,
+  .mf-root[data-skin="moonscrawl"] .mf-shell *::before,
+  .mf-root[data-skin="moonscrawl"] .mf-shell *::after {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+  }
 }
 @media (forced-colors: active) { .demo-orbit, .demo-swatch { display: none; } .demo-skin-option[data-active] { border: 2px solid Highlight; } .demo-toast { border: 2px solid CanvasText; } }
 @media (max-width: 560px) { .fixture-dashboard-utility { align-items: stretch; flex-direction: column; } .fixture-dashboard-utility-actions { flex-wrap: wrap; } .fixture-dashboard-utility-actions .mf-input { flex: 1 1 100%; inline-size: 100%; } }

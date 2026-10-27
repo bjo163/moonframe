@@ -2446,3 +2446,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Backlog status: `implemented`. Source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser rendering/capture, or commit run; host runner owns verification and checkpoint. Responsive/contrast review, rights review, human review, and acceptance remain pending.
 - Checkbox recount after this task: 370/488 checked and 118 unchecked, based on the preceding ledger recount of 369/488. Checked does not imply acceptance.
 - Rollback: remove the Moonscrawl MF-VF-187 rules, restore the task to planned, and remove matching TODO and ledger evidence.
+## MF-VF-188 — Moonscrawl decoration-off and reduced-motion fallback
+
+- Starting HEAD: `bc3650b8e49835610c3ed7e1283a1f6dc3086fbf` (worktree clean before task edits).
+- Dependencies MF-VF-182, MF-VF-183, and MF-VF-187 are implemented.
+- Added fixture-scoped art-off CSS to remove optional pseudo-art, card shadow/rotation, and dashed card edges. Added reduced-motion rules for Moonscrawl fixture transitions, animations, and scrolling while preserving content and controls.
+- Added a Playwright regression checking skin/motion/decor attributes, heading/navigation/action visibility, toggle focus, and reduced transition duration.
+- SHA-256: `lab.css` `C0C2A8CF78807A415EBE622231B7BFB8E5DE69754EB4074963D3E8B873600A0A`; `skins.spec.js` `922A614CEE035D5EAE5EEF6E312041358AD41C3BDE787101953DF6E0AF054C2E`. `git diff --check` exited 0.
+- Runner override honored: no package-manager commands, validators, browser tests, typecheck, build, screenshot capture, or commit run. Host runner owns verification/checkpoint. Human visual review, accessibility certification, and acceptance remain pending.
+- Rollback: remove the CSS additions and browser test, restore MF-VF-188 to planned, and remove matching TODO/backlog/ledger evidence.
