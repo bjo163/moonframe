@@ -1,3 +1,10 @@
+## MF-VF-163 — Mooncrash table, form, and dialog recipes
+
+- Starting HEAD: `1e714a247c10f60e1d16c3be973a80b430ec6087` (worktree clean).
+- Added Mooncrash-scoped equipment-panel table headers, margin-rail field groups, inset-edged controls, and double-plate dialogs in `src/styles.css`. Existing theme border/surface tokens are reused; shared markup, density, keyboard/form behavior, and ARIA semantics are unchanged.
+- Dependencies MF-VF-156 and MF-VF-162 are implemented. Backlog status: `implemented`. Source inspection only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, browser rendering, screenshot capture, or commit run; host runner owns applicable verification and checkpoint. Responsive/contrast review and acceptance remain pending.
+- No SHA computed in this invocation. Rollback: remove the seven MF-VF-163 selector rules, restore the backlog row to planned, and remove this ledger and TODO evidence.
+
 ## MF-VF-104 — Moonzine decoration-off and reduced-motion fallback
 
 - Added a focused Playwright scenario in `tests/browser/skins.spec.js` to verify core heading, navigation, card content, action, and control focus remain available when decorations are disabled. It also checks reduced-motion removes the Moonzine stagger and transitions without shifting navigation geometry.
