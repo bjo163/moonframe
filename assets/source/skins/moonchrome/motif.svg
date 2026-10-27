@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Moonchrome reflective rim motif</title>
+  <desc id="desc">A pair of precise concentric arcs suggesting a polished instrument rim.</desc>
+  <path d="M10 48a27 27 0 0 1 44-32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 48a21 21 0 0 1 33-25" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity=".55"/>
+  <path d="M51 19l3-3-1 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

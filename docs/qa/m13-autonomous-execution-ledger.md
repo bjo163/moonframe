@@ -2462,3 +2462,10 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Dependencies MF-VF-025, MF-VF-026, MF-VF-081, and MF-VF-082 are recorded complete/captured. Acceptance requires a named human verdict comparing Moonpunk with Moonriot and Moonsmash using grayscale and decoration-off evidence.
 - No reviewer verdict is available. Updated the task to `blocked-external-approval`; it remains unchecked. No review or approval was fabricated. Resume when a reviewer records an evidence-linked verdict in `docs/qa/reviews/moonpunk.md`.
 - Runner override honored: no package-manager commands, suites, typecheck, build, or commit run. Host runner owns checkpoint.
+# MF-VF-205 — Moonchrome reflective rim motif
+
+- Starting HEAD: `eba098937b7095388dec469b7d19a856843f4d3a` (worktree clean).
+- Dependency MF-VF-204 is implemented. Added original static `assets/source/skins/moonchrome/motif.svg`: a monochrome pair of concentric arcs with an accessible title and description; no external resources, script, event handlers, or embedded text.
+- Backlog status: `implemented`. Source inspection only. Per runner override, no validators, package-manager commands, test suites, typecheck, build, rendering, screenshot, or human review ran. Host runner owns verification and checkpoint. Optical/rights review and acceptance remain pending.
+- SHA-256: `67443a5d48e7e909b9ef1e63d6053b9c576740d514c19b89093b71221a3bb98b`.
+- Rollback: remove the SVG, restore MF-VF-205 to planned in the visual backlog, and remove the matching TODO and ledger entries.
