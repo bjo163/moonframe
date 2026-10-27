@@ -2287,3 +2287,9 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Stylesheet SHA-256: `E4D2E78D95AEA66DDDB8345FE872DB3C79A011BC06B8E3FE47A79ECB9A11C9A9`. `git diff --check` passed.
 - Runner override honored: no package-manager commands, validators, suites, typecheck, build, browser render, screenshots, or human review. Host runner owns applicable checks/checkpoint. Responsive and contrast review, rights review, and acceptance remain pending.
 - Rollback: remove the new Mooncrash selector block and restore the backlog row; remove matching TODO/ledger evidence. No commit created.
+## MF-PF-020 — Canonical 78×30 token source-value decision remains externally blocked
+
+- Updated the canonical task row from `implemented`/checked to `blocked-external-approval`/unchecked. The existing ADR records a file-format and source-layout decision only; it explicitly leaves canonical values, generator selection, the 30-slot value/contrast matrix, and public token API approval pending.
+- Exact unmet dependency: an authorized maintainer must approve or defer canonical 78×30 source-value production with migration/versioning. No owner decision or token values were fabricated. Dependent MF-PF-021/MF-PF-022 are not made newly eligible by this record.
+- Documentation/source inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, browser capture, or commit run; host runner owns verification and checkpoint.
+- Rollback: restore the MF-PF-020 backlog row/evidence to its previous wording and remove this ledger entry.
