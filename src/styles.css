@@ -603,6 +603,24 @@
 [data-skin="moonhalftone"] .mf-callout-icon { line-height: 1; }
 [data-skin="moonhalftone"] .mf-empty-icon { inline-size: 2.75rem; block-size: 2.75rem; padding: .35rem; }
 
+/* Moonhalftone data and interaction recipes use printed bands and ink rules,
+   keeping live controls clear while giving tables/forms/dialogs a distinct
+   panel rhythm. */
+[data-skin="moonhalftone"] .mf-table-wrapper { padding: .45rem; border: 1px solid var(--mf-border); background: var(--mf-surface-raised); }
+[data-skin="moonhalftone"] .mf-table { border-collapse: separate; border-spacing: 0; }
+[data-skin="moonhalftone"] .mf-table thead { border-block-end: 3px double var(--mf-text); }
+[data-skin="moonhalftone"] .mf-table th { background: transparent; color: var(--mf-text); font-family: var(--mf-display); font-size: .82rem; letter-spacing: .04em; }
+[data-skin="moonhalftone"] .mf-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--mf-surface) 72%, var(--mf-surface-raised)); }
+[data-skin="moonhalftone"] .mf-table tbody td:first-child { border-inline-start: 2px solid var(--mf-border); }
+[data-skin="moonhalftone"] .mf-field { padding: .8rem; border-block-start: 2px solid var(--mf-border); background: var(--mf-surface); }
+[data-skin="moonhalftone"] .mf-field > label { font-family: var(--mf-display); font-weight: 700; }
+[data-skin="moonhalftone"] .mf-input,
+[data-skin="moonhalftone"] .mf-select,
+[data-skin="moonhalftone"] .mf-textarea { border-radius: 0; border-inline-start: 3px solid var(--mf-border); background: var(--mf-bg); }
+[data-skin="moonhalftone"] .mf-dialog { border: 1px solid var(--mf-text); border-block-start-width: 4px; border-radius: 0; box-shadow: 6px 6px 0 var(--mf-border); }
+[data-skin="moonhalftone"] .mf-dialog-header { border-block-end: 1px solid var(--mf-border); padding-block-end: .85rem; }
+[data-skin="moonhalftone"] .mf-dialog-title { font-family: var(--mf-display); font-weight: 700; }
+
 /* 05 / Moonglitch — instrument keys, telemetry rails and aligned logs. */
 [data-skin="moonglitch"] { --mf-bg: #e6f1ec; --mf-surface: #f7fffb; --mf-surface-raised: #d7e9df; --mf-text: #12372a; --mf-muted: #3c6352; --mf-border: #6f9b86; --mf-accent: #006c4c; --mf-accent-text: #ffffff; --mf-radius: 2px; --mf-shadow: none; --mf-font: "Cascadia Code", "SFMono-Regular", Consolas, monospace; --mf-display: var(--mf-font); }
 [data-skin="moonglitch"][data-mode="dark"] { --mf-bg: #091a14; --mf-surface: #11291f; --mf-surface-raised: #1b3a2d; --mf-text: #deffec; --mf-muted: #9acdb2; --mf-border: #5f9c7b; --mf-accent: #69edaf; --mf-accent-text: #082b1a; }

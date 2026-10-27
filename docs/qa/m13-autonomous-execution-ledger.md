@@ -2174,3 +2174,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Stylesheet SHA-256:  6A3F1CB26E8B62DDE1D2CFB9E22ABCC0CF98A2F544D39E2F5857BDCAEEAB3B9.
 - Static source/class inspection and git diff --check only. Runner override honored: no validators, package-manager commands, test suites, typecheck, build, render, or human review run; host runner owns verification and checkpoint.
 - Responsive/contrast review and acceptance remain pending. Rollback: remove the MF-VF-127 selector block, restore the backlog row to planned, and remove matching TODO/ledger notes.
+
+## MF-VF-115 — Style Moonhalftone data-table, form, and dialog recipes
+
+- Starting HEAD: `73dd5aad8c1023846ca46f43775bfe83adb3ab36`.
+- Added Moonhalftone-scoped printed table bands, ink-rule field groups, clear control edges, and framed dialog treatment in `src/styles.css`. Shared component markup, keyboard/form behavior, and ARIA semantics were not changed; semantic status colors remain token-owned.
+- Dependencies MF-VF-108 and MF-VF-114 are implemented. Backlog status: `implemented`.
+- Source/class inspection only. Runner override honored: no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run; host runner owns verification/checkpoint.
+- Responsive rendering, browser behavior, contrast, rights review, and acceptance remain pending. No commit created.
+- Rollback: remove the MF-VF-115 selector block, restore the backlog row to planned, and remove matching TODO/ledger evidence.
