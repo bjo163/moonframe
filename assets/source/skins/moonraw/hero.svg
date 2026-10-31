@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="moonrawHeroTitle moonrawHeroDesc">
+  <title id="moonrawHeroTitle">Moonraw exposed structural specimen</title>
+  <desc id="moonrawHeroDesc">An orthogonal illustration of exposed load-bearing frames, a modular block mass, and a ruled specimen band. All forms are decorative geometry and contain no words or interface copy.</desc>
+  <rect width="960" height="560" fill="#f2f0ea"/>
+  <g stroke="#d6d2c6" stroke-width="2">
+    <path d="M0 96h960M0 192h960M0 288h960M0 384h960M0 480h960"/>
+    <path d="M96 0v560M192 0v560M288 0v560M384 0v560M480 0v560M576 0v560M672 0v560M768 0v560M864 0v560"/>
+  </g>
+  <g fill="none" stroke="#191b1d" stroke-width="10">
+    <path d="M56 56h352v448H56z"/>
+    <path d="M456 56h448v232H456z"/>
+    <path d="M456 336h448v168H456z"/>
+  </g>
+  <g fill="#191b1d">
+    <path d="M88 88h72v384H88zM216 88h72v384h-72zM344 88h32v88h-32zM344 232h32v240h-32z"/>
+    <path d="M488 88h136v32H488zM656 88h216v32H656z"/>
+    <path d="M488 152h88v24H488zM608 152h264v24H608z"/>
+    <path d="M488 200h216v24H488zM736 200h136v24H736z"/>
+  </g>
+  <g fill="#6c6f72">
+    <path d="M488 368h96v16H488zM616 368h256v16H616z"/>
+    <path d="M488 408h200v12H488zM720 408h152v12H720z"/>
+    <path d="M488 440h128v12H488zM648 440h224v12H648z"/>
+  </g>
+  <g fill="#191b1d">
+    <rect x="488" y="480" width="48" height="24"/>
+    <rect x="552" y="480" width="24" height="24"/>
+    <rect x="592" y="480" width="72" height="24"/>
+    <rect x="680" y="480" width="16" height="24"/>
+    <rect x="712" y="480" width="160" height="24"/>
+  </g>
+  <g fill="none" stroke="#191b1d" stroke-width="4">
+    <path d="M64 64h12M64 64v12M400 64h-12M400 64v12M64 496h12M64 496v-12M400 496h-12M400 496v-12"/>
+  </g>
+</svg>
