@@ -1095,14 +1095,44 @@
 /* 12 / Moonchrome — contoured metal rims with flat text planes. */
 [data-skin="moonchrome"] { --mf-bg: #e7ebf3; --mf-surface: #f9fbff; --mf-surface-raised: #dbe2ef; --mf-text: #273448; --mf-muted: #536580; --mf-border: #788aa6; --mf-accent: #405785; --mf-accent-text: #ffffff; --mf-radius: 1.25rem; --mf-shadow: inset 0 1px 0 #ffffffaa, 0 10px 30px #2639571c; --mf-display: "Segoe UI", system-ui, sans-serif; }
 [data-skin="moonchrome"][data-mode="dark"] { --mf-bg: #111b2b; --mf-surface: #1d2b40; --mf-surface-raised: #30425d; --mf-text: #edf4ff; --mf-muted: #b2c7e3; --mf-border: #7a96bc; --mf-accent: #b1d3ff; --mf-accent-text: #132e52; --mf-shadow: inset 0 1px 0 #ffffff25, 0 10px 30px #0003; }
-[data-skin="moonchrome"] .mf-shell { grid-template-columns: 14rem minmax(0, 1fr); padding: 1rem; gap: 1rem; }
-[data-skin="moonchrome"] .mf-sidebar { border: 1px solid var(--mf-border); border-radius: 2rem; background: linear-gradient(145deg, var(--mf-surface), var(--mf-surface-raised)); }
-[data-skin="moonchrome"] .mf-nav-item { border-radius: 999px; font-weight: 500; }
-[data-skin="moonchrome"] .mf-hero { border: 2px solid var(--mf-border); border-radius: 2rem; box-shadow: inset 0 0 0 5px var(--mf-surface-raised); }
+[data-skin="moonchrome"] .mf-shell { grid-template-columns: 14rem minmax(0, 1fr); padding: clamp(1rem, 2vw, 1.5rem); gap: clamp(1rem, 2vw, 1.5rem); }
+[data-skin="moonchrome"] .mf-main { inline-size: 100%; max-inline-size: 84rem; margin-inline: auto; }
+[data-skin="moonchrome"] .mf-sidebar { border: 1px solid var(--mf-border); border-radius: 2rem; background: linear-gradient(145deg, var(--mf-surface), var(--mf-surface-raised)); box-shadow: inset 0 0 0 4px var(--mf-surface), inset 0 0 0 5px var(--mf-border), 0 10px 30px #26395714; }
+[data-skin="moonchrome"] .mf-header { border-block-end: 1px solid var(--mf-border); padding-block-end: 1rem; }
+[data-skin="moonchrome"] .mf-nav-item { border: 1px solid transparent; border-radius: 999px; font-weight: 500; letter-spacing: .01em; }
+[data-skin="moonchrome"] .mf-nav-item[aria-current="page"],
+[data-skin="moonchrome"] .mf-nav-item[data-active="true"] { box-shadow: inset 0 0 0 1px var(--mf-border), inset 0 1px 0 #ffffffa0; }
+[data-skin="moonchrome"] .mf-hero { border: 2px solid var(--mf-border); border-radius: 2rem; box-shadow: inset 0 0 0 2px var(--mf-surface), inset 0 0 0 3px var(--mf-border), inset 0 0 0 8px var(--mf-surface-raised), 0 18px 44px #2639571c; }
 [data-skin="moonchrome"] .mf-hero h1 { font-weight: 300; letter-spacing: -.05em; }
-[data-skin="moonchrome"] .mf-card { border: 1px solid var(--mf-border); padding: .2rem; }
-[data-skin="moonchrome"] .mf-button { border-radius: 999px; border: 1px solid var(--mf-border); box-shadow: inset 0 2px 0 #ffffff40, 0 2px 3px #0002; }
-[data-skin="moonchrome"] .mf-table th { letter-spacing: .1em; font-size: .7rem; }
+[data-skin="moonchrome"] .mf-card { border: 1px solid var(--mf-border); border-radius: 1.25rem; padding: .25rem; box-shadow: inset 0 0 0 1px var(--mf-surface-raised), var(--mf-shadow); }
+[data-skin="moonchrome"] .mf-card-title { font-size: .95rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
+[data-skin="moonchrome"] .mf-stat-value,
+[data-skin="moonchrome"] .mf-table td { font-variant-numeric: tabular-nums lining-nums; }
+[data-skin="moonchrome"] .mf-button { border-radius: 999px; border: 1px solid var(--mf-border); box-shadow: inset 0 2px 0 #ffffff40, 0 2px 3px #0002; letter-spacing: .01em; }
+/* Machined icon frames keep the shared glyph and ARIA meaning while adding a circular rim. */
+[data-skin="moonchrome"] .mf-icon,
+[data-skin="moonchrome"] .mf-search-icon,
+[data-skin="moonchrome"] .mf-timeline-marker,
+[data-skin="moonchrome"] .mf-callout-icon,
+[data-skin="moonchrome"] .mf-empty-icon { display: inline-grid; place-items: center; border: 1px solid var(--mf-border); border-radius: 50%; background: var(--mf-surface); box-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border); }
+[data-skin="moonchrome"] .mf-icon { min-inline-size: 2.25rem; min-block-size: 2.25rem; }
+[data-skin="moonchrome"] .mf-timeline-marker { min-inline-size: 1.75rem; min-block-size: 1.75rem; }
+[data-skin="moonchrome"] .mf-callout-icon { padding: .15rem; }
+[data-skin="moonchrome"] .mf-empty-icon { padding: .45rem; }
+[data-skin="moonchrome"] .mf-search-icon { inline-size: 1.5rem; block-size: 1.5rem; font-size: .8rem; }
+[data-skin="moonchrome"] .mf-search-input { padding-inline-start: 2.85rem; }
+/* Precision records use uppercase technical headings, inset fields and a flat dialog text plane. */
+[data-skin="moonchrome"] .mf-table { border-block-start: 2px solid var(--mf-border); }
+[data-skin="moonchrome"] .mf-table th { background: var(--mf-surface-raised); border-block-end: 2px solid var(--mf-border); letter-spacing: .1em; font-size: .7rem; text-transform: uppercase; }
+[data-skin="moonchrome"] .mf-table td { border-block-end: 1px solid var(--mf-border); }
+[data-skin="moonchrome"] .mf-field label,
+[data-skin="moonchrome"] .mf-label { font-size: .8rem; font-weight: 650; letter-spacing: .05em; text-transform: uppercase; }
+[data-skin="moonchrome"] input:not([type="checkbox"]):not([type="radio"]),
+[data-skin="moonchrome"] select,
+[data-skin="moonchrome"] textarea { border: 1px solid var(--mf-border); border-radius: .75rem; background: var(--mf-surface); box-shadow: inset 0 1px 2px #26395714, inset 0 0 0 1px #ffffffa0; }
+[data-skin="moonchrome"] .mf-dialog,
+[data-skin="moonchrome"] dialog { border: 1px solid var(--mf-border); border-radius: 1.5rem; background: var(--mf-surface); box-shadow: inset 0 0 0 5px var(--mf-surface-raised), 0 24px 80px #0005; }
+[data-skin="moonchrome"] .mf-dialog-title { letter-spacing: -.01em; }
 
 /* 13 / Classic uses the balanced base recipes. */
 [data-skin="classic"] .mf-hero { background: linear-gradient(130deg, var(--mf-surface), var(--mf-surface-raised)); }

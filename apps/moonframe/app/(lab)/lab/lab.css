@@ -229,6 +229,23 @@ button svg, a svg { flex-shrink: 0; }
   box-shadow: none;
   background: transparent;
 }
+/* Moonchrome's machined rims and layered plate shadows are optional decoration; keep content, focus and actions. */
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-empty-icon {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-sidebar { background: var(--mf-surface); box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-hero { border-width: 1px; box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-card { padding: 0; box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-nav-item[aria-current="page"],
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-nav-item[data-active="true"] { box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-search-input { padding-inline-start: 2.2rem; }
 /* Keep Moonglitch's diagnostic icon framing optional with the other artwork. */
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-nav-item > svg,
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-button > svg,
