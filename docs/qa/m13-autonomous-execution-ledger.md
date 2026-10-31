@@ -2538,3 +2538,12 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Stylesheet SHA-256: `D58894DE3B00B00A99084FAED414B3FB485E022CB632E6A9FE71BEE8A256D4A9`. Targeted Playwright test `Moonraw decoration-off removes ruled icon frames without hiding content or actions` passed (1/1). Full-suite verification is recorded with the Moonraw capture batch.
 - Human visual rights sign-off and acceptance remain pending.
 - Rollback: remove the MF-VF-197 rules, restore MF-VF-197 to planned, and remove matching TODO/backlog/ledger evidence.
+
+## MF-VF-200–203 — Moonraw art-off, captures, and comparison
+
+- Starting HEAD `fc8dd5a` plus worktree; dependencies MF-VF-194, MF-VF-195, MF-VF-198, MF-VF-199, MF-VF-017, MF-VF-019, MF-VF-027, MF-VF-028, MF-VF-025, and MF-VF-026 are implemented.
+- MF-VF-200: added Moonraw art-off overrides in `apps/moonframe/app/(lab)/lab/lab.css` (SHA-256 `8949E7D09C877DCD4C624D2D207FA8944E9F79E255C1D9715A1A43A93ACFBBC8`) plus the Playwright test `Moonraw decoration-off removes ruled icon frames without hiding content or actions`.
+- MF-VF-201/202: regenerated Moonraw light and dark captures at 1440×960 and 360×800 with the fixed Northstar fixture and frozen time. Default desktop digests `46fda26213e232b63046b3dbafb1b3609fdd5265bc15580c572b1e33116d3e53` (light) and `6b6d5a8a867b25a8c2e946d9d56e10b0b7a4c2e94a9f16a19a952b6dacaa7034` (dark); mobile digests `623630e10925d04263165a5d2635e35136a7da8db7692932257620e3addcb6aa` and `180b43422352f0f0097cb596a1a7ba2796b65d0aab458abb0deeaceb2303594d`. All sidecars match source fingerprint `a77ff3a0a6faacd5a492e28acafd9421e2382b03c1b0bb2170be236056a493be`.
+- MF-VF-203: updated `docs/qa/reviews/raw-classic.md` with ten current captures and a named owner-delegated agent review (Qoder, 2026-10-31) recording a `distinct` verdict for composition, grayscale hierarchy, decoration-off behavior, and responsive order. Human countersign, contrast certification, and acceptance remain pending.
+- Verification: `pnpm run test:browser` 85/85 passed; `pnpm run audit:pairs` exit 0 (30 desktop + 30 tablet + 30 phone current-source captures).
+- Rollback: remove the Moonraw art-off block and test, remove the Moonraw captures/sidecars, restore rows 200–203 to planned, and restore the prior `raw-classic.md` evidence block.
