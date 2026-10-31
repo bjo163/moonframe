@@ -73,7 +73,7 @@ test('legacy defaults have no brand overlay, first-paint flash, or cross-consume
   expect(initialStates).toHaveLength(30);
   const secondContext = await browser.newContext();
   const secondPage = await secondContext.newPage();
-  await secondPage.goto('/lab');
+  await secondPage.goto(new URL('/lab', firstPage.url()).toString());
   await expect(secondPage.locator('.mf-root')).not.toHaveAttribute('data-brand');
   await expect(secondPage.locator('.mf-root')).toHaveAttribute('data-skin', 'classic');
   await expect(secondPage.locator('.mf-root')).toHaveAttribute('data-mode', 'light');
@@ -194,8 +194,10 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(profileUrl).toHaveAttribute('aria-describedby', 'fixture-workspace-url-error');
     await expect(profileFixture.getByText('Enter a valid workspace URL.', { exact: true })).toBeVisible();
     await profileUrl.fill('https://northstar.example/workspace');
+    await page.clock.pauseAt(new Date('2026-10-25T12:00:00.000Z'));
     await saveProfileButton.click();
     await expect(profileFixture.locator('.fixture-profile-status')).toHaveText('Saving…');
+    await page.clock.fastForward(180);
     await expect(profileFixture.locator('.fixture-profile-status')).toHaveText('Workspace profile saved.');
     await profileFixture.getByRole('button', { name: 'Cancel', exact: true }).click();
     await expect(profileUrl).toHaveValue('https://northstar.example/workspace');
