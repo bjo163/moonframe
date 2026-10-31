@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonchrome — Moonframe edition</title>
+  <desc id="desc">A machined edition plate with a concentric instrument rim and stacked label bars; the identity is carried by the accessible title, not baked-in lettering.</desc>
+  <rect x="2" y="2" width="236" height="60" rx="16" fill="#f7fafd" stroke="#6f7f96" stroke-width="2"/>
+  <rect x="8" y="8" width="224" height="48" rx="12" fill="none" stroke="#c8d2e0" stroke-width="4"/>
+  <circle cx="34" cy="32" r="13" fill="none" stroke="#405785" stroke-width="2.5"/>
+  <path d="M25 27a11 11 0 0 1 18 0" fill="none" stroke="#8a99af" stroke-width="2"/>
+  <circle cx="34" cy="32" r="3" fill="#405785"/>
+  <rect x="62" y="16" width="150" height="7" fill="#25344a"/>
+  <rect x="62" y="28" width="112" height="5" fill="#66788f"/>
+  <rect x="62" y="38" width="128" height="5" fill="#66788f"/>
+  <rect x="62" y="48" width="84" height="4" fill="#9aabc0"/>
+  <rect x="196" y="10" width="32" height="3" fill="#6f90c6"/>
+</svg>
