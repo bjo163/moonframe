@@ -219,6 +219,16 @@ button svg, a svg { flex-shrink: 0; }
   box-shadow: none;
   background: transparent;
 }
+/* Moonraw's ruled icon cells are optional decoration; keep glyphs, labels, focus and actions. */
+.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-empty-icon {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
 /* Keep Moonglitch's diagnostic icon framing optional with the other artwork. */
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-nav-item > svg,
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-button > svg,
