@@ -2530,3 +2530,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - SVG SHA-256: `0cd38e8fda3de6cbbfc107130136ad01d6e6592dd539722dd34dc8bbc518b312`. Chromium parse/security check: no parser error, 0 scripts, 0 foreignObject, 0 image/use references, accessible title/description.
 - Owner-delegated agent optical review at 960×560 and 240px in grayscale: structure legible, no essential text. Human rights/visual sign-off and acceptance remain pending.
 - Rollback: remove the SVG, restore MF-VF-195 to planned, and remove matching TODO/backlog/ledger evidence.
+
+## MF-VF-197 — Moonraw semantic icon frames
+
+- Starting HEAD `fc8dd5a` plus worktree; dependencies MF-VF-192, MF-VF-050, and MF-VF-057 are implemented.
+- Added Moonraw-scoped square icon cells with a double inset rule and minimum sizes for `.mf-icon`, `.mf-search-icon`, `.mf-timeline-marker`, `.mf-callout-icon`, and `.mf-empty-icon`; shared SVG glyphs, accessible names, and behavior are unchanged.
+- Stylesheet SHA-256: `D58894DE3B00B00A99084FAED414B3FB485E022CB632E6A9FE71BEE8A256D4A9`. Targeted Playwright test `Moonraw decoration-off removes ruled icon frames without hiding content or actions` passed (1/1). Full-suite verification is recorded with the Moonraw capture batch.
+- Human visual rights sign-off and acceptance remain pending.
+- Rollback: remove the MF-VF-197 rules, restore MF-VF-197 to planned, and remove matching TODO/backlog/ledger evidence.

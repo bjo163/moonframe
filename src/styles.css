@@ -1075,6 +1075,17 @@
 [data-skin="moonraw"] dialog { border: 2px solid var(--mf-border); border-radius: 0; box-shadow: 8px 8px 0 var(--mf-border); }
 [data-skin="moonraw"] .mf-dialog::backdrop,
 [data-skin="moonraw"] dialog::backdrop { background: #0009; }
+/* Raw icon frames are square ruled cells with a double rule; glyph geometry and ARIA meaning are unchanged. */
+[data-skin="moonraw"] .mf-icon,
+[data-skin="moonraw"] .mf-search-icon,
+[data-skin="moonraw"] .mf-timeline-marker,
+[data-skin="moonraw"] .mf-callout-icon,
+[data-skin="moonraw"] .mf-empty-icon { display: inline-grid; place-items: center; border: 1px solid var(--mf-border); border-radius: 0; background: var(--mf-surface); box-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border); }
+[data-skin="moonraw"] .mf-icon { min-inline-size: 2rem; min-block-size: 2rem; }
+[data-skin="moonraw"] .mf-search-icon,
+[data-skin="moonraw"] .mf-timeline-marker,
+[data-skin="moonraw"] .mf-callout-icon { min-inline-size: 1.75rem; min-block-size: 1.75rem; }
+[data-skin="moonraw"] .mf-empty-icon { padding: .35rem; }
 @media (max-width: 48rem) {
   [data-skin="moonraw"] .mf-shell { padding: 1rem; gap: 1.25rem; }
   [data-skin="moonraw"] .mf-sidebar { padding: 0 0 1rem; }
