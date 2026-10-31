@@ -2514,3 +2514,11 @@ Updated 2026-10-26. This ledger records local task execution evidence; it does n
 - Stylesheet SHA-256: `c02e82f1f892d7e05a836e5732434934b21aa0f7263948dc742dba53f75567a8`.
 - Backlog status: `implemented`. Source/class inspection only. Runner override honored: no validators, package-manager commands, tests, typecheck, build, browser rendering/capture, or commit run. Host runner owns verification/checkpoint; responsive rendering, contrast and human review/acceptance remain pending.
 - Rollback: remove the MF-VF-198 rules, restore the backlog row to planned, and remove matching TODO and ledger evidence.
+
+## MF-VF-199 — Moonraw table, form, and dialog recipes
+
+- Starting branch: `main`; initial worktree was clean. Dependencies MF-VF-192 and MF-VF-198 are implemented.
+- Added Moonraw-scoped ruled table headers/rows, square input/select/textarea surfaces with visible keyboard focus, and hard-edged dialog/backdrop styling in `src/styles.css`; shared component markup, keyboard/form behavior, density, and ARIA semantics remain unchanged.
+- Stylesheet SHA-256: `25F6B721BF444180B8BF056304DFBDE5A6F3A84A31A6619F67C3C8AA8BD7DC5F`. Backlog status: `implemented`.
+- Verification 2026-10-31 at starting HEAD `32c959804a2ca065c1bd410ab8ff26d64949b0a0` plus this worktree: `node scripts/validate-contracts.mjs` exit 0; `node scripts/verify-m13-handoff.mjs` exit 0; `pnpm test` 13/13 pass; `pnpm run typecheck` exit 0; `pnpm run build` exit 0; `pnpm run test:browser` 84/84 pass; `pnpm run audit:pairs` exit 0 (30 desktop + 30 tablet + 30 phone current-source captures). Human visual review and acceptance remain pending.
+- Rollback: remove the MF-VF-199 selector rules, restore the backlog row to planned, and remove matching TODO and ledger evidence.
