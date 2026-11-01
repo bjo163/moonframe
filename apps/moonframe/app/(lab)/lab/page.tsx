@@ -298,7 +298,7 @@ function LabWorkspace() {
     catch { announce('Clipboard unavailable. Select and copy the example in the Components tab.'); }
   }
 
-  return <div className="mf-shell" data-decoration-off={decorationsOff ? 'true' : undefined}>
+  return <div className="mf-shell" data-decorations={decorationsOff ? 'off' : undefined}>
     <a href="#main-content" className="demo-skip">Skip to content</a>
     <aside className="mf-sidebar" aria-label="Workspace and skin navigation">
       <a href="#main-content" className="demo-brand" aria-label="Moonframe home" onClick={() => setPage('workspace')}><span className="demo-mark" aria-hidden="true">m<span>•</span></span><span>moonframe<small>THE SHAPE OF YOUR IDEAS</small></span></a>

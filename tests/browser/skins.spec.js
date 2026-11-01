@@ -210,7 +210,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     await expect(decorativeSwatches.first()).toBeVisible();
     await expect(decorativeProjectSymbols.first()).toBeVisible();
     await decorationToggle.check();
-    await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+    await expect(shell).toHaveAttribute('data-decorations', 'off');
     await expect(decorativeSwatches.first()).toHaveCSS('display', 'none');
     await expect(decorativeProjectSymbols.first()).toHaveCSS('display', 'none');
     await expect(decorativeBrandMarks.first()).toHaveCSS('display', 'none');
@@ -246,7 +246,7 @@ for (const skin of skins) for (const mode of ['light', 'dark']) {
     }));
     writeSkinCaptureProvenance(decorationOffScreenshotPath, { ...decorationOffCapture, browserName: browser.browserType().name(), browserVersion: browser.version() });
     await decorationToggle.uncheck();
-    await expect(shell).not.toHaveAttribute('data-decoration-off', 'true');
+    await expect(shell).not.toHaveAttribute('data-decorations', 'off');
     await expect(decorativeSwatches.first()).toBeVisible();
     await expect(decorativeProjectSymbols.first()).toBeVisible();
     const root = page.locator('.mf-root');
@@ -610,7 +610,7 @@ test('Moonzine decoration-off preserves content and reduced-motion keeps editori
 
   const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(card).toBeVisible();
@@ -646,7 +646,7 @@ test('Mooncrash decoration-off removes rack indices without hiding navigation or
   expect(navIndexBefore).not.toBe('none');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
@@ -681,7 +681,7 @@ test('Moonpanel decoration-off removes icon frames without hiding content or act
   expect(await iconFrame.evaluate(node => getComputedStyle(node).borderTopWidth)).not.toBe('0px');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(iconFrame).toBeVisible();
@@ -717,7 +717,7 @@ test('Moonraw decoration-off removes ruled icon frames without hiding content or
   expect(await iconFrame.evaluate(node => getComputedStyle(node).boxShadow)).not.toBe('none');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(iconFrame).toBeVisible();
@@ -756,7 +756,7 @@ test('Moonchrome decoration-off removes machined rims without hiding content or 
   expect(await hero.evaluate(node => getComputedStyle(node).boxShadow)).not.toBe('none');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(iconFrame).toBeVisible();
@@ -796,7 +796,7 @@ test('Classic decoration-off removes pill rims without hiding content or actions
   expect(await hero.evaluate(node => getComputedStyle(node).boxShadow)).not.toBe('none');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(iconFrame).toBeVisible();
@@ -833,7 +833,7 @@ test('Moonhalftone decoration-off removes screentone icon frames without hiding 
   expect(await iconFrame.evaluate(node => getComputedStyle(node).borderTopWidth)).not.toBe('0px');
 
   await decorationToggle.check();
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(iconFrame).toBeVisible();
@@ -859,7 +859,7 @@ test('Moonscrawl decoration-off preserves content, focus, and reduced-motion beh
 
   await expect(root).toHaveAttribute('data-skin', 'moonscrawl');
   await expect(root).toHaveAttribute('data-motion', 'reduced');
-  await expect(shell).toHaveAttribute('data-decoration-off', 'true');
+  await expect(shell).toHaveAttribute('data-decorations', 'off');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(nav).toBeVisible();
   await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
@@ -868,6 +868,53 @@ test('Moonscrawl decoration-off preserves content, focus, and reduced-motion beh
 
   const durations = await shell.evaluate(node => getComputedStyle(node).transitionDuration.split(',').map(value => Number.parseFloat(value)));
   expect(durations.every(duration => duration <= 0.01)).toBe(true);
+});
+
+// One invariant for all fifteen identities: the documented hook must leave no decorative paint behind.
+test('every skin leaves no decorative paint under data-decorations="off"', async ({ page }) => {
+  test.setTimeout(180_000);
+  await page.setViewportSize({ width: 1440, height: 960 });
+
+  for (const skin of skins) {
+    await page.goto(`/lab?skin=${skin.id}`);
+    await expect(page.locator('.mf-root')).toHaveAttribute('data-skin', skin.id);
+    await page.getByLabel('Motion', { exact: true }).selectOption('reduced');
+    const decorationToggle = page.getByRole('switch', { name: 'Hide decorative elements', exact: true });
+    await decorationToggle.check();
+    await expect(page.locator('.mf-shell')).toHaveAttribute('data-decorations', 'off');
+
+    const survivors = await page.evaluate(() => {
+      const groups = [
+        ['.mf-shell, .mf-main, .mf-hero, .mf-sidebar', 'backgroundImage'],
+        ['.mf-card, .mf-button, .mf-nav-item, .mf-hero, .mf-header, .mf-sidebar, .mf-input, .mf-select, .mf-textarea, .mf-table-row', 'boxShadow'],
+        ['.mf-icon, .mf-search-icon, .mf-timeline-marker, .mf-callout-icon, .mf-empty-icon, .mf-nav-item > svg, .mf-button > svg, .mf-stat-header > svg', 'backgroundImage'],
+        ['.mf-icon, .mf-search-icon, .mf-timeline-marker, .mf-callout-icon, .mf-empty-icon, .mf-nav-item > svg, .mf-button > svg, .mf-stat-header > svg', 'filter'],
+      ];
+      const offenders = [];
+      for (const [selectors, property] of groups) {
+        for (const el of document.querySelectorAll(`.mf-shell :is(${selectors}), .mf-shell:is(${selectors})`)) {
+          const value = getComputedStyle(el)[property];
+          if (value !== 'none') {
+            offenders.push(`${el.tagName.toLowerCase()}.${(el.getAttribute('class') || '').split(/\s+/)[0]} ${property}:${value}`);
+          }
+        }
+      }
+      for (const el of document.querySelectorAll('.mf-shell :is(.mf-hero, .mf-sidebar, .mf-nav-item)')) {
+        for (const pseudo of ['::before', '::after']) {
+          const value = getComputedStyle(el, pseudo).content;
+          if (value !== 'none' && value !== 'normal') offenders.push(`${el.tagName.toLowerCase()}.${(el.getAttribute('class') || '').split(/\s+/)[0]}${pseudo} content:${value}`);
+        }
+      }
+      return [...new Set(offenders)];
+    });
+
+    expect(survivors, `${skin.id} still paints ${survivors.join(', ')}`).toEqual([]);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.locator('.mf-nav-item').first()).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Create project', exact: true })).toBeVisible();
+    await decorationToggle.focus();
+    await expect(decorationToggle).toBeFocused();
+  }
 });
 
 test('critical lab actions and readable content work without artwork or custom fonts', async ({ page }) => {

@@ -145,7 +145,7 @@ button svg, a svg { flex-shrink: 0; }
 .fixture-dashboard-heading h2 { max-inline-size: 14ch; margin: 8px 0 3px; font-family: var(--mf-display); font-size: clamp(32px, 5.2vw, 64px); line-height: .98; letter-spacing: -.055em; text-wrap: balance; }
 .fixture-dashboard-heading p { margin: 0; color: var(--mf-muted); font-size: 12px; }
 .fixture-dashboard-heading .fixture-dashboard-marginalia { margin-block-start: 10px; color: var(--mf-accent); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 9px; font-style: italic; letter-spacing: .04em; }
-.mf-shell[data-decoration-off="true"] .fixture-dashboard-marginalia { display: none; }
+.mf-shell[data-decorations="off"] .fixture-dashboard-marginalia { display: none; }
 .fixture-dashboard-heading-actions { display: grid; justify-items: end; gap: 10px; }
 .fixture-dashboard-heading-actions time { color: var(--mf-muted); font-size: 11px; }
 .fixture-dashboard-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0 24px; }
@@ -196,107 +196,106 @@ button svg, a svg { flex-shrink: 0; }
 .fixture-profile-actions > div:last-child { display: flex; justify-content: flex-end; gap: 8px; }
 .fixture-profile-status { color: var(--mf-muted); font-size: 11px; }
 .fixture-profile-status:empty { display: none; }
-.mf-shell[data-decoration-off="true"] .demo-orbit,
-.mf-shell[data-decoration-off="true"] .demo-project-symbol,
-.mf-shell[data-decoration-off="true"] .demo-swatch,
-.mf-shell[data-decoration-off="true"] .demo-mark,
-.mf-shell[data-decoration-off="true"] .demo-workspace-icon,
-.mf-shell[data-decoration-off="true"] .mf-nav-item svg,
-.mf-shell[data-decoration-off="true"] .demo-skin-option svg { display: none !important; }
-.mf-shell[data-decoration-off="true"] .demo-project-name { gap: 0; }
-.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-sidebar::after { display: none; }
-.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card { box-shadow: none; }
-.mf-shell[data-skin="moonriot"][data-decoration-off="true"] .mf-card:nth-of-type(even) { translate: none; }
+.mf-shell[data-decorations="off"] .demo-orbit,
+.mf-shell[data-decorations="off"] .demo-project-symbol,
+.mf-shell[data-decorations="off"] .demo-swatch,
+.mf-shell[data-decorations="off"] .demo-mark,
+.mf-shell[data-decorations="off"] .demo-workspace-icon,
+.mf-shell[data-decorations="off"] .mf-nav-item svg,
+.mf-shell[data-decorations="off"] .demo-skin-option svg { display: none !important; }
+.mf-shell[data-decorations="off"] .demo-project-name { gap: 0; }
+/* Moonriot's offset card slabs are optional decoration; the stripe and shadows follow the library hook. */
+.mf-root[data-skin="moonriot"] .mf-shell[data-decorations="off"] .mf-card:nth-of-type(even) { translate: none; }
 /* Mooncrash rack indices are optional decoration; keep the navigation labels and targets intact. */
-.mf-root[data-skin="mooncrash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before { content: none !important; }
+.mf-root[data-skin="mooncrash"] .mf-shell[data-decorations="off"] .mf-nav-item::before { content: none !important; }
 /* Moonpanel's icon-cell frames are optional decoration; preserve the glyphs and their labels. */
-.mf-root[data-skin="moonpanel"] .mf-shell[data-decoration-off="true"] .mf-icon,
-.mf-root[data-skin="moonpanel"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
-.mf-root[data-skin="moonpanel"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
-.mf-root[data-skin="moonpanel"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
-.mf-root[data-skin="moonpanel"] .mf-shell[data-decoration-off="true"] .mf-empty-icon {
+.mf-root[data-skin="moonpanel"] .mf-shell[data-decorations="off"] .mf-icon,
+.mf-root[data-skin="moonpanel"] .mf-shell[data-decorations="off"] .mf-search-icon,
+.mf-root[data-skin="moonpanel"] .mf-shell[data-decorations="off"] .mf-timeline-marker,
+.mf-root[data-skin="moonpanel"] .mf-shell[data-decorations="off"] .mf-callout-icon,
+.mf-root[data-skin="moonpanel"] .mf-shell[data-decorations="off"] .mf-empty-icon {
   border: 0;
   box-shadow: none;
   background: transparent;
 }
 /* Moonraw's ruled icon cells are optional decoration; keep glyphs, labels, focus and actions. */
-.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-icon,
-.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
-.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
-.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
-.mf-root[data-skin="moonraw"] .mf-shell[data-decoration-off="true"] .mf-empty-icon {
+.mf-root[data-skin="moonraw"] .mf-shell[data-decorations="off"] .mf-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decorations="off"] .mf-search-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decorations="off"] .mf-timeline-marker,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decorations="off"] .mf-callout-icon,
+.mf-root[data-skin="moonraw"] .mf-shell[data-decorations="off"] .mf-empty-icon {
   border: 0;
   box-shadow: none;
   background: transparent;
 }
 /* Moonchrome's machined rims and layered plate shadows are optional decoration; keep content, focus and actions. */
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-icon,
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-empty-icon {
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-search-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-timeline-marker,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-callout-icon,
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-empty-icon {
   border: 0;
   border-radius: 0;
   box-shadow: none;
   background: transparent;
 }
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-sidebar { background: var(--mf-surface); box-shadow: none; }
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-hero { border-width: 1px; box-shadow: none; }
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-card { padding: 0; box-shadow: none; }
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-nav-item[aria-current="page"],
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-nav-item[data-active="true"] { box-shadow: none; }
-.mf-root[data-skin="moonchrome"] .mf-shell[data-decoration-off="true"] .mf-search-input { padding-inline-start: 2.2rem; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-sidebar { background: var(--mf-surface); box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-hero { border-width: 1px; box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-card { padding: 0; box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-nav-item[aria-current="page"],
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-nav-item[data-active="true"] { box-shadow: none; }
+.mf-root[data-skin="moonchrome"] .mf-shell[data-decorations="off"] .mf-search-input { padding-inline-start: 2.2rem; }
 /* Classic's pill icon rims and card shadows are optional decoration; keep glyphs, labels, focus and actions. */
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-icon,
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-timeline-marker,
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-empty-icon { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-nav-item[aria-current="page"],
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-nav-item[data-active="true"] { box-shadow: none; }
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-hero { box-shadow: none; }
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-card { box-shadow: none; }
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-button { box-shadow: none; }
-.mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-search-input { padding-inline-start: 1.5rem; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-icon,
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-search-icon,
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-timeline-marker,
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-callout-icon,
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-empty-icon { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-nav-item[aria-current="page"],
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-nav-item[data-active="true"] { box-shadow: none; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-hero { box-shadow: none; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-card { box-shadow: none; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-button { box-shadow: none; }
+.mf-root[data-skin="classic"] .mf-shell[data-decorations="off"] .mf-search-input { padding-inline-start: 1.5rem; }
 /* Moonsmash's radial framing and poster graphics are optional decoration; keep glyphs, labels, focus and actions. */
-.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item,
-.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-card { rotate: none; box-shadow: none; }
-.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
-.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after { content: none !important; }
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decorations="off"] .mf-nav-item,
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decorations="off"] .mf-card { rotate: none; box-shadow: none; }
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decorations="off"] .mf-nav-item::before,
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decorations="off"] .mf-nav-item::after { content: none !important; }
 /* Moonink's organic border radius and top-rule cards are optional decoration; preserve reading column and focus. */
-.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item { rotate: none; box-shadow: none; }
-.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
-.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after { content: none !important; }
-.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-card { box-shadow: none; }
+.mf-root[data-skin="moonink"] .mf-shell[data-decorations="off"] .mf-nav-item { rotate: none; box-shadow: none; }
+.mf-root[data-skin="moonink"] .mf-shell[data-decorations="off"] .mf-nav-item::before,
+.mf-root[data-skin="moonink"] .mf-shell[data-decorations="off"] .mf-nav-item::after { content: none !important; }
+.mf-root[data-skin="moonink"] .mf-shell[data-decorations="off"] .mf-card { box-shadow: none; }
 /* Keep Moonglitch's diagnostic icon framing optional with the other artwork. */
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-nav-item > svg,
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-button > svg,
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-search-icon > svg,
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-callout-icon > svg,
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-empty-icon > svg,
-.mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-stat-header > svg { border: 0; padding: 0; filter: none; }
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-nav-item > svg,
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-button > svg,
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-search-icon > svg,
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-callout-icon > svg,
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-empty-icon > svg,
+.mf-root[data-skin="moonglitch"] .mf-shell[data-decorations="off"] .mf-stat-header > svg { border: 0; padding: 0; filter: none; }
 /* Moonhalftone screentone and icon framing are optional; preserve glyphs and controls. */
-.mf-root[data-skin="moonhalftone"] .mf-shell[data-decoration-off="true"] .mf-icon,
-.mf-root[data-skin="moonhalftone"] .mf-shell[data-decoration-off="true"] .mf-search-icon,
-.mf-root[data-skin="moonhalftone"] .mf-shell[data-decoration-off="true"] .mf-callout-icon,
-.mf-root[data-skin="moonhalftone"] .mf-shell[data-decoration-off="true"] .mf-empty-icon,
-.mf-root[data-skin="moonhalftone"] .mf-shell[data-decoration-off="true"] .mf-stat-header > svg {
+.mf-root[data-skin="moonhalftone"] .mf-shell[data-decorations="off"] .mf-icon,
+.mf-root[data-skin="moonhalftone"] .mf-shell[data-decorations="off"] .mf-search-icon,
+.mf-root[data-skin="moonhalftone"] .mf-shell[data-decorations="off"] .mf-callout-icon,
+.mf-root[data-skin="moonhalftone"] .mf-shell[data-decorations="off"] .mf-empty-icon,
+.mf-root[data-skin="moonhalftone"] .mf-shell[data-decorations="off"] .mf-stat-header > svg {
   border: 0;
   background: transparent;
   box-shadow: none;
   filter: none;
 }
 /* Moonscrawl's hand-drawn frames and rotations are optional decoration; keep readable labels and controls. */
-.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item,
-.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-card {
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decorations="off"] .mf-nav-item,
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decorations="off"] .mf-card {
   rotate: none;
   box-shadow: none;
 }
-.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
-.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after {
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decorations="off"] .mf-nav-item::before,
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decorations="off"] .mf-nav-item::after {
   content: none !important;
 }
-.mf-root[data-skin="moonscrawl"] .mf-shell[data-decoration-off="true"] .mf-card {
+.mf-root[data-skin="moonscrawl"] .mf-shell[data-decorations="off"] .mf-card {
   border-style: solid;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -309,7 +308,7 @@ button svg, a svg { flex-shrink: 0; }
 @media (max-width: 480px) { .fixture-dashboard-heading { align-items: start; flex-direction: column; } .fixture-dashboard-metrics { gap: 7px; } .fixture-dashboard-metric { padding: 10px 8px; } .fixture-dashboard-metric dt { font-size: 9px; } .fixture-dashboard-metric dd { margin-block-start: 7px; font-size: 23px; } .fixture-dashboard-activity li { align-items: start; gap: 8px; } .fixture-dashboard-activity li > div:last-child { max-inline-size: 100px; } .fixture-dashboard-activity strong { overflow-wrap: anywhere; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (prefers-reduced-motion: reduce) {
-  .mf-shell[data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: none; }
+  .mf-root[data-skin="moonriot"] .mf-card:nth-of-type(even) { translate: none; }
   .mf-root[data-skin="moonscrawl"] .mf-shell *,
   .mf-root[data-skin="moonscrawl"] .mf-shell *::before,
   .mf-root[data-skin="moonscrawl"] .mf-shell *::after {
