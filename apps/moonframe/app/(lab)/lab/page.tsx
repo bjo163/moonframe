@@ -232,6 +232,7 @@ function LabWorkspace() {
   const [decorationsOff, setDecorationsOff] = useState(false);
   const [page, setPage] = useState<'workspace' | 'components'>('workspace');
   const [projects, setProjects] = useState<ProjectItem[]>(seedProjects);
+  const [hydrated, setHydrated] = useState(false);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('All statuses');
   const [sort, setSort] = useState<'date' | 'name' | 'progress'>('date');
@@ -240,7 +241,6 @@ function LabWorkspace() {
   const [notice, setNotice] = useState('');
   const [storageAvailable, setStorageAvailable] = useState(true);
   const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isMounted = useRef(true);
   const currentSkin = skins.find(s => s.id === theme.skin) || skins[0];
 
   const announce = (message: string) => {
@@ -251,6 +251,7 @@ function LabWorkspace() {
 
   useEffect(() => {
     setProjects(loadProjects());
+    setHydrated(true);
     return () => { if (noticeTimer.current) clearTimeout(noticeTimer.current); };
   }, []);
 
