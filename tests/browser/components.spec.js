@@ -514,6 +514,29 @@ test('dialog and backdrop fade instead of popping', async ({ page }) => {
   expect(observed.backdrop).toContain('opacity');
 });
 
+test('avatar settles on initials after a failure and recovers on a corrected source', async ({ page }) => {
+  await page.goto('/lab/behavior?fixture=avatar');
+  const fixture = page.locator('[data-fixture="avatar-lifecycle"]');
+  const avatar = fixture.locator('.mf-avatar');
+  await expect(avatar.getByRole('img', { name: 'Reviewer' })).toHaveText('RV');
+
+  const laterErrors = await page.evaluate(selector => {
+    const host = document.querySelector(selector);
+    host.dataset.errorCount = '0';
+    host.addEventListener('error', () => { host.dataset.errorCount = String(Number(host.dataset.errorCount) + 1); }, true);
+    return true;
+  }, '[data-fixture="avatar-lifecycle"]');
+  expect(laterErrors).toBe(true);
+  await page.waitForTimeout(600);
+  expect(await avatar.locator('img').count()).toBe(0);
+  expect(await fixture.evaluate(node => Number(node.dataset.errorCount))).toBe(0);
+
+  await fixture.getByRole('button', { name: 'Use a reachable photo' }).click();
+  const image = avatar.locator('img');
+  await expect(image).toHaveCount(1);
+  await expect(image).toHaveAttribute('src', /^data:image\/svg\+xml/);
+});
+
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {
   test.setTimeout(120_000);
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));

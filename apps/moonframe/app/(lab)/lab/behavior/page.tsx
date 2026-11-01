@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 import {
   Button, Checkbox, Switch, Tabs, Dialog, Accordion, Input, Select,
   Field, RadioGroup, DropdownMenu, Popover, Tooltip, DataTable,
-  OTPInput, PasswordField, TagInput, SegmentedControl, ErrorBoundary,
+  OTPInput, PasswordField, TagInput, SegmentedControl, ErrorBoundary, Avatar,
 } from '@moonwitness/moonframe';
+
+const unreachableAvatarSrc = '/mf-avatar-that-does-not-exist.png';
+const reachableAvatarSrc = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22%3E%3Crect width=%2220%22 height=%2220%22 fill=%22%23354ab5%22/%3E%3C/svg%3E';
 
 function ProbePanel({ label, fail }: { label: string; fail: boolean }) {
   if (fail) throw new Error(`${label} could not render`);
@@ -35,6 +38,8 @@ export default function BehaviorFixturePage() {
   const [erpSearch, setErpSearch] = useState('');
   const [statesFixture, setStatesFixture] = useState(false);
   const [errorFixture, setErrorFixture] = useState(false);
+  const [avatarFixture, setAvatarFixture] = useState(false);
+  const [avatarSrc, setAvatarSrc] = useState(unreachableAvatarSrc);
   const [defaultFail, setDefaultFail] = useState(false);
   const [customFail, setCustomFail] = useState(false);
   const [previewState, setPreviewState] = useState<'loading' | 'empty' | 'error' | 'denied'>('loading');
@@ -56,6 +61,7 @@ export default function BehaviorFixturePage() {
     setErpFixture(query.get('fixture') === 'enterprise');
     setStatesFixture(query.get('fixture') === 'states');
     setErrorFixture(query.get('fixture') === 'error-boundary');
+    setAvatarFixture(query.get('fixture') === 'avatar');
     const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
     setArchiveFixture(shouldOpenArchiveFixture);
     setArchiveOpen(shouldOpenArchiveFixture);
@@ -77,7 +83,7 @@ export default function BehaviorFixturePage() {
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
-      {!authFixture && !articleFixture && !erpFixture && !statesFixture && !errorFixture && <h1>Components</h1>}
+      {!authFixture && !articleFixture && !erpFixture && !statesFixture && !errorFixture && !avatarFixture && <h1>Components</h1>}
       {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
         <header style={{ marginBlockEnd: '1.5rem' }}>
           <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
@@ -170,6 +176,13 @@ export default function BehaviorFixturePage() {
             <ProbePanel label="Custom fallback panel" fail={customFail} />
           </ErrorBoundary>
           <div><Button variant="secondary" onClick={() => setCustomFail(true)}>Break the second panel</Button></div>
+        </div>
+      </section>}
+      {avatarFixture && <section data-fixture="avatar-lifecycle" aria-labelledby="avatar-lifecycle-title" style={{ maxWidth: 440, margin: '2rem auto', color: 'var(--mf-text)' }}>
+        <header style={{ marginBlockEnd: '1rem' }}><p style={{ color: 'var(--mf-muted)', fontSize: '.8rem' }}>WORKSPACE · LOCAL PREVIEW</p><h1 id="avatar-lifecycle-title">Avatar source recovery</h1><p>A failed photo falls back to initials; a corrected source is retried.</p></header>
+        <div style={{ display: 'grid', gap: '1rem', justifyItems: 'start' }}>
+          <Avatar src={avatarSrc} alt="Reviewer" fallback="RV" />
+          <div><Button variant="secondary" onClick={() => setAvatarSrc(reachableAvatarSrc)}>Use a reachable photo</Button></div>
         </div>
       </section>}
       {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">

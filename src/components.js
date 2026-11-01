@@ -141,9 +141,7 @@ export const Progress = forwardRef(function Progress({ value = 0, max = 100, lab
 export const Avatar = forwardRef(function Avatar({ src, alt = '', fallback = '?', className, ...props }, ref) {
   const [failedSource, setFailedSource] = useState(null);
   useEffect(() => {
-    if (src && failedSource) {
-      setFailedSource(null);
-    }
+    if (failedSource && failedSource !== src) setFailedSource(null);
   }, [src, failedSource]);
   return h('span', { ...props, ref, className: cx('mf-avatar', className) },
     src && src !== failedSource
