@@ -1135,8 +1135,26 @@
 [data-skin="moonchrome"] .mf-dialog-title { letter-spacing: -.01em; }
 
 /* 13 / Classic uses the balanced base recipes. */
-[data-skin="classic"] .mf-hero { background: linear-gradient(130deg, var(--mf-surface), var(--mf-surface-raised)); }
-[data-skin="classic"] .mf-nav-item[aria-current="page"] { color: var(--mf-accent); }
+[data-skin="classic"] .mf-nav-item { border-radius: 999px; font-weight: 600; }
+[data-skin="classic"] .mf-nav-item[aria-current="page"],
+[data-skin="classic"] .mf-nav-item[data-active="true"] { background: var(--mf-surface-raised); color: var(--mf-text); box-shadow: 0 1px 2px #0002; }
+[data-skin="classic"] .mf-hero { background: linear-gradient(130deg, var(--mf-surface), var(--mf-surface-raised)); box-shadow: 0 1px 2px #0002; }
+[data-skin="classic"] .mf-hero h1 { font-weight: 700; letter-spacing: -.02em; }
+[data-skin="classic"] .mf-card { border-radius: var(--mf-radius); }
+[data-skin="classic"] .mf-card-title { font-weight: 700; }
+[data-skin="classic"] .mf-button { box-shadow: 0 1px 2px #0002; }
+/* Soft pill icon frames keep the shared glyph and ARIA meaning while adding a restrained rim. */
+[data-skin="classic"] .mf-icon,
+[data-skin="classic"] .mf-search-icon,
+[data-skin="classic"] .mf-timeline-marker,
+[data-skin="classic"] .mf-callout-icon,
+[data-skin="classic"] .mf-empty-icon { display: inline-grid; place-items: center; border: 1px solid var(--mf-border); border-radius: 999px; background: var(--mf-surface); box-shadow: 0 1px 2px #0002; }
+[data-skin="classic"] .mf-icon { min-inline-size: 2rem; min-block-size: 2rem; }
+[data-skin="classic"] .mf-timeline-marker { min-inline-size: 1.75rem; min-block-size: 1.75rem; }
+[data-skin="classic"] .mf-callout-icon { padding: .15rem; }
+[data-skin="classic"] .mf-empty-icon { padding: .45rem; }
+[data-skin="classic"] .mf-search-icon { inline-size: 1.5rem; block-size: 1.5rem; font-size: .8rem; }
+[data-skin="classic"] .mf-search-input { padding-inline-start: 2.65rem; }
 
 /* 14 / Moonquest — journal columns, inset frames and inventory index. */
 [data-skin="moonquest"] { --mf-bg: #e8e0ca; --mf-surface: #fff8e5; --mf-surface-raised: #e9ddbb; --mf-text: #40331e; --mf-muted: #6c583d; --mf-border: #a58d58; --mf-accent: #675023; --mf-accent-text: #fff9e8; --mf-radius: .5rem; --mf-shadow: inset 0 0 0 3px var(--mf-surface), inset 0 0 0 4px var(--mf-border), 0 4px 12px #37281118; --mf-display: Palatino, "Palatino Linotype", Georgia, serif; }
