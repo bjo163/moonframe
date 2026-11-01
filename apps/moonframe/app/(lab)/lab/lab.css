@@ -258,6 +258,16 @@ button svg, a svg { flex-shrink: 0; }
 .mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-card { box-shadow: none; }
 .mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-button { box-shadow: none; }
 .mf-root[data-skin="classic"] .mf-shell[data-decoration-off="true"] .mf-search-input { padding-inline-start: 1.5rem; }
+/* Moonsmash's radial framing and poster graphics are optional decoration; keep glyphs, labels, focus and actions. */
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item,
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-card { rotate: none; box-shadow: none; }
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
+.mf-root[data-skin="moonsmash"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after { content: none !important; }
+/* Moonink's organic border radius and top-rule cards are optional decoration; preserve reading column and focus. */
+.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item { rotate: none; box-shadow: none; }
+.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item::before,
+.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-nav-item::after { content: none !important; }
+.mf-root[data-skin="moonink"] .mf-shell[data-decoration-off="true"] .mf-card { box-shadow: none; }
 /* Keep Moonglitch's diagnostic icon framing optional with the other artwork. */
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-nav-item > svg,
 .mf-shell[data-skin="moonglitch"][data-decoration-off="true"] .mf-button > svg,

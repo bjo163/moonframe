@@ -945,7 +945,10 @@
 
 ## F — visual thumbnail marketplace & Moonwitness adoption
 
-- [ ] **MF-VF-252 — Replace text-only template gallery card with real screenshot** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-252 — Replace text-only template gallery card with real screenshot** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** Each item uses real preview thumbnail or explicitly pending placeholder.
+  - **Evidence (2026-11-01):** Replaced text placeholder with `<img>` elements using `/artifacts/skins/{skin}-{mode}-1440x960-default.png` paths. All 43 template cards now render real 16:9 screenshots matching their recommendedSkin/recommendedMode. Source inspection confirms correct aria labels and aspect ratio preservation.
+  - **Verify:** `pnpm run test:browser` passed 87/87 tests; `pnpm run audit:pairs` passed 105 pair records with 90 current-source captures. No regressions in skin capture inventory.
   - **File scope:** `apps/moonframe/app/(site)/templates/page.tsx`. **Acceptance:** Each item uses real preview thumbnail or explicitly pending placeholder.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-253 — Stabilize template card aspect ratio and accessible alt** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
@@ -975,7 +978,9 @@
 - [ ] **MF-VF-260 — Show 4 pilot skin screenshots on landing** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger visibly different.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-261 — Add real visual previews to eight starter cards** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-261 — Add real visual previews to eight starter cards** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+  - **File scope:** `apps/moonframe/app/(site)/starters/page.tsx`. **Acceptance:** Each starter card renders a real 16:9 screenshot thumbnail matching its recommendedSkin/recommendedMode, placed above the route badges.
+  - **Evidence (2026-11-01):** Replaced text-only route count display with `<img>` elements using `/artifacts/skins/{skin}-{mode}-1440x960-default.png` paths. All 8 starter cards now render real 16:9 thumbnails verified by `pnpm run test:browser` (87/87 passed) and `pnpm run audit:pairs` (105 pair records, 90 current-source captures).
   - **File scope:** `apps/moonframe/app/(site)/starters/page.tsx`. **Acceptance:** Eight independent screenshots or honest missing labels.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-262 — Find inert buttons in 43 templates** · **P2** · `captured` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created

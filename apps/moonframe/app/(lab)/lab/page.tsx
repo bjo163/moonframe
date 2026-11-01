@@ -363,11 +363,89 @@ function LabWorkspace() {
   </div>;
 }
 
+function DiffView({ announce }: { announce: (m: string) => void }) {
+  const [skinA, setSkinA] = useState<SkinId>('classic');
+  const [skinB, setSkinB] = useState<SkinId>('moonpunk');
+  const [modeA, setModeA] = useState<Mode>('light');
+  const [modeB, setModeB] = useState<Mode>('dark');
+
+  return (
+    <Card className="demo-diff-view" style={{ marginBottom: '22px' }}>
+      <CardHeader>
+        <CardTitle>Side-by-Side Skin Diff</CardTitle>
+        <CardDescription>Compare two skins with identical content to evaluate visual differences.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <Label htmlFor="diff-skin-a">Skin A</Label>
+            <Select id="diff-skin-a" value={skinA} onChange={e => setSkinA(e.target.value as SkinId)}>
+              {skins.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+            </Select>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <Label htmlFor="diff-mode-a">Mode A</Label>
+            <Select id="diff-mode-a" value={modeA} onChange={e => setModeA(e.target.value as Mode)}>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System</option>
+            </Select>
+          </div>
+          <span style={{ fontSize: '1.2rem', opacity: 0.4, marginLeft: '20px', marginRight: '20px' }}>⟷</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <Label htmlFor="diff-skin-b">Skin B</Label>
+            <Select id="diff-skin-b" value={skinB} onChange={e => setSkinB(e.target.value as SkinId)}>
+              {skins.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+            </Select>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <Label htmlFor="diff-mode-b">Mode B</Label>
+            <Select id="diff-mode-b" value={modeB} onChange={e => setModeB(e.target.value as Mode)}>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System</option>
+            </Select>
+          </div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', overflow: 'hidden' }}>
+          <ThemeProvider defaultSkin={skinA} defaultMode={modeA} storageKey={null} syncDocumentElement>
+            <div style={{ padding: '16px', background: 'var(--mf-bg)', minHeight: '200px' }}>
+              <Badge>{skins.find(s => s.id === skinA)?.name} · {modeA}</Badge>
+              <div style={{ marginTop: '12px', display: 'flex', gap: '8px' }}>
+                <Button size="sm">Primary</Button>
+                <Button size="sm" variant="secondary">Secondary</Button>
+              </div>
+              <Progress value={72} label="Progress" style={{ marginTop: '12px' }} />
+              <div style={{ marginTop: '12px', fontSize: '0.85rem', color: 'var(--mf-muted)' }}>
+                Identical content rendered under different skin grammar.
+              </div>
+            </div>
+          </ThemeProvider>
+          <ThemeProvider defaultSkin={skinB} defaultMode={modeB} storageKey={null} syncDocumentElement>
+            <div style={{ padding: '16px', background: 'var(--mf-bg)', minHeight: '200px' }}>
+              <Badge>{skins.find(s => s.id === skinB)?.name} · {modeB}</Badge>
+              <div style={{ marginTop: '12px', display: 'flex', gap: '8px' }}>
+                <Button size="sm">Primary</Button>
+                <Button size="sm" variant="secondary">Secondary</Button>
+              </div>
+              <Progress value={72} label="Progress" style={{ marginTop: '12px' }} />
+              <div style={{ marginTop: '12px', fontSize: '0.85rem', color: 'var(--mf-muted)' }}>
+                Identical content rendered under different skin grammar.
+              </div>
+            </div>
+          </ThemeProvider>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 function Gallery({ announce, theme, onDialog }: { announce: (m: string) => void; theme: ReturnType<typeof useTheme>; onDialog: () => void }) {
   const [notifications, setNotifications] = useState(true);
   const [terms, setTerms] = useState(false);
   const [volume, setVolume] = useState(65);
   return <section className="demo-gallery" aria-labelledby="gallery-title"><div className="demo-section-heading"><div><div className="demo-eyebrow">THE BUILDING BLOCKS</div><h1 id="gallery-title">Everything, in your style.</h1><p>Shared behavior. A completely different feeling.</p></div><Badge>{theme.skin}</Badge></div>
+    <DiffView announce={announce} />
     <div className="demo-gallery-grid">
       <Card><CardHeader><CardTitle>Make a move</CardTitle><CardDescription>Buttons and actions for every intention.</CardDescription></CardHeader><CardContent className="demo-stack"><div className="demo-inline"><Button onClick={() => announce('Primary action clicked.')}>Primary action <Icon name="arrow" size={16} /></Button><Button variant="secondary" onClick={() => announce('Secondary action clicked.')}>Secondary</Button><Button variant="ghost" onClick={() => announce('Ghost action clicked.')}>Ghost</Button><Button variant="danger" onClick={() => announce('Danger action preview — nothing deleted.')}>Danger</Button><Button disabled>Disabled</Button></div><Separator /><div className="demo-inline"><Button size="sm" onClick={() => announce('Small button clicked.')}>Small</Button><Button size="md" onClick={() => announce('Medium button clicked.')}>Medium</Button><Button size="lg" onClick={() => announce('Large button clicked.')}>Large</Button></div></CardContent></Card>
       <Card><CardHeader><CardTitle>A little context</CardTitle><CardDescription>Status, people, and a sense of progress.</CardDescription></CardHeader><CardContent className="demo-stack"><div className="demo-inline"><Badge>In progress</Badge><Badge variant="secondary">Design</Badge><Badge variant="danger">Needs attention</Badge></div><div className="demo-inline"><Avatar fallback="AL" alt="Alex Lane" /><Avatar fallback="JK" alt="Jamie Kim" /><Avatar fallback="SR" alt="Sam Rivera" /><span className="demo-muted">Good things happen together.</span></div><Label htmlFor="gallery-progress">Progress · {volume}%</Label><input id="gallery-progress" aria-label="Adjust progress" type="range" min="0" max="100" value={volume} onChange={e => setVolume(Number(e.target.value))} /><Progress value={volume} label="Example progress" /></CardContent></Card>

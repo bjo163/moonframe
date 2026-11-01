@@ -1,7 +1,7 @@
 {
-  "sourceCommit": "93b596f4af6437d009de105cda4d936e4368f2bd",
-  "sourceFingerprint": "d0d272ebcdcd096b6f2277ffe0d1c77db410bda0a137cbe4576f74234426c0c9",
-  "imageSha256": "65801700956772464846159ccb55346af593e01e740556162b6344d321703f01",
+  "sourceCommit": "c34bdfbfefae8c5e400a0c1472859c1f5c8f4088",
+  "sourceFingerprint": "b9cec4fa03da441f044ff2903484426f27067d1806101702b9520ade71d1cf09",
+  "imageSha256": "eeee3305eb46219c6aff410eb8c2c01844e836a023d388a86f9dd7a8e989727a",
   "capture": {
     "viewport": "360x800",
     "locale": "en-US",

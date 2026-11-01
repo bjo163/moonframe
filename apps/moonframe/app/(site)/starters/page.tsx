@@ -54,6 +54,20 @@ export default function StartersIndexPage() {
                   })}
                 </div>
               </CardContent>
+                <img
+                  alt={`Starter preview: ${starter.title}`}
+                  src={`/artifacts/skins/${starter.recommendedSkin}-${starter.recommendedMode}-1440x960-default.png`}
+                  style={{
+                    aspectRatio: '16 / 9',
+                    minHeight: '7rem',
+                    width: '100%',
+                    objectFit: 'cover',
+                    border: '1px solid var(--mf-border)',
+                    borderRadius: 'var(--mf-radius)',
+                    display: 'block',
+                    marginTop: '0.6rem',
+                  }}
+                />
               <CardFooter style={{ justifyContent: 'space-between' }}>
                 <Button size="sm" asChild>
                   <Link href={`/starters/${starter.id}`}>Launch Multi-Route App →</Link>
