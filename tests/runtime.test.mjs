@@ -406,3 +406,25 @@ test('skin screenshot provenance rejects mismatched source, PNG digests, or capt
   assert.equal(validateSkinCaptureProvenance(valid, 'b'.repeat(64), 'e'.repeat(64)), false);
   assert.equal(validateSkinCaptureProvenance({ ...valid, sourceCommit: 'invalid' }, 'b'.repeat(64), 'c'.repeat(64)), false);
 });
+
+test('every data attribute the library stylesheet selects is actually set by library or showcase code', () => {
+  const css = fs.readFileSync(path.join('src', 'styles.css'), 'utf8');
+  const tapped = [...new Set([...css.matchAll(/\[(data-[a-z-]+)/g)].map(match => match[1]))];
+  assert.ok(tapped.length > 15, `expected the stylesheet to tap its preference attributes, found ${tapped.length}`);
+
+  const sources = [];
+  const walk = dir => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name === 'node_modules' || entry.name === '.next' || entry.name === 'dist') continue;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (/\.(js|ts|tsx|mjs)$/.test(entry.name)) sources.push(full);
+    }
+  };
+  walk('src');
+  walk(path.join('apps', 'moonframe'));
+  const producers = sources.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+
+  const orphans = tapped.filter(attribute => !new RegExp(`${attribute}(?![\\w-])`).test(producers));
+  assert.deepEqual(orphans, [], `styles.css selects ${orphans.join(', ')} but no component or page sets it`);
+});
