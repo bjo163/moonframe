@@ -1447,10 +1447,18 @@
         ],
         "humanReviewRequired": true,
         "pairwiseStatus": "not-reviewed",
-        "reviewEvidence": []
+        "reviewEvidence": [
+          "MF-VF-218: assets/source/skins/classic/pattern.svg (320x96 hairline border w/ registration ticks), SHA-256 51d64a8951cc172dd5ce49c28362b0e319adb8499780abff3201979be4fc5ce1",
+          "MF-VF-219: assets/source/skins/classic/hero.svg (960x560 neutral composition), SHA-256 e2498c5ed48fccdba5af0a76eb1460f240193026f591b22e6e8c59151050051a",
+          "MF-VF-220: assets/source/skins/classic/edition.svg (240x64 badge), SHA-256 64df81633a7f5aa1774751286d0baeaf9247b33c56038993e3f44942bb8b0946",
+          "MF-VF-221: src/styles.css [data-skin=\"classic\"] icon frames (pill rims on .mf-icon/.mf-search-icon/.mf-timeline-marker/.mf-callout-icon/.mf-empty-icon)",
+          "MF-VF-222: src/styles.css [data-skin=\"classic\"] nav-item pill radius 999px + active surface; shell uses base grid recipes (no geometry override)",
+          "MF-VF-223: src/styles.css [data-skin=\"classic\"] table th/td, field label, input/select/textarea, dialog/card/button recipes",
+          "MF-VF-224: apps/moonframe/app/(lab)/lab/lab.css decoration-off block + tests/browser/skins.spec.js \"Classic decoration-off removes pill rims\""
+        ]
       },
       "specStatus": "specified",
-      "implementationStatus": "not-implemented",
+      "implementationStatus": "implemented",
       "approvalStatus": "pending-visual-review",
       "userVisualReference": {
         "role": "neutral-control",

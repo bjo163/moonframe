@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">Moonledger grid pattern</title>
+  <desc id="desc">A subtle geometric grid using moonledger restrained blue-gray tone; decorative only, can be removed without changing content.</desc>
+  <rect x="2" y="2" width="316" height="92" rx="8" fill="none" stroke="#7b8fa3" stroke-opacity=".12" stroke-width="1"/>
+  <path d="M0 0h320v96H0zM16 16h288M16 80h288M0 16h320M0 80h320" stroke="#7b8fa3" stroke-opacity=".08" stroke-width="1"/>
+  <rect cx="8" cy="8" r="4" fill="#7b8fa3"/>
+  <rect cx="312" cy="8" r="4" fill="#7b8fa3"/>
+  <rect cx="8" cy="88" r="4" fill="#7b8fa3"/>
+  <rect cx="312" cy="88" r="4" fill="#7b8fa3"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="classicHeroTitle classicHeroDesc">
+  <title id="title">Moonquest familiar application baseline</title>
+  <desc id="desc">A calm application composition with a left rail, a content column of three cards, and a bottom action strip. All forms are decorative geometry with no words or interface copy.</desc>
+  <rect width="960" height="560" fill="#e8e0ca"/>
+  <rect x="40" y="40" width="880" height="480" rx="28" fill="#fff8e5" stroke="#a58d58" stroke-width="2"/>
+  <rect x="52" y="52" width="856" height="456" rx="22" fill="none" stroke="#e9ddbb" stroke-width="1.5"/>
+  <rect x="72" y="72" width="816" height="2" fill="#e9ddbb"/>
+  <rect x="80" y="104" width="156" height="352" rx="12" fill="#fff8e5" stroke="#a58d58" stroke-width="1.5"/>
+  <g fill="#6c583d" stroke="#a58d58" stroke-width="1">
+    <rect x="92" y="124" width="132" height="26" rx="13"/>
+    <rect x="92" y="160" width="132" height="26" rx="13"/>
+    <rect x="92" y="196" width="132" height="26" rx="13"/>
+    <rect x="92" y="232" width="132" height="26" rx="13"/>
+  </g>
+  <rect x="260" y="104" width="560" height="352" rx="12" fill="#fff8e5" stroke="#a58d58" stroke-width="1.5"/>
+  <g fill="#40331e">
+    <rect x="280" y="124" width="160" height="18" rx="4"/>
+  </g>
+  <g fill="#6c583d">
+    <rect x="280" y="150" width="240" height="10" rx="3"/>
+  </g>
+  <g>
+    <rect x="280" y="180" width="164" height="152" rx="10" fill="#fffaf0" stroke="#e9ddbb" stroke-width="1.5"/>
+    <rect x="460" y="180" width="164" height="152" rx="10" fill="#fffaf0" stroke="#e9ddbb" stroke-width="1.5"/>
+    <rect x="640" y="180" width="164" height="152" rx="10" fill="#fffaf0" stroke="#e9ddbb" stroke-width="1.5"/>
+  </g>
+  <g fill="#e9ddbb">
+    <rect x="292" y="192" width="140" height="10" rx="2"/>
+    <rect x="472" y="192" width="140" height="10" rx="2"/>
+    <rect x="652" y="192" width="140" height="10" rx="2"/>
+  </g>
+  <g fill="#a58d58">
+    <rect x="292" y="212" width="120" height="8" rx="2"/>
+    <rect x="472" y="212" width="120" height="8" rx="2"/>
+    <rect x="652" y="212" width="120" height="8" rx="2"/>
+  </g>
+  <g fill="#40331e">
+    <rect x="292" y="240" width="80" height="8" rx="2"/>
+    <rect x="472" y="240" width="80" height="8" rx="2"/>
+    <rect x="652" y="240" width="80" height="8" rx="2"/>
+  </g>
+  <rect x="80" y="480" width="800" height="40" rx="10" fill="#fffaf0" stroke="#e9ddbb" stroke-width="1.5"/>
+  <g>
+    <rect x="100" y="492" width="120" height="16" rx="8" fill="#fff9e8" stroke="#a58d58" stroke-width="1.5"/>
+    <rect x="660" y="492" width="120" height="16" rx="8" stroke="#40331e"/>
+  </g>
+  <g fill="none" stroke="#40331e" stroke-width="3">
+    <path d="M60 104v-16h20M900 104v-16h-20M60 480v16h20M900 480v16h-20"/>
+  </g>
+</svg>

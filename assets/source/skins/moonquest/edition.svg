@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="title desc">
+  <title id="title">Moonframe edition</title>
+  <desc id="desc">A balanced edition plate with a centered frame motif and stacked label bars; the identity is carried by the accessible title, not baked-in lettering.</desc>
+  <rect x="2" y="2" width="236" height="60" rx="14" fill="#fffaf0" stroke="#a58d58" stroke-width="2"/>
+  <rect x="8" y="8" width="224" height="48" rx="10" fill="none" stroke="#e9ddbb" stroke-width="2"/>
+  <path d="M34 22h28v28H34z" fill="none" stroke="#40331e" stroke-width="3"/>
+  <path d="M42 30h12v12H42z" fill="none" stroke="#6c583d" stroke-width="2"/>
+  <rect x="74" y="16" width="150" height="7" fill="#40331e"/>
+  <rect x="74" y="28" width="112" height="5" fill="#6c583d"/>
+  <rect x="74" y="38" width="128" height="5" fill="#6c583d"/>
+  <rect x="74" y="48" width="84" height="4" fill="#e9ddbb"/>
+</svg>

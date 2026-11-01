@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">Classic margin hairline</title>
+  <desc id="desc">A restrained hairline border with small registration ticks for optional noninteractive margins; it carries no texture and can be removed without changing content.</desc>
+  <rect x="2" y="2" width="316" height="92" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="10" y="10" width="300" height="76" rx="8" fill="none" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
+  <path d="M18 18v8M34 18v8M50 18v8M286 18v8M302 18v8M18 86v-8M34 86v-8M50 86v-8M286 86v-8M302 86v-8" stroke="currentColor" stroke-opacity=".22" stroke-width="1"/>
+  <path d="M140 14h80M140 90h80" stroke="currentColor" stroke-opacity=".14" stroke-width="1"/>
+</svg>

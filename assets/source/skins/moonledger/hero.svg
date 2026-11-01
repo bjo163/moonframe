@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="classicHeroTitle classicHeroDesc">
+  <title id="title">Moonledger compact workbench hero</title>
+  <desc id="desc">A compact workbench composition showing moonledger palette and restrained chrome; decorative geometry only.</desc>
+  <rect width="960" height="560" fill="#edf1f5"/>
+  <rect x="40" y="40" width="880" height="480" rx="22" fill="#ffffff" stroke="#7b8fa3" stroke-width="1.5"/>
+  <rect x="52" y="52" width="856" height="456" rx="18" fill="none" stroke="#c1d5e0" stroke-width="1.5"/>
+  <g fill="#185f83">
+    <rect x="72" y="72" width="816" height="2" fill="#7b8fa3"/>
+  </g>
+  <rect x="80" y="104" width="156" height="352" rx="12" fill="#e4eaf0" stroke="#7b8fa3" stroke-width="1.5"/>
+  <g fill="#52677b">
+    <rect x="92" y="124" width="132" height="26" rx="4"/>
+    <rect x="92" y="160" width="132" height="26" rx="4"/>
+    <rect x="92" y="196" width="132" height="26" rx="4"/>
+    <rect x="92" y="232" width="132" height="26" rx="4"/>
+  </g>
+  <rect x="260" y="104" width="560" height="352" rx="12" fill="#e4eaf0" stroke="#7b8fa3" stroke-width="1.5"/>
+  <g fill="#233445">
+    <rect x="280" y="124" width="160" height="18" rx="4"/>
+  </g>
+  <g fill="#52677b">
+    <rect x="280" y="150" width="240" height="10" rx="3"/>
+  </g>
+  <g>
+    <rect x="280" y="180" width="164" height="152" rx="8" fill="#edf6ff" stroke="#7b8fa3" stroke-width="1.5"/>
+    <rect x="460" y="180" width="164" height="152" rx="8" fill="#edf6ff" stroke="#7b8fa3" stroke-width="1.5"/>
+    <rect x="640" y="180" width="164" height="152" rx="8" fill="#edf6ff" stroke="#7b8fa3" stroke-width="1.5"/>
+  </g>
+  <g fill="#7b8fa3">
+    <rect x="292" y="192" width="140" height="10" rx="2"/>
+    <rect x="472" y="192" width="140" height="10" rx="2"/>
+    <rect x="652" y="192" width="140" height="10" rx="2"/>
+  </g>
+  <g fill="#8cd5f7">
+    <rect x="292" y="212" width="120" height="8" rx="2"/>
+    <rect x="472" y="212" width="120" height="8" rx="2"/>
+    <rect x="652" y="212" width="120" height="8" rx="2"/>
+  </g>
+  <g fill="#0c3448">
+    <rect x="292" y="240" width="80" height="8" rx="2"/>
+    <rect x="472" y="240" width="80" height="8" rx="2"/>
+    <rect x="652" y="240" width="80" height="8" rx="2"/>
+  </g>
+  <rect x="80" y="480" width="800" height="40" rx="10" fill="#e4eaf0" stroke="#7b8fa3" stroke-width="1.5"/>
+  <g>
+    <rect x="100" y="492" width="120" height="16" rx="8" fill="#ffffff" stroke="#7b8fa3" stroke-width="1.5"/>
+    <rect x="660" y="492" width="120" height="16" rx="8" fill="#0c3448"/>
+  </g>
+  <g fill="none" stroke="#7b8fa3" stroke-width="3">
+    <path d="M60 104v-16h20M900 104v-16h-20M60 480v16h20M900 480v16h-20"/>
+  </g>
+</svg>
