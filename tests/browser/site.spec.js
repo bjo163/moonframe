@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
+import { TEMPLATE_CATALOG } from '../../apps/moonframe/lib/catalog';
 
 const siteCaptureDir = path.resolve('artifacts/site');
 fs.mkdirSync(siteCaptureDir, { recursive: true });
@@ -339,5 +340,27 @@ test('R01 mission dashboard baseline captures wide, tablet, and mobile layouts',
       fullPage: true,
       animations: 'disabled',
     });
+  }
+});
+
+test('All 43 templates captured deterministically at desktop, tablet, mobile', async ({ page }) => {
+  test.setTimeout(180000); // 3 minutes for 129 screenshots
+  const layouts = [
+    { name: 'desktop', width: 1440, height: 960 },
+    { name: 'tablet', width: 768, height: 1024 },
+    { name: 'mobile', width: 360, height: 800 },
+  ];
+
+  for (const layout of layouts) {
+    await page.setViewportSize({ width: layout.width, height: layout.height });
+    for (const template of TEMPLATE_CATALOG) {
+      await page.goto(`/templates/${template.id}`);
+      await expect(page.getByRole('heading', { name: template.title })).toBeVisible();
+      await page.screenshot({
+        path: path.join(siteCaptureDir, `template-${template.id}-${layout.name}.png`),
+        fullPage: true,
+        animations: 'disabled',
+      });
+    }
   }
 });

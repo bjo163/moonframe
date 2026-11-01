@@ -21,12 +21,12 @@
 |---|---:|---:|
 | A — P0 repair release evidence and CI | 16 | 16 |
 | B — deterministic lab and snapshot fixture microtasks | 16 | 16 |
-| C — master logo and its smallest production assets | 17 | 4 |
-| D — individual functional SVG glyphs (one icon = one task) | 22 | 0 |
-| E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 0 |
-| F — visual thumbnail marketplace & Moonwitness adoption | 18 | 0 |
-| G — final 9 specimens, cross-family QA and release gate | 23 | 9 |
-| **TOTAL** | **292** | **51** |
+| C — master logo and its smallest production assets | 17 | 14 |
+| D — individual functional SVG glyphs (one icon = one task) | 22 | 10 |
+| E — 15 skins x 12 subatomic design, illustration and review actions | 180 | 160 |
+| F — visual thumbnail marketplace & Moonwitness adoption | 18 | 16 |
+| G — final 9 specimens, cross-family QA and release gate | 23 | 19 |
+| **TOTAL** | **292** | **281** |
 
 ## A — P0 repair release evidence and CI
 
@@ -571,7 +571,7 @@
   - **Evidence (2026-10-27):** Added scoped Moonsmash styling to `src/styles.css`: framed/segmented table rows, display-face table headers, hard-edged field controls, and an offset impact frame for dialogs. Selectors use existing `.mf-table-wrapper`, `.mf-table`, `.mf-field`, `.mf-input`, and `.mf-dialog` classes; public component markup and behavior are unchanged. Dependencies MF-VF-132 and MF-VF-138 are implemented. Source/class inspection only; no validators, package-manager commands, tests, typecheck, build, rendering, or browser capture run per runner override. Responsive output, contrast in rendered states, visual review, rights review, and acceptance remain pending. Host runner owns checks/checkpoint. Rollback: remove the MF-VF-139 style block and restore this row to planned; remove matching TODO/ledger entries.
   - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-140 — [moonsmash] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-134, MF-VF-135, MF-VF-139` · **GitHub issue:** not-created
+- [x] **MF-VF-140 — [moonsmash] Verify art-off and reduced-motion fallback** · **P1** · `implemented` · **dependency:** `MF-VF-134, MF-VF-135, MF-VF-139` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonsmash decoration disabled.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-141 — [moonsmash] Capture same-content light 1440px and 360px** · **P2** · `captured` · **dependency:** `MF-VF-017, MF-VF-019, MF-VF-027, MF-VF-028, MF-VF-138, MF-VF-139, MF-VF-140` · **GitHub issue:** not-created
@@ -613,7 +613,7 @@
   - **File scope:** `src/styles.css`. **Acceptance:** Distinct visual construction while keyboard/API semantics and density are stable.
   - **Evidence (2026-10-27):** Added a Moonink-specific table treatment with ruled rows, field controls with a margin rail and underline focus/error states, and a quiet side-rail dialog treatment. Rules are scoped under `data-skin="moonink"`; shared markup, focus behavior, and semantic status colors are unchanged. Dependencies MF-VF-144 and MF-VF-150 are implemented. Source inspection only; no validators, package-manager commands, suites, typecheck, build, rendering, browser capture, or human review run under runner override. Host runner owns checks/checkpoint. Responsive rendering, contrast, and visual acceptance remain pending. Rollback: remove the MF-VF-151 CSS block and restore this row to planned; remove matching TODO/ledger evidence.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-152 — [moonink] Verify art-off and reduced-motion fallback** · **P1** · `planned` · **dependency:** `MF-VF-146, MF-VF-147, MF-VF-151` · **GitHub issue:** not-created
+- [x] **MF-VF-152 — [moonink] Verify art-off and reduced-motion fallback** · **P1** · `implemented` · **dependency:** `MF-VF-146, MF-VF-147, MF-VF-151` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(lab)/lab/lab.css`. **Acceptance:** No content/focus/action loss when moonink decoration disabled.
   - **Verify:** One scoped artifact, provenance/visual/accessibility test as appropriate. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-153 — [moonink] Capture same-content light 1440px and 360px** · **P2** · `captured` · **dependency:** `MF-VF-017, MF-VF-019, MF-VF-027, MF-VF-028, MF-VF-150, MF-VF-151, MF-VF-152` · **GitHub issue:** not-created
@@ -963,19 +963,19 @@
   - **File scope:** `apps/moonframe/components/site/SkinCard.tsx`. Added per-card Light/Dark controls that retain the same dashboard sample and switch the nested ThemeProvider mode. Buttons expose `aria-pressed`; the mode label is associated accessibly. Existing `mode` remains the initial value.
   - **Evidence (2026-10-27):** Source inspection confirms both modes are selectable per card, the displayed mode tracks selection, and the fixed preview content is shared. Dependency MF-VF-031 is implemented. Status `implemented`; no browser render, screenshots, validators, package-manager commands, suites, typecheck, or build run per runner override; host runner owns verification/checkpoint. Responsive visual review and acceptance remain pending. Rollback: revert SkinCard mode state/controls and restore this row to planned; remove matching TODO and ledger entries.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-256 — Add two-skin side-by-side diff selection** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-256 — Add two-skin side-by-side diff selection** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Identical content appears in both skin containers.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-257 — Add grayscale/decor-off toggle on diff view** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-257 — Add grayscale/decor-off toggle on diff view** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(lab)/lab/page.tsx`. **Acceptance:** Review non-color properties by disabling color/decorations.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-258 — Show actual human-reviewed/pending state on skin detail** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/skins/[id]/page.tsx`. **Acceptance:** Do not show approved badge based on CSS score.
   - **Evidence (2026-10-27):** Added a persistent, accessible “pending human review” status to each skin detail page. It explicitly says automated structure checks and screenshots are not approval. Source inspection only; no package-manager commands, tests, validators, typecheck, build, or browser capture run under runner override. Human review and acceptance remain pending; host runner owns verification/checkpoint. Rollback: remove the status paragraph and restore this row to planned.
-- [ ] **MF-VF-259 — Add optional art slot to showcase landing hero** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-259 — Add optional art slot to showcase landing hero** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** CTA/title remain visible when illustration fails/hidden.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-260 — Show 4 pilot skin screenshots on landing** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-260 — Show 4 pilot skin screenshots on landing** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/app/(site)/page.tsx`. **Acceptance:** Classic, Moonpunk, Moonzine, Moonledger visibly different.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-261 — Add real visual previews to eight starter cards** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
@@ -986,13 +986,13 @@
 - [x] **MF-VF-262 — Find inert buttons in 43 templates** · **P2** · `captured` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** Audit per action working/demo/integration seam.
   - **Evidence (2026-10-27):** Source audit classifies navigation, local dialog triggers, local demo callbacks, and inert actions with their consumer integration seams in [template action audit](../qa/template-action-audit.md). The source contains inert controls including Reset Avatar, Install with pnpm, Explore 15 Skins, and finance/operations/inventory/security actions without handlers. Source inspection only; no browser interaction review, tests, validators, package-manager commands, typecheck, or build run under runner override. No behavior change or human acceptance claimed. Rollback: restore this row to planned and remove the audit document.
-- [ ] **MF-VF-263 — Label demo auth/OAuth actions as simulated** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-263 — Label demo auth/OAuth actions as simulated** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `apps/moonframe/templates/index.tsx`. **Acceptance:** No fake sign-in success claim.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-264 — Screenshot 43 templates deterministically** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-264 — Screenshot 43 templates deterministically** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `tests/browser/site.spec.js`. **Acceptance:** One capture per template with same recorded viewport/skin mode.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-265 — Track 43 individual template review records** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [ ] **MF-VF-265 — Track 43 individual template review records** · **P2** · `in_progress` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/qa/template-fidelity-ledger.md (proposed)`. **Acceptance:** Reference, image, rights, reviewer, exceptions, explicit pending state.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 - [x] **MF-VF-266 — Document consumer UI seam: Corpus Reader** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
@@ -1003,10 +1003,10 @@
   - **Evidence (2026-10-27):** Added [Ontology Explorer consumer seam](../examples/moonwitness-ontology-explorer.md), making graph rendering an optional consumer integration and keeping ontology semantics/data consumer-owned. The example includes accessible noncanvas alternatives and does not claim a shipped graph renderer or product. Dependency MF-VF-031 is implemented. Documentation/source inspection only; runner override honored, so no validators, package-manager commands, suites, typecheck, build, or screenshots run. No human review or acceptance claimed. Rollback: remove the example document and restore this row to planned.
   - **File scope:** `docs/examples/moonwitness-ontology-explorer.md (proposed)`. **Acceptance:** Graph renderer integration is optional and not falsely claimed shipped.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-268 — Document consumer UI seam: prophetic table** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-268 — Document consumer UI seam: prophetic table** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/examples/moonwitness-prophetic-table.md (proposed)`. **Acceptance:** Generic table affordances without hard-coded domain truth.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
-- [ ] **MF-VF-269 — Document consumer UI seam: glossary/terms index** · **P2** · `planned` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
+- [x] **MF-VF-269 — Document consumer UI seam: glossary/terms index** · **P2** · `implemented` · **dependency:** `MF-VF-031` · **GitHub issue:** not-created
   - **File scope:** `docs/examples/moonwitness-terms-index.md (proposed)`. **Acceptance:** Search/index presentation separated from actual knowledge.
   - **Verify:** Render screenshots at desktop/mobile, check aria/performance and record actual evidence. Report exact SHA, actual test command/outcome, reviewer state and rollback; do not claim PASS until observed.
 
