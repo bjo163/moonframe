@@ -140,6 +140,11 @@ export const Progress = forwardRef(function Progress({ value = 0, max = 100, lab
 
 export const Avatar = forwardRef(function Avatar({ src, alt = '', fallback = '?', className, ...props }, ref) {
   const [failedSource, setFailedSource] = useState(null);
+  useEffect(() => {
+    if (src && failedSource) {
+      setFailedSource(null);
+    }
+  }, [src, failedSource]);
   return h('span', { ...props, ref, className: cx('mf-avatar', className) },
     src && src !== failedSource
       ? h('img', { src, alt, onError: () => setFailedSource(src) })
@@ -205,6 +210,8 @@ export const Dialog = forwardRef(function Dialog({ open, defaultOpen = false, on
     else if (forwardedRef) forwardedRef.current = node;
   }, [forwardedRef]);
   useEffect(() => {
+    // Clear queue on mount to prevent StrictMode double-mount accumulation
+    programmaticCloses.current = [];
     const node = dialog.current;
     if (!node) return;
     if (isOpen && !node.open) {
@@ -2115,7 +2122,7 @@ export function SFXProvider({
     setMuted,
     setVolume,
     play,
-  }), [consentGranted, muted, volume, lastEvent, context]);
+  }), [consentGranted, muted, volume, lastEvent]);
 
   return h(SFXContext.Provider, { value }, children);
 }
