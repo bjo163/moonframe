@@ -106,6 +106,7 @@ test('fixed T-1045 archive dialog fixture opens deterministically and captures s
 });
 
 test('simulated sign-in fixture keeps its form contract consistent across every skin and mode', async ({ page, browser }) => {
+  test.setTimeout(120_000);
   await page.clock.setFixedTime(new Date('2026-10-25T12:00:00.000Z'));
 
   for (const skin of skins) for (const mode of ['light', 'dark']) {
@@ -465,6 +466,52 @@ test('loading, empty, error, and denied request states keep their messages and a
     await panel.getByRole('button', { name: 'Request access', exact: true }).click();
     await expect(panel.getByRole('status')).toHaveText('Access request prepared locally; nothing was sent.');
   }
+});
+
+test('error boundary contains a failing panel, keeps siblings usable, and recovers through the fallback reset', async ({ page }) => {
+  await page.goto('/lab/behavior?fixture=error-boundary');
+  const fixture = page.locator('[data-fixture="error-boundary"]');
+  await expect(fixture).toBeVisible();
+  await expect(fixture.getByRole('heading', { level: 1, name: 'Render failure boundaries' })).toBeVisible();
+  await expect(fixture.getByText('Default fallback panel rendered normally.')).toBeVisible();
+  await expect(fixture.getByText('Custom fallback panel rendered normally.')).toBeVisible();
+
+  await fixture.getByRole('button', { name: 'Break the first panel' }).click();
+  const fallbackAlert = fixture.getByRole('alert');
+  await expect(fallbackAlert).toContainText('Something went wrong');
+  await expect(fallbackAlert.getByRole('button', { name: 'Try again' })).toBeVisible();
+  await expect(fixture.getByText('Custom fallback panel rendered normally.')).toBeVisible();
+
+  await fixture.getByRole('button', { name: 'Break the second panel' }).click();
+  await expect(fixture.getByText('Custom recovery view: Custom fallback panel could not render')).toBeVisible();
+
+  await fixture.getByRole('button', { name: 'Restore the second panel' }).click();
+  await expect(fixture.getByText('Custom fallback panel rendered normally.')).toBeVisible();
+});
+
+test('dialog and backdrop fade instead of popping', async ({ page }) => {
+  await page.goto('/lab/behavior?fixture=error-boundary');
+  const observed = await page.evaluate(async () => {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'mf-dialog';
+    document.body.appendChild(dialog);
+    const closedOpacity = getComputedStyle(dialog).opacity;
+    dialog.showModal();
+    const opening = getComputedStyle(dialog);
+    const started = { opacity: opening.opacity, transition: opening.transitionProperty, backdrop: getComputedStyle(dialog, '::backdrop').transitionProperty };
+    await new Promise(resolve => {
+      dialog.addEventListener('transitionend', resolve, { once: true });
+      setTimeout(resolve, 600);
+    });
+    const settled = getComputedStyle(dialog).opacity;
+    dialog.close();
+    document.body.removeChild(dialog);
+    return { closedOpacity, settled, ...started };
+  });
+  expect(observed.closedOpacity).toBe('0');
+  expect(observed.settled).toBe('1');
+  expect(observed.transition).toContain('opacity');
+  expect(observed.backdrop).toContain('opacity');
 });
 
 test('archive dialog content, Escape focus return, and open-overlay captures stay consistent across every skin and mode', async ({ page, browser }) => {

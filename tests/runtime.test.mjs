@@ -16,6 +16,7 @@ import {
   skins,
   skinIds,
   Button,
+  ErrorBoundary,
   Card,
   Input,
   NavItem,
@@ -427,4 +428,16 @@ test('every data attribute the library stylesheet selects is actually set by lib
 
   const orphans = tapped.filter(attribute => !new RegExp(`${attribute}(?![\\w-])`).test(producers));
   assert.deepEqual(orphans, [], `styles.css selects ${orphans.join(', ')} but no component or page sets it`);
+});
+
+test('BarChart reports an empty state instead of rendering an unlabeled blank chart', () => {
+  const html = renderToString(createElement(BarChart, { label: 'Requests per day', data: [] }));
+  assert.match(html, /mf-empty-state/);
+  assert.match(html, /No data to chart/);
+  assert.doesNotMatch(html, /<svg/, 'an empty chart should not advertise an image with no data in it');
+});
+
+test('ErrorBoundary server-renders its children untouched when nothing throws', () => {
+  const html = renderToString(createElement(ErrorBoundary, null, createElement('p', null, 'panel content')));
+  assert.equal(html, '<p>panel content</p>');
 });

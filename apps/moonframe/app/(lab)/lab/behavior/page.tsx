@@ -4,8 +4,13 @@ import React, { useEffect, useState } from 'react';
 import {
   Button, Checkbox, Switch, Tabs, Dialog, Accordion, Input, Select,
   Field, RadioGroup, DropdownMenu, Popover, Tooltip, DataTable,
-  OTPInput, PasswordField, TagInput, SegmentedControl,
+  OTPInput, PasswordField, TagInput, SegmentedControl, ErrorBoundary,
 } from '@moonwitness/moonframe';
+
+function ProbePanel({ label, fail }: { label: string; fail: boolean }) {
+  if (fail) throw new Error(`${label} could not render`);
+  return <p data-panel={label}>{`${label} rendered normally.`}</p>;
+}
 
 const erpServices = [
   { service: 'Payments API', environment: 'Production', status: 'Healthy', region: 'sin1', requests: '12.4k', latency: '42 ms', cost: '$840' },
@@ -29,6 +34,9 @@ export default function BehaviorFixturePage() {
   const [erpRegionFilter, setErpRegionFilter] = useState('all');
   const [erpSearch, setErpSearch] = useState('');
   const [statesFixture, setStatesFixture] = useState(false);
+  const [errorFixture, setErrorFixture] = useState(false);
+  const [defaultFail, setDefaultFail] = useState(false);
+  const [customFail, setCustomFail] = useState(false);
   const [previewState, setPreviewState] = useState<'loading' | 'empty' | 'error' | 'denied'>('loading');
   const [previewNotice, setPreviewNotice] = useState('');
   const [checked, setChecked] = useState(false);
@@ -47,6 +55,7 @@ export default function BehaviorFixturePage() {
     setArticleFixture(query.get('fixture') === 'article');
     setErpFixture(query.get('fixture') === 'enterprise');
     setStatesFixture(query.get('fixture') === 'states');
+    setErrorFixture(query.get('fixture') === 'error-boundary');
     const shouldOpenArchiveFixture = query.get('fixture') === 'archive-task';
     setArchiveFixture(shouldOpenArchiveFixture);
     setArchiveOpen(shouldOpenArchiveFixture);
@@ -68,7 +77,7 @@ export default function BehaviorFixturePage() {
 
   return (
     <main data-skin="classic" data-mode="light" style={{ padding: '1.5rem' }}>
-      {!authFixture && !articleFixture && !erpFixture && !statesFixture && <h1>Components</h1>}
+      {!authFixture && !articleFixture && !erpFixture && !statesFixture && !errorFixture && <h1>Components</h1>}
       {authFixture && <section data-fixture="auth-preview" aria-labelledby="auth-preview-title" style={{ maxWidth: 440, margin: '2rem auto', padding: '2rem', border: '1px solid var(--mf-border)', borderRadius: 'var(--mf-radius)', background: 'var(--mf-surface)' }}>
         <header style={{ marginBlockEnd: '1.5rem' }}>
           <p style={{ color: 'var(--mf-muted)', fontSize: '.875rem' }}>Northstar Studio workspace</p>
@@ -144,6 +153,24 @@ export default function BehaviorFixturePage() {
           {previewState === 'denied' && <div role="alert"><h2>You do not have access to these projects</h2><p>Ask a workspace administrator to review your permissions.</p><Button onClick={() => setPreviewNotice('Access request prepared locally; nothing was sent.')}>Request access</Button></div>}
           {previewNotice && <p role="status" aria-live="polite">{previewNotice}</p>}
         </section>
+      </section>}
+      {errorFixture && <section data-fixture="error-boundary" aria-labelledby="error-boundary-title" style={{ maxWidth: 640, margin: '2rem auto', color: 'var(--mf-text)' }}>
+        <header style={{ marginBlockEnd: '1.5rem' }}><p style={{ color: 'var(--mf-muted)', fontSize: '.8rem' }}>WORKSPACE · LOCAL PREVIEW</p><h1 id="error-boundary-title">Render failure boundaries</h1><p>A failing panel is contained here; the rest of the page stays usable.</p></header>
+        <div style={{ display: 'grid', gap: '1rem' }}>
+          <ErrorBoundary>
+            <ProbePanel label="Default fallback panel" fail={defaultFail} />
+          </ErrorBoundary>
+          <div><Button variant="secondary" onClick={() => setDefaultFail(true)}>Break the first panel</Button></div>
+          <ErrorBoundary fallback={(error, reset) => (
+            <div style={{ display: 'grid', gap: '.75rem' }}>
+              <p role="alert">Custom recovery view: {error.message}</p>
+              <div><Button onClick={() => { setCustomFail(false); reset(); }}>Restore the second panel</Button></div>
+            </div>
+          )}>
+            <ProbePanel label="Custom fallback panel" fail={customFail} />
+          </ErrorBoundary>
+          <div><Button variant="secondary" onClick={() => setCustomFail(true)}>Break the second panel</Button></div>
+        </div>
       </section>}
       {archiveFixture && <section data-fixture="archive-task-dialog" aria-labelledby="archive-task-fixture-title">
         <h2 id="archive-task-fixture-title">Project tasks</h2>

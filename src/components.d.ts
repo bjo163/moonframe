@@ -50,6 +50,14 @@ export const Progress: RefComponent<HTMLDivElement, Omit<React.HTMLAttributes<HT
 export const Avatar: RefComponent<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElement> & { src?: string; alt?: string; fallback?: React.ReactNode }>;
 export const Separator: RefComponent<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { orientation?: 'horizontal' | 'vertical'; decorative?: boolean }>;
 export const Alert: RefComponent<HTMLDivElement, Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> & { title?: React.ReactNode; variant?: Variant }>;
+export interface ErrorBoundaryProps {
+  children?: React.ReactNode;
+  fallback?: React.ReactNode | ((error: Error, reset: () => void) => React.ReactNode);
+  onError?: (error: Error, info: React.ErrorInfo) => void;
+}
+export class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
+  reset(): void;
+}
 export const Skeleton: RefComponent<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>;
 
 export interface TabItem {
@@ -353,6 +361,7 @@ export interface BarChartProps extends React.HTMLAttributes<HTMLDivElement> {
   data: BarChartDatum[];
   height?: number;
   label?: string;
+  emptyLabel?: string;
   formatValue?: (value: number) => string;
 }
 export const BarChart: RefComponent<HTMLDivElement, BarChartProps>;

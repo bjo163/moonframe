@@ -159,6 +159,38 @@ export const Alert = forwardRef(function Alert({ title, variant = 'secondary', c
   return h('div', { ...props, role, ref, className: cx('mf-alert', className), 'data-variant': variant }, title && h('strong', { className: 'mf-alert-title' }, title), children);
 });
 
+/** Catches render errors below it so one broken panel cannot blank the whole application. */
+export class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+    this.reset = this.reset.bind(this);
+  }
+
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+
+  componentDidCatch(error, info) {
+    this.props.onError?.(error, info);
+  }
+
+  reset() {
+    this.setState({ error: null });
+  }
+
+  render() {
+    const { children, fallback } = this.props;
+    if (!this.state.error) return children;
+    if (typeof fallback === 'function') return fallback(this.state.error, this.reset);
+    if (fallback !== undefined) return fallback;
+    return h(Alert, { role: 'alert', variant: 'danger', title: 'Something went wrong' },
+      h('p', null, 'This section could not be displayed.'),
+      h(Button, { variant: 'secondary', onClick: this.reset }, 'Try again')
+    );
+  }
+}
+
 export const Skeleton = forwardRef(function Skeleton({ className, ...props }, ref) {
   return h('div', { ...props, ref, className: cx('mf-skeleton', className), 'aria-hidden': true });
 });
@@ -1231,10 +1263,16 @@ export const BarChart = forwardRef(function BarChart({
   data = [],
   height = 180,
   label = 'Bar chart',
+  emptyLabel = 'No data to chart',
   formatValue,
   className,
   ...props
 }, ref) {
+  if (!data.length) {
+    return h('div', { ...props, ref, className: cx('mf-chart-wrap', className) },
+      h(EmptyState, { title: emptyLabel }));
+  }
+
   const maxVal = Math.max(1, ...data.map(d => Number(d.value) || 0));
   const width = Math.max(240, data.length * 56);
   const chartHeight = Math.max(120, Number(height) || 180);

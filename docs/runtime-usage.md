@@ -132,7 +132,7 @@ Available exports include:
 - **Layout & Shell:** `AppShell`, `Sidebar`, `Main`, `Header`, `Nav`, `NavItem`, `Hero`, `Grid`, `StatCard`
 - **Actions & Form Inputs:** `Button`, `Input`, `Textarea`, `Label`, `Select`, `Checkbox`, `Switch`, `RadioGroup`, `Field`, `FieldDescription`, `FieldError`, `OTPInput`, `PasswordField`, `SearchInput`, `Slider`, `TagInput`, `SegmentedControl`, `FileDropzone`
 - **Display, Charts & Data:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Badge`, `Avatar`, `AvatarGroup`, `Progress`, `Separator`, `Skeleton`, `EmptyState`, `Kbd`, `CodeBlock`, `DescriptionList`, `DescriptionTerm`, `DescriptionDetails`, `Stepper`, `Timeline`, `BarChart`, `Sparkline`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`
-- **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`
+- **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`, `ErrorBoundary`
 - **Level C Reusable Composite Blocks:** `PageHeader`, `MetricGrid`, `AuthCard`, `PricingCard`, `SettingsSection`, `ActivityFeed`
 
 ## Moonframe CLI Scaffolder (`pnpm run cli`)
