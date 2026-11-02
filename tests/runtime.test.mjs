@@ -408,11 +408,7 @@ test('skin screenshot provenance rejects mismatched source, PNG digests, or capt
   assert.equal(validateSkinCaptureProvenance({ ...valid, sourceCommit: 'invalid' }, 'b'.repeat(64), 'c'.repeat(64)), false);
 });
 
-test('every data attribute the library stylesheet selects is actually set by library or showcase code', () => {
-  const css = fs.readFileSync(path.join('src', 'styles.css'), 'utf8');
-  const tapped = [...new Set([...css.matchAll(/\[(data-[a-z-]+)/g)].map(match => match[1]))];
-  assert.ok(tapped.length > 15, `expected the stylesheet to tap its preference attributes, found ${tapped.length}`);
-
+function producerText() {
   const sources = [];
   const walk = dir => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -424,10 +420,56 @@ test('every data attribute the library stylesheet selects is actually set by lib
   };
   walk('src');
   walk(path.join('apps', 'moonframe'));
-  const producers = sources.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+  return sources.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+}
 
+function stylesheetBody(file) {
+  return fs.readFileSync(file, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+}
+
+// Class names the stylesheets style but no component emits, because consumers place them on their own elements.
+const documentedConsumerHooks = ['mf-editorial-paper', 'mf-icon', 'mf-sr-only'];
+
+test('every data attribute the library stylesheet selects is actually set by library or showcase code', () => {
+  const css = fs.readFileSync(path.join('src', 'styles.css'), 'utf8');
+  const tapped = [...new Set([...css.matchAll(/\[(data-[a-z-]+)/g)].map(match => match[1]))];
+  assert.ok(tapped.length > 15, `expected the stylesheet to tap its preference attributes, found ${tapped.length}`);
+
+  const producers = producerText();
   const orphans = tapped.filter(attribute => !new RegExp(`${attribute}(?![\\w-])`).test(producers));
   assert.deepEqual(orphans, [], `styles.css selects ${orphans.join(', ')} but no component or page sets it`);
+});
+
+test('every class both stylesheets select is emitted by a component or documented as an opt-in hook', () => {
+  const stylesheets = [path.join('src', 'styles.css'), path.join('apps', 'moonframe', 'app', '(lab)', 'lab', 'lab.css')];
+  const selected = new Set();
+  for (const file of stylesheets) {
+    for (const match of stylesheetBody(file).matchAll(/\.mf-[a-z0-9-]+/g)) selected.add(match[0].slice(1));
+  }
+  assert.ok(selected.size > 50, `expected the stylesheets to select many classes, found ${selected.size}`);
+
+  const producers = producerText();
+  const usage = fs.readFileSync(path.join('docs', 'runtime-usage.md'), 'utf8');
+  const orphans = [...selected].filter(className => {
+    if (documentedConsumerHooks.includes(className)) return !usage.includes(className);
+    return !new RegExp(`${className}(?![\\w-])`).test(producers);
+  });
+  assert.deepEqual(orphans, [], `the stylesheets select ${orphans.join(', ')} but no component emits it and it is not a documented opt-in hook`);
+});
+
+test('a disabled NavItem keeps its link role but gives up activation and focus', () => {
+  const anchor = renderToString(createElement(NavItem, { href: '/billing', disabled: true }, 'Billing'));
+  assert.match(anchor, /aria-disabled="true"/);
+  assert.match(anchor, /tabindex="-1"/);
+  assert.doesNotMatch(anchor, /(?:^|\s)disabled=/, 'an anchor ignores the disabled attribute, so it must not be emitted');
+
+  const button = renderToString(createElement(NavItem, { disabled: true }, 'Billing'));
+  assert.match(button, /disabled=""/);
+  assert.match(button, /aria-disabled="true"/);
+
+  const enabled = renderToString(createElement(NavItem, { href: '/billing' }, 'Billing'));
+  assert.doesNotMatch(enabled, /aria-disabled/);
+  assert.doesNotMatch(enabled, /tabindex/i);
 });
 
 test('BarChart reports an empty state instead of rendering an unlabeled blank chart', () => {

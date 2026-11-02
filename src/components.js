@@ -331,18 +331,21 @@ export const Grid = forwardRef(function Grid({ columns, className, style, ...pro
   return h('div', { ...props, ref, className: cx('mf-grid', className), style: gridStyle });
 });
 
-export const NavItem = forwardRef(function NavItem({ active = false, asChild = false, href, className, children, ...props }, ref) {
+export const NavItem = forwardRef(function NavItem({ active = false, asChild = false, href, disabled = false, className, children, ...props }, ref) {
   const shared = {
     ...props,
     ref,
     href,
     className: cx('mf-nav-item', className),
     'aria-current': active ? 'page' : props['aria-current'],
+    'aria-disabled': disabled ? 'true' : props['aria-disabled'],
+    tabIndex: disabled ? -1 : props.tabIndex,
     'data-active': active ? 'true' : undefined,
   };
   if (asChild) return h(Slot, shared, children);
+  // An anchor ignores the disabled attribute, so a disabled nav item keeps its role but loses activation and focus.
   if (href) return h('a', shared, children);
-  return h('button', { type: 'button', ...shared }, children);
+  return h('button', { type: 'button', ...shared, disabled: disabled || undefined }, children);
 });
 
 export const StatCard = forwardRef(function StatCard({ label, value, detail, icon, className, children, ...props }, ref) {
