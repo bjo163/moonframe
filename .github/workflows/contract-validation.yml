@@ -1,13 +1,13 @@
-name: Validate Moonframe specification contracts
+name: Moonframe pipeline
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [dev, main]
 permissions:
   contents: read
+
 jobs:
   spec-contracts:
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -28,8 +28,9 @@ jobs:
         run: node scripts/run-m13-autopilot.mjs --dry-run
 
   runtime-and-showcase:
-    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
     needs: spec-contracts
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
@@ -65,3 +66,49 @@ jobs:
             playwright-report/
           retention-days: 7
           if-no-files-found: warn
+
+  promote-to-main:
+    if: github.ref == 'refs/heads/dev'
+    needs: [spec-contracts, runtime-and-showcase]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Fast-forward main to the verified dev commit
+        run: |
+          git fetch origin main
+          if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)" ]; then
+            echo "main already carries this commit; nothing to promote"
+            exit 0
+          fi
+          git merge-base --is-ancestor origin/main HEAD || {
+            echo "main has commits that dev does not; refusing to overwrite"
+            exit 1
+          }
+          git push origin "HEAD:refs/heads/main"
+
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Tag and release when package.json carries a new version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          tag="v${version}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
+            echo "${tag} is already released"
+            exit 0
+          fi
+          git tag "$tag"
+          git push origin "$tag"
+          gh release create "$tag" --target main --title "Moonframe $tag" --generate-notes
