@@ -10,7 +10,7 @@
 
 - **Canonical Skins Evaluated:** 15 (`moonpunk`, `moonriot`, `moonzine`, `moonhalftone`, `moonglitch`, `moonsmash`, `moonink`, `mooncrash`, `moonpanel`, `moonscrawl`, `moonraw`, `moonchrome`, `classic`, `moonquest`, `moonledger`)
 - **Screenshot inventory:** 30/30 paths present; PNG pixels are not visually reviewed by this script
-- **Current-source captures:** 30/30 screenshots have SHA-256 sidecars matching source fingerprint 3398dcb15405da58502af0ae3c3e0f801b78ff3cb0a6627bc9377cb1ea9e6e5c; stale/missing provenance is not accepted
+- **Current-source captures:** 30/30 screenshots have SHA-256 sidecars matching source fingerprint fb07d0393f4ff1e02b218bd0ef67d4f45dbbb330bbbf1eed6a48735c10b16330; stale/missing provenance is not accepted
 - **Tablet captures:** 30/30 real 768×1024 captures have current-source SHA-256 sidecars; human visual review is pending
 - **Phone captures:** 30/30 real 360×800 captures have current-source SHA-256 sidecars; human visual review is pending
 - **Pilot pair metadata:** 6/6 checked structurally; human visual review pending
