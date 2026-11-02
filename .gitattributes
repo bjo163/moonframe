@@ -1,0 +1,7 @@
+# Normalize line endings so a Windows checkout and the Linux CI runner write
+# identical bytes. The skin capture fingerprint hashes file content, so a
+# CRLF worktree silently produces a fingerprint no other machine can reproduce.
+* text=auto eol=lf
+
+# Real binaries are hashed into capture provenance; never line-end them.
+*.png binary
