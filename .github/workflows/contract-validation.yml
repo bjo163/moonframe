@@ -1,13 +1,12 @@
 name: Moonframe pipeline
 on:
   push:
-    branches: [dev, main]
+    branches: [dev]
 permissions:
   contents: read
 
 jobs:
   spec-contracts:
-    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -28,7 +27,6 @@ jobs:
         run: node scripts/run-m13-autopilot.mjs --dry-run
 
   runtime-and-showcase:
-    if: github.ref == 'refs/heads/dev'
     needs: spec-contracts
     runs-on: ubuntu-latest
     steps:
@@ -67,17 +65,21 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+  # A merge made with GITHUB_TOKEN starts no further workflow runs, so main is promoted
+  # and released inside this same dev run instead of by a main-push trigger.
   promote-to-main:
-    if: github.ref == 'refs/heads/dev'
     needs: [spec-contracts, runtime-and-showcase]
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Fast-forward main to the verified dev commit
+      - name: Land the verified dev commit on main
         run: |
           git fetch origin main
           if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)" ]; then
@@ -85,24 +87,34 @@ jobs:
             exit 0
           fi
           git merge-base --is-ancestor origin/main HEAD || {
-            echo "main has commits that dev does not; refusing to overwrite"
+            echo "main carries commits dev does not; reconcile on dev instead of overwriting main"
             exit 1
           }
-          git push origin "HEAD:refs/heads/main"
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head dev --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr" ]; then
+            pr=$(gh api --method POST "repos/$GITHUB_REPOSITORY/pulls" \
+              -f title="chore(pipeline): promote dev to main" \
+              -f base=main -f head=dev \
+              -f body="Whole gate green on \`dev\` at \`${GITHUB_SHA}\`." \
+              --jq .number)
+          fi
+          gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --rebase
 
   release:
-    if: github.ref == 'refs/heads/main'
+    needs: promote-to-main
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Tag and release when package.json carries a new version
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tag the promoted main commit when package.json carries a new version
         run: |
+          git fetch origin main
+          git checkout --detach origin/main
           version=$(node -p "require('./package.json').version")
           tag="v${version}"
           if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
