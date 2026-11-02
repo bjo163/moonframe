@@ -116,6 +116,10 @@ export default function WorkspacePage() {
 }
 ```
 
+### `disabled` on `NavItem`
+
+`NavItem disabled` removes activation and focus without faking a native attribute. With `href` it renders an anchor, which browsers ignore `disabled` on, so the component emits `aria-disabled="true"` and `tabindex="-1"` instead and the stylesheet drops its pointer events. Without `href` it renders a real `<button disabled>`. Either way the item keeps its nav role, so screen readers still announce it as a link or button that is currently unavailable.
+
 ### Subpath exports
 
 - `@moonwitness/moonframe` — Full component library, layout primitives, `Slot`, `DataTable`, M10 `SkinBrandMark`, `SkinArtwork`, `SFXProvider`, `useSFX`, and theme runtime
@@ -134,6 +138,8 @@ Available exports include:
 - **Display, Charts & Data:** `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Badge`, `Avatar`, `AvatarGroup`, `Progress`, `Separator`, `Skeleton`, `EmptyState`, `Kbd`, `CodeBlock`, `DescriptionList`, `DescriptionTerm`, `DescriptionDetails`, `Stepper`, `Timeline`, `BarChart`, `Sparkline`, `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`, `DataTable`
 - **Navigation, Overlays & Feedback:** `Tabs`, `Accordion`, `Dialog`, `Drawer`, `Popover`, `DropdownMenu`, `Tooltip`, `CommandPalette`, `Breadcrumb`, `BreadcrumbItem`, `BreadcrumbLink`, `Pagination`, `Alert`, `Callout`, `Banner`, `ToastProvider`, `useToast`, `ErrorBoundary`
 - **Level C Reusable Composite Blocks:** `PageHeader`, `MetricGrid`, `AuthCard`, `PricingCard`, `SettingsSection`, `ActivityFeed`
+
+Three class names are opt-in hooks the stylesheets style but no component emits: `mf-icon` frames an icon you place in a component slot, `mf-editorial-paper` applies the Moonzine paper treatment to your own element, and `mf-sr-only` visually hides text that stays available to screen readers. Every other selector must be produced by a component or showcase page — a producer check in `tests/runtime.test.mjs` fails when a selector is added without a producer or a documented hook.
 
 ## Moonframe CLI Scaffolder (`pnpm run cli`)
 
