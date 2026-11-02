@@ -1749,6 +1749,10 @@ function markdownLinkProblems(source,content,resolveLocal,readMarkdown){
   const query=pathname.indexOf('?');if(query>=0)pathname=pathname.slice(0,query);
   try{pathname=decodeURIComponent(pathname);fragment=decodeURIComponent(fragment);}
   catch{problems.push(`${source}: malformed percent-encoding in ${href}`);continue;}
+  // `artifacts/` is capture output: `pnpm run test:browser` writes it and .gitignore keeps
+  // all but the sample skin PNGs out of the repository, so those targets only exist in a
+  // captured tree. They stay readable in the QA docs but cannot be asserted here.
+  if(/(^|\/)artifacts\//.test(pathname))continue;
   const target=resolveLocal(source,pathname);
   if(!target){problems.push(`${source}: broken local Markdown link target ${href}`);continue;}
   if(hash>=0&&fragment&&target.toLowerCase().endsWith('.md')){
@@ -1791,6 +1795,7 @@ if(process.argv.includes('--self-test')){
  assert(fixtureProblems.some(x=>x.includes('missing heading anchor #absent')));
  assert.equal(markdownLinkProblems('README.md','[remote](https://example.invalid/a?x=1#remote)',()=>null,()=>null).length,0);
  assert(markdownLinkProblems('docs/parent/page.md','[escape](../../../../secret.md)',()=>null,()=>null)[0].includes('broken local Markdown link'));
+ assert.equal(markdownLinkProblems('docs/qa/ledger.md','[capture](../../artifacts/skins/moonpunk-light-1440x960-default.png)',()=>null,()=>null).length,0,'Capture links into the generated artifacts tree are not asserted');
  console.log('PASS: Markdown links (nested paths, query/fragment, duplicate headings); invalid target/anchor, traversal and external-URL fixtures');
 }
 if (process.argv.includes('--self-test')) {
