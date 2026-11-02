@@ -914,7 +914,7 @@ export default function PlansAndPricing() {
   return (
     <Grid columns={3}>
       <PricingCard name="Starter" price="$0" features={['3 skins', 'Core primitives', 'Community support']} />
-      <PricingCard name="Studio" price="$49" badge="Most Popular" featured features={['All 15 skins', '22 page templates', 'Next.js 16 SSR kit']} />
+      <PricingCard name="Studio" price="$49" badge="Most Popular" featured features={['All 15 skins', '43 page templates', 'Next.js 16 SSR kit']} />
       <PricingCard name="Enterprise" price="$199" features={['Custom skin grammar', 'Dedicated SLA', 'Unlimited seats']} />
     </Grid>
   );
@@ -1502,7 +1502,7 @@ export default function PublicPricing() {
       <PageHeader eyebrow="Transparent Pricing" title="Choose Your Moonframe Tier" />
       <Grid columns={3}>
         <PricingCard name="Starter" price="$29" features={['5 skins', 'Next.js 16']} />
-        <PricingCard name="Pro" price="$99" featured features={['All 15 skins', '22 Templates']} />
+        <PricingCard name="Pro" price="$99" featured features={['All 15 skins', '43 Templates']} />
         <PricingCard name="Studio" price="$299" features={['Full source', '8 Starters']} />
       </Grid>
     </div>

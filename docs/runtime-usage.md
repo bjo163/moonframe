@@ -1,6 +1,6 @@
 # Using Moonframe
 
-The local runtime implements all 15 skin IDs in light and dark, **66+ shared React components and Level C composite blocks**, Next.js SSR/App Router theme helpers, an optional Tailwind CSS v4 bridge, and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) with **22 Wave-A page templates**. Use Node.js 24.22.1 LTS from `.nvmrc` for repository scripts; consumer apps support Node `>=22.0.0` and React `^19.0.0`.
+The local runtime implements all 15 skin IDs in light and dark, **70+ shared React components and Level C composite blocks**, Next.js SSR/App Router theme helpers, an optional Tailwind CSS v4 bridge, and the **`moonframe` Next.js 16 Showcase & Template Marketplace** (`apps/moonframe`) with **43 Wave-A and Wave-B page templates**. Use Node.js 24.22.1 LTS from `.nvmrc` for repository scripts; consumer apps support Node `>=22.0.0` and React `^19.0.0`.
 
 ## Run the `moonframe` Showcase & Template Marketplace
 
@@ -12,8 +12,8 @@ pnpm run dev
 Open `http://localhost:3000`. Running `pnpm run dev` at the repository root starts the `apps/moonframe` Next.js 16 application via pnpm workspaces (`"@moonwitness/moonframe": "workspace:*"`):
 - **`/`** — Landing page, live 15-skin interactive wall, featured templates, and quickstart
 - **`/skins` & `/skins/[id]`** — 15-skin gallery and deep-dive non-color visual grammar specs
-- **`/components` & `/components/[slug]`** — Interactive playground for all 66+ components & composite blocks
-- **`/templates` & `/templates/[id]`** — 22 Wave-A production page templates with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), and copyable TSX source code
+- **`/components` & `/components/[slug]`** — Interactive playground for all 70+ components & composite blocks
+- **`/templates` & `/templates/[id]`** — 43 Wave-A and Wave-B production page templates with responsive live preview (`Desktop` / `Tablet` / `Mobile`), Fullscreen mode (`/preview/[id]`), and copyable TSX source code
 - **`/lab` & `/lab/behavior`** — Deterministic 15-skin comparison lab and keyboard/ARIA behavior test harness
 - **`/docs`** — Complete Next.js App Router, SSR anti-FOUC `ThemeScript`, Tailwind v4 bridge, and API guide
 

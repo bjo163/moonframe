@@ -683,8 +683,8 @@ export function TemplateRenderer({ id }: { id: string }) {
               description="For product teams shipping distinctive web apps."
               features={[
                 'Everything in Starter',
-                '66+ reusable components & Level C blocks',
-                '22 full-page production templates',
+                '70+ reusable components & Level C blocks',
+                '43 full-page production templates',
                 'Tailwind v4 semantic token bridge',
                 'Priority issue triage',
               ]}
@@ -820,7 +820,7 @@ export function TemplateRenderer({ id }: { id: string }) {
                 col: 'In Progress',
                 badge: '2 items',
                 cards: [
-                  { code: 'MF-288', title: 'Build 22 Next.js App Router showcase templates', tag: 'Templates', progress: 85 },
+                  { code: 'MF-288', title: 'Build 43 Next.js App Router showcase templates', tag: 'Templates', progress: 85 },
                   { code: 'MF-291', title: 'Verify 15 skins × 2 modes contrast >= 4.5:1', tag: 'Skins', progress: 90 },
                 ],
               },
@@ -829,7 +829,7 @@ export function TemplateRenderer({ id }: { id: string }) {
                 badge: '3 items',
                 cards: [
                   { code: 'MF-210', title: 'Configure pnpm workspace & workspace:* link', tag: 'DX', progress: 100 },
-                  { code: 'MF-225', title: 'Export 66+ typed components from @moonwitness/moonframe', tag: 'Core', progress: 100 },
+                  { code: 'MF-225', title: 'Export 70+ typed components from @moonwitness/moonframe', tag: 'Core', progress: 100 },
                   { code: 'MF-240', title: 'Implement zero-FOUC ThemeScript for Next.js', tag: 'SSR', progress: 100 },
                 ],
               },
@@ -1075,7 +1075,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               One Component Architecture.<br />Fifteen Unmistakable Worlds.
             </h1>
             <p style={{ maxWidth: '58ch', color: 'var(--mf-muted)', fontSize: '1.05rem' }}>
-              Stop shipping generic clones. Moonframe gives your Next.js application 66+ accessible components and 22 ready-made templates that transform across 15 radical visual grammars.
+              Stop shipping generic clones. Moonframe gives your Next.js application 70+ accessible components and 43 ready-made templates that transform across 15 radical visual grammars.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
               <Button size="lg">Install with pnpm</Button>
@@ -1086,7 +1086,7 @@ export function TemplateRenderer({ id }: { id: string }) {
             columns={4}
             items={[
               { label: 'Canonical Skins', value: '15', delta: '30 Modes', detail: 'Light & Dark for every skin' },
-              { label: 'Reusable Exports', value: '66+', delta: 'Typed', detail: 'Primitives + Level C Blocks' },
+              { label: 'Reusable Exports', value: '70+', delta: 'Typed', detail: 'Primitives + Level C Blocks' },
               { label: 'Contrast Floor', value: '4.5:1', delta: 'WCAG AA', detail: 'Playwright verified' },
               { label: 'Runtime Deps', value: '0', delta: 'Pure React', detail: 'No external font/icon requests' },
             ]}
@@ -1111,7 +1111,7 @@ export function TemplateRenderer({ id }: { id: string }) {
               eyebrow="Developer Guide"
               title="Getting Started with @moonwitness/moonframe"
               badge="Node 24.22.1 LTS"
-              description="Install via pnpm, configure zero-FOUC server rendering in Next.js, and compose with 66+ typed components."
+              description="Install via pnpm, configure zero-FOUC server rendering in Next.js, and compose with 70+ typed components."
             />
             <Callout title="Zero External Network Calls" variant="primary">
               Moonframe ships complete CSS recipes and semantic components without external font or icon CDNs.
@@ -1149,7 +1149,7 @@ export function TemplateRenderer({ id }: { id: string }) {
             action={
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Button asChild><a href="/">Return to Showcase Home</a></Button>
-                <Button variant="secondary" asChild><a href="/templates">Browse 22 Templates</a></Button>
+                <Button variant="secondary" asChild><a href="/templates">Browse 43 Templates</a></Button>
               </div>
             }
           />

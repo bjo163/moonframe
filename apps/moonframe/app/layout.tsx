@@ -5,7 +5,7 @@ import { ThemeScript } from '@moonwitness/moonframe';
 
 export const metadata = {
   title: 'Moonframe — 15-Skin React & Next.js UI System & Template Showcase',
-  description: 'Premium 15-skin React 19 & Next.js 16 component library, 66+ reusable primitives & Level C composite blocks, and 22 production page templates.',
+  description: 'Premium 15-skin React 19 & Next.js 16 component library, 70+ reusable primitives & Level C composite blocks, and 43 production page templates.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

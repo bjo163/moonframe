@@ -206,7 +206,7 @@ function LiveComponentSpecimen({ slug }: { slug: string }) {
               { key: 'status', header: 'Status' },
             ]}
             data={[
-              { id: '1', name: '@moonwitness/moonframe', exports: '66+ components', status: 'Verified' },
+              { id: '1', name: '@moonwitness/moonframe', exports: '70+ components', status: 'Verified' },
               { id: '2', name: '@moonwitness/moonframe/theme', exports: '7 hooks & SSR helpers', status: 'Verified' },
               { id: '3', name: '@moonwitness/moonframe/skins', exports: '15 canonical skins', status: 'Verified' },
             ]}
@@ -221,7 +221,7 @@ function LiveComponentSpecimen({ slug }: { slug: string }) {
             columns={3}
             items={[
               { label: 'Active Skins', value: '15', delta: '30 Modes', trend: [5, 8, 11, 13, 15] },
-              { label: 'Templates', value: '22', delta: 'App Router', trend: [4, 9, 14, 18, 22] },
+              { label: 'Templates', value: '43', delta: 'App Router', trend: [4, 9, 14, 18, 43] },
               { label: 'Bundle Overhead', value: '0 Deps', delta: 'Pure React', trend: [1, 1, 1, 1, 1] },
             ]}
           />
