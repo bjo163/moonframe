@@ -22,9 +22,10 @@ This repository's standing agent instructions are defined here. They apply to Co
 
 The repository has exactly two branches: `dev` (where work lands) and `main` (the primary branch and only release source).
 
-- Push **only** to `dev`. `main` is protected: a direct push to it is rejected, so nothing you commit locally should be sent there.
-- `.github/workflows/contract-validation.yml` runs the full gate on every `dev` push. When it is green the same run lands those commits on `main` through a pipeline-authored pull request, then tags `v<package.json version>` and opens the matching GitHub Release. Never hand-run that promotion, and never merge that pull request yourself.
-- Promotion only proceeds while `main` is an ancestor of `dev`. If `main` ever carries a commit `dev` does not, the job fails instead of overwriting it — reconcile on `dev` and let the pipeline run again.
+- Push **only** to `dev`. `main` is ruleset-protected: it cannot be created, deleted, force-pushed or moved backwards, and the pipeline is the only thing meant to move it.
+- `.github/workflows/contract-validation.yml` runs the full gate on every `dev` push. When it is green the same run fast-forwards `main` onto those commits, then tags `v<package.json version>` and opens the matching GitHub Release. Never hand-run that promotion and never push `main` yourself.
+- Promotion only proceeds while `main` is an ancestor of `dev`. If `main` ever carries a commit `dev` does not, the job fails instead of overwriting it — land the work on `dev` and let the gate re-run.
+- GitHub will not let a personal-repo workflow open pull requests into a PR-required branch, so `main` is enforced as forward-only rather than review-only. A separate job catches any `main` push that did not come through `dev`.
 - A GitHub Release is not an npm publish. Publishing to npm still needs explicit separate authorization.
 - Feature, spike and hotfix branches are not part of this model. Commit to `dev`; the pipeline decides whether `main` moves.
 

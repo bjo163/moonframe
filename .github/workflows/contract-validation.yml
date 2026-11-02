@@ -1,12 +1,13 @@
 name: Moonframe pipeline
 on:
   push:
-    branches: [dev]
+    branches: [dev, main]
 permissions:
   contents: read
 
 jobs:
   spec-contracts:
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -27,6 +28,7 @@ jobs:
         run: node scripts/run-m13-autopilot.mjs --dry-run
 
   runtime-and-showcase:
+    if: github.ref == 'refs/heads/dev'
     needs: spec-contracts
     runs-on: ubuntu-latest
     steps:
@@ -65,21 +67,19 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
-  # A merge made with GITHUB_TOKEN starts no further workflow runs, so main is promoted
+  # A push made with GITHUB_TOKEN starts no further workflow runs, so main is promoted
   # and released inside this same dev run instead of by a main-push trigger.
   promote-to-main:
+    if: github.ref == 'refs/heads/dev'
     needs: [spec-contracts, runtime-and-showcase]
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: write
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      contents: write
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Land the verified dev commit on main
+      - name: Fast-forward main to the verified dev commit
         run: |
           git fetch origin main
           if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD)" ]; then
@@ -87,20 +87,30 @@ jobs:
             exit 0
           fi
           git merge-base --is-ancestor origin/main HEAD || {
-            echo "main carries commits dev does not; reconcile on dev instead of overwriting main"
+            echo "main carries commits dev does not; land them on dev and let the gate re-run"
             exit 1
           }
-          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head dev --state open --json number --jq '.[0].number // empty')
-          if [ -z "$pr" ]; then
-            pr=$(gh api --method POST "repos/$GITHUB_REPOSITORY/pulls" \
-              -f title="chore(pipeline): promote dev to main" \
-              -f base=main -f head=dev \
-              -f body="Whole gate green on \`dev\` at \`${GITHUB_SHA}\`." \
-              --jq .number)
-          fi
-          gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --rebase
+          git push origin "HEAD:refs/heads/main"
+
+  # Anything that lands on main outside the pipeline is a human push, which does trigger
+  # this job. main may only ever be a subset of dev.
+  main-carries-only-dev-work:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Reject main commits that never passed the gate on dev
+        run: |
+          git fetch origin dev
+          git merge-base --is-ancestor HEAD origin/dev || {
+            echo "::error title=main moved without dev::\`main\` carries $(git rev-parse --short HEAD) which \`dev\` does not. Work belongs on \`dev\`; the pipeline promotes it."
+            exit 1
+          }
 
   release:
+    if: github.ref == 'refs/heads/dev'
     needs: promote-to-main
     runs-on: ubuntu-latest
     permissions:
