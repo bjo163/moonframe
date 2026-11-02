@@ -271,7 +271,7 @@
 
 **Live execution update (2026-10-27, MF-VF-402):** Added layer-specific decorative versus informative alt-text guidance to `docs/visual/cinematic-mangapunk-reference-bible.md`, including composite-scene redundancy and live-text rules. Status `implemented`; documentation inspection only. No validators, package-manager commands, tests, typecheck, build, screenshots, or human review run per runner override. Host runner owns verification/checkpoint; no runtime or WCAG conformance claim.
 
-**Frozen vision/contracts/task definitions:** [Freeze document](docs/governance/M13_PLAN_FREEZE_2026-10-26.md) and [content-addressed manifest](contracts/moonframe-m13-plan-freeze-v0.1.json) pin the baseline commit `723964322f9176bebf117b588e7976aff4030650`. The historical source is immutable by SHA; current working `main` intentionally continues to change as tasks are implemented. No new branch, Git tag, public release or human/rights approval is implied.
+**Frozen vision/contracts/task definitions:** [Freeze document](docs/governance/M13_PLAN_FREEZE_2026-10-26.md) and [content-addressed manifest](contracts/moonframe-m13-plan-freeze-v0.1.json) pin the baseline commit `723964322f9176bebf117b588e7976aff4030650`. The historical source is immutable by SHA; current working `dev` intentionally continues to change as tasks are implemented, and the pipeline advances `main` only from a green `dev`. No new branch, Git tag, public release or human/rights approval is implied.
 
 **Codex no-routine-confirmation execution:** [Autonomous M13 master prompt](docs/handoff/CODEX_M13_AUTONOMOUS_MASTER_PROMPT.md), [repository AGENTS.md](AGENTS.md), and [local resume/test/commit runner](scripts/run-m13-autopilot.mjs). From a **clean local checkout** with Codex, Node/pnpm and git credentials configured:
 
@@ -280,7 +280,7 @@ node scripts/run-m13-autopilot.mjs --dry-run
 node scripts/run-m13-autopilot.mjs --until-done --push
 ```
 
-The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, executes one dependency-ready task per cycle, runs validation/typecheck/build and browser checks when needed, then performs normal tested Git commits and optional **fast-forward-only** pushes. It checkpoints and continues across Codex invocations while the owner's local computer/session remains running. Unavoidable external signoffs/licensing/production actions remain `blocked`, not auto-authorized. Avoid auto-approval of visual/art/media, npm publishing, production deploy, access changes and billing.
+The runner gives Codex `--sandbox workspace-write --ask-for-approval never`, executes one dependency-ready task per cycle, runs validation/typecheck/build and browser checks when needed, then performs normal tested Git commits and optional **fast-forward-only** pushes to `dev` (it never pushes `main`, tags or releases). It checkpoints and continues across Codex invocations while the owner's local computer/session remains running. Unavoidable external signoffs/licensing/production actions remain `blocked`, not auto-authorized. Avoid auto-approval of visual/art/media, npm publishing, production deploy, access changes and billing.
 
 **Freeze count:** 488 total M13 task IDs = **460 visual** (14 implemented, 446 pending) + **28 preflight** (0 implemented, 28 pending) at freeze; ***14 implemented / 474 pending***. These counts may change through genuine evidence-backed task completion; do not rewrite the frozen baseline.
 

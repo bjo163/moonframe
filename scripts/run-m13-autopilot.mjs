@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Local unattended M13 Codex runner. No public publish/deployment, force pushes, or secrets.
+// Local unattended M13 Codex runner. Lands on dev only; no public publish/deployment, force pushes, or secrets.
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
@@ -58,7 +58,7 @@ const forbidden = name => /(^|\/)(\.env(?:\.|$)|\.git\/|\.aws|\.ssh|\.codex\/|\.
  /\.(pem|p12|pfx|key)$/i.test(name) ||
  ['LICENSE','AGENTS.md','docs/governance/M13_PLAN_FREEZE_2026-10-26.md','contracts/moonframe-m13-plan-freeze-v0.1.json'].includes(name);
 const original = git('rev-parse','HEAD');
-if (!dryRun && git('branch','--show-current') !== 'main') throw Error('This runner only works on existing main. Detached read-only dry-run is permitted for CI.');
+if (!dryRun && git('branch','--show-current') !== 'dev') throw Error('This runner only lands work on dev. main is promoted by the pipeline alone; detached read-only dry-run is permitted for CI.');
 if (!resumeCheckpoint && changes().length) throw Error('Non-clean worktree. Preserve/checkpoint your current changes first.');
 if (push) {
   const remote=git('remote','get-url','origin');
@@ -130,9 +130,9 @@ while (iteration < cyclesMax) {
   const sha=git('rev-parse','HEAD');
   say('Committed '+sha);
   if (push) {
-    const r=cmd('git',['push','origin','HEAD:refs/heads/main'],false);
+    const r=cmd('git',['push','origin','HEAD:refs/heads/dev'],false);
     if (r.status!==0) {say('Push rejected/unavailable; local commit retained, no force: '+(r.stderr||'').slice(-800));fatal=true;break;}
-    say('Pushed main fast-forward '+sha);
+    say('Pushed dev fast-forward '+sha+'; the pipeline owns main, tags and releases');
   }
   stagnation=0;
   const after=countTasks();
