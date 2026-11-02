@@ -444,9 +444,9 @@ test('every class both stylesheets select is emitted by a component or documente
   const stylesheets = [path.join('src', 'styles.css'), path.join('apps', 'moonframe', 'app', '(lab)', 'lab', 'lab.css')];
   const selected = new Set();
   for (const file of stylesheets) {
-    for (const match of stylesheetBody(file).matchAll(/\.mf-[a-z0-9-]+/g)) selected.add(match[0].slice(1));
+    for (const match of stylesheetBody(file).matchAll(/\.([a-zA-Z][a-zA-Z0-9_-]*)/g)) selected.add(match[1]);
   }
-  assert.ok(selected.size > 50, `expected the stylesheets to select many classes, found ${selected.size}`);
+  assert.ok(selected.size > 200, `expected the stylesheets to select many classes, found ${selected.size}`);
 
   const producers = producerText();
   const usage = fs.readFileSync(path.join('docs', 'runtime-usage.md'), 'utf8');
